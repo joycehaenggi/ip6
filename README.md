@@ -15,22 +15,25 @@
   * Dr. Doris Agotai
 
 ### Kunde
-* FHNW Hochschule für Life Sciences, Institut für Medizinalund Analysetechnologien
+* FHNW Hochschule für Life Sciences, Institut für Medizinalund Analysetechnologien (Standort Muttenz)
+  * Daniel Seiler
 
 ### Anforderungen
-* Neues Interaktionskonzept für Pandemia-Parliament
-* Fokus auf Desktop-Geräte & Nicht zwingend responsive
-* Erstellung von Prototypen mit neuem Design:
+* Untersuchung und Optimierung UX und Usability im Herstellungsprozess von patientenangepassten Implantaten
+* Erstellung von Prototypen:
     * Lo-Fi Prototyp
     * Hi-Fi Prototyp
     * Klickbarer Prototyp
+    * Von jedem Prototyp wurden mehrere Versionen/ Varianten erstellt.
+    * Die Prototypen wurden in unterschiedlichen Tests untersucht und anschliessend optimiert.
 * Technische Umsetzung 
   * Frontend wird vollumfänglich umgesetzt.
-  * Backend muss vom Projektteam kaum umgesetzt werden.
-  * Neu entwickeltes Frontend soll in bestehendes Backend vom Kunden integriert werden.
+  * Backend ?
 * Die genauen Technologien können in Absprache definiert werden
   * Das Projektteam verwendet für die Umsetzung des Frontends HTML, CSS & JavaScript.
-  * Als Ergänzung wird PHP verwendet: 
-    * Um mehrmals verwendete Komponenten nur einmal im Quellcode zu haben.
-    * Für allfällige Implementationen im Backend.
+  * Als Framework wird React verwendet
+
+### Daten
+* Die Daten für die Darstellung der Informationen wurden aus der Excel-Tabelle PFMEA-Orbita.xlsx bezogen.
+* Alle Dokumente liegen auf dem privaten Team "IP6 - UX und Usability für Patient Matched Production_M365" auf Microsoft Teams. Alle beteiligten Personen haben Zugang zu diesem Ordner.
     
