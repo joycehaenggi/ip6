@@ -15,7 +15,7 @@
   * Dr. Doris Agotai
 
 ### Kunde
-* FHNW Hochschule für Life Sciences, Institut für Medizinalund Analysetechnologien (Standort Muttenz)
+* FHNW Hochschule für Life Sciences, Institut für Medizinal und Analysetechnologien (Standort Muttenz)
   * Daniel Seiler
 
 ### Anforderungen
