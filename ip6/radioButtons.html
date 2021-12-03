@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    .radio-item {
+        display: inline-block;
+        position: relative;
+        padding: 0 6px;
+        margin: 10px 0 0;
+    }
+
+    .radio-item input[type='radio'] {
+        display: none;
+    }
+
+    .radio-item label {
+        color: #666;
+        font-weight: normal;
+    }
+
+    .radio-item label:before {
+        content: " ";
+        display: inline-block;
+        position: relative;
+        top: 5px;
+        margin: 0 5px 0 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 11px;
+        border: 2px solid #32404F;
+        background-color: transparent;
+    }
+
+    .radio-item input[type=radio]:checked + label:after {
+        border-radius: 50px;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 10px;
+        left: 10.5px;
+        content: " ";
+        display: block;
+        background: #32404F;
+    }
+</style>
+<body>
+
+<div class="radio-item">
+    <input type="radio" id="ritema" name="ritem" value="ropt1">
+    <label for="ritema"></label>
+</div>
+
+<div class="radio-item">
+    <input type="radio" id="ritemb" name="ritem" value="ropt2">
+    <label for="ritemb"></label>
+</div>
+
+</body>
+</html>
