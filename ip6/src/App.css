@@ -4,8 +4,38 @@
   box-sizing: border-box;
 }
 
+.header{
+  height: 6rem;
+  background: #32404F;
+  color: white;
+  padding: 1.5rem 5rem 1.5rem 5rem;
+}
+
 .hazards {
   margin: 1.5rem 5rem 1.5rem 5rem;
+}
+
+table p {
+
+
+}
+
+.firstOption, .secondOption {
+  font-size: calc(8 * 0.063rem);
+  padding-top: 6px;
+
+}
+
+.firstOption {
+  float:left;
+}
+
+.secondOption {
+  float:right;
+}
+
+table p:last-child{
+  float:right;
 }
 
 
@@ -40,6 +70,10 @@ th {
   padding-left: calc(8 * 0.063rem);
 }
 
+th.radioButtonsColumn {
+  padding-top:5px;
+}
+
 th:first-child, td:first-child {
   border: solid 1px #E1E5EB;
   border-right:none;
@@ -57,6 +91,9 @@ td:last-child {
   border-left: none;
 }
 
+td.dropdown:last-child {
+  border: solid 1px #E1E5EB;
+}
 
 
 td {
@@ -105,6 +142,30 @@ td > * {
 .red {
   background: #D63837;
 }
+
+/*.content {
+  position: relative;
+  background: white;
+  height: 0;
+  font-size: 20px;
+  text-align: justify;
+  width: 780px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.container.active .content {
+  height: 150px;
+}*/
+
+
+
+
+
+
+
+
+
 
 input[type='radio']{
 /*  height:11px;
@@ -179,4 +240,31 @@ input[type=radio]:checked + label:after {
   content: " ";
   display: block;
   background: #32404F;
+}
+
+
+
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
 }
