@@ -1,43 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 
-var acc = document.getElementsByClassName("accordion");
-var i;
-// alert("Hello World");
+
 function App() {
-
-
 
     return (
 
-
-
-        /*<div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>*/
         <div>
+
+
             <div class="header">
                 Virtueller Assistent
-            </div>
-
-            <button className="accordion">Section 1</button>
-            <div className="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                    ea commodo consequat.</p>
             </div>
 
             <div className="hazards">
@@ -474,25 +447,33 @@ function App() {
                 </table>
             </div>
 
+            <button className="accordion">Section 2</button>
+            <div className="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
 
         </div>
     );
 
-}
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+        alert(acc.length);
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+
 }
 
 
