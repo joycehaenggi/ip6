@@ -5,7 +5,7 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("../fonts/OpenSans-VariableFont_wdth,wght.ttf") format("ttf");
+    src: url("../../fonts/OpenSans-VariableFont_wdth,wght.ttf") format("ttf");
 }
 
 /*@font-face {
@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: 'Oswald';
-    src: url("../fonts/Oswald-Regular.ttf");
+    src: url("../../fonts/Oswald-Regular.ttf");
 }
 
 *{
@@ -30,86 +30,33 @@
     font-weight: 400;
 }
 
-.header {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #32404F;
-    color: white;
-    height: 72px;
-    padding-left: 5rem;
-    padding-right: 5rem;
-}
-
-.logo_title {
-    margin: .5rem;
-    margin-left: 0;
-    align-items: center;
-    display: flex;
-}
-
-.logo {
+.title_header {
     float:left;
-}
-
-.title_assistent {
     font-family: 'Oswald', sans-serif;
     font-size: calc(28 * 0.063rem);
-    float:left;
-    margin-top: calc(-5 * 0.063rem);
+    margin-top: calc(-3 * 0.063rem);
+    margin-left: calc(16 * 0.063rem);
+    width: calc(300 * 0.063rem);
 }
 
-.header-links {
-    height: 100%;
-    align-items: center;
-    display: flex;
-}
-
-.header-links ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    /*margin-right: -1rem;*/
-}
-
-.header-links li {
-    list-style: none;
-}
-
-.header-links li a {
-    text-decoration: none;
+.header{
+    height: 4.5rem;
+    background: #32404F;
     color: white;
-    padding: 1rem;
-    display: block;
+    /*padding-left: 0.8rem 5rem 1.5rem 5rem;*/
+    padding-left: 5rem;
+    padding-right: 5rem;
+    align-items: center;
+    vertical-align: center;
 }
 
-.header-links li:last-child a {
-    /*padding-right: 0;*/
+ul {
+    list-style-type: none;
+    float:right;
 }
 
-.header-links li:hover a {
-    background-color: #4C5A69;
-    /*color: #E1E5EB;*/
-}
-
-.toggle-button {
-    position: absolute;
-    /*top: .75rem;*/
-    top: calc(20 * 0.063rem);
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-}
-
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
+.icon_header {
+    float:left;
 }
 
 .hazards {
@@ -302,8 +249,104 @@ input[type=radio]:checked + label:after {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #32404F;
+    color: white;
+    height: 72px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.brand-title {
+    margin: .5rem;
+    margin-left: 0;
+    align-items: center;
+    display: flex;
+}
+
+.logo {
+    float:left;
+}
+
+.title_assistent {
+    font-family: 'Oswald', sans-serif;
+    font-size: calc(28 * 0.063rem);
+    float:left;
+    margin-top: calc(-5 * 0.063rem);
+}
+
+.navbar-links {
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.navbar-links li a:last-child {
+    padding-right: 0;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    /*top: .75rem;*/
+    top: calc(20 * 0.063rem);
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
 @media (max-width: 900px) {
-    .header {
+    .navbar {
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -313,12 +356,7 @@ input[type=radio]:checked + label:after {
 }
 
 @media (max-width: 700px) {
-    .header {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .logo_title {
+    .brand-title {
         margin-left: .5rem;
     }
 
@@ -327,31 +365,35 @@ input[type=radio]:checked + label:after {
         display: flex;
     }
 
-    .header-links {
+    .navbar-links {
         display: none;
         width: 100%;
     }
 
-    .header {
+    .navbar {
         flex-direction: column;
         align-items: flex-start;
         height: auto;
+
     }
 
-    .header-links ul {
+    .navbar-links ul {
         width: 100%;
         flex-direction: column;
     }
 
-    .header-links li {
+    .navbar-links li {
         text-align: center;
     }
 
-    .header-links li a {
+    .navbar-links li a {
         padding: .5rem 1rem;
     }
 
-    .header-links.active {
+    .navbar-links.active {
         display: flex;
     }
+
+
 }
+
