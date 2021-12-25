@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link  rel="icon" type="image/x-icon" href="icon_virtueller_assistent_v4.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Virtueller Assistent Produktionsprozess medizinischer Implantate</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -68,13 +70,11 @@
     <table>
         <thead>
         <tr>
-            <th class="fivePercent">Icon</th>
+            <th class="fivePercent" title="test">Icon</th>
             <th class="tenPercent">Risikopriorität</th>
-            <th class="fiftyFivePercent">Definition Gefährdung</th>
-            <th class="fifteenPercent radioButtonsColumn">Gefährdung <br/>
-                <div class="firstOption">nicht zutreffend</div>
-                <div class="secondOption">akzeptiert</div>
-            </th>
+            <th class="fourtySevenPercent">Definition Gefährdung</th>
+            <th class="thirteenPercent">Nicht zutreffend</th>
+            <th class="tenPercent">Akzeptiert</th>
             <th class="fifteenPercent">Akzeptanznachweis</th>
         </tr>
         </thead>
@@ -82,7 +82,7 @@
 
         <tr class="accordion" onclick="myFunction()">
             <td class="fivePercent" onclick="myFunction()">
-                <svg width="21" height="16" viewBox="0 0 21 16" fill="none"
+                <svg class="icon_list" width="21" height="16" viewBox="0 0 21 16" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <line y1="-0.110337" x2="16.2356" y2="-0.110337"
                           transform="matrix(0.999982 0.00606201 -0.00878856 0.999961 0 10.2075)"
@@ -164,15 +164,21 @@
                 </svg>
             </td>
             <td class="tenPercent"><span class="dot yellow"></span></td>
-            <td class="fiftyFivePercent">Designvorgabe "Mindestdicke" kann nicht eingehalten werden - Dicke des
+            <td class="fourtySevenPercent">Designvorgabe "Mindestdicke" kann nicht eingehalten werden - Dicke des
                 Implantsts zu dünn.
             </td>
-            <td class="fifteenPercent">
-                <input type="radio" value="Male" name="gender" class="radioButton1"/>
-                <input type="radio" value="Female" name="gender" class="radioButton2"/>
+            <td class="thirteenPercent">
+            <input type="checkbox">
             </td>
-            <td class="fifteenPercent">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+
+            <td class="tenPercent">
+                <!--<div id="tooltip" style="position: absolute; display: none;"></div>-->
+                <svg class="checkmark" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path onmousemove="showTooltip(evt, 'Akzeptiert-Status wird automatisch gesetzt, nachdem Gefährdung erfolgreich bearbeitet wurde.');" onmouseout="hideTooltip();" d="M17 2L6.6875 15L2 9.09091" stroke="#4C5A69" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </td>
+            <td data-tooltip="An example!" class="fifteenPercent" title="">
+                <svg  width="20" height="20" viewBox="0 0 20 20" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1048_46910)">
                         <path
@@ -185,12 +191,13 @@
                         </clipPath>
                     </defs>
                 </svg>
+<!--                <span data-tooltip="An example!">Hover over me!</span>-->
             </td>
         </tr>
 
-        <tr>
+<!--        <tr>
             <td class="fivePercent">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                <svg class="icon_list" width="20" height="20" viewBox="0 0 20 20" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path
                             d="M14.9582 9.42314H5.04454C4.972 9.42314 4.90565 9.38229 4.87292 9.3176C4.65296 8.88245 4.39865 8.45545 4.11719 8.04852C3.58504 7.27933 3.30846 6.37629 3.31735 5.4371C3.32823 4.2891 3.79662 3.18672 4.63627 2.33291C5.47604 1.47902 6.57046 0.992524 7.71792 0.963139C8.29742 0.948139 8.86181 1.04137 9.39777 1.23875C9.59069 1.30983 9.79327 1.34583 9.99981 1.34583C10.2063 1.34583 10.4089 1.30979 10.6018 1.23875C11.1385 1.04114 11.704 0.9481 12.2837 0.963177C13.4302 0.993062 14.5236 1.47925 15.3628 2.33214C16.2018 3.18491 16.6704 4.28622 16.6823 5.4331C16.692 6.37379 16.4154 7.27822 15.8825 8.04856C15.6012 8.4551 15.3481 8.88187 15.1302 9.31699C15.0976 9.38206 15.031 9.42314 14.9582 9.42314ZM5.16208 9.03852H14.8402C15.0537 8.6241 15.2976 8.21795 15.5661 7.82968C16.0536 7.1251 16.3065 6.29772 16.2977 5.43702C16.2753 3.2766 14.4326 1.40391 12.2738 1.34764C11.7425 1.33379 11.2256 1.41891 10.7347 1.59964C10.4991 1.68645 10.2518 1.73041 9.99981 1.73041C9.74777 1.73041 9.50046 1.68641 9.26485 1.59964C8.77462 1.41914 8.25815 1.33372 7.72777 1.3476C5.56604 1.40299 3.72242 3.27741 3.70192 5.44072C3.69377 6.30006 3.94673 7.12614 4.43346 7.82968C4.70215 8.2181 4.94692 8.62425 5.16208 9.03852Z"
@@ -275,7 +282,7 @@
 
         <tr>
             <td class="fivePercent">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                <svg class="icon_list" width="20" height="20" viewBox="0 0 20 20" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1038_32065)">
                         <path
@@ -328,7 +335,7 @@
 
         <tr>
             <td class="fivePercent">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                <svg class="icon_list" width="20" height="20" viewBox="0 0 20 20" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1038_32065)">
                         <path
@@ -381,7 +388,7 @@
 
         <tr>
             <td class="fivePercent">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                <svg class="icon_list" width="20" height="20" viewBox="0 0 20 20" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1038_42395)">
                         <path
@@ -480,7 +487,7 @@
                     </defs>
                 </svg>
             </td>
-        </tr>
+        </tr>-->
         </tbody>
     </table>
 </div>
@@ -488,3 +495,4 @@
 
 </body>
 </html>
+
