@@ -130,13 +130,12 @@
     margin-top: calc(40 * 0.063em);
     border: 1px solid #E1E5EB;
     height: 100px;
-    font-size: calc(12 * 0.063rem);
+    font-size: calc(11 * 0.063rem);
     border-radius: 5px;
 }
 
 .title_progress_bar {
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-left: 2.5%;
     height: 17px;
     margin-top: 12px;
     color: #4C5A69;
@@ -144,11 +143,10 @@
 
 .progress_bar {
     height: 17px;
-    width: 90%;
+    width: 95%;
     background: #E1E5EB;
     border-radius: 5px;
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-left: 2.5%;
     margin-top: 21px;
 }
 
@@ -176,7 +174,7 @@ table {
     border-collapse: separate;
     width: 100%;
     border-spacing: 0 calc(10 * 0.063em);
-    font-size: calc(12 * 0.063rem);
+    font-size: calc(11 * 0.063rem);
 }
 
 td, th {
@@ -311,7 +309,7 @@ input[type="radio"] {
     max-width: 180px;
     text-align: left;
     transition: all 1s ease-in-out;
-    font-size: calc(12 * 0.063rem);
+    font-size: calc(11 * 0.063rem);
 }
 
 #tooltip::after {
@@ -342,7 +340,7 @@ input[type="radio"] {
     background: #4C5A69;
     padding: 4px;
     border-radius: 5px;
-    font-size: calc(12 * 0.063rem);
+    font-size: calc(11 * 0.063rem);
 
     visibility: hidden;
     opacity: 0;
@@ -437,6 +435,7 @@ input[type="radio"] {
 
 .button {
     font-size: calc(12 * 0.063rem);
+    font-weight: 500;
     width: 140px;
     height: 38px;
     border-radius: 50px;
