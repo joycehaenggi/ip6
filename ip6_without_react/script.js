@@ -5,15 +5,57 @@ toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
 
-function showTooltip(evt, text) {
-    let tooltip = document.getElementById("tooltip");
-    tooltip.innerHTML = text;
-    tooltip.style.display = "block";
-    tooltip.style.left = evt.pageX + 10 + 'px';
-    tooltip.style.top = evt.pageY + 10 + 'px';
-}
+var x = 0;
+/*if(x === null){
+    var x = 0;
+}*/
 
-function hideTooltip() {
-    var tooltip = document.getElementById("tooltip");
-    tooltip.style.display = "none";
+// Get the notification object using its Id
+notification = document.getElementById("notification");
+text_notification = document.getElementById("text_notification");
+arrow_id = document.getElementById("arrow_id");
+
+// Function to increase image size
+function resizeNotification() {
+    if (x === 0) {
+
+        let id = null;
+        let pos = 100;
+        clearInterval(id);
+        id = setInterval(frame, 10);
+        function frame() {
+            if (pos === 5) {
+                clearInterval(id);
+            } else {
+                pos--;
+                notification.style.width = pos + "%";
+            }
+        }
+
+        notification.style.transition = "transform 25s ease";
+        notification.style.float = "right";
+        notification.style.marginBottom = "calc(40 * 0.063em)";
+        text_notification.style.display = "none";
+        arrow_id.style.display = "none";
+        x = 1;
+    } else {
+
+        x = 0;
+
+        let id = null;
+        let pos = 5;
+        clearInterval(id);
+        id = setInterval(frame, 1);
+        function frame() {
+            if (pos === 100) {
+                clearInterval(id);
+                text_notification.style.display = "block";
+                arrow_id.style.display = "flex";
+            } else {
+                pos++;
+                notification.style.width = pos + "%";
+            }
+        }
+
+    }
 }

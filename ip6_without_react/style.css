@@ -92,7 +92,6 @@
 .rectangle {
     margin: calc(30 * 0.063em) 5rem calc(30 * 0.063em) 5rem;
     margin-top: calc(40 * 0.063em);
-    margin-bottom: calc(30 * 0.063em);
 }
 
 .notification{
@@ -108,12 +107,6 @@
     cursor: pointer;
 }
 
-.notification:active {
-    height: 30px;
-    width:5%;
-    float:right;
-    margin-bottom: calc(40 * 0.063em);
-}
 
 .notification:active p, .notification:active .arrow_right {
     display: none;
@@ -130,6 +123,45 @@
 
 .info_icon, .arrow_right {
     margin: 0 25px;
+}
+
+.progress-wrapper {
+    margin: calc(30 * 0.063em) 5rem calc(30 * 0.063em) 5rem;
+    margin-top: calc(40 * 0.063em);
+    border: 1px solid #E1E5EB;
+    height: 100px;
+    font-size: calc(12 * 0.063rem);
+    border-radius: 5px;
+}
+
+.title_progress_bar {
+    margin-right: 5%;
+    margin-left: 5%;
+    height: 17px;
+    margin-top: 12px;
+    color: #4C5A69;
+}
+
+.progress_bar {
+    height: 17px;
+    width: 90%;
+    background: #E1E5EB;
+    border-radius: 5px;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 21px;
+}
+
+.progress_in_percent {
+    height: 100%;
+    width: 40%;
+    background: #4C5A69;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hazards {
@@ -397,14 +429,47 @@ input[type="radio"] {
     transform-origin: top center;
 }*/
 
+.mainView-Button-container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    float: right;
+}
 
+.button {
+    font-size: calc(12 * 0.063rem);
+    width: 140px;
+    height: 38px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
 
+.submit {
+    background: #687D99;
+    color: white;
+}
+
+.mainView-Button {
+    float: left;
+    margin-right: 30px;
+}
+
+.cancel {
+    background: #E1E5EB;
+    color: #4C5A69;
+    opacity: 0.4;
+}
 
 
 @media (max-width: 900px) {
     .header {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+    .rectangle {
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
     .hazards {
         margin: 1rem;
@@ -415,6 +480,10 @@ input[type="radio"] {
     .header {
         padding-left: 0;
         padding-right: 0;
+    }
+    .rectangle {
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     .logo_title {
