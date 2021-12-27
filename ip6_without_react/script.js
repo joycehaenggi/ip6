@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 const toggleButton = document.getElementsByClassName('toggle-button')[0]
 const navbarLinks = document.getElementsByClassName('header-links')[0]
 
@@ -18,12 +18,17 @@ var text_notification = document.getElementById("text_notification");
 var arrow_id = document.getElementById("arrow_id");
 var cancel = document.getElementById("cancel");
 
+
+
 var speedAndTimoutNotification = 2500;
 var speedProgressBarAnimation = 1000;
 
 var nunmberofallCheckboxes;
 var nunmberofCheckedCheckboxes;
 var percentageOfCheckedCheckboxes;
+
+var someVarName;
+// someVarName = "value";
 
 // Function to increase image size
 function resizeNotification() {
@@ -53,9 +58,7 @@ function numberOfCheckedCheckboxes (){
     nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
     nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
 
-    percentageOfCheckedCheckboxes = (nunmberofCheckedCheckboxes / nunmberofallCheckboxes) *100;
-
-    console.log(percentageOfCheckedCheckboxes);
+    percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) *100);
 
     $("div.progress_in_percent").animate({
         width: +percentageOfCheckedCheckboxes+'%'
@@ -75,50 +78,22 @@ function numberOfCheckedCheckboxes (){
         cancel.style.background = '#E1E5EB';
         cancel.style.opacity = '0.4';
     }
-
-
 }
-let name = "Nathan";
 
-
-
-/*// Function to increase image size
-function resizeNotification() {
-
-    var id = setInterval(frame, 10);
-    var pos;
-
-    if (x) {
-        pos = 100;
-        notification.style.transition = "transform 25s ease";
-        notification.style.float = "right";
-        notification.style.marginBottom = "calc(40 * 0.063em)";
-        text_notification.style.display = "none";
-        arrow_id.style.display = "none";
-    } else {
-        pos = 5;
+function setCookie(name,value) {
+    document.cookie = name + "=" + (value || "");
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
     }
+    return null;
+}
 
-    function frame() {
-        if (x) {
-            if (pos === 5) {
-                clearInterval(id);
-                x = false;
-            } else {
-                pos--;
-                notification.style.width = pos + "%";
-            }
-        }
-        else {
-            if (pos === 100) {
-                clearInterval(id);
-                text_notification.style.display = "block";
-                arrow_id.style.display = "flex";
-                x = true;
-            } else {
-                pos++;
-                notification.style.width = pos + "%";
-            }
-        }
-    }
-}*/
+setCookie("x","bobthegreat@gmail.com")
+var x = getCookie("x");//"bobthegreat@gmail.com"
+console.log(x);

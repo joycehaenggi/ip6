@@ -86,7 +86,8 @@
 </div>
 
 <div class="hazards">
-    <table class="mainTable">
+    <form autocomplete="off">
+    <table>
         <thead>
         <tr>
             <th class="fivePercent" title="test">Icon</th>
@@ -525,6 +526,7 @@
 
         </tbody>
     </table>
+    </form>
 </div>
 
 <div class="progress-wrapper">
@@ -543,6 +545,39 @@
         Schritt abschliessen
     </div>
 </div>
+
+<!--
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="wrap">
+    <h3>Background Swap:</h3>
+
+
+    <input type="checkbox" class="name" />
+
+    <input type="checkbox" class="name" />
+
+    <script>
+        var checkboxValue = JSON.parse(localStorage.getItem('checkboxValue')) || {}
+        var $checkbox = $("name");
+
+        $checkbox.on("change", function() {
+            $checkbox.each(function() {
+                checkboxValue[this.id] = this.checked;
+            });
+            localStorage.setItem("checkboxValue", JSON.stringify(checkboxValue));
+        });
+
+        //on page load
+        $.each(checkboxValue, function(key, value) {
+            $("#" + key).prop('checked', value);
+        });
+    </script>
+</div>
+-->
+
+
+
+
 
 
 
