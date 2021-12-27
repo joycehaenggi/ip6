@@ -4,6 +4,7 @@ const navbarLinks = document.getElementsByClassName('header-links')[0]
 
 // Get the notification object using its Id
 let notification = document.getElementById("notification");
+let info_icon = document.getElementById("info_icon");
 let text_notification = document.getElementById("text_notification");
 let arrow_id = document.getElementById("arrow_id");
 let cancel = document.getElementById("cancel");
@@ -45,14 +46,32 @@ function resizeNotification() {
     if (x === "true") {
         text_notification.style.display = "none";
         arrow_id.style.display = "none";
-        $("div.notification").animate({
-            width: '-=95%'
-        }, speedAndTimoutNotification);
+        info_icon.style.display = "flex";
+
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $("div.notification").animate({
+                width: '-=80%'
+            }, speedAndTimoutNotification);
+        } else {
+            $("div.notification").animate({
+                width: '-=95%'
+            }, speedAndTimoutNotification);
+        }
         x = "false";
     } else {
-        $("div.notification").animate({
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $("div.notification").animate({
+                width: '+=80%'
+            }, speedAndTimoutNotification);
+            info_icon.style.display = "none";
+        } else {
+            $("div.notification").animate({
+                width: '+=95%'
+            }, speedAndTimoutNotification);
+        }
+/*        $("div.notification").animate({
             width: '+=95%'
-        }, speedAndTimoutNotification);
+        }, speedAndTimoutNotification);*/
         setTimeout(myGreeting, speedAndTimoutNotification);
         function myGreeting() {
             text_notification.style.display = "block";
