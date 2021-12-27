@@ -40,8 +40,6 @@ var nunmberofallCheckboxes;
 var nunmberofCheckedCheckboxes;
 var percentageOfCheckedCheckboxes;
 
-var someVarName;
-
 // Function to increase image size
 function resizeNotification() {
     if (x === "true") {
@@ -90,10 +88,12 @@ function numberOfCheckedCheckboxes (){
         cancel.style.color = 'white';
         cancel.style.background = '#687D99';
         cancel.style.opacity = '1.0';
+        cancel.style.cursor = 'pointer';
     } else {
         cancel.style.color = '#4C5A69';
         cancel.style.background = '#E1E5EB';
         cancel.style.opacity = '0.4';
+        cancel.style.cursor = 'default';
     }
 }
 

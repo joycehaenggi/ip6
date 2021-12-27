@@ -394,11 +394,18 @@ input[type="radio"] {
     margin-right: 30px;
 }
 
+.button {
+    cursor: pointer;
+}
+
 .cancel {
     background: #E1E5EB;
     color: #4C5A69;
     opacity: 0.4;
+    cursor: default;
 }
+
+
 
 
 @media (max-width: 900px) {
