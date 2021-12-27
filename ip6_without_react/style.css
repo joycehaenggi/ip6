@@ -12,12 +12,19 @@
     font-weight: 400;
 }
 
+:root {
+    --header-Darkblue: #32404F;
+    --hintergrund: #ccc;
+    --akzent: #c32e04;
+    --linkfarbe: #09c;
+}
+
 .header {
     display: flex;
     position: relative;
     justify-content: space-between;
     align-items: center;
-    background-color: #32404F;
+    background-color: var(--header-Darkblue);
     color: white;
     height: 72px;
     padding-left: 5rem;
@@ -52,7 +59,6 @@
     margin: 0;
     padding: 0;
     display: flex;
-    /*margin-right: -1rem;*/
 }
 
 .header-links li {
@@ -105,6 +111,8 @@
     font-size: calc(12 * 0.063rem);
     border-radius: 5px;
     cursor: pointer;
+    float:right;
+    margin-bottom: calc(30 * 0.063em);
 }
 
 
@@ -322,8 +330,6 @@ input[type="radio"] {
     z-index: 10000;
 }
 
-
-
 [data-tooltip]::after {
     position: absolute;
     width: 140px;
@@ -350,27 +356,6 @@ input[type="radio"] {
     z-index: 10000;
 }
 
-/*[data-tooltip]::before {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    visibility: hidden;
-    opacity: 0;
-    left: calc(50% - 5px);
-    top: 35%;
-    box-sizing: border-box;
-
-    border: 10px solid transparent;
-    border-bottom-color: #4C5A69;
-
-
-    transform: translateY(-1%) translateX(-1%) scale(0);
-    transition: 3s transform;
-    transform-origin: center center;
-}*/
-
 [data-tooltip]:hover::after, [data-tooltip]:hover::before {
     position: absolute;
     opacity: 10;
@@ -381,51 +366,6 @@ input[type="radio"] {
 }
 
 
-
-
-
-
-
-/*[data-tooltip]::before,
-[data-tooltip]::after {
-    --scale: 0;
-    --arrow-size: 20px;
-    --tooltip-color: green;
-
-    position: absolute;
-    top: -.25rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
-    transition: 150ms transform;
-    transform-origin: bottom center;
-}
-
-[data-tooltip]::before {
-    --translate-y: calc(-100% - var(--arrow-size));
-
-    content: attr(data-tooltip);
-    color: white;
-    padding: .5rem;
-    border-radius: .3rem;
-    text-align: center;
-    width: max-content;
-    max-width: 100%;
-    background: var(--tooltip-color);
-}
-
-[data-tooltip]:hover::before,
-[data-tooltip]:hover::after {
-    --scale: 1;
-}
-
-[data-tooltip]::after {
-    --translate-y: calc(-1 * var(--arrow-size));
-
-    content: '';
-    border: var(--arrow-size) solid transparent;
-    border-top-color: var(--tooltip-color);
-    transform-origin: top center;
-}*/
 
 .mainView-Button-container {
     padding-left: 5rem;
