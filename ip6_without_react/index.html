@@ -86,7 +86,7 @@
 </div>
 
 <div class="hazards">
-    <table>
+    <table class="mainTable">
         <thead>
         <tr>
             <th class="fivePercent" title="test">Icon</th>
@@ -187,7 +187,7 @@
                 Implantsts zu dünn.
             </td>
             <td class="thirteenPercent">
-            <input type="checkbox">
+            <input type="checkbox" onclick="numberOfCheckedCheckboxes()">
             </td>
 
             <td data-tooltip="Akzeptiert-Status" class="tenPercent">
@@ -277,7 +277,7 @@
                 Implantat nicht formstabil.
             </td>
             <td class="thirteenPercent">
-                <input type="checkbox">
+                <input type="checkbox" onclick="numberOfCheckedCheckboxes()">
             </td>
 
             <td data-tooltip="Akzeptiert-Status" class="tenPercent">
@@ -334,7 +334,7 @@
             <td class="fourtySevenPercent">Designvorgabe "Anzahl Schraubenlöcher" kann nicht eingehalten werden.
             </td>
             <td class="thirteenPercent">
-                <input type="checkbox">
+                <input type="checkbox" onclick="numberOfCheckedCheckboxes()">
             </td>
 
             <td data-tooltip="Akzeptiert-Status" class="tenPercent">
@@ -391,7 +391,7 @@
             <td class="fourtySevenPercent">Designvorgabe "Platzierung der Schraubenlöcher" kann nicht eingehalten werden
             </td>
             <td class="thirteenPercent">
-                <input type="checkbox">
+                <input type="checkbox" onclick="numberOfCheckedCheckboxes()">
             </td>
 
             <td data-tooltip="Akzeptiert-Status" class="tenPercent">
@@ -498,7 +498,7 @@
             <td class="fourtySevenPercent">Designvorgabe "Schraubentyp/Durchmesser/Länge" kann nicht eingehalten werden
             </td>
             <td class="thirteenPercent">
-                <input type="checkbox">
+                <input type="checkbox" onclick="numberOfCheckedCheckboxes()">
             </td>
 
             <td data-tooltip="Akzeptiert-Status" class="tenPercent">
@@ -530,7 +530,7 @@
 <div class="progress-wrapper">
     <div class="title_progress_bar">Fortschrittsübersicht Implantatdesign Matching</div>
     <div class="progress_bar">
-        <div class="progress_in_percent">40%</div>
+        <div class="progress_in_percent" id="progress_in_percent"></div>
     </div>
 </div>
 
@@ -539,7 +539,7 @@
         Gefährdung erstellen
     </div>
 
-    <div class="button cancel">
+    <div class="button cancel" id="cancel">
         Schritt abschliessen
     </div>
 </div>
