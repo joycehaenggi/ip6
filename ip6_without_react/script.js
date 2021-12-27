@@ -1,8 +1,27 @@
 // 'use strict';
-
-
 const toggleButton = document.getElementsByClassName('toggle-button')[0]
 const navbarLinks = document.getElementsByClassName('header-links')[0]
+
+// Get the notification object using its Id
+let notification = document.getElementById("notification");
+let text_notification = document.getElementById("text_notification");
+let arrow_id = document.getElementById("arrow_id");
+let cancel = document.getElementById("cancel");
+
+let speedAndTimoutNotification = 2500;
+let speedProgressBarAnimation = 1000;
+
+let nunmberofallCheckboxes;
+let nunmberofCheckedCheckboxes;
+let percentageOfCheckedCheckboxes;
+
+let x;
+let checkbox;
+let item;
+
+if(x === undefined){
+    x = "true";
+}
 
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
@@ -20,25 +39,6 @@ window.onload = function () {
     }
 }
 
-var x;
-if(x === undefined){
-    x = "true";
-}
-
-// Get the notification object using its Id
-var notification = document.getElementById("notification");
-var text_notification = document.getElementById("text_notification");
-var arrow_id = document.getElementById("arrow_id");
-var cancel = document.getElementById("cancel");
-
-
-
-var speedAndTimoutNotification = 2500;
-var speedProgressBarAnimation = 1000;
-
-var nunmberofallCheckboxes;
-var nunmberofCheckedCheckboxes;
-var percentageOfCheckedCheckboxes;
 
 // Function to increase image size
 function resizeNotification() {
@@ -63,13 +63,7 @@ function resizeNotification() {
     localStorage.setItem("someVarKey", x);
 }
 
-
-
-
-
 function numberOfCheckedCheckboxes (){
-    // console.log(document.querySelectorAll('input[type="checkbox"]:checked').length);
-
     nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
     nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
 
@@ -98,9 +92,9 @@ function numberOfCheckedCheckboxes (){
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    var checkbox = document.querySelectorAll("input[type='checkbox']");
+    checkbox = document.querySelectorAll("input[type='checkbox']");
 
-    for(var item of checkbox){
+    for(item of checkbox){
         item.addEventListener("click", function(){
             localStorage.s_item ?
                 localStorage.s_item = localStorage.s_item.indexOf(this.id+",") == -1
@@ -111,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     if(localStorage.s_item){ // verifico se existe localStorage
-        for(var item of checkbox){ // existe, percorro as checkbox
+        for(item of checkbox){ // existe, percorro as checkbox
             item.checked = localStorage.s_item.indexOf(item.id+",") != -1 ? true : false;
         }
     }
