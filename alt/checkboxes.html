@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input id="s_item1" type="checkbox">
+<input id="s_item2" type="checkbox">
+<input id="s_item3" type="checkbox">
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+
+        var checkbox = document.querySelectorAll("input[type='checkbox']");
+
+        for(var item of checkbox){
+            item.addEventListener("click", function(){
+                localStorage.s_item ?
+                    localStorage.s_item = localStorage.s_item.indexOf(this.id+",") == -1
+                        ? localStorage.s_item+this.id+","
+                        : localStorage.s_item.replace(this.id+",","") :
+                    localStorage.s_item = this.id+",";
+            });
+        }
+
+        if(localStorage.s_item){ // verifico se existe localStorage
+            for(var item of checkbox){ // existe, percorro as checkbox
+                item.checked = localStorage.s_item.indexOf(item.id+",") != -1 ? true : false;
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,4 +1,6 @@
 // 'use strict';
+
+
 const toggleButton = document.getElementsByClassName('toggle-button')[0]
 const navbarLinks = document.getElementsByClassName('header-links')[0]
 
@@ -6,10 +8,21 @@ toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
 
+window.onload = function () {
+    numberOfCheckedCheckboxes();
+    x = localStorage.getItem("someVarKey");
+    console.log(x);
+
+    if(x === "false") {
+        notification.style.width = "5%";
+        text_notification.style.display = "none";
+        text_notification.style.arrow_id = "none";
+    }
+}
 
 var x;
 if(x === undefined){
-    x = true;
+    x = "true";
 }
 
 // Get the notification object using its Id
@@ -28,17 +41,16 @@ var nunmberofCheckedCheckboxes;
 var percentageOfCheckedCheckboxes;
 
 var someVarName;
-// someVarName = "value";
 
 // Function to increase image size
 function resizeNotification() {
-    if (x) {
+    if (x === "true") {
         text_notification.style.display = "none";
         arrow_id.style.display = "none";
         $("div.notification").animate({
             width: '-=95%'
         }, speedAndTimoutNotification);
-        x = false;
+        x = "false";
     } else {
         $("div.notification").animate({
             width: '+=95%'
@@ -48,9 +60,14 @@ function resizeNotification() {
             text_notification.style.display = "block";
             arrow_id.style.display = "flex";
         }
-        x = true;
+        x = "true";
     }
+    localStorage.setItem("someVarKey", x);
 }
+
+
+
+
 
 function numberOfCheckedCheckboxes (){
     // console.log(document.querySelectorAll('input[type="checkbox"]:checked').length);
@@ -80,20 +97,22 @@ function numberOfCheckedCheckboxes (){
     }
 }
 
-function setCookie(name,value) {
-    document.cookie = name + "=" + (value || "");
-}
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}
+document.addEventListener("DOMContentLoaded", function(){
+    var checkbox = document.querySelectorAll("input[type='checkbox']");
 
-setCookie("x","bobthegreat@gmail.com")
-var x = getCookie("x");//"bobthegreat@gmail.com"
-console.log(x);
+    for(var item of checkbox){
+        item.addEventListener("click", function(){
+            localStorage.s_item ?
+                localStorage.s_item = localStorage.s_item.indexOf(this.id+",") == -1
+                    ? localStorage.s_item+this.id+","
+                    : localStorage.s_item.replace(this.id+",","") :
+                localStorage.s_item = this.id+",";
+        });
+    }
+
+    if(localStorage.s_item){ // verifico se existe localStorage
+        for(var item of checkbox){ // existe, percorro as checkbox
+            item.checked = localStorage.s_item.indexOf(item.id+",") != -1 ? true : false;
+        }
+    }
+});
