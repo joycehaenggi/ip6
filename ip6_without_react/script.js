@@ -16,12 +16,12 @@ let nunmberofallCheckboxes;
 let nunmberofCheckedCheckboxes;
 let percentageOfCheckedCheckboxes;
 
-let x;
+let fullNotification;
 let checkbox;
 let item;
 
-if (x === undefined) {
-    x = "true";
+if (fullNotification === undefined) {
+    fullNotification = "true";
 }
 
 toggleButton.addEventListener('click', () => {
@@ -30,10 +30,10 @@ toggleButton.addEventListener('click', () => {
 
 window.onload = function () {
     numberOfCheckedCheckboxes();
-    x = localStorage.getItem("someVarKey");
-    console.log(x);
+    fullNotification = localStorage.getItem("someVarKey");
+    console.log(fullNotification);
 
-    if (x === "false") {
+    if (fullNotification === "false") {
         notification.style.width = "5%";
         text_notification.style.display = "none";
         text_notification.style.arrow_id = "none";
@@ -43,43 +43,23 @@ window.onload = function () {
 
 // Function to increase image size
 function resizeNotification() {
-    if (x === "true") {
+    if (fullNotification === "true") {
         text_notification.style.display = "none";
         arrow_id.style.display = "none";
         info_icon.style.display = "flex";
 
-        /*        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-                    $("div.notification").animate({
-                        width: '-=80%'
-                    }, speedAndTimoutNotification);
-                } else {*/
         $("div.notification").animate({
             width: '-=95%'
         }, speedAndTimoutNotification);
-        // }
-        x = "false";
+
+        fullNotification = "false";
+
+
     } else {
-        /*        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-                    $("div.notification").animate({
-                        width: '+=80%'
-                    }, speedAndTimoutNotification);
-                    info_icon.style.display = "none";
-                } else {*/
+
         $("div.notification").animate({
             width: '+=95%'
         }, speedAndTimoutNotification);
-
-        function myFunction(y) {
-            if (y.matches) { // If media query matches
-                info_icon.style.display = "none";
-            } else {
-                info_icon.style.display = "block";
-            }
-        }
-
-        var y = window.matchMedia("(max-width: 700px)")
-        myFunction(y) // Call listener function at run time
-        y.addEventListener('change', myFunction) // Attach listener function on state changes
 
         setTimeout(myGreeting, speedAndTimoutNotification);
         function myGreeting() {
@@ -90,9 +70,9 @@ function resizeNotification() {
             }
         }
 
-        x = "true";
+        fullNotification = "true";
     }
-    localStorage.setItem("someVarKey", x);
+    localStorage.setItem("someVarKey", fullNotification);
 }
 
 function numberOfCheckedCheckboxes() {
@@ -143,21 +123,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-/*function myFunction(y) {
-    if (y.matches) { // If media query matches
-        document.body.style.backgroundColor = "yellow";
-    } else {
-        document.body.style.backgroundColor = "pink";
-    }
-}
+/*        var y = window.matchMedia("(max-width: 700px)")
+        myFunction(y) // Call listener function at run time
+        y.addEventListener('change', myFunction) // Attach listener function on state changes*/
 
-var y = window.matchMedia("(max-width: 700px)")
-myFunction(y) // Call listener function at run time
-y.addEventListener('change', myFunction) // Attach listener function on state changes*/
+/*        function myFunction(y) {
+            if (y.matches) { // If media query matches
+                $("div.notification").animate({
+                    width: '-=80%'
+                }, speedAndTimoutNotification);
+            } else {
 
-// const mediaQuery = window.matchMedia('(max-width: 800px)');
-
-/*e(mediaQuery);
-mediaQuery.addEventListener('change', function (e) {
-    document.body.style.backgroundColor = "yellow";
-});*/
+            }
+        }
+        */
