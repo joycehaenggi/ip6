@@ -2,21 +2,43 @@
     font-family: 'Oswald';
     src: url("../fonts/Oswald-Regular.ttf");
 }
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url("../fonts/OpenSans-SemiBold.ttf");
+}
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url("../fonts/OpenSans-Bold.ttf");
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: OpenSans-Regular, serif;
+    /*font-family: OpenSans, serif;*/
     font-style: normal;
     font-weight: 400;
 }
 
 :root {
     --header-Darkblue: #32404F;
-    --hintergrund: #ccc;
-    --akzent: #c32e04;
-    --linkfarbe: #09c;
+    --notification-Blue: #4C5A69;
+    --button-Blue: #687D99;
+    --Frames-BlueGray: #E1E5EB;
+    --riskPriority-Green: #008351;
+    --riskPriority-Yellow: #FAD201;
+    --riskPriority-Red: #CC0605;
+    --colorOpacity: 0.8;
+    --paddingLeftRight: 5rem;
+    --marginOne: 40;
+    --marginTwo: 30;
+    --mainFontSize: 11;
+    --secondFontSize: 12;
 }
 
 .header {
@@ -27,8 +49,32 @@
     background-color: var(--header-Darkblue);
     color: white;
     height: 72px;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: var(--paddingLeftRight);
+    padding-right: var(--paddingLeftRight);
+}
+
+.wrapper {
+    margin-top: calc(var(--marginOne) * 0.063rem);
+    padding-left: var(--paddingLeftRight);
+    padding-right: var(--paddingLeftRight);
+}
+
+.notification {
+    margin-bottom: calc(var(--marginTwo) * 0.063rem);
+}
+
+.progress-wrapper {
+    margin-top: calc(var(--marginTwo) * 0.063rem);
+    border: 1px solid #E1E5EB;
+    height: 100px;
+    font-size: calc(var(--mainFontSize) * 0.063rem);
+    border-radius: 5px;
+}
+
+.mainView-Button-container {
+    margin-top: calc(var(--marginOne) * 0.063rem);
+    display: flex;
+    justify-content: flex-end;
 }
 
 .logo_title {
@@ -73,7 +119,7 @@
 }
 
 .header-links li:hover a {
-    background-color: #4C5A69;
+    background-color: var(--notification-Blue);
     border-radius: 5px;
 }
 
@@ -95,24 +141,18 @@
     border-radius: 10px;
 }
 
-.rectangle {
-    margin: calc(30 * 0.063em) 5rem calc(30 * 0.063em) 5rem;
-    margin-top: calc(40 * 0.063em);
-}
-
 .notification {
     height: 30px;
     width: 100%;
-    background: #4C5A69;
+    background-color: var(--notification-Blue);
     color: white;
     align-items: center;
     display: flex;
     justify-content: space-between;
-    font-size: calc(12 * 0.063rem);
+    font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
     border-radius: 5px;
     cursor: pointer;
     float: right;
-    margin-bottom: calc(30 * 0.063em);
 }
 
 
@@ -133,26 +173,17 @@
     margin: 0 25px;
 }
 
-.progress-wrapper {
-    margin: calc(30 * 0.063em) 5rem calc(30 * 0.063em) 5rem;
-    margin-top: calc(40 * 0.063em);
-    border: 1px solid #E1E5EB;
-    height: 100px;
-    font-size: calc(11 * 0.063rem);
-    border-radius: 5px;
-}
-
 .title_progress_bar {
     margin-left: 2.5%;
     height: 17px;
     margin-top: 12px;
-    color: #4C5A69;
+    color: var(--notification-Blue);
 }
 
 .progress_bar {
     height: 17px;
     width: 95%;
-    background: #E1E5EB;
+    background-color: var(--Frames-BlueGray);
     border-radius: 5px;
     margin-left: 2.5%;
     margin-top: 21px;
@@ -160,18 +191,14 @@
 
 .progress_in_percent {
     height: 100%;
-    width: 0%;
-    background: #4C5A69;
+    width: 0;
+    background-color: var(--notification-Blue);
     border-radius: 5px;
     color: white;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.hazards {
-    margin: calc(30 * 0.063em) 5rem calc(30 * 0.063em) 5rem;
 }
 
 table p:last-child {
@@ -182,7 +209,7 @@ table {
     border-collapse: separate;
     width: 100%;
     border-spacing: 0 calc(10 * 0.063em);
-    font-size: calc(11 * 0.063rem);
+    font-size: calc(var(--mainFontSize) * 0.063rem);
 }
 
 td, th {
@@ -197,7 +224,7 @@ th, td {
 td {
     border-bottom: 1px solid;
     border-top: 1px solid;
-    border-color: #E1E5EB;
+    border-color: var(--Frames-BlueGray);;
 }
 
 th {
@@ -284,15 +311,18 @@ td > * {
 }
 
 .green {
-    background: #339C74;
+    background-color: var(--riskPriority-Green);
+    opacity: var(--colorOpacity);
 }
 
 .yellow {
-    background: #FBDB34;
+    background-color: var(--riskPriority-Yellow);
+    opacity: var(--colorOpacity);
 }
 
 .red {
-    background: #D63837;
+    background-color: var(--riskPriority-Red);
+    opacity: var(--colorOpacity);
 }
 
 input[type="radio"] {
@@ -323,11 +353,11 @@ input[type="radio"] {
     text-align: center;
 
     content: attr(data-tooltip);
-    color: #ffffff;
-    background: #4C5A69;
+    color: white;
+    background-color: var(--notification-Blue);
     padding: 4px;
     border-radius: 5px;
-    font-size: calc(11 * 0.063rem);
+    font-size: calc(var(--mainFontSize) * 0.063rem);
 
     visibility: hidden;
     opacity: 0;
@@ -338,21 +368,15 @@ input[type="radio"] {
 
 [data-tooltip]:hover::after, [data-tooltip]:hover::before {
     position: absolute;
-    opacity: 10;
+    opacity: 1;
     visibility: visible;
     transform: translateY(0) translateX(0px);
 }
 
-
-.mainView-Button-container {
-    margin-left: 5rem;
-    margin-right: 5rem;
-    float: right;
-}
-
 .button {
-    font-size: calc(12 * 0.063rem);
-    font-weight: 500;
+    font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
+    font-family: OpenSans-SemiBold, serif;
+    /*font-family: OpenSans-Bold, serif;*/
     width: 140px;
     height: 38px;
     border-radius: 50px;
@@ -362,7 +386,7 @@ input[type="radio"] {
 }
 
 .submit {
-    background: #687D99;
+    background-color: var(--button-Blue);
     color: white;
 }
 
@@ -376,12 +400,11 @@ input[type="radio"] {
 }
 
 .cancel {
-    background: #E1E5EB;
-    color: #4C5A69;
+    background-color: var(--Frames-BlueGray);
+    color: var(--notification-Blue);
     opacity: 0.4;
     cursor: default;
 }
-
 
 @media (max-width: 900px) {
     .header {
@@ -389,9 +412,9 @@ input[type="radio"] {
         padding-right: 0;
     }
 
-    .rectangle, .hazards, .progress-wrapper, .mainView-Button-container {
-        margin-left: 1rem;
-        margin-right: 1rem;
+    .wrapper {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .logo_title {
