@@ -198,7 +198,6 @@ td {
     border-bottom: 1px solid;
     border-top: 1px solid;
     border-color: #E1E5EB;
-    z-index: -100;
 }
 
 th {
@@ -219,14 +218,12 @@ th:first-child, td:first-child {
     border-right: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    z-index: 1;
 }
 
 th:last-child, td:last-child {
     border: solid 1px #E1E5EB;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
-    z-index: 1;
 }
 
 td:last-child {
@@ -271,7 +268,7 @@ td > * {
 }
 
 .icon_list {
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
     transform: scale(1.5);
 }
 
@@ -309,7 +306,7 @@ input[type="radio"] {
     opacity: 0.2;
 }
 
-#tooltip {
+/*#tooltip {
     background: #4C5A69;
     color: white;
     border-radius: 5px;
@@ -322,12 +319,11 @@ input[type="radio"] {
 
 #tooltip::after {
     transition: all 1s ease-in-out;
-}
+}*/
 
 [data-tooltip] {
     position: relative;
     cursor: default;
-    z-index: 10000;
 }
 
 [data-tooltip]::after {
@@ -351,9 +347,8 @@ input[type="radio"] {
     visibility: hidden;
     opacity: 0;
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
-    transition: 3s transform;
+    transition: 1.5s transform;
     transform-origin: center center;
-    z-index: 10000;
 }
 
 [data-tooltip]:hover::after, [data-tooltip]:hover::before {
@@ -361,8 +356,6 @@ input[type="radio"] {
     opacity: 10;
     visibility: visible;
     transform: translateY(0) translateX(0px);
-    z-index: 10000;
-    margin-bottom: 100px;
 }
 
 

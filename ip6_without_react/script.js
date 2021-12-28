@@ -9,7 +9,7 @@ let text_notification = document.getElementById("text_notification");
 let arrow_id = document.getElementById("arrow_id");
 let cancel = document.getElementById("cancel");
 
-let speedAndTimoutNotification = 2500;
+let speedAndTimoutNotification = 1500;
 let speedProgressBarAnimation = 1000;
 
 let nunmberofallCheckboxes;
@@ -48,27 +48,27 @@ function resizeNotification() {
         arrow_id.style.display = "none";
         info_icon.style.display = "flex";
 
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+/*        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
             $("div.notification").animate({
                 width: '-=80%'
             }, speedAndTimoutNotification);
-        } else {
+        } else {*/
             $("div.notification").animate({
                 width: '-=95%'
             }, speedAndTimoutNotification);
-        }
+        // }
         x = "false";
     } else {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+/*        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
             $("div.notification").animate({
                 width: '+=80%'
             }, speedAndTimoutNotification);
             info_icon.style.display = "none";
-        } else {
+        } else {*/
             $("div.notification").animate({
                 width: '+=95%'
             }, speedAndTimoutNotification);
-        }
+        // }
 /*        $("div.notification").animate({
             width: '+=95%'
         }, speedAndTimoutNotification);*/
