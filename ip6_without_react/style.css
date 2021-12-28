@@ -42,8 +42,9 @@
 }
 
 .header {
-    display: flex;
+    font-size: calc(14 * 0.063rem);
     position: relative;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--header-Darkblue);
