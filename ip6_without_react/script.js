@@ -9,7 +9,7 @@ let text_notification = document.getElementById("text_notification");
 let arrow_id = document.getElementById("arrow_id");
 let cancel = document.getElementById("cancel");
 
-let speedAndTimoutNotification = 1500;
+let speedAndTimoutNotification = 900;
 let speedProgressBarAnimation = 1000;
 
 let nunmberofallCheckboxes;
@@ -20,7 +20,7 @@ let x;
 let checkbox;
 let item;
 
-if(x === undefined){
+if (x === undefined) {
     x = "true";
 }
 
@@ -33,7 +33,7 @@ window.onload = function () {
     x = localStorage.getItem("someVarKey");
     console.log(x);
 
-    if(x === "false") {
+    if (x === "false") {
         notification.style.width = "5%";
         text_notification.style.display = "none";
         text_notification.style.arrow_id = "none";
@@ -48,56 +48,69 @@ function resizeNotification() {
         arrow_id.style.display = "none";
         info_icon.style.display = "flex";
 
-/*        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            $("div.notification").animate({
-                width: '-=80%'
-            }, speedAndTimoutNotification);
-        } else {*/
-            $("div.notification").animate({
-                width: '-=95%'
-            }, speedAndTimoutNotification);
+        /*        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                    $("div.notification").animate({
+                        width: '-=80%'
+                    }, speedAndTimoutNotification);
+                } else {*/
+        $("div.notification").animate({
+            width: '-=95%'
+        }, speedAndTimoutNotification);
         // }
         x = "false";
     } else {
-/*        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            $("div.notification").animate({
-                width: '+=80%'
-            }, speedAndTimoutNotification);
-            info_icon.style.display = "none";
-        } else {*/
-            $("div.notification").animate({
-                width: '+=95%'
-            }, speedAndTimoutNotification);
-        // }
-/*        $("div.notification").animate({
+        /*        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                    $("div.notification").animate({
+                        width: '+=80%'
+                    }, speedAndTimoutNotification);
+                    info_icon.style.display = "none";
+                } else {*/
+        $("div.notification").animate({
             width: '+=95%'
-        }, speedAndTimoutNotification);*/
+        }, speedAndTimoutNotification);
+
+        function myFunction(y) {
+            if (y.matches) { // If media query matches
+                info_icon.style.display = "none";
+            } else {
+                info_icon.style.display = "block";
+            }
+        }
+
+        var y = window.matchMedia("(max-width: 700px)")
+        myFunction(y) // Call listener function at run time
+        y.addEventListener('change', myFunction) // Attach listener function on state changes
+
         setTimeout(myGreeting, speedAndTimoutNotification);
         function myGreeting() {
             text_notification.style.display = "block";
             arrow_id.style.display = "flex";
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                info_icon.style.display = "none";
+            }
         }
+
         x = "true";
     }
     localStorage.setItem("someVarKey", x);
 }
 
-function numberOfCheckedCheckboxes (){
+function numberOfCheckedCheckboxes() {
     nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
     nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
 
-    percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) *100);
+    percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
 
     $("div.progress_in_percent").animate({
-        width: +percentageOfCheckedCheckboxes+'%'
+        width: +percentageOfCheckedCheckboxes + '%'
     }, speedProgressBarAnimation);
 
-    document.getElementById("progress_in_percent").innerHTML = percentageOfCheckedCheckboxes+'%';
-    if(percentageOfCheckedCheckboxes === 0){
+    document.getElementById("progress_in_percent").innerHTML = percentageOfCheckedCheckboxes + '%';
+    if (percentageOfCheckedCheckboxes === 0) {
         document.getElementById("progress_in_percent").innerHTML = '';
     }
 
-    if(percentageOfCheckedCheckboxes === 100){
+    if (percentageOfCheckedCheckboxes === 100) {
         cancel.style.color = 'white';
         cancel.style.background = '#687D99';
         cancel.style.opacity = '1.0';
@@ -110,22 +123,41 @@ function numberOfCheckedCheckboxes (){
     }
 }
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
     checkbox = document.querySelectorAll("input[type='checkbox']");
 
-    for(item of checkbox){
-        item.addEventListener("click", function(){
+    for (item of checkbox) {
+        item.addEventListener("click", function () {
             localStorage.s_item ?
-                localStorage.s_item = localStorage.s_item.indexOf(this.id+",") == -1
-                    ? localStorage.s_item+this.id+","
-                    : localStorage.s_item.replace(this.id+",","") :
-                localStorage.s_item = this.id+",";
+                localStorage.s_item = localStorage.s_item.indexOf(this.id + ",") == -1
+                    ? localStorage.s_item + this.id + ","
+                    : localStorage.s_item.replace(this.id + ",", "") :
+                localStorage.s_item = this.id + ",";
         });
     }
 
-    if(localStorage.s_item){ // verifico se existe localStorage
-        for(item of checkbox){ // existe, percorro as checkbox
-            item.checked = localStorage.s_item.indexOf(item.id+",") != -1 ? true : false;
+    if (localStorage.s_item) { // verifico se existe localStorage
+        for (item of checkbox) { // existe, percorro as checkbox
+            item.checked = localStorage.s_item.indexOf(item.id + ",") != -1 ? true : false;
         }
     }
 });
+
+/*function myFunction(y) {
+    if (y.matches) { // If media query matches
+        document.body.style.backgroundColor = "yellow";
+    } else {
+        document.body.style.backgroundColor = "pink";
+    }
+}
+
+var y = window.matchMedia("(max-width: 700px)")
+myFunction(y) // Call listener function at run time
+y.addEventListener('change', myFunction) // Attach listener function on state changes*/
+
+// const mediaQuery = window.matchMedia('(max-width: 800px)');
+
+/*e(mediaQuery);
+mediaQuery.addEventListener('change', function (e) {
+    document.body.style.backgroundColor = "yellow";
+});*/

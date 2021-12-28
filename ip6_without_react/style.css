@@ -347,7 +347,7 @@ input[type="radio"] {
     visibility: hidden;
     opacity: 0;
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
-    transition: 1.5s transform;
+    transition: 0.75s transform;
     transform-origin: center center;
 }
 
@@ -422,7 +422,7 @@ input[type="radio"] {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .header {
         padding-left: 0;
         padding-right: 0;
@@ -472,5 +472,11 @@ input[type="radio"] {
 
     .notification {
         height: 50px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }
