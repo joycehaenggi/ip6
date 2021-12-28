@@ -306,21 +306,6 @@ input[type="radio"] {
     opacity: 0.2;
 }
 
-/*#tooltip {
-    background: #4C5A69;
-    color: white;
-    border-radius: 5px;
-    padding: 10px;
-    max-width: 180px;
-    text-align: left;
-    transition: all 1s ease-in-out;
-    font-size: calc(11 * 0.063rem);
-}
-
-#tooltip::after {
-    transition: all 1s ease-in-out;
-}*/
-
 [data-tooltip] {
     position: relative;
     cursor: default;
@@ -400,35 +385,11 @@ input[type="radio"] {
 
 @media (max-width: 900px) {
     .header {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .rectangle {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-
-    .hazards, .progress-wrapper, .mainView-Button-container {
-        margin: 1rem;
-    }
-
-    .info_icon {
-        display: none;
-    }
-
-    #text_notification {
-        margin-left: 25px;
-    }
-}
-
-@media (max-width: 800px) {
-    .header {
         padding-left: 0;
         padding-right: 0;
     }
 
-    .rectangle {
+    .rectangle, .hazards, .progress-wrapper, .mainView-Button-container {
         margin-left: 1rem;
         margin-right: 1rem;
     }
@@ -472,6 +433,14 @@ input[type="radio"] {
 
     .notification {
         height: 50px;
+    }
+
+    #text_notification {
+        margin-left: 25px;
+    }
+
+    .info_icon {
+        display: none;
     }
 
     table {

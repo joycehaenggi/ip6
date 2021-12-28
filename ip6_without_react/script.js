@@ -1,8 +1,7 @@
-// 'use strict';
+'use strict';
 const toggleButton = document.getElementsByClassName('toggle-button')[0]
 const navbarLinks = document.getElementsByClassName('header-links')[0]
 
-// Get the notification object using its Id
 let notification = document.getElementById("notification");
 let info_icon = document.getElementById("info_icon");
 let text_notification = document.getElementById("text_notification");
@@ -31,7 +30,6 @@ toggleButton.addEventListener('click', () => {
 window.onload = function () {
     numberOfCheckedCheckboxes();
     fullNotification = localStorage.getItem("someVarKey");
-    console.log(fullNotification);
 
     if (fullNotification === "false") {
         notification.style.width = "5%";
@@ -41,8 +39,8 @@ window.onload = function () {
 }
 
 
-// Function to increase image size
-function resizeNotification() {
+// Function to decrease notification size
+function decreaseNotification() {
     var y = window.matchMedia("(max-width: 700px)")
 
     if (fullNotification === "true") {
