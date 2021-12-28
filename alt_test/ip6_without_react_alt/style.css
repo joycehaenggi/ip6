@@ -5,7 +5,7 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("../../fonts/OpenSans-VariableFont_wdth,wght.ttf") format("ttf");
+    src: url("../../ip6_without_react/fonts/OpenSans-VariableFont_wdth,wght.ttf") format("ttf");
 }
 
 /*@font-face {
@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: 'Oswald';
-    src: url("../../fonts/Oswald-Regular.ttf");
+    src: url("../../ip6_without_react/fonts/Oswald-Regular.ttf");
 }
 
 *{
