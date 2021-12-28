@@ -43,6 +43,8 @@ window.onload = function () {
 
 // Function to increase image size
 function resizeNotification() {
+    var y = window.matchMedia("(max-width: 700px)")
+
     if (fullNotification === "true") {
         text_notification.style.display = "none";
         arrow_id.style.display = "none";
@@ -54,8 +56,18 @@ function resizeNotification() {
 
         fullNotification = "false";
 
-
     } else {
+
+        myFunction(y) // Call listener function at run time
+        y.addEventListener('change', myFunction) // Attach listener function on state changes
+
+        function myFunction(y) {
+            if (y.matches) { // If media query matches
+                info_icon.style.display = "none";
+            } else {
+                info_icon.style.display = "flex";
+            }
+        }
 
         $("div.notification").animate({
             width: '+=95%'
@@ -123,17 +135,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-/*        var y = window.matchMedia("(max-width: 700px)")
-        myFunction(y) // Call listener function at run time
-        y.addEventListener('change', myFunction) // Attach listener function on state changes*/
-
-/*        function myFunction(y) {
-            if (y.matches) { // If media query matches
-                $("div.notification").animate({
-                    width: '-=80%'
-                }, speedAndTimoutNotification);
-            } else {
-
-            }
-        }
-        */
