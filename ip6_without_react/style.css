@@ -346,7 +346,7 @@ input[type="radio"] {
     position: absolute;
     width: 140px;
     left: calc(50% - 70px);
-    top: 70%;
+    top: 65%;
     /*    left: 52%;
         top: 50%;*/
     box-sizing: border-box;
