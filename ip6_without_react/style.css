@@ -382,6 +382,28 @@ td > * {
     transform: translateY(0) translateX(0px);
 }
 
+
+
+.accordion {
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    /*background-color: #ccc;*/
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    /*overflow: hidden;*/
+    transition: max-height 0.5s ease-out;
+}
+
+
+
+
 .button {
     font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
     font-family: OpenSans-SemiBold, serif;
