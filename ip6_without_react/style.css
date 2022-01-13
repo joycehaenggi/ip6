@@ -124,17 +124,49 @@
 
 }
 
-.manufacturing-step-information{
+.manufacturing-step-navigation{
     display: flex;
-    font-family: 'OpenSans-Regular', sans-serif;
-    margin-top: calc(100 * 0.063rem);
+    font-family: 'OpenSans-Bold', sans-serif;
+    font-size: calc(11 * 0.063rem);
+    margin-top: calc(20 * 0.063rem);
     margin-left: calc(80 * 0.063rem);
 }
 
-.manu-title{
-    font-size: calc(14 * 0.063rem);
-
+.navigation-steps{
+    margin-left: 0.5%;
 }
+
+.next-arrow{
+    margin-left: 0.5%;
+}
+
+.searchbar{
+    display: flex;
+    position: absolute;
+    right: 5rem;
+    margin-top: calc(2.8 * 0.063rem);
+}
+
+.search-field{
+    height: 21px;
+    width: 200px;
+    border: 1px solid var(--notification-Blue);
+    border-radius: 50px;
+}
+
+.search-field-icon{
+    display: flex;
+    position: absolute;
+    right: 11rem;
+    margin-top: calc(5 * 0.063rem);
+}
+.manufacturing-step-information{
+    display: flex;
+    font-family: 'OpenSans-Regular', sans-serif;
+    margin-top: calc(30 * 0.063rem);
+    margin-left: calc(80 * 0.063rem);
+}
+
 
 .manufacturing-legend{
     display: flex;
