@@ -121,7 +121,54 @@
 .header-links li:hover a {
     background-color: var(--notification-Blue);
     border-radius: 5px;
+
 }
+
+.manufacturing-step-information{
+    display: flex;
+    font-family: 'OpenSans-Regular', sans-serif;
+    margin-top: calc(100 * 0.063rem);
+    margin-left: calc(80 * 0.063rem);
+}
+
+.manu-title{
+    font-size: calc(14 * 0.063rem);
+
+}
+
+.manufacturing-legend{
+    display: flex;
+    position: absolute;
+    right: 6rem;
+    margin-top: calc(2.8 * 0.063rem);
+}
+
+.manufacturing-legend-elements {
+    display:flex;
+    font-size: calc(9 * 0.063rem);
+    margin-top: calc(1.4 * 0.063rem);
+
+}
+
+.manu-legend-tittle{
+    font-size: calc(11 * 0.063rem);
+    margin-left: 2.8%;
+}
+
+.manu-legend{
+    margin-left: calc(5 * 0.063rem);
+}
+
+.legend-dot{
+    margin-top: calc(-5 * 0.063rem);
+    margin-left: calc(5 * 0.063rem);
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
 
 .toggle-button {
     position: absolute;
