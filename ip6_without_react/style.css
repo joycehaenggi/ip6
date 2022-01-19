@@ -2,14 +2,17 @@
     font-family: 'Oswald';
     src: url("fonts/Oswald-Regular.ttf");
 }
+
 @font-face {
     font-family: 'OpenSans-Regular';
     src: url("fonts/OpenSans-Regular.ttf");
 }
+
 @font-face {
     font-family: 'OpenSans-SemiBold';
     src: url("fonts/OpenSans-SemiBold.ttf");
 }
+
 @font-face {
     font-family: 'OpenSans-Bold';
     src: url("fonts/OpenSans-Bold.ttf");
@@ -124,7 +127,7 @@
 
 }
 
-.manufacturing-step-navigation{
+.manufacturing-step-navigation {
     display: flex;
     font-family: 'OpenSans-Bold', sans-serif;
     font-size: calc(11 * 0.063rem);
@@ -132,22 +135,22 @@
     margin-left: calc(80 * 0.063rem);
 }
 
-.navigation-steps{
+.navigation-steps {
     margin-left: 0.5%;
 }
 
-.next-arrow{
+.next-arrow {
     margin-left: 0.5%;
 }
 
-.searchbar{
+.searchbar {
     display: flex;
     position: absolute;
     right: 5rem;
     margin-top: calc(2.8 * 0.063rem);
 }
 
-.search-field{
+.search-field {
     height: 21px;
     width: 200px;
     border: 1px solid var(--notification-Blue);
@@ -168,7 +171,7 @@
 }
 
 
-.manufacturing-legend{
+.manufacturing-legend {
     display: flex;
     position: absolute;
     right: 6rem;
@@ -176,22 +179,22 @@
 }
 
 .manufacturing-legend-elements {
-    display:flex;
+    display: flex;
     font-size: calc(9 * 0.063rem);
     margin-top: calc(1.4 * 0.063rem);
 
 }
 
-.manu-legend-tittle{
+.manu-legend-tittle {
     font-size: calc(11 * 0.063rem);
     margin-left: 2.8%;
 }
 
-.manu-legend{
+.manu-legend {
     margin-left: calc(5 * 0.063rem);
 }
 
-.legend-dot{
+.legend-dot {
     margin-top: calc(-5 * 0.063rem);
     margin-left: calc(5 * 0.063rem);
     height: 22px;
@@ -339,6 +342,7 @@ td {
 th {
     border: solid 1px #E1E5EB;
     border-right: none;
+    /*padding-top: 21px;*/
     padding-bottom: calc(10 * 0.063rem);
     padding-left: calc(10 * 0.063rem);
     padding-top: calc(5 * 0.063rem);
@@ -349,7 +353,6 @@ th {
 .th_title {
     font-family: OpenSans-SemiBold, sans-serif;
     float:left;
-    /*padding-top: 12px;*/
 }
 
 .sort {
@@ -531,19 +534,25 @@ td > * {
 
 /*Styling Neue Gefährdung erstellen*/
 
+form{
+    height: 25rem;
 
-.neue_gefaehrdung_table{
-    border-spacing: 0;
 }
+
+.neue_gefaehrdung_table {
+    border-spacing: 0;
+
+}
+
 .hundredPercent {
     width: 100%;
 }
 
-.neue_gefaehrdung_th{
-   background-color: var(--Frames-BlueGray);
+.neue_gefaehrdung_th {
+    background-color: var(--Frames-BlueGray);
 }
 
-.neue_gefaehrdung_th_title{
+.neue_gefaehrdung_th_title {
     font-size: 14px;
 }
 
@@ -551,6 +560,10 @@ td > * {
     height: 50em;
 }
 
+input[type="button"]{
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 11px;
+}
 
 /* Detailansicht mit Accordion */
 .accordion {
@@ -591,6 +604,10 @@ td > * {
 }
 
 
+input[type="text"]{
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 11px;
+}
 
 
 
@@ -658,5 +675,9 @@ td > * {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
+    }
+
+    .neue_gefaehrdung_input {
+        width: 10em;
     }
 }
