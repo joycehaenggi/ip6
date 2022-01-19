@@ -516,6 +516,32 @@ td > * {
     cursor: default;
 }
 
+/*Styling Neue Gefährdung erstellen*/
+
+
+.neue_gefaehrdung_table{
+    border-spacing: 0;
+}
+.hundredPercent {
+    width: 100%;
+}
+
+.neue_gefaehrdung_th{
+   background-color: var(--Frames-BlueGray);
+}
+
+.neue_gefaehrdung_th_title{
+    font-size: 14px;
+}
+
+.neue_gefaehrdung_th_title_first_child{
+    height: 50em;
+}
+
+
+
+
+
 @media (max-width: 900px) {
     .header {
         padding-left: 0;

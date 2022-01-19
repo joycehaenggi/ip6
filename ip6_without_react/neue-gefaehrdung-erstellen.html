@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="images/icon_virtueller_assistent.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Virtueller Assistent Produktionsprozess medizinischer Implantate</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+<!--Header-->
+
+<nav class="header">
+    <div class="logo_title">
+        <div class="logo">
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip01_1325_56723)">
+                    <path d="M24.5664 25.6055V30.0586L19 32.4336L13.4336 30.0586V25.6055L19 23.3789L24.5664 25.6055Z"
+                          fill="#B8C7E6"/>
+                    <path d="M24.5664 16.6992V21.1523L19 23.3789L13.4336 21.1523V16.6992L19 14.4727L24.5664 16.6992Z"
+                          fill="#B8C7E6"/>
+                    <path d="M24.5664 21.1523V16.6992L19 14.4727V23.3789L24.5664 21.1523Z" fill="#A3B4D9"/>
+                    <path d="M24.5664 30.0586V25.6055L19 23.3789V32.4336L24.5664 30.0586Z" fill="#A3B4D9"/>
+                    <path d="M23.4531 11.1328H14.5469C13.9234 11.1328 13.4336 11.6226 13.4336 12.2461V16.6992H24.5664V12.2461C24.5664 11.6226 24.0766 11.1328 23.4531 11.1328Z"
+                          fill="#CDD9F2"/>
+                    <path d="M24.5664 30.0586V32.4336C24.5664 32.723 24.455 33.0125 24.2323 33.2128L19.7792 37.6659C19.5789 37.8887 19.2895 38 19 38C18.7105 38 18.4211 37.8887 18.2208 37.6659L13.7677 33.2128C13.545 33.0125 13.4336 32.723 13.4336 32.4336V30.0586H24.5664Z"
+                          fill="#CDD9F2"/>
+                    <path d="M13.4336 21.1523H24.5664V25.6055H13.4336V21.1523Z" fill="#CDD9F2"/>
+                    <path d="M19 38C19.2895 38 19.5789 37.8887 19.7792 37.6659L24.2323 33.2128C24.455 33.0125 24.5664 32.723 24.5664 32.4336V30.0586H19V38Z"
+                          fill="#B8C7E6"/>
+                    <path d="M19 21.1523H24.5664V25.6055H19V21.1523Z" fill="#B8C7E6"/>
+                    <path d="M23.4531 11.1328H19V16.6992H24.5664V12.2461C24.5664 11.6226 24.0766 11.1328 23.4531 11.1328Z"
+                          fill="#B8C7E6"/>
+                    <path d="M11.207 8.12705V12.2461C11.207 12.8695 11.6968 13.3594 12.3203 13.3594H25.6797C26.3032 13.3594 26.793 12.8695 26.793 12.2461V8.12705L19 5.90049L11.207 8.12705Z"
+                          fill="#B8C7E6"/>
+                    <path d="M25.6797 13.3594C26.3032 13.3594 26.793 12.8695 26.793 12.2461V8.12705L19 5.90049V13.3594H25.6797Z"
+                          fill="#A3B4D9"/>
+                    <path d="M28.7521 5.18796L26.7928 8.12703H11.2068L9.24745 5.18796C8.57963 4.18601 8.49049 2.87227 9.0694 1.78125C9.6483 0.690234 10.7839 0 12.0307 0H16.7732C17.3967 0 17.8865 0.48977 17.8865 1.11328C17.8865 1.73679 18.3763 2.22656 18.9998 2.22656C19.6233 2.22656 20.1131 1.73679 20.1131 1.11328C20.1131 0.48977 20.6028 0 21.2264 0H25.9689C27.2157 0 28.3512 0.690234 28.9302 1.78125C29.5092 2.87227 29.42 4.16367 28.7521 5.18796Z"
+                          fill="#E5EDFF"/>
+                    <path d="M26.793 8.12703L28.7524 5.18796C29.4202 4.16367 29.5093 2.87219 28.9304 1.78125C28.3515 0.690309 27.2159 0 25.9691 0H21.2266C20.6031 0 20.1133 0.48977 20.1133 1.11328C20.1133 1.73679 19.6235 2.22656 19 2.22656V8.12703H26.793Z"
+                          fill="#CDD9F2"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_1325_56723">
+                        <rect width="38" height="38" fill="white"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        <div class="title_assistent">
+            Virtueller Assistent
+        </div>
+
+    </div>
+    <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </a>
+    <div class="header-links">
+        <ul>
+            <li><a href="https://quizzical-keller-9651b4.netlify.app/">Home</a></li>
+            <li><a href="https://quizzical-keller-9651b4.netlify.app/">Auftragsübersicht</a></li>
+            <li><a href="https://quizzical-keller-9651b4.netlify.app/">Neuer Auftrag</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="manufacturing-step-navigation">
+    <div class="home">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1387_56763)">
+                <path d="M14.8861 7.00049L12.1185 4.63702C12.1217 4.62085 12.1249 4.60469 12.1282 4.58529V1.49435C12.1249 1.31005 11.9794 1.16133 11.7952 1.15486H10.2497C10.0719 1.15486 9.92637 1.31329 9.92637 1.49435V2.77469L7.71163 0.886503C7.592 0.783041 7.41417 0.783041 7.29131 0.886503L0.116845 6.99726C-0.0221828 7.11042 -0.0383488 7.31411 0.0748131 7.45314C0.187975 7.59217 0.391666 7.60833 0.530694 7.49517C0.533927 7.49194 0.533927 7.49194 0.53716 7.4887L7.50147 1.55901L9.99426 3.68322L11.4848 4.95064L14.469 7.49194C14.6048 7.60833 14.8085 7.59216 14.9249 7.45637C15.0381 7.32058 15.0219 7.11688 14.8861 7.00049ZM11.4783 4.09061L10.573 3.32757V1.80473H11.4783V4.09061Z"
+                      fill="black"/>
+                <path d="M13.4601 7.65359L12.5516 6.87762L7.71149 2.74236C7.59186 2.6389 7.41403 2.6389 7.29117 2.74236L2.45107 6.87762L1.54255 7.65359C1.40675 7.76998 1.39059 7.97367 1.50698 8.10947C1.62014 8.24526 1.8206 8.26143 1.95316 8.14827L1.9564 8.14503L2.36054 7.79585V13.8581C2.36378 14.0392 2.51251 14.1879 2.69356 14.1911H12.3059C12.4869 14.1879 12.6356 14.0424 12.6389 13.8581V7.79585L13.043 8.14503C13.1012 8.19353 13.1724 8.22263 13.25 8.22263C13.3437 8.22263 13.4342 8.1806 13.4957 8.10947C13.6153 7.97044 13.5959 7.76675 13.4601 7.65359ZM8.79461 13.5412H6.20805V10.0494H8.79461V13.5412ZM9.44125 13.5412V9.73577C9.44125 9.55794 9.30869 9.40275 9.13086 9.40275H5.8718C5.69397 9.40275 5.56141 9.55794 5.56141 9.73577V13.5412H3.00718V7.24297L7.50133 3.41487L11.9955 7.24297V13.5412H9.44125Z"
+                      fill="black"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_1387_56763">
+                    <rect width="15" height="15" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+    <p class="navigation-steps" id="navigation-step-icon"></p>
+    <div class="next-arrow">
+        <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1387_56747)">
+                <path d="M4.55193 2.83534L1.77676 0.0678424C1.68583 -0.0227783 1.53862 -0.022626 1.44785 0.0683112C1.35715 0.159237 1.35738 0.306529 1.44832 0.39722L4.05831 3L1.44822 5.60277C1.3573 5.69348 1.35706 5.84068 1.44775 5.93161C1.49326 5.9772 1.55287 5.99999 1.61248 5.99999C1.67195 5.99999 1.73132 5.97735 1.77675 5.93208L4.55193 3.16465C4.59573 3.12108 4.6203 3.06178 4.6203 3C4.6203 2.93822 4.59566 2.879 4.55193 2.83534Z"
+                      fill="black"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_1387_56747">
+                    <rect width="6" height="6" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+    <p class="navigation-steps">Neuer Auftrag erstellen</p>
+    <div class="next-arrow">
+        <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1387_56747)">
+                <path d="M4.55193 2.83534L1.77676 0.0678424C1.68583 -0.0227783 1.53862 -0.022626 1.44785 0.0683112C1.35715 0.159237 1.35738 0.306529 1.44832 0.39722L4.05831 3L1.44822 5.60277C1.3573 5.69348 1.35706 5.84068 1.44775 5.93161C1.49326 5.9772 1.55287 5.99999 1.61248 5.99999C1.67195 5.99999 1.73132 5.97735 1.77675 5.93208L4.55193 3.16465C4.59573 3.12108 4.6203 3.06178 4.6203 3C4.6203 2.93822 4.59566 2.879 4.55193 2.83534Z"
+                      fill="black"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_1387_56747">
+                    <rect width="6" height="6" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+    <p class="navigation-steps">Herstellungsprozess</p>
+    <div class="next-arrow">
+        <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1387_56747)">
+                <path d="M4.55193 2.83534L1.77676 0.0678424C1.68583 -0.0227783 1.53862 -0.022626 1.44785 0.0683112C1.35715 0.159237 1.35738 0.306529 1.44832 0.39722L4.05831 3L1.44822 5.60277C1.3573 5.69348 1.35706 5.84068 1.44775 5.93161C1.49326 5.9772 1.55287 5.99999 1.61248 5.99999C1.67195 5.99999 1.73132 5.97735 1.77675 5.93208L4.55193 3.16465C4.59573 3.12108 4.6203 3.06178 4.6203 3C4.6203 2.93822 4.59566 2.879 4.55193 2.83534Z"
+                      fill="black"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_1387_56747">
+                    <rect width="6" height="6" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+    <p class="navigation-steps">Implantatdesign Matching</p>
+</div>
+</div>
+
+
+<!--Navigation and Searchbar-->
+
+<div class="manufacturing-step-information">
+    <p class="manu-title">Implantatdesign Matching</p>
+    <div class="manufacturing-legend">
+        <p class="manu-legend-tittle">Risikopriorität:</p>
+        <div class="manufacturing-legend-elements">
+            <span class="legend-dot green"></span>
+            <p class="manu-legend">gering</p>
+            <span class="legend-dot yellow"></span>
+            <p class="manu-legend">mittel</p>
+            <span class="legend-dot red"></span>
+            <p class="manu-legend">hoch</p>
+        </div>
+    </div>
+</div>
+
+
+<!--Table-->
+
+<div class="wrapper">
+    <table class="neue_gefaehrdung_table">
+        <thead>
+        <tr>
+            <th class="hundredPercent neue_gefaehrdung_th">
+                <p class="neue_gefaehrdung_th_title">Neue Gefährdung erstellen
+                <p/>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <th class="hundredPercent neue_gefaehrdung_th_title_first_child">
+            <form>
+                <label>Gefährdung</label>
+                <input type="text"><br>
+                <label>Gefährdungssituation</label>
+                <input type="text"> <br>
+                <label>Schaden</label>
+                <input type="text"> <br>
+                <input type="text"><br>
+                <label>Eintretenswahrscheinlichkeit</label>
+                <input type="radio">1
+                <input type="radio">2
+                <input type="radio">3
+                <input type="radio">4
+                <input type="radio">5
+                <label>Schweregrad</label>
+                <input type="radio">1
+                <input type="radio">2
+                <input type="radio">3
+                <input type="radio">4
+                <input type="radio">5
+                <label>Risikopriorität</label>
+                <input type="text"> <br>
+                <label>Massnahmen</label>
+                <input type="text"><br>
+                <input type="text"> <br>
+                <label>Implementierungsnachweis</label>
+                <input type="button" value="Durchsuchen...">Noch keine Datei ausgewählt.</p><br>
+                <label>Eintretenswahrscheinlichkeit</label>
+                <input type="radio">1
+                <input type="radio">2
+                <input type="radio">3
+                <input type="radio">4
+                <input type="radio">5
+                <label>Schweregrad</label>
+                <input type="text">
+                <label>Risikopriorität</label>
+                <input type="text">
+            </form>
+
+
+            <div class="mainView-Button-container panel">
+                <div class="button submit mainView-Button">
+                    Speichern
+                </div>
+
+                <div class="button cancel" id="cancel">
+                    Abbrechen
+                </div>
+            </div>
+
+        </th>
+
+
+        </tbody>
+    </table>
+
+
+</div>
+
+
+</body>
+</html>
