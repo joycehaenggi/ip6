@@ -677,7 +677,15 @@ form{
     background: var(--header-Darkblue);
 }
 
+input[type="button"]{
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 11px;
+}
 
+input[type="text"]{
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 11px;
+}
 
 
 
