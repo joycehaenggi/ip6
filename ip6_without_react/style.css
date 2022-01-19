@@ -2,14 +2,17 @@
     font-family: 'Oswald';
     src: url("fonts/Oswald-Regular.ttf");
 }
+
 @font-face {
     font-family: 'OpenSans-Regular';
     src: url("fonts/OpenSans-Regular.ttf");
 }
+
 @font-face {
     font-family: 'OpenSans-SemiBold';
     src: url("fonts/OpenSans-SemiBold.ttf");
 }
+
 @font-face {
     font-family: 'OpenSans-Bold';
     src: url("fonts/OpenSans-Bold.ttf");
@@ -124,7 +127,7 @@
 
 }
 
-.manufacturing-step-navigation{
+.manufacturing-step-navigation {
     display: flex;
     font-family: 'OpenSans-Bold', sans-serif;
     font-size: calc(11 * 0.063rem);
@@ -132,35 +135,36 @@
     margin-left: calc(80 * 0.063rem);
 }
 
-.navigation-steps{
+.navigation-steps {
     margin-left: 0.5%;
 }
 
-.next-arrow{
+.next-arrow {
     margin-left: 0.5%;
 }
 
-.searchbar{
+.searchbar {
     display: flex;
     position: absolute;
     right: 5rem;
     margin-top: calc(2.8 * 0.063rem);
 }
 
-.search-field{
+.search-field {
     height: 21px;
     width: 200px;
     border: 1px solid var(--notification-Blue);
     border-radius: 50px;
 }
 
-.search-field-icon{
+.search-field-icon {
     display: flex;
     position: absolute;
     right: 11rem;
     margin-top: calc(5 * 0.063rem);
 }
-.manufacturing-step-information{
+
+.manufacturing-step-information {
     display: flex;
     font-family: 'OpenSans-Regular', sans-serif;
     margin-top: calc(30 * 0.063rem);
@@ -168,7 +172,7 @@
 }
 
 
-.manufacturing-legend{
+.manufacturing-legend {
     display: flex;
     position: absolute;
     right: 6rem;
@@ -176,22 +180,22 @@
 }
 
 .manufacturing-legend-elements {
-    display:flex;
+    display: flex;
     font-size: calc(9 * 0.063rem);
     margin-top: calc(1.4 * 0.063rem);
 
 }
 
-.manu-legend-tittle{
+.manu-legend-tittle {
     font-size: calc(11 * 0.063rem);
     margin-left: 2.8%;
 }
 
-.manu-legend{
+.manu-legend {
     margin-left: calc(5 * 0.063rem);
 }
 
-.legend-dot{
+.legend-dot {
     margin-top: calc(-5 * 0.063rem);
     margin-left: calc(5 * 0.063rem);
     height: 22px;
@@ -199,7 +203,6 @@
     border-radius: 50%;
     display: inline-block;
 }
-
 
 
 .toggle-button {
@@ -320,7 +323,7 @@ th {
 .th_title {
     /*padding-top: 21px;*/
     font-family: OpenSans-SemiBold, sans-serif;
-    float:left;
+    float: left;
     padding-top: 12px;
 }
 
@@ -345,7 +348,6 @@ th:last-child, td:last-child {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
-
 
 
 td:last-child {
@@ -462,7 +464,6 @@ td > * {
 }
 
 
-
 .accordion {
     cursor: pointer;
     transition: 0.4s;
@@ -479,8 +480,6 @@ td > * {
     /*overflow: hidden;*/
     transition: max-height 0.5s ease-out;
 }
-
-
 
 
 .button {
@@ -518,29 +517,75 @@ td > * {
 
 /*Styling Neue Gefährdung erstellen*/
 
+form{
 
-.neue_gefaehrdung_table{
-    border-spacing: 0;
 }
+
+.neue_gefaehrdung_table {
+    border-spacing: 0;
+
+}
+
 .hundredPercent {
     width: 100%;
 }
 
-.neue_gefaehrdung_th{
-   background-color: var(--Frames-BlueGray);
+.neue_gefaehrdung_th {
+    background-color: var(--Frames-BlueGray);
 }
 
-.neue_gefaehrdung_th_title{
+.neue_gefaehrdung_th_title {
     font-size: 14px;
 }
 
-.neue_gefaehrdung_th_title_first_child{
-    height: 50em;
+.neue_gefaehrdung_th_title_first_child {
+
+    text-align: start;
+    height: 30em;
+    font-size: 11px;
+}
+
+.neue_gefaherdung_label {
+    display: flex;
+    position: absolute;
+    left: 6rem;
+}
+
+.neue_gefaehrdung_input {
+    display: flex;
+    position: absolute;
+    left: 15rem;
+    border: 1px solid var(--Frames-BlueGray);
+    border-radius: 5px;
+}
+
+.long{
+    width: 30em;
+    height: 2em;
+}
+
+.short {
+    height: 2em;
+    width: 10em;
+
+}
+
+.row_margin {
+    margin-top: 25px;
+}
+
+.row_special_margin{
+    margin-top: 65px;
 }
 
 
+.form.p{
+    display: initial;
+}
 
-
+.radio_margin{
+    padding-left: 9.5rem;
+}
 
 @media (max-width: 900px) {
     .header {
@@ -606,5 +651,9 @@ td > * {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
+    }
+
+    .neue_gefaehrdung_input {
+        width: 10em;
     }
 }
