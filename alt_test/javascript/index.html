@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <script src="test_js.js"></script>-->
+    <style>
+        .element {
+            background: lightgray;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="demo"></div>
+
+<script>
+    const cars = ["Gefährdung1", "Gefährdung2"];
+
+    let text = "";
+    for (let i = 0; i < cars.length; i++) {
+        text += cars[i] + "<br>";
+        text += "<div class='element'>Hallo </div>";
+    }
+
+    document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+
+</html>
