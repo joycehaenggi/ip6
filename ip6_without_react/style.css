@@ -195,12 +195,20 @@ input.searchfield {
     font-size: calc(11 * 0.063rem);
 }
 
-.manu-legend {
-    margin-left: calc(5 * 0.063rem);
+.low, .middle, .high {
+    display: flex;
+    width: 60px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: calc(11 * 0.063rem);
+    margin-left: 9px;
 }
 
-.legend-dot {
+/*.manu-legend {
     margin-left: calc(5 * 0.063rem);
+}*/
+
+.legend-dot {
     height: 21px;
     width: 21px;
     border-radius: 50%;
