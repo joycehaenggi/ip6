@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <script src="jquery.js"></script>
+
+    <style>
+
+    </style>
 </head>
 <body>
-
 <nav class="header">
     <div class="logo_title">
         <div class="logo">
@@ -66,6 +69,13 @@
         </ul>
     </div>
 </nav>
+
+<!--<label class="form-input">
+    <input type="checkbox"/>
+    <div class="checkbox"></div>
+</label>-->
+
+
 
 <div class="manufacturing-step-navigation">
     <div class="home">
@@ -358,14 +368,12 @@
                     Implantsts zu dünn.
                 </div>
                 <div class="td thirteenPercent">
-                    <input type="checkbox" id="s_item1" onclick="numberOfCheckedCheckboxes()">
+                    <input id="confirm" type="checkbox" /><label for="confirm"></label>
                 </div>
 
                 <div data-tooltip="Akzeptiert-Status" class="td tenPercent">
-                    <svg class="checkmark" width="19" height="17" viewBox="0 0 19 17" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17 2L6.6875 15L2 9.09091" stroke="#4C5A69" stroke-width="2.5"
-                              stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg class="checkmark" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 2L6.6875 15L2 9.09091" stroke="#4C5A69" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
                 <div data-tooltip="Gefährdung bearbeiten" class="td fifteenPercent">
@@ -747,7 +755,7 @@
         </div>
     </div>
 
-    <div class="progress-wrapper accordion">
+    <div class="progress-wrapper">
         <div class="title_progress_bar">Fortschrittsübersicht Implantatdesign Matching</div>
         <div class="progress_bar">
             <div class="progress_in_percent" id="progress_in_percent"></div>
