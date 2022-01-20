@@ -836,9 +836,7 @@ input[type="text"]{
     font-size: 11px;
 }
 
-
-
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
     .header {
         padding-left: 0;
         padding-right: 0;
@@ -886,6 +884,10 @@ input[type="text"]{
         display: flex;
     }
 
+    .rectangle {
+        height: 50px;
+    }
+
     .notification {
         height: 50px;
     }
@@ -898,13 +900,19 @@ input[type="text"]{
         display: none;
     }
 
-    table {
+    .table {
+        width: 100%;
         display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+        overflow-x: scroll;  /* Hide the horizontal scroll *
+        /*white-space: nowrap;*/
+        font-size: calc((var(--mainFontSize) - 2) * 0.063rem);
     }
 
     .neue_gefaehrdung_input {
         width: 10em;
+    }
+
+    p.th_title {
+        word-wrap: break-word;
     }
 }
