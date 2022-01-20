@@ -56,8 +56,8 @@
     padding-right: var(--paddingLeftRight);
 }
 
-.header a{
-    color:white;
+.header a {
+    color: white;
     text-decoration: none;
 }
 
@@ -66,7 +66,6 @@
     padding-left: var(--paddingLeftRight);
     padding-right: var(--paddingLeftRight);
 }
-
 
 
 .logo_title {
@@ -163,7 +162,7 @@ input.searchfield {
     background: url("svg/search.svg") center / contain no-repeat;
 }
 
-.manufacturing-step-information{
+.manufacturing-step-information {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -173,7 +172,7 @@ input.searchfield {
     margin-bottom: 20px;
 }
 
-.manu-title{
+.manu-title {
     font-size: calc(14 * 0.063rem);
 }
 
@@ -214,7 +213,6 @@ input.searchfield {
     border-radius: 50%;
     display: inline-block;
 }
-
 
 
 .toggle-button {
@@ -354,7 +352,7 @@ th {
 }
 
 .th, .td {
-    height:45px;
+    height: 45px;
     padding-left: 10px;
     display: flex;
     align-items: center;
@@ -367,10 +365,9 @@ th {
     border-right: none;
 }
 
-.tr .th:last-child{
-    border-right:none;
+.tr .th:last-child {
+    border-right: none;
 }
-
 
 
 td, th {
@@ -401,7 +398,7 @@ th {
 
 .th_title {
     font-family: OpenSans-SemiBold, sans-serif;
-    float:left;
+    float: left;
 }
 
 .sort {
@@ -426,7 +423,6 @@ th:last-child, td:last-child {
 }
 
 
-
 td:last-child {
     border-left: none;
 }
@@ -448,30 +444,30 @@ td > * {
 
 .fivePercent {
     width: 5%;
-    float:left;
+    float: left;
     /*text-align: center;*/
 }
 
 .tenPercent {
     width: 10%;
-    float:left;
+    float: left;
 }
 
 .thirteenPercent {
     width: 13%;
-    float:left;
+    float: left;
 }
 
 .fifteenPercent {
     width: 15%;
-    float:left;
+    float: left;
 }
 
 .fourtySevenPercent {
     width: 47%;
     text-align: left;
     padding-left: calc(8 * 0.063rem);
-    float:left;
+    float: left;
 }
 
 .icon_list {
@@ -508,10 +504,12 @@ td > * {
 [type="checkbox"] + label {
     position: absolute;
 }
+
 [type="checkbox"] {
     position: relative;
     -webkit-appearance: none;
 }
+
 [type="checkbox"] + label::before {
     width: 15px;
     height: 15px;
@@ -523,7 +521,8 @@ td > * {
     z-index: 5;
     position: relative;
 }
-[type="checkbox"]:checked+label::before {
+
+[type="checkbox"]:checked + label::before {
     background-image: url("images/checked.svg");
 }
 
@@ -568,7 +567,7 @@ td > * {
     transform: translateY(0) translateX(0px);
 }
 
-.custom_radio_button{
+.custom_radio_button {
     position: absolute;
     top: 0;
     left: 0;
@@ -627,7 +626,7 @@ td > * {
 
 /*Styling Neue Gefährdung erstellen*/
 
-form{
+form {
     height: 25rem;
 
 }
@@ -677,7 +676,7 @@ form{
 
 }
 
-.long{
+.long {
     width: 30em;
     height: 2em;
 }
@@ -688,7 +687,7 @@ form{
 
 }
 
-.end{
+.end {
     left: 58rem;
 }
 
@@ -696,28 +695,28 @@ form{
     margin-top: 25px;
 }
 
-.row_special_margin{
+.row_special_margin {
     margin-top: 65px;
 }
 
-.special{
+.special {
     margin-top: 110px;
 }
 
-.margin_end{
+.margin_end {
     margin-top: 160px;
 }
 
-.radio_margin{
+.radio_margin {
     display: flex;
     padding-left: 9.2rem;
 }
 
-.position_middle{
+.position_middle {
     left: 30rem;
 }
 
-.position_right{
+.position_right {
     left: 50rem;
 }
 
@@ -787,7 +786,7 @@ form{
     background: var(--header-Darkblue);
 }
 
-input[type="button"]{
+input[type="button"] {
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 11px;
 }
@@ -818,20 +817,20 @@ input[type="button"]{
 .block {
     /*padding-top: 18px;*/
     height: 48px;
-    margin-top:18px;
+    margin-top: 18px;
 }
 
-.block-title{
+.block-title {
     font-family: 'OpenSans-SemiBold', sans-serif;
 }
 
-.block-text{
+.block-text {
     margin-left: 40px;
     margin-top: 8px;
 }
 
 
-input[type="text"]{
+input[type="text"] {
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 11px;
 }
@@ -903,8 +902,6 @@ input[type="text"]{
     .table {
         width: 100%;
         display: block;
-        overflow-x: scroll;  /* Hide the horizontal scroll *
-        /*white-space: nowrap;*/
         font-size: calc((var(--mainFontSize) - 2) * 0.063rem);
     }
 
@@ -914,5 +911,16 @@ input[type="text"]{
 
     p.th_title {
         word-wrap: break-word;
+    }
+
+    .th, .td {
+        height: 45px;
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 700px) {
+    .table {
+        overflow-x: scroll;
     }
 }
