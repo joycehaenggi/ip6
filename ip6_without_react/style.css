@@ -67,23 +67,7 @@
     padding-right: var(--paddingLeftRight);
 }
 
-.notification {
 
-}
-
-.progress-wrapper {
-    margin-top: calc(var(--marginOne) * 0.063rem);
-    border: 1px solid #E1E5EB;
-    height: 100px;
-    font-size: calc(var(--mainFontSize) * 0.063rem);
-    border-radius: 5px;
-}
-
-.mainView-Button-container {
-    margin-top: calc(var(--marginOne) * 0.063rem);
-    display: flex;
-    justify-content: flex-end;
-}
 
 .logo_title {
     margin: .5rem;
@@ -134,65 +118,81 @@
 
 .manufacturing-step-navigation {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-family: 'OpenSans-Bold', sans-serif;
     font-size: calc(11 * 0.063rem);
-    margin-top: calc(20 * 0.063rem);
-    margin-left: calc(80 * 0.063rem);
 }
 
-.navigation-steps {
-    margin-left: 0.5%;
+.navigation-tree {
+    display: flex;
+    flex-direction: row;
 }
 
 .next-arrow {
-    margin-left: 0.5%;
+    margin-left: calc(15 * 0.063rem);
+    margin-right: calc(5 * 0.063rem);
 }
 
-.searchbar {
-    display: flex;
-    position: absolute;
-    right: 5rem;
-    margin-top: calc(2.8 * 0.063rem);
+.next-arrow-first-child {
+    margin-left: calc(12 * 0.063rem);
 }
 
-.search-field {
-    height: 21px;
-    width: 200px;
-    border: 1px solid var(--notification-Blue);
+
+input.searchfield {
+    box-sizing: border-box;
     border-radius: 50px;
+    border: 1px solid var(--notification-Blue);
+    height: 21.8px;
+    width: 200px;
+    padding-left: 25px;
+
 }
 
-.search-field-icon{
-    display: flex;
-    position: absolute;
-    right: 11rem;
-    margin-top: calc(5 * 0.063rem);
+.searchfield-label {
+    position: relative;
 }
+
+.searchfield-label:before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    bottom: 0;
+    width: 20px;
+    background: url("svg/search.svg") center / contain no-repeat;
+}
+
 .manufacturing-step-information{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-family: 'OpenSans-Regular', sans-serif;
-    margin-top: calc(30 * 0.063rem);
-    margin-left: calc(80 * 0.063rem);
+    height: 21px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+}
+
+.manu-title{
+    font-size: calc(14 * 0.063rem);
 }
 
 
 .manufacturing-legend {
     display: flex;
-    position: absolute;
-    right: 6rem;
-    margin-top: calc(2.8 * 0.063rem);
+    justify-content: space-between;
+    align-items: center;
+    height: 21px;
 }
 
 .manufacturing-legend-elements {
     display: flex;
-    font-size: calc(9 * 0.063rem);
+    font-size: calc(11 * 0.063rem);
     margin-top: calc(1.4 * 0.063rem);
-
 }
 
 .manu-legend-tittle {
     font-size: calc(11 * 0.063rem);
-    margin-left: 2.8%;
 }
 
 .manu-legend {
@@ -200,10 +200,9 @@
 }
 
 .legend-dot {
-    margin-top: calc(-5 * 0.063rem);
     margin-left: calc(5 * 0.063rem);
-    height: 22px;
-    width: 22px;
+    height: 21px;
+    width: 21px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -572,80 +571,6 @@ td > * {
 }
 
 
-.custom_radio_button:after {
-    background: red;
-}
-
-/* The container */
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Hide the browser's default checkbox */
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-/* Create a custom checkbox */
-.checkbox_customized {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.container2:hover input ~ .checkbox_customized {
-    background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container2 input:checked ~ .checkbox_customized {
-    background-color: #2196F3;
-    background-color: red;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkbox_customized:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.container2 input:checked ~ .checkbox_customized:after {
-    display: block;
-}
-
-/* Style the checkmark/indicator */
-.container2 .checkbox_customized:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-
 .button {
     font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
     font-family: OpenSans-SemiBold, serif;
@@ -676,6 +601,20 @@ td > * {
     color: var(--notification-Blue);
     opacity: 0.4;
     cursor: default;
+}
+
+.progress-wrapper {
+    margin-top: calc(var(--marginOne) * 0.063rem);
+    border: 1px solid #E1E5EB;
+    height: 100px;
+    font-size: calc(var(--mainFontSize) * 0.063rem);
+    border-radius: 5px;
+}
+
+.mainView-Button-container {
+    margin-top: calc(var(--marginOne) * 0.063rem);
+    display: flex;
+    justify-content: flex-end;
 }
 
 /*Styling Neue Gefährdung erstellen*/
