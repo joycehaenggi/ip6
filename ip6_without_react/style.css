@@ -927,7 +927,7 @@ input[type="text"] {
 
 @media (max-width: 700px) {
     .manufacturing-step-navigation, .manufacturing-step-information {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: flex-start;
         height: 50px;
     }
@@ -938,6 +938,6 @@ input[type="text"] {
 
     .manufacturing-legend{
         margin-top: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 }
