@@ -466,8 +466,8 @@ td > * {
 .fourtySevenPercent {
     width: 47%;
     text-align: left;
-    padding-left: calc(8 * 0.063rem);
     float: left;
+    justify-content: flex-start;
 }
 
 .icon_list {
@@ -922,5 +922,22 @@ input[type="text"] {
 @media (max-width: 700px) {
     .table {
         overflow-x: scroll;
+    }
+}
+
+@media (max-width: 700px) {
+    .manufacturing-step-navigation, .manufacturing-step-information {
+        flex-direction: column;
+        align-items: flex-start;
+        height: 50px;
+    }
+
+    .manufacturing-step-information{
+        margin-top: 30px;
+    }
+
+    .manufacturing-legend{
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
 }
