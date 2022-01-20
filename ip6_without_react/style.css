@@ -517,7 +517,7 @@ td > * {
 
 /*Styling Neue Gefährdung erstellen*/
 
-form{
+form {
     height: 25rem;
 
 }
@@ -567,7 +567,7 @@ form{
 
 }
 
-.long{
+.long {
     width: 30em;
     height: 2em;
 }
@@ -578,7 +578,7 @@ form{
 
 }
 
-.end{
+.end {
     left: 58rem;
 }
 
@@ -586,28 +586,28 @@ form{
     margin-top: 25px;
 }
 
-.row_special_margin{
-    margin-top: 65px;
+.row_special_margin {
+    margin-top: 20px;
 }
 
-.special{
-    margin-top: 110px;
+.special {
+    margin-top: 20px;
 }
 
-.margin_end{
+.margin_end {
     margin-top: 160px;
 }
 
-.radio_margin{
+.radio_margin {
     display: flex;
     padding-left: 9.2rem;
 }
 
-.position_middle{
+.position_middle {
     left: 30rem;
 }
 
-.position_right{
+.position_right {
     left: 50rem;
 }
 
@@ -677,16 +677,24 @@ form{
     background: var(--header-Darkblue);
 }
 
-input[type="button"]{
+input[type="button"] {
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 11px;
 }
 
-input[type="text"]{
+input[type="text"] {
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 11px;
 }
 
+.neue_gefaehrdung_info_icon {
+    margin: 0 8px;
+}
+
+.neue_gefaehrdung_add_icon {
+    margin-left: 31rem;
+    margin-top: 1.7rem;
+}
 
 
 @media (max-width: 900px) {
