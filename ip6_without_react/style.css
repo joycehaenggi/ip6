@@ -56,6 +56,11 @@
     padding-right: var(--paddingLeftRight);
 }
 
+.header a{
+    color:white;
+    text-decoration: none;
+}
+
 .wrapper {
     margin-top: calc(var(--marginOne) * 0.063rem);
     padding-left: var(--paddingLeftRight);
