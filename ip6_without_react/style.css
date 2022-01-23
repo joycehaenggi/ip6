@@ -91,7 +91,6 @@
     height: 100%;
     align-items: center;
     display: flex;
-    background-color: var(--header-Darkblue) !important;
 }
 
 .header-links ul {
@@ -123,6 +122,7 @@
     align-items: center;
     font-family: 'OpenSans-Bold', sans-serif;
     font-size: calc(11 * 0.063rem);
+    margin-top: calc(20 * 0.063rem);
 }
 
 .navigation-tree {
@@ -401,9 +401,11 @@ th {
 .th_title {
     font-family: OpenSans-SemiBold, sans-serif;
     float: left;
+    padding-top: 12px;
 }
 
 .sort {
+    /*padding-bottom: calc(8 * 0.063rem);*/
     float: right;
 }
 
@@ -583,6 +585,7 @@ td > * {
 .button {
     font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
     font-family: OpenSans-SemiBold, serif;
+    /*font-family: OpenSans-Bold, serif;*/
     width: 140px;
     height: 38px;
     border-radius: 50px;
@@ -699,11 +702,11 @@ form {
 }
 
 .row_special_margin {
-    margin-top: 65px;
+    margin-top: 20px;
 }
 
 .special {
-    margin-top: 110px;
+    margin-top: 20px;
 }
 
 .margin_end {
@@ -837,6 +840,16 @@ input[type="text"] {
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 11px;
 }
+
+.neue_gefaehrdung_info_icon {
+    margin: 0 8px;
+}
+
+.neue_gefaehrdung_add_icon {
+    margin-left: 31rem;
+    margin-top: 1.7rem;
+}
+
 
 @media (max-width: 1050px) {
     .header {
