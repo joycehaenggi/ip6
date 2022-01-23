@@ -116,18 +116,15 @@ function numberOfCheckedCheckboxes() {
 }
 
 nextStep.onmouseover = function() {
-    nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
-    nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
-    percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
+    numberOfCheckedCheckboxes()
+
     if (percentageOfCheckedCheckboxes === 100){
         nextStep.style.background = "#4C5A69";
     }
 };
 
 nextStep.onmouseout = function() {
-    nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
-    nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
-    percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
+    numberOfCheckedCheckboxes()
 
     if (percentageOfCheckedCheckboxes === 100){
         nextStep.style.background = "#687D99";
