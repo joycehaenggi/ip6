@@ -32,6 +32,7 @@
     --notification-Blue: #4C5A69;
     --button-Blue: #687D99;
     --Frames-BlueGray: #E1E5EB;
+    --Button-Hover: #212B36;
     --riskPriority-Green: #008351;
     --riskPriority-Yellow: #FAD201;
     --riskPriority-Red: #CC0605;
@@ -588,6 +589,11 @@ td > * {
     justify-content: center;
     align-items: center;
     display: flex;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--notification-Blue);
 }
 
 .submit {
@@ -600,16 +606,12 @@ td > * {
     margin-right: 30px;
 }
 
-.button {
-    cursor: pointer;
-}
-
-.cancel {
+/*#cancel {
     background-color: var(--Frames-BlueGray);
     color: var(--notification-Blue);
     opacity: 0.4;
     cursor: default;
-}
+}*/
 
 .progress-wrapper {
     margin-top: calc(var(--marginOne) * 0.063rem);

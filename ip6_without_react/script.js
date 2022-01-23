@@ -6,7 +6,7 @@ let notification = document.getElementById("notification");
 let info_icon = document.getElementById("info_icon");
 let text_notification = document.getElementById("text_notification");
 let arrow_id = document.getElementById("arrow_id");
-let cancel = document.getElementById("cancel");
+let nextStep = document.getElementById("nextStep");
 
 let speedAndTimoutNotification = 900;
 let speedProgressBarAnimation = 1000;
@@ -19,14 +19,6 @@ let fullNotification;
 let checkbox;
 let item;
 
-if (fullNotification === undefined) {
-    fullNotification = "true";
-}
-
-toggleButton.addEventListener('click', () => {
-    navbarLinks.classList.toggle('active')
-})
-
 window.onload = function () {
     numberOfCheckedCheckboxes();
     fullNotification = localStorage.getItem("someVarKey");
@@ -37,6 +29,27 @@ window.onload = function () {
         text_notification.style.arrow_id = "none";
     }
 }
+
+nextStep.onmouseover = function() {
+    numberOfCheckedCheckboxes();
+    if (percentageOfCheckedCheckboxes === 100){
+        nextStep.style.background = "#4C5A69";
+    }
+};
+
+nextStep.onmouseout = function() {
+    if (percentageOfCheckedCheckboxes === 100){
+        nextStep.style.background = "#687D99";
+    }
+};
+
+if (fullNotification === undefined) {
+    fullNotification = "true";
+}
+
+toggleButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+})
 
 
 // Function to decrease notification size
@@ -103,15 +116,15 @@ function numberOfCheckedCheckboxes() {
     }
 
     if (percentageOfCheckedCheckboxes === 100) {
-        cancel.style.color = 'white';
-        cancel.style.background = '#687D99';
-        cancel.style.opacity = '1.0';
-        cancel.style.cursor = 'pointer';
+        nextStep.style.color = 'white';
+        nextStep.style.background = '#687D99';
+        nextStep.style.opacity = '1.0';
+        nextStep.style.cursor = 'pointer';
     } else {
-        cancel.style.color = '#4C5A69';
-        cancel.style.background = '#E1E5EB';
-        cancel.style.opacity = '0.4';
-        cancel.style.cursor = 'default';
+        nextStep.style.color = '#4C5A69';
+        nextStep.style.background = '#E1E5EB';
+        nextStep.style.opacity = '0.4';
+        nextStep.style.cursor = 'default';
     }
 }
 
