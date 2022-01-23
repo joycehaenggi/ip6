@@ -7,6 +7,7 @@ let info_icon = document.getElementById("info_icon");
 let text_notification = document.getElementById("text_notification");
 let arrow_id = document.getElementById("arrow_id");
 let nextStep = document.getElementById("nextStep");
+let nextStepLink = document.getElementById("nextStep-Link");
 
 let speedAndTimoutNotification = 900;
 let speedProgressBarAnimation = 1000;
@@ -29,19 +30,6 @@ window.onload = function () {
         text_notification.style.arrow_id = "none";
     }
 }
-
-nextStep.onmouseover = function() {
-    numberOfCheckedCheckboxes();
-    if (percentageOfCheckedCheckboxes === 100){
-        nextStep.style.background = "#4C5A69";
-    }
-};
-
-nextStep.onmouseout = function() {
-    if (percentageOfCheckedCheckboxes === 100){
-        nextStep.style.background = "#687D99";
-    }
-};
 
 if (fullNotification === undefined) {
     fullNotification = "true";
@@ -101,9 +89,6 @@ function decreaseNotification() {
 function numberOfCheckedCheckboxes() {
     nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
     nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
-
-    console.log(nunmberofCheckedCheckboxes);
-
     percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
 
     $("div.progress_in_percent").animate({
@@ -120,13 +105,34 @@ function numberOfCheckedCheckboxes() {
         nextStep.style.background = '#687D99';
         nextStep.style.opacity = '1.0';
         nextStep.style.cursor = 'pointer';
+        nextStepLink.style.pointerEvents = 'auto';
     } else {
         nextStep.style.color = '#4C5A69';
         nextStep.style.background = '#E1E5EB';
         nextStep.style.opacity = '0.4';
         nextStep.style.cursor = 'default';
+        nextStepLink.style.pointerEvents = 'none';
     }
 }
+
+nextStep.onmouseover = function() {
+    nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
+    nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
+    if (percentageOfCheckedCheckboxes === 100){
+        nextStep.style.background = "#4C5A69";
+    }
+};
+
+nextStep.onmouseout = function() {
+    nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
+    nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
+
+    if (percentageOfCheckedCheckboxes === 100){
+        nextStep.style.background = "#687D99";
+    }
+};
 
 document.addEventListener("DOMContentLoaded", function () {
     checkbox = document.querySelectorAll("input[type='checkbox']");
