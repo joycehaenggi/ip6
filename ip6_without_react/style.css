@@ -602,19 +602,17 @@ td > * {
 .submit {
     background-color: var(--button-Blue);
     color: white;
-}
-
-.mainView-Button {
-    float: left;
     margin-right: 30px;
 }
 
-/*#cancel {
+.cancel {
     background-color: var(--Frames-BlueGray);
     color: var(--notification-Blue);
-    opacity: 0.4;
-    cursor: default;
-}*/
+}
+
+.cancel:hover {
+    background-color: #d3d8e1;
+}
 
 .progress-wrapper {
     margin-top: calc(var(--marginOne) * 0.063rem);
