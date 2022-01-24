@@ -121,6 +121,7 @@ a {
 
 .manufacturing-step-navigation {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     font-family: 'OpenSans-Bold', sans-serif;

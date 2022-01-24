@@ -262,6 +262,36 @@
         </div>
         <div class="tbody">
 
+            <div id="hazards-checklist"></div>
+
+            <script>
+                let hazards_array = [
+                    ["toThin.svg", "yellow", "Designvorgabe \"Mindestdicke\" kann nicht eingehalten werden - Dicke des Implantsts zu dünn."],
+                    ["dimensionally_unstable.svg", "green", "Designvorgabe \"Mindestdicke\" kann nicht eingehalten werden - Implantat nicht formstabil."],
+                    ["nut.svg", "green", "Designvorgabe \"Anzahl Schraubenlöcher\" kann nicht eingehalten werden."],
+                    ["nut.svg", "red", "Designvorgabe \"Platzierung der Schraubenlöcher\" kann nicht eingehalten werden."],
+                    ["screw.svg", "yellow", "Designvorgabe \"Schraubentyp/Durchmesser/Länge\" kann nicht eingehalten werden."]
+                ];
+
+                // const hazards_array = ["Gefährdung1", "Gefährdung2"];
+                let text = "";
+
+                for (let i = 0; i < hazards_array.length; i++) {
+                    text += "<div class='tr accordion'>";
+                    // text += "<div class='element'>"+ items [i] +"</div>";
+                                text += "<div class='td fivePercent'><img src='svg/"+hazards_array[i][0]+"' class='icon_list' width='21' height='16'></div>" +
+                                        "<div class='td tenPercent'><span class='dot "+hazards_array[i][1]+"'></span></div>" +
+                                        "<div class='td fourtySevenPercent'>"+hazards_array[i][2]+"</div>" +
+                                        "<div class='td thirteenPercent'><input id='confirm"+hazards_array[i]+"' type='checkbox' onclick='numberOfCheckedCheckboxes()' /><label for='confirm"+hazards_array[i]+"'></label></div>" +
+                                        "<div class='td tenPercent'>aa</div>" +
+                                        "<div class='td fifteenPercent'>aa</div>";
+                    text += "</div>";
+                }
+                document.getElementById("hazards-checklist").innerHTML = text;
+
+            </script>
+
+
             <div class="tr accordion">
                 <div class="td fivePercent">
                     <svg class="icon_list" width="21" height="16" viewBox="0 0 21 16" fill="none"
@@ -351,8 +381,7 @@
                     Implantsts zu dünn.
                 </div>
                 <div class="td thirteenPercent">
-                    <input id="confirm" type="checkbox" onclick="numberOfCheckedCheckboxes()"/><label
-                        for="confirm"></label>
+                    <input id="confirm" type="checkbox" onclick="numberOfCheckedCheckboxes()"/><label for="confirm"></label>
                 </div>
 
                 <div data-tooltip="Akzeptiert-Status" class="td tenPercent">

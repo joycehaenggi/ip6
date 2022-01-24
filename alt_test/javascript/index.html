@@ -13,18 +13,27 @@
 </head>
 <body>
 
-<div id="demo"></div>
+<div id="hazards-checklist"></div>
 
 <script>
-    const cars = ["Gefährdung1", "Gefährdung2"];
+    let hazards_array = [
+        ["dd", "DE", "Hallo"],
+        [3, "IT", "buongiorno"],
+        [5, "FR", "bonjour"]
+    ];
+
+    // const hazards_array = ["Gefährdung1", "Gefährdung2"];
 
     let text = "";
-    for (let i = 0; i < cars.length; i++) {
-        text += cars[i] + "<br>";
-        text += "<div class='element'>Hallo </div>";
+    for (let i = 0; i < hazards_array.length; i++) {
+        // text += cars[i] + "<br>";
+        // text += "<div class='element'>"+ items [i] +"</div>";
+        for(let j = 0; j < hazards_array[i].length; j++){
+            text += "<div class='element'>"+ hazards_array [i][j] +"</div>";
+        }
     }
+    document.getElementById("hazards-checklist").innerHTML = text;
 
-    document.getElementById("demo").innerHTML = text;
 </script>
 
 </body>
