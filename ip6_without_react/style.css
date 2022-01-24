@@ -526,32 +526,34 @@ td > * {
 
 .form-wrapper{
     display: flex;
-
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .neue_gefaherdung_label{
-    width: 100px;
+    width: 20rem;
+    margin-top: 1rem;
 }
 
 
 .neue_gefaehrdung_input{
+        border: 1px solid var(--Frames-BlueGray);
+        border-radius: 5px;
+
 }
 
 
-/*.neue_gefaehrdung_table {*/
-/*    border-spacing: 0;*/
+.neue_gefaehrdung_table {
+    border-spacing: 0;
 
-/*}*/
+}
 
-/*.neue_gefaehrdung_th {*/
-/*    background-color: var(--Frames-BlueGray);*/
-/*}*/
+.neue_gefaehrdung_th {
+    background-color: var(--Frames-BlueGray);
+    font-size: 14px;
+}
 
-/*!*.neue_gefaehrdung_th_title {*!*/
-/*!*    font-size: 14px;*!*/
-/*!*}*!*/
+
 
 /*.neue_gefaehrdung_th_title_first_child {*/
 /*    height: 30em;*/
