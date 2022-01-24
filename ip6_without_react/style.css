@@ -521,9 +521,13 @@ input.searchfield {
     transition: 0.4s;
 }
 
-.active, .active .td, .accordion:hover {
+.active, .active .td, .accordion:hover{
     background-color: #E1E5EB;
     font-family: 'OpenSans-SemiBold', sans-serif;
+}
+
+.active .td .arrowDown{
+    transform: rotate(180deg);
 }
 
 .panel {
