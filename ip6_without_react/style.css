@@ -1,3 +1,4 @@
+/*---- Adding fonts ----*/
 @font-face {
     font-family: 'Oswald';
     src: url("fonts/Oswald-Regular.ttf");
@@ -18,6 +19,8 @@
     src: url("fonts/OpenSans-Bold.ttf");
 }
 
+
+/*---- General settings ----*/
 * {
     margin: 0;
     padding: 0;
@@ -44,6 +47,8 @@
     --secondFontSize: 12;
 }
 
+
+/*---- Header ----*/
 .header {
     font-size: calc(14 * 0.063rem);
     position: relative;
@@ -64,13 +69,6 @@
 a {
     text-decoration: none;
 }
-
-.wrapper {
-    margin-top: calc(var(--marginOne) * 0.063rem);
-    padding-left: var(--paddingLeftRight);
-    padding-right: var(--paddingLeftRight);
-}
-
 
 .logo_title {
     margin: .5rem;
@@ -116,9 +114,36 @@ a {
 .header-links li:hover a {
     background-color: var(--notification-Blue);
     border-radius: 5px;
-
 }
 
+.toggle-button {
+    position: absolute;
+    top: calc(20 * 0.063rem);
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+/*---- Wrapper ----*/
+.wrapper {
+    margin-top: calc(var(--marginOne) * 0.063rem);
+    padding-left: var(--paddingLeftRight);
+    padding-right: var(--paddingLeftRight);
+}
+
+
+/*---- Top-overview ----*/
 .manufacturing-step-navigation {
     display: flex;
     flex-direction: row;
@@ -142,7 +167,6 @@ a {
 .next-arrow-first-child {
     margin-left: calc(12 * 0.063rem);
 }
-
 
 input.searchfield {
     box-sizing: border-box;
@@ -182,22 +206,18 @@ input.searchfield {
     font-size: calc(14 * 0.063rem);
 }
 
-
 .manufacturing-legend {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 21px;
+    font-size: calc(11 * 0.063rem);
 }
 
 .manufacturing-legend-elements {
     display: flex;
     font-size: calc(11 * 0.063rem);
     margin-top: calc(1.4 * 0.063rem);
-}
-
-.manu-legend-tittle {
-    font-size: calc(11 * 0.063rem);
 }
 
 .low, .middle, .high {
@@ -209,10 +229,6 @@ input.searchfield {
     margin-left: 9px;
 }
 
-/*.manu-legend {
-    margin-left: calc(5 * 0.063rem);
-}*/
-
 .legend-dot {
     height: 21px;
     width: 21px;
@@ -221,24 +237,7 @@ input.searchfield {
 }
 
 
-.toggle-button {
-    position: absolute;
-    top: calc(20 * 0.063rem);
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-}
-
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-}
-
+/*---- Notification-panel ----*/
 .rectangle {
     display: block;
     height: 30px;
@@ -259,7 +258,6 @@ input.searchfield {
     margin-bottom: calc(var(--marginOne) * 0.063rem);
 }
 
-
 .notification:active p, .notification:active .arrow_right {
     display: none;
 }
@@ -277,71 +275,8 @@ input.searchfield {
     margin: 0 25px;
 }
 
-.title_progress_bar {
-    margin-left: 2.5%;
-    height: 17px;
-    margin-top: 12px;
-    color: var(--notification-Blue);
-}
 
-.progress_bar {
-    height: 17px;
-    width: 95%;
-    background-color: var(--Frames-BlueGray);
-    border-radius: 5px;
-    margin-left: 2.5%;
-    margin-top: 21px;
-}
-
-.progress_in_percent {
-    height: 100%;
-    width: 0;
-    background-color: var(--notification-Blue);
-    border-radius: 5px;
-    color: white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-table p:last-child {
-    float: right;
-}
-
-table {
-    border-collapse: separate;
-    width: 100%;
-    border-spacing: 0 calc(10 * 0.063em);
-    font-size: calc(var(--mainFontSize) * 0.063rem);
-}
-
-td, th {
-    text-align: left;
-}
-
-th, td {
-    padding: 8px;
-    height: 45px;
-}
-
-td {
-    border-bottom: 1px solid;
-    border-top: 1px solid;
-    border-color: var(--Frames-BlueGray);;
-}
-
-th {
-    border: solid 1px #E1E5EB;
-    border-right: none;
-    /*padding-top: 21px;*/
-    padding-bottom: calc(10 * 0.063rem);
-    padding-left: calc(10 * 0.063rem);
-    padding-top: calc(5 * 0.063rem);
-    padding-right: calc(5 * 0.063rem);
-    font-family: OpenSans-SemiBold, sans-serif;
-}
-
+/*---- List-of hazards ----*/
 .table {
     border-collapse: separate;
     width: 100%;
@@ -375,85 +310,13 @@ th {
     border-right: none;
 }
 
-
-td, th {
-    text-align: left;
-}
-
-th, td {
-    padding: 8px;
-    height: 45px;
-}
-
-td {
-    border-bottom: 1px solid;
-    border-top: 1px solid;
-    border-color: var(--Frames-BlueGray);;
-}
-
-th {
-    border: solid 1px #E1E5EB;
-    border-right: none;
-    /*padding-top: 21px;*/
-    padding-bottom: calc(10 * 0.063rem);
-    padding-left: calc(10 * 0.063rem);
-    padding-top: calc(5 * 0.063rem);
-    padding-right: calc(5 * 0.063rem);
-    font-family: OpenSans-SemiBold, sans-serif;
-}
-
-.th_title {
-    font-family: OpenSans-SemiBold, sans-serif;
-    float: left;
-    padding-top: 12px;
-}
-
 .sort {
-    /*padding-bottom: calc(8 * 0.063rem);*/
     float: right;
 }
-
-th.radioButtonsColumn {
-    padding-top: 5px;
-}
-
-th:first-child, td:first-child {
-    border: solid 1px #E1E5EB;
-    border-right: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-th:last-child, td:last-child {
-    border: solid 1px #E1E5EB;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-
-td:last-child {
-    border-left: none;
-}
-
-td.dropdown:last-child {
-    border: solid 1px #E1E5EB;
-}
-
-
-td {
-    text-align: center;
-    vertical-align: middle;
-}
-
-td > * {
-    vertical-align: middle;
-}
-
 
 .fivePercent {
     width: 5%;
     float: left;
-    /*text-align: center;*/
 }
 
 .tenPercent {
@@ -548,10 +411,7 @@ td > * {
     width: 140px;
     left: calc(50% - 70px);
     top: 65%;
-    /*    left: 52%;
-        top: 50%;*/
     box-sizing: border-box;
-    /*text-align: left;*/
     text-align: center;
 
     content: attr(data-tooltip);
@@ -575,21 +435,55 @@ td > * {
     transform: translateY(0) translateX(0px);
 }
 
-.custom_radio_button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 15px;
-    width: 15px;
-    border: 1px solid var(--header-Darkblue);
-    border-radius: 100%;
+
+/*---- Progress-bar ----*/
+.title_progress_bar {
+    margin-left: 2.5%;
+    height: 17px;
+    margin-top: 12px;
+    color: var(--notification-Blue);
 }
 
+.progress_bar {
+    height: 17px;
+    width: 95%;
+    background-color: var(--Frames-BlueGray);
+    border-radius: 5px;
+    margin-left: 2.5%;
+    margin-top: 21px;
+}
+
+.progress_in_percent {
+    height: 100%;
+    width: 0;
+    background-color: var(--notification-Blue);
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-wrapper {
+    margin-top: calc(var(--marginOne) * 0.063rem);
+    border: 1px solid #E1E5EB;
+    height: 100px;
+    font-size: calc(var(--mainFontSize) * 0.063rem);
+    border-radius: 5px;
+}
+
+
+/*---- Buttons ----*/
+.mainView-Button-container {
+    margin-top: calc(var(--marginOne) * 0.063rem);
+    display: flex;
+    justify-content: flex-end;
+}
 
 .button {
     font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
     font-family: OpenSans-SemiBold, serif;
-    /*font-family: OpenSans-Bold, serif;*/
     width: 140px;
     height: 38px;
     border-radius: 50px;
@@ -618,30 +512,149 @@ td > * {
     background-color: #d3d8e1;
 }
 
-.progress-wrapper {
-    margin-top: calc(var(--marginOne) * 0.063rem);
-    border: 1px solid #E1E5EB;
-    height: 100px;
+/*---- Detail-View with Accordion ----*/
+.accordion {
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: 0.4s;
+}
+
+.active, .active .td, .accordion:hover {
+    background-color: #E1E5EB;
+    font-family: 'OpenSans-SemiBold', sans-serif;
+}
+
+.panel {
+    padding: 0 20px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+}
+
+.block {
+    height: 48px;
+    margin-top: 18px;
+}
+
+.block-title {
+    font-family: 'OpenSans-SemiBold', sans-serif;
+}
+
+.block-text {
+    margin-left: 40px;
+    margin-top: 8px;
+}
+
+input[type="text"] {
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 11px;
+}
+
+.neue_gefaehrdung_info_icon {
+    margin: 0 8px;
+}
+
+.neue_gefaehrdung_add_icon {
+    margin-left: 31rem;
+    margin-top: 1.7rem;
+}
+
+/*---- Create new hazard-page ----*/
+table {
+    border-collapse: separate;
+    width: 100%;
+    border-spacing: 0 calc(10 * 0.063em);
     font-size: calc(var(--mainFontSize) * 0.063rem);
-    border-radius: 5px;
 }
 
-.mainView-Button-container {
-    margin-top: calc(var(--marginOne) * 0.063rem);
-    display: flex;
-    justify-content: flex-end;
+table p:last-child {
+    float: right;
 }
 
-/*Styling Neue Gefährdung erstellen*/
+td, th {
+    text-align: left;
+}
+
+th, td {
+    padding: 8px;
+    height: 45px;
+}
+
+td {
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-color: var(--Frames-BlueGray);;
+}
+
+th {
+    border: solid 1px #E1E5EB;
+    border-right: none;
+    padding-bottom: calc(10 * 0.063rem);
+    padding-left: calc(10 * 0.063rem);
+    padding-top: calc(5 * 0.063rem);
+    padding-right: calc(5 * 0.063rem);
+    font-family: OpenSans-SemiBold, sans-serif;
+}
+
+.th_title {
+    font-family: OpenSans-SemiBold, sans-serif;
+    float: left;
+    padding-top: 12px;
+}
+
+th.radioButtonsColumn {
+    padding-top: 5px;
+}
+
+th:first-child, td:first-child {
+    border: solid 1px #E1E5EB;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+th:last-child, td:last-child {
+    border: solid 1px #E1E5EB;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+td:last-child {
+    border-left: none;
+}
+
+td.dropdown:last-child {
+    border: solid 1px #E1E5EB;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td > * {
+    vertical-align: middle;
+}
+
+.custom_radio_button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border: 1px solid var(--header-Darkblue);
+    border-radius: 100%;
+}
 
 form {
     height: 25rem;
-
 }
 
 .neue_gefaehrdung_table {
     border-spacing: 0;
-
 }
 
 .hundredPercent {
@@ -681,7 +694,6 @@ form {
     display: flex;
     position: absolute;
     left: 15rem;
-
 }
 
 .long {
@@ -692,7 +704,6 @@ form {
 .short {
     height: 2em;
     width: 10em;
-
 }
 
 .end {
@@ -750,7 +761,6 @@ form {
     cursor: pointer;
 }
 
-
 /* Create a custom radio button */
 .custom_radio_button {
     position: absolute;
@@ -799,60 +809,8 @@ input[type="button"] {
     font-size: 11px;
 }
 
-/* Detailansicht mit Accordion */
-.accordion {
-    color: #444;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    transition: 0.4s;
 
-}
-
-.active, .active .td, .accordion:hover {
-    background-color: #E1E5EB;
-    font-family: 'OpenSans-SemiBold', sans-serif;
-}
-
-.panel {
-    padding: 0 20px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease-out;
-}
-
-.block {
-    /*padding-top: 18px;*/
-    height: 48px;
-    margin-top: 18px;
-}
-
-.block-title {
-    font-family: 'OpenSans-SemiBold', sans-serif;
-}
-
-.block-text {
-    margin-left: 40px;
-    margin-top: 8px;
-}
-
-
-input[type="text"] {
-    font-family: "OpenSans-Regular", sans-serif;
-    font-size: 11px;
-}
-
-.neue_gefaehrdung_info_icon {
-    margin: 0 8px;
-}
-
-.neue_gefaehrdung_add_icon {
-    margin-left: 31rem;
-    margin-top: 1.7rem;
-}
-
-
+/*---- Responsive adjustment ----*/
 @media (max-width: 1050px) {
     .header {
         padding-left: 0;
@@ -939,12 +897,6 @@ input[type="text"] {
 }
 
 @media (max-width: 700px) {
-    .table {
-        overflow-x: scroll;
-    }
-}
-
-@media (max-width: 700px) {
     .manufacturing-step-navigation, .manufacturing-step-information {
         flex-direction: column-reverse;
         align-items: flex-start;
@@ -958,5 +910,9 @@ input[type="text"] {
     .manufacturing-legend{
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .table {
+        overflow-x: scroll;
     }
 }
