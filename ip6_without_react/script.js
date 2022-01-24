@@ -51,7 +51,8 @@ function decreaseNotification() {
 
         $("div.notification").animate({
             width: '-=95%'
-        }, speedAndTimoutNotification);
+        }, speedAndTimoutNotification
+        );
 
         fullNotification = "false";
 
@@ -70,9 +71,11 @@ function decreaseNotification() {
 
         $("div.notification").animate({
             width: '+=95%'
-        }, speedAndTimoutNotification);
+        }, speedAndTimoutNotification
+        );
 
         setTimeout(myGreeting, speedAndTimoutNotification);
+
         function myGreeting() {
             text_notification.style.display = "block";
             arrow_id.style.display = "flex";
@@ -92,8 +95,10 @@ function numberOfCheckedCheckboxes() {
     percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
 
     $("div.progress_in_percent").animate({
-        width: +percentageOfCheckedCheckboxes + '%'
-    }, speedProgressBarAnimation);
+        width: +percentageOfCheckedCheckboxes + '%',
+        innerHTML: percentageOfCheckedCheckboxes,
+    }, speedProgressBarAnimation,
+    );
 
     document.getElementById("progress_in_percent").innerHTML = percentageOfCheckedCheckboxes + '%';
     if (percentageOfCheckedCheckboxes === 0) {
@@ -115,18 +120,18 @@ function numberOfCheckedCheckboxes() {
     }
 }
 
-nextStep.onmouseover = function() {
+nextStep.onmouseover = function () {
     numberOfCheckedCheckboxes()
 
-    if (percentageOfCheckedCheckboxes === 100){
+    if (percentageOfCheckedCheckboxes === 100) {
         nextStep.style.background = "#4C5A69";
     }
 };
 
-nextStep.onmouseout = function() {
+nextStep.onmouseout = function () {
     numberOfCheckedCheckboxes()
 
-    if (percentageOfCheckedCheckboxes === 100){
+    if (percentageOfCheckedCheckboxes === 100) {
         nextStep.style.background = "#687D99";
     }
 };
@@ -153,16 +158,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 var acc = document.getElementsByClassName("accordion");
+let arrowDown = document.getElementsByClassName("arrowDown")
 var i;
 
 for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
+    acc[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
+        var arrowDownChange = this.element;
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
+            arrowDownChange.style.transform = 'rotate(0deg)';
         } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
+            arrowDownChange.style.transform = 'rotate(180deg)';
         }
     });
 }
