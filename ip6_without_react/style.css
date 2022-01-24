@@ -526,8 +526,15 @@ input.searchfield {
     font-family: 'OpenSans-SemiBold', sans-serif;
 }
 
+.arrowDown{
+    transform: rotate(0deg);
+    transition: 1s ease-out;
+}
+
+
 .active .td .arrowDown{
     transform: rotate(180deg);
+    transition: 1s ease-out;
 }
 
 .panel {
