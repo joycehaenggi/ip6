@@ -512,6 +512,7 @@ input.searchfield {
     background-color: #d3d8e1;
 }
 
+
 /*---- Detail-View with Accordion ----*/
 .accordion {
     color: #444;
@@ -752,6 +753,7 @@ form {
 .position_right {
     left: 50rem;
 }
+
 
 /* Radio Buttons neue Gefährdung erstellen */
 .container {
