@@ -521,8 +521,11 @@ input.searchfield {
     transition: 0.4s;
 }
 
-.active, .active .td, .accordion:hover{
+.active, .accordion:hover{
     background-color: #E1E5EB;
+}
+
+.active .fourtySevenPercent {
     font-family: 'OpenSans-SemiBold', sans-serif;
 }
 
