@@ -158,7 +158,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 var acc = document.getElementsByClassName("accordion");
-let arrowDown = document.getElementsByClassName("arrowDown")
 var i;
 
 for (i = 0; i < acc.length; i++) {
@@ -168,10 +167,8 @@ for (i = 0; i < acc.length; i++) {
         var arrowDownChange = this.element;
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
-            arrowDownChange.style.transform = 'rotate(0deg)';
         } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
-            arrowDownChange.style.transform = 'rotate(180deg)';
         }
     });
 }
