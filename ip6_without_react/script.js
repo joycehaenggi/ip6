@@ -96,7 +96,7 @@ function numberOfCheckedCheckboxes() {
 
     $("div.progress_in_percent").animate({
         width: +percentageOfCheckedCheckboxes + '%',
-        innerHTML: percentageOfCheckedCheckboxes,
+        // innerHTML: percentageOfCheckedCheckboxes,
     }, speedProgressBarAnimation,
     );
 
