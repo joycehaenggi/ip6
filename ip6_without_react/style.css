@@ -516,100 +516,105 @@ td > * {
 }
 
 /*Styling Neue Gefährdung erstellen*/
-
-form {
-    height: 25rem;
-
-}
-
-.neue_gefaehrdung_table {
-    border-spacing: 0;
-
-}
-
 .hundredPercent {
     width: 100%;
 }
 
-.neue_gefaehrdung_th {
-    background-color: var(--Frames-BlueGray);
-}
+/*form {*/
+/*    height: 25rem;*/
+/*}*/
 
-.neue_gefaehrdung_th_title {
-    font-size: 14px;
-}
-
-.neue_gefaehrdung_th_title_first_child {
-
-    text-align: start;
-    height: 30em;
-    font-size: 11px;
-}
-
-.neue_gefaherdung_label {
+.form-wrapper{
     display: flex;
-    position: absolute;
-    left: 6rem;
+
+    justify-content: space-between;
+    align-items: center;
 }
 
-.neue_gefaehrdung_input {
-    display: flex;
-    position: absolute;
-    left: 15rem;
-    border: 1px solid var(--Frames-BlueGray);
-    border-radius: 5px;
+.neue_gefaherdung_label{
+    width: 100px;
 }
 
-.neue_gefaehrdung_input_button {
-    display: flex;
-    position: absolute;
-    left: 15rem;
 
+.neue_gefaehrdung_input{
 }
+
+
+/*.neue_gefaehrdung_table {*/
+/*    border-spacing: 0;*/
+
+/*}*/
+
+/*.neue_gefaehrdung_th {*/
+/*    background-color: var(--Frames-BlueGray);*/
+/*}*/
+
+/*!*.neue_gefaehrdung_th_title {*!*/
+/*!*    font-size: 14px;*!*/
+/*!*}*!*/
+
+/*.neue_gefaehrdung_th_title_first_child {*/
+/*    height: 30em;*/
+/*    font-size: 11px;*/
+
+/*}*/
+
+/*.neue_gefaehrdung_input {*/
+/*    border: 1px solid var(--Frames-BlueGray);*/
+/*    border-radius: 5px;*/
+/*    align-self: center;*/
+/*}*/
+
+/*.neue_gefaehrdung_input_button {*/
+/*    display: flex;*/
+/*    position: absolute;*/
+/*    left: 15rem;*/
+
+/*}*/
 
 .long {
     width: 30em;
     height: 2em;
 }
 
-.short {
-    height: 2em;
-    width: 10em;
+/*.short {*/
+/*    height: 2em;*/
+/*    width: 10em;*/
 
-}
+/*}*/
 
-.end {
-    left: 58rem;
-}
+/*.end {*/
+/*    left: 58rem;*/
+/*}*/
 
-.row_margin {
-    margin-top: 25px;
-}
+/*.row_margin {*/
+/*    margin-top: 25px;*/
+/*}*/
 
-.row_special_margin {
-    margin-top: 20px;
-}
+/*.row_special_margin {*/
+/*    margin-top: 20px;*/
+/*}*/
 
-.special {
-    margin-top: 20px;
-}
+/*.special {*/
+/*    margin-top: 20px;*/
+/*}*/
 
-.margin_end {
-    margin-top: 160px;
-}
+/*.margin_end {*/
+/*    margin-top: 160px;*/
+/*}*/
 
-.radio_margin {
-    display: flex;
-    padding-left: 9.2rem;
-}
+/*.radio_margin {*/
+/*    display: flex;*/
+/*    padding-left: 9.2rem;*/
+/*}*/
 
-.position_middle {
-    left: 30rem;
-}
+/*.position_middle {*/
+/*    left: 30rem;*/
+/*}*/
 
-.position_right {
-    left: 50rem;
-}
+/*.position_right {*/
+/*    left: 50rem;*/
+/*}*/
 
 /* Radio Buttons neue Gefährdung erstellen */
 .container {
