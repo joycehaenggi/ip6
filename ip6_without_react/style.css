@@ -520,9 +520,9 @@ td > * {
     width: 100%;
 }
 
-/*form {*/
-/*    height: 25rem;*/
-/*}*/
+form {
+    height: 25rem;
+}
 
 .form-wrapper {
     display: flex;
@@ -531,10 +531,14 @@ td > * {
 }
 
 .neue_gefaherdung_label {
-    width: 20rem;
+    width: 15rem;
     margin-top: 1rem;
 }
 
+.neue_gefaherdung_label_short {
+    width: 15rem;
+    margin-top: 1rem;
+}
 
 .neue_gefaehrdung_input {
     border: 1px solid var(--Frames-BlueGray);
@@ -542,6 +546,11 @@ td > * {
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 11px;
     width: 20rem;
+    height: 2em;
+}
+
+.short {
+    width: 8rem;
     height: 2em;
 }
 
@@ -554,69 +563,32 @@ td > * {
     font-size: 14px;
 }
 
-.neue_gefaehrdung_add_icon {
-   margin-left: 1rem;
+.neue_gefaehrdung_third_column {
+    margin-left: 6rem;
+    width: 6rem;
 }
 
 
-/*.neue_gefaehrdung_th_title_first_child {*/
-/*    height: 30em;*/
-/*    font-size: 11px;*/
+.neue_gefaehrdung_fourth_column {
+    margin-left: 2rem;
+    width: 7rem;
+}
 
-/*}*/
+.neue_gefaehrdung_fourth_column_long{
+    margin-left: 9rem;
+    width: 7rem;
+}
 
-/*.neue_gefaehrdung_input {*/
-/*    border: 1px solid var(--Frames-BlueGray);*/
-/*    border-radius: 5px;*/
-/*    align-self: center;*/
-/*}*/
+.neue_gefaehrdung_input_button {
+    margin-top: 1rem;
 
-/*.neue_gefaehrdung_input_button {*/
-/*    display: flex;*/
-/*    position: absolute;*/
-/*    left: 15rem;*/
+}
 
-/*}*/
+.radio {
+    display: flex;
+    align-self: flex-start;
+}
 
-
-/*.short {*/
-/*    height: 2em;*/
-/*    width: 10em;*/
-
-/*}*/
-
-/*.end {*/
-/*    left: 58rem;*/
-/*}*/
-
-/*.row_margin {*/
-/*    margin-top: 25px;*/
-/*}*/
-
-/*.row_special_margin {*/
-/*    margin-top: 20px;*/
-/*}*/
-
-/*.special {*/
-/*    margin-top: 20px;*/
-/*}*/
-
-/*.margin_end {*/
-/*    margin-top: 160px;*/
-/*}*/
-
-/*.radio_margin {*/
-/*    display: flex;*/
-/*    padding-left: 9.2rem;*/
-/*}*/
-
-/*.position_middle {*/
-/*    left: 30rem;*/
-/*}*/
-
-/*.position_right {*/
-/*    left: 50rem;*/
-/*}*/
 
 /* Radio Buttons neue Gefährdung erstellen */
 .container {
@@ -693,13 +665,6 @@ input[type="text"] {
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 11px;
 }
-
-.neue_gefaehrdung_info_icon {
-    margin: 0 8px;
-}
-
-
-
 
 @media (max-width: 900px) {
     .header {
