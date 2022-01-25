@@ -540,6 +540,8 @@ form {
     margin-top: 1rem;
 }
 
+
+
 .neue_gefaehrdung_input {
     border: 1px solid var(--Frames-BlueGray);
     border-radius: 5px;
@@ -626,6 +628,7 @@ form {
     height: 2em;
     background-color: #F3F3F3;
 }
+
 
 /* Radio Buttons neue Gefährdung erstellen */
 .container {
