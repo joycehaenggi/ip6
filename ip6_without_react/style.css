@@ -537,18 +537,8 @@ input.searchfield {
     margin-left: calc(30 * 0.063rem);
 }
 
-input[type="text"] {
-    font-family: "OpenSans-Regular", sans-serif;
-    font-size: 11px;
-}
-
-.neue_gefaehrdung_info_icon {
-    margin: 0 8px;
-}
-
-.neue_gefaehrdung_add_icon {
-    margin-left: 31rem;
-    margin-top: 1.7rem;
+.decision-evaluation {
+    display: flex;
 }
 
 
@@ -804,6 +794,20 @@ form {
 
 .position_right {
     left: 50rem;
+}
+
+input[type="text"] {
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 11px;
+}
+
+.neue_gefaehrdung_info_icon {
+    margin: 0 8px;
+}
+
+.neue_gefaehrdung_add_icon {
+    margin-left: 31rem;
+    margin-top: 1.7rem;
 }
 
 

@@ -29,6 +29,7 @@ window.onload = function () {
         text_notification.style.display = "none";
         text_notification.style.arrow_id = "none";
     }
+    localStorage.getItem('dropdownWasOpen')
 }
 
 if (fullNotification === undefined) {
@@ -168,6 +169,7 @@ for (i = 0; i < acc.length; i++) {
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
             panel.style.borderBottom = "none"
+            localStorage.setItem('dropdownWasOpen', 'true');
         } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
             panel.style.borderBottom = "1px solid #E1E5EB"
