@@ -413,14 +413,12 @@ input.searchfield {
     top: 65%;
     box-sizing: border-box;
     text-align: center;
-
     content: attr(data-tooltip);
     color: white;
     background-color: var(--notification-Blue);
     padding: 4px;
     border-radius: 5px;
     font-size: calc(var(--mainFontSize) * 0.063rem);
-
     visibility: hidden;
     opacity: 0;
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
@@ -458,23 +456,65 @@ input.searchfield {
     transition: 1s ease-out;
 }
 
-
 .active .td .arrowDown{
     transform: rotate(180deg);
     transition: 1s ease-out;
 }
 
+.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .panel {
-    padding: 0 20px;
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease-out;
+    border-left: 1px solid var(--Frames-BlueGray);
+    border-right: 1px solid var(--Frames-BlueGray);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.title_with_image_container {
+    padding-top: calc(18 * 0.063rem);
+    padding-bottom: calc(18 * 0.063rem);
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--Frames-BlueGray);
+}
+
+.title_with_image_square {
+    height:  calc(135 * 0.063rem);
+    width:   calc(135 * 0.063rem);
+    background: var(--Frames-BlueGray);
+    border-radius: 5px;
+}
+
+.title_detail_view {
+    margin-top: calc(9 * 0.063rem);
+    text-align: center;
+    font-family: 'OpenSans-SemiBold', sans-serif;
+}
+
+.image_detail_view {
+    margin-left: calc(23 * 0.063rem);
+    margin-right: calc(23 * 0.063rem);
+    margin-top: calc(13 * 0.063rem);
+}
+
+.blocks {
+    padding: 0 20px;
 }
 
 .block {
     height: 48px;
     margin-top: 18px;
+}
+
+.block-effects {
+    height: 335px;
 }
 
 .block-title {
@@ -484,6 +524,15 @@ input.searchfield {
 .block-text {
     margin-left: 40px;
     margin-top: 8px;
+}
+
+.block-graphics{
+    display: flex;
+    margin-top: calc(16 * 0.063rem);
+}
+
+.riskVisualization2 {
+    margin-left: calc(30 * 0.063rem);
 }
 
 input[type="text"] {

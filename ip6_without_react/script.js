@@ -167,8 +167,10 @@ for (i = 0; i < acc.length; i++) {
         var arrowDownChange = this.element;
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
+            panel.style.borderBottom = "none"
         } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.style.borderBottom = "1px solid #E1E5EB"
         }
     });
 }
