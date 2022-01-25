@@ -8,6 +8,8 @@ let text_notification = document.getElementById("text_notification");
 let arrow_id = document.getElementById("arrow_id");
 let nextStep = document.getElementById("nextStep");
 let nextStepLink = document.getElementById("nextStep-Link");
+let postProcessingBlock = document.getElementById("post-processing-block");
+let panel = document.getElementById("panel");
 
 let speedAndTimoutNotification = 900;
 let speedProgressBarAnimation = 1000;
@@ -51,8 +53,8 @@ function decreaseNotification() {
         info_icon.style.display = "flex";
 
         $("div.notification").animate({
-            width: '-=95%'
-        }, speedAndTimoutNotification
+                width: '-=95%'
+            }, speedAndTimoutNotification
         );
 
         fullNotification = "false";
@@ -71,8 +73,8 @@ function decreaseNotification() {
         }
 
         $("div.notification").animate({
-            width: '+=95%'
-        }, speedAndTimoutNotification
+                width: '+=95%'
+            }, speedAndTimoutNotification
         );
 
         setTimeout(myGreeting, speedAndTimoutNotification);
@@ -96,9 +98,9 @@ function numberOfCheckedCheckboxes() {
     percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
 
     $("div.progress_in_percent").animate({
-        width: +percentageOfCheckedCheckboxes + '%',
-        // innerHTML: percentageOfCheckedCheckboxes,
-    }, speedProgressBarAnimation,
+            width: +percentageOfCheckedCheckboxes + '%',
+            // innerHTML: percentageOfCheckedCheckboxes,
+        }, speedProgressBarAnimation,
     );
 
     document.getElementById("progress_in_percent").innerHTML = percentageOfCheckedCheckboxes + '%';
@@ -137,6 +139,7 @@ nextStep.onmouseout = function () {
     }
 };
 
+
 document.addEventListener("DOMContentLoaded", function () {
     checkbox = document.querySelectorAll("input[type='checkbox']");
 
@@ -157,6 +160,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+function evaluationYes() {
+    postProcessingBlock.style.display = 'block';
+    panel.style.Height =  "400 px";
+}
+
 
 var acc = document.getElementsByClassName("accordion");
 var i;
@@ -165,7 +173,6 @@ for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
-        var arrowDownChange = this.element;
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
             panel.style.borderBottom = "none"
@@ -176,3 +183,4 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
+
