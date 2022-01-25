@@ -148,3 +148,15 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
+
+
+// get value of the checked radio
+function displayRadioValue() {
+    var ele = document.getElementsByName('severity');
+
+    for(i = 0; i < ele.length; i++) {
+        if(ele[i].checked)
+            document.getElementById("result").innerHTML
+                = ele[i].value;
+    }
+}

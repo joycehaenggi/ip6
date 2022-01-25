@@ -422,9 +422,9 @@ td > * {
     opacity: var(--colorOpacity);
 }
 
-/*.checkmark {
+.checkmark {
     opacity: 0.2;
-}*/
+}
 
 [data-tooltip] {
     position: relative;
@@ -614,7 +614,7 @@ form {
 
 
 /* Create a custom radio button */
-.checkmark {
+.new_checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -625,29 +625,30 @@ form {
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container:hover input ~ .new_checkmark {
     background-color: var(--header-Darkblue);
+
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.container input:checked ~ .mew_checkmark {
     background-color: white;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
+.new_checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked ~ .new_checkmark:after {
     display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.container .checkmark:after {
+.container .new_checkmark:after {
     top: 2px;
     left: 2px;
     width: 9px;
