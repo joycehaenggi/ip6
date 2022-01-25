@@ -422,9 +422,9 @@ td > * {
     opacity: var(--colorOpacity);
 }
 
-.checkmark {
+/*.checkmark {
     opacity: 0.2;
-}
+}*/
 
 [data-tooltip] {
     position: relative;
