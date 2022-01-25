@@ -624,11 +624,11 @@ form {
     border-radius: 100%;
 }
 
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .new_checkmark {
-    background-color: var(--header-Darkblue);
+/*!* On mouse-over, add a grey background color *!*/
+/*.container:hover input ~ .new_checkmark {*/
+/*    background-color: var(--header-Darkblue);*/
 
-}
+/*}*/
 
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .mew_checkmark {

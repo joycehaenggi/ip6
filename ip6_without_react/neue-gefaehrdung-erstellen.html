@@ -209,23 +209,23 @@
 
                     <div class="neue_gefaherdung_label radio">
                         <label class="container"> 1
-                            <input type="radio" name="severity" value="1" onclick="displayRadioValue()">
+                            <input type="radio" name="severity" value="1" onclick="displayRadioValueOfSeverity()">
                             <span class="new_checkmark"></span>
                         </label>
                         <label class="container"> 2
-                            <input type="radio" name="severity" value="2" onclick="displayRadioValue()">
+                            <input type="radio" name="severity" value="2" onclick="displayRadioValueOfSeverity()">
                             <span class="new_checkmark"></span>
                         </label>
                         <label class="container"> 3
-                            <input type="radio" name="severity" value="3" onclick="displayRadioValue()">
+                            <input type="radio" name="severity" value="3" onclick="displayRadioValueOfSeverity()">
                             <span class="new_checkmark"></span>
                         </label>
                         <label class="container"> 4
-                            <input type="radio" name="severity" value="4" onclick="displayRadioValue()">
+                            <input type="radio" name="severity" value="4" onclick="displayRadioValueOfSeverity()">
                             <span class="new_checkmark"></span>
                         </label>
                         <label class="container"> 5
-                            <input type="radio" name="severity" value="5" onclick="displayRadioValue()">
+                            <input type="radio" name="severity" value="5" onclick="displayRadioValueOfSeverity()">
                             <span class="new_checkmark"></span>
                         </label>
                     </div>
@@ -248,23 +248,23 @@
 
                         <div class="neue_gefaherdung_label_short radio">
                             <label class="container"> 1
-                                <input type="radio" name="risk_priority">
+                                <input type="radio" name="risk_priority" value="1" onclick="displayRadioValueOfRiskPriority()">
                                 <span class="new_checkmark"></span>
                             </label>
                             <label class="container"> 2
-                                <input type="radio" name="risk_priority">
+                                <input type="radio" name="risk_priority" value="2" onclick="displayRadioValueOfRiskPriority()">
                                 <span class="new_checkmark"></span>
                             </label>
                             <label class="container"> 3
-                                <input type="radio" name="risk_priority">
+                                <input type="radio" name="risk_priority" value="3" onclick="displayRadioValueOfRiskPriority()">
                                 <span class="new_checkmark"></span>
                             </label>
                             <label class="container"> 4
-                                <input type="radio" name="risk_priority">
+                                <input type="radio" name="risk_priority" value="4" onclick="displayRadioValueOfRiskPriority()">
                                 <span class="new_checkmark"></span>
                             </label>
                             <label class="container"> 5
-                                <input type="radio" name="risk_priority">
+                                <input type="radio" name="risk_priority" value="5" onclick="displayRadioValueOfRiskPriority()">
                                 <span class="new_checkmark"></span>
                             </label>
                         </div>
@@ -273,7 +273,8 @@
                         <div class="neue_gefaehrdung_info_icon">
                         </div>
                     </label>
-                    <div id="result">test</div>
+                    <div id="resultSeverity"></div>
+                    <div id="resultRiskPriority"></div>
                 </div>
 
                 <div class="form-wrapper">
@@ -325,23 +326,23 @@
 
                     <div class="neue_gefaherdung_label radio">
                         <label class="container"> 1
-                            <input type="radio" name="severity">
+                            <input type="radio" name="severity_two" value="1" onclick="displayRadioValueOfSeverityTwo()">
                             <span class="new_checkmark"></span>
                         </label>
                         <label class="container"> 2
-                            <input type="radio" name="severity">
+                            <input type="radio" name="severity_two" value="2" onclick="displayRadioValueOfSeverityTwo()">
                             <span class="new_checkmark"></span>
                         </label>
                         <label class="container"> 3
-                            <input type="radio" name="severity">
+                            <input type="radio" name="severity_two" value="3" onclick="displayRadioValueOfSeverityTwo()">
                             <span class="new_checkmark"></span>
                         </label>
                         <label class="container"> 4
-                            <input type="radio" name="severity">
+                            <input type="radio" name="severity_two" value="4" onclick="displayRadioValueOfSeverityTwo()">
                             <span class="new_checkmark"></span>
                         </label>
                         <label class="container"> 5
-                            <input type="radio" name="severity">
+                            <input type="radio" name="severity_two" value="5" onclick="displayRadioValueOfSeverityTwo()">
                             <span class="new_checkmark"></span>
                         </label>
                     </div>
@@ -359,15 +360,17 @@
                             <!--                                </svg>-->
                         </div>
                     </label>
-                    <input class="neue_gefaehrdung_input short" type="text">
 
+                    <div id="resultRiskPriority_two"></div>
 
 
                     <label class="neue_gefaehrdung_fourth_column_long ">Risikoprioritätszahl
                         <div class="neue_gefaehrdung_info_icon">
                         </div>
                     </label>
-                    <input class="neue_gefaehrdung_input short" type="text">
+                    <div id="resultSeverity_two"></div>
+                    <div id="resultRiskPriority_three"></div>
+
                 </div>
 
                 <div class="mainView-Button-container panel">
