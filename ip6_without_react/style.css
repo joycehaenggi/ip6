@@ -424,7 +424,7 @@ input.searchfield {
     visibility: hidden;
     opacity: 0;
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
-    transition: 0.75s transform;
+    transition: 0.25s transform;
     transform-origin: center center;
 }
 
@@ -433,6 +433,71 @@ input.searchfield {
     opacity: 1;
     visibility: visible;
     transform: translateY(0) translateX(0px);
+}
+
+/*---- Detail-View with Accordion ----*/
+.accordion {
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover{
+    background-color: #E1E5EB;
+}
+
+.active .fourtySevenPercent {
+    font-family: 'OpenSans-SemiBold', sans-serif;
+    transition: 1s ease-out;
+}
+
+.arrowDown{
+    transform: rotate(0deg);
+    transition: 1s ease-out;
+}
+
+
+.active .td .arrowDown{
+    transform: rotate(180deg);
+    transition: 1s ease-out;
+}
+
+.panel {
+    padding: 0 20px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+}
+
+.block {
+    height: 48px;
+    margin-top: 18px;
+}
+
+.block-title {
+    font-family: 'OpenSans-SemiBold', sans-serif;
+}
+
+.block-text {
+    margin-left: 40px;
+    margin-top: 8px;
+}
+
+input[type="text"] {
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 11px;
+}
+
+.neue_gefaehrdung_info_icon {
+    margin: 0 8px;
+}
+
+.neue_gefaehrdung_add_icon {
+    margin-left: 31rem;
+    margin-top: 1.7rem;
 }
 
 
@@ -512,70 +577,6 @@ input.searchfield {
     background-color: #d3d8e1;
 }
 
-
-/*---- Detail-View with Accordion ----*/
-.accordion {
-    color: #444;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    transition: 0.4s;
-}
-
-.active, .accordion:hover{
-    background-color: #E1E5EB;
-}
-
-.active .fourtySevenPercent {
-    font-family: 'OpenSans-SemiBold', sans-serif;
-}
-
-.arrowDown{
-    transform: rotate(0deg);
-    transition: 1s ease-out;
-}
-
-
-.active .td .arrowDown{
-    transform: rotate(180deg);
-    transition: 1s ease-out;
-}
-
-.panel {
-    padding: 0 20px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease-out;
-}
-
-.block {
-    height: 48px;
-    margin-top: 18px;
-}
-
-.block-title {
-    font-family: 'OpenSans-SemiBold', sans-serif;
-}
-
-.block-text {
-    margin-left: 40px;
-    margin-top: 8px;
-}
-
-input[type="text"] {
-    font-family: "OpenSans-Regular", sans-serif;
-    font-size: 11px;
-}
-
-.neue_gefaehrdung_info_icon {
-    margin: 0 8px;
-}
-
-.neue_gefaehrdung_add_icon {
-    margin-left: 31rem;
-    margin-top: 1.7rem;
-}
 
 /*---- Create new hazard-page ----*/
 table {
