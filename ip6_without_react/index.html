@@ -265,11 +265,11 @@
             <div id="hazards-checklist"></div>
             <script>
                 let hazards_array = [
-                    ["toThin.svg", "yellow", "Designvorgabe \"Mindestdicke\" kann nicht eingehalten werden - Dicke des Implantsts zu dünn."],
-                    ["dimensionally_unstable.svg", "green", "Designvorgabe \"Mindestdicke\" kann nicht eingehalten werden - Implantat nicht formstabil."],
-                    ["nut.svg", "green", "Designvorgabe \"Anzahl Schraubenlöcher\" kann nicht eingehalten werden."],
-                    ["nut.svg", "red", "Designvorgabe \"Platzierung der Schraubenlöcher\" kann nicht eingehalten werden."],
-                    ["screw.svg", "yellow", "Designvorgabe \"Schraubentyp/Durchmesser/Länge\" kann nicht eingehalten werden."]
+                    ["toThin.svg", "yellow", "Designvorgabe \"Mindestdicke\" kann nicht eingehalten werden - Dicke des Implantsts zu dünn.", "Dicke des Implantsts zu dünn"],
+                    ["dimensionally_unstable.svg", "green", "Designvorgabe \"Mindestdicke\" kann nicht eingehalten werden - Implantat nicht formstabil.", "Implantat nicht formstabil"],
+                    ["nut.svg", "green", "Designvorgabe \"Anzahl Schraubenlöcher\" kann nicht eingehalten werden.", "Anzahl Schraubenlöcher"],
+                    ["nut.svg", "red", "Designvorgabe \"Platzierung der Schraubenlöcher\" kann nicht eingehalten werden.", "Platzierung Schraubenlöcher"],
+                    ["screw.svg", "yellow", "Designvorgabe \"Schraubentyp/Durchmesser/Länge\" kann nicht eingehalten werden.", "Schraubentyp/ Durchmesser/ Länge Schraubenlöcher"]
                 ];
 
                 let hazard = "";
@@ -293,7 +293,7 @@
 
                         "<div class='title_with_image_container'>" +
                         "<div class='title_with_image_square'>" +
-                        "<div class='title_detail_view'>Dicke des Implantsts zu dünn." +
+                        "<div class='title_detail_view'>"+hazards_array[i][3] +
                         "</div>" +
                         "<div class='image_detail_view'><img src='svg/" + hazards_array[i][0] + "' width='89' height='65'>" +
                         "</div>" +

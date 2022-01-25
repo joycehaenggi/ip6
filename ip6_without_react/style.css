@@ -494,6 +494,8 @@ input.searchfield {
 
 .title_detail_view {
     margin-top: calc(9 * 0.063rem);
+    padding-left: calc(5 * 0.063rem);
+    padding-right: calc(5 * 0.063rem);
     text-align: center;
     font-family: 'OpenSans-SemiBold', sans-serif;
 }
