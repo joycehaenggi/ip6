@@ -195,3 +195,10 @@ function displayRadioValueOfRiskPriority() {
                 =  ele[i].value;
     }
 }
+
+function add(){
+    var new_chq_no = parseInt($('#total_chq').val())+1;
+    var new_input="<input class='neue_gefaehrdung_input special' type='text' id='new_"+new_chq_no+"'>";
+    $('#new_chq').append(new_input);
+    $('#total_chq').val(new_chq_no)
+}

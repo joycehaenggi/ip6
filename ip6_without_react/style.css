@@ -567,7 +567,7 @@ form {
 
 .neue_gefaehrdung_third_column {
     margin-left: 0.5rem;
-    width: 5rem;
+    width: 6rem;
 }
 
 .neue_gefaehrdung_second_column{
@@ -575,18 +575,18 @@ form {
 }
 
 .neue_gefaehrdung_third_one_column{
-    margin-left: 0.3rem;
+    margin-left: 0.2rem;
 }
 
 
 .neue_gefaehrdung_fourth_column {
     margin-left: 2rem;
-    width: 7rem;
+    width: 8rem;
 }
 
 .neue_gefaehrdung_fourth_column_long{
     margin-left: 7rem;
-    width: 7rem;
+    width: 8rem;
 }
 
 .neue_gefaehrdung_input_button {
@@ -629,6 +629,14 @@ form {
     background-color: #F3F3F3;
 }
 
+.neue_gefaehrdung_input_add{
+    border: 1px solid var(--Frames-BlueGray);
+}
+
+.special{
+   /* margin-top: 5rem;*/
+    left: 3rem;
+}
 
 /* Radio Buttons neue Gefährdung erstellen */
 .container {
