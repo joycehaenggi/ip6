@@ -575,12 +575,19 @@ form {
 }
 
 .neue_gefaehrdung_fourth_column_long{
-    margin-left: 9rem;
+    margin-left: 7rem;
     width: 7rem;
 }
 
 .neue_gefaehrdung_input_button {
     margin-top: 1rem;
+    border: 1px solid var(--Frames-BlueGray);
+    background-color: white;
+    width: 8rem;
+    padding: 4px;
+    cursor: pointer;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
 
 }
 
@@ -589,6 +596,28 @@ form {
     align-self: flex-start;
 }
 
+.rectangle{
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--Frames-BlueGray);
+    border-radius: 5px ;
+    width: 10rem;
+    height: 2em;
+}
+
+.rectangle_align{
+    align-self: center;
+}
+
+.severity{
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--Frames-BlueGray);
+    border-radius: 5px ;
+    width: 10rem;
+    height: 2em;
+    background-color: #F3F3F3;
+}
 
 /* Radio Buttons neue Gefährdung erstellen */
 .container {

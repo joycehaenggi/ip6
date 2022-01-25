@@ -182,7 +182,7 @@ function displayRadioValueOfRiskPriority() {
     for(i = 0; i < ele.length; i++) {
         if(ele[i].checked)
             document.getElementById("resultRiskPriority").innerHTML
-                = "/"+ ele[i].value;
+                = ele[i].value;
     }
     for(i = 0; i < ele.length; i++) {
         if(ele[i].checked)
@@ -192,6 +192,6 @@ function displayRadioValueOfRiskPriority() {
     for(i = 0; i < ele.length; i++) {
         if(ele[i].checked)
             document.getElementById("resultRiskPriority_three").innerHTML
-                = "/"+ ele[i].value;
+                =  ele[i].value;
     }
 }
