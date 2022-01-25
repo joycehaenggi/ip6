@@ -179,14 +179,19 @@ function displayRadioValueOfSeverityTwo() {
 function displayRadioValueOfRiskPriority() {
     var ele = document.getElementsByName('risk_priority');
 
-
     for(i = 0; i < ele.length; i++) {
         if(ele[i].checked)
             document.getElementById("resultRiskPriority").innerHTML
                 = "/"+ ele[i].value;
-        document.getElementById("resultRiskPriority_two").innerHTML
-            = ele[i].value;
-        document.getElementById("resultRiskPriority_three").innerHTML
-            = "/"+ele[i].value;
+    }
+    for(i = 0; i < ele.length; i++) {
+        if(ele[i].checked)
+            document.getElementById("resultRiskPriority_two").innerHTML
+                = ele[i].value;
+    }
+    for(i = 0; i < ele.length; i++) {
+        if(ele[i].checked)
+            document.getElementById("resultRiskPriority_three").innerHTML
+                = "/"+ ele[i].value;
     }
 }
