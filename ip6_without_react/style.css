@@ -852,13 +852,13 @@ form {
     align-self: flex-start;
 }
 
-.rectangle{
+.risk_priority_field{
     display: flex;
     justify-content: center;
     border: 1px solid var(--Frames-BlueGray);
     border-radius: 5px ;
     width: 10rem;
-    border-radius: 5px;
+    height: 20px;
 }
 
 .neue_gefaehrdung_input_button {
