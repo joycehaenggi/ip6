@@ -5,10 +5,8 @@
     <title>Title</title>
 
     <script>
-        var room = 1;
 
         function add_fields() {
-            room++;
             var objTo = document.getElementById('room_fileds')
             var divtest = document.createElement("div");
             divtest.innerHTML = '<input type="text" name="fname">';
@@ -23,7 +21,7 @@
     .flexbox {
         display: flex;
         justify-content: flex-start;
-        height: 20px;
+        flex-wrap: wrap;
     }
 
     input {
@@ -33,6 +31,13 @@
         margin-bottom: 50px;
     }
 
+    .box {
+        width: 200px;
+        height: 200px;
+        background: orange;
+        margin-left: 10px;
+    }
+
 
 </style>
 <body>
@@ -40,6 +45,10 @@
 
 <div class="flexbox" id="room_fileds">
         <input type="text" name="fname">
+</div>
+
+<div class="box">
+
 </div>
 </body>
 </html>

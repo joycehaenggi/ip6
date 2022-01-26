@@ -124,7 +124,7 @@
                     </defs>
                 </svg>
             </div>
-            <p class="navigation-steps">Implantatdesign Matching</p>
+            <p class="navigation-steps nameStep" id="actualStep"></p>
         </div>
 
         <div class="searchbar">
@@ -136,7 +136,7 @@
 
     <div class="manufacturing-step-information">
         <div class="menu-title-box">
-            <p class="manu-title">Implantatdesign Matching</p>
+            <p class="manu-title" id="titleName"></p>
         </div>
         <div class="manufacturing-legend">
             <div class="priority-title">
@@ -262,13 +262,23 @@
         <div class="tbody">
             <div id="hazards-checklist"></div>
             <script>
-                let hazards_array = [
+                var hazards_array = [];
+
+
+                hazards_array = [
                     ["toThin.svg", "yellow", "Designvorgabe \"Mindestdicke\" kann nicht eingehalten werden - Dicke des Implantsts zu dünn.", "Dicke des Implantsts zu dünn"],
                     ["dimensionally_unstable.svg", "green", "Designvorgabe \"Mindestdicke\" kann nicht eingehalten werden - Implantat nicht formstabil.", "Implantat nicht formstabil"],
                     ["nut.svg", "green", "Designvorgabe \"Anzahl Schraubenlöcher\" kann nicht eingehalten werden.", "Anzahl Schraubenlöcher"],
                     ["nut.svg", "red", "Designvorgabe \"Platzierung der Schraubenlöcher\" kann nicht eingehalten werden.", "Platzierung Schraubenlöcher"],
                     ["screw.svg", "yellow", "Designvorgabe \"Schraubentyp/Durchmesser/Länge\" kann nicht eingehalten werden.", "Schraubentyp/ Durchmesser/ Länge Schraubenlöcher"]
                 ];
+
+
+
+                /*    if(step === 1){
+                        console.log(step);
+                        hazards_array.length = 0;
+                    }*/
 
                 let hazard = "";
                 let hazards2 = [];
@@ -281,7 +291,7 @@
                     hazards2[i] += "<div class='td fivePercent'><img src='svg/" + hazards_array[i][0] + "' class='icon_list' width='21' height='16'></div>" +
                         "<div class='td tenPercent'><span class='dot " + hazards_array[i][1] + "'></span></div>" +
                         "<div class='td fourtySevenPercent'>" + hazards_array[i][2] + "</div>" +
-                        "<div class='td thirteenPercent'><input id='confirm" + hazards_array[i] + "' type='checkbox' onclick='numberOfCheckedCheckboxes()' /><label for='confirm" + hazards_array[i] + "'></label></div>" +
+                        "<div class='td thirteenPercent'><input id='confirm" + [i] + "' class='checkbox' type='checkbox' onclick='numberOfCheckedCheckboxes()' name='vehicle'  /><label for='confirm" +[i] + "'></label></div>" +
                         "<div class='td tenPercent'><div class='data-tooltip' data-tooltip='Akzeptiert-Status'><img src='svg/check_Mark.svg' class='checkmark' width='19' height='17'></div></div>" +
                         "<div class='td fifteenPercent'><div class='data-tooltip' data-tooltip='Gefährdung bearbeiten'><img src='svg/arrow_down.svg' id='arrowDown' class='arrowDown' width='20' height='20'></div></div>";
                     hazards2[i] += "</div>";
@@ -375,7 +385,7 @@
     </div>
 
     <div class="progress-wrapper">
-        <div class="title_progress_bar">Fortschrittsübersicht Implantatdesign Matching</div>
+        <div class="title_progress_bar" id="titleProgressBar">Fortschrittsübersicht - Implantatdesign Matching</div>
         <div class="progress_bar">
             <div class="progress_in_percent" id="progress_in_percent"></div>
         </div>
@@ -386,11 +396,11 @@
                 Gefährdung erstellen
             </div>
         </a>
-        <a href="index.html" id="nextStep-Link">
+        <div id="nextStep-Link" onclick="nextStepCounter()">
             <div class="button nextStep" id="nextStep">
                 Schritt abschliessen
             </div>
-        </a>
+        </div>
     </div>
 </div>
 

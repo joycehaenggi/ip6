@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>How to Check and uncheck all using jQuery and JavaScript</title>
+        <link href='style.css' type='text/css' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type='text/javascript'>
+            $(document).ready(function(){
+                // Check or Uncheck All checkboxes
+                $("#checkall").change(function(){
+                   var checked = $(this).is(':checked');
+                   if(checked){
+                     $(".checkbox").each(function(){
+                       $(this).prop("checked",true);
+                     });
+                   }else{
+                     $(".checkbox").each(function(){
+                       $(this).prop("checked",false);
+                     });
+                   }
+               });
+                
+               // Changing state of CheckAll checkbox 
+               $(".checkbox").click(function(){
+    
+                  if($(".checkbox").length == $(".checkbox:checked").length) {
+			         $("#checkall").prop("checked", true);
+		          } else {
+			         $("#checkall").prop("checked", false);
+		          }
+
+               });
+            });
+        </script>
+    </head>
+    <body>
+        <div class='container'>
+            <h2>Example2 - With Checkboxes</h2>
+            <input type="checkbox" id='checkall' /> Select All<br/>
+            <input type="checkbox" class='checkbox' name="languages" value="PHP"> PHP<br/>
+            <input type="checkbox" class='checkbox' name="languages" value="AngularJS"> AngularJS<br/>
+            <input type="checkbox" class='checkbox' name="languages" value="Python"> Python<br/>
+            <input type="checkbox" class='checkbox' name="languages" value="Java"> Java<br/>
+        </div>
+    </body>
+</html>
