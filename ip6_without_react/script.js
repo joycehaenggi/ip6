@@ -196,9 +196,24 @@ function displayRadioValueOfRiskPriority() {
     }
 }
 
-function add(){
-    var new_chq_no = parseInt($('#total_chq').val())+1;
-    var new_input="<input class='neue_gefaehrdung_input special' type='text' id='new_"+new_chq_no+"'>";
-    $('#new_chq').append(new_input);
-    $('#total_chq').val(new_chq_no)
+function addNewDamage(){
+    var new_input="<input class='testtest' type='text'>";
+    $('#new_damage').append(new_input);
+
+}
+
+function addNewHazard(){
+    var new_div="<div class='testtesttest'></div>";
+    var new_input="<input class='testtest'  type='text'>";
+    $('#test').append(new_div);
+    $('#new_hazard').append(new_input);
+
+    $('#mouseenter .testtesttest').css('margin-bottom', '220px');
+
+}
+
+function moveDiv(getDiv, getValue)
+{
+    var curMargin = parseInt(document.getElementById(getDiv).style.marginLeft);
+    document.getElementById(getDiv).style.marginLeft = curMargin + getValue + "px";
 }

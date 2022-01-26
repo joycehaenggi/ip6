@@ -182,20 +182,41 @@
                         <label class="neue_gefaherdung_label"></label>
                     <input class="neue_gefaehrdung_input " type="text">
 
-                    <div class="neue_gefaehrdung_third_one_column" onclick="add()">
+                    <div class="neue_gefaehrdung_third_one_column" onclick="addNewDamage()">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 0C4.48566 0 0 4.48566 0 10C0 15.5143 4.48566 20 10 20C15.5143 20 20 15.5136 20 10C20 4.48645 15.5143 0 10 0ZM10 18.4508C5.34082 18.4508 1.54918 14.66 1.54918 10C1.54918 5.34004 5.34082 1.54918 10 1.54918C14.6592 1.54918 18.4508 5.34004 18.4508 10C18.4508 14.66 14.66 18.4508 10 18.4508Z"
                                   fill="#32404F"/>
                             <path d="M13.873 9.15568H10.7746V6.05732C10.7746 5.62975 10.4284 5.28271 10 5.28271C9.57164 5.28271 9.22539 5.62975 9.22539 6.05732V9.15568H6.12703C5.69867 9.15568 5.35242 9.50271 5.35242 9.93029C5.35242 10.3579 5.69867 10.7049 6.12703 10.7049H9.22539V13.8033C9.22539 14.2308 9.57164 14.5779 10 14.5779C10.4284 14.5779 10.7746 14.2308 10.7746 13.8033V10.7049H13.873C14.3013 10.7049 14.6476 10.3579 14.6476 9.93029C14.6476 9.50271 14.3013 9.15568 13.873 9.15568Z"
                                   fill="#32404F"/>
                         </svg>
-                    </div>
-                        <div class="neue_gefaherdung_label" id="new_chq"></div>
-                        <div class="form-wrapper">
-                            <input class="neue_gefaehrdung_input special" type="hidden" value="1" id="total_chq">
+
+
+                        <div style="overflow: hidden; width: 500px;">
+                            <div id="test" style="width: 1000px; margin-left: 0px;">
+                                !!stuff inside the centered div with the negative margin-left so it starts outside the container!!
+                            </div>
                         </div>
+
+                        <input type="button" value="<- Left" onclick="moveDiv('idofthediv', -25)" />
+                        &nbsp;
+                        <input type="button" value="Right ->" onclick="moveDiv('idofthediv', 25)" />
+
+
+
+
                 </div>
-                <div class="form-wrapper">
+
+                        <div class="test" id="new_damage"></div>
+                        <div >
+                            <input class="testtest" type="hidden" value="1" >
+                        </div>
+                    </div>
+
+
+
+
+                    <div id="idofthediv" style="width: 1000px; margin-left: 0px;">
+                        <div class="form-wrapper" >
                     <label class="neue_gefaherdung_label">Eintretenswahrscheinlichkeit
                         <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z" fill="black"/>
@@ -285,7 +306,7 @@
                     <input class="neue_gefaehrdung_input " type="text">
 
 <!--                    TODO make css better for add-->
-                    <div class="neue_gefaehrdung_third_one_column" onclick="add()">
+                    <div class="neue_gefaehrdung_third_one_column" onclick="addNewHazard()">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 0C4.48566 0 0 4.48566 0 10C0 15.5143 4.48566 20 10 20C15.5143 20 20 15.5136 20 10C20 4.48645 15.5143 0 10 0ZM10 18.4508C5.34082 18.4508 1.54918 14.66 1.54918 10C1.54918 5.34004 5.34082 1.54918 10 1.54918C14.6592 1.54918 18.4508 5.34004 18.4508 10C18.4508 14.66 14.66 18.4508 10 18.4508Z"
                                   fill="#32404F"/>
@@ -294,10 +315,9 @@
                         </svg>
                     </div>
 
-                        <div class="neue_gefaherdung_label" id="new_chq"></div>
+                        <div class="neue_gefaherdung_label" id="new_hazard"></div>
                     <div class="form-wrapper">
-                        <input class="neue_gefaehrdung_input special" type="hidden" value="1" id="total_chq">
-                    </div>
+                                          </div>
                 </div>
                     <div class=" form-wrapper">
                         <label class="neue_gefaherdung_label">Implementierungsnachweis
@@ -381,6 +401,7 @@
                     <div class="button cancel" id="cancel">
                         Abbrechen
                     </div>
+                </div>
                 </div>
             </form>
         </th>

@@ -785,3 +785,18 @@ input[type="text"] {
         width: 10em;
     }
 }
+
+.test{
+    position: absolute;
+    margin-left: 15rem;
+
+
+    }
+
+.testtest{
+    display: flex;
+    width: 20rem;
+    height: 2em;
+    margin-bottom:8px;
+}
+
