@@ -161,8 +161,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function evaluationYes() {
-/*    postProcessingBlock.style.display = 'block';
-    panel.style.Height =  "400 px";*/
+    postProcessingBlock.style.display = 'block';
+    postProcessingBlock.style.height =  "48px";
+    postProcessingBlock.style.transition =  "1s ease-out";
+    panel.style.maxHeight = panel.scrollHeight + "px";
+/*    $("div.postProcessing").animate({
+            scrollHeight:  '48px'
+            // innerHTML: percentageOfCheckedCheckboxes,
+        }, speedProgressBarAnimation,
+    );*/
+}
+
+function evaluationNo(){
+    postProcessingBlock.style.display = 'none';
+    postProcessingBlock.style.height =  "0";
+    postProcessingBlock.style.transition =  "1s ease-out";
+    // panel.style.maxHeight = panel.scrollHeight-48 + "px";
 }
 
 
@@ -184,7 +198,7 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
-var acc2 = document.getElementsByClassName("accordion2");
+/*var acc2 = document.getElementsByClassName("accordion2");
 var j;
 
 for (j = 0; j < acc.length; j++) {
@@ -200,4 +214,4 @@ for (j = 0; j < acc.length; j++) {
             panel.style.borderBottom = "1px solid #E1E5EB"
         }
     });
-}
+}*/

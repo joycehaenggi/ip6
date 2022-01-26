@@ -503,9 +503,9 @@ input.searchfield {
 }
 
 #post-processing-block {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease-out;
+    height: 0;
+    display: none;
+    transition: 1s ease-out;
 }
 
 .title_with_image_container {
@@ -584,12 +584,6 @@ input.searchfield {
 .detailViewSelection {
     margin-left: 20px;
 }
-
-#post-processing-block {
-    max-height: 0;
-    overflow: hidden;
-}
-
 
 /*---- Progress-bar ----*/
 .title_progress_bar {
