@@ -161,8 +161,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function evaluationYes() {
-    postProcessingBlock.style.display = 'block';
-    panel.style.Height =  "400 px";
+/*    postProcessingBlock.style.display = 'block';
+    panel.style.Height =  "400 px";*/
 }
 
 
@@ -184,3 +184,20 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
+var acc2 = document.getElementsByClassName("accordion2");
+var j;
+
+for (j = 0; j < acc.length; j++) {
+    acc2[j].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            panel.style.borderBottom = "none"
+            localStorage.setItem('dropdownWasOpen', 'true');
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.style.borderBottom = "1px solid #E1E5EB"
+        }
+    });
+}

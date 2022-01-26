@@ -459,7 +459,7 @@ input.searchfield {
 }
 
 /*---- Detail-View with Accordion ----*/
-.accordion {
+.accordion, .accordion2 {
     color: #444;
     cursor: pointer;
     width: 100%;
@@ -500,6 +500,12 @@ input.searchfield {
     border-right: 1px solid var(--Frames-BlueGray);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+#post-processing-block {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
 }
 
 .title_with_image_container {
@@ -580,6 +586,7 @@ input.searchfield {
 }
 
 #post-processing-block {
+    max-height: 0;
     overflow: hidden;
 }
 
