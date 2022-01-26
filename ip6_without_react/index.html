@@ -328,7 +328,7 @@
                         "</div>" +
                         "</div>" +
 
-                        "<div class='block'>" +
+                        "<div class='block pP"+i+"'>" +
                         "<div class='block-title'>" +
                         "Bewertung" +
                         "</div>" +
@@ -336,11 +336,11 @@
                         "<div class='evaluation-text'>Kann Mindestdicke anhand Massnahmen eingehalten werden?</div>" +
                         "<div class='evaluation-radio-buttons'>" +
                         "<label class='container detailViewSelection'>Ja" +
-                        "<input type='radio' onclick='evaluationYes()' id='ja' value='Ja' name='evaluation'>" +
+                        "<input type='radio' onclick='evaluationYes("+i+")' id='ja' value='Ja' name='evaluation'>" +
                         "<span class='custom_radio_button'></span>" +
                         "</label>" +
                         "<label class='container detailViewSelection'>Nein" +
-                        "<input type='radio' onclick='evaluationNo()' id='nein' value='Nein' name='evaluation'>" +
+                        "<input type='radio' onclick='evaluationNo("+i+")' id='nein' value='Nein' name='evaluation'>" +
                         "<span class='custom_radio_button'></span>" +
                         "</label>" +
                         "</div>"+

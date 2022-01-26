@@ -160,23 +160,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-function evaluationYes() {
+function evaluationYes(x) {
+    var y = document.getElementsByClassName("pP"+x).nextElementSibling;
+
     postProcessingBlock.style.display = 'block';
     postProcessingBlock.style.height =  "48px";
-    postProcessingBlock.style.transition =  "1s ease-out";
     panel.style.maxHeight = panel.scrollHeight + "px";
-/*    $("div.postProcessing").animate({
-            scrollHeight:  '48px'
-            // innerHTML: percentageOfCheckedCheckboxes,
-        }, speedProgressBarAnimation,
-    );*/
+    // console.log(y);
 }
 
-function evaluationNo(){
+function evaluationNo(x){
     postProcessingBlock.style.display = 'none';
     postProcessingBlock.style.height =  "0";
-    postProcessingBlock.style.transition =  "1s ease-out";
-    // panel.style.maxHeight = panel.scrollHeight-48 + "px";
 }
 
 
