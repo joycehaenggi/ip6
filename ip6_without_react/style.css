@@ -727,7 +727,7 @@ form {
 
 .column4 {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: calc(300 * 0.063rem);
     min-height: 50px;
@@ -931,6 +931,10 @@ input[type="text"] {
     .flex-element {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .responsive_width {
+        width: 107px;
     }
 
     .empty_column {
