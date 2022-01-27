@@ -647,41 +647,6 @@ input.searchfield {
 
 
 /*---- Create new hazard-page ----*/
-table {
-    border-collapse: separate;
-    width: 100%;
-    border-spacing: 0 calc(10 * 0.063em);
-    font-size: calc(var(--mainFontSize) * 0.063rem);
-}
-
-table p:last-child {
-    float: right;
-}
-
-td, th {
-    text-align: left;
-}
-
-th, td {
-    padding: 8px;
-    height: 45px;
-}
-
-td {
-    border-bottom: 1px solid;
-    border-top: 1px solid;
-    border-color: var(--Frames-BlueGray);;
-}
-
-th {
-    border: solid 1px #E1E5EB;
-    border-right: none;
-    padding-bottom: calc(10 * 0.063rem);
-    padding-left: calc(10 * 0.063rem);
-    padding-top: calc(5 * 0.063rem);
-    padding-right: calc(5 * 0.063rem);
-    font-family: OpenSans-SemiBold, sans-serif;
-}
 
 .th_title {
     font-family: OpenSans-SemiBold, sans-serif;
@@ -781,11 +746,7 @@ form {
     border-spacing: 0;
 }
 
-.hundredPercent {
-    width: 100%;
-}
-
-.neue_gefaehrdung_th {
+.neue_gefaehrdung_title {
     background-color: var(--Frames-BlueGray);
     font-size: 14px;
 }
@@ -1086,4 +1047,8 @@ input[type="text"] {
     .table {
         overflow-x: scroll;
     }
+}
+
+.neue_gefaehrdung {
+    margin-top: 40px;
 }
