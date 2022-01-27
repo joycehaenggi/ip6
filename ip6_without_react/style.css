@@ -692,7 +692,7 @@ form {
     margin-right: calc(10 * 0.063rem);
     min-height: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 .column2 {
@@ -721,9 +721,10 @@ form {
     margin-right: calc(10 * 0.063rem);
     min-height: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
+
 .column4 {
     display: flex;
     justify-content: space-between;
@@ -732,8 +733,9 @@ form {
     min-height: 50px;
     margin-right: calc(10 * 0.063rem);
 }
-.column5 {
-    width: calc(300 * 0.063rem);
+
+.svg_severity {
+    margin: 0 20px;
 }
 
 .label_customized {
@@ -904,10 +906,6 @@ input[type="text"] {
     font-size: 11px;
 }
 
-.flexbox {
-    flex-wrap: wrap;
-}
-
 .input {
     display: inline-block;
     border: 1px solid var(--Frames-BlueGray);
@@ -928,6 +926,15 @@ input[type="text"] {
     .wrapper {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+
+    .flex-element {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .empty_column {
+        display: none;
     }
 
     .logo_title {
