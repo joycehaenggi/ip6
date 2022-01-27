@@ -960,30 +960,29 @@ input[type="button"] {
 }
 
 
-/*---- Responsive adjustment ----*/
-@media (max-width: 1050px) {
-    input[type="text"] {
-        font-family: "OpenSans-Regular", sans-serif;
-        font-size: 11px;
-    }
 
-    .flexbox {
-        flex-wrap: wrap;
-    }
 
-    .input {
-        display: inline-block;
-        border: 1px solid var(--Frames-BlueGray);
-        border-radius: 5px;
-        width: 20rem;
-        height: 2em;
-        margin-left: 15rem;
-        margin-top: 0.5rem;
-    }
+input[type="text"] {
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 11px;
 }
 
+.flexbox {
+    flex-wrap: wrap;
+}
 
-@media (max-width: 900px) {
+.input {
+    display: inline-block;
+    border: 1px solid var(--Frames-BlueGray);
+    border-radius: 5px;
+    width: 20rem;
+    height: 2em;
+    margin-left: 15rem;
+    margin-top: 0.5rem;
+}
+
+/*---- Responsive adjustment ----*/
+@media (max-width: 1050px) {
     .header {
         padding-left: 0;
         padding-right: 0;
