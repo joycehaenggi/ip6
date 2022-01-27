@@ -677,22 +677,28 @@ form {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 16px;
+    min-height: 50px;
+    flex-wrap: wrap;
 }
 
 .flex_add {
     align-items: start;
+    flex-wrap:nowrap;
+    padding-top:10px;
 }
 
 .column1 {
-    width: calc(250 * 0.063rem);
+    min-width: calc(300 * 0.063rem);
+    margin-right: calc(10 * 0.063rem);
+    min-height: 50px;
     display: flex;
-    padding-right:10px;
     justify-content: space-between;
     align-items: center;
 }
 .column2 {
     min-width: calc(300 * 0.063rem);
+    margin-right: calc(10 * 0.063rem);
+    min-height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -712,15 +718,19 @@ form {
 
 .column3 {
     width: calc(300 * 0.063rem);
-    margin-left: calc(10 * 0.063rem);
+    margin-right: calc(10 * 0.063rem);
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .column4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: calc(300 * 0.063rem);
-    margin: 0  calc(10 * 0.063rem);
-
+    min-height: 50px;
+    margin-right: calc(10 * 0.063rem);
 }
 .column5 {
     width: calc(300 * 0.063rem);
@@ -780,7 +790,6 @@ form {
 
 .radio {
     display: flex;
-    align-self: flex-start;
 }
 
 .risk_priority_field {
@@ -789,7 +798,7 @@ form {
     align-items: center;
     border: 1px solid var(--Frames-BlueGray);
     border-radius: 5px;
-    width: 10rem;
+    width: calc(120 * 0.063rem);
     height: calc(29 * 0.063rem);
 }
 
