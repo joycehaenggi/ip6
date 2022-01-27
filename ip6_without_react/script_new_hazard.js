@@ -71,17 +71,17 @@ function displayRadioValueOfRiskPriority() {
 function addNewDamage() {
     var objTo = document.getElementById('add_new_Damage')
     var divAdd = document.createElement("div");
-    divAdd.innerHTML = '<input class="input" type="text" name="fname">';
+    divAdd.innerHTML = '<input class="input_customized add_new_input" type="text" name="fname">';
     objTo.appendChild(divAdd)
-    document.getElementById('form').style.height = "37rem";
+    // document.getElementById('form').style.height = "37rem";
 
 }
 
 function addNewMeasures() {
 
     var objTo2 = document.getElementById('add_new_measures')
-    var divAdd2 = document.createElement("dive");
-    divAdd2.innerHTML = '<input class="input" type="text" name="fname">';
+    var divAdd2 = document.createElement("div");
+    divAdd2.innerHTML = '<input class="input_customized add_new_input" type="text" name="fname">';
     objTo2.appendChild(divAdd2)
     // document.getElementById('form').style.height = "37rem";
 }

@@ -647,50 +647,107 @@ input.searchfield {
 
 
 /*---- Create new hazard-page ----*/
-
-.th_title {
-    font-family: OpenSans-SemiBold, sans-serif;
-    float: left;
-    padding-top: 12px;
+.neue_gefaehrdung {
+    margin-top: 40px;
+    /*border: 1px solid var(--Frames-BlueGray);*/
 }
 
-th.radioButtonsColumn {
-    padding-top: 5px;
-}
-
-th:first-child, td:first-child {
-    border: solid 1px #E1E5EB;
-    border-right: none;
+.neue_gefaehrdung_title {
+    background-color: var(--Frames-BlueGray);
+    font-size: 14px;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left:13px;
     border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-th:last-child, td:last-child {
-    border: solid 1px #E1E5EB;
-    border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
 
-td:last-child {
-    border-left: none;
+form {
+    flex-wrap: wrap;
+    border: 1px solid var(--Frames-BlueGray);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding:20px;
+    font-size: calc(12 * 0.063rem);
 }
 
-td.dropdown:last-child {
-    border: solid 1px #E1E5EB;
+.flex-element {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
-td {
-    text-align: center;
-    vertical-align: middle;
+.flex_add {
+    align-items: start;
 }
 
-td > * {
-    vertical-align: middle;
+.column1 {
+    width: calc(250 * 0.063rem);
+    display: flex;
+    padding-right:10px;
+    align-items: center;
+}
+.column2 {
+    min-width: calc(300 * 0.063rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/*Styling Neue Gefährdung erstellen*/
-.hundredPercent {
-    width: 100%;
+#add_new_Damage, #add_new_measures {
+    flex-wrap: wrap;
+}
+
+.newOne{
+    margin-right: 10px;
+}
+
+.column3 {
+    width: calc(250 * 0.063rem);
+    padding: 0 calc(30 * 0.063rem);
+}
+.column4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(200 * 0.063rem);
+    padding: 0 20px;
+
+}
+.column5 {
+    width: calc(300 * 0.063rem);
+}
+
+.label_customized {
+    font-size: calc(12 * 0.063rem);
+    width: 200px;
+    display: block;
+}
+
+.addLabel {
+    padding-top: 6px;
+}
+
+.input_customized {
+    border: 1px solid var(--Frames-BlueGray);
+    border-radius: 5px;
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 11px;
+    width: calc(300 * 0.063rem);
+    height: calc(29 * 0.063rem);
+    padding-left: calc(5 * 0.063rem);
+}
+
+.add_new_input {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.svg_add {
+    cursor: pointer;
 }
 
 .custom_radio_button {
@@ -703,55 +760,9 @@ td > * {
     border-radius: 100%;
 }
 
-form {
-    flex-wrap: wrap;
-}
-
-.form {
-    height: 25rem;
-}
-
-.form-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.neue_gefaherdung_label {
-    width: 15rem;
-    margin-top: 1rem;
-}
-
-.neue_gefaherdung_label_short {
-    width: 15rem;
-    margin-top: 1rem;
-}
 
 
-.neue_gefaehrdung_input {
-    border: 1px solid var(--Frames-BlueGray);
-    border-radius: 5px;
-    font-family: "OpenSans-Regular", sans-serif;
-    font-size: 11px;
-    width: 20rem;
-    height: 2em;
-}
-
-.short {
-    width: 8rem;
-    height: 2em;
-}
-
-.neue_gefaehrdung_table {
-    border-spacing: 0;
-}
-
-.neue_gefaehrdung_title {
-    background-color: var(--Frames-BlueGray);
-    font-size: 14px;
-}
-
-.neue_gefaehrdung_third_column {
+/*.neue_gefaehrdung_third_column {
     margin-left: 0.5rem;
     width: 6rem;
 }
@@ -764,7 +775,6 @@ form {
     margin-left: 0.2rem;
 }
 
-
 .neue_gefaehrdung_fourth_column {
     margin-left: 2rem;
     width: 8rem;
@@ -773,7 +783,7 @@ form {
 .neue_gefaehrdung_fourth_column_long {
     margin-left: 7rem;
     width: 8rem;
-}
+}*/
 
 .neue_gefaehrdung_input_button {
     margin-top: 1rem;
@@ -784,7 +794,6 @@ form {
     cursor: pointer;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-
 }
 
 .radio {
@@ -795,25 +804,17 @@ form {
 .risk_priority_field {
     display: flex;
     justify-content: center;
+    align-items: center;
     border: 1px solid var(--Frames-BlueGray);
     border-radius: 5px;
     width: 10rem;
-    height: 20px;
+    height: calc(29 * 0.063rem);
 }
 
 .neue_gefaehrdung_input_button {
     display: flex;
     position: absolute;
     left: 15rem;
-}
-
-.long {
-    width: 30em;
-    height: 2em;
-}
-
-.rectangle_align {
-    align-self: center;
 }
 
 .severity {
@@ -830,31 +831,24 @@ form {
     border: 1px solid var(--Frames-BlueGray);
 }
 
-.special {
-    /* margin-top: 5rem;*/
-    left: 3rem;
-}
-
 input[type="text"] {
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 11px;
 }
 
 .neue_gefaehrdung_info_icon {
-    margin: 0 8px;
+    /*margin: 0 8px;*/
 }
 
 .neue_gefaehrdung_add_icon {
-    margin-left: 31rem;
-    margin-top: 1.7rem;
+    /*margin-left: 31rem;*/
+    /*margin-top: 1.7rem;*/
 }
-
 
 /* Radio Buttons neue Gefährdung erstellen */
 .container {
     display: block;
     position: relative;
-    margin-bottom: 12px;
     cursor: pointer;
     font-size: 11px;
     padding-left: 20px;
@@ -919,9 +913,6 @@ input[type="button"] {
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 11px;
 }
-
-
-
 
 input[type="text"] {
     font-family: "OpenSans-Regular", sans-serif;
@@ -1047,8 +1038,4 @@ input[type="text"] {
     .table {
         overflow-x: scroll;
     }
-}
-
-.neue_gefaehrdung {
-    margin-top: 40px;
 }
