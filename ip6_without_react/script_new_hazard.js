@@ -1,3 +1,4 @@
+'use strict';
 // get value of the checked radio for Severity
 function displayRadioValueOfSeverity() {
     var ele = document.getElementsByName('severity');
