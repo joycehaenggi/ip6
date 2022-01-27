@@ -224,6 +224,8 @@ function addNewDamage() {
     var divAdd = document.createElement("div");
     divAdd.innerHTML = '<input class="input" type="text" name="fname">';
     objTo.appendChild(divAdd)
+    document.getElementById('form').style.height = "37rem";
+
 }
 
 function addNewMeasures() {
@@ -232,5 +234,7 @@ function addNewMeasures() {
     var divAdd2 = document.createElement("div");
     divAdd2.innerHTML = '<input class="input" type="text" name="fname">';
     objTo2.appendChild(divAdd2)
+     document.getElementById('form').style.height = "37rem";
+
 
 }

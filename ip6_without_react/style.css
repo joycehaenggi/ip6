@@ -520,7 +520,11 @@ td > * {
     width: 100%;
 }
 
-form {
+form{
+    flex-wrap: wrap;
+}
+
+.form {
     height: 25rem;
 }
 
