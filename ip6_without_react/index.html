@@ -273,8 +273,6 @@
                     ["screw.svg", "yellow", "Designvorgabe \"Schraubentyp/Durchmesser/Länge\" kann nicht eingehalten werden.", "Schraubentyp/ Durchmesser/ Länge Schraubenlöcher"]
                 ];
 
-
-
                 /*    if(step === 1){
                         console.log(step);
                         hazards_array.length = 0;
@@ -291,7 +289,7 @@
                     hazards2[i] += "<div class='td fivePercent'><img src='svg/" + hazards_array[i][0] + "' class='icon_list' width='21' height='16'></div>" +
                         "<div class='td tenPercent'><span class='dot " + hazards_array[i][1] + "'></span></div>" +
                         "<div class='td fourtySevenPercent'>" + hazards_array[i][2] + "</div>" +
-                        "<div class='td thirteenPercent'><input id='confirm" + [i] + "' class='checkbox' type='checkbox' onclick='numberOfCheckedCheckboxes()' name='vehicle'  /><label for='confirm" +[i] + "'></label></div>" +
+                        "<div class='td thirteenPercent'><input id='confirm" + [i] + "' class='checkbox' type='checkbox' onclick='numberOfCheckedCheckboxes()' name='vehicle'  /><label for='confirm" + [i] + "'></label></div>" +
                         "<div class='td tenPercent'><div class='data-tooltip' data-tooltip='Akzeptiert-Status'><img src='svg/check_Mark.svg' class='checkmark' width='19' height='17'></div></div>" +
                         "<div class='td fifteenPercent'><div class='data-tooltip' data-tooltip='Gefährdung bearbeiten'><img src='svg/arrow_down.svg' id='arrowDown' class='arrowDown' width='20' height='20'></div></div>";
                     hazards2[i] += "</div>";
@@ -301,7 +299,7 @@
 
                         "<div class='title_with_image_container'>" +
                         "<div class='title_with_image_square'>" +
-                        "<div class='title_detail_view'>"+hazards_array[i][3] +
+                        "<div class='title_detail_view'>" + hazards_array[i][3] +
                         "</div>" +
                         "<div class='image_detail_view'><img src='svg/" + hazards_array[i][0] + "' width='89' height='65'>" +
                         "</div>" +
@@ -338,7 +336,7 @@
                         "</div>" +
                         "</div>" +
 
-                        "<div class='block pP"+i+"'>" +
+                        "<div class='block pP" + i + "'>" +
                         "<div class='block-title'>" +
                         "Bewertung" +
                         "</div>" +
@@ -346,16 +344,16 @@
                         "<div class='evaluation-text'>Kann Mindestdicke anhand Massnahmen eingehalten werden?</div>" +
                         "<div class='evaluation-radio-buttons'>" +
                         "<label class='container detailViewSelection'>Ja" +
-                        "<input type='radio' onclick='evaluationYes("+i+")' id='ja' value='Ja' name='evaluation'>" +
+                        "<input type='radio' onclick='evaluationYes(" + i + ")' id='ja' value='Ja' name='evaluation'>" +
                         "<span class='custom_radio_button'></span>" +
                         "</label>" +
                         "<label class='container detailViewSelection'>Nein" +
-                        "<input type='radio' onclick='evaluationNo("+i+")' id='nein' value='Nein' name='evaluation'>" +
+                        "<input type='radio' onclick='evaluationNo(" + i + ")' id='nein' value='Nein' name='evaluation'>" +
                         "<span class='custom_radio_button'></span>" +
                         "</label>" +
-                        "</div>"+
-                        "</div>"+
-                        "</div>"+
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
 
                         "<div id='post-processing-block' class='postProcessing'>" +
                         "<div class='block-title'>" +
@@ -372,9 +370,9 @@
                         "<input type='radio' id='nein' value='Nein' name='post_processing'>" +
                         "<span class='custom_radio_button'></span>" +
                         "</label>" +
-                        "</div>"+
-                        "</div>"+
-                        "</div>"+
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
 
 
                         "</div>" +
@@ -404,7 +402,7 @@
     </div>
 </div>
 
-<script src="script.js" defer></script>
+<script src="script_general.js" defer></script>
 <script src="jquery.js"></script>
 
 </body>
