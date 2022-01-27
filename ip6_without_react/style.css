@@ -767,36 +767,11 @@ form {
     border-radius: 100%;
 }
 
-
-
-/*.neue_gefaehrdung_third_column {
-    margin-left: 0.5rem;
-    width: 6rem;
-}
-
-.neue_gefaehrdung_second_column {
-    width: 1rem;
-}
-
-.neue_gefaehrdung_third_one_column {
-    margin-left: 0.2rem;
-}
-
-.neue_gefaehrdung_fourth_column {
-    margin-left: 2rem;
-    width: 8rem;
-}
-
-.neue_gefaehrdung_fourth_column_long {
-    margin-left: 7rem;
-    width: 8rem;
-}*/
-
 .neue_gefaehrdung_input_button {
-    margin-top: 1rem;
     border: 1px solid var(--Frames-BlueGray);
     background-color: white;
     width: 8rem;
+    height: calc(29 * 0.063rem);
     padding: 4px;
     cursor: pointer;
     -moz-border-radius: 4px;
