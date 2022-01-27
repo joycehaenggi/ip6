@@ -688,6 +688,7 @@ form {
     width: calc(250 * 0.063rem);
     display: flex;
     padding-right:10px;
+    justify-content: space-between;
     align-items: center;
 }
 .column2 {
@@ -695,6 +696,10 @@ form {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.add_column {
+    justify-content: flex-start;
 }
 
 #add_new_Damage, #add_new_measures {
@@ -706,15 +711,15 @@ form {
 }
 
 .column3 {
-    width: calc(250 * 0.063rem);
-    padding: 0 calc(30 * 0.063rem);
+    width: calc(300 * 0.063rem);
+    margin-left: calc(10 * 0.063rem);
 }
 .column4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(200 * 0.063rem);
-    padding: 0 20px;
+    width: calc(300 * 0.063rem);
+    margin: 0  calc(10 * 0.063rem);
 
 }
 .column5 {
@@ -729,6 +734,8 @@ form {
 
 .addLabel {
     padding-top: 6px;
+    display: block;
+    width: 300px;
 }
 
 .input_customized {

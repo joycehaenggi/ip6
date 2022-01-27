@@ -202,7 +202,7 @@
                 <div class="column1">
                     <label class="label_customized addLabel">Schaden</label>
                 </div>
-                <div class="column2" id="add_new_Damage">
+                <div class="column2 add_column" id="add_new_Damage">
                     <input class="input_customized add_new_input" type="text">
                 </div>
             </div>
@@ -297,7 +297,7 @@
                     </div>
                 </div>
                 <div class="column4">
-                    <label class="neue_gefaehrdung_fourth_column ">Risikoprioritätszahl</label>
+                    <label class="risk_priority_number_title">Risikoprioritätszahl</label>
                     <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"
@@ -307,8 +307,6 @@
                         <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"
                               fill="black"/>
                     </svg>
-                </div>
-                <div class="column5">
                     <div class="risk_priority_field">
                         <div class="rectangle_align" id="resultSeverity"></div>
                         <div class="rectangle_align">/</div>
@@ -316,98 +314,7 @@
                     </div>
                 </div>
             </div>
-            <!--            <div class="flex-element">-->
-            <!--                <label class="label_customized box-test">Eintretenswahrscheinlichkeit</label>-->
-            <!--                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none"-->
-            <!--                         xmlns="http://www.w3.org/2000/svg">-->
-            <!--                        <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"-->
-            <!--                              fill="black"/>-->
-            <!--                        <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z"-->
-            <!--                              fill="black"/>-->
-            <!--                        <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"-->
-            <!--                              fill="black"/>-->
-            <!--                    </svg>-->
 
-
-            <!--                <div class="label_customized radio">-->
-            <!--                    <label class="container"> 1-->
-            <!--                        <input type="radio" name="severity" value="1" onclick="displayRadioValueOfSeverity()">-->
-            <!--                        <span class="custom_radio_button"></span>-->
-            <!--                    </label>-->
-            <!--                    <label class="container"> 2-->
-            <!--                        <input type="radio" name="severity" value="2" onclick="displayRadioValueOfSeverity()">-->
-            <!--                        <span class="custom_radio_button"></span>-->
-            <!--                    </label>-->
-            <!--                    <label class="container"> 3-->
-            <!--                        <input type="radio" name="severity" value="3" onclick="displayRadioValueOfSeverity()">-->
-            <!--                        <span class="custom_radio_button"></span>-->
-            <!--                    </label>-->
-            <!--                    <label class="container"> 4-->
-            <!--                        <input type="radio" name="severity" value="4" onclick="displayRadioValueOfSeverity()">-->
-            <!--                        <span class="custom_radio_button"></span>-->
-            <!--                    </label>-->
-            <!--                    <label class="container"> 5-->
-            <!--                        <input type="radio" name="severity" value="5" onclick="displayRadioValueOfSeverity()">-->
-            <!--                        <span class="custom_radio_button"></span>-->
-            <!--                    </label>-->
-            <!--                </div>-->
-
-            <!--                <label class=" neue_gefaehrdung_third_column ">Schweregrad</label>-->
-            <!--                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none"-->
-            <!--                         xmlns="http://www.w3.org/2000/svg">-->
-            <!--                        <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"-->
-            <!--                              fill="black"/>-->
-            <!--                        <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z"-->
-            <!--                              fill="black"/>-->
-            <!--                        <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"-->
-            <!--                              fill="black"/>-->
-            <!--                    </svg>-->
-
-
-            <!--                <div class="neue_gefaherdung radio">-->
-            <!--                    <label class="container"> 1-->
-            <!--                        <input type="radio" name="risk_priority" value="1"-->
-            <!--                               onclick="displayRadioValueOfRiskPriority()">-->
-            <!--                        <span class="custom_radio_button"></span>-->
-            <!--                    </label>-->
-            <!--                    <label class="container"> 2-->
-            <!--                        <input type="radio" name="risk_priority" value="2"-->
-            <!--                               onclick="displayRadioValueOfRiskPriority()">-->
-            <!--                        <span class="custom_radio_button"></span>-->
-            <!--                    </label>-->
-            <!--                    <label class="container"> 3-->
-            <!--                        <input type="radio" name="risk_priority" value="3"-->
-            <!--                               onclick="displayRadioValueOfRiskPriority()">-->
-            <!--                        <span class="custom_radio_button"></span>-->
-            <!--                    </label>-->
-            <!--                    <label class="container"> 4-->
-            <!--                        <input type="radio" name="risk_priority" value="4"-->
-            <!--                               onclick="displayRadioValueOfRiskPriority()">-->
-            <!--                        <span class="custom_radio_button"></span>-->
-            <!--                    </label>-->
-            <!--                    <label class="container"> 5-->
-            <!--                        <input type="radio" name="risk_priority" value="5"-->
-            <!--                               onclick="displayRadioValueOfRiskPriority()">-->
-            <!--                        <span class="custom_radio_button"></span>-->
-            <!--                    </label>-->
-            <!--                </div>-->
-            <!--                <label class="neue_gefaehrdung_fourth_column ">Risikoprioritätszahl</label>-->
-            <!--                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none"-->
-            <!--                         xmlns="http://www.w3.org/2000/svg">-->
-            <!--                        <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"-->
-            <!--                              fill="black"/>-->
-            <!--                        <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z"-->
-            <!--                              fill="black"/>-->
-            <!--                        <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"-->
-            <!--                              fill="black"/>-->
-            <!--                    </svg>-->
-
-            <!--                <div class="risk_priority_field ">-->
-            <!--                    <div class="rectangle_align" id="resultSeverity"></div>-->
-            <!--                    <div class="rectangle_align">/</div>-->
-            <!--                    <div class="rectangle_align" id="resultRiskPriority"></div>-->
-            <!--                </div>-->
-            <!--            </div>-->
 
             <div class="flex-element flex_add">
                 <div class="column1">
@@ -510,7 +417,7 @@
                     </div>
                 </div>
                 <div class="column4">
-                    <label class="neue_gefaehrdung_fourth_column ">Risikoprioritätszahl</label>
+                    <label class="risk_priority_number_title">Risikoprioritätszahl</label>
                     <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"
@@ -520,8 +427,6 @@
                         <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"
                               fill="black"/>
                     </svg>
-                </div>
-                <div class="column5">
                     <div class="risk_priority_field">
                         <div class="rectangle_align" id="resultSeverity_two"></div>
                         <div class="rectangle_align">/</div>
