@@ -811,12 +811,6 @@ form {
     height: calc(29 * 0.063rem);
 }
 
-.neue_gefaehrdung_input_button {
-    display: flex;
-    position: absolute;
-    left: 15rem;
-}
-
 .severity {
     display: flex;
     justify-content: center;
