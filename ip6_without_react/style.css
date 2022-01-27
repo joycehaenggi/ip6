@@ -715,6 +715,20 @@ input[type="text"] {
     font-size: 11px;
 }
 
+.flexbox {
+    flex-wrap: wrap;
+}
+.input{
+    display: inline-block;
+    border: 1px solid var(--Frames-BlueGray);
+    border-radius: 5px;
+    width: 20rem;
+    height: 2em;
+    margin-left: 15rem;
+    margin-top: 0.5rem;
+}
+
+
 @media (max-width: 900px) {
     .header {
         padding-left: 0;
@@ -786,17 +800,8 @@ input[type="text"] {
     }
 }
 
-.test{
-    position: absolute;
-    margin-left: 15rem;
 
 
-    }
 
-.testtest{
-    display: flex;
-    width: 20rem;
-    height: 2em;
-    margin-bottom:8px;
-}
+
 
