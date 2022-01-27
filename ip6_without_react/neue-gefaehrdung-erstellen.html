@@ -6,52 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Virtueller Assistent Produktionsprozess medizinischer Implantate</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="jquery.js"></script>
 </head>
 <body>
 
+<!--Header-->
+
 <nav class="header">
-    <a href="index.html">
-        <div class="logo_title">
-            <div class="logo">
-                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip01_1325_56723)">
-                        <path d="M24.5664 25.6055V30.0586L19 32.4336L13.4336 30.0586V25.6055L19 23.3789L24.5664 25.6055Z"
-                              fill="#B8C7E6"/>
-                        <path d="M24.5664 16.6992V21.1523L19 23.3789L13.4336 21.1523V16.6992L19 14.4727L24.5664 16.6992Z"
-                              fill="#B8C7E6"/>
-                        <path d="M24.5664 21.1523V16.6992L19 14.4727V23.3789L24.5664 21.1523Z" fill="#A3B4D9"/>
-                        <path d="M24.5664 30.0586V25.6055L19 23.3789V32.4336L24.5664 30.0586Z" fill="#A3B4D9"/>
-                        <path d="M23.4531 11.1328H14.5469C13.9234 11.1328 13.4336 11.6226 13.4336 12.2461V16.6992H24.5664V12.2461C24.5664 11.6226 24.0766 11.1328 23.4531 11.1328Z"
-                              fill="#CDD9F2"/>
-                        <path d="M24.5664 30.0586V32.4336C24.5664 32.723 24.455 33.0125 24.2323 33.2128L19.7792 37.6659C19.5789 37.8887 19.2895 38 19 38C18.7105 38 18.4211 37.8887 18.2208 37.6659L13.7677 33.2128C13.545 33.0125 13.4336 32.723 13.4336 32.4336V30.0586H24.5664Z"
-                              fill="#CDD9F2"/>
-                        <path d="M13.4336 21.1523H24.5664V25.6055H13.4336V21.1523Z" fill="#CDD9F2"/>
-                        <path d="M19 38C19.2895 38 19.5789 37.8887 19.7792 37.6659L24.2323 33.2128C24.455 33.0125 24.5664 32.723 24.5664 32.4336V30.0586H19V38Z"
-                              fill="#B8C7E6"/>
-                        <path d="M19 21.1523H24.5664V25.6055H19V21.1523Z" fill="#B8C7E6"/>
-                        <path d="M23.4531 11.1328H19V16.6992H24.5664V12.2461C24.5664 11.6226 24.0766 11.1328 23.4531 11.1328Z"
-                              fill="#B8C7E6"/>
-                        <path d="M11.207 8.12705V12.2461C11.207 12.8695 11.6968 13.3594 12.3203 13.3594H25.6797C26.3032 13.3594 26.793 12.8695 26.793 12.2461V8.12705L19 5.90049L11.207 8.12705Z"
-                              fill="#B8C7E6"/>
-                        <path d="M25.6797 13.3594C26.3032 13.3594 26.793 12.8695 26.793 12.2461V8.12705L19 5.90049V13.3594H25.6797Z"
-                              fill="#A3B4D9"/>
-                        <path d="M28.7521 5.18796L26.7928 8.12703H11.2068L9.24745 5.18796C8.57963 4.18601 8.49049 2.87227 9.0694 1.78125C9.6483 0.690234 10.7839 0 12.0307 0H16.7732C17.3967 0 17.8865 0.48977 17.8865 1.11328C17.8865 1.73679 18.3763 2.22656 18.9998 2.22656C19.6233 2.22656 20.1131 1.73679 20.1131 1.11328C20.1131 0.48977 20.6028 0 21.2264 0H25.9689C27.2157 0 28.3512 0.690234 28.9302 1.78125C29.5092 2.87227 29.42 4.16367 28.7521 5.18796Z"
-                              fill="#E5EDFF"/>
-                        <path d="M26.793 8.12703L28.7524 5.18796C29.4202 4.16367 29.5093 2.87219 28.9304 1.78125C28.3515 0.690309 27.2159 0 25.9691 0H21.2266C20.6031 0 20.1133 0.48977 20.1133 1.11328C20.1133 1.73679 19.6235 2.22656 19 2.22656V8.12703H26.793Z"
-                              fill="#CDD9F2"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_1325_56723">
-                            <rect width="38" height="38" fill="white"/>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </div>
-            <div class="title_assistent">
-                Virtueller Assistent
-            </div>
+    <div class="logo_title">
+        <div class="logo">
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip01_1325_56723)">
+                    <path d="M24.5664 25.6055V30.0586L19 32.4336L13.4336 30.0586V25.6055L19 23.3789L24.5664 25.6055Z"
+                          fill="#B8C7E6"/>
+                    <path d="M24.5664 16.6992V21.1523L19 23.3789L13.4336 21.1523V16.6992L19 14.4727L24.5664 16.6992Z"
+                          fill="#B8C7E6"/>
+                    <path d="M24.5664 21.1523V16.6992L19 14.4727V23.3789L24.5664 21.1523Z" fill="#A3B4D9"/>
+                    <path d="M24.5664 30.0586V25.6055L19 23.3789V32.4336L24.5664 30.0586Z" fill="#A3B4D9"/>
+                    <path d="M23.4531 11.1328H14.5469C13.9234 11.1328 13.4336 11.6226 13.4336 12.2461V16.6992H24.5664V12.2461C24.5664 11.6226 24.0766 11.1328 23.4531 11.1328Z"
+                          fill="#CDD9F2"/>
+                    <path d="M24.5664 30.0586V32.4336C24.5664 32.723 24.455 33.0125 24.2323 33.2128L19.7792 37.6659C19.5789 37.8887 19.2895 38 19 38C18.7105 38 18.4211 37.8887 18.2208 37.6659L13.7677 33.2128C13.545 33.0125 13.4336 32.723 13.4336 32.4336V30.0586H24.5664Z"
+                          fill="#CDD9F2"/>
+                    <path d="M13.4336 21.1523H24.5664V25.6055H13.4336V21.1523Z" fill="#CDD9F2"/>
+                    <path d="M19 38C19.2895 38 19.5789 37.8887 19.7792 37.6659L24.2323 33.2128C24.455 33.0125 24.5664 32.723 24.5664 32.4336V30.0586H19V38Z"
+                          fill="#B8C7E6"/>
+                    <path d="M19 21.1523H24.5664V25.6055H19V21.1523Z" fill="#B8C7E6"/>
+                    <path d="M23.4531 11.1328H19V16.6992H24.5664V12.2461C24.5664 11.6226 24.0766 11.1328 23.4531 11.1328Z"
+                          fill="#B8C7E6"/>
+                    <path d="M11.207 8.12705V12.2461C11.207 12.8695 11.6968 13.3594 12.3203 13.3594H25.6797C26.3032 13.3594 26.793 12.8695 26.793 12.2461V8.12705L19 5.90049L11.207 8.12705Z"
+                          fill="#B8C7E6"/>
+                    <path d="M25.6797 13.3594C26.3032 13.3594 26.793 12.8695 26.793 12.2461V8.12705L19 5.90049V13.3594H25.6797Z"
+                          fill="#A3B4D9"/>
+                    <path d="M28.7521 5.18796L26.7928 8.12703H11.2068L9.24745 5.18796C8.57963 4.18601 8.49049 2.87227 9.0694 1.78125C9.6483 0.690234 10.7839 0 12.0307 0H16.7732C17.3967 0 17.8865 0.48977 17.8865 1.11328C17.8865 1.73679 18.3763 2.22656 18.9998 2.22656C19.6233 2.22656 20.1131 1.73679 20.1131 1.11328C20.1131 0.48977 20.6028 0 21.2264 0H25.9689C27.2157 0 28.3512 0.690234 28.9302 1.78125C29.5092 2.87227 29.42 4.16367 28.7521 5.18796Z"
+                          fill="#E5EDFF"/>
+                    <path d="M26.793 8.12703L28.7524 5.18796C29.4202 4.16367 29.5093 2.87219 28.9304 1.78125C28.3515 0.690309 27.2159 0 25.9691 0H21.2266C20.6031 0 20.1133 0.48977 20.1133 1.11328C20.1133 1.73679 19.6235 2.22656 19 2.22656V8.12703H26.793Z"
+                          fill="#CDD9F2"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_1325_56723">
+                        <rect width="38" height="38" fill="white"/>
+                    </clipPath>
+                </defs>
+            </svg>
         </div>
-    </a>
+        <div class="title_assistent">
+            Virtueller Assistent
+        </div>
+
+    </div>
     <a href="#" class="toggle-button">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -59,431 +62,339 @@
     </a>
     <div class="header-links">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="https://quizzical-keller-9651b4.netlify.app/" target="_blank">Auftragsübersicht</a></li>
-            <li><a href="https://quizzical-keller-9651b4.netlify.app/" target="_blank">Neuer Auftrag</a></li>
+            <li><a href="https://quizzical-keller-9651b4.netlify.app/">Home</a></li>
+            <li><a href="https://quizzical-keller-9651b4.netlify.app/">Auftragsübersicht</a></li>
+            <li><a href="https://quizzical-keller-9651b4.netlify.app/">Neuer Auftrag</a></li>
         </ul>
     </div>
 </nav>
 
+
+<div class="manufacturing-step-navigation">
+    <div class="home">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1387_56763)">
+                <path d="M14.8861 7.00049L12.1185 4.63702C12.1217 4.62085 12.1249 4.60469 12.1282 4.58529V1.49435C12.1249 1.31005 11.9794 1.16133 11.7952 1.15486H10.2497C10.0719 1.15486 9.92637 1.31329 9.92637 1.49435V2.77469L7.71163 0.886503C7.592 0.783041 7.41417 0.783041 7.29131 0.886503L0.116845 6.99726C-0.0221828 7.11042 -0.0383488 7.31411 0.0748131 7.45314C0.187975 7.59217 0.391666 7.60833 0.530694 7.49517C0.533927 7.49194 0.533927 7.49194 0.53716 7.4887L7.50147 1.55901L9.99426 3.68322L11.4848 4.95064L14.469 7.49194C14.6048 7.60833 14.8085 7.59216 14.9249 7.45637C15.0381 7.32058 15.0219 7.11688 14.8861 7.00049ZM11.4783 4.09061L10.573 3.32757V1.80473H11.4783V4.09061Z"
+                      fill="black"/>
+                <path d="M13.4601 7.65359L12.5516 6.87762L7.71149 2.74236C7.59186 2.6389 7.41403 2.6389 7.29117 2.74236L2.45107 6.87762L1.54255 7.65359C1.40675 7.76998 1.39059 7.97367 1.50698 8.10947C1.62014 8.24526 1.8206 8.26143 1.95316 8.14827L1.9564 8.14503L2.36054 7.79585V13.8581C2.36378 14.0392 2.51251 14.1879 2.69356 14.1911H12.3059C12.4869 14.1879 12.6356 14.0424 12.6389 13.8581V7.79585L13.043 8.14503C13.1012 8.19353 13.1724 8.22263 13.25 8.22263C13.3437 8.22263 13.4342 8.1806 13.4957 8.10947C13.6153 7.97044 13.5959 7.76675 13.4601 7.65359ZM8.79461 13.5412H6.20805V10.0494H8.79461V13.5412ZM9.44125 13.5412V9.73577C9.44125 9.55794 9.30869 9.40275 9.13086 9.40275H5.8718C5.69397 9.40275 5.56141 9.55794 5.56141 9.73577V13.5412H3.00718V7.24297L7.50133 3.41487L11.9955 7.24297V13.5412H9.44125Z"
+                      fill="black"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_1387_56763">
+                    <rect width="15" height="15" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+    <p class="navigation-steps" id="navigation-step-icon"></p>
+    <div class="next-arrow">
+        <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1387_56747)">
+                <path d="M4.55193 2.83534L1.77676 0.0678424C1.68583 -0.0227783 1.53862 -0.022626 1.44785 0.0683112C1.35715 0.159237 1.35738 0.306529 1.44832 0.39722L4.05831 3L1.44822 5.60277C1.3573 5.69348 1.35706 5.84068 1.44775 5.93161C1.49326 5.9772 1.55287 5.99999 1.61248 5.99999C1.67195 5.99999 1.73132 5.97735 1.77675 5.93208L4.55193 3.16465C4.59573 3.12108 4.6203 3.06178 4.6203 3C4.6203 2.93822 4.59566 2.879 4.55193 2.83534Z"
+                      fill="black"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_1387_56747">
+                    <rect width="6" height="6" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+    <p class="navigation-steps">Neuer Auftrag erstellen</p>
+    <div class="next-arrow">
+        <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1387_56747)">
+                <path d="M4.55193 2.83534L1.77676 0.0678424C1.68583 -0.0227783 1.53862 -0.022626 1.44785 0.0683112C1.35715 0.159237 1.35738 0.306529 1.44832 0.39722L4.05831 3L1.44822 5.60277C1.3573 5.69348 1.35706 5.84068 1.44775 5.93161C1.49326 5.9772 1.55287 5.99999 1.61248 5.99999C1.67195 5.99999 1.73132 5.97735 1.77675 5.93208L4.55193 3.16465C4.59573 3.12108 4.6203 3.06178 4.6203 3C4.6203 2.93822 4.59566 2.879 4.55193 2.83534Z"
+                      fill="black"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_1387_56747">
+                    <rect width="6" height="6" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+    <p class="navigation-steps">Herstellungsprozess</p>
+    <div class="next-arrow">
+        <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1387_56747)">
+                <path d="M4.55193 2.83534L1.77676 0.0678424C1.68583 -0.0227783 1.53862 -0.022626 1.44785 0.0683112C1.35715 0.159237 1.35738 0.306529 1.44832 0.39722L4.05831 3L1.44822 5.60277C1.3573 5.69348 1.35706 5.84068 1.44775 5.93161C1.49326 5.9772 1.55287 5.99999 1.61248 5.99999C1.67195 5.99999 1.73132 5.97735 1.77675 5.93208L4.55193 3.16465C4.59573 3.12108 4.6203 3.06178 4.6203 3C4.6203 2.93822 4.59566 2.879 4.55193 2.83534Z"
+                      fill="black"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_1387_56747">
+                    <rect width="6" height="6" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+    <p class="navigation-steps">Implantatdesign Matching</p>
+</div>
+</div>
+
+
+<!--Navigation and Searchbar-->
+
+<div class="manufacturing-step-information">
+    <p class="manu-title">Implantatdesign Matching</p>
+    <div class="manufacturing-legend">
+        <p class="manu-legend-tittle">Risikopriorität:</p>
+        <div class="manufacturing-legend-elements">
+            <span class="legend-dot green"></span>
+            <p class="manu-legend">gering</p>
+            <span class="legend-dot yellow"></span>
+            <p class="manu-legend">mittel</p>
+            <span class="legend-dot red"></span>
+            <p class="manu-legend">hoch</p>
+        </div>
+    </div>
+</div>
+
+
+<!--Neue Gefährdung erstellen-->
+
 <div class="wrapper">
-    <div class="manufacturing-step-navigation">
-        <div class="navigation-tree">
-            <svg class="home" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_1387_56763)">
-                    <path d="M14.8861 7.00049L12.1185 4.63702C12.1217 4.62085 12.1249 4.60469 12.1282 4.58529V1.49435C12.1249 1.31005 11.9794 1.16133 11.7952 1.15486H10.2497C10.0719 1.15486 9.92637 1.31329 9.92637 1.49435V2.77469L7.71163 0.886503C7.592 0.783041 7.41417 0.783041 7.29131 0.886503L0.116845 6.99726C-0.0221828 7.11042 -0.0383488 7.31411 0.0748131 7.45314C0.187975 7.59217 0.391666 7.60833 0.530694 7.49517C0.533927 7.49194 0.533927 7.49194 0.53716 7.4887L7.50147 1.55901L9.99426 3.68322L11.4848 4.95064L14.469 7.49194C14.6048 7.60833 14.8085 7.59216 14.9249 7.45637C15.0381 7.32058 15.0219 7.11688 14.8861 7.00049ZM11.4783 4.09061L10.573 3.32757V1.80473H11.4783V4.09061Z"
-                          fill="black"/>
-                    <path d="M13.4601 7.65359L12.5516 6.87762L7.71149 2.74236C7.59186 2.6389 7.41403 2.6389 7.29117 2.74236L2.45107 6.87762L1.54255 7.65359C1.40675 7.76998 1.39059 7.97367 1.50698 8.10947C1.62014 8.24526 1.8206 8.26143 1.95316 8.14827L1.9564 8.14503L2.36054 7.79585V13.8581C2.36378 14.0392 2.51251 14.1879 2.69356 14.1911H12.3059C12.4869 14.1879 12.6356 14.0424 12.6389 13.8581V7.79585L13.043 8.14503C13.1012 8.19353 13.1724 8.22263 13.25 8.22263C13.3437 8.22263 13.4342 8.1806 13.4957 8.10947C13.6153 7.97044 13.5959 7.76675 13.4601 7.65359ZM8.79461 13.5412H6.20805V10.0494H8.79461V13.5412ZM9.44125 13.5412V9.73577C9.44125 9.55794 9.30869 9.40275 9.13086 9.40275H5.8718C5.69397 9.40275 5.56141 9.55794 5.56141 9.73577V13.5412H3.00718V7.24297L7.50133 3.41487L11.9955 7.24297V13.5412H9.44125Z"
-                          fill="black"/>
-                </g>
-                <defs>
-                    <clipPath id="clip0_1387_56763">
-                        <rect width="15" height="15" fill="white"/>
-                    </clipPath>
-                </defs>
-            </svg>
-            <div class="next-arrow next-arrow-first-child">
-                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1387_56747)">
-                        <path d="M4.55193 2.83534L1.77676 0.0678424C1.68583 -0.0227783 1.53862 -0.022626 1.44785 0.0683112C1.35715 0.159237 1.35738 0.306529 1.44832 0.39722L4.05831 3L1.44822 5.60277C1.3573 5.69348 1.35706 5.84068 1.44775 5.93161C1.49326 5.9772 1.55287 5.99999 1.61248 5.99999C1.67195 5.99999 1.73132 5.97735 1.77675 5.93208L4.55193 3.16465C4.59573 3.12108 4.6203 3.06178 4.6203 3C4.6203 2.93822 4.59566 2.879 4.55193 2.83534Z"
-                              fill="black"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_1387_567471">
-                            <rect width="6" height="6" fill="white"/>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </div>
-            <p class="navigation-steps">Neuer Auftrag erstellen</p>
-            <div class="next-arrow">
-                <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1387_56747)">
-                        <path d="M4.55193 2.83534L1.77676 0.0678424C1.68583 -0.0227783 1.53862 -0.022626 1.44785 0.0683112C1.35715 0.159237 1.35738 0.306529 1.44832 0.39722L4.05831 3L1.44822 5.60277C1.3573 5.69348 1.35706 5.84068 1.44775 5.93161C1.49326 5.9772 1.55287 5.99999 1.61248 5.99999C1.67195 5.99999 1.73132 5.97735 1.77675 5.93208L4.55193 3.16465C4.59573 3.12108 4.6203 3.06178 4.6203 3C4.6203 2.93822 4.59566 2.879 4.55193 2.83534Z"
-                              fill="black"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_1387_567472">
-                            <rect width="6" height="6" fill="white"/>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </div>
-            <p class="navigation-steps">Herstellungsprozess</p>
-            <div class="next-arrow">
-                <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1387_56747)">
-                        <path d="M4.55193 2.83534L1.77676 0.0678424C1.68583 -0.0227783 1.53862 -0.022626 1.44785 0.0683112C1.35715 0.159237 1.35738 0.306529 1.44832 0.39722L4.05831 3L1.44822 5.60277C1.3573 5.69348 1.35706 5.84068 1.44775 5.93161C1.49326 5.9772 1.55287 5.99999 1.61248 5.99999C1.67195 5.99999 1.73132 5.97735 1.77675 5.93208L4.55193 3.16465C4.59573 3.12108 4.6203 3.06178 4.6203 3C4.6203 2.93822 4.59566 2.879 4.55193 2.83534Z"
-                              fill="black"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_1387_567473">
-                            <rect width="6" height="6" fill="white"/>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </div>
-            <p class="navigation-steps nameStep" id="actualStep"></p>
-        </div>
+    <table class="neue_gefaehrdung_table">
+        <thead>
+        <tr>
+            <th class="hundredPercent neue_gefaehrdung_th">
+                <p>Neue Gefährdung erstellen<p/>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
 
-        <div class="searchbar">
-            <label class="searchfield-label">
-                <input type="text" class="searchfield">
-            </label>
-        </div>
-    </div>
-
-    <div class="manufacturing-step-information">
-        <div class="menu-title-box">
-            <p class="manu-title" id="titleName"></p>
-        </div>
-        <div class="manufacturing-legend">
-            <div class="priority-title">
-                <p class="manu-legend-tittle">Risikopriorität:</p>
-            </div>
-            <div class="low">
-                <span class="legend-dot green"></span>
-                <p class="manu-legend">gering</p>
-            </div>
-            <div class="middle">
-                <span class="legend-dot yellow"></span>
-                <p class="manu-legend">mittel</p>
-            </div>
-            <div class="high">
-                <span class="legend-dot red"></span>
-                <p class="manu-legend">hoch</p>
-            </div>
-            <div class="manufacturing-legend-elements">
-            </div>
-        </div>
-    </div>
-
-    <div class="rectangle">
-        <div class="notification" onclick="decreaseNotification()" id="notification">
-            <div class="first_part">
-                <svg class="info_icon" id="info_icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.969339 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.81264 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78746 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78746 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
-                          fill="white"/>
-                </svg>
-                <p id="text_notification">Wählen Sie alle nicht zutreffenden Gefährdungen aus und bearbeiten Sie die
-                    zutreffenden Gefährdungen</p>
-            </div>
-            <div class="arrow" id="arrow_id">
-                <svg class="arrow_right" width="15" height="15" viewBox="0 0 15 15" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.26063 8.12621H12.2396L10.1828 10.1831C9.59193 10.7739 10.4782 11.6601 11.069 11.0693L12.9423 9.19312L14.1928 7.94065C14.4351 7.69685 14.4351 7.3031 14.1928 7.0593L11.069 3.93187C10.9501 3.80974 10.7865 3.74122 10.6161 3.74264C10.0535 3.74271 9.77737 4.42799 10.1828 4.81813L12.2445 6.87504H1.22829C0.361791 6.91803 0.426489 8.16934 1.26063 8.12621Z"
-                          fill="white"/>
-                </svg>
-            </div>
-        </div>
-    </div>
-
-    <!--Neue Gefährdung erstellen-->
-
-    <div class="wrapper">
-        <table class="neue_gefaehrdung_table">
-            <thead>
-            <tr>
-                <th class="hundredPercent neue_gefaehrdung_th">
-                    <p>Neue Gefährdung erstellen
-                    <p/>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-
-            <th class="hundredPercent">
-                <form>
-                    <div class="form-wrapper">
-                        <label class="neue_gefaherdung_label">Gefährdung</label>
-                        <input class="neue_gefaehrdung_input" type="text">
-                    </div>
-                    <div class="form-wrapper">
-                        <label class="neue_gefaherdung_label">Gefährdungssituation</label>
-                        <input class="neue_gefaehrdung_input " type="text">
-                    </div>
-                    <div class="form-wrapper">
-                        <label class="neue_gefaherdung_label">Schaden</label>
-                        <input class="neue_gefaehrdung_input " type="text">
-                    </div>
+        <th class="hundredPercent">
+            <form class="form" id="form">
+                <div class="form-wrapper">
+                    <label class="neue_gefaherdung_label">Gefährdung</label>
+                    <input class="neue_gefaehrdung_input" type="text">
+                </div>
+                <div class="form-wrapper">
+                    <label class="neue_gefaherdung_label">Gefährdungssituation</label>
+                    <input class="neue_gefaehrdung_input " type="text">
+                </div>
+                <div class="form-wrapper">
+                    <label class="neue_gefaherdung_label">Schaden</label>
+                    <input class="neue_gefaehrdung_input " type="text">
+                </div>
                     <div class="form-wrapper">
                         <label class="neue_gefaherdung_label"></label>
-                        <input class="neue_gefaehrdung_input " type="text">
+                    <input class="neue_gefaehrdung_input " type="text">
 
-                        <div class="neue_gefaehrdung_third_one_column" onclick="addNewDamage()">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10 0C4.48566 0 0 4.48566 0 10C0 15.5143 4.48566 20 10 20C15.5143 20 20 15.5136 20 10C20 4.48645 15.5143 0 10 0ZM10 18.4508C5.34082 18.4508 1.54918 14.66 1.54918 10C1.54918 5.34004 5.34082 1.54918 10 1.54918C14.6592 1.54918 18.4508 5.34004 18.4508 10C18.4508 14.66 14.66 18.4508 10 18.4508Z"
-                                      fill="#32404F"/>
-                                <path d="M13.873 9.15568H10.7746V6.05732C10.7746 5.62975 10.4284 5.28271 10 5.28271C9.57164 5.28271 9.22539 5.62975 9.22539 6.05732V9.15568H6.12703C5.69867 9.15568 5.35242 9.50271 5.35242 9.93029C5.35242 10.3579 5.69867 10.7049 6.12703 10.7049H9.22539V13.8033C9.22539 14.2308 9.57164 14.5779 10 14.5779C10.4284 14.5779 10.7746 14.2308 10.7746 13.8033V10.7049H13.873C14.3013 10.7049 14.6476 10.3579 14.6476 9.93029C14.6476 9.50271 14.3013 9.15568 13.873 9.15568Z"
-                                      fill="#32404F"/>
+                    <div class="neue_gefaehrdung_third_one_column" onclick="addNewDamage()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0C4.48566 0 0 4.48566 0 10C0 15.5143 4.48566 20 10 20C15.5143 20 20 15.5136 20 10C20 4.48645 15.5143 0 10 0ZM10 18.4508C5.34082 18.4508 1.54918 14.66 1.54918 10C1.54918 5.34004 5.34082 1.54918 10 1.54918C14.6592 1.54918 18.4508 5.34004 18.4508 10C18.4508 14.66 14.66 18.4508 10 18.4508Z"
+                                  fill="#32404F"/>
+                            <path d="M13.873 9.15568H10.7746V6.05732C10.7746 5.62975 10.4284 5.28271 10 5.28271C9.57164 5.28271 9.22539 5.62975 9.22539 6.05732V9.15568H6.12703C5.69867 9.15568 5.35242 9.50271 5.35242 9.93029C5.35242 10.3579 5.69867 10.7049 6.12703 10.7049H9.22539V13.8033C9.22539 14.2308 9.57164 14.5779 10 14.5779C10.4284 14.5779 10.7746 14.2308 10.7746 13.8033V10.7049H13.873C14.3013 10.7049 14.6476 10.3579 14.6476 9.93029C14.6476 9.50271 14.3013 9.15568 13.873 9.15568Z"
+                                  fill="#32404F"/>
+                        </svg>
+                </div>
+                    </div>
+                <div class="form-wrapper">
+                    <div class="flexbox" id="add_new_Damage">
+                        <input class="input" type="hidden" name="fname">
+                    </div>
+                </div>
+                        <div class="form-wrapper" >
+                    <label class="neue_gefaherdung_label box-test">Eintretenswahrscheinlichkeit
+                        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z" fill="black"/>
+                            <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z" fill="black"/>
+                            <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z" fill="black"/>
+                        </svg>
+                    </label>
+
+
+
+                    <div class="neue_gefaherdung_label radio">
+                        <label class="container"> 1
+                            <input type="radio" name="severity" value="1" onclick="displayRadioValueOfSeverity()">
+                            <span class="new_checkmark"></span>
+                        </label>
+                        <label class="container"> 2
+                            <input type="radio" name="severity" value="2" onclick="displayRadioValueOfSeverity()">
+                            <span class="new_checkmark"></span>
+                        </label>
+                        <label class="container"> 3
+                            <input type="radio" name="severity" value="3" onclick="displayRadioValueOfSeverity()">
+                            <span class="new_checkmark"></span>
+                        </label>
+                        <label class="container"> 4
+                            <input type="radio" name="severity" value="4" onclick="displayRadioValueOfSeverity()">
+                            <span class="new_checkmark"></span>
+                        </label>
+                        <label class="container"> 5
+                            <input type="radio" name="severity" value="5" onclick="displayRadioValueOfSeverity()">
+                            <span class="new_checkmark"></span>
+                        </label>
+                    </div>
+
+
+                        <label class=" neue_gefaehrdung_third_column ">Schweregrad
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z" fill="black"/>
+                                <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z" fill="black"/>
+                                <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z" fill="black"/>
                             </svg>
+                        </label>
 
 
-                            <div style="overflow: hidden; width: 500px;">
-                                <div id="test" style="width: 1000px; margin-left: 0px;">
-                                    !!stuff inside the centered div with the negative margin-left so it starts outside
-                                    the container!!
-                                </div>
-                            </div>
-
-                            <input type="button" value="<- Left" onclick="moveDiv('idofthediv', -25)"/>
-                            &nbsp;
-                            <input type="button" value="Right ->" onclick="moveDiv('idofthediv', 25)"/>
-
-
+                        <div class="neue_gefaherdung_label_short radio">
+                            <label class="container"> 1
+                                <input type="radio" name="risk_priority" value="1" onclick="displayRadioValueOfRiskPriority()">
+                                <span class="new_checkmark"></span>
+                            </label>
+                            <label class="container"> 2
+                                <input type="radio" name="risk_priority" value="2" onclick="displayRadioValueOfRiskPriority()">
+                                <span class="new_checkmark"></span>
+                            </label>
+                            <label class="container"> 3
+                                <input type="radio" name="risk_priority" value="3" onclick="displayRadioValueOfRiskPriority()">
+                                <span class="new_checkmark"></span>
+                            </label>
+                            <label class="container"> 4
+                                <input type="radio" name="risk_priority" value="4" onclick="displayRadioValueOfRiskPriority()">
+                                <span class="new_checkmark"></span>
+                            </label>
+                            <label class="container"> 5
+                                <input type="radio" name="risk_priority" value="5" onclick="displayRadioValueOfRiskPriority()">
+                                <span class="new_checkmark"></span>
+                            </label>
                         </div>
 
-                        <div class="test" id="new_damage"></div>
-                        <div>
-                            <input class="testtest" type="hidden" value="1">
+                    <label class="neue_gefaehrdung_fourth_column ">Risikoprioritätszahl
+                        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z" fill="black"/>
+                            <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z" fill="black"/>
+                            <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z" fill="black"/>
+                        </svg>
+                    </label>
+                    <div class="rectangle ">
+                        <div class="rectangle_align" id="resultSeverity"></div>
+                        <div class="rectangle_align">/ </div>
+                        <div class="rectangle_align" id="resultRiskPriority"></div>
+                    </div>
+                </div>
+
+                <div class="form-wrapper">
+                    <label class="neue_gefaherdung_label">Massnahmen</label>
+                    <input class="neue_gefaehrdung_input " type="text">
+                </div>
+                <div class="form-wrapper">
+                    <label class="neue_gefaherdung_label"></label>
+                    <input class="neue_gefaehrdung_input " type="text">
+
+<!--                    TODO make css better for add-->
+                    <div class="neue_gefaehrdung_third_one_column" onclick="addNewMeasures()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0C4.48566 0 0 4.48566 0 10C0 15.5143 4.48566 20 10 20C15.5143 20 20 15.5136 20 10C20 4.48645 15.5143 0 10 0ZM10 18.4508C5.34082 18.4508 1.54918 14.66 1.54918 10C1.54918 5.34004 5.34082 1.54918 10 1.54918C14.6592 1.54918 18.4508 5.34004 18.4508 10C18.4508 14.66 14.66 18.4508 10 18.4508Z"
+                                  fill="#32404F"/>
+                            <path d="M13.873 9.15568H10.7746V6.05732C10.7746 5.62975 10.4284 5.28271 10 5.28271C9.57164 5.28271 9.22539 5.62975 9.22539 6.05732V9.15568H6.12703C5.69867 9.15568 5.35242 9.50271 5.35242 9.93029C5.35242 10.3579 5.69867 10.7049 6.12703 10.7049H9.22539V13.8033C9.22539 14.2308 9.57164 14.5779 10 14.5779C10.4284 14.5779 10.7746 14.2308 10.7746 13.8033V10.7049H13.873C14.3013 10.7049 14.6476 10.3579 14.6476 9.93029C14.6476 9.50271 14.3013 9.15568 13.873 9.15568Z"
+                                  fill="#32404F"/>
+                        </svg>
+                    </div>
+                </div>
+
+                    <div class="form-wrapper">
+                        <div class="flexbox" id="add_new_measures">
+                            <input class="input" type="hidden" name="fname">
                         </div>
+                    </div>
+                    <div class=" form-wrapper">
+                        <label class="neue_gefaherdung_label">Implementierungsnachweis
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z" fill="black"/>
+                                <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z" fill="black"/>
+                                <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z" fill="black"/>
+                            </svg>
+                        </label>
+
+                        <input class="neue_gefaehrdung_input_button" type="button" value="Durchsuchen...">
+                    </div>
+                <div class="form-wrapper">
+                    <label class="neue_gefaherdung_label">Eintretenswahrscheinlichkeit
+                        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z" fill="black"/>
+                            <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z" fill="black"/>
+                            <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z" fill="black"/>
+                        </svg>
+                    </label>
+
+                    <div class="neue_gefaherdung_label radio">
+                        <label class="container"> 1
+                            <input type="radio" name="severity_two" value="1" onclick="displayRadioValueOfSeverityTwo()">
+                            <span class="new_checkmark"></span>
+                        </label>
+                        <label class="container"> 2
+                            <input type="radio" name="severity_two" value="2" onclick="displayRadioValueOfSeverityTwo()">
+                            <span class="new_checkmark"></span>
+                        </label>
+                        <label class="container"> 3
+                            <input type="radio" name="severity_two" value="3" onclick="displayRadioValueOfSeverityTwo()">
+                            <span class="new_checkmark"></span>
+                        </label>
+                        <label class="container"> 4
+                            <input type="radio" name="severity_two" value="4" onclick="displayRadioValueOfSeverityTwo()">
+                            <span class="new_checkmark"></span>
+                        </label>
+                        <label class="container"> 5
+                            <input type="radio" name="severity_two" value="5" onclick="displayRadioValueOfSeverityTwo()">
+                            <span class="new_checkmark"></span>
+                        </label>
+                    </div>
+
+                    <label class=" neue_gefaehrdung_third_column ">Schweregrad
+                        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z" fill="black"/>
+                            <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z" fill="black"/>
+                            <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z" fill="black"/>
+                        </svg>
+
+
+                    </label>
+
+                    <div class="rectangle severity">
+                        <div class="rectangle_align " id="resultRiskPriority_two"></div>
                     </div>
 
 
-                    <div id="idofthediv" style="width: 1000px; margin-left: 0px;">
-                        <div class="form-wrapper">
-                            <label class="neue_gefaherdung_label">Eintretenswahrscheinlichkeit
-                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"
-                                          fill="black"/>
-                                    <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z"
-                                          fill="black"/>
-                                    <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"
-                                          fill="black"/>
-                                </svg>
-                            </label>
+
+                    <label class="neue_gefaehrdung_fourth_column_long ">Risikoprioritätszahl
+                        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z" fill="black"/>
+                            <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z" fill="black"/>
+                            <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z" fill="black"/>
+                        </svg>
 
 
-                            <div class="neue_gefaherdung_label radio">
-                                <label class="container"> 1
-                                    <input type="radio" name="severity" value="1"
-                                           onclick="displayRadioValueOfSeverity()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 2
-                                    <input type="radio" name="severity" value="2"
-                                           onclick="displayRadioValueOfSeverity()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 3
-                                    <input type="radio" name="severity" value="3"
-                                           onclick="displayRadioValueOfSeverity()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 4
-                                    <input type="radio" name="severity" value="4"
-                                           onclick="displayRadioValueOfSeverity()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 5
-                                    <input type="radio" name="severity" value="5"
-                                           onclick="displayRadioValueOfSeverity()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                            </div>
-
-
-                            <label class=" neue_gefaehrdung_third_column ">Schweregrad
-                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"
-                                          fill="black"/>
-                                    <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z"
-                                          fill="black"/>
-                                    <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"
-                                          fill="black"/>
-                                </svg>
-                            </label>
-
-
-                            <div class="neue_gefaherdung_label_short radio">
-                                <label class="container"> 1
-                                    <input type="radio" name="risk_priority" value="1"
-                                           onclick="displayRadioValueOfRiskPriority()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 2
-                                    <input type="radio" name="risk_priority" value="2"
-                                           onclick="displayRadioValueOfRiskPriority()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 3
-                                    <input type="radio" name="risk_priority" value="3"
-                                           onclick="displayRadioValueOfRiskPriority()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 4
-                                    <input type="radio" name="risk_priority" value="4"
-                                           onclick="displayRadioValueOfRiskPriority()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 5
-                                    <input type="radio" name="risk_priority" value="5"
-                                           onclick="displayRadioValueOfRiskPriority()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                            </div>
-
-                            <label class="neue_gefaehrdung_fourth_column ">Risikoprioritätszahl
-                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"
-                                          fill="black"/>
-                                    <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z"
-                                          fill="black"/>
-                                    <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"
-                                          fill="black"/>
-                                </svg>
-                            </label>
-                            <div class="risk_priority_field">
-                                <div class="rectangle_align" id="resultSeverity"></div>
-                                <div class="rectangle_align">/</div>
-                                <div class="rectangle_align" id="resultRiskPriority"></div>
-                            </div>
-                        </div>
-
-                        <div class="form-wrapper">
-                            <label class="neue_gefaherdung_label">Massnahmen</label>
-                            <input class="neue_gefaehrdung_input " type="text">
-                        </div>
-                        <div class="form-wrapper">
-                            <label class="neue_gefaherdung_label"></label>
-                            <input class="neue_gefaehrdung_input " type="text">
-
-                            <!--                    TODO make css better for add-->
-                            <div class="neue_gefaehrdung_third_one_column" onclick="addNewHazard()">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 0C4.48566 0 0 4.48566 0 10C0 15.5143 4.48566 20 10 20C15.5143 20 20 15.5136 20 10C20 4.48645 15.5143 0 10 0ZM10 18.4508C5.34082 18.4508 1.54918 14.66 1.54918 10C1.54918 5.34004 5.34082 1.54918 10 1.54918C14.6592 1.54918 18.4508 5.34004 18.4508 10C18.4508 14.66 14.66 18.4508 10 18.4508Z"
-                                          fill="#32404F"/>
-                                    <path d="M13.873 9.15568H10.7746V6.05732C10.7746 5.62975 10.4284 5.28271 10 5.28271C9.57164 5.28271 9.22539 5.62975 9.22539 6.05732V9.15568H6.12703C5.69867 9.15568 5.35242 9.50271 5.35242 9.93029C5.35242 10.3579 5.69867 10.7049 6.12703 10.7049H9.22539V13.8033C9.22539 14.2308 9.57164 14.5779 10 14.5779C10.4284 14.5779 10.7746 14.2308 10.7746 13.8033V10.7049H13.873C14.3013 10.7049 14.6476 10.3579 14.6476 9.93029C14.6476 9.50271 14.3013 9.15568 13.873 9.15568Z"
-                                          fill="#32404F"/>
-                                </svg>
-                            </div>
-
-                            <div class="neue_gefaherdung_label" id="new_hazard"></div>
-                            <div class="form-wrapper">
-                            </div>
-                        </div>
-                        <div class=" form-wrapper">
-                            <label class="neue_gefaherdung_label">Implementierungsnachweis
-                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"
-                                          fill="black"/>
-                                    <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z"
-                                          fill="black"/>
-                                    <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"
-                                          fill="black"/>
-                                </svg>
-                            </label>
-
-                            <input class="neue_gefaehrdung_input_button" type="button" value="Durchsuchen...">
-                        </div>
-                        <div class="form-wrapper">
-                            <label class="neue_gefaherdung_label">Eintretenswahrscheinlichkeit
-                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"
-                                          fill="black"/>
-                                    <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z"
-                                          fill="black"/>
-                                    <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"
-                                          fill="black"/>
-                                </svg>
-                            </label>
-
-                            <div class="neue_gefaherdung_label radio">
-                                <label class="container"> 1
-                                    <input type="radio" name="severity_two" value="1"
-                                           onclick="displayRadioValueOfSeverityTwo()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 2
-                                    <input type="radio" name="severity_two" value="2"
-                                           onclick="displayRadioValueOfSeverityTwo()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 3
-                                    <input type="radio" name="severity_two" value="3"
-                                           onclick="displayRadioValueOfSeverityTwo()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 4
-                                    <input type="radio" name="severity_two" value="4"
-                                           onclick="displayRadioValueOfSeverityTwo()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                                <label class="container"> 5
-                                    <input type="radio" name="severity_two" value="5"
-                                           onclick="displayRadioValueOfSeverityTwo()">
-                                    <span class="custom_radio_button"></span>
-                                </label>
-                            </div>
-
-                            <label class=" neue_gefaehrdung_third_column ">Schweregrad
-                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"
-                                          fill="black"/>
-                                    <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z"
-                                          fill="black"/>
-                                    <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"
-                                          fill="black"/>
-                                </svg>
-
-
-                            </label>
-
-                            <div class="risk_priority_field severity">
-                                <div class="rectangle_align " id="resultRiskPriority_two"></div>
-                            </div>
-
-
-                            <label class="neue_gefaehrdung_fourth_column_long ">Risikoprioritätszahl
-                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 0C2.46015 0 0 2.45988 0 5.5C0 8.5398 2.45988 11 5.5 11C8.53985 11 11 8.54012 11 5.5C11 2.4602 8.54012 0 5.5 0ZM5.5 10.2326C2.89046 10.2326 0.767443 8.10956 0.767443 5.5C0.767443 2.89044 2.89046 0.767443 5.5 0.767443C8.10954 0.767443 10.2326 2.89044 10.2326 5.5C10.2326 8.10956 8.10954 10.2326 5.5 10.2326Z"
-                                          fill="black"/>
-                                    <path d="M5.49984 4.58472C5.17405 4.58472 4.94238 4.7223 4.94238 4.92501V7.6833C4.94238 7.85707 5.17405 8.03079 5.49984 8.03079C5.81115 8.03079 6.06451 7.85707 6.06451 7.6833V4.92496C6.06451 4.72228 5.81115 4.58472 5.49984 4.58472Z"
-                                          fill="black"/>
-                                    <path d="M5.49989 2.8833C5.16686 2.8833 4.90625 3.12221 4.90625 3.39731C4.90625 3.67244 5.16688 3.91859 5.49989 3.91859C5.82567 3.91859 6.08632 3.67244 6.08632 3.39731C6.08632 3.12221 5.82565 2.8833 5.49989 2.8833Z"
-                                          fill="black"/>
-                                </svg>
-
-
-                            </label>
-                            <div class="risk_priority_field">
-                                <div class="rectangle_align" id="resultSeverity_two"></div>
-                                <div class="rectangle_align">/</div>
-                                <div class="rectangle_align" id="resultRiskPriority_three"></div>
-                            </div>
-                        </div>
-
-                        <div class="mainView-Button-container">
-                            <div class="button submit mainView-Button">
-                                Speichern
-                            </div>
-                            <div class="button cancel" id="cancel">
-                                Abbrechen
-                            </div>
-                        </div>
+                    </label>
+                    <div class="rectangle">
+                    <div class="rectangle_align" id="resultSeverity_two"></div>
+                    <div class="rectangle_align">/ </div>
+                    <div class="rectangle_align" id="resultRiskPriority_three"></div>
                     </div>
-                </form>
-            </th>
+                </div>
+
+                <div class="mainView-Button-container panel" id="mainView-Button-container">
+                    <div class="button submit mainView-Button" id="mainView-Button-container">
+                        Speichern
+                    </div>
+                    <div class="button cancel" id="cancel">
+                        Abbrechen
+                    </div>
+                </div>
+
+            </form>
+        </th>
 
 
-            </tbody>
-        </table>
-    </div>
+        </tbody>
+    </table>
 
 
-    <script src="script_new_hazard.js" defer></script>
-    <script src="jquery.js"></script>
+</div>
+
 
 </body>
 </html>

@@ -762,7 +762,11 @@ td > * {
     border-radius: 100%;
 }
 
-form {
+form{
+    flex-wrap: wrap;
+}
+
+.form {
     height: 25rem;
 }
 
@@ -988,6 +992,25 @@ input[type="button"] {
         font-size: 11px;
     }
 
+.flexbox {
+    flex-wrap: wrap;
+}
+.input{
+    display: inline-block;
+    border: 1px solid var(--Frames-BlueGray);
+    border-radius: 5px;
+    width: 20rem;
+    height: 2em;
+    margin-left: 15rem;
+    margin-top: 0.5rem;
+}
+
+
+@media (max-width: 900px) {
+    .header {
+        padding-left: 0;
+        padding-right: 0;
+    }
     @media (max-width: 900px) {
         .header {
             padding-left: 0;
@@ -1099,7 +1122,7 @@ input[type="button"] {
         margin-left: 15rem;
 
 
-    }
+
 
     .testtest {
         display: flex;
