@@ -397,31 +397,6 @@ input.searchfield {
     background-image: url("svg/checkbox_checked.svg");
 }
 
-/*input.radio {
-    display: none;
-}
-
-[type="radio"].input_evaluation_yes{
-    margin-left: 20px;
-    margin-right: 18px;
-}
-
-[type="radio"] + label::before {
-    width: 15px;
-    height: 15px;
-    background-image: url("svg/radio_button_unchecked.svg");
-    display: block;
-    content: "";
-    float: left;
-    margin-right: 20px;
-    z-index: 5;
-    position: relative;
-}
-
-[type="radio"]:checked + label::before {
-    background-image: url("svg/radio_button_checked.svg");
-}*/
-
 .checkmark {
     opacity: 0.2;
 }
