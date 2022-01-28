@@ -29,7 +29,8 @@ function displayRadioValueOfSeverity() {
     checkfProbabilityOfOccurrenceANDSeverity();
 
     let severityValueField = document.getElementById("resultSeverity");
-    severityValueField.style.transform = transition;
+
+    severityValueField.style.animation = "changeBackground 3s 1;";
     severityValueField.innerHTML = severityValue;
     document.getElementById("resultSeverity_two").innerHTML = severityValue;
     document.getElementById("resultSeverity_three").innerHTML = severityValue;

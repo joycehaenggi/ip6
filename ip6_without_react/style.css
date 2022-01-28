@@ -806,7 +806,18 @@ form {
 
 .severity_field {
     background-color: var(--Frames-BlueGray);
-    transition: 1s;
+}
+
+@keyframes changeBackground {
+    0% {
+        background-color: var(--Frames-BlueGray);
+    }
+    50% {
+        background-color: white;
+    }
+    100% {
+        background-color: var(--Frames-BlueGray);
+    }
 }
 
 .severity {
@@ -818,6 +829,8 @@ form {
     background-color: #F3F3F3;
     width: 10em;
 }
+
+
 
 .neue_gefaehrdung_input_add {
     border: 1px solid var(--Frames-BlueGray);
