@@ -14,7 +14,7 @@ function displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadio
 }
 
 // get value of the checked radio for severity
-function displayRadioValueOfRiskPriority() {
+function displayRadioValueOfSeverity() {
     let severityValue = document.querySelector('input[name="severity"]:checked').value;
 
     document.getElementById("resultSeverity").innerHTML = severityValue;
