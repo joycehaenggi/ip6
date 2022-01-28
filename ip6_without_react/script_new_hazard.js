@@ -30,7 +30,7 @@ function addNewTextfield(TopicofnewTextfield){
 }
 
 
-
+//Alternative Versions
 //Long Variant for new TextFields in separated methods
 function addNewDamage() {
     var objTo = document.getElementById('add_new_Damage')
@@ -45,8 +45,6 @@ function addNewMeasures() {
     objTo2.appendChild(divAdd2)
 }
 
-
-//Alternative Versions
 // get value of the checked radio for ProbabilityOfOccurrence
 function displayRadioValueOfProbabilityOfOccurrenceAlternative(x) {
     var ele
