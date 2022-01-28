@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+</head>
+<body>
+
+<input type="radio" name="dog" value="Dalmatiner" onclick="radioButtonValue()"> Dalmatiner<br>
+<input type="radio" name="dog" value="Rottweiler" onclick="radioButtonValue()"> Rottweiler<br>
+
+
+<script>
+    function radioButtonValue(){
+        const msg = document.querySelector('input[name="dog"]:checked').value;
+        console.log(msg);
+    }
+
+</script>
+</body>
+</html>
