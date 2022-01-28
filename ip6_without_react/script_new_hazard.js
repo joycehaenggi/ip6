@@ -1,26 +1,70 @@
 'use strict';
 
+let ProbabilityOfOccurrenceValue = null;
+let ProbabilityOfOccurrenceValue2 = null;
+let severityValue = null;
+let resultField1 = document.getElementById("resultRiskPriorityNumber");
+let resultField2 = document.getElementById("resultRiskPriorityNumber2");
+
 // get value of the checked radio for ProbabilityOfOccurrence
 function displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup){
-    let ProbabilityOfOccurrenceValue;
-
     if(ProbabilityOfOccurrenceRadioButtonGroup === 1){
         ProbabilityOfOccurrenceValue = document.querySelector('input[name="probabilityOfOccurrence"]:checked').value;
         document.getElementById("resultProbabilityOfOccurrence").innerHTML = ProbabilityOfOccurrenceValue;
     } else {
-        ProbabilityOfOccurrenceValue = document.querySelector('input[name="probabilityOfOccurrenceTwo"]:checked').value;
-        document.getElementById("resultProbabilityOfOccurrence_two").innerHTML = ProbabilityOfOccurrenceValue;
+        ProbabilityOfOccurrenceValue2 = document.querySelector('input[name="probabilityOfOccurrenceTwo"]:checked').value;
+        document.getElementById("resultProbabilityOfOccurrence_two").innerHTML = ProbabilityOfOccurrenceValue2;
     }
+
+    checkfProbabilityOfOccurrenceANDSeverity();
 }
 
 // get value of the checked radio for severity
 function displayRadioValueOfSeverity() {
-    let severityValue = document.querySelector('input[name="severity"]:checked').value;
+    severityValue = document.querySelector('input[name="severity"]:checked').value;
+    checkfProbabilityOfOccurrenceANDSeverity();
 
     document.getElementById("resultSeverity").innerHTML = severityValue;
     document.getElementById("resultSeverity_two").innerHTML = severityValue;
     document.getElementById("resultSeverity_three").innerHTML = severityValue;
+
+    checkfProbabilityOfOccurrenceANDSeverity();
 }
+
+function checkfProbabilityOfOccurrenceANDSeverity() {
+
+        if(ProbabilityOfOccurrenceValue !== null && severityValue !== null){
+            let result = ProbabilityOfOccurrenceValue * severityValue;
+
+            if(result <= 6 && severityValue !== 5){
+                resultField1.style.background = "#339C74";
+                resultField1.style.color = "white";
+            }
+            else if(result >= 7 && result <= 12 && severityValue !== 5){
+                resultField1.style.background = "#FBDB34";
+                resultField1.style.color = "black";
+            } else {
+                resultField1.style.background = "#D63837";
+                resultField1.style.color = "white";
+            }
+        }
+
+        if(ProbabilityOfOccurrenceValue2 !== null && severityValue !== null){
+            let result2 = ProbabilityOfOccurrenceValue2 * severityValue;
+
+            if(result2 <= 6 && severityValue !== 5){
+                resultField2.style.background = "#339C74";
+                resultField2.style.color = "white";
+            }
+            else if(result2 >= 7 && result2 <= 12 && severityValue !== 5){
+                resultField2.style.background = "#FBDB34";
+                resultField2.style.color = "black";
+            } else {
+                resultField2.style.background = "#D63837";
+                resultField2.style.color = "white";
+            }
+        }
+ }
 
 function addNewTextfield(TopicofnewTextfield){
     var objTo = document.getElementById(TopicofnewTextfield);

@@ -794,7 +794,7 @@ form {
     display: flex;
 }
 
-.risk_priority_field {
+.result_field {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -802,6 +802,10 @@ form {
     border-radius: 5px;
     width: calc(120 * 0.063rem);
     height: calc(29 * 0.063rem);
+}
+
+.severity_field {
+    background-color: var(--Frames-BlueGray);
 }
 
 .severity {
