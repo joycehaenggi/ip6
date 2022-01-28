@@ -6,6 +6,10 @@ let severityValue = null;
 let resultField1 = document.getElementById("resultRiskPriorityNumber");
 let resultField2 = document.getElementById("resultRiskPriorityNumber2");
 
+let transition = "1s";
+let color1 = "white";
+let color2 = "black";
+
 // get value of the checked radio for ProbabilityOfOccurrence
 function displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
     if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {
@@ -24,7 +28,9 @@ function displayRadioValueOfSeverity() {
     severityValue = document.querySelector('input[name="severity"]:checked').value;
     checkfProbabilityOfOccurrenceANDSeverity();
 
-    document.getElementById("resultSeverity").innerHTML = severityValue;
+    let severityValueField = document.getElementById("resultSeverity");
+    severityValueField.style.transform = transition;
+    severityValueField.innerHTML = severityValue;
     document.getElementById("resultSeverity_two").innerHTML = severityValue;
     document.getElementById("resultSeverity_three").innerHTML = severityValue;
 
@@ -40,12 +46,15 @@ function checkfProbabilityOfOccurrenceANDSeverity() {
             if (result <= 6 && severityValue !== 5) {
                 resultField1.style.background = "#339C74";
                 resultField1.style.color = "white";
+                resultField1.style.transition = transition;
             } else if (result >= 7 && result <= 12 && severityValue !== 5) {
                 resultField1.style.background = "#FBDB34";
                 resultField1.style.color = "black";
+                resultField1.style.transition =  transition;
             } else {
                 resultField1.style.background = "#D63837";
                 resultField1.style.color = "white";
+                resultField1.style.transition = transition;
             }
         }
 
@@ -55,12 +64,15 @@ function checkfProbabilityOfOccurrenceANDSeverity() {
             if (result2 <= 6 && severityValue !== 5) {
                 resultField2.style.background = "#339C74";
                 resultField2.style.color = "white";
+                resultField2.style.transition = transition;
             } else if (result2 >= 7 && result2 <= 12 && severityValue !== 5) {
                 resultField2.style.background = "#FBDB34";
                 resultField2.style.color = "black";
+                resultField2.style.transition = transition;
             } else {
                 resultField2.style.background = "#D63837";
                 resultField2.style.color = "white";
+                resultField2.style.transition = transition;
             }
         }
     }

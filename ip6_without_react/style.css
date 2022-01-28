@@ -806,6 +806,7 @@ form {
 
 .severity_field {
     background-color: var(--Frames-BlueGray);
+    transition: 1s;
 }
 
 .severity {
