@@ -452,6 +452,7 @@ input.searchfield {
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
     transition: 0.25s transform;
     transform-origin: center center;
+    z-index: 5;
 }
 
 
