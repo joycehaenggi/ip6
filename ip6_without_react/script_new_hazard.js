@@ -7,8 +7,8 @@ let resultField1 = document.getElementById("resultRiskPriorityNumber");
 let resultField2 = document.getElementById("resultRiskPriorityNumber2");
 
 // get value of the checked radio for ProbabilityOfOccurrence
-function displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup){
-    if(ProbabilityOfOccurrenceRadioButtonGroup === 1){
+function displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
+    if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {
         ProbabilityOfOccurrenceValue = document.querySelector('input[name="probabilityOfOccurrence"]:checked').value;
         document.getElementById("resultProbabilityOfOccurrence").innerHTML = ProbabilityOfOccurrenceValue;
     } else {
@@ -33,14 +33,14 @@ function displayRadioValueOfSeverity() {
 
 function checkfProbabilityOfOccurrenceANDSeverity() {
 
-        if(ProbabilityOfOccurrenceValue !== null && severityValue !== null){
+    if (severityValue !== null) {
+        if (ProbabilityOfOccurrenceValue !== null) {
             let result = ProbabilityOfOccurrenceValue * severityValue;
 
-            if(result <= 6 && severityValue !== 5){
+            if (result <= 6 && severityValue !== 5) {
                 resultField1.style.background = "#339C74";
                 resultField1.style.color = "white";
-            }
-            else if(result >= 7 && result <= 12 && severityValue !== 5){
+            } else if (result >= 7 && result <= 12 && severityValue !== 5) {
                 resultField1.style.background = "#FBDB34";
                 resultField1.style.color = "black";
             } else {
@@ -49,14 +49,13 @@ function checkfProbabilityOfOccurrenceANDSeverity() {
             }
         }
 
-        if(ProbabilityOfOccurrenceValue2 !== null && severityValue !== null){
+        if (ProbabilityOfOccurrenceValue2 !== null) {
             let result2 = ProbabilityOfOccurrenceValue2 * severityValue;
 
-            if(result2 <= 6 && severityValue !== 5){
+            if (result2 <= 6 && severityValue !== 5) {
                 resultField2.style.background = "#339C74";
                 resultField2.style.color = "white";
-            }
-            else if(result2 >= 7 && result2 <= 12 && severityValue !== 5){
+            } else if (result2 >= 7 && result2 <= 12 && severityValue !== 5) {
                 resultField2.style.background = "#FBDB34";
                 resultField2.style.color = "black";
             } else {
@@ -64,9 +63,11 @@ function checkfProbabilityOfOccurrenceANDSeverity() {
                 resultField2.style.color = "white";
             }
         }
- }
+    }
 
-function addNewTextfield(TopicofnewTextfield){
+}
+
+function addNewTextfield(TopicofnewTextfield) {
     var objTo = document.getElementById(TopicofnewTextfield);
     var divAdd = document.createElement("div");
     divAdd.innerHTML = '<input class="input_customized add_new_input" type="text">';
@@ -82,6 +83,7 @@ function addNewDamage() {
     divAdd.innerHTML = '<input class="input_customized add_new_input" type="text">';
     objTo.appendChild(divAdd)
 }
+
 function addNewMeasures() {
     var objTo2 = document.getElementById('add_new_measures')
     var divAdd2 = document.createElement("div");
@@ -93,7 +95,7 @@ function addNewMeasures() {
 function displayRadioValueOfProbabilityOfOccurrenceAlternative(x) {
     var ele
 
-    if(x === 1){
+    if (x === 1) {
         ele = document.getElementsByName('severity');
     } else {
         ele = document.getElementsByName('severity_two');
@@ -101,7 +103,7 @@ function displayRadioValueOfProbabilityOfOccurrenceAlternative(x) {
 
     for (let i = 0; i < ele.length; i++) {
         if (ele[i].checked)
-            if(x === 1){
+            if (x === 1) {
                 document.getElementById("resultSeverity").innerHTML = ele[i].value;
             } else {
                 document.getElementById("resultSeverity_two").innerHTML = ele[i].value;
