@@ -390,7 +390,7 @@ input.searchfield {
     content: "";
     float: left;
     margin-right: 5px;
-    z-index: 5;
+    z-index: 2;
     position: relative;
 }
 
@@ -434,7 +434,6 @@ input.searchfield {
     transform: translateY(0) translateX(0px);
 }
 
-
 [data-tooltip2]::after {
     position: absolute;
     width: 140px;
@@ -453,9 +452,8 @@ input.searchfield {
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
     transition: 0.25s transform;
     transform-origin: center center;
-    z-index: 5;
+    z-index: 2;
 }
-
 
 
 /*---- Detail-View with Accordion ----*/
@@ -511,11 +509,6 @@ input.searchfield {
 .postProcessing {
 
 }
-
-/*.ab0{
-    display: block;
-    height: 48px;
-}*/
 
 .title_with_image_container {
     padding-top: calc(18 * 0.063rem);
@@ -673,7 +666,6 @@ input.searchfield {
     background-color: #d3d8e1;
 }
 
-
 /*---- Create new hazard-page ----*/
 .neue_gefaehrdung {
     margin-top: 40px;
@@ -719,21 +711,17 @@ form {
     padding-top:10px;
 }
 
-.column1 {
+.column {
     min-width: calc(300 * 0.063rem);
-    margin-right: calc(10 * 0.063rem);
     min-height: 50px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.column2 {
-    min-width: calc(300 * 0.063rem);
     margin-right: calc(10 * 0.063rem);
-    min-height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.columnInColumn {
+    display: flex;
 }
 
 .add_column {
@@ -746,28 +734,6 @@ form {
 
 .newOne{
     margin-right: 10px;
-}
-
-.column3 {
-    width: calc(300 * 0.063rem);
-    margin-right: calc(10 * 0.063rem);
-    min-height: 50px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.column4 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: calc(300 * 0.063rem);
-    min-height: 50px;
-    margin-right: calc(10 * 0.063rem);
-}
-
-.column4_row1 {
-    display: flex;
 }
 
 .svg_severity {
@@ -815,19 +781,6 @@ form {
     border-radius: 100%;
 }
 
-/*.neue_gefaehrdung_input_button {
-    border: 1px solid var(--Frames-BlueGray);
-    background-color: white;
-    width: 8rem;
-    height: calc(29 * 0.063rem);
-    padding: 4px;
-    cursor: pointer;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-}*/
-
-
-
 .radio {
     display: flex;
 }
@@ -846,18 +799,6 @@ form {
     background-color: var(--Frames-BlueGray);
 }
 
-@keyframes changeBackground {
-    0% {
-        background-color: var(--Frames-BlueGray);
-    }
-    50% {
-        background-color: white;
-    }
-    100% {
-        background-color: var(--Frames-BlueGray);
-    }
-}
-
 .severity {
     display: flex;
     justify-content: center;
@@ -866,26 +807,6 @@ form {
     height: 2em;
     background-color: #F3F3F3;
     width: 10em;
-}
-
-
-
-.neue_gefaehrdung_input_add {
-    border: 1px solid var(--Frames-BlueGray);
-}
-
-input[type="text"] {
-    font-family: "OpenSans-Regular", sans-serif;
-    font-size: 11px;
-}
-
-.neue_gefaehrdung_info_icon {
-    /*margin: 0 8px;*/
-}
-
-.neue_gefaehrdung_add_icon {
-    /*margin-left: 31rem;*/
-    /*margin-top: 1.7rem;*/
 }
 
 /* Radio Buttons neue Gefährdung erstellen */
