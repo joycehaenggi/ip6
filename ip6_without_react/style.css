@@ -736,13 +736,12 @@ form {
     margin-right: 10px;
 }
 
-.svg_severity {
+.svg_info_icon {
     margin: 0 20px;
 }
 
 .label_customized {
     font-size: calc(12 * 0.063rem);
-    width: 180px;
     display: block;
 }
 
