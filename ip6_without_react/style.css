@@ -1017,7 +1017,7 @@ input[type="text"] {
         padding: .5rem 1rem;
     }
 
-    .header-links.active {
+    .header-links.navMobileActive {
         display: flex;
     }
 

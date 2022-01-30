@@ -36,10 +36,6 @@ if (fullNotification === undefined) {
     fullNotification = "true";
 }
 
-toggleButton.addEventListener('click', () => {
-    navbarLinks.classList.toggle('active')
-})
-
 function numberOfCheckedCheckboxes() {
     nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
     nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;

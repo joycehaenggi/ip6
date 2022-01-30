@@ -37,8 +37,8 @@ if (fullNotification === undefined) {
 }
 
 toggleButton.addEventListener('click', () => {
-    navbarLinks.classList.toggle('active')
-})
+    navbarLinks.classList.toggle('navMobileActive')
+});
 
 // Function to decrease notification size
 function decreaseNotification() {
