@@ -815,7 +815,7 @@ form {
     border-radius: 100%;
 }
 
-.neue_gefaehrdung_input_button {
+/*.neue_gefaehrdung_input_button {
     border: 1px solid var(--Frames-BlueGray);
     background-color: white;
     width: 8rem;
@@ -824,7 +824,9 @@ form {
     cursor: pointer;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-}
+}*/
+
+
 
 .radio {
     display: flex;
