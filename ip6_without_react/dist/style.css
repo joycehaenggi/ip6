@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: red;
+}
+
+h2 {
+  background: blue;
+}
+
+h3 {
+  background: blue;
+}
+
+h5 {
+  background: blue;
+}
+
+h4 {
+  background: red;
+}
+
+.ll {
+  background: red;
+}
+
+.a {
+  background: red;
+}
+
+/*# sourceMappingURL=style.css.map */
