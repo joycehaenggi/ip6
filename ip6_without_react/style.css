@@ -804,6 +804,7 @@ form {
 
 .severity_field {
     background-color: var(--Frames-BlueGray);
+    width: calc(300 * 0.063rem);
 }
 
 .severity {
@@ -901,7 +902,7 @@ input[type="text"] {
 }
 
 /*---- Responsive adjustment ----*/
-@media (max-width: 1200px) {
+@media (max-width: 1451px) {
     .severityColumn {
         justify-content: flex-start;
     }
