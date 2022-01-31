@@ -720,6 +720,14 @@ form {
     align-items: center;
 }
 
+.severityColumn {
+    justify-content: flex-end;
+}
+
+.column1 {
+    min-width: calc(200 * 0.063rem);
+}
+
 .columnInColumn {
     display: flex;
 }
@@ -790,7 +798,7 @@ form {
     align-items: center;
     border: 1px solid var(--Frames-BlueGray);
     border-radius: 5px;
-    width: calc(120 * 0.063rem);
+    width: calc(170 * 0.063rem);
     height: calc(29 * 0.063rem);
 }
 
@@ -893,6 +901,13 @@ input[type="text"] {
 }
 
 /*---- Responsive adjustment ----*/
+@media (max-width: 1200px) {
+    .severityColumn {
+        justify-content: flex-start;
+    }
+}
+
+
 @media (max-width: 1050px) {
     .header {
         padding-left: 0;
