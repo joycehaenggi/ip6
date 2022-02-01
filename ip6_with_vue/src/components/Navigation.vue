@@ -238,7 +238,7 @@ input.searchfield {
   display: flex;
   width: 60px;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   font-size: calc(11 * 0.063rem);
   margin-left: 9px;
 }
