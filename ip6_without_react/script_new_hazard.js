@@ -42,14 +42,16 @@ function displayRadioValueOfSeverity() {
 function checkfProbabilityOfOccurrenceANDSeverity() {
 
     if (severityValue !== null) {
+        let NewSeverityValue = parseInt(severityValue, 10);
+
         if (ProbabilityOfOccurrenceValue !== null) {
             let result = ProbabilityOfOccurrenceValue * severityValue;
 
-            if (result <= 6 && severityValue !== 5) {
+            if (result <= 6 && NewSeverityValue !== 5) {
                 resultField1.style.background = "#339C74";
                 resultField1.style.color = color1;
                 resultField1.style.transition = transition;
-            } else if (result >= 7 && result <= 12 && severityValue !== 5) {
+            } else if ((result >= 7 && result <= 12 && NewSeverityValue !== 5) || (result === 5 && NewSeverityValue === 5)) {
                 resultField1.style.background = "#FBDB34";
                 resultField1.style.color = color2;
                 resultField1.style.transition =  transition;
@@ -63,11 +65,11 @@ function checkfProbabilityOfOccurrenceANDSeverity() {
         if (ProbabilityOfOccurrenceValue2 !== null) {
             let result2 = ProbabilityOfOccurrenceValue2 * severityValue;
 
-            if (result2 <= 6 && severityValue !== 5) {
+            if (result2 <= 6 && NewSeverityValue !== 5) {
                 resultField2.style.background = "#339C74";
                 resultField2.style.color = color1;
                 resultField2.style.transition = transition;
-            } else if (result2 >= 7 && result2 <= 12 && severityValue !== 5) {
+            } else if ((result2 >= 7 && result2 <= 12 && NewSeverityValue !== 5) || (result2 === 5 && NewSeverityValue === 5)) {
                 resultField2.style.background = "#FBDB34";
                 resultField2.style.color = color2;
                 resultField2.style.transition = transition;
