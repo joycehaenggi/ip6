@@ -8,7 +8,6 @@ let text_notification = document.getElementById("text_notification");
 let arrow_id = document.getElementById("arrow_id");
 
 let speedAndTimoutNotification = 900;
-
 let fullNotification;
 
 var step = 0;

@@ -1,3 +1,11 @@
+.progress-wrapper {
+    margin-top: calc(var(--marginOne) * 0.063rem);
+    border: 1px solid #E1E5EB;
+    height: 100px;
+    font-size: calc(var(--mainFontSize) * 0.063rem);
+    border-radius: 5px;
+}
+
 .title_progress_bar {
     margin-left: 2.5%;
     height: 17px;
@@ -14,7 +22,7 @@
     margin-top: 21px;
 }
 
-.progress_in_percent {
+#progress_in_percent {
     height: 100%;
     width: 0;
     background-color: var(--notification-Blue);
@@ -24,12 +32,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.progress-wrapper {
-    margin-top: calc(var(--marginOne) * 0.063rem);
-    border: 1px solid #E1E5EB;
-    height: 100px;
-    font-size: calc(var(--mainFontSize) * 0.063rem);
-    border-radius: 5px;
 }

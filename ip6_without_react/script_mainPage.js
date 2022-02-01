@@ -41,7 +41,7 @@ function numberOfCheckedCheckboxes() {
     nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
     percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
 
-    $("div.progress_in_percent").animate({
+    $("div#progress_in_percent").animate({
             width: +percentageOfCheckedCheckboxes + '%',
             // innerHTML: percentageOfCheckedCheckboxes,
         }, speedProgressBarAnimation,
