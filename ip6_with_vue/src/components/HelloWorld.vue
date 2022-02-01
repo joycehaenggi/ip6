@@ -28,10 +28,10 @@
           <td :colspan="headers.length">
 
             <div class='title_with_image_container'>
-            <div class='title_with_image_square'>
-              <div class='title_detail_view'> Test
+              <div class='title_with_image_square'>
+                <div class='title_detail_view'> Test
                 </div>
-              <div class='image_detail_view'><img src='../assets/img/toThin.svg' width='89' height='65'>
+                <div class='image_detail_view'><img src='../assets/img/toThin.svg' width='89' height='65'>
                 </div>
               </div>
             </div>
@@ -39,59 +39,125 @@
 
             <div class='blocks'>
 
-            <div class='block'>
-              <div class='block-title'>Schaden
+              <div class='block'>
+                <div class='block-title'>Schaden
                 </div>
-              <div class='block-text'>
-                <ul><li>Test</li></ul>
+                <div class='block-text'>
+                  <ul>
+                    <li>Test</li>
+                  </ul>
                 </div>
               </div>
 
               <div class='block'>
-              <div class='block-title'>
-                Massnahmen zur Risikominderung
+                <div class='block-title'>
+                  Massnahmen zur Risikominderung
                 </div>
-              <div class='block-text'>
-                <ul><li>Report mit Begründung der Abweichung der Spezifikation und den individuellen Einfluss auf die Wirksamkeit durch den behandelnden Arzt</li></ul>
+                <div class='block-text'>
+                  <ul>
+                    <li>Report mit Begründung der Abweichung der Spezifikation und den individuellen Einfluss auf die
+                      Wirksamkeit durch den behandelnden Arzt
+                    </li>
+                  </ul>
                 </div>
               </div>
 
               <div class='block block-effects'>
-              <div class='block-title'>
-                Auswirkungen der Risikominderung
+                <div class='block-title'>
+                  Auswirkungen der Risikominderung
                 </div>
-              <div class='block-graphics'>
-                <img src='../assets/img/riskVisualization1.svg'>
-                <img src='../assets/img/riskVisualization2.svg' class='riskVisualization2'>
+                <div class='block-graphics'>
+                  <img src='../assets/img/riskVisualization1.svg'>
+                  <img src='../assets/img/riskVisualization2.svg' class='riskVisualization2'>
                 </div>
               </div>
 
               <div class='block pP" + i + "'>
-              <div class='block-title'>
-                Bewertung
+                <div class='block-title'>
+                  Bewertung
                 </div>
-              <div class='block-text decision-evaluation'>
-                  <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made Device herstellen?</div>
-                <div class='evaluation-radio-buttons'>
-                  <label class='container detailViewSelection'>Spezifikation
-                    <input type='radio' onclick='evaluationYes(" + i + ")' id='ja' value='Ja' name='evaluation'>
-                    <span class='custom_radio_button'></span>
-                    </label>
-                  <label class='container detailViewSelection'>Custom Made Device
-                    <input type='radio' onclick='evaluationNo(" + i + ")' id='nein' value='Nein' name='evaluation'>
-                    <span class='custom_radio_button'></span>
-                    </label>
+                <div class='block-text decision-evaluation'>
+                  <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
+                    Device herstellen?
+                  </div>
+                  <div class='evaluation-radio-buttons'>
+                    <div class="evaluation-radio-buttons">
+                      <input type="radio" v-model="w" value="Spezifikation"> Spezifikation
+                      <input type="radio" v-model="w" value="CustomMadeDevice">Custom Made Device
+                    </div>
+
+
                   </div>
                 </div>
               </div>
 
 
-
             </div>
 
+            <template>
+              <div v-if="w == 'Spezifikation'">
+                <div class="postProcessing">
+                  <div class="block-title">Nachbearbeitung</div>
+                </div>
+                <div class="block-text decision-evaluation">
+                  <div class="evaluation-text">Ist eine Nachbearbeitung des Devices möglich?</div>
+                  <div class="evaluation-radio-buttons">
+                    <input type="radio" v-model="x" value="Ja"> Ja
+                    <input type="radio" v-model="x" value="No">Nein
+                  </div>
+
+                </div>
+<div>
+                <!--Nachbearbeitung JA-->
+                <div v-show="x === 'Ja'">
+                  <div class="block-text decision-evaluation">
+                    Gibt es neue Gefährdungen?
+                  </div>
+                  <div class="evaluation-radio-buttons">
+                    <input type="radio" v-model="y" value="Ja"> Ja
+                    <input type="radio" v-model="y" value="Nein">Nein
+                  </div>
 
 
 
+                <!--Nachbearbeitung JA UND neue Gefährdung erstellen JA-->
+                <div v-show="y === 'Ja'">
+                  <div class="block-text decision-evaluation">
+                   <i> Neue Gefährdung erstellen Button aktiv </i>
+                  </div>
+                </div>
+
+
+                <!--Nachbearbeitung JA UND neue Gefährdung erstellen NEIN-->
+                <div v-show="y === 'Nein'">
+                  <div class="block-text decision-evaluation">
+                   <i> Gefährdung abschliessen Button aktiv</i>
+                  </div>
+                  <div>
+                  </div>
+                </div>
+
+
+                  </div>
+              </div>
+                <!--Nachbearbeitung NEIN-->
+
+                <div v-show="x === 'No'">
+                  <div class="block-text decision-evaluation">
+                    Die Herstellung des Devices muss abgebrochen werden.
+                  </div>
+                </div>
+              </div>
+
+
+            </template>
+
+
+
+
+            <template v-if="w === 'CustomMadeDevice'">
+              <div v-if="w === 'CustomMadeDevice'">Test B</div>
+            </template>
 
           </td>
         </template>
@@ -105,25 +171,28 @@ export default {
   name: 'HelloWorld',
 
 
-  data () {
+  data() {
     return {
+      w: null,
+      x: null,
+      y: null,
       singleSelect: false,
       selected: [],
       expanded: [],
       singleExpand: false,
       hazardsHeader: [
 
-        { text: 'Icon', value: 'icon' },
-        { text: 'Risikoprioritätszahl', value: 'risikoprioritätszahl' },
+        {text: 'Icon', value: 'icon'},
+        {text: 'Risikoprioritätszahl', value: 'risikoprioritätszahl'},
         {
           text: 'Definition Gefährdung',
           align: 'start',
           sortable: true,
           value: 'definition',
         },
-        { text: 'Nicht zutreffend', value: 'data-table-select' },
-        { text: 'Akzeptiert', value: 'akzeptiert' },
-        { text: 'Gefährdung verifizieren', value: 'data-table-expand' },
+        {text: 'Nicht zutreffend', value: 'data-table-select'},
+        {text: 'Akzeptiert', value: 'akzeptiert'},
+        {text: 'Gefährdung verifizieren', value: 'data-table-expand'},
       ],
       hazards: [
         {
@@ -139,13 +208,20 @@ export default {
     }
   },
   methods: {
-    getColor (risikoprioritätszahl) {
+    getColor(risikoprioritätszahl) {
       if (risikoprioritätszahl > 400) return 'red'
       else if (risikoprioritätszahl > 200) return 'orange'
       else return 'green'
     },
+    test() {
+      document.getElementById('test').classList.add('hide');
+      console.log("test")
+
+    },
   },
 }
+
+
 </script>
 
 <style>
@@ -262,7 +338,7 @@ export default {
 }
 
 .evaluation-text {
-  width: 330px;
+  width: 600px;
 }
 
 .evaluation-radio-buttons {
@@ -272,6 +348,10 @@ export default {
 
 .detailViewSelection {
   margin-left: 20px;
+}
+
+.hide {
+  display: none;
 }
 
 </style>
