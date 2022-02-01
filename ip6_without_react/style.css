@@ -243,13 +243,13 @@ input.searchfield {
 }
 
 .notification {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 30px;
     width: 100%;
     background-color: var(--notification-Blue);
     color: white;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
     font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
     border-radius: 5px;
     cursor: pointer;
@@ -294,13 +294,15 @@ input.searchfield {
     padding-left: 10px;
     display: flex;
     align-items: center;
+}
+
+.th {
     justify-content: flex-start;
     border-right: 1px solid #E1E5EB;
 }
 
 .td {
     justify-content: center;
-    border-right: none;
 }
 
 .tr .th:last-child {
@@ -329,7 +331,6 @@ input.searchfield {
 
 .fourtySevenPercent {
     width: 47%;
-    text-align: left;
     justify-content: flex-start;
 }
 
@@ -346,7 +347,6 @@ input.searchfield {
     height: 22px;
     width: 22px;
     border-radius: 50%;
-    display: inline-block;
 }
 
 .green {
