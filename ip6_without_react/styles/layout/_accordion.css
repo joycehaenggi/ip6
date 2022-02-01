@@ -1,0 +1,124 @@
+.accordion {
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #E1E5EB;
+}
+
+.active .fourtySevenPercent {
+    font-family: 'OpenSans-SemiBold', sans-serif;
+    transition: 1s ease-out;
+}
+
+.arrowDown {
+    transform: rotate(0deg);
+    transition: 1s ease-out;
+}
+
+.active .td .arrowDown {
+    transform: rotate(-180deg);
+    transition: 1s ease-out;
+}
+
+.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+    border-left: 1px solid var(--Frames-BlueGray);
+    border-right: 1px solid var(--Frames-BlueGray);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#post-processing-block {
+    height: 0;
+    display: none;
+    transition: 1s ease-out;
+}
+
+.title_with_image_container {
+    padding-top: calc(18 * 0.063rem);
+    padding-bottom: calc(18 * 0.063rem);
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--Frames-BlueGray);
+}
+
+.title_with_image_square {
+    height: calc(135 * 0.063rem);
+    width: calc(135 * 0.063rem);
+    background: var(--Frames-BlueGray);
+    border-radius: 5px;
+}
+
+.title_detail_view {
+    margin-top: calc(9 * 0.063rem);
+    padding-left: calc(5 * 0.063rem);
+    padding-right: calc(5 * 0.063rem);
+    text-align: center;
+    font-family: 'OpenSans-SemiBold', sans-serif;
+}
+
+.image_detail_view {
+    margin-left: calc(23 * 0.063rem);
+    margin-right: calc(23 * 0.063rem);
+    margin-top: calc(13 * 0.063rem);
+}
+
+.blocks {
+    padding: 0 20px;
+}
+
+.block {
+    height: 48px;
+    margin-top: 18px;
+}
+
+.block-effects {
+    height: 335px;
+}
+
+.block-title {
+    font-family: 'OpenSans-SemiBold', sans-serif;
+}
+
+.block-text {
+    margin-left: 40px;
+    margin-top: 8px;
+}
+
+.block-graphics {
+    display: flex;
+    margin-top: calc(16 * 0.063rem);
+}
+
+.riskVisualization2 {
+    margin-left: calc(30 * 0.063rem);
+}
+
+.decision-evaluation {
+    display: flex;
+}
+
+.evaluation-text {
+    width: 330px;
+}
+
+.evaluation-radio-buttons {
+    margin-left: calc(100 * 0.063rem);
+    display: flex;
+}
+
+.detailViewSelection {
+    margin-left: 20px;
+}

@@ -1,0 +1,8 @@
+.icon_list {
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.5);
+}
+
+.icon_list:hover {
+    transform: scale(2.5);
+}

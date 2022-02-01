@@ -1,0 +1,58 @@
+.table {
+    width: 100%;
+    font-size: calc(var(--mainFontSize) * 0.063rem);
+    margin-top: calc(var(--marginOne) * 0.063rem);
+}
+
+.tr {
+    border: 1px solid #E1E5EB;
+    height: 45px;
+    border-radius: 5px;
+    margin-top: calc(5 * 0.063rem);
+    display: flex;
+}
+
+.th, .td {
+    height: 45px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.th {
+    justify-content: flex-start;
+    border-right: 1px solid #E1E5EB;
+}
+
+.td {
+    justify-content: center;
+}
+
+.tr .th:last-child {
+    border-right: none;
+}
+
+.sort {
+    float: right;
+}
+
+.fivePercent {
+    width: 5%;
+}
+
+.tenPercent {
+    width: 10%;
+}
+
+.thirteenPercent {
+    width: 13%;
+}
+
+.fifteenPercent {
+    width: 15%;
+}
+
+.fourtySevenPercent {
+    width: 47%;
+    justify-content: flex-start;
+}

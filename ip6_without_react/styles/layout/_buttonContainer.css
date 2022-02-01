@@ -1,0 +1,5 @@
+.mainView-Button-container {
+    margin-top: calc(var(--marginOne) * 0.063rem);
+    display: flex;
+    justify-content: flex-end;
+}

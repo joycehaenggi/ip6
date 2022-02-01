@@ -1,0 +1,16 @@
+.toggle-button {
+    position: absolute;
+    top: calc(20 * 0.063rem);
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}

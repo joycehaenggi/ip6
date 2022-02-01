@@ -1,0 +1,48 @@
+[data-tooltip], [data-tooltip2]  {
+    position: relative;
+    cursor: default;
+}
+
+[data-tooltip]::after {
+    position: absolute;
+    width: 140px;
+    left: calc(50% - 70px);
+    top: 65%;
+    text-align: center;
+    content: attr(data-tooltip);
+    color: white;
+    background-color: var(--notification-Blue);
+    padding: 4px;
+    border-radius: 5px;
+    font-size: calc(var(--mainFontSize) * 0.063rem);
+    opacity: 0;
+    transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
+    transition: 0.25s transform;
+    transform-origin: center center;
+}
+
+[data-tooltip]:hover::after, [data-tooltip]:hover::before, [data-tooltip2]:hover::after, [data-tooltip2]:hover::before {
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) translateX(0px);
+}
+
+[data-tooltip2]::after {
+    position: absolute;
+    width: 140px;
+    left: calc(50% - 70px);
+    top: 105%;
+    text-align: left;
+    content: attr(data-tooltip2);
+    color: white;
+    background-color: var(--notification-Blue);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: calc(calc(var(--mainFontSize) + 1) * 0.063rem);
+    visibility: hidden;
+    transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
+    transition: 0.25s transform;
+    transform-origin: center center;
+    z-index: 2;
+}

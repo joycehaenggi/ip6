@@ -1,0 +1,145 @@
+.neue_gefaehrdung {
+    margin-top: 40px;
+}
+
+.neue_gefaehrdung_title {
+    background-color: var(--Frames-BlueGray);
+    font-size: 14px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-left:13px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+form {
+    border: 1px solid var(--Frames-BlueGray);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding:20px;
+    font-size: calc(12 * 0.063rem);
+}
+
+.flex-element {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 50px;
+    flex-wrap: wrap;
+}
+
+.buttons_new_hazard {
+    margin-top: 40px;
+}
+
+.flex_add {
+    align-items: start;
+    flex-wrap:nowrap;
+    padding-top:10px;
+}
+
+.column {
+    min-width: calc(300 * 0.063rem);
+    min-height: 50px;
+    margin-right: calc(10 * 0.063rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column1 {
+    min-width: calc(200 * 0.063rem);
+}
+
+.columnInColumn {
+    display: flex;
+}
+
+.severityColumn, .col4 {
+    justify-content: flex-end;
+}
+
+.add_column {
+    justify-content: flex-start;
+}
+
+#add_new_Damage, #add_new_measures {
+    flex-wrap: wrap;
+}
+
+.newOne{
+    margin-right: 10px;
+}
+
+.svg_info_icon {
+    margin: 0 20px;
+}
+
+.label_customized {
+    font-size: calc(12 * 0.063rem);
+    display: block;
+}
+
+.addLabel {
+    padding-top: -6px;
+    display: block;
+    width: 300px;
+}
+
+.input_customized {
+    border: 1px solid var(--Frames-BlueGray);
+    border-radius: 5px;
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 11px;
+    width: calc(300 * 0.063rem);
+    height: calc(29 * 0.063rem);
+    padding-left: calc(5 * 0.063rem);
+}
+
+.add_new_input {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.svg_add {
+    cursor: pointer;
+}
+
+.custom_radio_button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border: 1px solid var(--header-Darkblue);
+    border-radius: 100%;
+}
+
+.radio {
+    display: flex;
+}
+
+.result_field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--Frames-BlueGray);
+    border-radius: 5px;
+    width: calc(170 * 0.063rem);
+    height: calc(29 * 0.063rem);
+}
+
+.severity_field {
+    background-color: var(--Frames-BlueGray);
+}
+
+.severity {
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--Frames-BlueGray);
+    border-radius: 5px;
+    height: 2em;
+    background-color: #F3F3F3;
+    width: 10em;
+}
