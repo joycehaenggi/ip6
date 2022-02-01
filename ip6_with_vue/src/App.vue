@@ -83,6 +83,36 @@
   color:white;
 }
 
+.button {
+  font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
+  font-family: OpenSans-SemiBold, serif;
+  width: 140px;
+  height: 38px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.cancel {
+  background-color: var(--Frames-BlueGray);
+  color: var(--notification-Blue);
+}
+
+.cancel:hover {
+  background-color: #d3d8e1;
+}
+
+.submit {
+  background-color: var(--button-Blue);
+  color: white;
+}
+
+.nextStepButton {
+  margin-right: 20px;
+}
+
 
 </style>
 <script>export default {

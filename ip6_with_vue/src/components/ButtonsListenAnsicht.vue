@@ -27,30 +27,4 @@ export default {
   justify-content: flex-end;
 }
 
-.button {
-  font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
-  font-family: OpenSans-SemiBold, serif;
-  width: 140px;
-  height: 38px;
-  border-radius: 50px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: var(--notification-Blue);
-}
-
-.submit {
-  background-color: var(--button-Blue);
-  color: white;
-}
-
-.nextStepButton {
-  margin-right: 20px;
-}
-
-
 </style>
