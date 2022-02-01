@@ -1,8 +1,8 @@
-.neue_gefaehrdung {
+.new_hazard {
     margin-top: 40px;
 }
 
-.neue_gefaehrdung_title {
+.new_hazard_title {
     background-color: var(--Frames-BlueGray);
     font-size: 14px;
     height: 45px;
@@ -72,10 +72,6 @@ form {
     margin-right: 10px;
 }
 
-.svg_info_icon {
-    margin: 0 20px;
-}
-
 .label_customized {
     font-size: calc(12 * 0.063rem);
     display: block;
@@ -100,10 +96,6 @@ form {
 .add_new_input {
     margin-right: 10px;
     margin-bottom: 10px;
-}
-
-.svg_add {
-    cursor: pointer;
 }
 
 .custom_radio_button {
