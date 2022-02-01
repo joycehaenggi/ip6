@@ -123,7 +123,7 @@
                 <!--Nachbearbeitung JA UND neue Gefährdung erstellen JA-->
                 <div v-show="y === 'Ja'">
                   <div class="block-text decision-evaluation">
-                   <i> Neue Gefährdung erstellen Button aktiv </i>
+                    <button class="button submit">Gefährdung erstellen</button>
                   </div>
                 </div>
 
@@ -131,7 +131,8 @@
                 <!--Nachbearbeitung JA UND neue Gefährdung erstellen NEIN-->
                 <div v-show="y === 'Nein'">
                   <div class="block-text decision-evaluation">
-                   <i> Gefährdung abschliessen Button aktiv</i>
+                    <button class="button submit">Gefährdung abschliessen</button>
+
                   </div>
                   <div>
                   </div>
@@ -148,7 +149,6 @@
                   </div>
                 </div>
               </div>
-
 
             </template>
 
@@ -352,6 +352,10 @@ export default {
 
 .hide {
   display: none;
+}
+
+.wana{
+  display: flex;
 }
 
 </style>
