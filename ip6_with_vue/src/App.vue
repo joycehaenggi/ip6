@@ -1,50 +1,10 @@
 <template>
-  <v-app>
-      <v-bar>
-        <Header></Header>
-      </v-bar>
-
-    <v-main>
-      <Navigation></Navigation>
-<!--      <TabellenUeberschrift/>-->
-      <HelloWorld/>
-      <FortschrittUebersicht/>
-      <ButtonsListenAnsicht/>
-    </v-main>
-
-  </v-app>
+  <div id="app">
+    <router-view/>
+  </div>
 </template>
 
-<script>
-import Header from './components/Header';
-import Navigation from './components/Navigation';
-// import TabellenUeberschrift from "@/components/TabellenUeberschrift";
-import HelloWorld from "@/components/HelloWorld";
-import FortschrittUebersicht from "@/components/FortschrittUebersicht";
-import ButtonsListenAnsicht from "@/components/buttonsListenAnsicht";
-
-
-export default {
-  name: 'App',
-
-  components: {
-
-    Header,
-    Navigation,
-    // TabellenUeberschrift,
-    HelloWorld,
-    FortschrittUebersicht,
-    ButtonsListenAnsicht,
-  },
-
-
-  data: () => ({
-    //
-  }),
-};
-</script>
-
-<style>
+<style lang="scss">
 /*---- Adding fonts ----*/
 @font-face {
   font-family: "Oswald";
@@ -123,4 +83,9 @@ export default {
   color:white;
 }
 
+
 </style>
+<script>export default {
+  components: {}
+}
+</script>

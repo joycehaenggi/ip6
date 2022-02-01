@@ -84,6 +84,8 @@ export default {
 
 <style>
 .v-application--wrap{
+
   min-height: 0vh !important;
+  max-width: 100% !important;
 }
 </style>
