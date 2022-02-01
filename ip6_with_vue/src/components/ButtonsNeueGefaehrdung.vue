@@ -7,16 +7,14 @@
     <div class="column empty_column">
     </div>
   <div class="column">
-    <a href="index.html">
-      <div class="button cancel" id="cancel">
+
+      <div class="button cancel" id="cancel" @click="$router.push('./')">
         Abbrechen
       </div>
-    </a>
-    <a href="index.html">
-      <div class="button submit">
+      <div class="button submit" @click="$router.push('./')">
         Speichern
       </div>
-    </a>
+
   </div>
   </div>
 </template>
