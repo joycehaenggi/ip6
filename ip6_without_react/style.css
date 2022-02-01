@@ -286,6 +286,7 @@ input.searchfield {
     height: 45px;
     border-radius: 5px;
     margin-top: calc(5 * 0.063rem);
+    display: flex;
 }
 
 .th, .td {
@@ -312,28 +313,23 @@ input.searchfield {
 
 .fivePercent {
     width: 5%;
-    float: left;
 }
 
 .tenPercent {
     width: 10%;
-    float: left;
 }
 
 .thirteenPercent {
     width: 13%;
-    float: left;
 }
 
 .fifteenPercent {
     width: 15%;
-    float: left;
 }
 
 .fourtySevenPercent {
     width: 47%;
     text-align: left;
-    float: left;
     justify-content: flex-start;
 }
 
