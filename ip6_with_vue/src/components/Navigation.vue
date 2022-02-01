@@ -1,4 +1,4 @@
-svg<template>
+<template>
   <div class="wrapper">
     <div class="manufacturing-step-navigation">
       <div class="navigation-tree">
