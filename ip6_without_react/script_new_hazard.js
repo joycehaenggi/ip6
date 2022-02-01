@@ -1,5 +1,6 @@
 'use strict';
 
+//Define all variables
 let ProbabilityOfOccurrenceValue = null;
 let ProbabilityOfOccurrenceValue2 = null;
 let severityValue = null;
@@ -46,15 +47,15 @@ function checkfProbabilityOfOccurrenceANDSeverity() {
 
             if (result <= 6 && severityValue !== 5) {
                 resultField1.style.background = "#339C74";
-                resultField1.style.color = "white";
+                resultField1.style.color = color1;
                 resultField1.style.transition = transition;
             } else if (result >= 7 && result <= 12 && severityValue !== 5) {
                 resultField1.style.background = "#FBDB34";
-                resultField1.style.color = "black";
+                resultField1.style.color = color2;
                 resultField1.style.transition =  transition;
             } else {
                 resultField1.style.background = "#D63837";
-                resultField1.style.color = "white";
+                resultField1.style.color = color1;
                 resultField1.style.transition = transition;
             }
         }
@@ -64,15 +65,15 @@ function checkfProbabilityOfOccurrenceANDSeverity() {
 
             if (result2 <= 6 && severityValue !== 5) {
                 resultField2.style.background = "#339C74";
-                resultField2.style.color = "white";
+                resultField2.style.color = color1;
                 resultField2.style.transition = transition;
             } else if (result2 >= 7 && result2 <= 12 && severityValue !== 5) {
                 resultField2.style.background = "#FBDB34";
-                resultField2.style.color = "black";
+                resultField2.style.color = color2;
                 resultField2.style.transition = transition;
             } else {
                 resultField2.style.background = "#D63837";
-                resultField2.style.color = "white";
+                resultField2.style.color = color1;
                 resultField2.style.transition = transition;
             }
         }
