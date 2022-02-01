@@ -295,6 +295,10 @@ input.searchfield {
   display: inline-block;
 }
 
+.v-application p {
+  margin-bottom: 0px;
+}
+
 
 
 </style>
