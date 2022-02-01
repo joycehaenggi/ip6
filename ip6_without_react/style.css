@@ -1,3 +1,5 @@
+@import "styles/style.css";
+
 /*---- Adding fonts ----*/
 @font-face {
     font-family: 'Oswald';
@@ -46,7 +48,6 @@
     --mainFontSize: 11;
     --secondFontSize: 12;
 }
-
 
 /*---- Header ----*/
 .header {
@@ -170,13 +171,11 @@ a {
 }
 
 input.searchfield {
-    box-sizing: border-box;
     border-radius: 50px;
     border: 1px solid var(--notification-Blue);
     height: 21.8px;
     width: 200px;
     padding-left: 25px;
-
 }
 
 .searchfield-label {
@@ -276,12 +275,9 @@ input.searchfield {
     margin: 0 25px;
 }
 
-
 /*---- List-of hazards ----*/
 .table {
-    border-collapse: separate;
     width: 100%;
-    border-spacing: 0 calc(10 * 0.063em);
     font-size: calc(var(--mainFontSize) * 0.063rem);
     margin-top: calc(var(--marginOne) * 0.063rem);
 }
@@ -412,7 +408,6 @@ input.searchfield {
     width: 140px;
     left: calc(50% - 70px);
     top: 65%;
-    box-sizing: border-box;
     text-align: center;
     content: attr(data-tooltip);
     color: white;
@@ -420,7 +415,6 @@ input.searchfield {
     padding: 4px;
     border-radius: 5px;
     font-size: calc(var(--mainFontSize) * 0.063rem);
-    visibility: hidden;
     opacity: 0;
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
     transition: 0.25s transform;
@@ -439,7 +433,6 @@ input.searchfield {
     width: 140px;
     left: calc(50% - 70px);
     top: 105%;
-    box-sizing: border-box;
     text-align: left;
     content: attr(data-tooltip2);
     color: white;
@@ -448,7 +441,6 @@ input.searchfield {
     border-radius: 5px;
     font-size: calc(calc(var(--mainFontSize) + 1) * 0.063rem);
     visibility: hidden;
-    opacity: 0;
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
     transition: 0.25s transform;
     transform-origin: center center;
@@ -490,7 +482,6 @@ input.searchfield {
 }
 
 .panel {
-    background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease-out;
@@ -504,10 +495,6 @@ input.searchfield {
     height: 0;
     display: none;
     transition: 1s ease-out;
-}
-
-.postProcessing {
-
 }
 
 .title_with_image_container {
@@ -685,7 +672,6 @@ input.searchfield {
 }
 
 form {
-    flex-wrap: wrap;
     border: 1px solid var(--Frames-BlueGray);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
