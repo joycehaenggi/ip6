@@ -125,7 +125,9 @@
                       </div>
                     </div>
                     <div class="end setMargin">
-                      <button class="button submit " @click="$router.push('NeueGefaehrdungErstellen')">Gefährdung erstellen</button>
+                      <button class="button submit " @click="$router.push('NeueGefaehrdungErstellen')">Gefährdung
+                        erstellen
+                      </button>
                       <button class="button cancel space">Gefährdung abschliessen</button>
                     </div>
                   </div>
@@ -150,8 +152,30 @@
             </template>
 
             <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
-            <template v-if="w === 'CustomMadeDevice'">
-              <div v-if="w === 'CustomMadeDevice'">Test B</div>
+            <template>
+              <div v-if="w === 'CustomMadeDevice'">
+
+                <v-textarea
+                    outlined
+                    label="Begründung für Custom Made Device"
+                    value="Geben Sie eine Begründung ein. "
+                />
+
+                <div class='test setMargin'>
+                  <div class='block-title'>
+                    Arztnachweis (optional)
+                  </div>
+                  <div class="column button-margin">
+                    <input class=" inputfile" type="file" name="file" id="file" title="test"/>
+
+                  </div>
+                </div>
+
+                <div class="end setMargin">
+                  <button class="button submit space">Gefährdung abschliessen</button>
+                </div>
+
+              </div>
             </template>
 
           </td>
@@ -369,7 +393,7 @@ export default {
 }
 
 .rectangle-margin {
-  margin-top: 20px;
+  margin-top: 18px;
   margin-bottom: 40px;
 }
 
@@ -387,7 +411,6 @@ export default {
 
 .text {
   padding-top: 7px;
-
 }
 
 .end {
@@ -400,7 +423,18 @@ export default {
   margin-bottom: 20px;
 }
 
-.space{
+.space {
   margin-left: 20px;
 }
+
+.v-input__control{
+  margin-left: 20px;
+  margin-top: 18px;
+}
+
+.button-margin{
+  margin-top: 18px;
+}
+
+
 </style>
