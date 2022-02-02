@@ -14,6 +14,17 @@
           class="elevation-1"
       >
 
+        <template slot="headers" >
+          <tr>
+            <th>
+              <v-checkbox
+                  hide-details
+
+              > <div>hallo</div></v-checkbox>
+            </th>
+          </tr>
+        </template>
+
         <template v-slot:item.risikoprioritätszahl="{ item }">
           <v-chip
               :color="getColor(item.risikoprioritätszahl)"
@@ -435,6 +446,22 @@ export default {
 .button-margin{
   margin-top: 18px;
 }
+
+.table{
+  margin: auto;
+}
+
+.v-data-table-header{
+  border-color: var(--Frames-BlueGray);
+  border-radius: 5px;
+
+}
+
+.v-application{
+  padding-left: var(--paddingLeftRight);
+  padding-right: var(--paddingLeftRight);
+}
+
 
 
 </style>

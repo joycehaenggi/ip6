@@ -3,7 +3,8 @@
     <Header/>
     <Navigation/>
     <HelloWorld/>
-    <FortschrittUebersicht/>
+
+     <FortschrittUebersicht/>
     <ButtonsListenAnsicht/>
   </div>
 </template>
@@ -18,14 +19,20 @@ import ButtonsListenAnsicht from "@/components/ButtonsListenAnsicht";
 
 
 
+
+
 export default {
   name: 'Home',
   components: {
+
     Header,
     Navigation,
     HelloWorld,
     FortschrittUebersicht,
     ButtonsListenAnsicht,
+
+
+
   }
 }
 </script>

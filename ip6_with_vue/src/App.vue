@@ -113,6 +113,9 @@
   margin-right: 20px;
 }
 
+.v-application--wrap{
+
+}
 
 </style>
 <script>export default {
