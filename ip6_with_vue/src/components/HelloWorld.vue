@@ -26,7 +26,7 @@
 
         <!--        Expanded informations-->
         <template v-slot:expanded-item="{ headers }">
-          <td :colspan="headers.length">
+          <td :colspan="headers.length ">
 
             <div class='title_with_image_container'>
               <div class='title_with_image_square'>
@@ -73,7 +73,7 @@
                 </div>
               </div>
 
-              <div class='block pP" + i + "'>
+              <div class='block pP" + i + " setMargin'>
                 <div class='block-title'>
                   Bewertung
                 </div>
@@ -83,9 +83,9 @@
                   </div>
 
 
-                      <input class="top right" type="radio" v-model="w" value="Spezifikation"> Spezifikation
-                      <input class="radio-button-cmd top right" type="radio" v-model="w" value="CustomMadeDevice">Custom Made Device
-
+                  <input class="top right" type="radio" v-model="w" value="Spezifikation"> Spezifikation
+                  <input class="radio-button-cmd top right" type="radio" v-model="w" value="CustomMadeDevice">Custom
+                  Made Device
 
 
                 </div>
@@ -97,7 +97,7 @@
             <!--Nachbearbeitung (in Spezifikation bleiben) -->
             <template>
               <div v-if="w == 'Spezifikation'">
-                <div class='block test'>
+                <div class='block test setMargin'>
 
                   <div class='block-title'>
                     Nachbearbeitung
@@ -106,8 +106,8 @@
                     <div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?
                     </div>
                     <div class='button_detailView'>
-                       <input class="top right"  type="radio" v-model="x" value="Ja"> Ja
-                          <input class="radio-button-nein top right"  type="radio" v-model="x" value="No">Nein
+                      <input class="top right" type="radio" v-model="x" value="Ja"> Ja
+                      <input class="radio-button-nein top right" type="radio" v-model="x" value="No">Nein
 
                     </div>
                   </div>
@@ -116,9 +116,17 @@
                 <div>
                   <!--Nachbearbeitung JA-->
                   <div v-show="x === 'Ja'">
-                    <div class="button_detailView">
-                      <button class="button submit">Weitere Gefährdung erstellen</button>
-                      <button class="button submit">Gefährdung abschliessen</button>
+                    <div class="rectangle-margin">
+                      <div class="rectangle">
+                        <div class="text">
+                          Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
+                          Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="end setMargin">
+                      <button class="button submit " @click="$router.push('NeueGefaehrdungErstellen')">Gefährdung erstellen</button>
+                      <button class="button cancel space">Gefährdung abschliessen</button>
                     </div>
                   </div>
                 </div>
@@ -126,8 +134,15 @@
                 <!--Nachbearbeitung NEIN-->
 
                 <div v-show="x === 'No'">
-                  <div class="block-text decision-evaluation">
-                    Die Herstellung des Devices muss abgebrochen werden.
+                  <div class="rectangle-margin">
+                    <div class="rectangle">
+                      <div class="text">
+                        Die Herstellung des Devices muss abgebrochen werden.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="end">
+                    <button class="button submit setMargin">Herstellung abbrechen</button>
                   </div>
                 </div>
               </div>
@@ -336,21 +351,56 @@ export default {
   margin-left: 20px;
 }
 
-.radio-button-cmd{
-margin-left: 3rem;
+.radio-button-cmd {
+  margin-left: 3rem;
 }
 
-.top{
+.top {
   margin-top: 0.3rem;
 }
 
-.right{
+.right {
   margin-right: 0.3rem;
 }
 
 
-.radio-button-nein{
+.radio-button-nein {
   margin-left: 7.5rem;
 }
 
+.rectangle-margin {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.rectangle {
+  background-color: var(--Frames-BlueGray);
+  max-width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  font-family: OpenSans-Regular;
+  font-size: 11px;
+  font-weight: 400;
+
+}
+
+.text {
+  padding-top: 7px;
+
+}
+
+.end {
+  display: flex;
+  justify-content: end;
+
+}
+
+.setMargin {
+  margin-bottom: 20px;
+}
+
+.space{
+  margin-left: 20px;
+}
 </style>
