@@ -447,5 +447,21 @@ export default {
   margin-top: 18px;
 }
 
+.table{
+  margin: auto;
+}
+
+.v-data-table-header{
+  border-color: var(--Frames-BlueGray);
+  border-radius: 5px;
+
+}
+
+.v-application{
+  padding-left: var(--paddingLeftRight);
+  padding-right: var(--paddingLeftRight);
+}
+
+
 
 </style>

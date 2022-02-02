@@ -20,6 +20,7 @@ import ButtonsListenAnsicht from "@/components/ButtonsListenAnsicht";
 
 
 
+
 export default {
   name: 'Home',
   components: {
@@ -29,6 +30,7 @@ export default {
     HelloWorld,
     FortschrittUebersicht,
     ButtonsListenAnsicht,
+
 
 
   }
