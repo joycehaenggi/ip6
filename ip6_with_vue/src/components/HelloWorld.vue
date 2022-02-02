@@ -190,17 +190,22 @@
             </template>
 
           </td>
+
         </template>
+
       </v-data-table>
+      <FortschrittUebersicht/>
+      <ButtonsListenAnsicht/>
     </v-app>
   </div>
 </template>
 
 <script>
+import FortschrittUebersicht from "./FortschrittUebersicht";
+import ButtonsListenAnsicht from "./ButtonsListenAnsicht";
 export default {
   name: 'HelloWorld',
-
-
+  components: {ButtonsListenAnsicht, FortschrittUebersicht},
   data() {
     return {
       w: null,
@@ -439,7 +444,7 @@ export default {
 }
 
 .v-input__control{
-  margin-left: 20px;
+
   margin-top: 18px;
 }
 
@@ -461,6 +466,8 @@ export default {
   padding-left: var(--paddingLeftRight);
   padding-right: var(--paddingLeftRight);
 }
+
+
 
 
 

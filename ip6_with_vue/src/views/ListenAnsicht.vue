@@ -4,8 +4,7 @@
     <Navigation/>
     <HelloWorld/>
 
-     <FortschrittUebersicht/>
-    <ButtonsListenAnsicht/>
+
   </div>
 </template>
 
@@ -14,8 +13,7 @@
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
 import HelloWorld from "../components/HelloWorld";
-import FortschrittUebersicht from "@/components/FortschrittUebersicht";
-import ButtonsListenAnsicht from "@/components/ButtonsListenAnsicht";
+
 
 
 
@@ -28,8 +26,7 @@ export default {
     Header,
     Navigation,
     HelloWorld,
-    FortschrittUebersicht,
-    ButtonsListenAnsicht,
+
 
 
 
