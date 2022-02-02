@@ -308,6 +308,10 @@ export default {
 /*---- Create new hazard-page ----*/
 .neue_gefaehrdung {
   margin-top: 40px;
+
+  padding-left: var(--paddingLeftRight);
+  padding-right: var(--paddingLeftRight);
+
 }
 
 .neue_gefaehrdung_title {
@@ -526,5 +530,6 @@ input[type="text"] {
   font-family: "OpenSans-Regular", sans-serif;
   font-size: 11px;
 }
+
 
 </style>
