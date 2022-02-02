@@ -14,6 +14,17 @@
           class="elevation-1"
       >
 
+        <template slot="headers" >
+          <tr>
+            <th>
+              <v-checkbox
+                  hide-details
+
+              > <div>hallo</div></v-checkbox>
+            </th>
+          </tr>
+        </template>
+
         <template v-slot:item.risikoprioritätszahl="{ item }">
           <v-chip
               :color="getColor(item.risikoprioritätszahl)"
