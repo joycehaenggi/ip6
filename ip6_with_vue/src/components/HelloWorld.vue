@@ -81,14 +81,13 @@
                   <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
                     Device herstellen?
                   </div>
-                  <div class='evaluation-radio-buttons'>
-                    <div class="evaluation-radio-buttons">
+
+
                       <input class="top right" type="radio" v-model="w" value="Spezifikation"> Spezifikation
                       <input class="radio-button-cmd top right" type="radio" v-model="w" value="CustomMadeDevice">Custom Made Device
-                    </div>
 
 
-                  </div>
+
                 </div>
               </div>
 
@@ -107,13 +106,8 @@
                     <div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?
                     </div>
                     <div class='button_detailView'>
-                      <div class='evaluation-radio-buttons'>
-                        <div class="evaluation-radio-buttons">
-                       <input class="top right" type="radio" v-model="x" value="Ja"> Ja
-                          <input  class='radio-button-nein top right' type="radio" v-model="x" value="No">Nein
-                        </div>
-                      </div>
-
+                       <input class="top right"  type="radio" v-model="x" value="Ja"> Ja
+                          <input class="radio-button-nein top right"  type="radio" v-model="x" value="No">Nein
 
                     </div>
                   </div>

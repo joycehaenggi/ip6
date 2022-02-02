@@ -26,7 +26,6 @@ export default {
     HelloWorld,
     FortschrittUebersicht,
     ButtonsListenAnsicht,
-
   }
 }
 </script>
