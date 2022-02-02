@@ -14,17 +14,10 @@
           class="elevation-1"
       >
 
-        <template v-slot:item.risikoprioritätszahl="{ item }">
-          <v-chip
-              :color="getColor(item.risikoprioritätszahl)"
-              dark
-          >
-            {{ item.risikoprioritätszahl }}
-          </v-chip>
-        </template>
 
 
-        <!--        Expanded informations-->
+
+
         <template v-slot:expanded-item="{ headers }">
           <td :colspan="headers.length">
 
@@ -83,8 +76,8 @@
                   </div>
                   <div class='evaluation-radio-buttons'>
                     <div class="evaluation-radio-buttons">
-                      <input class="top right" type="radio" v-model="w" value="Spezifikation"> Spezifikation
-                      <input class="radio-button-cmd top right" type="radio" v-model="w" value="CustomMadeDevice">Custom Made Device
+                      <input type="radio" v-model="w" value="Spezifikation"> Spezifikation
+                      <input type="radio" v-model="w" value="CustomMadeDevice">Custom Made Device
                     </div>
 
 
@@ -95,40 +88,53 @@
 
             </div>
 
-            <!--Nachbearbeitung (in Spezifikation bleiben) -->
             <template>
               <div v-if="w == 'Spezifikation'">
-                <div class='block test'>
-
-                  <div class='block-title'>
-                    Nachbearbeitung
-                  </div>
-                  <div class='block-text decision-evaluation'>
-                    <div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?
-                    </div>
-                    <div class='button_detailView'>
-                      <div class='evaluation-radio-buttons'>
-                        <div class="evaluation-radio-buttons">
-                       <input class="top right" type="radio" v-model="x" value="Ja"> Ja
-                          <input  class='radio-button-nein top right' type="radio" v-model="x" value="No">Nein
-                        </div>
-                      </div>
-
-
-                    </div>
-                  </div>
+                <div class="postProcessing">
+                  <div class="block-title">Nachbearbeitung</div>
                 </div>
+                <div class="block-text decision-evaluation">
+                  <div class="evaluation-text">Ist eine Nachbearbeitung des Devices möglich?</div>
+                  <div class="evaluation-radio-buttons">
+                    <input type="radio" v-model="x" value="Ja"> Ja
+                    <input type="radio" v-model="x" value="No">Nein
+                  </div>
 
+                </div>
                 <div>
                   <!--Nachbearbeitung JA-->
                   <div v-show="x === 'Ja'">
-                    <div class="button_detailView">
-                      <button class="button submit">Weitere Gefährdung erstellen</button>
-                      <button class="button submit">Gefährdung abschliessen</button>
+                    <div class="block-text decision-evaluation">
+                      Gibt es neue Gefährdungen?
                     </div>
+                    <div class="evaluation-radio-buttons">
+                      <input type="radio" v-model="y" value="Ja"> Ja
+                      <input type="radio" v-model="y" value="Nein">Nein
+                    </div>
+
+
+
+                    <!--Nachbearbeitung JA UND neue Gefährdung erstellen JA-->
+                    <div v-show="y === 'Ja'">
+                      <div class="block-text decision-evaluation">
+                        <button class="button submit">Gefährdung erstellen</button>
+                      </div>
+                    </div>
+
+
+                    <!--Nachbearbeitung JA UND neue Gefährdung erstellen NEIN-->
+                    <div v-show="y === 'Nein'">
+                      <div class="block-text decision-evaluation">
+                        <button class="button submit">Gefährdung abschliessen</button>
+
+                      </div>
+                      <div>
+                      </div>
+                    </div>
+
+
                   </div>
                 </div>
-
                 <!--Nachbearbeitung NEIN-->
 
                 <div v-show="x === 'No'">
@@ -140,7 +146,9 @@
 
             </template>
 
-            <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
+
+
+
             <template v-if="w === 'CustomMadeDevice'">
               <div v-if="w === 'CustomMadeDevice'">Test B</div>
             </template>
@@ -328,35 +336,20 @@ export default {
 }
 
 .evaluation-radio-buttons {
-  margin-left: calc(100 * 1rem);
+  margin-left: calc(100 * 0.063rem);
   display: flex;
 }
 
-
-.button_detailView {
-  display: flex;
-
-}
-
-.test {
+.detailViewSelection {
   margin-left: 20px;
 }
 
-.radio-button-cmd{
-margin-left: 3rem;
+.hide {
+  display: none;
 }
 
-.top{
-  margin-top: 0.3rem;
-}
-
-.right{
-  margin-right: 0.3rem;
-}
-
-
-.radio-button-nein{
-  margin-left: 7.5rem;
+.wana{
+  display: flex;
 }
 
 </style>

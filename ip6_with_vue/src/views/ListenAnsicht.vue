@@ -12,9 +12,11 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
-import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from "../components/HelloWorld";
 import FortschrittUebersicht from "@/components/FortschrittUebersicht";
 import ButtonsListenAnsicht from "@/components/ButtonsListenAnsicht";
+
+
 
 export default {
   name: 'Home',
@@ -23,7 +25,8 @@ export default {
     Navigation,
     HelloWorld,
     FortschrittUebersicht,
-    ButtonsListenAnsicht
+    ButtonsListenAnsicht,
+
   }
 }
 </script>
