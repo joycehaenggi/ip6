@@ -1,11 +1,11 @@
 <template>
-  <div class="test">
+
   <div class="progress-wrapper">
     <div class="title_progress_bar" id="titleProgressBar">Fortschrittsübersicht - Implantatdesign Matching</div>
     <div class="progress_bar">
       <div class="progress_in_percent" id="progress_in_percent"></div>
     </div>
-  </div>
+
   </div>
 </template>
 
@@ -53,11 +53,6 @@ export default {
   font-size: calc(var(--mainFontSize) * 0.063rem);
   border-radius: 5px;
 
-}
-
-.test{
-  padding-left: var(--paddingLeftRight);
-  padding-right: var(--paddingLeftRight);
 }
 
 </style>

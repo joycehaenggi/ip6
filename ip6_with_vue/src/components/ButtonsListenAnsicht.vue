@@ -6,7 +6,7 @@
       </div>
 
     <div id="nextStep-Link" onclick="nextStepCounter()">
-      <div class="button nextStep" id="nextStep">
+      <div class="button nextStep cancel" id="nextStep">
         Schritt abschliessen
       </div>
     </div>

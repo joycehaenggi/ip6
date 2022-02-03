@@ -92,7 +92,7 @@
     </div>
 
     <div class="rectangle">
-      <div class="notification" onclick="decreaseNotification()" id="notification">
+      <div class="notification" v-on:click="decreaseNotification" id="notification">
         <div class="first_part">
           <svg class="info_icon" id="info_icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +116,13 @@
 
 <script>
 export default {
-  name: "Navigation"
+  name: "Navigation",
+
+methods: {
+  decreaseNotification: function () {
+
+  }
+}
 }
 let notification = document.getElementById("notification");
 let text_notification = document.getElementById("text_notification");
