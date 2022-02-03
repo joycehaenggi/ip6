@@ -5,7 +5,7 @@
           v-model="selected"
           :headers="hazardsHeader"
           :items="hazards"
-          :single-expand="singleExpand"
+
           :expanded.sync="expanded"
           :single-select="singleSelect"
           item-key="name"
@@ -28,16 +28,17 @@
           <td>{{ item.risikoprioritätszahl }}</td>
           <Green/>
         </template>
+        <template slot="headers" >
+          <tr>
+            <th>
+              <v-checkbox
+                  hide-details
 
+              > <div>hallo</div></v-checkbox>
+            </th>
+          </tr>
+        </template>
 
-        <!--        <template v-slot:item.risikoprioritätszahl="{ item }">-->
-        <!--          <v-chip-->
-        <!--              :color="getColor(item.risikoprioritätszahl)"-->
-        <!--              dark-->
-        <!--          >-->
-        <!--            {{ item.risikoprioritätszahl }}-->
-        <!--          </v-chip>-->
-        <!--        </template>-->
 
 
         <!--        Expanded informations-->
@@ -236,7 +237,7 @@ export default {
           text: 'Definition Gefährdung',
           align: 'start',
           sortable: true,
-          value: 'definition',
+          value: 'name',
 
 
         },
@@ -246,26 +247,26 @@ export default {
       ],
       hazards: [
         {
-          definition: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
+          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
 
 
         },
         {
-          definition: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
+          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
         },
 
 
     {
-      definition: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
+      name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
     },
         {
-          definition: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
+          name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
         },
         {
-          definition: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
+          name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
         },
         {
-          definition: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",
+          name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",
         }
     ]
     }
