@@ -2,7 +2,7 @@
   <div class="home">
     <Header/>
     <Navigation/>
-    <ListenAnsicht/>
+    <Tabelle/>
     <Test/>
 
 
@@ -15,8 +15,8 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
-import ListenAnsicht from "../components/ListenAnsicht";
-import Test from "../components/Test";
+
+import Tabelle from "../components/Tabelle";
 
 
 
@@ -29,8 +29,7 @@ export default {
 
     Header,
     Navigation,
-    ListenAnsicht,
-    Test,
+     Tabelle,
 
 
 
