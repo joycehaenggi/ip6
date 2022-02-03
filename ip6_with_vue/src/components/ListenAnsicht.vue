@@ -28,17 +28,18 @@
           <td>{{ item.risikoprioritätszahl }}</td>
           <Green/>
         </template>
-        <template slot="headers" >
+        <template slot="headers">
           <tr>
             <th>
               <v-checkbox
                   hide-details
 
-              > <div>hallo</div></v-checkbox>
+              >
+                <div>hallo</div>
+              </v-checkbox>
             </th>
           </tr>
         </template>
-
 
 
         <!--        Expanded informations-->
@@ -256,9 +257,9 @@ export default {
         },
 
 
-    {
-      name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
-    },
+        {
+          name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
+        },
         {
           name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
         },
@@ -268,7 +269,7 @@ export default {
         {
           name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",
         }
-    ]
+      ]
     }
   },
   methods: {
@@ -494,6 +495,18 @@ export default {
 .v-application {
   padding-left: var(--paddingLeftRight);
   padding-right: var(--paddingLeftRight);
+}
+
+.v-data-table {
+  font-family: 'OpenSans-Regular' !important;
+  font-size: 11px !important;
+}
+
+
+.v-data-table > .v-data-table__wrapper > table > tbody > tr > td, .v-data-table > .v-data-table__wrapper > table > tbody > tr > th, .v-data-table > .v-data-table__wrapper > table > thead > tr > td, .v-data-table > .v-data-table__wrapper > table > thead > tr > th, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > td, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > th {
+  font-size: 11px !important;
+  font-family: 'OpenSans-Regular' !important;
+
 }
 
 
