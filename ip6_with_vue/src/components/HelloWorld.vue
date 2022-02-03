@@ -30,15 +30,14 @@
         </template>
 
 
-
-<!--        <template v-slot:item.risikoprioritätszahl="{ item }">-->
-<!--          <v-chip-->
-<!--              :color="getColor(item.risikoprioritätszahl)"-->
-<!--              dark-->
-<!--          >-->
-<!--            {{ item.risikoprioritätszahl }}-->
-<!--          </v-chip>-->
-<!--        </template>-->
+        <!--        <template v-slot:item.risikoprioritätszahl="{ item }">-->
+        <!--          <v-chip-->
+        <!--              :color="getColor(item.risikoprioritätszahl)"-->
+        <!--              dark-->
+        <!--          >-->
+        <!--            {{ item.risikoprioritätszahl }}-->
+        <!--          </v-chip>-->
+        <!--        </template>-->
 
 
         <!--        Expanded informations-->
@@ -247,13 +246,28 @@ export default {
       ],
       hazards: [
         {
-
           definition: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
-          nichtZutreffend: "test",
-                   verfizieren: "test",
 
+
+        },
+        {
+          definition: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
+        },
+
+
+    {
+      definition: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
+    },
+        {
+          definition: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
+        },
+        {
+          definition: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
+        },
+        {
+          definition: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",
         }
-      ],
+    ]
     }
   },
   methods: {
@@ -457,32 +471,29 @@ export default {
   margin-left: 20px;
 }
 
-.v-input__control{
+.v-input__control {
 
   margin-top: 18px;
 }
 
-.button-margin{
+.button-margin {
   margin-top: 18px;
 }
 
-.table{
+.table {
   margin: auto;
 }
 
-.v-data-table-header{
+.v-data-table-header {
   border-color: var(--Frames-BlueGray);
   border-radius: 5px;
 
 }
 
-.v-application{
+.v-application {
   padding-left: var(--paddingLeftRight);
   padding-right: var(--paddingLeftRight);
 }
-
-
-
 
 
 </style>
