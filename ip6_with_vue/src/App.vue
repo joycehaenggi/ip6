@@ -113,8 +113,11 @@
   margin-right: 20px;
 }
 
-.v-application--wrap{
-
+.theme--light.v-icon {
+  color: var(--header-Darkblue) !important;
+}
+.v-input--selection-controls__ripple.green--text {
+  color: var(--header-Darkblue) !important;
 }
 
 </style>

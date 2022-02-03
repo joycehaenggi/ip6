@@ -14,32 +14,31 @@
           class="elevation-1"
       >
 
-        <template slot="headers" >
-          <tr>
-            <th>
-              <v-checkbox
-                  hide-details
-
-              > <div>hallo</div></v-checkbox>
-            </th>
-          </tr>
+        <template v-slot:item.icon="{ item }">
+          <td>{{ item.icon }}</td>
+          <ToThin/>
         </template>
 
-        <template>
-          <div>
-            <v-icon>my-icon</v-icon>
-          </div>
+        <template v-slot:item.akzeptiert="{ item }">
+          <td>{{ item.akzeptiert }}</td>
+          <Checkmark/>
         </template>
-
 
         <template v-slot:item.risikoprioritätszahl="{ item }">
-          <v-chip
-              :color="getColor(item.risikoprioritätszahl)"
-              dark
-          >
-            {{ item.risikoprioritätszahl }}
-          </v-chip>
+          <td>{{ item.risikoprioritätszahl }}</td>
+          <Green/>
         </template>
+
+
+
+<!--        <template v-slot:item.risikoprioritätszahl="{ item }">-->
+<!--          <v-chip-->
+<!--              :color="getColor(item.risikoprioritätszahl)"-->
+<!--              dark-->
+<!--          >-->
+<!--            {{ item.risikoprioritätszahl }}-->
+<!--          </v-chip>-->
+<!--        </template>-->
 
 
         <!--        Expanded informations-->
@@ -213,11 +212,14 @@
 <script>
 import FortschrittUebersicht from "./FortschrittUebersicht";
 import ButtonsListenAnsicht from "./ButtonsListenAnsicht";
+import ToThin from "./icons/ToThin";
+import Green from "./risikoprioritätszahl/Green";
+import Checkmark from "./icons/Checkmark";
 
 
 export default {
   name: 'HelloWorld',
-  components: {ButtonsListenAnsicht, FortschrittUebersicht},
+  components: {ButtonsListenAnsicht, FortschrittUebersicht, ToThin, Green, Checkmark},
   data() {
     return {
       w: null,
@@ -236,7 +238,7 @@ export default {
           align: 'start',
           sortable: true,
           value: 'definition',
-          icon: 'test',
+
 
         },
         {text: 'Nicht zutreffend', value: 'data-table-select'},
@@ -245,12 +247,10 @@ export default {
       ],
       hazards: [
         {
-          icon: "test",
-          risikoprioritätszahl: "400",
+
           definition: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
           nichtZutreffend: "test",
-          akzeptiert: "test",
-          verfizieren: "test",
+                   verfizieren: "test",
 
         }
       ],
