@@ -25,6 +25,13 @@
           </tr>
         </template>
 
+        <template>
+          <div>
+            <v-icon>my-icon</v-icon>
+          </div>
+        </template>
+
+
         <template v-slot:item.risikoprioritätszahl="{ item }">
           <v-chip
               :color="getColor(item.risikoprioritätszahl)"
@@ -194,8 +201,11 @@
         </template>
 
       </v-data-table>
+
       <FortschrittUebersicht/>
       <ButtonsListenAnsicht/>
+
+
     </v-app>
   </div>
 </template>
@@ -203,6 +213,8 @@
 <script>
 import FortschrittUebersicht from "./FortschrittUebersicht";
 import ButtonsListenAnsicht from "./ButtonsListenAnsicht";
+
+
 export default {
   name: 'HelloWorld',
   components: {ButtonsListenAnsicht, FortschrittUebersicht},
@@ -224,6 +236,8 @@ export default {
           align: 'start',
           sortable: true,
           value: 'definition',
+          icon: 'test',
+
         },
         {text: 'Nicht zutreffend', value: 'data-table-select'},
         {text: 'Akzeptiert', value: 'akzeptiert'},

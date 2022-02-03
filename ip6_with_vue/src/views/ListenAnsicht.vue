@@ -3,9 +3,12 @@
     <Header/>
     <Navigation/>
     <HelloWorld/>
+    <Test/>
+
 
 
   </div>
+
 </template>
 
 <script>
@@ -13,6 +16,7 @@
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
 import HelloWorld from "../components/HelloWorld";
+import Test from "../components/Test";
 
 
 
@@ -26,6 +30,7 @@ export default {
     Header,
     Navigation,
     HelloWorld,
+    Test,
 
 
 
