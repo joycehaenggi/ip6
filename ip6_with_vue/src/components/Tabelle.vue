@@ -232,18 +232,21 @@ export default {
       singleExpand: false,
       hazardsHeader: [
 
-        {text: 'Icon', value: 'icon'},
-        {text: 'Risikoprioritätszahl', value: 'risikoprioritätszahl'},
+        {text: 'Icon', value: 'icon', width: 80},
+        {text: 'Risikoprioritätszahl', value: 'risikoprioritätszahl', width: 150},
         {
           text: 'Definition Gefährdung',
+
           align: 'start',
           sortable: true,
           value: 'name',
+          width: 800
+
 
 
         },
-        {text: 'Nicht zutreffend', value: 'data-table-select'},
-        {text: 'Akzeptiert', value: 'akzeptiert'},
+        {text: 'Nicht zutreffend', value: 'data-table-select', width: 80},
+        {text: 'Akzeptiert', value: 'akzeptiert', width: 80},
         {text: 'Gefährdung verifizieren', value: 'data-table-expand'},
       ],
       hazards: [
@@ -509,5 +512,9 @@ export default {
 
 }
 
+
+.v-simple-checkbox{
+  border: #3ff0a6;
+}
 
 </style>
