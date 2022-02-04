@@ -70,27 +70,27 @@
           <div class="radio">
             <label class="container"> 1
               <input type="radio" name="probabilityOfOccurrence" value="1"
-                     onclick="displayRadioValueOfProbabilityOfOccurrence(1)">
+                     @click="displayRadioValueOfProbabilityOfOccurrence(1)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 2
               <input type="radio" name="probabilityOfOccurrence" value="2"
-                     onclick="displayRadioValueOfProbabilityOfOccurrence(1)">
+                     @click="displayRadioValueOfProbabilityOfOccurrence(1)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 3
               <input type="radio" name="probabilityOfOccurrence" value="3"
-                     onclick="displayRadioValueOfProbabilityOfOccurrence(1)">
+                     @click="displayRadioValueOfProbabilityOfOccurrence(1)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 4
               <input type="radio" name="probabilityOfOccurrence" value="4"
-                     onclick="displayRadioValueOfProbabilityOfOccurrence(1)">
+                     @click="displayRadioValueOfProbabilityOfOccurrence(1)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 5
               <input type="radio" name="probabilityOfOccurrence" value="5"
-                     onclick="displayRadioValueOfProbabilityOfOccurrence(1)">
+                     @click="displayRadioValueOfProbabilityOfOccurrence(1)">
               <span class="custom_radio_button"></span>
             </label>
           </div>
@@ -243,7 +243,7 @@
             </label>
             <label class="container"> 5
               <input type="radio" name="probabilityOfOccurrenceTwo" value="5"
-                     onclick="displayRadioValueOfProbabilityOfOccurrence(2)">
+                     @click="displayRadioValueOfProbabilityOfOccurrence(2)">
               <span class="custom_radio_button"></span>
             </label>
           </div>
@@ -306,7 +306,35 @@
 
 <script>
 
-  import EintretenswahrscheinlichkeitEins from "@/components/ToolTip/EintretenswahrscheinlichkeitEins";
+import EintretenswahrscheinlichkeitEins from "@/components/ToolTip/EintretenswahrscheinlichkeitEins";
+
+//Define all variables
+let ProbabilityOfOccurrenceValue = null;
+let ProbabilityOfOccurrenceValue2 = null;
+// let severityValue = null;
+
+// get value of the checked radio for ProbabilityOfOccurrence
+/*function displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
+  if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {
+    ProbabilityOfOccurrenceValue = document.querySelector('input[name="probabilityOfOccurrence"]:checked').value;
+    document.getElementById("resultProbabilityOfOccurrence").innerHTML = ProbabilityOfOccurrenceValue;
+  } else {
+    ProbabilityOfOccurrenceValue2 = document.querySelector('input[name="probabilityOfOccurrenceTwo"]:checked').value;
+    document.getElementById("resultProbabilityOfOccurrence_two").innerHTML = ProbabilityOfOccurrenceValue2;
+  }
+}*/
+
+/*// get value of the checked radio for severity
+function displayRadioValueOfSeverity() {
+  severityValue = document.querySelector('input[name="severity"]:checked').value;
+
+  let severityValueField = document.getElementById("resultSeverity");
+
+  severityValueField.style.animation = "changeBackground 3s 1;";
+  severityValueField.innerHTML = severityValue;
+  document.getElementById("resultSeverity_two").innerHTML = severityValue;
+  document.getElementById("resultSeverity_three").innerHTML = severityValue;
+}*/
 
 
 
@@ -322,6 +350,17 @@ export default {
   watch: {
     buttonHovering (newVal) {
       this.showToolTip = newVal
+    }
+  },
+  methods: {
+    displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
+      if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {
+        ProbabilityOfOccurrenceValue = document.querySelector('input[name="probabilityOfOccurrence"]:checked').value;
+        document.getElementById("resultProbabilityOfOccurrence").innerHTML = ProbabilityOfOccurrenceValue;
+      } else {
+        ProbabilityOfOccurrenceValue2 = document.querySelector('input[name="probabilityOfOccurrenceTwo"]:checked').value;
+        document.getElementById("resultProbabilityOfOccurrence_two").innerHTML = ProbabilityOfOccurrenceValue2;
+      }
     }
   }
 
