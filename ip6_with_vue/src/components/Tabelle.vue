@@ -5,7 +5,7 @@
           v-model="selected"
           :headers="hazardsHeader"
           :items="hazards"
-          :single-expand="singleExpand"
+
           :expanded.sync="expanded"
           :single-select="singleSelect"
           item-key="name"
@@ -14,31 +14,31 @@
           class="elevation-1"
       >
 
-        <template slot="headers" >
+        <template v-slot:item.icon="{ item }">
+          <td>{{ item.icon }}</td>
+          <ToThin/>
+        </template>
+
+        <template v-slot:item.akzeptiert="{ item }">
+          <td>{{ item.akzeptiert }}</td>
+          <Checkmark/>
+        </template>
+
+        <template v-slot:item.risikoprioritätszahl="{ item }">
+          <td>{{ item.risikoprioritätszahl }}</td>
+          <Green/>
+        </template>
+        <template slot="headers">
           <tr>
             <th>
               <v-checkbox
                   hide-details
 
-              > <div>hallo</div></v-checkbox>
+              >
+                <div>hallo</div>
+              </v-checkbox>
             </th>
           </tr>
-        </template>
-
-        <template>
-          <div>
-            <v-icon>my-icon</v-icon>
-          </div>
-        </template>
-
-
-        <template v-slot:item.risikoprioritätszahl="{ item }">
-          <v-chip
-              :color="getColor(item.risikoprioritätszahl)"
-              dark
-          >
-            {{ item.risikoprioritätszahl }}
-          </v-chip>
         </template>
 
 
@@ -213,11 +213,14 @@
 <script>
 import FortschrittUebersicht from "./FortschrittUebersicht";
 import ButtonsListenAnsicht from "./ButtonsListenAnsicht";
+import ToThin from "./icons/ToThin";
+import Green from "./risikoprioritätszahl/Green";
+import Checkmark from "./icons/Checkmark";
 
 
 export default {
   name: 'HelloWorld',
-  components: {ButtonsListenAnsicht, FortschrittUebersicht},
+  components: {ButtonsListenAnsicht, FortschrittUebersicht, ToThin, Green, Checkmark},
   data() {
     return {
       w: null,
@@ -229,31 +232,47 @@ export default {
       singleExpand: false,
       hazardsHeader: [
 
-        {text: 'Icon', value: 'icon'},
-        {text: 'Risikoprioritätszahl', value: 'risikoprioritätszahl'},
+        {text: 'Icon', value: 'icon', width: 80},
+        {text: 'Risikoprioritätszahl', value: 'risikoprioritätszahl', width: 150},
         {
           text: 'Definition Gefährdung',
+
           align: 'start',
           sortable: true,
-          value: 'definition',
-          icon: 'test',
+          value: 'name',
+          width: 800
+
+
 
         },
-        {text: 'Nicht zutreffend', value: 'data-table-select'},
-        {text: 'Akzeptiert', value: 'akzeptiert'},
+        {text: 'Nicht zutreffend', value: 'data-table-select', width: 80},
+        {text: 'Akzeptiert', value: 'akzeptiert', width: 80},
         {text: 'Gefährdung verifizieren', value: 'data-table-expand'},
       ],
       hazards: [
         {
-          icon: "test",
-          risikoprioritätszahl: "400",
-          definition: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
-          nichtZutreffend: "test",
-          akzeptiert: "test",
-          verfizieren: "test",
+          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
 
+
+        },
+        {
+          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
+        },
+
+
+        {
+          name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
+        },
+        {
+          name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
+        },
+        {
+          name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
+        },
+        {
+          name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",
         }
-      ],
+      ]
     }
   },
   methods: {
@@ -457,32 +476,45 @@ export default {
   margin-left: 20px;
 }
 
-.v-input__control{
+.v-input__control {
 
   margin-top: 18px;
 }
 
-.button-margin{
+.button-margin {
   margin-top: 18px;
 }
 
-.table{
+.table {
   margin: auto;
 }
 
-.v-data-table-header{
+.v-data-table-header {
   border-color: var(--Frames-BlueGray);
   border-radius: 5px;
 
 }
 
-.v-application{
+.v-application {
   padding-left: var(--paddingLeftRight);
   padding-right: var(--paddingLeftRight);
 }
 
+.v-data-table {
+  font-family: 'OpenSans-Regular' !important;
+  font-size: 11px !important;
+}
 
 
+.v-data-table > .v-data-table__wrapper > table > tbody > tr > td, .v-data-table > .v-data-table__wrapper > table > tbody > tr > th, .v-data-table > .v-data-table__wrapper > table > thead > tr > td, .v-data-table > .v-data-table__wrapper > table > thead > tr > th, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > td, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > th {
+  font-size: 11px !important;
+  font-family: 'OpenSans-Regular' !important;
 
+}
+
+
+.v-simple-checkbox{
+  border: #3ff0a6;
+}
 
 </style>

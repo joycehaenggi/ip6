@@ -169,7 +169,7 @@ function names() {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-family: 'OpenSans-Bold', sans-serif;
+
   font-size: calc(11 * 0.063rem);
   margin-top: calc(20 * 0.063rem);
 }
@@ -177,6 +177,7 @@ function names() {
 .navigation-tree {
   display: flex;
   flex-direction: row;
+
 }
 
 .next-arrow {
@@ -216,7 +217,7 @@ input.searchfield {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'OpenSans-Regular', sans-serif;
+  font-family: 'OpenSans-Bold', sans-serif;
   height: 21px;
   margin-top: 16px;
   margin-bottom: 20px;
@@ -305,6 +306,9 @@ input.searchfield {
   margin-bottom: 0px;
 }
 
+.navigation-steps{
+  font-family: 'OpenSans-Bold';
+}
 
 
 </style>

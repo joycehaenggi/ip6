@@ -2,7 +2,7 @@
   <div class="home">
     <Header/>
     <Navigation/>
-    <HelloWorld/>
+    <Tabelle/>
     <Test/>
 
 
@@ -15,8 +15,8 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
-import HelloWorld from "../components/HelloWorld";
-import Test from "../components/Test";
+
+import Tabelle from "../components/Tabelle";
 
 
 
@@ -29,8 +29,7 @@ export default {
 
     Header,
     Navigation,
-    HelloWorld,
-    Test,
+     Tabelle,
 
 
 
