@@ -15,7 +15,7 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
-
+import Test from '@/components/Test.vue'
 import Tabelle from "../components/Tabelle";
 
 
@@ -29,6 +29,7 @@ export default {
 
     Header,
     Navigation,
+    Test,
      Tabelle,
 
 

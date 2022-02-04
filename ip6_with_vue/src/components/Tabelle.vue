@@ -14,41 +14,41 @@
           class="elevation-1"
       >
 
+        <!--add Icon to icon-row -->
         <template v-slot:item.icon="{ item }">
           <td>{{ item.icon }}</td>
           <ToThin/>
         </template>
 
+        <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{ item }">
-          <td>{{ item.akzeptiert }}</td>
-          <Checkmark/>
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on }">
+              <v-card-text v-on="on">{{ item.akzeptiert }}
+                <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </v-card-text>
+            </template>
+            <span>Akzeptiert Status</span>
+          </v-tooltip>
         </template>
+
+
 
         <template v-slot:item.risikoprioritätszahl="{ item }">
           <td>{{ item.risikoprioritätszahl }}</td>
           <Green/>
         </template>
-        <template slot="headers">
-          <tr>
-            <th>
-              <v-checkbox
-                  hide-details
-
-              >
-                <div>hallo</div>
-              </v-checkbox>
-            </th>
-          </tr>
-        </template>
 
 
-        <!--        Expanded informations-->
+        <!--Expanded informations-->
         <template v-slot:expanded-item="{ headers }">
           <td :colspan="headers.length ">
 
             <div class='title_with_image_container'>
               <div class='title_with_image_square'>
-                <div class='title_detail_view'> Test
+                <div class='title_detail_view'> Dicke des Implantats zu dünn.
                 </div>
                 <div class='image_detail_view'><img src='../assets/img/toThin.svg' width='89' height='65'>
                 </div>
@@ -215,14 +215,18 @@ import FortschrittUebersicht from "./FortschrittUebersicht";
 import ButtonsListenAnsicht from "./ButtonsListenAnsicht";
 import ToThin from "./icons/ToThin";
 import Green from "./risikoprioritätszahl/Green";
-import Checkmark from "./icons/Checkmark";
+
 
 
 export default {
   name: 'HelloWorld',
-  components: {ButtonsListenAnsicht, FortschrittUebersicht, ToThin, Green, Checkmark},
+  components: {ButtonsListenAnsicht, FortschrittUebersicht, ToThin, Green},
   data() {
+
+
     return {
+      reviews: 413,
+      value: 4.5,
       w: null,
       x: null,
       y: null,
@@ -243,9 +247,8 @@ export default {
           width: 800
 
 
-
         },
-        {text: 'Nicht zutreffend', value: 'data-table-select', width: 80},
+        {text: 'Nicht zutreffend', value: 'data-table-select', width: 80,  sortable: true},
         {text: 'Akzeptiert', value: 'akzeptiert', width: 80},
         {text: 'Gefährdung verifizieren', value: 'data-table-expand'},
       ],
@@ -513,8 +516,21 @@ export default {
 }
 
 
-.v-simple-checkbox{
+.v-simple-checkbox {
   border: #3ff0a6;
 }
 
+
+.v-hover {
+  size: 30px;
+}
+
+.class1 {
+  background-image: url("../assets/img/toThin.svg");
+}
+
+.class2 {
+
+
+}
 </style>
