@@ -14,12 +14,15 @@
           class="elevation-1"
       >
 
+
+
         <template v-slot:item.icon="{ item }">
-          <td>{{ item.icon }}</td>
-          <ToThin/>
+                <td>{{ item.icon }}</td>
+                <ToThin/>
         </template>
 
         <template v-slot:item.akzeptiert="{ item }">
+
           <td>{{ item.akzeptiert }}</td>
           <Checkmark/>
         </template>
@@ -28,18 +31,7 @@
           <td>{{ item.risikoprioritätszahl }}</td>
           <Green/>
         </template>
-        <template slot="headers">
-          <tr>
-            <th>
-              <v-checkbox
-                  hide-details
 
-              >
-                <div>hallo</div>
-              </v-checkbox>
-            </th>
-          </tr>
-        </template>
 
 
         <!--        Expanded informations-->
@@ -222,7 +214,11 @@ export default {
   name: 'HelloWorld',
   components: {ButtonsListenAnsicht, FortschrittUebersicht, ToThin, Green, Checkmark},
   data() {
+
+
     return {
+      reviews: 413,
+      value: 4.5,
       w: null,
       x: null,
       y: null,
@@ -517,4 +513,17 @@ export default {
   border: #3ff0a6;
 }
 
+
+.v-hover{
+  size: 30px;
+}
+
+.class1 {
+  background-image: url("../assets/img/toThin.svg");
+}
+
+.class2 {
+
+
+}
 </style>
