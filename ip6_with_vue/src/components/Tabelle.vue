@@ -107,7 +107,7 @@
 
 
                 </div>
-              </div>
+                             </div>
 
 
             </div>
@@ -128,6 +128,10 @@
                       <input class="radio-button-nein top right" type="radio" v-model="x" value="No">Nein
 
                     </div>
+
+                  </div>
+                  <div class="end setMargin">
+                    <button class="button cancel space">Gefährdung abschliessen</button>
                   </div>
                 </div>
 
@@ -446,7 +450,7 @@ export default {
 
 .rectangle-margin {
   margin-top: 18px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .rectangle {
@@ -529,8 +533,9 @@ export default {
   background-image: url("../assets/img/toThin.svg");
 }
 
-.class2 {
-
+.v-tooltip__content{
+  background-color: var(--notification-Blue) !important;
 
 }
+
 </style>

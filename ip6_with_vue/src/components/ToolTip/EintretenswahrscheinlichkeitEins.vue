@@ -16,7 +16,7 @@
 
 
 export default {
-  name: "Test",
+  name: "ToolTipEW1",
   props: {
     text: {
       type: String,
