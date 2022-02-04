@@ -14,17 +14,25 @@
           class="elevation-1"
       >
 
-
-
+        <!--add Icon to icon-row -->
         <template v-slot:item.icon="{ item }">
-                <td>{{ item.icon }}</td>
-                <ToThin/>
+          <td>{{ item.icon }}</td>
+          <ToThin/>
         </template>
 
+        <!--add Checkmark and tooltip to akzeptiertrow-->
         <template v-slot:item.akzeptiert="{ item }">
-
-          <td>{{ item.akzeptiert }}</td>
-          <Checkmark/>
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on }">
+              <v-card-text v-on="on">{{ item.akzeptiert }}
+                <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 2L6.6875 15L2 9.09091" stroke="#4C5A69" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+              </v-card-text>
+            </template>
+            <span>Akzeptiert Status</span>
+          </v-tooltip>
         </template>
 
         <template v-slot:item.risikoprioritätszahl="{ item }">
@@ -33,8 +41,7 @@
         </template>
 
 
-
-        <!--        Expanded informations-->
+        <!--Expanded informations-->
         <template v-slot:expanded-item="{ headers }">
           <td :colspan="headers.length ">
 
@@ -207,12 +214,12 @@ import FortschrittUebersicht from "./FortschrittUebersicht";
 import ButtonsListenAnsicht from "./ButtonsListenAnsicht";
 import ToThin from "./icons/ToThin";
 import Green from "./risikoprioritätszahl/Green";
-import Checkmark from "./icons/Checkmark";
+
 
 
 export default {
   name: 'HelloWorld',
-  components: {ButtonsListenAnsicht, FortschrittUebersicht, ToThin, Green, Checkmark},
+  components: {ButtonsListenAnsicht, FortschrittUebersicht, ToThin, Green},
   data() {
 
 
@@ -237,7 +244,6 @@ export default {
           sortable: true,
           value: 'name',
           width: 800
-
 
 
         },
@@ -509,12 +515,12 @@ export default {
 }
 
 
-.v-simple-checkbox{
+.v-simple-checkbox {
   border: #3ff0a6;
 }
 
 
-.v-hover{
+.v-hover {
   size: 30px;
 }
 
