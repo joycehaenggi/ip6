@@ -20,7 +20,7 @@
           <ToThin/>
         </template>
 
-        <!--add Checkmark and tooltip to akzeptiertrow-->
+        <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{ item }">
           <v-tooltip bottom>
             <template v-slot:activator="{ on }">
@@ -34,6 +34,8 @@
             <span>Akzeptiert Status</span>
           </v-tooltip>
         </template>
+
+
 
         <template v-slot:item.risikoprioritätszahl="{ item }">
           <td>{{ item.risikoprioritätszahl }}</td>
