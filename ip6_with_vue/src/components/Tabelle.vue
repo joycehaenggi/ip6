@@ -130,9 +130,7 @@
                     </div>
 
                   </div>
-                  <div class="end setMargin">
-                    <button class="button cancel space">Gefährdung abschliessen</button>
-                  </div>
+
                 </div>
 
                 <div>
