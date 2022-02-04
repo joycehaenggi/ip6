@@ -25,9 +25,8 @@
           <v-tooltip bottom>
             <template v-slot:activator="{ on }">
               <v-card-text v-on="on">{{ item.akzeptiert }}
-                <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 2L6.6875 15L2 9.09091" stroke="#4C5A69" stroke-width="2.5" stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </v-card-text>
             </template>
