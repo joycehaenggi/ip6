@@ -65,7 +65,7 @@ export default Vue.extend({
 }
 .content:hover {
   transition: all 0.5s ease-in-out;
-  transform:translate(60px,0px) scale(2.5);
+  transform:translate(8rem,0rem) scale(2.5);
 
 }
 </style>

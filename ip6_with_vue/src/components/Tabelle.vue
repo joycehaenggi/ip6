@@ -253,8 +253,8 @@ export default {
 
         },
         {text: 'Nicht zutreffend', value: 'data-table-select', width: 80,  sortable: true},
-        {text: 'Akzeptiert', value: 'akzeptiert', width: 80},
-        {text: 'Gefährdung verifizieren', value: 'data-table-expand'},
+        {text: 'Akzeptiert', value: 'akzeptiert', width:80},
+        {text: 'Gefährdung verifizieren', value: 'data-table-expand', width:80 },
       ],
       hazards: [
         {
@@ -535,7 +535,11 @@ export default {
 
 .v-tooltip__content{
   background-color: var(--notification-Blue) !important;
+  font-family: 'OpenSans-Regular' !important;
+  font-size: calc(calc(var(--mainFontSize) + 1) * 0.063rem) !important;
 
 }
+.v-tooltip{
 
+}
 </style>
