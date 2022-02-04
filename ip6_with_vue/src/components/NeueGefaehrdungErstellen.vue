@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-    <v-app>
+
   <!--Neue Gefährdung erstellen-->
   <div class="neue_gefaehrdung">
     <div class="neue_gefaehrdung_title">
@@ -294,8 +293,8 @@
 
   </div>
 
-</v-app>
-  </div>
+
+
 </template>
 
 
