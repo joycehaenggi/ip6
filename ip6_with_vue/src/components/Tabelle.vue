@@ -49,7 +49,7 @@
 
             <div class='title_with_image_container'>
               <div class='title_with_image_square'>
-                <div class='title_detail_view'> Test
+                <div class='title_detail_view'> Dicke des Implantats zu dünn.
                 </div>
                 <div class='image_detail_view'><img src='../assets/img/toThin.svg' width='89' height='65'>
                 </div>
@@ -249,7 +249,7 @@ export default {
 
 
         },
-        {text: 'Nicht zutreffend', value: 'data-table-select', width: 80},
+        {text: 'Nicht zutreffend', value: 'data-table-select', width: 80,  sortable: true},
         {text: 'Akzeptiert', value: 'akzeptiert', width: 80},
         {text: 'Gefährdung verifizieren', value: 'data-table-expand'},
       ],
