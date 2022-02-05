@@ -181,33 +181,27 @@
         </div>
         <form class="form" id="form">
             <div class="flex-element">
-                <div class="column">
+                <div class="column column1">
                     <label class="label_customized">Gefährdung</label>
                 </div>
-                <div class="column">
+                <div class="column column2">
                     <input class="input_customized" type="text">
                 </div>
             </div>
             <div class="flex-element">
-                <div class="column">
+                <div class="column column1">
                     <label class="label_customized">Gefährdungssituation</label>
                 </div>
-                <div class="column">
+                <div class="column column2">
                     <input class="input_customized" type="text">
                 </div>
             </div>
-            <div class="flex-element flex_add">
-                <div class="column flex_add_column">
+            <div class="flex-element">
+                <div class="column column1">
                     <label class="label_customized addLabel">Schaden</label>
                 </div>
-                <div class="column add_column" id="add_new_Damage">
+                <div class="column column2">
                     <input class="input_customized add_new_input" type="text">
-                </div>
-            </div>
-            <div class="flex-element">
-                <div class="column empty_column">
-                </div>
-                <div class="column">
                     <svg class="svg_add" width="20" height="20" onclick="addNewTextfield('add_new_Damage')"
                          viewBox="0 0 20 20" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
@@ -218,9 +212,10 @@
                     </svg>
                 </div>
             </div>
+            <div id="add_new_Damage"></div>
 
             <div class="flex-element">
-                <div class="column">
+                <div class="column column1">
                     <div class="columnInColumn">
                         <label class="label_customized">Eintretungswahrscheinlichkeit</label>
                         <div class='data-tooltip'
@@ -234,7 +229,7 @@
                     </div>
                 </div>
 
-                <div class="column">
+                <div class="column column2">
                     <div class="radio">
                         <label class="container"> 1
                             <input type="radio" name="probabilityOfOccurrence" value="1"
@@ -263,7 +258,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="column severityColumn">
+                <div class="column column3 severityColumn">
                     <div class="columnInColumn">
                         <label>Schweregrad</label>
                         <div class='data-tooltip' data-tooltip2="Schweregrad vor Anwendung der Massnahmen.">
@@ -275,7 +270,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="column col4">
+                <div class="column column4">
                     <div class="radio">
                         <label class="container"> 1
                             <input type="radio" name="severity" value="1"
@@ -307,7 +302,7 @@
             </div>
 
             <div class="flex-element">
-                <div class="column">
+                <div class="column column1">
                     <div class="columnInColumn">
                         <label class="risk_priority_number_title">Risikoprioritätszahl</label>
                         <div class='data-tooltip'
@@ -320,7 +315,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="column">
+                <div class="column column2">
                     <div class="result_field" id="resultRiskPriorityNumber">
                         <div id="resultProbabilityOfOccurrence"></div>
                         <p>/</p>
@@ -330,18 +325,11 @@
             </div>
 
             <div class="flex-element flex_add">
-                <div class="column">
+                <div class="column column1">
                     <label class="label_customized addLabel">Massnahmen</label>
                 </div>
-                <div class="column add_column" id="add_new_measures">
+                <div class="column column2 add_column">
                     <input class="input_customized add_new_input" type="text">
-                </div>
-            </div>
-
-            <div class="flex-element">
-                <div class="column empty_column">
-                </div>
-                <div class="column">
                     <svg class="svg_add" width="20" height="20" onclick="addNewTextfield('add_new_measures')"
                          viewBox="0 0 20 20"
                          fill="none"
@@ -354,8 +342,10 @@
                 </div>
             </div>
 
+            <div id="add_new_measures"></div>
+
             <div class="flex-element">
-                <div class="column">
+                <div class="column column1">
                     <div class="columnInColumn">
                         <label class="label_customized">Implementierungsnachweis</label>
                         <div class='data-tooltip'
@@ -368,13 +358,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="column">
+                <div class="column column2">
                     <input type="file" name="file" id="file" class="inputfile" title="test"/>
                 </div>
             </div>
 
             <div class="flex-element">
-                <div class="column">
+                <div class="column column1">
                     <div class="columnInColumn">
                         <label class="label_customized">Eintretungswahrscheinlichkeit</label>
                         <div class='data-tooltip'
@@ -387,7 +377,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="column">
+                <div class="column column2">
                     <div class="radio">
                         <label class="container"> 1
                             <input type="radio" name="probabilityOfOccurrenceTwo" value="1"
@@ -416,7 +406,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="column severityColumn">
+                <div class="column column3 severityColumn">
                     <div class="columnInColumn">
                         <label class="responsive_width">Schweregrad</label>
                         <div class='data-tooltip' data-tooltip2="Schweregrad nach Anwendung der Massnahmen.">
@@ -428,12 +418,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="column col4">
+                <div class="column column4 col4">
                     <div class="result_field severity_field" id="resultSeverity_two"></div>
                 </div>
             </div>
               <div class="flex-element">
-                <div class="column">
+                <div class="column column1">
                     <div class="columnInColumn">
                         <label class="risk_priority_number_title">Risikoprioritätszahl</label>
                         <div class='data-tooltip'
@@ -446,7 +436,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="column">
+                <div class="column column2">
                     <div class="result_field" id="resultRiskPriorityNumber2">
                         <div id="resultProbabilityOfOccurrence_two"></div>
                         <p>/</p>
@@ -455,13 +445,13 @@
                 </div>
             </div>
             <div class="flex-element buttons_new_hazard">
-                <div class="column empty_column">
+                <div class="column column1 empty_column">
                 </div>
-                <div class="column empty_column">
+                <div class="column column2 empty_column">
                 </div>
-                <div class="column empty_column">
+                <div class="column column3 empty_column">
                 </div>
-                <div class="column">
+                <div class="column column4">
                     <a href="index.html">
                         <div class="button cancel" id="cancel">
                             Abbrechen

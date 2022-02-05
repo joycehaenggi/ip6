@@ -85,7 +85,12 @@ function checkfProbabilityOfOccurrenceANDSeverity() {
 function addNewTextfield(TopicofnewTextfield) {
     var objTo = document.getElementById(TopicofnewTextfield);
     var divAdd = document.createElement("div");
-    divAdd.innerHTML = '<input class="input_customized add_new_input" type="text">';
+    divAdd.innerHTML = '<div class="flex_add">\n' +
+        '<div class="empty_column-Flex-Add">\n' +
+        '</div>\n' +
+        '<div class="flex_add_column">' +
+        '<input class="input_customized add_new_input" type="text">' +
+        '</div></div></div>';
     objTo.appendChild(divAdd)
 }
 

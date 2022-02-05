@@ -34,7 +34,7 @@
         <div class="column empty_column">
         </div>
         <div class="column">
-          <svg class="svg_add" width="20" height="20" onclick="addNewTextfield('add_new_Damage')"
+          <svg class="svg_add" width="20" height="20" @click="addNewTextfield('add_new_Damage')"
                viewBox="0 0 20 20" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <path
@@ -173,7 +173,7 @@
         <div class="column empty_column">
         </div>
         <div class="column">
-          <svg class="svg_add" width="20" height="20" onclick="addNewTextfield('add_new_measures')"
+          <svg class="svg_add" width="20" height="20" @click="addNewTextfield('add_new_measures')"
                viewBox="0 0 20 20"
                fill="none"
                xmlns="http://www.w3.org/2000/svg">
@@ -397,6 +397,22 @@ export default {
           }
         }
       }
+    },
+    addNewTextfield(TopicofnewTextfield) {
+      var objTo = document.getElementById(TopicofnewTextfield);
+      var divAdd = document.createElement("div");
+      divAdd.innerHTML = '<div class="flex-element">' +
+          '                <div class="column empty_column">' +
+          '                </div>' +
+          '                <div class="column"><input class="input_customized add_new_input" type="text" ' +
+          'style="box-sizing: border-box; width: calc(300 * 0.063rem); height: calc(29 * 0.063rem); border-radius: calc(5 * 0.063rem); padding-left: calc(5 * 0.063rem); border: 1px solid #E1E5EB">' +
+          '</div></div>';
+
+      divAdd.style.borderRadius = '5px';
+      divAdd.style.fontFamily = '"OpenSans-Regular", sans-serif';
+      divAdd.style.fontSize = '11px';
+      divAdd.style.marginBottom = 'calc(10 * 0.063rem)';
+      objTo.appendChild(divAdd)
     }
 
   }
@@ -515,7 +531,6 @@ form {
 }
 
 .add_new_input {
-  margin-right: 10px;
   margin-bottom: 10px;
 }
 

@@ -1,5 +1,5 @@
 @media (max-width: 1451px) {
-    .col4, .severityColumn {
+    .severityColumn, .col4 {
         justify-content: flex-start;
     }
 }
@@ -13,11 +13,6 @@
     .wrapper {
         padding-left: 1rem;
         padding-right: 1rem;
-    }
-
-    .flex-element {
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     .responsive_width {
@@ -115,5 +110,10 @@
     .manufacturing-legend {
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .flex-element {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
