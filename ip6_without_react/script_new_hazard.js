@@ -80,7 +80,6 @@ function checkfProbabilityOfOccurrenceANDSeverity() {
             }
         }
     }
-
 }
 
 function addNewTextfield(TopicofnewTextfield) {
