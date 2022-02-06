@@ -4,7 +4,6 @@
     <NavigationNeueGefaehrdung/>
     <NeueGefaehrdungErstellen/>
     <ButtonsNeueGefaehrdung/>
-
   </div>
 </template>
 
@@ -14,7 +13,6 @@ import Header from '@/components/Header.vue'
 import NavigationNeueGefaehrdung from '@/components/NavigationNeueGefaehrdung.vue'
 import NeueGefaehrdungErstellen from "@/components/NeueGefaehrdungErstellen";
 import ButtonsNeueGefaehrdung from "@/components/ButtonsNeueGefaehrdung";
-
 
 export default {
   name: 'Home',
