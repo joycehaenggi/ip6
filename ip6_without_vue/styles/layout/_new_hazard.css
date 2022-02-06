@@ -5,6 +5,7 @@
 .new_hazard_title {
     background-color: var(--Frames-BlueGray);
     font-size: 14px;
+    width: 100%;
     height: 45px;
     display: flex;
     align-items: center;

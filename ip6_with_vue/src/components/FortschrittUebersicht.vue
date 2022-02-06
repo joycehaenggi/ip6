@@ -1,11 +1,9 @@
 <template>
-
   <div class="progress-wrapper">
     <div class="title_progress_bar" id="titleProgressBar">Fortschrittsübersicht - Implantatdesign Matching</div>
     <div class="progress_bar">
       <div class="progress_in_percent" id="progress_in_percent"></div>
     </div>
-
   </div>
 </template>
 

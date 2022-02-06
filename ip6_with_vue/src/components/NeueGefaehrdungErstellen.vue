@@ -414,22 +414,14 @@ export default {
       divAdd.style.marginBottom = 'calc(10 * 0.063rem)';
       objTo.appendChild(divAdd)
     }
-
   }
-
-
 }
-
-//TODO add Script here
-
-
 </script>
 
 <style scoped>
 /*---- Create new hazard-page ----*/
 .neue_gefaehrdung {
   margin-top: 40px;
-
   padding-left: var(--paddingLeftRight);
   padding-right: var(--paddingLeftRight);
 

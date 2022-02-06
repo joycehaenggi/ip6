@@ -26,7 +26,8 @@
             <template v-slot:activator="{ on }">
               <v-card-text v-on="on">{{ item.akzeptiert }}
                 <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </v-card-text>
             </template>
@@ -34,13 +35,10 @@
           </v-tooltip>
         </template>
 
-
-
         <template v-slot:item.risikoprioritätszahl="{ item }">
           <td>{{ item.risikoprioritätszahl }}</td>
           <Green/>
         </template>
-
 
         <!--Expanded informations-->
         <template v-slot:expanded-item="{ headers }">
@@ -107,7 +105,7 @@
 
 
                 </div>
-                             </div>
+              </div>
 
 
             </div>
@@ -219,13 +217,10 @@ import ToThin from "./icons/ToThin";
 import Green from "./risikoprioritätszahl/Green";
 
 
-
 export default {
   name: 'HelloWorld',
   components: {ButtonsListenAnsicht, FortschrittUebersicht, ToThin, Green},
   data() {
-
-
     return {
       reviews: 413,
       value: 4.5,
@@ -236,48 +231,23 @@ export default {
       selected: [],
       expanded: [],
       singleExpand: false,
+      nunmberofallCheckboxes: null,
       hazardsHeader: [
-
         {text: 'Icon', value: 'icon', width: 80},
         {text: 'Risikoprioritätszahl', value: 'risikoprioritätszahl', width: 150},
-        {
-          text: 'Definition Gefährdung',
-
-          align: 'start',
-          sortable: true,
-          value: 'name',
-          width: 800
-
-
-        },
-        {text: 'Nicht zutreffend', value: 'data-table-select', width: 80,  sortable: true},
-        {text: 'Akzeptiert', value: 'akzeptiert', width:80},
-        {text: 'Gefährdung verifizieren', value: 'data-table-expand', width:80 },
+        {text: 'Definition Gefährdung', align: 'start', sortable: true, value: 'name', width: 800},
+        {text: 'Nicht zutreffend', value: 'data-table-select', width: 80, sortable: true},
+        {text: 'Akzeptiert', value: 'akzeptiert', width: 80},
+        {text: 'Gefährdung verifizieren', value: 'data-table-expand', width: 80},
       ],
       hazards: [
-        {
-          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
-
-
-        },
-        {
-          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
-        },
-
-
-        {
-          name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
-        },
-        {
-          name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
-        },
-        {
-          name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
-        },
-        {
-          name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",
-        }
-      ]
+        {name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",},
+        {name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",},
+        {name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",},
+        {name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",},
+        {name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",},
+        {name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",}
+      ],
     }
   },
   methods: {
@@ -289,8 +259,28 @@ export default {
     test() {
       document.getElementById('test').classList.add('hide');
       console.log("test")
-
     },
+    numberOfCheckedCheckboxes() {
+      let nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
+      let nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
+      let percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
+
+      document.getElementById("progress_in_percent").innerHTML = percentageOfCheckedCheckboxes + '%';
+      console.log(this.numberOfCheckedCheckboxes)
+/*      if (percentageOfCheckedCheckboxes === 100) {
+        nextStep.style.color = 'white';
+        nextStep.style.background = '#687D99';
+        nextStep.style.opacity = '1.0';
+        nextStep.style.cursor = 'pointer';
+        nextStepLink.style.pointerEvents = 'auto';
+      } else {
+        nextStep.style.color = '#4C5A69';
+        nextStep.style.background = '#E1E5EB';
+        nextStep.style.opacity = '0.4';
+        nextStep.style.cursor = 'default';
+        nextStepLink.style.pointerEvents = 'none';
+      }*/
+    }
   },
 }
 
@@ -452,7 +442,7 @@ export default {
 }
 
 .rectangle {
-  background-color: var(--Frames-BlueGray);
+  /*background-color: var(--Frames-BlueGray);*/
   max-width: 100%;
   height: 30px;
   border-radius: 5px;
@@ -531,13 +521,14 @@ export default {
   background-image: url("../assets/img/toThin.svg");
 }
 
-.v-tooltip__content{
+.v-tooltip__content {
   background-color: var(--notification-Blue) !important;
   font-family: 'OpenSans-Regular' !important;
   font-size: calc(calc(var(--mainFontSize) + 1) * 0.063rem) !important;
 
 }
-.v-tooltip{
+
+.v-tooltip {
 
 }
 </style>

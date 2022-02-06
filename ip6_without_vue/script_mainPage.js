@@ -16,13 +16,7 @@ let item;
 window.onload = function () {
     numberOfCheckedCheckboxes();
     names();
-    fullNotification = localStorage.getItem("someVarKey");
 
-    if (fullNotification === "false") {
-        notification.style.width = "5%";
-        text_notification.style.display = "none";
-        text_notification.style.arrow_id = "none";
-    }
     localStorage.getItem('dropdownWasOpen')
 }
 
