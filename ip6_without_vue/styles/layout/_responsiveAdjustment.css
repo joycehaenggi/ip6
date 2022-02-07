@@ -1,6 +1,7 @@
-@media (max-width: 1451px) {
-    .severityColumn, .col4 {
-        justify-content: flex-start;
+@media (max-width: 1150px) {
+    .wrapper {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
@@ -10,18 +11,9 @@
         padding-right: 0;
     }
 
-    .wrapper {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .responsive_width {
-        width: 107px;
-    }
-
-    .empty_column {
-        display: none;
-    }
+    /*.responsive_width {*/
+    /*    width: 107px;*/
+    /*}*/
 
     .logo_title {
         margin-left: .5rem;

@@ -12,6 +12,10 @@
     user-select: none;
 }
 
+.container:last-child {
+    padding-right: 0;
+}
+
 /* Hide the browser's default radio button */
 .container input {
     position: absolute;
