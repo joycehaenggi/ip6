@@ -25,6 +25,22 @@
             </div>
           </div>
         </template>
+
+        <template #item.data-table-select="{item}">
+          <div >
+
+            <div>
+            <append-icon><img
+                v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
+                src="../assets/img/toThin.svg" width="20" alt=""/></append-icon>
+              <i></i>
+            </div>
+            <div>
+            </div>
+          </div>
+        </template>
+
+
       </v-data-table>
     </v-col>
   </v-row>
