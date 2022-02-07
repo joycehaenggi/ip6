@@ -31,4 +31,11 @@ export default {
   padding-right: var(--paddingLeftRight);
   margin-bottom: calc(var(--marginOne) * 0.063rem);
 }
+
+@media (max-width: 1150px) {
+  .wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 </style>

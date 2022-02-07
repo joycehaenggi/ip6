@@ -504,6 +504,25 @@ form {
   margin-right: calc(10 * 0.063rem);
 }
 
+.button-submit {
+  background-color: var(--button-Blue);
+  color: white;
+}
+
+.button-cancel {
+  background-color: var(--Frames-BlueGray);
+  color: var(--notification-Blue);
+  margin-right: 20px;
+}
+
+.button:hover {
+  background-color: var(--notification-Blue);
+}
+
+.button-cancel:hover {
+  background-color: #d3d8e1;
+}
+
 @media (max-width: 1020px) {
   .columnInColumn-Severity{
     min-width: calc(250 * 0.063rem);
@@ -584,25 +603,6 @@ form {
 
 .severity_field {
   background-color: var(--Frames-BlueGray);
-}
-
-.button-submit {
-  background-color: var(--button-Blue);
-  color: white;
-}
-
-.button-cancel {
-  background-color: var(--Frames-BlueGray);
-  color: var(--notification-Blue);
-  margin-right: 20px;
-}
-
-.button:hover {
-  background-color: var(--notification-Blue);
-}
-
-.button-cancel:hover {
-  background-color: #d3d8e1;
 }
 
 .svg_info_icon {
