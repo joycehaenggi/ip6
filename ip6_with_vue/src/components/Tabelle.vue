@@ -19,29 +19,33 @@
         <template #item.nicht-zutreffend="{item}">
           <div>
             <div>
-              <input @click="hallWelt"
+              <input @click="numberOfCheckedCheckboxes"
                   v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
                   type="checkbox"/>
             </div>
             <div>
-              <input
+              <input @click="numberOfCheckedCheckboxes"
                   v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
                   type="checkbox"/>
             </div>
             <div>
-              <input v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
+              <input @click="numberOfCheckedCheckboxes"
+                  v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
                      type="checkbox"/>
             </div>
             <div>
-              <input v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
+              <input @click="numberOfCheckedCheckboxes"
+                  v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
                      type="checkbox"/>
             </div>
             <div>
-              <input v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
+              <input @click="numberOfCheckedCheckboxes"
+                  v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
                      type="checkbox"/>
             </div>
             <div>
-              <input v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'" type="checkbox"/>
+              <input @click="numberOfCheckedCheckboxes"
+                  v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'" type="checkbox"/>
             </div>
             <div>
             </div>
@@ -309,8 +313,7 @@
 
       </v-data-table>
 
-      <FortschrittUebersicht/>
-      <ButtonsListenAnsicht/>
+
 
 
     </v-app>
@@ -318,13 +321,10 @@
 </template>
 
 <script>
-import FortschrittUebersicht from "./FortschrittUebersicht";
-import ButtonsListenAnsicht from "./ButtonsListenAnsicht";
 
 
 export default {
   name: 'HelloWorld',
-  components: {ButtonsListenAnsicht, FortschrittUebersicht},
   data() {
 
 
@@ -390,8 +390,16 @@ export default {
     test() {
       document.getElementById('test').classList.add('hide');
       console.log("test")
-
     },
+    numberOfCheckedCheckboxes(){
+      // let nunmberOfAllCheckboxes = document.querySelectorAll('input[type="checkbox"]').length
+      let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
+      // let percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
+      // console.log(nunmberOfAllCheckboxes)
+      // console.log(nunmberOfCheckedCheckboxes)
+
+      this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
+    }
   },
 }
 
@@ -604,6 +612,10 @@ export default {
 .v-application {
   padding-left: var(--paddingLeftRight);
   padding-right: var(--paddingLeftRight);
+}
+
+v-application--wrap {
+  min-height:10px !important;
 }
 
 .v-data-table {
