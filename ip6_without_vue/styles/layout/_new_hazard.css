@@ -52,7 +52,7 @@ form {
 }
 
 .column1 {
-    min-width: calc(220 * 0.063rem);
+    min-width: calc(250 * 0.063rem);
 }
 
 .column2 {
@@ -61,6 +61,7 @@ form {
 
 .column3 {
     margin-right: 0;
+    min-width: calc(330 * 0.063rem);
 }
 
 .column4 {
@@ -72,7 +73,7 @@ form {
 }
 
 .columnInColumn-Severity {
-    min-width: calc(125 * 0.063rem);
+    min-width: calc(150 * 0.063rem);
     margin-right: calc(10 * 0.063rem);
 }
 
@@ -87,7 +88,7 @@ form {
     margin-right: calc(10 * 0.063rem);
 }
 
-.column3, .column4 {
+.column3 {
     justify-content: flex-end;
 }
 

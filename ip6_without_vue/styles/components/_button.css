@@ -14,20 +14,21 @@
     background-color: var(--notification-Blue);
 }
 
-.submit {
+.button-submit {
     background-color: var(--button-Blue);
     color: white;
 }
 
-.nextStepButton {
+.button-nextStep {
+    margin-left: 20px;
+}
+
+.button-cancel {
+    background-color: var(--Frames-BlueGray);
+    color: var(--notification-Blue);
     margin-right: 20px;
 }
 
-.cancel {
-    background-color: var(--Frames-BlueGray);
-    color: var(--notification-Blue);
-}
-
-.cancel:hover {
+.button-cancel:hover {
     background-color: #d3d8e1;
 }
