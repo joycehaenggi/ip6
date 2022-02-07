@@ -152,7 +152,7 @@ export default {
   }
 }
 
-// / TODO Animate Notification
+
 
 </script>
 
@@ -264,6 +264,7 @@ input.searchfield {
 .rectangle {
   display: block;
   height: 30px;
+  background-color: white;
 }
 
 .notification {
