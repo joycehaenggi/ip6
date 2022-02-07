@@ -2,55 +2,100 @@
   <div id="app">
     <v-app id="inspire">
       <v-data-table
-          v-model="selected"
+
           :headers="hazardsHeader"
           :items="hazards"
 
           :expanded.sync="expanded"
-          :single-select="singleSelect"
+
           item-key="name"
-          show-select
+
           show-expand
           class="elevation-1"
       >
 
-        <!--add Icon to icon-row -->
-        <template v-slot:item.icon="{ item }">
-          <td>{{ item.icon }}</td>
-          <ToThin/>
+
+
+        <template #item.nicht-zutreffend="{item}">
+          <div >
+
+            <div>
+
+              <input v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'" type="checkbox" />
+
+            </div>
+            <div>
+
+              <input v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'" type="checkbox" />
+
+            </div>
+
+            <div>
+
+              <input v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'" type="checkbox" />
+
+            </div>
+            <div>
+
+              <input v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'" type="checkbox" />
+
+            </div>
+
+            <div>
+
+              <input v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'" type="checkbox" />
+
+            </div>
+
+            <div>
+
+              <input v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'" type="checkbox" />
+
+            </div>
+            <div>
+            </div>
+          </div>
         </template>
 
+
+        <!--Add different icon per row in icon-row-->
         <template #item.icon="{item}">
           <div class="d-flex">
             <div>
               {{ item.icon }}
             </div>
             <div>
-              <img v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'" src="../assets/img/toThin.svg" width="20" alt=""/>
+              <img
+                  v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
+                  src="../assets/img/toThin.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
             <div>
-              <img v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'" src="../assets/img/dimensionally_unstable.svg" width="20" alt=""/>
+              <img
+                  v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
+                  src="../assets/img/dimensionally_unstable.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
             <div>
-              <img v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'" src="../assets/img/nut.svg" width="20" alt=""/>
+              <img v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
+                   src="../assets/img/nut.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
             <div>
-              <img v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'" src="../assets/img/nut.svg" width="20" alt=""/>
+              <img v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
+                   src="../assets/img/nut.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
             <div>
-              <img v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'" src="../assets/img/screw.svg" width="20" alt=""/>
+              <img v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
+                   src="../assets/img/screw.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
             <div>
-              <img v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'" src="../assets/img/screw.svg" width="20" alt=""/>
+              <img v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'"
+                   src="../assets/img/screw.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
-
-
           </div>
         </template>
 
@@ -60,7 +105,8 @@
             <template v-slot:activator="{ on }">
               <v-card-text v-on="on">{{ item.akzeptiert }}
                 <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </v-card-text>
             </template>
@@ -69,12 +115,22 @@
         </template>
 
 
-
         <template v-slot:item.risikoprioritätszahl="{ item }">
           <td>{{ item.risikoprioritätszahl }}</td>
           <Green/>
         </template>
 
+
+        <template v-slot:item.risikoprioritätszahl="{ item }">
+          <td>{{ item.risikoprioritätszahl }}</td>
+          <div>
+            <img
+                v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
+                src="../assets/img/yellow-risikoprioritätszahl.svg" width="20" alt=""/>
+            <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+          </div>
+
+        </template>
 
         <!--Expanded informations-->
         <template v-slot:expanded-item="{ headers }">
@@ -141,7 +197,7 @@
 
 
                 </div>
-                             </div>
+              </div>
 
 
             </div>
@@ -249,14 +305,12 @@
 <script>
 import FortschrittUebersicht from "./FortschrittUebersicht";
 import ButtonsListenAnsicht from "./ButtonsListenAnsicht";
-import ToThin from "./icons/ToThin";
 import Green from "./risikoprioritätszahl/Green";
-
 
 
 export default {
   name: 'HelloWorld',
-  components: {ButtonsListenAnsicht, FortschrittUebersicht, ToThin, Green},
+  components: {ButtonsListenAnsicht, FortschrittUebersicht, Green},
   data() {
 
 
@@ -266,8 +320,7 @@ export default {
       w: null,
       x: null,
       y: null,
-      singleSelect: false,
-      selected: [],
+
       expanded: [],
       singleExpand: false,
       hazardsHeader: [
@@ -284,9 +337,9 @@ export default {
 
 
         },
-        {text: 'Nicht zutreffend', value: 'data-table-select', width: 80,  sortable: true},
-        {text: 'Akzeptiert', value: 'akzeptiert', width:80},
-        {text: 'Gefährdung verifizieren', value: 'data-table-expand', width:80 },
+        {text: 'Nicht zutreffend', value: 'nicht-zutreffend', width: 100, sortable: true},
+        {text: 'Akzeptiert', value: 'akzeptiert', width: 80},
+        {text: 'Gefährdung verifizieren', value: 'data-table-expand', width: 80},
       ],
       hazards: [
         {
@@ -565,13 +618,14 @@ export default {
   background-image: url("../assets/img/toThin.svg");
 }
 
-.v-tooltip__content{
+.v-tooltip__content {
   background-color: var(--notification-Blue) !important;
   font-family: 'OpenSans-Regular' !important;
   font-size: calc(calc(var(--mainFontSize) + 1) * 0.063rem) !important;
 
 }
-.v-tooltip{
+
+.v-tooltip {
 
 }
 </style>
