@@ -2,22 +2,92 @@
   <div id="app">
     <v-app id="inspire">
       <v-data-table
-          v-model="selected"
+
           :headers="hazardsHeader"
           :items="hazards"
 
           :expanded.sync="expanded"
-          :single-select="singleSelect"
+
           item-key="name"
-          show-select
+
           show-expand
           class="elevation-1"
       >
 
-        <!--add Icon to icon-row -->
-        <template v-slot:item.icon="{ item }">
-          <td>{{ item.icon }}</td>
-          <ToThin/>
+
+        <!--Set checkbox for nicht-zutreffend-row-->
+        <template #item.nicht-zutreffend="{item}">
+          <div>
+            <div>
+              <input
+                  v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
+                  type="checkbox"/>
+            </div>
+            <div>
+              <input
+                  v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
+                  type="checkbox"/>
+            </div>
+            <div>
+              <input v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
+                     type="checkbox"/>
+            </div>
+            <div>
+              <input v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
+                     type="checkbox"/>
+            </div>
+            <div>
+              <input v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
+                     type="checkbox"/>
+            </div>
+            <div>
+              <input v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'" type="checkbox"/>
+            </div>
+            <div>
+            </div>
+          </div>
+        </template>
+
+
+        <!--Add different icon per row in icon-row-->
+        <template #item.icon="{item}">
+          <div class="d-flex">
+            <div>
+              {{ item.icon }}
+            </div>
+            <div>
+              <img
+                  v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
+                  src="../assets/img/toThin.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+            <div>
+              <img
+                  v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
+                  src="../assets/img/dimensionally_unstable.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+            <div>
+              <img v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
+                   src="../assets/img/nut.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+            <div>
+              <img v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
+                   src="../assets/img/nut.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+            <div>
+              <img v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
+                   src="../assets/img/screw.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+            <div>
+              <img v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'"
+                   src="../assets/img/screw.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+          </div>
         </template>
 
         <!--add Checkmark and tooltip to akzeptiert-row-->
@@ -35,9 +105,46 @@
           </v-tooltip>
         </template>
 
+        <!--add color to risikoprioritätszahl--row-->
         <template v-slot:item.risikoprioritätszahl="{ item }">
           <td>{{ item.risikoprioritätszahl }}</td>
-          <Green/>
+          <div>
+            <img
+                v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
+                src="../assets/img/yellow-risikoprioritätszahl.svg" width="20" alt=""/>
+            <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+          </div>
+          <div>
+            <img
+                v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
+                src="../assets/img/green-risikoprioritätszahl.svg" width="20" alt=""/>
+            <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+          </div>
+          <div>
+            <img
+                v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
+                src="../assets/img/green-risikoprioritätszahl.svg" width="20" alt=""/>
+            <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+          </div>
+          <div>
+            <img
+                v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
+                src="../assets/img/red-risikoprioritätszahl.svg" width="20" alt=""/>
+            <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+          </div>
+          <div>
+            <img
+                v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
+                src="../assets/img/yellow-risikoprioritätszahl.svg" width="20" alt=""/>
+            <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+          </div>
+          <div>
+            <img
+                v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'"
+                src="../assets/img/red-risikoprioritätszahl.svg" width="20" alt=""/>
+            <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+          </div>
+
         </template>
 
         <!--Expanded informations-->
@@ -213,41 +320,65 @@
 <script>
 import FortschrittUebersicht from "./FortschrittUebersicht";
 import ButtonsListenAnsicht from "./ButtonsListenAnsicht";
-import ToThin from "./icons/ToThin";
-import Green from "./risikoprioritätszahl/Green";
 
 
 export default {
   name: 'HelloWorld',
-  components: {ButtonsListenAnsicht, FortschrittUebersicht, ToThin, Green},
+  components: {ButtonsListenAnsicht, FortschrittUebersicht},
   data() {
+
+
     return {
       reviews: 413,
       value: 4.5,
       w: null,
       x: null,
       y: null,
-      singleSelect: false,
-      selected: [],
+
       expanded: [],
       singleExpand: false,
-      nunmberofallCheckboxes: null,
       hazardsHeader: [
+
         {text: 'Icon', value: 'icon', width: 80},
         {text: 'Risikoprioritätszahl', value: 'risikoprioritätszahl', width: 150},
-        {text: 'Definition Gefährdung', align: 'start', sortable: true, value: 'name', width: 800},
-        {text: 'Nicht zutreffend', value: 'data-table-select', width: 80, sortable: true},
+        {
+          text: 'Definition Gefährdung',
+
+          align: 'start',
+          sortable: true,
+          value: 'name',
+          width: 800
+
+
+        },
+        {text: 'Nicht zutreffend', value: 'nicht-zutreffend', width: 100, sortable: true},
         {text: 'Akzeptiert', value: 'akzeptiert', width: 80},
         {text: 'Gefährdung verifizieren', value: 'data-table-expand', width: 80},
       ],
       hazards: [
-        {name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",},
-        {name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",},
-        {name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",},
-        {name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",},
-        {name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",},
-        {name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",}
-      ],
+        {
+          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
+
+
+        },
+        {
+          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
+        },
+
+
+        {
+          name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
+        },
+        {
+          name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
+        },
+        {
+          name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
+        },
+        {
+          name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",
+        }
+      ]
     }
   },
   methods: {
@@ -259,28 +390,8 @@ export default {
     test() {
       document.getElementById('test').classList.add('hide');
       console.log("test")
-    },
-    numberOfCheckedCheckboxes() {
-      let nunmberofallCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
-      let nunmberofCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
-      let percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
 
-      document.getElementById("progress_in_percent").innerHTML = percentageOfCheckedCheckboxes + '%';
-      console.log(this.numberOfCheckedCheckboxes)
-/*      if (percentageOfCheckedCheckboxes === 100) {
-        nextStep.style.color = 'white';
-        nextStep.style.background = '#687D99';
-        nextStep.style.opacity = '1.0';
-        nextStep.style.cursor = 'pointer';
-        nextStepLink.style.pointerEvents = 'auto';
-      } else {
-        nextStep.style.color = '#4C5A69';
-        nextStep.style.background = '#E1E5EB';
-        nextStep.style.opacity = '0.4';
-        nextStep.style.cursor = 'default';
-        nextStepLink.style.pointerEvents = 'none';
-      }*/
-    }
+    },
   },
 }
 
@@ -442,7 +553,7 @@ export default {
 }
 
 .rectangle {
-  /*background-color: var(--Frames-BlueGray);*/
+  background-color: var(--Frames-BlueGray);
   max-width: 100%;
   height: 30px;
   border-radius: 5px;
