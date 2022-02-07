@@ -19,7 +19,7 @@
         <template #item.nicht-zutreffend="{item}">
           <div>
             <div>
-              <input
+              <input @click="hallWelt"
                   v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
                   type="checkbox"/>
             </div>
