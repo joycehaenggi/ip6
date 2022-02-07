@@ -20,6 +20,40 @@
           <ToThin/>
         </template>
 
+        <template #item.icon="{item}">
+          <div class="d-flex">
+            <div>
+              {{ item.icon }}
+            </div>
+            <div>
+              <img v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'" src="../assets/img/toThin.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+            <div>
+              <img v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'" src="../assets/img/dimensionally_unstable.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+            <div>
+              <img v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'" src="../assets/img/nut.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+            <div>
+              <img v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'" src="../assets/img/nut.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+            <div>
+              <img v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'" src="../assets/img/screw.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+            <div>
+              <img v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'" src="../assets/img/screw.svg" width="20" alt=""/>
+              <i v-else :class="`fi fi-rr-${item.icon}`"></i>
+            </div>
+
+
+          </div>
+        </template>
+
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{ item }">
           <v-tooltip bottom>
