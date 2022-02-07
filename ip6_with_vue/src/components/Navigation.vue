@@ -138,7 +138,7 @@ export default {
       let TextNotification = document.getElementById("text_notification")
       notification.style.transition = "1s"
 
-      if(this.fullNotification === true){
+      if (this.fullNotification === true) {
         notification.style.width = "5%"
         TextNotification.style.display = "none";
         this.fullNotification = false

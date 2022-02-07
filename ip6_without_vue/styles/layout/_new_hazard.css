@@ -109,11 +109,6 @@ form {
 
 }
 
-.flex_add_column {
-    min-width: calc(300 * 0.063rem);
-    height: 40px;
-}
-
 .empty_column-Flex-Add {
     min-width: calc(250 * 0.063rem);
     height: 40px;
@@ -122,10 +117,6 @@ form {
 
 .column3 {
     /*justify-content: flex-end;*/
-}
-
-.newOne{
-    margin-right: 10px;
 }
 
 .label_customized {

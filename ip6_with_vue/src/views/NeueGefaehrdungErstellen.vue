@@ -1,9 +1,10 @@
 <template>
   <div class="home">
     <Header/>
-    <NavigationNeueGefaehrdung/>
-    <NeueGefaehrdungErstellen/>
-    <ButtonsNeueGefaehrdung/>
+    <div class="wrapper">
+      <NavigationNeueGefaehrdung/>
+      <NeueGefaehrdungErstellen/>
+    </div>
   </div>
 </template>
 
@@ -12,15 +13,22 @@
 import Header from '@/components/Header.vue'
 import NavigationNeueGefaehrdung from '@/components/NavigationNeueGefaehrdung.vue'
 import NeueGefaehrdungErstellen from "@/components/NeueGefaehrdungErstellen";
-import ButtonsNeueGefaehrdung from "@/components/ButtonsNeueGefaehrdung";
 
 export default {
   name: 'Home',
   components: {
     Header,
     NavigationNeueGefaehrdung,
-    NeueGefaehrdungErstellen,
-    ButtonsNeueGefaehrdung
+    NeueGefaehrdungErstellen
   }
 }
 </script>
+
+<style>
+.wrapper {
+  margin-top: calc(var(--marginOne) * 0.063rem);
+  padding-left: var(--paddingLeftRight);
+  padding-right: var(--paddingLeftRight);
+  margin-bottom: calc(var(--marginOne) * 0.063rem);
+}
+</style>
