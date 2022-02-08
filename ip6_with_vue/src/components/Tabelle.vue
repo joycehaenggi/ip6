@@ -287,7 +287,7 @@
                 <v-textarea
                     outlined
                     label="Begründung für Custom Made Device"
-                    value="Geben Sie eine Begründung ein. "
+                    placeholder="Geben Sie eine Begründung ein. "
                 />
 
                 <div class='test setMargin'>
