@@ -19,33 +19,39 @@
         <template #item.nicht-zutreffend="{item}">
           <div>
             <div>
-              <input @click="numberOfCheckedCheckboxes"
+              <input id="confirm" @click="numberOfCheckedCheckboxes"
                   v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
                   type="checkbox"/>
+                <label class="checkbox" for="confirm"></label>
             </div>
             <div>
-              <input @click="numberOfCheckedCheckboxes"
+              <input id="confirm2" @click="numberOfCheckedCheckboxes"
                   v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
                   type="checkbox"/>
+              <label class="checkbox" for="confirm2"></label>
             </div>
             <div>
-              <input @click="numberOfCheckedCheckboxes"
+              <input id="confirm3" @click="numberOfCheckedCheckboxes"
                   v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
                      type="checkbox"/>
+              <label class="checkbox" for="confirm3"></label>
             </div>
             <div>
-              <input @click="numberOfCheckedCheckboxes"
+              <input id="confirm4" @click="numberOfCheckedCheckboxes"
                   v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
                      type="checkbox"/>
+              <label class="checkbox" for="confirm4"></label>
             </div>
             <div>
-              <input @click="numberOfCheckedCheckboxes"
+              <input id="confirm5" @click="numberOfCheckedCheckboxes"
                   v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
                      type="checkbox"/>
+              <label class="checkbox" for="confirm5"></label>
             </div>
             <div>
-              <input @click="numberOfCheckedCheckboxes"
+              <input id="confirm6" @click="numberOfCheckedCheckboxes"
                   v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'" type="checkbox"/>
+              <label class="checkbox" for="confirm6"></label>
             </div>
             <div>
             </div>
@@ -646,7 +652,29 @@ v-application--wrap {
 
 }
 
-.v-tooltip {
-
+[type="checkbox"] + label {
+  position: absolute;
 }
+
+[type="checkbox"] {
+  position: relative;
+  -webkit-appearance: none;
+}
+
+[type="checkbox"] + label::before {
+  width: 15px;
+  height: 15px;
+  background-image: url("../assets/svg/checkbox_unchecked.svg");
+  display: block;
+  content: "";
+  float: left;
+  margin-right: 5px;
+  z-index: 2;
+  position: relative;
+}
+
+[type="checkbox"]:checked + label::before {
+  background-image: url("../assets/svg/checkbox_checked.svg");
+}
+
 </style>
