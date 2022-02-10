@@ -81,7 +81,7 @@ function evaluationYes(x) {
     var y = document.getElementsByClassName("pP"+x).nextElementSibling;
 
     postProcessingBlock.style.display = 'block';
-    postProcessingBlock.style.height =  "48px";
+    postProcessingBlock.style.height =  "70px";
     panel.style.maxHeight = panel.scrollHeight + "px";
     // console.log(y);
 }

@@ -4,7 +4,7 @@
     <Navigation/>
     <Tabelle @ReadCheckboxNumber="transferCheckboxNumbers"/>
     <div class="wrapper">
-      <FortschrittUebersicht :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes" />
+      <FortschrittUebersicht :noCheckboxCheckedProcess="noCheckboxChecked" :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes" />
       <ButtonsListenAnsicht/>
     </div>
   </div>
@@ -32,6 +32,7 @@ export default {
       nunmberOfAllCheckboxesValue: null,
       nunmberOfCheckedCheckboxesValue: null,
       percentageOfCheckedCheckboxes: null,
+      noCheckboxChecked: true
     }
   },
   methods: {
@@ -47,6 +48,16 @@ export default {
 
       progress_in_percent.style.transition = "1s"
       progress_in_percent.style.width = this.percentageOfCheckedCheckboxes+"%"
+
+      this.noCheckboxChecked = this.percentageOfCheckedCheckboxes === 0;
+
+      let nextStepButton = document.getElementById("nextStep");
+
+      if(this.percentageOfCheckedCheckboxes === 100){
+        nextStepButton.style.opacity = "1.0";
+      } else {
+        nextStepButton.style.opacity = "0.4";
+      }
     }
 
   }

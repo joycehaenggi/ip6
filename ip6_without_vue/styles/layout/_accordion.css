@@ -102,6 +102,10 @@
     margin-top: calc(16 * 0.063rem);
 }
 
+.block-evaluation {
+    height: 70px;
+}
+
 .riskVisualization2 {
     margin-left: calc(30 * 0.063rem);
 }
@@ -111,7 +115,7 @@
 }
 
 .evaluation-text {
-    width: 330px;
+    width: 530px;
 }
 
 .evaluation-radio-buttons {

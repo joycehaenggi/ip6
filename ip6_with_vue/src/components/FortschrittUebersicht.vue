@@ -3,26 +3,29 @@
     <div class="title_progress_bar" id="titleProgressBar">Fortschrittsübersicht - Implantatdesign Matching</div>
     <div class="progress_bar">
 
-      <div class="progress_in_percent" id="progress_in_percent">
-              {{ percentageOfCheckedCheckboxesProcess }}%
-      </div>
+        <div class="progress_in_percent" id="progress_in_percent">
+          <div v-if="!noCheckboxCheckedProcess">
+          {{ percentageOfCheckedCheckboxesProcess }}%
+          </div>
+        </div>
+
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['percentageOfCheckedCheckboxesProcess'],
+  props: ['noCheckboxCheckedProcess', 'percentageOfCheckedCheckboxesProcess'],
   name: "FortschrittUebersicht",
-/*  watch: {
-    this.test()
-    // let resultField1 = document.getElementById("resultRiskPriorityNumber");
-  },
-  methods: {
-    test(){
-      console.log("fff")
-    }
-  }*/
+  /*  watch: {
+      this.test()
+      // let resultField1 = document.getElementById("resultRiskPriorityNumber");
+    },
+    methods: {
+      test(){
+        console.log("fff")
+      }
+    }*/
 
 }
 </script>

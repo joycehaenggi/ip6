@@ -312,7 +312,7 @@
 
                         "<div class='block'>" +
                         "<div class='block-title'>" +
-                        "Original Massnahmen" +
+                        "Massnahmen zur Risikominderung" +
                         "</div>" +
                         "<div class='block-text'>" +
                         "<ul><li>Report mit Begründung der Abweichung der Spezifikation und den individuellen Einfluss auf die Wirksamkeit durch den behandelnden Arzt</li></ul>" +
@@ -321,7 +321,7 @@
 
                         "<div class='block block-effects'>" +
                         "<div class='block-title'>" +
-                        "Auswirkungen" +
+                        "Auswirkungen der Risikominderung" +
                         "</div>" +
                         "<div class='block-graphics'>" +
                         "<img src='svg/riskVisualization1.svg'>" +
@@ -329,18 +329,18 @@
                         "</div>" +
                         "</div>" +
 
-                        "<div class='block pP" + i + "'>" +
+                        "<div class='block block-evaluation pP" + i + "'>" +
                         "<div class='block-title'>" +
                         "Bewertung" +
                         "</div>" +
                         "<div class='block-text decision-evaluation'>" +
-                        "<div class='evaluation-text'>Kann Mindestdicke anhand Massnahmen eingehalten werden?</div>" +
+                        "<div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made Device herstellen?</div>" +
                         "<div class='evaluation-radio-buttons'>" +
-                        "<label class='container detailViewSelection'>Ja" +
+                        "<label class='container detailViewSelection'>Spezifikation" +
                         "<input type='radio' onclick='evaluationYes(" + i + ")' id='ja' value='Ja' name='evaluation'>" +
                         "<span class='custom_radio_button'></span>" +
                         "</label>" +
-                        "<label class='container detailViewSelection'>Nein" +
+                        "<label class='container detailViewSelection'>Custom Made Device" +
                         "<input type='radio' onclick='evaluationNo(" + i + ")' id='nein' value='Nein' name='evaluation'>" +
                         "<span class='custom_radio_button'></span>" +
                         "</label>" +
@@ -354,7 +354,7 @@
                         "</div>" +
 
                         "<div class='block-text decision-evaluation'>" +
-                        "<div class='evaluation-text'>Ist eine Nachbearbeitung des Implants möglich?</div>" +
+                        "<div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?</div>" +
                         "<div class='evaluation-radio-buttons'>" +
                         "<label class='container detailViewSelection'>Ja" +
                         "<input type='radio' id='ja' value='Ja' name='post_processing'>" +
@@ -383,11 +383,6 @@
         </div>
     </div>
     <div class="mainView-Button-container">
-        <a href="new_hazard.html">
-            <div class="button button-submit">
-                Gefährdung erstellen
-            </div>
-        </a>
         <div id="nextStep-Link" onclick="nextStepCounter()">
             <div class="button button-nextStep" id="nextStep">
                 Schritt abschliessen

@@ -392,12 +392,7 @@ export default {
       console.log("test")
     },
     numberOfCheckedCheckboxes(){
-      // let nunmberOfAllCheckboxes = document.querySelectorAll('input[type="checkbox"]').length
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
-      // let percentageOfCheckedCheckboxes = Math.round((nunmberofCheckedCheckboxes / nunmberofallCheckboxes) * 100);
-      // console.log(nunmberOfAllCheckboxes)
-      // console.log(nunmberOfCheckedCheckboxes)
-
       this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
     }
   },

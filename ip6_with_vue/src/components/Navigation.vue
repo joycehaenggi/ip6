@@ -262,9 +262,13 @@ input.searchfield {
 
 /*---- Notification-panel ----*/
 .rectangle {
-  display: block;
-  height: 30px;
   background-color: white;
+  max-width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 400;
 }
 
 .notification {

@@ -1,12 +1,8 @@
 <template>
   <div class="mainView-Button-container">
 
-      <div class="button submit nextStepButton" @click="$router.push('NeueGefaehrdungErstellen')">
-        Gefährdung erstellen
-      </div>
-
     <div id="nextStep-Link" onclick="nextStepCounter()">
-      <div class="button nextStep cancel" id="nextStep">
+      <div class="button nextStep-Button" id="nextStep">
         Schritt abschliessen
       </div>
     </div>
@@ -25,6 +21,13 @@ export default {
   margin-top: calc(var(--marginOne) * 0.063rem);
   display: flex;
   justify-content: flex-end;
+}
+
+.nextStep-Button {
+  color: rgb(76, 90, 105);
+  background: rgb(225, 229, 235) none repeat scroll 0 0;
+  opacity: 0.4;
+  cursor: default;
 }
 
 </style>
