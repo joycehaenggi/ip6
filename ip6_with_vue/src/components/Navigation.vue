@@ -259,6 +259,7 @@ input.searchfield {
   text-align: center;
   font-size: 11px;
   font-weight: 400;
+  margin-bottom: calc(var(--marginOne) * 0.063rem);
 }
 
 .notification {
@@ -273,7 +274,6 @@ input.searchfield {
   border-radius: 5px;
   cursor: pointer;
   float: right;
-  margin-bottom: calc(var(--marginOne) * 0.063rem);
 }
 
 .notification:active p, .notification:active .arrow_right {
