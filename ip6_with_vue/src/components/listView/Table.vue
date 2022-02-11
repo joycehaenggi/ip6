@@ -2,62 +2,56 @@
   <div id="app">
     <v-app id="inspire">
       <v-data-table
-
           :headers="hazardsHeader"
           :items="hazards"
-
           :expanded.sync="expanded"
-
           item-key="name"
-
           show-expand
           class="elevation-1"
+
       >
-
-
         <!--Set checkbox for nicht-zutreffend-row-->
         <template #item.nicht-zutreffend="{item}">
           <div>
             <div>
               <input id="confirm" @click="numberOfCheckedCheckboxes"
-                  v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
-                  type="checkbox"/>
-                <label class="checkbox" for="confirm"></label>
+                     v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
+                     type="checkbox"/>
+              <label class="checkbox" for="confirm"></label>
             </div>
             <div>
               <input id="confirm2" @click="numberOfCheckedCheckboxes"
-                  v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
-                  type="checkbox"/>
+                     v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
+                     type="checkbox"/>
               <label class="checkbox" for="confirm2"></label>
             </div>
             <div>
               <input id="confirm3" @click="numberOfCheckedCheckboxes"
-                  v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
+                     v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
                      type="checkbox"/>
               <label class="checkbox" for="confirm3"></label>
             </div>
             <div>
               <input id="confirm4" @click="numberOfCheckedCheckboxes"
-                  v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
+                     v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
                      type="checkbox"/>
               <label class="checkbox" for="confirm4"></label>
             </div>
             <div>
               <input id="confirm5" @click="numberOfCheckedCheckboxes"
-                  v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
+                     v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
                      type="checkbox"/>
               <label class="checkbox" for="confirm5"></label>
             </div>
             <div>
               <input id="confirm6" @click="numberOfCheckedCheckboxes"
-                  v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'" type="checkbox"/>
+                     v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'" type="checkbox"/>
               <label class="checkbox" for="confirm6"></label>
             </div>
             <div>
             </div>
           </div>
         </template>
-
 
         <!--Add different icon per row in icon-row-->
         <template #item.icon="{item}">
@@ -154,7 +148,6 @@
                 src="../../assets/svg/red-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
           </div>
-
         </template>
 
         <!--Expanded informations-->
@@ -169,7 +162,6 @@
                 </div>
               </div>
             </div>
-
 
             <div class='blocks'>
 
@@ -214,16 +206,11 @@
                   <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
                     Device herstellen?
                   </div>
-
-
                   <input class="top right" type="radio" v-model="w" value="Spezifikation"> Spezifikation
                   <input class="radio-button-cmd top right" type="radio" v-model="w" value="CustomMadeDevice">Custom
                   Made Device
-
-
                 </div>
               </div>
-
 
             </div>
 
@@ -231,7 +218,6 @@
             <template>
               <div v-if="w == 'Spezifikation'">
                 <div class='block test setMargin'>
-
                   <div class='block-title'>
                     Nachbearbeitung
                   </div>
@@ -241,35 +227,29 @@
                     <div class='button_detailView'>
                       <input class="top right" type="radio" v-model="x" value="Ja"> Ja
                       <input class="radio-button-nein top right" type="radio" v-model="x" value="No">Nein
-
                     </div>
-
                   </div>
-
                 </div>
 
-                <div>
-                  <!--Nachbearbeitung JA-->
-                  <div v-show="x === 'Ja'">
-                    <div class="rectangle-margin">
-                      <div class="rectangle">
-                        <div class="text">
-                          Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
-                          Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
-                        </div>
+                <!--Nachbearbeitung JA-->
+                <div v-show="x === 'Ja'">
+                  <div class="rectangle-margin">
+                    <div class="rectangle">
+                      <div class="text">
+                        Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
+                        Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
                       </div>
                     </div>
-                    <div class="end setMargin">
-                      <button class="button submit " @click="$router.push('newHazard')">Gefährdung
-                        erstellen
-                      </button>
-                      <button class="button cancel space">Gefährdung abschliessen</button>
-                    </div>
+                  </div>
+                  <div class="end setMargin">
+                    <button class="button submit " @click="$router.push('newHazard')">Gefährdung
+                      erstellen
+                    </button>
+                    <button class="button cancel space">Gefährdung abschliessen</button>
                   </div>
                 </div>
 
                 <!--Nachbearbeitung NEIN-->
-
                 <div v-show="x === 'No'">
                   <div class="rectangle-margin">
                     <div class="rectangle">
@@ -289,51 +269,37 @@
             <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
             <template>
               <div v-if="w === 'CustomMadeDevice'">
-
                 <v-textarea
                     outlined
                     label="Begründung für Custom Made Device"
                     placeholder="Geben Sie eine Begründung ein. "
                 />
-
                 <div class='test setMargin'>
                   <div class='block-title'>
                     Arztnachweis (optional)
                   </div>
                   <div class="column button-margin">
                     <input class=" inputfile" type="file" name="file" id="file" title="test"/>
-
                   </div>
                 </div>
-
                 <div class="end setMargin">
                   <button class="button submit space">Gefährdung abschliessen</button>
                 </div>
-
               </div>
             </template>
 
           </td>
-
         </template>
 
       </v-data-table>
-
-
-
-
     </v-app>
   </div>
 </template>
 
 <script>
-
-
 export default {
   name: 'HelloWorld',
   data() {
-
-
     return {
       svgPath: "../../assets/svg",
       reviews: 413,
@@ -341,50 +307,23 @@ export default {
       w: null,
       x: null,
       y: null,
-
       expanded: [],
       singleExpand: false,
       hazardsHeader: [
-
         {text: 'Icon', value: 'icon', width: 80},
         {text: 'Risikoprioritätszahl', value: 'risikoprioritätszahl', width: 150},
-        {
-          text: 'Definition Gefährdung',
-
-          align: 'start',
-          sortable: true,
-          value: 'name',
-          width: 800
-
-
-        },
+        {text: 'Definition Gefährdung', align: 'start', sortable: true, value: 'name', width: 800},
         {text: 'Nicht zutreffend', value: 'nicht-zutreffend', width: 100, sortable: true},
         {text: 'Akzeptiert', value: 'akzeptiert', width: 80},
         {text: 'Gefährdung verifizieren', value: 'data-table-expand', width: 80},
       ],
       hazards: [
-        {
-          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
-
-
-        },
-        {
-          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
-        },
-
-
-        {
-          name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
-        },
-        {
-          name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
-        },
-        {
-          name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
-        },
-        {
-          name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",
-        }
+        {name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",},
+        {name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",},
+        {name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",},
+        {name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",},
+        {name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",},
+        {name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",}
       ]
     }
   },
@@ -396,16 +335,13 @@ export default {
     },
     test() {
       document.getElementById('test').classList.add('hide');
-      console.log("test")
     },
-    numberOfCheckedCheckboxes(){
+    numberOfCheckedCheckboxes() {
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
       this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
     }
   },
 }
-
-
 </script>
 
 <style>
@@ -568,10 +504,8 @@ export default {
   height: 30px;
   border-radius: 5px;
   text-align: center;
-  font-family: OpenSans-Regular;
   font-size: 11px;
   font-weight: 400;
-
 }
 
 .text {
@@ -615,8 +549,8 @@ export default {
   padding-left: 0.1px;
 }
 
-v-application--wrap {
-  min-height:10px !important;
+.v-application--wrap {
+  min-height: 10px !important;
 }
 
 .v-data-table {
