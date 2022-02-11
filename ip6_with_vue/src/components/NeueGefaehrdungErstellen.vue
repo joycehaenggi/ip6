@@ -422,7 +422,7 @@ export default {
 }
 
 .new_hazard_title {
-  background-color: var(--Frames-BlueGray);
+  background-color: var(--frames-BlueGray);
   font-size: 14px;
   width: 100%;
   height: 45px;
@@ -434,7 +434,7 @@ export default {
 }
 
 form {
-  border: 1px solid var(--Frames-BlueGray);
+  border: 1px solid var(--frames-BlueGray);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   padding:20px;
@@ -510,7 +510,7 @@ form {
 }
 
 .button-cancel {
-  background-color: var(--Frames-BlueGray);
+  background-color: var(--frames-BlueGray);
   color: var(--notification-Blue);
   margin-right: 20px;
 }
@@ -563,7 +563,7 @@ form {
 }
 
 .input_customized {
-  border: 1px solid var(--Frames-BlueGray);
+  border: 1px solid var(--frames-BlueGray);
   border-radius: 5px;
   font-family: "OpenSans-Regular", sans-serif;
   font-size: 11px;
@@ -595,14 +595,14 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--Frames-BlueGray);
+  border: 1px solid var(--frames-BlueGray);
   border-radius: 5px;
   width: calc(120 * 0.063rem);
   height: calc(29 * 0.063rem);
 }
 
 .severity_field {
-  background-color: var(--Frames-BlueGray);
+  background-color: var(--frames-BlueGray);
 }
 
 .svg_info_icon {

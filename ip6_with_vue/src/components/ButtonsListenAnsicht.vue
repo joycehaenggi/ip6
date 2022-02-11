@@ -1,8 +1,8 @@
 <template>
   <div class="mainView-Button-container">
 
-    <div id="nextStep-Link" onclick="nextStepCounter()">
-      <div class="button nextStep-Button" id="nextStep">
+    <div id="nextStep-Link" @click="nextStepCounter()">
+      <div class="button button-nextStep" id="nextStep">
         Schritt abschliessen
       </div>
     </div>
@@ -11,7 +11,27 @@
 
 <script>
 export default {
-  name: "buttonsListenAnsicht"
+  name: "buttonsListenAnsicht",
+  props: ['titleNamesButtonList'],
+  data() {
+    return {
+      nameCounter: 3,
+    }
+  },
+  methods: {
+    nextStepCounter() {
+      if(this.nameCounter !== this.titleNamesButtonList.length-1){
+        this.nameCounter++;
+      } else {
+        this.nameCounter = 0;
+      }
+
+      let nameCounter = this.nameCounter
+
+      console.log(nameCounter)
+      this.$emit('readNameCounter',nameCounter)
+    }
+  }
 }
 </script>
 
@@ -23,11 +43,32 @@ export default {
   justify-content: flex-end;
 }
 
-.nextStep-Button {
-  color: rgb(76, 90, 105);
-  background: rgb(225, 229, 235) none repeat scroll 0 0;
+.button {
+  font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
+  font-family: OpenSans-SemiBold, serif;
+  width: 140px;
+  height: 38px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--notification-Blue) !important;
+  transition: 0s !important;
+}
+
+.button-nextStep {
+  background-color: var(--frames-BlueGray);
+  color: var(--notification-Blue);
   opacity: 0.4;
   cursor: default;
+}
+
+#nextStep-Link {
+  pointer-events: none;
 }
 
 </style>

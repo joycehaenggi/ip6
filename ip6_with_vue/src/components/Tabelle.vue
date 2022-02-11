@@ -444,8 +444,8 @@ export default {
   max-height: 0;
   overflow: hidden;
   transition: max-height 1s ease-out;
-  border-left: 1px solid var(--Frames-BlueGray);
-  border-right: 1px solid var(--Frames-BlueGray);
+  border-left: 1px solid var(--frames-BlueGray);
+  border-right: 1px solid var(--frames-BlueGray);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -461,13 +461,13 @@ export default {
   padding-bottom: calc(18 * 0.063rem);
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid var(--Frames-BlueGray);
+  border-bottom: 1px solid var(--frames-BlueGray);
 }
 
 .title_with_image_square {
   height: calc(135 * 0.063rem);
   width: calc(135 * 0.063rem);
-  background: var(--Frames-BlueGray);
+  background: var(--frames-BlueGray);
   border-radius: 5px;
 }
 
@@ -562,7 +562,7 @@ export default {
 }
 
 .rectangle {
-  background-color: var(--Frames-BlueGray);
+  background-color: var(--frames-BlueGray);
   max-width: 100%;
   height: 30px;
   border-radius: 5px;
@@ -605,7 +605,7 @@ export default {
 }
 
 .v-data-table-header {
-  border-color: var(--Frames-BlueGray);
+  border-color: var(--frames-BlueGray);
   border-radius: 5px;
 
 }
@@ -649,8 +649,12 @@ v-application--wrap {
   background-color: var(--notification-Blue) !important;
   font-family: 'OpenSans-Regular' !important;
   font-size: calc(calc(var(--mainFontSize) + 1) * 0.063rem) !important;
-
 }
+
+.v-data-footer {
+  display: none !important;
+}
+
 
 [type="checkbox"] + label {
   position: absolute;

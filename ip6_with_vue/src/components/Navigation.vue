@@ -62,7 +62,7 @@
             </defs>
           </svg>
         </div>
-        <p class="navigation-steps nameStep" id="actualStep"></p>
+        <p class="navigation-steps nameStep" id="actualStep">{{ titleNamesNavigation[nameCounterNavigation] }}</p>
       </div>
       <div class="searchbar">
         <label class="searchfield-label">
@@ -73,7 +73,7 @@
 
     <div class="manufacturing-step-information">
       <div class="menu-title-box">
-        <p class="manu-title" id="titleName"></p>
+        <p class="manu-title" id="titleName">{{ titleNamesNavigation[nameCounterNavigation] }}</p>
       </div>
       <div class="manufacturing-legend">
         <div class="priority-title">
@@ -123,6 +123,7 @@
 
 <script>
 export default {
+  props: ['titleNamesNavigation','nameCounterNavigation'],
   data() {
     return {
       buttonHovering: false,

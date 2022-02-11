@@ -44,8 +44,8 @@
   --header-Darkblue: #32404F;
   --notification-Blue: #4C5A69;
   --button-Blue: #687D99;
-  --Frames-BlueGray: #E1E5EB;
-  --Button-Hover: #212B36;
+  --frames-BlueGray: #E1E5EB;
+  --button-Hover: #212B36;
   --riskPriority-Green: #008351;
   --riskPriority-Yellow: #FAD201;
   --riskPriority-Red: #CC0605;
@@ -120,6 +120,9 @@
   color: var(--header-Darkblue) !important;
 
 }
+
+
+
 
 
 </style>

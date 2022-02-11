@@ -19,10 +19,6 @@
     color: white;
 }
 
-.button-nextStep {
-    margin-left: 20px;
-}
-
 .button-cancel {
     background-color: var(--Frames-BlueGray);
     color: var(--notification-Blue);

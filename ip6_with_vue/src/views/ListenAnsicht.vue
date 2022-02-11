@@ -1,12 +1,20 @@
 <template>
   <div class="home">
     <Header/>
-    <Navigation/>
+    <Navigation
+        :titleNamesNavigation="titleNames"
+        :nameCounterNavigation="nameCounterListView"
+    />
     <Tabelle @ReadCheckboxNumber="transferCheckboxNumbers"/>
     <div class="wrapper">
-      <FortschrittUebersicht :noCheckboxCheckedProcess="noCheckboxChecked" :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes" />
-      <ButtonsListenAnsicht/>
+      <FortschrittUebersicht :noCheckboxCheckedProcess="noCheckboxChecked"
+                             :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"
+                             :titleNamesProcessOverview="titleNames"
+                             :nameCounterProcessOverview="nameCounterListView"
+      />
+      <ButtonsListenAnsicht :titleNamesButtonList="titleNames" @readNameCounter="transferNameCounter" />
     </div>
+    {{ nameCounterListView }}
   </div>
 </template>
 
@@ -32,7 +40,10 @@ export default {
       nunmberOfAllCheckboxesValue: null,
       nunmberOfCheckedCheckboxesValue: null,
       percentageOfCheckedCheckboxes: null,
-      noCheckboxChecked: true
+      noCheckboxChecked: true,
+      titleNames: ['CT-Scan Orbita Rekon', 'CT-Daten Segmentierung Orbita', '3D Patientenanatomie', 'Implantatdesign Matching', 'Pre-Processing for SLM Titan Orbita',
+        'SLM Titan', 'Wärmebehandlung SLM Titan', 'Deburring SLM Titan', 'Sand-Blasting SLM Titan', 'Machining SLM Titan Structures'],
+      nameCounterListView: 3,
     }
   },
   methods: {
@@ -47,17 +58,30 @@ export default {
       this.percentageOfCheckedCheckboxes = Math.round((this.nunmberOfCheckedCheckboxesValue / this.nunmberOfAllCheckboxesValue) * 100);
 
       progress_in_percent.style.transition = "1s"
-      progress_in_percent.style.width = this.percentageOfCheckedCheckboxes+"%"
+      progress_in_percent.style.width = this.percentageOfCheckedCheckboxes + "%"
 
       this.noCheckboxChecked = this.percentageOfCheckedCheckboxes === 0;
 
       let nextStepButton = document.getElementById("nextStep");
+      let nextStepLink = document.getElementById("nextStep-Link");
 
-      if(this.percentageOfCheckedCheckboxes === 100){
-        nextStepButton.style.opacity = "1.0";
+      if (this.percentageOfCheckedCheckboxes === 100) {
+        nextStepButton.style.color = 'white';
+        nextStepButton.style.background = '#687D99';
+        nextStepButton.style.opacity = '1.0';
+        nextStepButton.style.cursor = 'pointer';
+        nextStepLink.style.pointerEvents = 'auto';
       } else {
-        nextStepButton.style.opacity = "0.4";
+        nextStepButton.style.color = '#4C5A69';
+        nextStepButton.style.background = '#E1E5EB';
+        nextStepButton.style.opacity = '0.4';
+        nextStepButton.style.cursor = 'default';
+        nextStepLink.style.pointerEvents = 'none';
       }
+    },
+    transferNameCounter(nameCounter) {
+      console.log(nameCounter)
+      this.nameCounterListView = nameCounter
     }
 
   }
@@ -66,12 +90,10 @@ export default {
 
 <style>
 .v-application--wrap {
-
   min-height: 0;
 }
 
 .wrapper {
-
   padding-left: var(--paddingLeftRight);
   padding-right: var(--paddingLeftRight);
   margin-bottom: calc(var(--marginOne) * 0.063rem);
