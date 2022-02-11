@@ -22,9 +22,9 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
-import Table from "../components/Table";
+import Table from "@/components/listView/Table";
 import ProcessOverview from "@/components/ProcessOverview";
-import ButtonListView from "@/components/ButtonListView";
+import ButtonListView from "@/components/listView/ButtonListView";
 
 export default {
   name: 'Home',

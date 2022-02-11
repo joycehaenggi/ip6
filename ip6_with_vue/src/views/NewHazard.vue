@@ -12,7 +12,7 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import NavigationNewHazard from '@/components/NavigationNewHazard.vue'
-import NewHazardForm from "@/components/NewHazardForm";
+import NewHazardForm from "@/components/newHazard/NewHazardForm";
 
 export default {
   name: 'Home',

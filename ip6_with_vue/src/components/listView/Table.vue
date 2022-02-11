@@ -68,33 +68,33 @@
             <div>
               <img
                   v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
-                  src="../assets/svg/toThin.svg" width="20" alt=""/>
+                  src="../../assets/svg/toThin.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
             <div>
               <img
                   v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
-                  src="../assets/svg/dimensionally_unstable.svg" width="20" alt=""/>
+                  src="../../assets/svg/dimensionally_unstable.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
             <div>
               <img v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
-                   src="../assets/svg/nut.svg" width="20" alt=""/>
+                   src="../../assets/svg/nut.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
             <div>
               <img v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
-                   src="../assets/svg/nut.svg" width="20" alt=""/>
+                   src="../../assets/svg/nut.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
             <div>
               <img v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
-                   src="../assets/svg/screw.svg" width="20" alt=""/>
+                   src="../../assets/svg/screw.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
             <div>
               <img v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'"
-                   src="../assets/svg/screw.svg" width="20" alt=""/>
+                   src="../../assets/svg/screw.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
           </div>
@@ -121,37 +121,37 @@
           <div>
             <img
                 v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
-                src="../assets/svg/yellow-risikoprioritätszahl.svg" width="20" alt=""/>
+                src="../../assets/svg/yellow-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
           </div>
           <div>
             <img
                 v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
-                src="../assets/svg/green-risikoprioritätszahl.svg" width="20" alt=""/>
+                src="../../assets/svg/green-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
           </div>
           <div>
             <img
                 v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
-                src="../assets/svg/green-risikoprioritätszahl.svg" width="20" alt=""/>
+                src="../../assets/svg/green-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
           </div>
           <div>
             <img
                 v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
-                src="../assets/svg/red-risikoprioritätszahl.svg" width="20" alt=""/>
+                src="../../assets/svg/red-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
           </div>
           <div>
             <img
                 v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
-                src="../assets/svg/yellow-risikoprioritätszahl.svg" width="20" alt=""/>
+                src="../../assets/svg/yellow-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
           </div>
           <div>
             <img
                 v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'"
-                src="../assets/svg/red-risikoprioritätszahl.svg" width="20" alt=""/>
+                src="../../assets/svg/red-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
           </div>
 
@@ -165,7 +165,7 @@
               <div class='title_with_image_square'>
                 <div class='title_detail_view'> Dicke des Implantats zu dünn.
                 </div>
-                <div class='image_detail_view'><img src='../assets/svg/toThin.svg' width='89' height='65'>
+                <div class='image_detail_view'><img src='../../assets/svg/toThin.svg' width='89' height='65'>
                 </div>
               </div>
             </div>
@@ -201,8 +201,8 @@
                   Auswirkungen der Risikominderung
                 </div>
                 <div class='block-graphics'>
-                  <img src='../assets/svg/riskVisualization1.svg'>
-                  <img src='../assets/svg/riskVisualization2.svg' class='riskVisualization2'>
+                  <img src='../../assets/svg/riskVisualization1.svg'>
+                  <img src='../../assets/svg/riskVisualization2.svg' class='riskVisualization2'>
                 </div>
               </div>
 
@@ -335,6 +335,7 @@ export default {
 
 
     return {
+      svgPath: "../../assets/svg",
       reviews: 413,
       value: 4.5,
       w: null,
@@ -642,7 +643,7 @@ v-application--wrap {
 }
 
 .class1 {
-  background-image: url("../assets/svg/toThin.svg");
+  /*background-image: url("src/assets/svg/toThin.svg");*/
 }
 
 .v-tooltip__content {
@@ -663,7 +664,7 @@ v-application--wrap {
 [type="checkbox"] + label::before {
   width: 15px;
   height: 15px;
-  background-image: url("../assets/svg/checkbox_unchecked.svg");
+  background-image: url("../../assets/svg/checkbox_unchecked.svg");
   display: block;
   content: "";
   float: left;
@@ -673,7 +674,7 @@ v-application--wrap {
 }
 
 [type="checkbox"]:checked + label::before {
-  background-image: url("../assets/svg/checkbox_checked.svg");
+  background-image: url("../../assets/svg/checkbox_checked.svg");
 }
 
 </style>
