@@ -612,8 +612,7 @@ export default {
 }
 
 .v-application {
-  padding-left: var(--paddingLeftRight);
-  padding-right: var(--paddingLeftRight);
+  padding-left: 0.1px;
 }
 
 v-application--wrap {

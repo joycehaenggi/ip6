@@ -1,20 +1,19 @@
 <template>
   <div class="home">
     <Header/>
-    <Navigation
-        :titleNamesNavigation="titleNames"
-        :nameCounterNavigation="nameCounterListView"
-    />
-    <Table @ReadCheckboxNumber="transferCheckboxNumbers"/>
     <div class="wrapper">
-      <ProcessOverview :noCheckboxCheckedProcess="noCheckboxChecked"
-                             :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"
-                             :titleNamesProcessOverview="titleNames"
-                             :nameCounterProcessOverview="nameCounterListView"
+      <Navigation
+          :titleNamesNavigation="titleNames"
+          :nameCounterNavigation="nameCounterListView"
       />
-      <ButtonListView :titleNamesButtonList="titleNames" @readNameCounter="transferNameCounter" />
+      <Table @ReadCheckboxNumber="transferCheckboxNumbers"/>
+        <ProcessOverview :noCheckboxCheckedProcess="noCheckboxChecked"
+                         :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"
+                         :titleNamesProcessOverview="titleNames"
+                         :nameCounterProcessOverview="nameCounterListView"
+        />
+        <ButtonListView :titleNamesButtonList="titleNames" @readNameCounter="transferNameCounter"/>
     </div>
-    {{ nameCounterListView }}
   </div>
 </template>
 
@@ -23,7 +22,7 @@
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
 import Table from "@/components/listView/Table";
-import ProcessOverview from "@/components/ProcessOverview";
+import ProcessOverview from "@/components/listView/ProcessOverview";
 import ButtonListView from "@/components/listView/ButtonListView";
 
 export default {
@@ -80,7 +79,6 @@ export default {
       }
     },
     transferNameCounter(nameCounter) {
-      console.log(nameCounter)
       this.nameCounterListView = nameCounter
     }
 
