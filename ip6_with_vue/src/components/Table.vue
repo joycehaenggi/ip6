@@ -260,7 +260,7 @@
                       </div>
                     </div>
                     <div class="end setMargin">
-                      <button class="button submit " @click="$router.push('NeueGefaehrdungErstellen')">Gefährdung
+                      <button class="button submit " @click="$router.push('newHazard')">Gefährdung
                         erstellen
                       </button>
                       <button class="button cancel space">Gefährdung abschliessen</button>

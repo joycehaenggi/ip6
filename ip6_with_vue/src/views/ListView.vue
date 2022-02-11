@@ -5,14 +5,14 @@
         :titleNamesNavigation="titleNames"
         :nameCounterNavigation="nameCounterListView"
     />
-    <Tabelle @ReadCheckboxNumber="transferCheckboxNumbers"/>
+    <Table @ReadCheckboxNumber="transferCheckboxNumbers"/>
     <div class="wrapper">
-      <FortschrittUebersicht :noCheckboxCheckedProcess="noCheckboxChecked"
+      <ProcessOverview :noCheckboxCheckedProcess="noCheckboxChecked"
                              :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"
                              :titleNamesProcessOverview="titleNames"
                              :nameCounterProcessOverview="nameCounterListView"
       />
-      <ButtonsListenAnsicht :titleNamesButtonList="titleNames" @readNameCounter="transferNameCounter" />
+      <ButtonListView :titleNamesButtonList="titleNames" @readNameCounter="transferNameCounter" />
     </div>
     {{ nameCounterListView }}
   </div>
@@ -22,18 +22,18 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
-import Tabelle from "../components/Tabelle";
-import FortschrittUebersicht from "@/components/FortschrittUebersicht";
-import ButtonsListenAnsicht from "@/components/ButtonsListenAnsicht";
+import Table from "../components/Table";
+import ProcessOverview from "@/components/ProcessOverview";
+import ButtonListView from "@/components/ButtonListView";
 
 export default {
   name: 'Home',
   components: {
     Header,
     Navigation,
-    Tabelle,
-    FortschrittUebersicht,
-    ButtonsListenAnsicht
+    Table,
+    ProcessOverview,
+    ButtonListView
   },
   data() {
     return {

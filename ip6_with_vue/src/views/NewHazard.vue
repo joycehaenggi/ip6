@@ -2,8 +2,8 @@
   <div class="home">
     <Header/>
     <div class="wrapper">
-      <NavigationNeueGefaehrdung/>
-      <NeueGefaehrdungErstellen/>
+      <NavigationNewHazard/>
+      <NewHazardForm/>
     </div>
   </div>
 </template>
@@ -11,15 +11,15 @@
 <script>
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
-import NavigationNeueGefaehrdung from '@/components/NavigationNeueGefaehrdung.vue'
-import NeueGefaehrdungErstellen from "@/components/NeueGefaehrdungErstellen";
+import NavigationNewHazard from '@/components/NavigationNewHazard.vue'
+import NewHazardForm from "@/components/NewHazardForm";
 
 export default {
   name: 'Home',
   components: {
     Header,
-    NavigationNeueGefaehrdung,
-    NeueGefaehrdungErstellen
+    NavigationNewHazard,
+    NewHazardForm
   }
 }
 </script>
