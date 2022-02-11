@@ -183,7 +183,7 @@ input.searchfield {
   top: 2px;
   bottom: 0;
   width: 20px;
-  background: url("../assets/img/search.svg") center / contain no-repeat;
+  background: url("../assets/svg/search.svg") center / contain no-repeat;
 }
 
 .manufacturing-step-information {

@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import ListenAnsicht from '../views/ListenAnsicht.vue'
+import ListView from '../views/ListView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'ListenAnsicht',
-    component: ListenAnsicht
+    name: 'ListView',
+    component: ListView
   },
   {
     path: '/neueGefaehrdungErstellen',

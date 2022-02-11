@@ -20,7 +20,7 @@
               {{ item.fat }}
             </div>
             <div class="ml-2">
-              <img v-if="item.name == 'Donut'" src="../assets/img/toThin.svg" width="20" alt=""/>
+              <img v-if="item.name == 'Donut'" src="src/assets/svg/toThin.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
             </div>
           </div>
@@ -32,7 +32,7 @@
             <div>
             <append-icon><img
                 v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
-                src="../assets/img/toThin.svg" width="20" alt=""/></append-icon>
+                src="src/assets/svg/toThin.svg" width="20" alt=""/></append-icon>
               <i></i>
             </div>
             <div>
