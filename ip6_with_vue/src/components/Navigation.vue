@@ -157,30 +157,20 @@ export default {
 </script>
 
 <style scoped>
-/*---- Wrapper ----*/
-.wrapper {
-  margin-top: calc(var(--marginOne) * 0.063rem);
-  padding-left: var(--paddingLeftRight);
-  padding-right: var(--paddingLeftRight);
-  margin-bottom: calc(var(--marginOne) * 0.063rem);
-}
-
-
 /*---- Top-overview ----*/
 .manufacturing-step-navigation {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   font-size: calc(11 * 0.063rem);
   margin-top: calc(20 * 0.063rem);
+  opacity: 0.5;
 }
 
 .navigation-tree {
   display: flex;
   flex-direction: row;
-
 }
 
 .next-arrow {
