@@ -28,7 +28,6 @@ import ProcessOverview from "@/components/listView/ProcessOverview";
 import ButtonListView from "@/components/listView/ButtonListView";
 
 export default {
-  name: 'Home',
   components: {
     Header,
     Navigation,

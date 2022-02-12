@@ -311,8 +311,6 @@ let color1 = "white";
 let color2 = "black";
 
 export default {
-  name: "NeueGefaehrdungErstellen",
-
   data() {
     return {
       showToolTip: false,

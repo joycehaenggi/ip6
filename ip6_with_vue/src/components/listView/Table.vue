@@ -587,16 +587,6 @@ export default {
   size: 30px;
 }
 
-.class1 {
-  /*background-image: url("src/assets/svg/toThin.svg");*/
-}
-
-.v-tooltip__content {
-  /*background-color: var(--notification-Blue) !important;*/
-  /*  font-family: 'OpenSans-Regular' !important;
-    font-size: calc(calc(var(--mainFontSize) + 1) * 0.063rem) !important;*/
-}
-
 [type="checkbox"] + label {
   position: absolute;
 }

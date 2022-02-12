@@ -11,7 +11,6 @@
 
 <script>
 export default {
-  name: "buttonsListenAnsicht",
   props: ['titleNamesButtonList'],
   data() {
     return {

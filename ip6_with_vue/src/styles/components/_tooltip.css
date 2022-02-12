@@ -1,6 +1,7 @@
 [data-tooltip], [data-tooltip2]  {
     position: relative;
     cursor: default;
+    z-index:2;
 }
 
 [data-tooltip]::after {
@@ -20,6 +21,8 @@
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
     transition: 0.25s transform;
     transform-origin: center center;
+    z-index:20000;
+
 }
 
 [data-tooltip]:hover::after, [data-tooltip]:hover::before, [data-tooltip2]:hover::after, [data-tooltip2]:hover::before {
@@ -27,6 +30,7 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0) translateX(0px);
+    z-index:2;
 }
 
 [data-tooltip2]::after {
