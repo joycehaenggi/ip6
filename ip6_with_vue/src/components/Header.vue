@@ -42,7 +42,7 @@
         </div>
       </div>
     </a>
-    <a href="#" class="toggle-button">
+    <a @click="showResponsiveNavigation" href="#" class="toggle-button">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -59,6 +59,12 @@
 
 <script>
 export default{
+  methods: {
+    showResponsiveNavigation(){
+      const navbarLinks = document.getElementsByClassName('header-links')[0]
+      navbarLinks.classList.toggle('navMobileActive')
+    }
+  }
 
 }
 </script>
