@@ -165,12 +165,12 @@ export default {
   align-items: center;
   font-size: calc(11 * 0.063rem);
   margin-top: calc(20 * 0.063rem);
-  opacity: 0.5;
 }
 
 .navigation-tree {
   display: flex;
   flex-direction: row;
+  opacity: 0.5;
 }
 
 .next-arrow {
@@ -189,7 +189,8 @@ input.searchfield {
   height: 21.8px;
   width: 200px;
   padding-left: 25px;
-
+  opacity: 1.0 !important;
+  color: black;
 }
 
 .searchfield-label {

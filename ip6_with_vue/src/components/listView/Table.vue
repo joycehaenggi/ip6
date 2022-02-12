@@ -246,8 +246,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="end setMargin">
-                    <button class="button submit "
+                  <div class="buttonContainer buttonContainer-detailView">
+                    <button class="button button-submit "
                             @click="$router.push({name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }})">
                       <router-link :to="{ name: 'NewHazard'}">
                         Gefährdung erstellen
@@ -266,8 +266,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="end">
-                    <button class="button submit setMargin">Herstellung abbrechen</button>
+                  <div class="buttonContainer buttonContainer-detailView">
+                    <button class="button button-submit">Herstellung abbrechen</button>
                   </div>
                 </div>
               </div>
@@ -290,8 +290,8 @@
                     <input class=" inputfile" type="file" name="file" id="file" title="test"/>
                   </div>
                 </div>
-                <div class="end setMargin">
-                  <button class="button submit space">Gefährdung abschliessen</button>
+                <div class="buttonContainer buttonContainer-detailView">
+                  <button class="button button-submit">Gefährdung abschliessen</button>
                 </div>
               </div>
             </template>

@@ -3,7 +3,7 @@
 }
 
 .new_hazard_title {
-    background-color: var(--Frames-BlueGray);
+    background-color: var(--frames-BlueGray);
     font-size: 14px;
     width: 100%;
     height: 45px;
@@ -15,7 +15,7 @@
 }
 
 form {
-    border: 1px solid var(--Frames-BlueGray);
+    border: 1px solid var(--frames-BlueGray);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding:20px;
@@ -125,7 +125,7 @@ form {
 }
 
 .input_customized {
-    border: 1px solid var(--Frames-BlueGray);
+    border: 1px solid var(--frames-BlueGray);
     border-radius: 5px;
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 11px;
@@ -157,20 +157,20 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--Frames-BlueGray);
+    border: 1px solid var(--frames-BlueGray);
     border-radius: 5px;
     width: calc(120 * 0.063rem);
     height: calc(29 * 0.063rem);
 }
 
 .severity_field {
-    background-color: var(--Frames-BlueGray);
+    background-color: var(--frames-BlueGray);
 }
 
 .severity {
     display: flex;
     justify-content: center;
-    border: 1px solid var(--Frames-BlueGray);
+    border: 1px solid var(--frames-BlueGray);
     border-radius: 5px;
     height: 2em;
     background-color: #F3F3F3;

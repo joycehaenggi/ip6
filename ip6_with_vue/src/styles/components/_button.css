@@ -14,15 +14,20 @@
     background-color: var(--notification-Blue);
 }
 
-.button-submit {
+.button-submit, .button-submit a {
     background-color: var(--button-Blue);
     color: white;
 }
 
+.button-CustomMadeDevice{
+    float:right;
+    margin-bottom: 20px;
+}
+
 .button-cancel {
-    background-color: var(--Frames-BlueGray);
+    background-color: var(--frames-BlueGray);
     color: var(--notification-Blue);
-    margin-right: 20px;
+    /*margin-right: 20px;*/
 }
 
 .button-cancel:hover {

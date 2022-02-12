@@ -1,6 +1,5 @@
 <template>
-  <div class="mainView-Button-container">
-
+  <div class="buttonContainer buttonContainer-nextStep">
     <div id="nextStep-Link" @click="nextStepCounter()">
       <div class="button button-nextStep" id="nextStep">
         Schritt abschliessen

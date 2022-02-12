@@ -5,7 +5,24 @@
 </template>
 
 <style lang="scss">
-/*---- Adding fonts ----*/
+
+/*:root {
+  --header-Darkblue: #32404F;
+  --notification-Blue: #4C5A69;
+  --button-Blue: #687D99;
+  --frames-BlueGray: #E1E5EB;
+  --button-Hover: #212B36;
+  --riskPriority-Green: #008351;
+  --riskPriority-Yellow: #FAD201;
+  --riskPriority-Red: #CC0605;
+  --colorOpacity: 0.8;
+  --paddingLeftRight: 5rem;
+  --marginOne: 40;
+  --marginTwo: 30;
+  --mainFontSize: 11;
+  --secondFontSize: 12;
+}*/
+/*!*---- Adding fonts ----*!
 @font-face {
   font-family: "Oswald";
   src: local("Oswald"),
@@ -40,22 +57,7 @@
   font-weight: 400;
 }
 
-:root {
-  --header-Darkblue: #32404F;
-  --notification-Blue: #4C5A69;
-  --button-Blue: #687D99;
-  --frames-BlueGray: #E1E5EB;
-  --button-Hover: #212B36;
-  --riskPriority-Green: #008351;
-  --riskPriority-Yellow: #FAD201;
-  --riskPriority-Red: #CC0605;
-  --colorOpacity: 0.8;
-  --paddingLeftRight: 5rem;
-  --marginOne: 40;
-  --marginTwo: 30;
-  --mainFontSize: 11;
-  --secondFontSize: 12;
-}
+
 
 .green {
   background-color: var(--riskPriority-Green);
@@ -111,19 +113,14 @@
 
 .nextStepButton {
   margin-right: 20px;
-}
+}*/
 
-.theme--light.v-icon {
+/*.theme--light.v-icon {
   color: var(--header-Darkblue) !important;
 }
 .v-input--selection-controls__ripple.green--text {
   color: var(--header-Darkblue) !important;
-
-}
-
-
-
-
+}*/
 
 </style>
 <script>export default {
