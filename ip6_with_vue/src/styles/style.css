@@ -12,12 +12,12 @@
 @import "items/_toggleButton.css";
 @import "items/_tooltip.css";
 
-@import "components/_accordion.css";
-@import "components/_buttonContainer.css";
+@import "components/listView/_accordion.css";
+@import "components/listView/_buttonContainer.css";
 @import "components/_header.css";
 @import "components/_navigation.css";
-@import "components/_new_hazard.css";
+@import "components/newHazard/_newHazardForm.css";
 @import "components/_notification.css";
-@import "components/_progress_bar.css";
-@import "components/_table.css";
+@import "components/listView/_progress_bar.css";
+@import "components/listView/_table.css";
 @import "components/_responsiveAdjustment.css";
