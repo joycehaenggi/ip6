@@ -2,7 +2,10 @@
   <div class="home">
     <Header/>
     <div class="wrapper">
-      <Navigation :actualTitleNameNavigation="$route.params.actualTitleNameNewHazard"/>
+      <Navigation
+          :actualTitleNameNavigation="$route.params.actualTitleNameNewHazard"
+          :listViewStatusNavigation="listViewStatus"
+      />
       <NewHazardForm/>
     </div>
     {{ $route.params.actualTitleNameNewHazard }}
@@ -24,7 +27,7 @@ export default {
   },
   data() {
     return {
-      listView: false
+      listViewStatus: false
     }
   }
 }

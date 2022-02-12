@@ -64,7 +64,7 @@
         </div>
         <p class="navigation-steps nameStep" id="actualStep">{{ actualTitleNameNavigation }}</p>
       </div>
-      <div class="searchbar">
+      <div v-if="listViewStatusNavigation" class="searchbar">
         <label class="searchfield-label">
           <input type="text" class="searchfield">
         </label>
@@ -123,7 +123,7 @@
 
 <script>
 export default {
-  props: ['actualTitleNameNavigation'],
+  props: ['actualTitleNameNavigation', 'listViewStatusNavigation'],
   data() {
     return {
       buttonHovering: false,

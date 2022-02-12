@@ -2,7 +2,10 @@
   <div class="home">
     <Header/>
     <div class="wrapper">
-      <Navigation :actualTitleNameNavigation="titleNames[nameCounterListView]"/>
+      <Navigation
+          :actualTitleNameNavigation="titleNames[nameCounterListView]"
+          :listViewStatusNavigation="listViewStatus"
+      />
       <Table @ReadCheckboxNumber="transferCheckboxNumbers"
              :actualTitleNameTable="titleNames[nameCounterListView]"
       />
@@ -42,7 +45,7 @@ export default {
       titleNames: ['CT-Scan Orbita Rekon', 'CT-Daten Segmentierung Orbita', '3D Patientenanatomie', 'Implantatdesign Matching', 'Pre-Processing for SLM Titan Orbita',
         'SLM Titan', 'Wärmebehandlung SLM Titan', 'Deburring SLM Titan', 'Sand-Blasting SLM Titan', 'Machining SLM Titan Structures'],
       nameCounterListView: 3,
-      listView: true,
+      listViewStatus: true,
     }
   },
   methods: {
