@@ -2,24 +2,30 @@
   <div class="home">
     <Header/>
     <div class="wrapper">
-      <NavigationNewHazard/>
+      <Navigation :actualTitleNameNavigation="$route.params.actualTitleNameNewHazard"/>
       <NewHazardForm/>
     </div>
+    {{ $route.params.actualTitleNameNewHazard }}
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
-import NavigationNewHazard from '@/components/NavigationNewHazard.vue'
+import Navigation from '@/components/Navigation.vue'
 import NewHazardForm from "@/components/newHazard/NewHazardForm";
 
 export default {
-  name: 'Home',
+  props: ['actualTitleNameNewHazard'],
   components: {
     Header,
-    NavigationNewHazard,
+    Navigation,
     NewHazardForm
+  },
+  data() {
+    return {
+      listView: false
+    }
   }
 }
 </script>

@@ -242,10 +242,12 @@
                     </div>
                   </div>
                   <div class="end setMargin">
-                    <button class="button submit " @click="$router.push('newHazard')">Gefährdung
-                      erstellen
+                    <button class="button submit " @click="$router.push({name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }})">
+                      <router-link :to="{ name: 'NewHazard'}">
+                        Gefährdung erstellen
+                      </router-link>
                     </button>
-                    <button class="button cancel space">Gefährdung abschliessen</button>
+                    <button class="button button-cancel">Gefährdung abschliessen</button>
                   </div>
                 </div>
 
@@ -298,7 +300,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  props: ['actualTitleNameTable'],
   data() {
     return {
       svgPath: "../../assets/svg",
@@ -469,7 +471,6 @@ export default {
 
 .button_detailView {
   display: flex;
-
 }
 
 .test {
@@ -522,17 +523,22 @@ export default {
   margin-bottom: 20px;
 }
 
-.space {
-  margin-left: 20px;
-}
-
 .v-input__control {
-
   margin-top: 18px;
 }
 
 .button-margin {
   margin-top: 18px;
+}
+
+.button-cancel {
+  background-color: var(--frames-BlueGray);
+  color: var(--notification-Blue);
+  margin-left: 20px;
+}
+
+.button a {
+  font-family: OpenSans-SemiBold, serif;
 }
 
 .table {

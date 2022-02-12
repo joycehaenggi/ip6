@@ -2,17 +2,16 @@
   <div class="home">
     <Header/>
     <div class="wrapper">
-      <Navigation
-          :titleNamesNavigation="titleNames"
-          :nameCounterNavigation="nameCounterListView"
+      <Navigation :actualTitleNameNavigation="titleNames[nameCounterListView]"/>
+      <Table @ReadCheckboxNumber="transferCheckboxNumbers"
+             :actualTitleNameTable="titleNames[nameCounterListView]"
       />
-      <Table @ReadCheckboxNumber="transferCheckboxNumbers"/>
-        <ProcessOverview :noCheckboxCheckedProcess="noCheckboxChecked"
-                         :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"
-                         :titleNamesProcessOverview="titleNames"
-                         :nameCounterProcessOverview="nameCounterListView"
-        />
-        <ButtonListView :titleNamesButtonList="titleNames" @readNameCounter="transferNameCounter"/>
+      <ProcessOverview :noCheckboxCheckedProcess="noCheckboxChecked"
+                       :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"
+                       :titleNamesProcessOverview="titleNames"
+                       :nameCounterProcessOverview="nameCounterListView"
+      />
+      <ButtonListView :titleNamesButtonList="titleNames" @readNameCounter="transferNameCounter"/>
     </div>
   </div>
 </template>
@@ -43,6 +42,7 @@ export default {
       titleNames: ['CT-Scan Orbita Rekon', 'CT-Daten Segmentierung Orbita', '3D Patientenanatomie', 'Implantatdesign Matching', 'Pre-Processing for SLM Titan Orbita',
         'SLM Titan', 'Wärmebehandlung SLM Titan', 'Deburring SLM Titan', 'Sand-Blasting SLM Titan', 'Machining SLM Titan Structures'],
       nameCounterListView: 3,
+      listView: true,
     }
   },
   methods: {
