@@ -96,17 +96,22 @@
 
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{ item }">
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-card-text v-on="on">{{ item.akzeptiert }}
+          <!--          <v-tooltip>-->
+
+            <v-card-text v-on="on">{{ item.akzeptiert }}
+
+              <div class='data-tooltip'
+                   data-tooltip="Akzeptiert-Status">
                 <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
                         stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-              </v-card-text>
-            </template>
-            <span>Akzeptiert Status</span>
-          </v-tooltip>
+              </div>
+
+            </v-card-text>
+
+          <!--            <span>Akzeptiert Status</span>-->
+          <!--          </v-tooltip>-->
         </template>
 
         <!--add color to risikoprioritätszahl--row-->
@@ -242,7 +247,8 @@
                     </div>
                   </div>
                   <div class="end setMargin">
-                    <button class="button submit " @click="$router.push({name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }})">
+                    <button class="button submit "
+                            @click="$router.push({name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }})">
                       <router-link :to="{ name: 'NewHazard'}">
                         Gefährdung erstellen
                       </router-link>
@@ -586,9 +592,9 @@ export default {
 }
 
 .v-tooltip__content {
-  background-color: var(--notification-Blue) !important;
-  font-family: 'OpenSans-Regular' !important;
-  font-size: calc(calc(var(--mainFontSize) + 1) * 0.063rem) !important;
+  /*background-color: var(--notification-Blue) !important;*/
+  /*  font-family: 'OpenSans-Regular' !important;
+    font-size: calc(calc(var(--mainFontSize) + 1) * 0.063rem) !important;*/
 }
 
 [type="checkbox"] + label {

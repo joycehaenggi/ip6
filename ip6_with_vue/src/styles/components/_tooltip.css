@@ -6,8 +6,8 @@
 [data-tooltip]::after {
     position: absolute;
     width: 140px;
-    left: calc(50% - 70px);
-    top: 65%;
+    left: calc(50% - 80px);
+    top: 80%;
     text-align: center;
     content: attr(data-tooltip);
     color: white;
@@ -15,6 +15,7 @@
     padding: 4px;
     border-radius: 5px;
     font-size: calc(var(--mainFontSize) * 0.063rem);
+    font-family: OpenSans-Regular, serif;
     opacity: 0;
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
     transition: 0.25s transform;

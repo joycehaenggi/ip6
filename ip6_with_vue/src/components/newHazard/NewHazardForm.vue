@@ -315,15 +315,9 @@ export default {
 
   data() {
     return {
-      buttonHovering: false,
       showToolTip: false,
       ProbabilityOfOccurrenceValue: null,
       ProbabilityOfOccurrenceValue2: null,
-    }
-  },
-  watch: {
-    buttonHovering(newVal) {
-      this.showToolTip = newVal
     }
   },
   methods: {

@@ -1,5 +1,9 @@
 .progress-wrapper {
     margin-top: calc(var(--marginOne) * 0.063rem);
+    padding: 21px 16px 23px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 1px solid #E1E5EB;
     height: 100px;
     font-size: calc(var(--mainFontSize) * 0.063rem);
@@ -7,22 +11,16 @@
 }
 
 .title_progress_bar {
-    margin-left: 2.5%;
-    height: 17px;
-    margin-top: 12px;
     color: var(--notification-Blue);
 }
 
 .progress_bar {
-    height: 17px;
-    width: 95%;
-    background-color: var(--Frames-BlueGray);
-    border-radius: 5px;
-    margin-left: 2.5%;
-    margin-top: 21px;
+    height: calc(17 * 0.063rem);
+    background-color: var(--frames-BlueGray);
+    border-radius: calc(5 * 0.063rem);
 }
 
-#progress_in_percent {
+.progress_in_percent {
     height: 100%;
     width: 0;
     background-color: var(--notification-Blue);
