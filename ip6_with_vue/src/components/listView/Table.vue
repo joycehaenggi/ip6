@@ -247,13 +247,12 @@
                     </div>
                   </div>
                   <div class="buttonContainer buttonContainer-detailView">
-                    <button class="button button-submit "
-                            @click="$router.push({name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }})">
-                      <router-link :to="{ name: 'NewHazard'}">
+                    <router-link :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }}">
+                    <button class="button button-submit">
                         Gefährdung erstellen
-                      </router-link>
                     </button>
-                    <button class="button button-cancel">Gefährdung abschliessen</button>
+                    </router-link>
+                    <button class="button button-cancel button-finishHazard">Gefährdung abschliessen</button>
                   </div>
                 </div>
 
@@ -544,19 +543,7 @@ export default {
   margin-top: 18px;
 }
 
-.button-margin {
-  margin-top: 18px;
-}
 
-.button-cancel {
-  background-color: var(--frames-BlueGray);
-  color: var(--notification-Blue);
-  margin-left: 20px;
-}
-
-.button a {
-  font-family: OpenSans-SemiBold, serif;
-}
 
 .table {
   margin: auto;

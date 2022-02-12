@@ -19,17 +19,38 @@
     color: white;
 }
 
-.button-CustomMadeDevice{
-    float:right;
-    margin-bottom: 20px;
+.button-cancel, .button-nextStep {
+    background-color: var(--frames-BlueGray);
+    color: var(--notification-Blue);
+}
+
+.button-cancel:hover {
+    background-color: #d3d8e1;
+}
+
+.button-nextStep {
+    opacity: 0.4;
+    cursor: default;
+}
+
+#nextStep-Link {
+    pointer-events: none;
+}
+
+
+.button-margin {
+    margin-top: 18px;
 }
 
 .button-cancel {
     background-color: var(--frames-BlueGray);
     color: var(--notification-Blue);
-    /*margin-right: 20px;*/
 }
 
-.button-cancel:hover {
-    background-color: #d3d8e1;
+.button-finishHazard{
+    margin-left: 20px;
+}
+
+.button a {
+    font-family: OpenSans-SemiBold, serif;
 }

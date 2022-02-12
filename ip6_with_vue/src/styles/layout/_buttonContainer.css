@@ -11,3 +11,24 @@
 .buttonContainer-nextStep {
     margin-top: calc(var(--marginOne) * 0.063rem);
 }
+
+.flex-element {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 50px;
+    flex-wrap: wrap;
+}
+
+.buttons_new_hazard {
+    margin-top: 40px;
+}
+
+.column {
+    min-width: calc(300 * 0.063rem);
+    min-height: 50px;
+    margin-right: calc(10 * 0.063rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
