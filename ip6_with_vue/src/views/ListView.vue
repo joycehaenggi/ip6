@@ -14,7 +14,7 @@
                        :titleNamesProcessOverview="titleNames"
                        :nameCounterProcessOverview="nameCounterListView"
       />
-      <ButtonListView :titleNamesButtonList="titleNames" @readNameCounter="transferNameCounter"/>
+      <ButtonContainerListView :titleNamesButtonList="titleNames" @readNameCounter="transferNameCounter"/>
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
 import Table from "@/components/listView/Table";
 import ProgressBar from "@/components/listView/ProgressBar";
-import ButtonListView from "@/components/listView/ButtonListView";
+import ButtonContainerListView from "@/components/listView/ButtonContainerListView";
 
 export default {
   components: {
@@ -33,7 +33,7 @@ export default {
     Navigation,
     Table,
     ProgressBar,
-    ButtonListView
+    ButtonContainerListView
   },
   data() {
     return {
