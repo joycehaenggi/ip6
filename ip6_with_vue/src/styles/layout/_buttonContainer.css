@@ -5,6 +5,7 @@
 
 .buttonContainer-detailView {
     margin-bottom: calc(20 * 0.063rem);
+    margin-right: calc(20 * 0.063rem);
 }
 
 .buttonContainer-nextStep {

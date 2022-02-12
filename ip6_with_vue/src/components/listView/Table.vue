@@ -157,7 +157,7 @@
 
         <!--Expanded informations-->
         <template v-slot:expanded-item="{ headers }">
-          <td :colspan="headers.length ">
+          <td class="td_detailView" :colspan="headers.length ">
 
             <div class='title_with_image_container'>
               <div class='title_with_image_square'>
@@ -238,7 +238,7 @@
 
                 <!--Nachbearbeitung JA-->
                 <div v-show="x === 'Ja'">
-                  <div class="rectangle-margin">
+                  <div class="rectangle-block">
                     <div class="rectangle">
                       <div class="text">
                         Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
@@ -259,7 +259,7 @@
 
                 <!--Nachbearbeitung NEIN-->
                 <div v-show="x === 'No'">
-                  <div class="rectangle-margin">
+                  <div class="rectangle-block">
                     <div class="rectangle">
                       <div class="text">
                         Die Herstellung des Devices muss abgebrochen werden.
@@ -280,7 +280,8 @@
                 <v-textarea
                     outlined
                     label="Begründung für Custom Made Device"
-                    placeholder="Geben Sie eine Begründung ein. "
+                    placeholder="Geben Sie eine Begründung ein."
+                    class="textarea-declaration"
                 />
                 <div class='test setMargin'>
                   <div class='block-title'>
@@ -395,6 +396,10 @@ export default {
   border-bottom-right-radius: 5px;
 }
 
+.v-data-table__expanded__content td.td_detailView{
+  padding: 0 !important;
+}
+
 #post-processing-block {
   height: 0;
   display: none;
@@ -431,7 +436,7 @@ export default {
 }
 
 .blocks {
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .block {
@@ -500,9 +505,15 @@ export default {
   margin-left: 7.5rem;
 }
 
-.rectangle-margin {
+.rectangle-block {
   margin-top: 18px;
   margin-bottom: 80px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.v-text-field.v-text-field--enclosed {
+  margin: 0 20px !important;
 }
 
 .rectangle {

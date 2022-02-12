@@ -9,7 +9,7 @@
       <Table @ReadCheckboxNumber="transferCheckboxNumbers"
              :actualTitleNameTable="titleNames[nameCounterListView]"
       />
-      <ProcessOverview :noCheckboxCheckedProcess="noCheckboxChecked"
+      <ProgressBar :noCheckboxCheckedProcess="noCheckboxChecked"
                        :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"
                        :titleNamesProcessOverview="titleNames"
                        :nameCounterProcessOverview="nameCounterListView"
@@ -24,7 +24,7 @@
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
 import Table from "@/components/listView/Table";
-import ProcessOverview from "@/components/listView/ProcessOverview";
+import ProgressBar from "@/components/listView/ProgressBar";
 import ButtonListView from "@/components/listView/ButtonListView";
 
 export default {
@@ -32,7 +32,7 @@ export default {
     Header,
     Navigation,
     Table,
-    ProcessOverview,
+    ProgressBar,
     ButtonListView
   },
   data() {
