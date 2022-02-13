@@ -253,7 +253,7 @@
                 <!--Nachbearbeitung JA-->
                 <div v-show="x === 'Ja'">
                   <div class="rectangle-block">
-                    <div class="rectangle">
+                    <div class="detailView-notification">
                       <div class="text">
                         Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
                         Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
@@ -273,7 +273,7 @@
                 <!--Nachbearbeitung NEIN-->
                 <div v-show="x === 'No'">
                   <div class="rectangle-block">
-                    <div class="rectangle">
+                    <div class="detailView-notification">
                       <div class="text">
                         Die Herstellung des Devices muss abgebrochen werden.
                       </div>
