@@ -8,7 +8,6 @@
       />
       <NewHazardForm/>
     </div>
-    {{ $route.params.actualTitleNameNewHazard }}
   </div>
 </template>
 
