@@ -1,6 +1,8 @@
 .rectangle {
     display: block;
     height: 30px;
+    margin-bottom: calc(var(--marginOne) * 0.063rem);
+    background: white;
 }
 
 .notification {
@@ -15,7 +17,6 @@
     border-radius: 5px;
     cursor: pointer;
     float: right;
-    margin-bottom: calc(var(--marginOne) * 0.063rem);
 }
 
 .notification:active p, .notification:active .arrow_right {

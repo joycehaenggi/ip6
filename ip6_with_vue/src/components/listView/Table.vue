@@ -98,7 +98,7 @@
         <template v-slot:item.akzeptiert="{ item }">
           <!--          <v-tooltip>-->
 
-            <v-card-text v-on="on">{{ item.akzeptiert }}
+            <v-card-text>{{ item.akzeptiert }}
 
               <div class='data-tooltip'
                    data-tooltip="Akzeptiert-Status">

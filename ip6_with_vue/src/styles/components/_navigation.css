@@ -83,5 +83,6 @@ input.searchfield {
 }
 
 .navigation-steps {
-    font-family: 'OpenSans-Bold';
+    font-family: OpenSans-Bold, serif;
+    opacity: 0.5;
 }
