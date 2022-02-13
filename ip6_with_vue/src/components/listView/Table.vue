@@ -98,17 +98,31 @@
         <template v-slot:item.akzeptiert="{ item }">
           <!--          <v-tooltip>-->
 
-            <v-card-text>{{ item.akzeptiert }}
+          <v-card-text>{{ item.akzeptiert }}
 
-              <div class='data-tooltip'
-                   data-tooltip="Akzeptiert-Status">
-                <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
-                        stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            <div v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'">
+              <div class="svg_tooltip">
+                <div class='data-tooltip'
+                     data-tooltip="Akzeptiert-Status">
+                  <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
               </div>
+            </div>
 
-            </v-card-text>
+            <div v-if="item.name != 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'">
+                <div class='data-tooltip'
+                     data-tooltip="Akzeptiert-Status">
+                  <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+            </div>
+
+          </v-card-text>
 
           <!--            <span>Akzeptiert Status</span>-->
           <!--          </v-tooltip>-->
@@ -248,9 +262,9 @@
                   </div>
                   <div class="buttonContainer buttonContainer-detailView">
                     <router-link :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }}">
-                    <button class="button button-submit">
+                      <button class="button button-submit">
                         Gefährdung erstellen
-                    </button>
+                      </button>
                     </router-link>
                     <button class="button button-cancel button-finishHazard">Gefährdung abschliessen</button>
                   </div>
@@ -351,263 +365,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.accordion {
-  color: #444;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color: #E1E5EB;
-}
-
-.active .fourtySevenPercent {
-  font-family: 'OpenSans-SemiBold', sans-serif;
-  transition: 1s ease-out;
-}
-
-.arrowDown {
-  transform: rotate(0deg);
-  transition: 1s ease-out;
-}
-
-.active .td .arrowDown {
-  transform: rotate(-180deg);
-  transition: 1s ease-out;
-}
-
-.active {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 1s ease-out;
-  border-left: 1px solid var(--frames-BlueGray);
-  border-right: 1px solid var(--frames-BlueGray);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.v-data-table__expanded__content td.td_detailView{
-  padding: 0 !important;
-}
-
-#post-processing-block {
-  height: 0;
-  display: none;
-  transition: 1s ease-out;
-}
-
-.title_with_image_container {
-  padding-top: calc(18 * 0.063rem);
-  padding-bottom: calc(18 * 0.063rem);
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid var(--frames-BlueGray);
-}
-
-.title_with_image_square {
-  height: calc(135 * 0.063rem);
-  width: calc(135 * 0.063rem);
-  background: var(--frames-BlueGray);
-  border-radius: 5px;
-}
-
-.title_detail_view {
-  margin-top: calc(9 * 0.063rem);
-  padding-left: calc(5 * 0.063rem);
-  padding-right: calc(5 * 0.063rem);
-  text-align: center;
-  font-family: 'OpenSans-SemiBold', sans-serif;
-}
-
-.image_detail_view {
-  margin-left: calc(23 * 0.063rem);
-  margin-right: calc(23 * 0.063rem);
-  margin-top: calc(13 * 0.063rem);
-}
-
-.blocks {
-  padding: 0 40px;
-}
-
-.block {
-  height: 48px;
-  margin-top: 18px;
-}
-
-.block-effects {
-  height: 335px;
-}
-
-.block-title {
-  font-family: 'OpenSans-SemiBold', sans-serif;
-}
-
-.block-text {
-  margin-left: 40px;
-  margin-top: 8px;
-}
-
-.block-graphics {
-  display: flex;
-  margin-top: calc(16 * 0.063rem);
-}
-
-.riskVisualization2 {
-  margin-left: calc(30 * 0.063rem);
-}
-
-.decision-evaluation {
-  display: flex;
-}
-
-.evaluation-text {
-  width: 600px;
-}
-
-.evaluation-radio-buttons {
-  margin-left: calc(100 * 1rem);
-  display: flex;
-}
-
-
-.button_detailView {
-  display: flex;
-}
-
-.test {
-  margin-left: 20px;
-}
-
-.radio-button-cmd {
-  margin-left: 3rem;
-}
-
-.top {
-  margin-top: 0.3rem;
-}
-
-.right {
-  margin-right: 0.3rem;
-}
-
-
-.radio-button-nein {
-  margin-left: 7.5rem;
-}
-
-.rectangle-block {
-  margin-top: 18px;
-  margin-bottom: 80px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.v-text-field.v-text-field--enclosed {
-  margin: 0 20px !important;
-}
-
-.rectangle {
-  background-color: var(--frames-BlueGray);
-  max-width: 100%;
-  height: 30px;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 400;
-}
-
-.text {
-  padding-top: 7px;
-}
-
-.end {
-  display: flex;
-  justify-content: end;
-
-}
-
-.setMargin {
-  margin-bottom: 20px;
-}
-
-.v-input__control {
-  margin-top: 18px;
-}
-
-
-
-.table {
-  margin: auto;
-}
-
-.v-data-table-header {
-  border-color: var(--frames-BlueGray);
-  border-radius: 5px;
-
-}
-
-.v-application {
-  padding-left: 0.1px;
-}
-
-.v-application--wrap {
-  min-height: 10px !important;
-}
-
-.v-data-table {
-  font-family: 'OpenSans-Regular' !important;
-  font-size: 11px !important;
-}
-
-
-.v-data-table > .v-data-table__wrapper > table > tbody > tr > td, .v-data-table > .v-data-table__wrapper > table > tbody > tr > th, .v-data-table > .v-data-table__wrapper > table > thead > tr > td, .v-data-table > .v-data-table__wrapper > table > thead > tr > th, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > td, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > th {
-  font-size: 11px !important;
-  font-family: 'OpenSans-Regular' !important;
-
-}
-
-
-.v-simple-checkbox {
-  border: #3ff0a6;
-}
-
-
-.v-hover {
-  size: 30px;
-}
-
-[type="checkbox"] + label {
-  position: absolute;
-}
-
-[type="checkbox"] {
-  position: relative;
-  -webkit-appearance: none;
-}
-
-[type="checkbox"] + label::before {
-  width: 15px;
-  height: 15px;
-  background-image: url("../../assets/svg/checkbox_unchecked.svg");
-  display: block;
-  content: "";
-  float: left;
-  margin-right: 5px;
-  z-index: 2;
-  position: relative;
-}
-
-[type="checkbox"]:checked + label::before {
-  background-image: url("../../assets/svg/checkbox_checked.svg");
-}
-
-</style>

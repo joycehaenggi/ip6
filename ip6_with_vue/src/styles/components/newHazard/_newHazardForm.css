@@ -284,6 +284,7 @@ input[type="text"] {
   margin-left: 15rem !important;
 }
 
+/*
 [data-tooltip], [data-tooltip2] {
   position: relative;
   cursor: default;
@@ -331,4 +332,4 @@ input[type="text"] {
   transition: 0.25s transform;
   transform-origin: center center;
   z-index: 2;
-}
+}*/

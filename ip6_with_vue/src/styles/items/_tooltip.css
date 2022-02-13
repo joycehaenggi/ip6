@@ -22,7 +22,10 @@
     transition: 0.25s transform;
     transform-origin: center center;
     z-index:20000;
+}
 
+.svg_tooltip [data-tooltip]::after{
+    top: -140%;
 }
 
 [data-tooltip]:hover::after, [data-tooltip]:hover::before, [data-tooltip2]:hover::after, [data-tooltip2]:hover::before {
