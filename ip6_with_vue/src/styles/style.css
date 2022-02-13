@@ -18,6 +18,6 @@
 @import "components/_navigation.css";
 @import "components/newHazard/_newHazardForm.css";
 @import "components/_notification.css";
-@import "components/listView/_progress_bar.css";
+@import "components/listView/_progress_overview.css";
 @import "components/listView/_table.css";
 @import "components/_responsiveAdjustment.css";

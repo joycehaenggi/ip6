@@ -6,10 +6,11 @@
           :actualTitleNameNavigation="titleNames[nameCounterListView]"
           :listViewStatusNavigation="listViewStatus"
       />
+      <NotificationBar/>
       <Table @ReadCheckboxNumber="transferCheckboxNumbers"
              :actualTitleNameTable="titleNames[nameCounterListView]"
       />
-      <ProgressBar :noCheckboxCheckedProcess="noCheckboxChecked"
+      <ProgressOverview :noCheckboxCheckedProcess="noCheckboxChecked"
                        :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"
                        :titleNamesProcessOverview="titleNames"
                        :nameCounterProcessOverview="nameCounterListView"
@@ -23,16 +24,18 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
+import NotificationBar from "@/components/NotificationBar";
 import Table from "@/components/listView/Table";
-import ProgressBar from "@/components/listView/ProgressBar";
+import ProgressOverview from "@/components/listView/ProgressOverview";
 import ButtonContainerListView from "@/components/listView/ButtonContainerListView";
 
 export default {
   components: {
     Header,
     Navigation,
+    NotificationBar,
     Table,
-    ProgressBar,
+    ProgressOverview,
     ButtonContainerListView
   },
   data() {
