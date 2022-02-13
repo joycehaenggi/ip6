@@ -25,7 +25,6 @@ export default {
       }
 
       let nameCounter = this.nameCounter
-
       this.$emit('readNameCounter',nameCounter)
     }
   }

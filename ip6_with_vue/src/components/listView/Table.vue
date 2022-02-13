@@ -362,6 +362,6 @@ export default {
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
       this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
     }
-  },
+  }
 }
 </script>

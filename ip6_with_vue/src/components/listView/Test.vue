@@ -154,10 +154,10 @@ export default {
           protein: 7,
           iron: '6%',
           icon: 'caret-square-down'
-        },
-      ],
+        }
+      ]
     }
-  },
+  }
 }
 </script>
 

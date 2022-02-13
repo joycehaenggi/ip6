@@ -48,9 +48,6 @@ export default {
         TextNotification.style.display = "block";
         this.fullNotification = true
       }
-    },
-    test() {
-      console.log("test")
     }
   }
 }
