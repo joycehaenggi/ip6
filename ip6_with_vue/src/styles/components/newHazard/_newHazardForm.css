@@ -33,7 +33,7 @@ form {
 .flex_add {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   min-height: 40px;
   flex-wrap: wrap;
 }

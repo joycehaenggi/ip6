@@ -21,7 +21,7 @@
           <input class="input_customized" type="text">
         </div>
       </div>
-      <div class="flex-element">
+      <div class="flex-element flex_add">
         <div class="column column1">
           <label class="label_customized addLabel">Schaden</label>
         </div>
@@ -406,12 +406,7 @@ export default {
           '</div>\n' +
           '<div class="flex_add_column">' +
           '<input class="input_customized add_new_input" type="text">' +
-          '</div></div></div>';
-
-      divAdd.style.borderRadius = '5px';
-      divAdd.style.fontFamily = '"OpenSans-Regular", sans-serif';
-      divAdd.style.fontSize = '11px';
-      divAdd.style.marginBottom = 'calc(10 * 0.063rem)';
+          '</div></div>';
       objTo.appendChild(divAdd)
     }
   }
