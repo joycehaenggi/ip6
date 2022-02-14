@@ -38,10 +38,6 @@ form {
   flex-wrap: wrap;
 }
 
-.buttons_new_hazard {
-  margin-top: 40px;
-}
-
 .column {
   min-height: 50px;
   margin-right: calc(10 * 0.063rem);
@@ -71,12 +67,6 @@ form {
   justify-content: space-between;
 }
 
-.button-newHazard-cancel {
-  margin-right: 20px;
-}
-
-
-
 /*.column4 {
 
 }*/
@@ -104,19 +94,6 @@ form {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-  }
-
-  .button-cancel {
-    margin-bottom: 20px;
-    margin-right: 0;
-  }
-
-  .button-newHazard {
-    min-width: calc(330 * 0.063rem);
-  }
-
-  .button-newHazard-cancel {
-    margin-right: 0;
   }
 }
 

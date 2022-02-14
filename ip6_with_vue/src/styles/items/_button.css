@@ -50,10 +50,30 @@
     background-color: #d3d8e1;
 }
 
+.button-newHazard-cancel {
+    margin-right: 20px;
+}
+
 .button-finishHazard{
     margin-left: 20px;
 }
 
 .button a {
     font-family: OpenSans-SemiBold, serif;
+}
+
+
+@media (max-width: 1020px) {
+    .button-cancel {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .button-newHazard {
+        min-width: calc(330 * 0.063rem);
+    }
+
+    .button-newHazard-cancel {
+        margin-right: 0;
+    }
 }
