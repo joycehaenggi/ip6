@@ -300,7 +300,7 @@
                       class="textarea-declaration"
                       rows="2"
                   />
-                  <div class='block-verify'>
+                  <div class='block block-verify'>
                     <div class='block-title'>
                       Arztnachweis (optional)
                     </div>
