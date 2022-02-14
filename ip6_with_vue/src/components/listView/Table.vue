@@ -306,7 +306,7 @@
                     <div class='block-title'>
                       Arztnachweis
                     </div>
-                    <div class="column button-margin">
+                    <div class="block-text">
                       <input class=" inputfile" type="file" name="file" id="file" title="test"/>
                     </div>
                   </div>
