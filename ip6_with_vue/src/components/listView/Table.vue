@@ -272,11 +272,11 @@
                     <div class="buttonContainer buttonContainer-detailView">
                       <router-link
                           :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }}">
-                        <button class="button button-submit">
+                        <button class="button button-cancel">
                           Gefährdung erstellen
                         </button>
                       </router-link>
-                      <button class="button button-cancel button-finishHazard">Gefährdung abschliessen</button>
+                      <button class="button button-submit button-finishHazard">Gefährdung abschliessen</button>
                     </div>
                   </div>
 
