@@ -31,10 +31,12 @@
   * Backend ?
 * Die genauen Technologien können in Absprache definiert werden
   * Das Projektteam verwendet für die Umsetzung des Frontends HTML, CSS & JavaScript.
-  * Als Framework wird React verwendet
+  * Als Framework wird Vue.js verwendet
 
 ### Daten
 * Die Daten für die Darstellung der Informationen wurden aus der Excel-Tabelle PFMEA-Orbita.xlsx bezogen.
 * Alle Dokumente liegen auf dem privaten Team "IP6 - UX und Usability für Patient Matched Production_M365" auf Microsoft Teams. Alle beteiligten Personen haben Zugang zu diesem Ordner.
 
 ### Projekt starten
+* Um das Projekt zu starten navigiert man in den Ordner ip6_without_vue in der Kommandozeile.
+* Anschliessend tippt man, "npm run serve" ein, wodurch das Projekt automatisch starten sollte.
