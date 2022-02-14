@@ -225,12 +225,15 @@
                   <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
                     Device herstellen?
                   </div>
-                  <input class="radioButton-detailView" type="radio" id="spezifikation" v-model="w"
-                         value="Spezifikation">
-                  <label class="label-verify" for="spezifikation">Spezifikation</label>
-                  <input class="radioButton-detailView" type="radio" id="CustomMadeDevice" v-model="w"
-                         value="CustomMadeDevice">
-                  <label class="label-verify" for="CustomMadeDevice">Custom Made Device</label>
+                  <label class="container label-verify"> <div class="verify-label-text"> Spezifikation</div>
+                    <input type="radio" name="probabilityOfOccurrenceTwo" value="Spezifikation" v-model="w">
+                    <span class="custom_radio_button"></span>
+                  </label>
+                  <label class="container label-verify"> <div class="verify-label-text"> Custom Made Device</div>
+                    <input type="radio" name="probabilityOfOccurrenceTwo" value="CustomMadeDevice" v-model="w">
+                    <span class="custom_radio_button"></span>
+                  </label>
+
                 </div>
               </div>
 
@@ -245,10 +248,14 @@
                       <div class='evaluation-text'>
                         Ist eine Nachbearbeitung des Devices möglich?
                       </div>
-                      <input class="radioButton-detailView" type="radio" id="yesPostProceccing" v-model="x" value="Ja">
-                      <label class="label-verify" for="yesPostProceccing">Ja</label>
-                      <input class="radio-button-nein radioButton-detailView" type="radio" id="noPostProceccing" v-model="x" value="No">
-                      <label class="label-verify" for="noPostProceccing">Nein</label>
+                      <label class="container label-verify"> <div class="verify-label-text"> Ja</div>
+                        <input type="radio" value="Ja" v-model="x">
+                        <span class="custom_radio_button"></span>
+                      </label>
+                      <label class="container label-verify"> <div class="verify-label-text"> Nein</div>
+                        <input type="radio" value="Nein" v-model="x">
+                        <span class="custom_radio_button"></span>
+                      </label>
                     </div>
                   </div>
 

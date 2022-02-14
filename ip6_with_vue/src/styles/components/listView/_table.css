@@ -98,7 +98,11 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
 }
 
 .label-verify {
-    width: 120px;
+    width: 150px;
+}
+
+.verify-label-text {
+    margin-top:-2px;
 }
 
 .radioButton-detailView {
@@ -151,10 +155,17 @@ textarea {
     display: none;
 }
 
-/*fieldset, .v-input__control {
-    height:92px;
+.v-data-table > .v-data-table__wrapper tbody tr.v-data-table__expanded__content {
+    /*box-shadow: inset 0px 4px 8px -5px rgba(50, 50, 50, 0.75), inset 0px -4px 8px -5px rgba(50, 50, 50, 0.75);*/
+    box-shadow: inset 0 0 4px var(--frames-BlueGray);
+    box-shadow: 0 4px 4px var(--frames-BlueGray);
 }
 
-.v-text-field__slot{
-    height:87px;
-}*/
+.v-data-table > .v-data-table__wrapper > table > tbody > tr > td, .v-data-table > .v-data-table__wrapper > table > tbody > tr > th, .v-data-table > .v-data-table__wrapper > table > thead > tr > td, .v-data-table > .v-data-table__wrapper > table > thead > tr > th, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > td, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > th {
+    padding: 0 16px;
+    transition: height 100s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.v-icon.v-icon::after {
+    background-color: white;
+}
