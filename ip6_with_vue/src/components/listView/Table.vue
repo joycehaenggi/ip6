@@ -217,7 +217,7 @@
                 </div>
               </div>
 
-              <div class='block pP" + i + " setMargin'>
+              <div class='block block-verify'>
                 <div class='block-title'>
                   Bewertung
                 </div>
@@ -225,18 +225,16 @@
                   <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
                     Device herstellen?
                   </div>
-                  <input class="top right" type="radio" v-model="w" value="Spezifikation"> Spezifikation
-                  <input class="radio-button-cmd top right" type="radio" v-model="w" value="CustomMadeDevice">Custom
+                  <input class="radioButton-detailView" type="radio" v-model="w" value="Spezifikation"> Spezifikation
+                  <input class="radio-button-cmd radioButton-detailView" type="radio" v-model="w" value="CustomMadeDevice">Custom
                   Made Device
                 </div>
               </div>
 
-            </div>
-
             <!--Nachbearbeitung (in Spezifikation bleiben) -->
             <template>
               <div v-if="w == 'Spezifikation'">
-                <div class='block test setMargin'>
+                <div class='block block-verify'>
                   <div class='block-title'>
                     Nachbearbeitung
                   </div>
@@ -244,8 +242,8 @@
                     <div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?
                     </div>
                     <div class='button_detailView'>
-                      <input class="top right" type="radio" v-model="x" value="Ja"> Ja
-                      <input class="radio-button-nein top right" type="radio" v-model="x" value="No">Nein
+                      <input class="radioButton-detailView" type="radio" v-model="x" value="Ja"> Ja
+                      <input class="radio-button-nein radioButton-detailView" type="radio" v-model="x" value="No">Nein
                     </div>
                   </div>
                 </div>
@@ -296,7 +294,7 @@
                     placeholder="Geben Sie eine Begründung ein."
                     class="textarea-declaration"
                 />
-                <div class='test setMargin'>
+                <div class='block-verify'>
                   <div class='block-title'>
                     Arztnachweis (optional)
                   </div>
@@ -309,6 +307,8 @@
                 </div>
               </div>
             </template>
+
+            </div>
 
           </td>
         </template>

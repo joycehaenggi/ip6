@@ -294,7 +294,7 @@
         </div>
         <div class="column column3 button-column">
           <router-link :to="{ name: 'ListView'}">
-            <div class="button button-cancel button-newHazard" id="cancel">
+            <div class="button button-cancel button-newHazard button-newHazard-cancel" id="cancel">
               Abbrechen
             </div>
           </router-link>

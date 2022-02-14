@@ -68,12 +68,18 @@ form {
 }
 
 .button-column {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
-.column4 {
-
+.button-newHazard-cancel {
+  margin-right: 20px;
 }
+
+
+
+/*.column4 {
+
+}*/
 
 .columnInColumn {
   display: flex;
@@ -107,6 +113,10 @@ form {
 
   .button-newHazard {
     min-width: calc(330 * 0.063rem);
+  }
+
+  .button-newHazard-cancel {
+    margin-right: 0;
   }
 }
 
