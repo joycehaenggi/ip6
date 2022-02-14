@@ -172,3 +172,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 .v-data-table__expanded__row {
     font-weight: bold;
 }
+
+.theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr > th {
+    /*color: rgba(0, 0, 0, 0.8);*/
+}
