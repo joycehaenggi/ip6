@@ -19,7 +19,7 @@
     color: white;
 }
 
-.button-cancel, .button-nextStep {
+.button-cancel, #button-nextStep {
     background-color: var(--frames-BlueGray);
     color: var(--notification-Blue);
 }
@@ -28,9 +28,13 @@
     background-color: #d3d8e1;
 }
 
-.button-nextStep {
+#button-nextStep {
     opacity: 0.4;
     cursor: default;
+}
+
+#button-nextStep:hover {
+    background-color: var(--notification-Blue) !important;
 }
 
 #nextStep-Link {
@@ -44,6 +48,11 @@
 .button-cancel {
     background-color: var(--frames-BlueGray);
     color: var(--notification-Blue);
+    margin-right: 20px;
+}
+
+.button-cancel:hover {
+    background-color: #d3d8e1;
 }
 
 .button-finishHazard{

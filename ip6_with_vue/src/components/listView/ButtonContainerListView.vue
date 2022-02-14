@@ -1,7 +1,7 @@
 <template>
   <div class="buttonContainer buttonContainer-nextStep">
     <div id="nextStep-Link" @click="nextStepCounter()">
-      <div class="button button-nextStep" id="nextStep">
+      <div class="button" id="button-nextStep">
         Schritt abschliessen
       </div>
     </div>

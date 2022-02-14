@@ -89,7 +89,7 @@
         </div>
         <div class="high">
           <span class="legend-dot red"></span>
-          <p @click="test" class="manu-legend">hoch</p>
+          <p class="manu-legend">hoch</p>
         </div>
         <div class="manufacturing-legend-elements">
         </div>

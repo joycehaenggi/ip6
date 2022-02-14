@@ -66,8 +66,9 @@ export default {
 
       this.noCheckboxChecked = this.percentageOfCheckedCheckboxes === 0;
 
-      let nextStepButton = document.getElementById("nextStep");
+      let nextStepButton = document.getElementById("button-nextStep");
       let nextStepLink = document.getElementById("nextStep-Link");
+
 
       if (this.percentageOfCheckedCheckboxes === 100) {
         nextStepButton.style.color = 'white';
@@ -90,15 +91,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.v-application--wrap {
-  min-height: 0;
-}
-
-.wrapper {
-  padding-left: var(--paddingLeftRight);
-  padding-right: var(--paddingLeftRight);
-  margin-bottom: calc(var(--marginOne) * 0.063rem);
-}
-</style>
