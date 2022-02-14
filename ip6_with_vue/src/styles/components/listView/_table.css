@@ -1,75 +1,3 @@
-.table {
-    width: 100%;
-    font-size: calc(var(--mainFontSize) * 0.063rem);
-    margin-top: calc(var(--marginOne) * 0.063rem);
-}
-
-.tr {
-    border: 1px solid #E1E5EB;
-    height: 45px;
-    border-radius: 5px;
-    margin-top: calc(5 * 0.063rem);
-    display: flex;
-}
-
-.th, .td {
-    height: 45px;
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.th {
-    justify-content: flex-start;
-    border-right: 1px solid #E1E5EB;
-}
-
-.td {
-    justify-content: center;
-}
-
-.accordion {
-    color: #444;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    transition: 0.4s;
-}
-
-.active, .accordion:hover {
-    background-color: #E1E5EB;
-}
-
-.active .fourtySevenPercent {
-    font-family: 'OpenSans-SemiBold', sans-serif;
-    transition: 1s ease-out;
-}
-
-.arrowDown {
-    transform: rotate(0deg);
-    transition: 1s ease-out;
-}
-
-.active .td .arrowDown {
-    transform: rotate(-180deg);
-    transition: 1s ease-out;
-}
-
-.active {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease-out;
-    border-left: 1px solid var(--frames-BlueGray);
-    border-right: 1px solid var(--frames-BlueGray);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
 .v-data-table__expanded__content td.td_detailView{
     padding: 0 !important;
 }
@@ -207,7 +135,6 @@
 .end {
     display: flex;
     justify-content: end;
-
 }
 
 .setMargin {
@@ -225,7 +152,6 @@
 .v-data-table-header {
     border-color: var(--frames-BlueGray);
     border-radius: 5px;
-
 }
 
 .v-application {
@@ -236,29 +162,22 @@
     min-height: 10px !important;
 }
 
-.v-data-table {
-    font-family: 'OpenSans-Regular' !important;
-    font-size: 11px !important;
-}
-
 
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > td, .v-data-table > .v-data-table__wrapper > table > tbody > tr > th, .v-data-table > .v-data-table__wrapper > table > thead > tr > td, .v-data-table > .v-data-table__wrapper > table > thead > tr > th, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > td, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > th {
     font-size: 11px !important;
-    font-family: 'OpenSans-Regular' !important;
+    font-family: OpenSans-Regular, serif;
 }
-
 
 .v-simple-checkbox {
     border: #3ff0a6;
 }
-
 
 .v-hover {
     size: 30px;
 }
 
 [type="checkbox"] + label {
-    position: absolute;
+    position: relative;
 }
 
 [type="checkbox"] {
