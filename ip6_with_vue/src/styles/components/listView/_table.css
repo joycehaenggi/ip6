@@ -139,13 +139,13 @@ fieldset, .v-text-field--outlined fieldset {
     border: 2px solid var(--frames-BlueGray);
 }
 
-fieldset, .v-input__control {
+/*fieldset, .v-input__control {
     height:92px;
 }
 
 .v-text-field__slot{
     height:87px;
-}
+}*/
 
 .v-input__slot {
     margin-bottom: 0;

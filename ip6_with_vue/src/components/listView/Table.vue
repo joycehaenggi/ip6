@@ -298,6 +298,7 @@
                       label="Begründung für Custom Made Device"
                       placeholder="Geben Sie eine Erläuterung ein."
                       class="textarea-declaration"
+                      rows="2"
                   />
                   <div class='block-verify'>
                     <div class='block-title'>
