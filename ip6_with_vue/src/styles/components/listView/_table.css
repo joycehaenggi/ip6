@@ -67,6 +67,8 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
 .block-text {
     margin-left: 40px;
     margin-top: 8px;
+    display: flex;
+    align-items: center;
 }
 
 .block-graphics {
@@ -95,17 +97,16 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
     display: flex;
 }
 
-.radio-button-cmd {
-    margin-left: 3rem;
+.label-verify {
+    width: 120px;
 }
 
 .radioButton-detailView {
-    margin-top: 0.3rem;
     margin-right: 0.3rem;
 }
 
 .radio-button-nein {
-    margin-left: 7.5rem;
+    /*margin-left: 7.5rem;*/
 }
 
 .rectangle-block {

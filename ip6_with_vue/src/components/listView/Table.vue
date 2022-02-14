@@ -113,13 +113,13 @@
             </div>
 
             <div v-if="item.name != 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'">
-                <div class='data-tooltip'
-                     data-tooltip="Akzeptiert-Status">
-                  <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
-                          stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
+              <div class='data-tooltip'
+                   data-tooltip="Akzeptiert-Status">
+                <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
             </div>
 
           </v-card-text>
@@ -225,88 +225,93 @@
                   <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
                     Device herstellen?
                   </div>
-                  <input class="radioButton-detailView" type="radio" v-model="w" value="Spezifikation"> Spezifikation
-                  <input class="radio-button-cmd radioButton-detailView" type="radio" v-model="w" value="CustomMadeDevice">Custom
-                  Made Device
+                  <input class="radioButton-detailView" type="radio" id="spezifikation" v-model="w"
+                         value="Spezifikation">
+                  <label class="label-verify" for="spezifikation">Spezifikation</label>
+                  <input class="radioButton-detailView" type="radio" id="CustomMadeDevice" v-model="w"
+                         value="CustomMadeDevice">
+                  <label class="label-verify" for="CustomMadeDevice">Custom Made Device</label>
                 </div>
               </div>
 
-            <!--Nachbearbeitung (in Spezifikation bleiben) -->
-            <template>
-              <div v-if="w == 'Spezifikation'">
-                <div class='block block-verify'>
-                  <div class='block-title'>
-                    Nachbearbeitung
-                  </div>
-                  <div class='block-text decision-evaluation'>
-                    <div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?
+              <!--Nachbearbeitung (in Spezifikation bleiben) -->
+              <template>
+                <div v-if="w == 'Spezifikation'">
+                  <div class='block block-verify'>
+                    <div class='block-title'>
+                      Nachbearbeitung
                     </div>
-                    <div class='button_detailView'>
-                      <input class="radioButton-detailView" type="radio" v-model="x" value="Ja"> Ja
-                      <input class="radio-button-nein radioButton-detailView" type="radio" v-model="x" value="No">Nein
+                    <div class='block-text decision-evaluation'>
+                      <div class='evaluation-text'>
+                        Ist eine Nachbearbeitung des Devices möglich?
+                      </div>
+                      <input class="radioButton-detailView" type="radio" id="yesPostProceccing" v-model="x" value="Ja">
+                      <label class="label-verify" for="yesPostProceccing">Ja</label>
+                      <input class="radio-button-nein radioButton-detailView" type="radio" id="noPostProceccing" v-model="x" value="No">
+                      <label class="label-verify" for="noPostProceccing">Nein</label>
+                    </div>
+                  </div>
+
+                  <!--Nachbearbeitung JA-->
+                  <div v-show="x === 'Ja'">
+                    <div class="rectangle-block">
+                      <div class="detailView-notification">
+                        <div class="text">
+                          Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
+                          Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="buttonContainer buttonContainer-detailView">
+                      <router-link
+                          :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }}">
+                        <button class="button button-submit">
+                          Gefährdung erstellen
+                        </button>
+                      </router-link>
+                      <button class="button button-cancel button-finishHazard">Gefährdung abschliessen</button>
+                    </div>
+                  </div>
+
+                  <!--Nachbearbeitung NEIN-->
+                  <div v-show="x === 'No'">
+                    <div class="rectangle-block">
+                      <div class="detailView-notification">
+                        <div class="text">
+                          Die Herstellung des Devices muss abgebrochen werden.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="buttonContainer buttonContainer-detailView">
+                      <button class="button button-submit">Herstellung abbrechen</button>
                     </div>
                   </div>
                 </div>
 
-                <!--Nachbearbeitung JA-->
-                <div v-show="x === 'Ja'">
-                  <div class="rectangle-block">
-                    <div class="detailView-notification">
-                      <div class="text">
-                        Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
-                        Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
-                      </div>
+              </template>
+
+              <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
+              <template>
+                <div v-if="w === 'CustomMadeDevice'">
+                  <v-textarea
+                      outlined
+                      label="Begründung für Custom Made Device"
+                      placeholder="Geben Sie eine Begründung ein."
+                      class="textarea-declaration"
+                  />
+                  <div class='block-verify'>
+                    <div class='block-title'>
+                      Arztnachweis (optional)
+                    </div>
+                    <div class="column button-margin">
+                      <input class=" inputfile" type="file" name="file" id="file" title="test"/>
                     </div>
                   </div>
                   <div class="buttonContainer buttonContainer-detailView">
-                    <router-link :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }}">
-                      <button class="button button-submit">
-                        Gefährdung erstellen
-                      </button>
-                    </router-link>
-                    <button class="button button-cancel button-finishHazard">Gefährdung abschliessen</button>
+                    <button class="button button-submit">Gefährdung abschliessen</button>
                   </div>
                 </div>
-
-                <!--Nachbearbeitung NEIN-->
-                <div v-show="x === 'No'">
-                  <div class="rectangle-block">
-                    <div class="detailView-notification">
-                      <div class="text">
-                        Die Herstellung des Devices muss abgebrochen werden.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="buttonContainer buttonContainer-detailView">
-                    <button class="button button-submit">Herstellung abbrechen</button>
-                  </div>
-                </div>
-              </div>
-
-            </template>
-
-            <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
-            <template>
-              <div v-if="w === 'CustomMadeDevice'">
-                <v-textarea
-                    outlined
-                    label="Begründung für Custom Made Device"
-                    placeholder="Geben Sie eine Begründung ein."
-                    class="textarea-declaration"
-                />
-                <div class='block-verify'>
-                  <div class='block-title'>
-                    Arztnachweis (optional)
-                  </div>
-                  <div class="column button-margin">
-                    <input class=" inputfile" type="file" name="file" id="file" title="test"/>
-                  </div>
-                </div>
-                <div class="buttonContainer buttonContainer-detailView">
-                  <button class="button button-submit">Gefährdung abschliessen</button>
-                </div>
-              </div>
-            </template>
+              </template>
 
             </div>
 
