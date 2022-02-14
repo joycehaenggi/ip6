@@ -226,11 +226,11 @@
                     Device herstellen?
                   </div>
                   <label class="container label-verify"> <div class="verify-label-text"> Spezifikation</div>
-                    <input type="radio" name="probabilityOfOccurrenceTwo" value="Spezifikation" v-model="w">
+                    <input type="radio" name="probabilityOfOccurrenceTwo" value="Spezifikation" v-model="specification_customMadeDevice">
                     <span class="custom_radio_button"></span>
                   </label>
                   <label class="container label-verify"> <div class="verify-label-text"> Custom Made Device</div>
-                    <input type="radio" name="probabilityOfOccurrenceTwo" value="CustomMadeDevice" v-model="w">
+                    <input type="radio" name="probabilityOfOccurrenceTwo" value="CustomMadeDevice" v-model="specification_customMadeDevice">
                     <span class="custom_radio_button"></span>
                   </label>
 
@@ -239,7 +239,7 @@
 
               <!--Nachbearbeitung (in Spezifikation bleiben) -->
               <template>
-                <div v-if="w == 'Spezifikation'">
+                <div v-if="specification_customMadeDevice === 'Spezifikation'">
                   <div class='block block-verify'>
                     <div class='block-title'>
                       Nachbearbeitung
@@ -249,24 +249,22 @@
                         Ist eine Nachbearbeitung des Devices möglich?
                       </div>
                       <label class="container label-verify"> <div class="verify-label-text"> Ja</div>
-                        <input type="radio" value="Ja" v-model="x">
+                        <input type="radio" value="yes" v-model="postProcessingPossibility">
                         <span class="custom_radio_button"></span>
                       </label>
                       <label class="container label-verify"> <div class="verify-label-text"> Nein</div>
-                        <input type="radio" value="Nein" v-model="x">
+                        <input type="radio" value="no" v-model="postProcessingPossibility">
                         <span class="custom_radio_button"></span>
                       </label>
                     </div>
                   </div>
 
                   <!--Nachbearbeitung JA-->
-                  <div v-show="x === 'Ja'">
+                  <div v-if="postProcessingPossibility === 'yes'">
                     <div class="rectangle-block">
                       <div class="detailView-notification">
-                        <div class="text">
                           Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
                           Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
-                        </div>
                       </div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
@@ -281,12 +279,10 @@
                   </div>
 
                   <!--Nachbearbeitung NEIN-->
-                  <div v-show="x === 'No'">
+                  <div v-if="postProcessingPossibility === 'no'">
                     <div class="rectangle-block">
                       <div class="detailView-notification">
-                        <div class="text">
                           Die Herstellung des Devices muss abgebrochen werden.
-                        </div>
                       </div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
@@ -294,12 +290,11 @@
                     </div>
                   </div>
                 </div>
-
               </template>
 
               <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
               <template>
-                <div v-if="w === 'CustomMadeDevice'">
+                <div v-if="specification_customMadeDevice === 'CustomMadeDevice'">
                   <v-textarea
                       outlined
                       label="Begründung für Custom Made Device"
@@ -309,7 +304,7 @@
                   />
                   <div class='block block-verify'>
                     <div class='block-title'>
-                      Arztnachweis (optional)
+                      Arztnachweis
                     </div>
                     <div class="column button-margin">
                       <input class=" inputfile" type="file" name="file" id="file" title="test"/>
@@ -336,12 +331,10 @@ export default {
   props: ['actualTitleNameTable'],
   data() {
     return {
-      svgPath: "../../assets/svg",
       reviews: 413,
       value: 4.5,
-      w: null,
-      x: null,
-      y: null,
+      specification_customMadeDevice: null,
+      postProcessingPossibility: null,
       expanded: [],
       singleExpand: false,
       hazardsHeader: [
