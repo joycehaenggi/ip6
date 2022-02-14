@@ -1,43 +1,5 @@
-.accordion {
-    color: #444;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    transition: 0.4s;
-}
-
-.active, .accordion:hover {
-    background-color: #E1E5EB;
-}
-
-.active .fourtySevenPercent {
-    font-family: 'OpenSans-SemiBold', sans-serif;
-    transition: 1s ease-out;
-}
-
-.arrowDown {
-    transform: rotate(0deg);
-    transition: 1s ease-out;
-}
-
-.active .td .arrowDown {
-    transform: rotate(-180deg);
-    transition: 1s ease-out;
-}
-
-.active {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease-out;
-    border-left: 1px solid var(--frames-BlueGray);
-    border-right: 1px solid var(--frames-BlueGray);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+.v-data-table > .v-data-table__wrapper > table > tbody > tr > .td_detailView{
+    padding: 0;
 }
 
 #post-processing-block {
@@ -76,7 +38,7 @@
 }
 
 .blocks {
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 .block {
@@ -102,10 +64,6 @@
     margin-top: calc(16 * 0.063rem);
 }
 
-.block-evaluation {
-    height: 70px;
-}
-
 .riskVisualization2 {
     margin-left: calc(30 * 0.063rem);
 }
@@ -115,14 +73,68 @@
 }
 
 .evaluation-text {
-    width: 530px;
+    width: 600px;
 }
 
 .evaluation-radio-buttons {
-    margin-left: calc(100 * 0.063rem);
+    margin-left: calc(100 * 1rem);
     display: flex;
 }
 
-.detailViewSelection {
+.button_detailView {
+    display: flex;
+}
+
+.radio-button-cmd {
+    margin-left: 3rem;
+}
+
+.top {
+    margin-top: 0.3rem;
+}
+
+.right {
+    margin-right: 0.3rem;
+}
+
+.radio-button-nein {
+    margin-left: 7.5rem;
+}
+
+.rectangle-block {
+    margin-top: 18px;
+    margin-bottom: 80px;
     margin-left: 20px;
+    margin-right: 20px;
+}
+
+.v-text-field.v-text-field--enclosed {
+    margin: 0 20px;
+}
+
+.detailView-notification {
+    background-color: var(--frames-BlueGray);
+    max-width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.text {
+    padding-top: 7px;
+}
+
+.end {
+    display: flex;
+    justify-content: end;
+}
+
+.setMargin {
+    margin-bottom: 20px;
+}
+
+.v-input__control {
+    margin-top: 18px;
 }

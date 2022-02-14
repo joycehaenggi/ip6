@@ -1,5 +1,5 @@
 [type="checkbox"] + label {
-    position: absolute;
+    position: relative;
 }
 
 [type="checkbox"] {
