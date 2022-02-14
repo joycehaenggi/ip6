@@ -296,7 +296,7 @@
                   <v-textarea
                       outlined
                       label="Begründung für Custom Made Device"
-                      placeholder="Geben Sie eine Begründung ein."
+                      placeholder="Geben Sie eine Erläuterung ein."
                       class="textarea-declaration"
                   />
                   <div class='block-verify'>
