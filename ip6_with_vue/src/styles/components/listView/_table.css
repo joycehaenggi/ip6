@@ -7,6 +7,18 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
     min-height: 0;
 }
 
+.v-icon.v-icon::after {
+    background-color: transparent;
+}
+
+tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__expanded__row {
+    background: var(--frames-BlueGray) !important;
+}
+
+.v-data-table__expanded__row {
+    font-weight: bold;
+}
+
 
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > .td_detailView{
     padding: 0;
@@ -161,18 +173,3 @@ textarea {
     box-shadow: 0 4px 4px var(--frames-BlueGray);
 }
 
-.v-icon.v-icon::after {
-    background-color: transparent;
-}
-
-tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__expanded__row {
-    background: var(--frames-BlueGray) !important;
-}
-
-.v-data-table__expanded__row {
-    font-weight: bold;
-}
-
-.theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr > th {
-    /*color: rgba(0, 0, 0, 0.8);*/
-}
