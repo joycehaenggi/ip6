@@ -42,7 +42,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     height: calc(135 * 0.063rem);
     width: calc(135 * 0.063rem);
     background: var(--frames-BlueGray);
-    border-radius: 5px;
+    border-radius: calc(var(--borderRadius) * 0.063rem);
 }
 
 .title_detail_view {
@@ -119,6 +119,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 
 .verify-label-text {
     margin-top:-2px;
+    margin-left:10px;
 }
 
 .radioButton-detailView {
@@ -134,7 +135,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     background-color: var(--frames-BlueGray);
     height: 30px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: calc(var(--borderRadius) * 0.063rem);
     display: flex;
     justify-content: center;
     align-items: center;

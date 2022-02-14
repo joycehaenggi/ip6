@@ -7,7 +7,7 @@
     border: 1px solid #E1E5EB;
     height: 100px;
     font-size: calc(var(--mainFontSize) * 0.063rem);
-    border-radius: 5px;
+    border-radius: calc(var(--borderRadius) * 0.063rem);
 }
 
 .title_progress_bar {
@@ -17,14 +17,14 @@
 .progress_bar {
     height: calc(17 * 0.063rem);
     background-color: var(--frames-BlueGray);
-    border-radius: calc(5 * 0.063rem);
+    border-radius: calc(var(--borderRadius) * 0.063rem);
 }
 
 .progress_in_percent {
     height: 100%;
     width: 0;
     background-color: var(--notification-Blue);
-    border-radius: 5px;
+    border-radius: calc(var(--borderRadius) * 0.063rem);
     color: white;
     text-align: center;
     display: flex;

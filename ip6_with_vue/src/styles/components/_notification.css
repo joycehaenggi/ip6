@@ -14,7 +14,7 @@
     background-color: var(--notification-Blue);
     color: white;
     font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
-    border-radius: 5px;
+    border-radius: calc(var(--borderRadius) * 0.063rem);
     cursor: pointer;
     float: right;
 }

@@ -14,7 +14,7 @@
     color: white;
     background-color: var(--notification-Blue);
     padding: 4px;
-    border-radius: 5px;
+    border-radius: calc(var(--borderRadius) * 0.063rem);
     font-size: calc(var(--mainFontSize) * 0.063rem);
     font-family: OpenSans-Regular, serif;
     opacity: 0;
@@ -46,7 +46,7 @@
     color: white;
     background-color: var(--notification-Blue);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: calc(var(--borderRadius) * 0.063rem);
     font-size: calc(calc(var(--mainFontSize) + 1) * 0.063rem);
     visibility: hidden;
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);

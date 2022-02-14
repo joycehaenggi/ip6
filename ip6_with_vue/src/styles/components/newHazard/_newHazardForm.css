@@ -114,7 +114,7 @@ form {
 
 .input_customized {
   border: 1px solid var(--frames-BlueGray);
-  border-radius: 5px;
+  border-radius: calc(var(--borderRadius) * 0.063rem);
   font-family: "OpenSans-Regular", sans-serif;
   font-size: 11px;
   width: calc(300 * 0.063rem);
@@ -146,7 +146,7 @@ form {
   justify-content: center;
   align-items: center;
   border: 1px solid var(--frames-BlueGray);
-  border-radius: 5px;
+  border-radius: calc(var(--borderRadius) * 0.063rem);
   width: calc(120 * 0.063rem);
   height: calc(29 * 0.063rem);
 }
