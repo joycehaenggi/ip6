@@ -4,7 +4,7 @@
       <v-text-field
           v-model="search"
           append-icon="search"
-          label="Search"
+          label="Suche"
           single-line
           hide-details
       ></v-text-field>
@@ -347,7 +347,7 @@ export default {
       expanded: [],
       singleExpand: false,
       hazardsHeader: [
-        {text: 'Icon', value: 'icon', width: 80},
+        {text: 'Icon', value: 'icon', width: 80, sortable: false},
         {text: 'Risikoprioritätszahl', value: 'risikoprioritätszahl', width: 150},
         {text: 'Definition Gefährdung', align: 'start', sortable: true, value: 'name', width: 800},
         {text: 'Nicht zutreffend', value: 'nicht-zutreffend', width: 100, sortable: true},

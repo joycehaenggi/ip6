@@ -19,6 +19,41 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     font-weight: bold;
 }
 
+.v-text-field > .v-input__control > .v-input__slot::after, .v-text-field > .v-input__control > .v-input__slot::before {
+    /*border:none;*/
+}
+
+.v-text-field > .v-input__control > .v-input__slot::before {
+    border-color: var(--notification-Blue) !important;
+}
+.v-text-field > .v-input__control > .v-input__slot::after {
+    border-color: var(--notification-Blue);
+}
+
+.mdi::before, .mdi-set, .v-icon.v-icon {
+    color: var(--notification-Blue);
+}
+
+.theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr > th{
+    color: var(--notification-Blue);
+}
+
+/*.v-icon {
+    display: none !important;
+}
+
+.v-input__icon {
+    background: url("../../../assets/svg/search.svg") center / contain no-repeat;
+}*/
+
+/*.v-icon.v-icon {
+    display: none;
+}*/
+
+
+.theme--light.v-data-table .v-data-table-header th.sortable:hover, .theme--light.v-data-table .v-data-table-header th.sortable.active{
+    color: var(--button-Hover);
+}
 
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > .td_detailView{
     padding: 0;
