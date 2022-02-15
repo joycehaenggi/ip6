@@ -19,8 +19,8 @@
       >
 
         <!--add risikoprioritätszahl--row-->
-        <template v-slot:item.risikoprioritaetszahl="{ item }">
-          <div :class="`dot ${item.risikoprioritaetszahl}`"></div>
+        <template v-slot:item.risikoprioritaet="{ item }">
+          <div :class="`dot ${item.risikoprioritaetClass}`"></div>
         </template>
 
         <!--Set checkbox for nicht-zutreffend-row-->
@@ -245,10 +245,10 @@ export default {
       singleExpand: false,
       hazardsHeader: [
         {text: 'Icon', value: 'icon', width: 80, sortable: false},
-        {text: 'Risikoprioritätszahl', value: 'risikoprioritaetszahl', width: 150},
-        {text: 'Definition Gefährdung', align: 'start', sortable: true, value: 'name', width: 800},
-        {text: 'Nicht zutreffend', value: 'nicht-zutreffend', width: 100, sortable: true},
-        {text: 'Akzeptiert', value: 'akzeptiert', width: 80},
+        {text: 'Risikoprioritätszahl', value: 'risikoprioritaet', width: 150},
+        {text: 'Definition Gefährdung', align: 'start', value: 'name', width: 800, sortable: true},
+        {text: 'Nicht zutreffend', value: 'nicht-zutreffend',  width: 100, sortable: false},
+        {text: 'Akzeptiert', value: 'akzeptiert', width: 80, sortable: false},
         {text: 'Gefährdung verifizieren', value: 'data-table-expand', width: 80},
       ],
       hazards: [
@@ -256,38 +256,44 @@ export default {
           id: 1,
           name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
           imageName: "toThin.svg",
-          risikoprioritaetszahl: "yellowCustomized",
+          risikoprioritaet: 2,
+          risikoprioritaetClass: "yellowCustomized",
           schaden: "Zweitoperation"
         },
         {
           id: 2,
           name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
           imageName: "dimensionally_unstable.svg",
-          risikoprioritaetszahl: "greenCustomized",
+          risikoprioritaet: 1,
+          risikoprioritaetClass: "greenCustomized",
         },
         {
           id: 3,
           name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
           imageName: "nut.svg",
-          risikoprioritaetszahl: "greenCustomized",
+          risikoprioritaet: 1,
+          risikoprioritaetClass: "greenCustomized",
         },
         {
           id: 4,
           name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
           imageName: "nut.svg",
-          risikoprioritaetszahl: "redCustomized",
+          risikoprioritaet: 3,
+          risikoprioritaetClass: "redCustomized",
         },
         {
           id: 5,
           name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
           imageName: "screw.svg",
-          risikoprioritaetszahl: "yellowCustomized",
+          risikoprioritaet: 2,
+          risikoprioritaetClass: "yellowCustomized",
         },
         {
           id: 6,
           name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",
           imageName: "screw.svg",
-          risikoprioritaetszahl: "greenCustomized",
+          risikoprioritaet: 1,
+          risikoprioritaetClass: "greenCustomized",
         }
       ]
     }
