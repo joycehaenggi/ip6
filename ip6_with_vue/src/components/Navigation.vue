@@ -64,17 +64,6 @@
         </div>
         <p class="navigation-steps nameStep" id="actualStep">{{ actualTitleNameNavigation }}</p>
       </div>
-      <div v-if="listViewStatusNavigation" class="searchbar">
-        <label class="searchfield-label">
-          <input type="text" class="searchfield">
-        </label>
-      </div>
-    </div>
-
-    <div class="manufacturing-step-information">
-      <div class="menu-title-box">
-        <p class="manu-title" id="titleName">{{ actualTitleNameNavigation }}</p>
-      </div>
       <div class="manufacturing-legend">
         <div class="priority-title">
           <p class="manu-legend-tittle">Risikopriorität:</p>
@@ -94,6 +83,14 @@
         <div class="manufacturing-legend-elements">
         </div>
       </div>
+
+    </div>
+
+    <div class="manufacturing-step-information">
+      <div class="menu-title-box">
+        <p class="manu-title" id="titleName">{{ actualTitleNameNavigation }}</p>
+      </div>
+
     </div>
   </div>
 </template>
