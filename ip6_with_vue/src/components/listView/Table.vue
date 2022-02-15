@@ -16,7 +16,6 @@
           item-key="name"
           show-expand
           class="elevation-1"
-
       >
         <!--Set checkbox for nicht-zutreffend-row-->
         <template #item.nicht-zutreffend="{item}">
