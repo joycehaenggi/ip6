@@ -1,54 +1,69 @@
+/* Table fonts */
 th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
     font-size: 11px;
     font-family: OpenSans-Regular, serif;
 }
 
+/* Remove unused margin */
 .v-application--wrap {
     min-height: 0;
 }
 
-.v-icon.v-icon::after {
-    background-color: transparent;
+/* Table Header */
+.theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr > th{
+    color: var(--notification-Blue);
+}
+.theme--light.v-data-table .v-data-table-header th.sortable:hover, .theme--light.v-data-table .v-data-table-header th.sortable.active{
+    color: var(--button-Hover);
 }
 
+/* Search Field Border Color */
+.theme--light.v-text-field > .v-input__control > .v-input__slot::before {
+    border-color: var(--notification-Blue);
+    opacity: 0.5;
+}
+.v-text-field > .v-input__control > .v-input__slot::after {
+    border-color: var(--notification-Blue);
+    opacity: 0.9;
+}
+
+/* Search Field Text no data */
+.v-data-table__wrapper .v-data-table__empty-wrapper td {
+    visibility: hidden;
+}
+.v-data-table__wrapper .v-data-table__empty-wrapper td:after {
+    visibility: visible;
+    content: "Keine übereinstimmenden Daten gefunden";
+}
+
+/* Hovered-selected-row */
 tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__expanded__row {
     background: var(--frames-BlueGray) !important;
 }
 
+/* Selected Row */
 .v-data-table__expanded__row {
     font-weight: bold;
 }
 
-.v-text-field > .v-input__control > .v-input__slot::after, .v-text-field > .v-input__control > .v-input__slot::before {
-    /*border:none;*/
+/* Remove background of expand-icon */
+.v-icon.v-icon::after {
+    background-color: transparent;
 }
 
-
+/* color "suchen" */
 .theme--light.v-label {
     color: var(--notification-Blue);
     opacity: 0.8;
 }
 
-.v-text-field > .v-input__control > .v-input__slot::before {
-    border-color: var(--notification-Blue) !important;
-}
-.v-text-field > .v-input__control > .v-input__slot::after {
-    border-color: var(--notification-Blue);
-}
-
+/* Color Vuetify-Icons */
 .mdi::before, .mdi-set, .v-icon.v-icon {
     color: var(--notification-Blue);
 }
 
-.theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr > th{
-    color: var(--notification-Blue);
-}
 
-.theme--light.v-data-table .v-data-table-header th.sortable:hover, .theme--light.v-data-table .v-data-table-header th.sortable.active{
-    color: var(--button-Hover);
-}
-
-
+/* Table Expanded */
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > .td_detailView{
     padding: 0;
 }

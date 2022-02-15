@@ -11,17 +11,17 @@
     display: inline-block;
 }
 
-.green {
+.greenCustomized {
     background-color: var(--riskPriority-Green);
     opacity: var(--colorOpacity);
 }
 
-.yellow {
+.yellowCustomized {
     background-color: var(--riskPriority-Yellow);
     opacity: var(--colorOpacity);
 }
 
-.red {
+.redCustomized {
     background-color: var(--riskPriority-Red);
     opacity: var(--colorOpacity);
 }
