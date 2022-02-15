@@ -1,9 +1,17 @@
 <template>
   <div id="app">
     <v-app id="inspire">
+      <v-text-field
+          v-model="search"
+          append-icon="search"
+          label="Search"
+          single-line
+          hide-details
+      ></v-text-field>
       <v-data-table
           :headers="hazardsHeader"
           :items="hazards"
+          :search="search"
           :expanded.sync="expanded"
           item-key="name"
           show-expand
@@ -335,6 +343,7 @@ export default {
       value: 4.5,
       specification_customMadeDevice: null,
       postProcessingPossibility: null,
+      search: '',
       expanded: [],
       singleExpand: false,
       hazardsHeader: [

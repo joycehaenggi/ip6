@@ -11,10 +11,10 @@ html {
 }
 
 .wrapper {
-    margin-top: calc(var(--marginOne) * 0.063rem);
     padding-left: var(--paddingLeftRight);
     padding-right: var(--paddingLeftRight);
-    margin-bottom: calc(var(--marginOne) * 0.063rem);
+    /*margin-top: calc(var(--marginOne) * 0.063rem);*/
+    /*margin-bottom: calc(var(--marginOne) * 0.063rem);*/
 }
 
 a {
