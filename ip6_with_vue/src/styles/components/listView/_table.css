@@ -23,6 +23,12 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     /*border:none;*/
 }
 
+
+.theme--light.v-label {
+    color: var(--notification-Blue);
+    opacity: 0.8;
+}
+
 .v-text-field > .v-input__control > .v-input__slot::before {
     border-color: var(--notification-Blue) !important;
 }
@@ -41,6 +47,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 .theme--light.v-data-table .v-data-table-header th.sortable:hover, .theme--light.v-data-table .v-data-table-header th.sortable.active{
     color: var(--button-Hover);
 }
+
 
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > .td_detailView{
     padding: 0;

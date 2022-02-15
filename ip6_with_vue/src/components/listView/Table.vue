@@ -4,7 +4,7 @@
       <v-text-field
           v-model="search"
           append-icon="search"
-          label="Suche"
+          label="Suchen"
           single-line
           hide-details
       ></v-text-field>
@@ -70,8 +70,6 @@
         <template v-slot:item.akzeptiert="{ item }">
           <!--          <v-tooltip>-->
 
-          <v-card-text>{{ item.akzeptiert }}
-
             <div v-if="item.name != 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'">
               <div class='data-tooltip'
                    data-tooltip="Akzeptiert-Status">
@@ -93,11 +91,6 @@
                 </div>
               </div>
             </div>
-
-          </v-card-text>
-
-          <!--            <span>Akzeptiert Status</span>-->
-          <!--          </v-tooltip>-->
         </template>
 
         <!--add color to risikoprioritätszahl--row-->
