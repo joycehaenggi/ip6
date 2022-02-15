@@ -9,12 +9,10 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
     min-height: 0;
 }
 
-/* Table Header */
-.theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr > th{
-    color: var(--notification-Blue);
-}
-.theme--light.v-data-table .v-data-table-header th.sortable:hover, .theme--light.v-data-table .v-data-table-header th.sortable.active{
-    color: var(--button-Hover);
+/* Search Field Space */
+.v-text-field {
+    padding-top: 0;
+    margin-top: 0;
 }
 
 /* Search Field Border Color */
@@ -36,6 +34,20 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
     content: "Keine übereinstimmenden Daten gefunden";
 }
 
+/* color "suchen" */
+.theme--light.v-label {
+    color: var(--notification-Blue);
+    opacity: 0.8;
+}
+
+/* Table Header */
+.theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr > th{
+    color: var(--notification-Blue);
+}
+.theme--light.v-data-table .v-data-table-header th.sortable:hover, .theme--light.v-data-table .v-data-table-header th.sortable.active{
+    color: var(--button-Hover);
+}
+
 /* Hovered-selected-row */
 tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__expanded__row {
     background: var(--frames-BlueGray) !important;
@@ -49,12 +61,6 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 /* Remove background of expand-icon */
 .v-icon.v-icon::after {
     background-color: transparent;
-}
-
-/* color "suchen" */
-.theme--light.v-label {
-    color: var(--notification-Blue);
-    opacity: 0.8;
 }
 
 /* Color Vuetify-Icons */
