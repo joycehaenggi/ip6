@@ -19,86 +19,51 @@
       >
         <!--Set checkbox for nicht-zutreffend-row-->
         <template #item.nicht-zutreffend="{item}">
-          <div>
-            <div>
               <input id="confirm" @click="numberOfCheckedCheckboxes"
                      v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
                      type="checkbox"/>
               <label class="checkbox" for="confirm"></label>
-            </div>
-            <div>
               <input id="confirm2" @click="numberOfCheckedCheckboxes"
                      v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
                      type="checkbox"/>
               <label class="checkbox" for="confirm2"></label>
-            </div>
-            <div>
               <input id="confirm3" @click="numberOfCheckedCheckboxes"
                      v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
                      type="checkbox"/>
               <label class="checkbox" for="confirm3"></label>
-            </div>
-            <div>
               <input id="confirm4" @click="numberOfCheckedCheckboxes"
                      v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
                      type="checkbox"/>
               <label class="checkbox" for="confirm4"></label>
-            </div>
-            <div>
               <input id="confirm5" @click="numberOfCheckedCheckboxes"
                      v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
                      type="checkbox"/>
               <label class="checkbox" for="confirm5"></label>
-            </div>
-            <div>
               <input id="confirm6" @click="numberOfCheckedCheckboxes"
                      v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'" type="checkbox"/>
               <label class="checkbox" for="confirm6"></label>
-            </div>
-            <div>
-            </div>
-          </div>
         </template>
 
         <!--Add different icon per row in icon-row-->
         <template #item.icon="{item}">
-          <div class="d-flex">
-            <div>
-              {{ item.icon }}
-            </div>
-            <div>
-              <img
-                  v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
+              <img class="icon_list" v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
                   src="../../assets/svg/toThin.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-            </div>
-            <div>
-              <img
-                  v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
+              <img class="icon_list" v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
                   src="../../assets/svg/dimensionally_unstable.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-            </div>
-            <div>
-              <img v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
+              <img class="icon_list" v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
                    src="../../assets/svg/nut.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-            </div>
-            <div>
-              <img v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
+              <img class="icon_list" v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
                    src="../../assets/svg/nut.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-            </div>
-            <div>
-              <img v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
+              <img class="icon_list" v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
                    src="../../assets/svg/screw.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-            </div>
-            <div>
-              <img v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'"
+              <img class="icon_list" v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'"
                    src="../../assets/svg/screw.svg" width="20" alt=""/>
               <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-            </div>
-          </div>
         </template>
 
         <!--add Checkmark and tooltip to akzeptiert-row-->
@@ -106,6 +71,16 @@
           <!--          <v-tooltip>-->
 
           <v-card-text>{{ item.akzeptiert }}
+
+            <div v-if="item.name != 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'">
+              <div class='data-tooltip'
+                   data-tooltip="Akzeptiert-Status">
+                <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
 
             <div v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'">
               <div class="svg_tooltip">
@@ -119,16 +94,6 @@
               </div>
             </div>
 
-            <div v-if="item.name != 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'">
-              <div class='data-tooltip'
-                   data-tooltip="Akzeptiert-Status">
-                <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
-                        stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </div>
-
           </v-card-text>
 
           <!--            <span>Akzeptiert Status</span>-->
@@ -137,43 +102,35 @@
 
         <!--add color to risikoprioritätszahl--row-->
         <template v-slot:item.risikoprioritätszahl="{ item }">
-          <td>{{ item.risikoprioritätszahl }}</td>
-          <div>
             <img
                 v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.'"
                 src="../../assets/svg/yellow-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-          </div>
-          <div>
+
             <img
                 v-if="item.name == 'Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.'"
                 src="../../assets/svg/green-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-          </div>
-          <div>
+
             <img
                 v-if="item.name == 'Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.'"
                 src="../../assets/svg/green-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-          </div>
-          <div>
+
             <img
                 v-if="item.name == 'Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.'"
                 src="../../assets/svg/red-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-          </div>
-          <div>
+
             <img
                 v-if="item.name == 'Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.'"
                 src="../../assets/svg/yellow-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-          </div>
-          <div>
+
             <img
                 v-if="item.name == 'Gefährdung zu Testzwecken - für mehr als 5 Einträge.'"
                 src="../../assets/svg/red-risikoprioritätszahl.svg" width="20" alt=""/>
             <i v-else :class="`fi fi-rr-${item.icon}`"></i>
-          </div>
         </template>
 
         <!--Expanded informations-->
