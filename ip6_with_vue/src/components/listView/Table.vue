@@ -257,6 +257,7 @@ export default {
           name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
           imageName: "toThin.svg",
           risikoprioritaetszahl: "yellowCustomized",
+          schaden: "Zweitoperation"
         },
         {
           id: 2,
