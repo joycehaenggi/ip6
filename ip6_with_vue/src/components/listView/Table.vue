@@ -293,14 +293,6 @@ export default {
     }
   },
   methods: {
-    getColor(risikoprioritätszahl) {
-      if (risikoprioritätszahl > 400) return 'red'
-      else if (risikoprioritätszahl > 200) return 'orange'
-      else return 'green'
-    },
-    test() {
-      document.getElementById('test').classList.add('hide');
-    },
     numberOfCheckedCheckboxes() {
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
       this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
