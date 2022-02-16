@@ -251,11 +251,14 @@ export default {
   props: ['actualTitleNameTable', 'nameCounterTable'],
   watch: {
     nameCounterTable: function () {
-      let oldCategoryId = 0
-      if(this.nameCounterTable === 0){
-        oldCategoryId = 2
-      } else if(this.nameCounterTable === 1) {
+      let oldCategoryId
+      //for case: nameCounterTable = 0, category = 1 before
+      if(this.nameCounterTable === 1) {
         oldCategoryId = 1
+      }
+      //for case: nameCounterTable = 1, category = 2 before
+      else if(this.nameCounterTable === 0){
+        oldCategoryId = 2
       }
       let idOfFirstElementActualCategory      = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
       let idOfLastElementActualCategory       = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
