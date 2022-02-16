@@ -15,9 +15,14 @@
           :sort-by.sync="sortBy"
           :sort-desc.sync="sortDesc"
           :expanded.sync="expanded"
+          :footer-props="{
+              showFirstLastPage: true,
+              'items-per-page-text':'Gefährdungen pro Seite',
+          }"
           item-key="name"
           show-expand
           class="elevation-1"
+
       >
 
         <!--add risikoprioritätszahl--row-->
@@ -60,13 +65,13 @@
 
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{ item }">
-            <div class='data-tooltip'
-                 data-tooltip="Akzeptiert-Status">
-              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
+          <div class='data-tooltip'
+               data-tooltip="Akzeptiert-Status">
+            <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
 
         </template>
 
@@ -240,15 +245,15 @@ export default {
     nameCounterTable: function () {
       let oldCategoryId
       //for case: nameCounterTable = 0, category = 1 before
-      if(this.nameCounterTable === 1) {
+      if (this.nameCounterTable === 1) {
         oldCategoryId = 1
       }
       //for case: nameCounterTable = 1, category = 2 before
-      else if(this.nameCounterTable === 0){
+      else if (this.nameCounterTable === 0) {
         oldCategoryId = 2
       }
-      let idOfFirstElementActualCategory      = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
-      let idOfLastElementActualCategory       = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
+      let idOfFirstElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
+      let idOfLastElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
 
       let i;
       for (i = idOfFirstElementActualCategory; i < idOfLastElementActualCategory; i++) {
@@ -258,7 +263,7 @@ export default {
       switch (this.nameCounterTable) {
         case 0:
           this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1);
-           break
+          break
         case 1:
           this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2);
           break
@@ -378,7 +383,7 @@ export default {
     }
   },
   created() {
-    if( this.nameCounterTable === 0){
+    if (this.nameCounterTable === 0) {
       this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1);
     }
   },
