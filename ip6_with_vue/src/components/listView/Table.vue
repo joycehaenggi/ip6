@@ -22,7 +22,9 @@
 
         <!--add risikoprioritätszahl--row-->
         <template v-slot:item.risikoprioritaet="{ item }">
-          <div :class="`dot ${item.risikoprioritaetClass}`"></div>
+          <div v-if="item.risikoprioritaet === 3" :class="`dot greenCustomized`"></div>
+          <div v-if="item.risikoprioritaet === 2" :class="`dot yellowCustomized`"></div>
+          <div v-if="item.risikoprioritaet === 1" :class="`dot redCustomized`"></div>
         </template>
 
         <!--Set checkbox for nicht-zutreffend-row-->
@@ -303,36 +305,31 @@ export default {
           name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
           imageName: "toThin.svg",
           risikoprioritaet: 2,
-          risikoprioritaetClass: "yellowCustomized",
           schaden: "Zweitoperation"
         },
         {
           id: 2,
           name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
           imageName: "dimensionally_unstable.svg",
-          risikoprioritaet: 3,
-          risikoprioritaetClass: "greenCustomized",
+          risikoprioritaet: 2,
         },
         {
           id: 3,
           name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
           imageName: "nut.svg",
-          risikoprioritaet: 3,
-          risikoprioritaetClass: "greenCustomized",
+          risikoprioritaet: 2,
         },
         {
           id: 4,
           name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
           imageName: "nut.svg",
-          risikoprioritaet: 1,
-          risikoprioritaetClass: "redCustomized",
+          risikoprioritaet: 2,
         },
         {
           id: 5,
           name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
           imageName: "screw.svg",
-          risikoprioritaet: 2,
-          risikoprioritaetClass: "yellowCustomized",
+          risikoprioritaet: 3,
         }
       ],
       hazardsSliced: null,
