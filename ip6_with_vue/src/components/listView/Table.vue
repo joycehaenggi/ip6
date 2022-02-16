@@ -60,7 +60,6 @@
 
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{ item }">
-          <div v-if="item.id !== 6">
             <div class='data-tooltip'
                  data-tooltip="Akzeptiert-Status">
               <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,19 +67,7 @@
                       stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-          </div>
 
-          <div v-if="item.id === 6">
-            <div class="svg_tooltip">
-              <div class='data-tooltip'
-                   data-tooltip="Akzeptiert-Status">
-                <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
-                        stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </div>
-          </div>
         </template>
 
         <!--Expanded informations-->
