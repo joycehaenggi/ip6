@@ -15,7 +15,9 @@
                        :titleNamesProcessOverview="titleNames"
                        :nameCounterProcessOverview="nameCounterListView"
       />
-      <ButtonContainerListView :titleNamesButtonList="titleNames" @readNameCounter="transferNameCounter"/>
+      <ButtonContainerListView :titleNamesButtonList="titleNames"
+                               :hazardsButtonContainer="hazards"
+                               @readNameCounter="transferNameCounter"/>
     </div>
   </div>
 </template>
@@ -40,6 +42,7 @@ export default {
   },
   data() {
     return {
+      hazards: null,
       nunmberOfAllCheckboxesValue: null,
       nunmberOfCheckedCheckboxesValue: null,
       percentageOfCheckedCheckboxes: null,
@@ -54,7 +57,10 @@ export default {
     numberOfAllCheckboxes() {
       this.nunmberOfAllCheckboxesValue = document.querySelectorAll('input[type="checkbox"]').length
     },
-    transferCheckboxNumbers(nunmberOfCheckedCheckboxes) {
+    transferCheckboxNumbers(nunmberOfCheckedCheckboxes, hazardArray) {
+      this.hazards = hazardArray
+      // console.log(this.hazards)
+
       this.numberOfAllCheckboxes()
       this.nunmberOfCheckedCheckboxesValue = nunmberOfCheckedCheckboxes
 

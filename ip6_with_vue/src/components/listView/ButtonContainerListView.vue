@@ -10,14 +10,19 @@
 
 <script>
 export default {
-  props: ['titleNamesButtonList'],
+  props: ['titleNamesButtonList', 'hazardsButtonContainer'],
   data() {
     return {
+      hazardsNew: null,
       nameCounter: 3,
     }
   },
   methods: {
     nextStepCounter() {
+      this.hazardsNew = this.hazardsButtonContainer
+      this.hazardsNew = []
+      // console.log(this.hazardsNew)
+
       if(this.nameCounter !== this.titleNamesButtonList.length-1){
         this.nameCounter++;
       } else {
@@ -29,4 +34,5 @@ export default {
     }
   }
 }
+
 </script>

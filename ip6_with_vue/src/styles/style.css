@@ -20,3 +20,6 @@
 @import "components/listView/_progress_overview.css";
 @import "components/listView/_table.css";
 @import "components/_responsiveAdjustment.css";
+
+@import "materialDesign/_materialDesignIcons.css";
+@import "materialDesign/_materialIcons.css";

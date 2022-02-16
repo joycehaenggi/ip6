@@ -247,7 +247,7 @@ export default {
         {text: 'Icon', value: 'icon', width: 80, sortable: false},
         {text: 'Risikoprioritätszahl', value: 'risikoprioritaet', width: 150},
         {text: 'Definition Gefährdung', align: 'start', value: 'name', width: 800, sortable: true},
-        {text: 'Nicht zutreffend', value: 'nicht-zutreffend',  width: 100, sortable: false},
+        {text: 'Nicht zutreffend', value: 'nicht-zutreffend', width: 100, sortable: false},
         {text: 'Akzeptiert', value: 'akzeptiert', width: 80, sortable: false},
         {text: 'Gefährdung verifizieren', value: 'data-table-expand', width: 80},
       ],
@@ -295,13 +295,24 @@ export default {
           risikoprioritaet: 1,
           risikoprioritaetClass: "greenCustomized",
         }
-      ]
+      ],
     }
   },
   methods: {
     numberOfCheckedCheckboxes() {
+/*      this.hazards = []
+      this.hazards = [
+        {
+          id: 1,
+          name: "eeeDesignvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
+          imageName: "toThin.svg",
+          risikoprioritaet: 2,
+          risikoprioritaetClass: "yellowCustomized",
+          schaden: "Zweitoperation"
+        }]*/
+      let hazardsArray = this.hazards
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
-      this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
+      this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes, hazardsArray)
     }
   }
 }
