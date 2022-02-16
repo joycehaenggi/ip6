@@ -24,10 +24,6 @@
     z-index:20000;
 }
 
-.svg_tooltip [data-tooltip]::after{
-    top: -140%;
-}
-
 [data-tooltip]:hover::after, [data-tooltip]:hover::before, [data-tooltip2]:hover::after, [data-tooltip2]:hover::before {
     position: absolute;
     opacity: 1;
