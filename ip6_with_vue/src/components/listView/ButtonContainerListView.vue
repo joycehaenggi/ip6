@@ -29,6 +29,7 @@ export default {
         this.nameCounter = 0;
       }
 
+      // let hazardsNew = this.hazardsNew
       let nameCounter = this.nameCounter
       this.$emit('readNameCounter',nameCounter)
     }

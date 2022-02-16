@@ -9,6 +9,7 @@
       <NotificationBar/>
       <Table @ReadCheckboxNumber="transferCheckboxNumbers"
              :actualTitleNameTable="titleNames[nameCounterListView]"
+             :nameCounterTable="nameCounterListView"
       />
       <ProgressOverview :noCheckboxCheckedProcess="noCheckboxChecked"
                        :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"

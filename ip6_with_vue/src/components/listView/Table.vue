@@ -10,8 +10,10 @@
       ></v-text-field>
       <v-data-table
           :headers="hazardsHeader"
-          :items="hazards"
+          :items="hazardsSliced"
           :search="search"
+          :sort-by.sync="sortBy"
+          :sort-desc.sync="sortDesc"
           :expanded.sync="expanded"
           item-key="name"
           show-expand
@@ -232,10 +234,54 @@
 
 <script>
 export default {
-  props: ['actualTitleNameTable'],
+  props: ['actualTitleNameTable', 'nameCounterTable'],
+  watch: {
+    nameCounterTable: function () {
+
+
+      switch (this.nameCounterTable) {
+        case 0:
+
+           break
+        case 1:
+
+          break
+        case 2:
+
+          break
+        case 3:
+
+          break
+        case 4:
+          this.hazardsSliced = this.hazards.slice(0, 1);
+          break
+        case 5:
+          this.hazardsSliced = this.hazards.slice(0, 1);
+          break
+        case 6:
+          this.hazardsSliced = this.hazards.slice(0, 1);
+          break
+        case 7:
+          this.hazardsSliced = this.hazards.slice(0, 1);
+          break
+        case 8:
+          this.hazardsSliced = this.hazards.slice(0, 1);
+          break
+        case 9:
+          this.hazardsSliced = this.hazards.slice(0, 1);
+          break
+        default:
+          this.hazardsSliced = this.hazards.slice(0, 2);
+          break
+      }
+
+    }
+  },
   data() {
     return {
       imagePath: "/../../assets/svg/",
+      sortBy: 'risikoprioritaet',
+      sortDesc: false,
       reviews: 413,
       value: 4.5,
       specification_customMadeDevice: null,
@@ -264,21 +310,21 @@ export default {
           id: 2,
           name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
           imageName: "dimensionally_unstable.svg",
-          risikoprioritaet: 1,
+          risikoprioritaet: 3,
           risikoprioritaetClass: "greenCustomized",
         },
         {
           id: 3,
           name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
           imageName: "nut.svg",
-          risikoprioritaet: 1,
+          risikoprioritaet: 3,
           risikoprioritaetClass: "greenCustomized",
         },
         {
           id: 4,
           name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
           imageName: "nut.svg",
-          risikoprioritaet: 3,
+          risikoprioritaet: 1,
           risikoprioritaetClass: "redCustomized",
         },
         {
@@ -287,32 +333,31 @@ export default {
           imageName: "screw.svg",
           risikoprioritaet: 2,
           risikoprioritaetClass: "yellowCustomized",
-        },
-        {
-          id: 6,
-          name: "Gefährdung zu Testzwecken - für mehr als 5 Einträge.",
-          imageName: "screw.svg",
-          risikoprioritaet: 1,
-          risikoprioritaetClass: "greenCustomized",
         }
       ],
+      hazardsSliced: null,
+    }
+  },
+  created() {
+    if( this.nameCounterTable === 3){
+      this.hazardsSliced = this.hazards.slice(0, 5);
     }
   },
   methods: {
     numberOfCheckedCheckboxes() {
-/*      this.hazards = []
-      this.hazards = [
-        {
-          id: 1,
-          name: "eeeDesignvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
-          imageName: "toThin.svg",
-          risikoprioritaet: 2,
-          risikoprioritaetClass: "yellowCustomized",
-          schaden: "Zweitoperation"
-        }]*/
-      let hazardsArray = this.hazards
+      /*      this.hazards = []
+            this.hazards = [
+              {
+                id: 1,
+                name: "eeeDesignvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
+                imageName: "toThin.svg",
+                risikoprioritaet: 2,
+                risikoprioritaetClass: "yellowCustomized",
+                schaden: "Zweitoperation"
+              }]*/
+      // console.log(this.nameCounterTable)
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
-      this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes, hazardsArray)
+      this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
     }
   }
 }
