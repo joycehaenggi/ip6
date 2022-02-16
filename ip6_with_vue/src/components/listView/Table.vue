@@ -257,7 +257,6 @@ export default {
       } else if(this.nameCounterTable === 1) {
         oldCategoryId = 1
       }
-      // console.log(this.hazards.filter(priority => priority.categoryId === oldCategoryId).length)
       let idOfFirstElementActualCategory      = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
       let idOfLastElementActualCategory       = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
 
@@ -280,7 +279,6 @@ export default {
       }
 
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
-      // console.log(nunmberOfCheckedCheckboxes)
       this.numberOfCheckedCheckboxes()
     }
   },
@@ -397,7 +395,6 @@ export default {
   methods: {
     numberOfCheckedCheckboxes() {
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
-      // console.log(nunmberOfCheckedCheckboxes)
       this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
     }
   }

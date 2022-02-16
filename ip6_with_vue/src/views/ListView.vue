@@ -60,7 +60,6 @@ export default {
       this.nunmberOfAllCheckboxesValue = document.querySelectorAll('input[type="checkbox"]').length
     },
     transferCheckboxNumbers(nunmberOfCheckedCheckboxes) {
-      // console.log("test")
       this.numberOfAllCheckboxes()
       this.nunmberOfCheckedCheckboxesValue = nunmberOfCheckedCheckboxes
 
@@ -91,7 +90,6 @@ export default {
       }
     },
     transferNameCounter(nameCounter) {
-      // this.transferCheckboxNumbers(0)
       this.nameCounterListView = nameCounter
     }
 
