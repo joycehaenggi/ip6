@@ -22,7 +22,6 @@
           item-key="name"
           show-expand
           class="elevation-1"
-
       >
 
         <!--add risikoprioritätszahl--row-->
@@ -64,11 +63,11 @@
         </template>
 
         <!--add Checkmark and tooltip to akzeptiert-row-->
-        <template v-slot:item.akzeptiert="{ item }">
+        <template v-slot:item.akzeptiert="{item}">
           <div class='data-tooltip'
                data-tooltip="Akzeptiert-Status">
-            <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-opacity="0.2" stroke-width="1.5"
+            <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-width="1.5"
                     stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
@@ -76,12 +75,12 @@
         </template>
 
         <!--Expanded informations-->
-        <template v-slot:expanded-item="{ headers }">
+        <template v-slot:expanded-item="{ headers, item }">
           <td class="td_detailView" :colspan="headers.length ">
 
             <div class='title_with_image_container'>
               <div class='title_with_image_square'>
-                <div class='title_detail_view'> Dicke des Implantats zu dünn.
+                <div class='title_detail_view'> Dicke des Implantats zu dünn. {{ item.id }}
                 </div>
                 <div class='image_detail_view'><img src='../../assets/svg/toThin.svg' width='89' height='65'>
                 </div>
@@ -186,7 +185,7 @@
                           Gefährdung erstellen
                         </button>
                       </router-link>
-                      <button class="button button-submit button-finishHazard">Gefährdung abschliessen</button>
+                      <button @click="accept" class="button button-submit button-finishHazard">Gefährdung abschliessen</button>
                     </div>
                   </div>
 
@@ -273,7 +272,6 @@ export default {
           break
       }
 
-      let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
       this.numberOfCheckedCheckboxes()
     }
   },
@@ -391,6 +389,12 @@ export default {
     numberOfCheckedCheckboxes() {
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
       this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
+    },
+    accept(){
+      console.log("accept")
+      this.expanded = []
+      let element = document.getElementById("accepted1");
+      element.style.opacity = 1.0
     }
   }
 }

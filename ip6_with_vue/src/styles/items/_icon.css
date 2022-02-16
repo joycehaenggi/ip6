@@ -14,3 +14,7 @@
 .svg_add {
     cursor: pointer;
 }
+
+.accepted_status {
+    opacity: 0.2;
+}
