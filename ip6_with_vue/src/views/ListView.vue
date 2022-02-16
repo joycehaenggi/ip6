@@ -48,9 +48,10 @@ export default {
       nunmberOfCheckedCheckboxesValue: null,
       percentageOfCheckedCheckboxes: null,
       noCheckboxChecked: true,
-      titleNames: ['CT-Scan Orbita Rekon', 'CT-Daten Segmentierung Orbita', '3D Patientenanatomie', 'Implantatdesign Matching', 'Pre-Processing for SLM Titan Orbita',
-        'SLM Titan', 'Wärmebehandlung SLM Titan', 'Deburring SLM Titan', 'Sand-Blasting SLM Titan', 'Machining SLM Titan Structures'],
-      nameCounterListView: 3,
+      titleNames: ['Implantatdesign Matching', 'SLM Titan'],
+/*      titleNames: ['CT-Scan Orbita Rekon', 'CT-Daten Segmentierung Orbita', '3D Patientenanatomie', 'Implantatdesign Matching', 'Pre-Processing for SLM Titan Orbita',
+        'SLM Titan', 'Wärmebehandlung SLM Titan', 'Deburring SLM Titan', 'Sand-Blasting SLM Titan', 'Machining SLM Titan Structures'],*/
+      nameCounterListView: 0,
       listViewStatus: true,
     }
   },
@@ -58,10 +59,8 @@ export default {
     numberOfAllCheckboxes() {
       this.nunmberOfAllCheckboxesValue = document.querySelectorAll('input[type="checkbox"]').length
     },
-    transferCheckboxNumbers(nunmberOfCheckedCheckboxes, hazardArray) {
-      this.hazards = hazardArray
-      // console.log(this.hazards)
-
+    transferCheckboxNumbers(nunmberOfCheckedCheckboxes) {
+      // console.log("test")
       this.numberOfAllCheckboxes()
       this.nunmberOfCheckedCheckboxesValue = nunmberOfCheckedCheckboxes
 
@@ -92,6 +91,7 @@ export default {
       }
     },
     transferNameCounter(nameCounter) {
+      // this.transferCheckboxNumbers(0)
       this.nameCounterListView = nameCounter
     }
 

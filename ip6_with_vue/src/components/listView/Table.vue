@@ -42,8 +42,20 @@
                src="../../assets/svg/dimensionally_unstable.svg" alt="icon"/>
           <img class="icon_list" v-if="item.id === 3 || item.id === 4"
                src="../../assets/svg/nut.svg" alt="icon"/>
-          <img class="icon_list" v-if="item.id === 5 || item.id === 6"
+          <img class="icon_list" v-if="item.id === 5"
                src="../../assets/svg/screw.svg" alt="icon"/>
+          <img class="icon_list" v-if="item.id === 6"
+               src="../../assets/svg/table_icons/not_diagonal_placable.svg" alt="icon"/>
+          <img class="icon_list" v-if="item.id === 7"
+               src="../../assets/svg/table_icons/contaminated_building_platform.svg" alt="icon"/>
+          <img class="icon_list" v-if="item.id === 8"
+               src="../../assets/svg/table_icons/not_same_material.svg" alt="icon"/>
+          <img class="icon_list" v-if="item.id === 9"
+               src="../../assets/svg/table_icons/coater_flap_worn.svg" alt="icon"/>
+          <img class="icon_list" v-if="item.id === 10"
+               src="../../assets/svg/table_icons/coater_collides.svg" alt="icon"/>
+          <img class="icon_list" v-if="item.id === 11"
+               src="../../assets/svg/table_icons/faulty_layer_structure.svg" alt="icon"/>
         </template>
 
         <!--add Checkmark and tooltip to akzeptiert-row-->
@@ -239,44 +251,37 @@ export default {
   props: ['actualTitleNameTable', 'nameCounterTable'],
   watch: {
     nameCounterTable: function () {
+      let oldCategoryId = 0
+      if(this.nameCounterTable === 0){
+        oldCategoryId = 2
+      } else if(this.nameCounterTable === 1) {
+        oldCategoryId = 1
+      }
+      // console.log(this.hazards.filter(priority => priority.categoryId === oldCategoryId).length)
+      let idOfFirstElementActualCategory      = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
+      let idOfLastElementActualCategory       = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
 
+      let i;
+      for (i = idOfFirstElementActualCategory; i < idOfLastElementActualCategory; i++) {
+        document.getElementById("confirm" + i).checked = false;
+      }
 
       switch (this.nameCounterTable) {
         case 0:
-
+          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1);
            break
         case 1:
+          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2);
+          break
 
-          break
-        case 2:
-
-          break
-        case 3:
-
-          break
-        case 4:
-          this.hazardsSliced = this.hazards.slice(0, 1);
-          break
-        case 5:
-          this.hazardsSliced = this.hazards.slice(0, 1);
-          break
-        case 6:
-          this.hazardsSliced = this.hazards.slice(0, 1);
-          break
-        case 7:
-          this.hazardsSliced = this.hazards.slice(0, 1);
-          break
-        case 8:
-          this.hazardsSliced = this.hazards.slice(0, 1);
-          break
-        case 9:
-          this.hazardsSliced = this.hazards.slice(0, 1);
-          break
         default:
-          this.hazardsSliced = this.hazards.slice(0, 2);
+          this.hazardsSliced = this.hazards.filter(this.hazards.risikoprioritaet === 1);
           break
       }
 
+      let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
+      // console.log(nunmberOfCheckedCheckboxes)
+      this.numberOfCheckedCheckboxes()
     }
   },
   data() {
@@ -302,58 +307,97 @@ export default {
       hazards: [
         {
           id: 1,
-          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
+          categoryId: 1,
+          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden. - Dicke des Implantsts zu dünn.",
           imageName: "toThin.svg",
           risikoprioritaet: 2,
           schaden: "Zweitoperation"
         },
         {
           id: 2,
-          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden Implantat nicht formstabil.",
+          categoryId: 1,
+          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden. - Implantat nicht formstabil.",
           imageName: "dimensionally_unstable.svg",
           risikoprioritaet: 2,
         },
         {
           id: 3,
+          categoryId: 1,
           name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
           imageName: "nut.svg",
           risikoprioritaet: 2,
         },
         {
           id: 4,
+          categoryId: 1,
           name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
           imageName: "nut.svg",
           risikoprioritaet: 2,
         },
         {
           id: 5,
+          categoryId: 1,
           name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
           imageName: "screw.svg",
           risikoprioritaet: 3,
+        },
+
+        {
+          id: 6,
+          categoryId: 2,
+          name: "Bauteile können nicht diagonal zum Gasstrom auf der Bauplattform platziert werden.",
+          imageName: "toThin.svg",
+          risikoprioritaet: 2,
+          schaden: "Zweitoperation"
+        },
+        {
+          id: 7,
+          categoryId: 2,
+          name: "Verunreinigte Bauplattform.",
+          imageName: "dimensionally_unstable.svg",
+          risikoprioritaet: 2,
+        },
+        {
+          id: 8,
+          categoryId: 2,
+          name: "Bauplattform ist nicht aus demselben Material wie das Baumaterial.",
+          imageName: "nut.svg",
+          risikoprioritaet: 2,
+        },
+        {
+          id: 9,
+          categoryId: 2,
+          name: "Die Beschichterlippe ist abgenutzt.",
+          imageName: "nut.svg",
+          risikoprioritaet: 2,
+        },
+        {
+          id: 10,
+          categoryId: 2,
+          name: "Der Beschichter kollidiert mit aus dem Pulverbett ragenden Bauteilstrukturen.",
+          imageName: "screw.svg",
+          risikoprioritaet: 2,
+        },
+        {
+          id: 11,
+          categoryId: 2,
+          name: "Fehlerhafter Schichtaufbau.",
+          imageName: "screw.svg",
+          risikoprioritaet: 2,
         }
       ],
       hazardsSliced: null,
     }
   },
   created() {
-    if( this.nameCounterTable === 3){
-      this.hazardsSliced = this.hazards.slice(0, 5);
+    if( this.nameCounterTable === 0){
+      this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1);
     }
   },
   methods: {
     numberOfCheckedCheckboxes() {
-      /*      this.hazards = []
-            this.hazards = [
-              {
-                id: 1,
-                name: "eeeDesignvorgabe Mindestdicke kann nicht eingehalten werden - Dicke des Implantsts zu dünn.",
-                imageName: "toThin.svg",
-                risikoprioritaet: 2,
-                risikoprioritaetClass: "yellowCustomized",
-                schaden: "Zweitoperation"
-              }]*/
-      // console.log(this.nameCounterTable)
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
+      // console.log(nunmberOfCheckedCheckboxes)
       this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
     }
   }
