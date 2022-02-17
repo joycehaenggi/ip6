@@ -41,24 +41,6 @@
         <!--Add different icon per row in icon-row-->
         <template v-slot:item.icon="{item}">
           <img class="icon_list" :src="`${item.imageName}`" alt="icon"/>
-<!--          <img class="icon_list" v-if="item.id === 2"
-               src="src/assets/svg/table_icons/dimensionally_unstable.svg" alt="icon"/>
-          <img class="icon_list" v-if="item.id === 3 || item.id === 4"
-               src="src/assets/svg/table_icons/nut.svg" alt="icon"/>
-          <img class="icon_list" v-if="item.id === 5"
-               src="src/assets/svg/table_icons/screw.svg" alt="icon"/>
-          <img class="icon_list" v-if="item.id === 6"
-               src="../../assets/svg/table_icons/not_diagonal_placable.svg" alt="icon"/>
-          <img class="icon_list" v-if="item.id === 7"
-               src="../../assets/svg/table_icons/contaminated_building_platform.svg" alt="icon"/>
-          <img class="icon_list" v-if="item.id === 8"
-               src="../../assets/svg/table_icons/not_same_material.svg" alt="icon"/>
-          <img class="icon_list" v-if="item.id === 9"
-               src="../../assets/svg/table_icons/coater_flap_worn.svg" alt="icon"/>
-          <img class="icon_list" v-if="item.id === 10"
-               src="../../assets/svg/table_icons/coater_collides.svg" alt="icon"/>
-          <img class="icon_list" v-if="item.id === 11"
-               src="../../assets/svg/table_icons/faulty_layer_structure.svg" alt="icon"/>-->
         </template>
 
         <!--add Checkmark and tooltip to akzeptiert-row-->
