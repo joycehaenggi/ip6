@@ -40,14 +40,13 @@
 
         <!--Add different icon per row in icon-row-->
         <template v-slot:item.icon="{item}">
-          <img class="icon_list" v-if="item.id === 1"
-               src="../../assets/svg/toThin.svg" alt="icon"/>
-          <img class="icon_list" v-if="item.id === 2"
-               src="../../assets/svg/dimensionally_unstable.svg" alt="icon"/>
+          <img class="icon_list" :src="`${item.imageName}`" alt="icon"/>
+<!--          <img class="icon_list" v-if="item.id === 2"
+               src="src/assets/svg/table_icons/dimensionally_unstable.svg" alt="icon"/>
           <img class="icon_list" v-if="item.id === 3 || item.id === 4"
-               src="../../assets/svg/nut.svg" alt="icon"/>
+               src="src/assets/svg/table_icons/nut.svg" alt="icon"/>
           <img class="icon_list" v-if="item.id === 5"
-               src="../../assets/svg/screw.svg" alt="icon"/>
+               src="src/assets/svg/table_icons/screw.svg" alt="icon"/>
           <img class="icon_list" v-if="item.id === 6"
                src="../../assets/svg/table_icons/not_diagonal_placable.svg" alt="icon"/>
           <img class="icon_list" v-if="item.id === 7"
@@ -59,7 +58,7 @@
           <img class="icon_list" v-if="item.id === 10"
                src="../../assets/svg/table_icons/coater_collides.svg" alt="icon"/>
           <img class="icon_list" v-if="item.id === 11"
-               src="../../assets/svg/table_icons/faulty_layer_structure.svg" alt="icon"/>
+               src="../../assets/svg/table_icons/faulty_layer_structure.svg" alt="icon"/>-->
         </template>
 
         <!--add Checkmark and tooltip to akzeptiert-row-->
@@ -82,7 +81,7 @@
               <div class='title_with_image_square'>
                 <div class='title_detail_view'> Dicke des Implantats zu dünn. {{ item.id }}
                 </div>
-                <div class='image_detail_view'><img src='../../assets/svg/toThin.svg' width='89' height='65'>
+                <div class='image_detail_view'><img :src="`${item.imageName}`" width='89' height='65'>
                 </div>
               </div>
             </div>
@@ -240,6 +239,112 @@
 <script>
 export default {
   props: ['actualTitleNameTable', 'nameCounterTable'],
+  data() {
+    return {
+      imagePath: require('../../assets/svg/table_icons/toThin.svg'),
+
+      sortBy: 'risikoprioritaet',
+      sortDesc: false,
+      reviews: 413,
+      value: 4.5,
+      specification_customMadeDevice: null,
+      postProcessingPossibility: null,
+      search: '',
+      expanded: [],
+      singleExpand: false,
+      hazardsHeader: [
+        {text: 'Icon', value: 'icon', width: 80, sortable: false},
+        {text: 'Risikoprioritätszahl', value: 'risikoprioritaet', width: 150},
+        {text: 'Definition Gefährdung', align: 'start', value: 'name', width: 800, sortable: true},
+        {text: 'Nicht zutreffend', value: 'nicht-zutreffend', width: 100, sortable: false},
+        {text: 'Akzeptiert', value: 'akzeptiert', width: 80, sortable: false},
+        {text: 'Gefährdung verifizieren', value: 'data-table-expand', width: 80},
+      ],
+      hazards: [
+        {
+          id: 1,
+          categoryId: 1,
+          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden. - Dicke des Implantsts zu dünn.",
+          imageName: require('../../assets/svg/table_icons/toThin.svg'),
+          risikoprioritaet: 2,
+          schaden: "Zweitoperation"
+        },
+        {
+          id: 2,
+          categoryId: 1,
+          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden. - Implantat nicht formstabil.",
+          imageName: require('../../assets/svg/table_icons/dimensionally_unstable.svg'),
+          risikoprioritaet: 2,
+        },
+        {
+          id: 3,
+          categoryId: 1,
+          name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
+          imageName: require('../../assets/svg/table_icons/nut.svg'),
+          risikoprioritaet: 2,
+        },
+        {
+          id: 4,
+          categoryId: 1,
+          name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
+          imageName: require('../../assets/svg/table_icons/nut.svg'),
+          risikoprioritaet: 2,
+        },
+        {
+          id: 5,
+          categoryId: 1,
+          name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
+          imageName: require('../../assets/svg/table_icons/screw.svg'),
+          risikoprioritaet: 3,
+        },
+
+        {
+          id: 6,
+          categoryId: 2,
+          name: "Bauteile können nicht diagonal zum Gasstrom auf der Bauplattform platziert werden.",
+          imageName: require('../../assets/svg/table_icons/not_diagonal_placable.svg'),
+          risikoprioritaet: 2,
+          schaden: "Zweitoperation"
+        },
+        {
+          id: 7,
+          categoryId: 2,
+          name: "Verunreinigte Bauplattform.",
+          imageName: require('../../assets/svg/table_icons/contaminated_building_platform.svg'),
+          risikoprioritaet: 2,
+        },
+        {
+          id: 8,
+          categoryId: 2,
+          name: "Bauplattform ist nicht aus demselben Material wie das Baumaterial.",
+          imageName: require('../../assets/svg/table_icons/not_same_material.svg'),
+          risikoprioritaet: 2,
+        },
+        {
+          id: 9,
+          categoryId: 2,
+          name: "Die Beschichterlippe ist abgenutzt.",
+          imageName: require('../../assets/svg/table_icons/coater_flap_worn.svg'),
+          risikoprioritaet: 2,
+        },
+        {
+          id: 10,
+          categoryId: 2,
+          name: "Der Beschichter kollidiert mit aus dem Pulverbett ragenden Bauteilstrukturen.",
+          imageName: require('../../assets/svg/table_icons/coater_collides.svg'),
+          risikoprioritaet: 2,
+        },
+        {
+          id: 11,
+          categoryId: 2,
+          name: "Fehlerhafter Schichtaufbau.",
+          imageName: require('../../assets/svg/table_icons/faulty_layer_structure.svg'),
+          risikoprioritaet: 2,
+        }
+      ],
+      hazardsSliced: null,
+    }
+  },
   watch: {
     nameCounterTable: function () {
       let oldCategoryId
@@ -273,111 +378,6 @@ export default {
       }
 
       this.numberOfCheckedCheckboxes()
-    }
-  },
-  data() {
-    return {
-      imagePath: "/../../assets/svg/",
-      sortBy: 'risikoprioritaet',
-      sortDesc: false,
-      reviews: 413,
-      value: 4.5,
-      specification_customMadeDevice: null,
-      postProcessingPossibility: null,
-      search: '',
-      expanded: [],
-      singleExpand: false,
-      hazardsHeader: [
-        {text: 'Icon', value: 'icon', width: 80, sortable: false},
-        {text: 'Risikoprioritätszahl', value: 'risikoprioritaet', width: 150},
-        {text: 'Definition Gefährdung', align: 'start', value: 'name', width: 800, sortable: true},
-        {text: 'Nicht zutreffend', value: 'nicht-zutreffend', width: 100, sortable: false},
-        {text: 'Akzeptiert', value: 'akzeptiert', width: 80, sortable: false},
-        {text: 'Gefährdung verifizieren', value: 'data-table-expand', width: 80},
-      ],
-      hazards: [
-        {
-          id: 1,
-          categoryId: 1,
-          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden. - Dicke des Implantsts zu dünn.",
-          imageName: "toThin.svg",
-          risikoprioritaet: 2,
-          schaden: "Zweitoperation"
-        },
-        {
-          id: 2,
-          categoryId: 1,
-          name: "Designvorgabe Mindestdicke kann nicht eingehalten werden. - Implantat nicht formstabil.",
-          imageName: "dimensionally_unstable.svg",
-          risikoprioritaet: 2,
-        },
-        {
-          id: 3,
-          categoryId: 1,
-          name: "Designvorgabe Anzahl Schraubenlöcher kann nicht eingehalten werden.",
-          imageName: "nut.svg",
-          risikoprioritaet: 2,
-        },
-        {
-          id: 4,
-          categoryId: 1,
-          name: "Designvorgabe Platzierung der Schraubenlöcher kann nicht eingehalten werden.",
-          imageName: "nut.svg",
-          risikoprioritaet: 2,
-        },
-        {
-          id: 5,
-          categoryId: 1,
-          name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
-          imageName: "screw.svg",
-          risikoprioritaet: 3,
-        },
-
-        {
-          id: 6,
-          categoryId: 2,
-          name: "Bauteile können nicht diagonal zum Gasstrom auf der Bauplattform platziert werden.",
-          imageName: "toThin.svg",
-          risikoprioritaet: 2,
-          schaden: "Zweitoperation"
-        },
-        {
-          id: 7,
-          categoryId: 2,
-          name: "Verunreinigte Bauplattform.",
-          imageName: "dimensionally_unstable.svg",
-          risikoprioritaet: 2,
-        },
-        {
-          id: 8,
-          categoryId: 2,
-          name: "Bauplattform ist nicht aus demselben Material wie das Baumaterial.",
-          imageName: "nut.svg",
-          risikoprioritaet: 2,
-        },
-        {
-          id: 9,
-          categoryId: 2,
-          name: "Die Beschichterlippe ist abgenutzt.",
-          imageName: "nut.svg",
-          risikoprioritaet: 2,
-        },
-        {
-          id: 10,
-          categoryId: 2,
-          name: "Der Beschichter kollidiert mit aus dem Pulverbett ragenden Bauteilstrukturen.",
-          imageName: "screw.svg",
-          risikoprioritaet: 2,
-        },
-        {
-          id: 11,
-          categoryId: 2,
-          name: "Fehlerhafter Schichtaufbau.",
-          imageName: "screw.svg",
-          risikoprioritaet: 2,
-        }
-      ],
-      hazardsSliced: null,
     }
   },
   created() {
