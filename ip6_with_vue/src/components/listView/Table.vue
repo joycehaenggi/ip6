@@ -33,7 +33,7 @@
 
         <!--Set checkbox for nicht-zutreffend-row-->
         <template v-slot:item.nicht-zutreffend="{item}">
-          <input :id="`confirm${item.id}`" @click="numberOfCheckedCheckboxes"
+          <input :id="`confirm${item.id}`" @click="numberOfCheckedCheckboxes(item.id, false)"
                  type="checkbox"/>
           <label class="checkbox" :for="`confirm${item.id}`"></label>
         </template>
@@ -171,7 +171,7 @@
                           Gefährdung erstellen
                         </button>
                       </router-link>
-                      <button @click="accept" class="button button-submit button-finishHazard">Gefährdung abschliessen
+                      <button @click="accept(item.id)" class="button button-submit button-finishHazard">Gefährdung abschliessen
                       </button>
                     </div>
                   </div>
@@ -230,7 +230,7 @@ export default {
   data() {
     return {
       imagePath: require('../../assets/svg/table_icons/toThin.svg'),
-
+      accceptCounter: null,
       sortBy: 'riskPriority',
       sortDesc: false,
       reviews: 413,
@@ -452,15 +452,36 @@ export default {
     }
   },
   methods: {
-    numberOfCheckedCheckboxes() {
+    numberOfCheckedCheckboxes(itemId, acceptStatus) {
+      // console.log(itemId)
+      let element = document.getElementById("accepted" + itemId)
+      console.log(element.style.opacity)
+
+      if(element.style.opacity.match("1") && acceptStatus === false){
+        element.style.opacity = 0.2
+        this.accceptCounter--
+      }
+
+      // let elementParce = parseInt(element, 10);
+      // console.log(elementParce)
+      // if(elementParce.style.opacity === 1.0) {
+      //   element.style.opacity = 0.2
+      //   this.accceptCounter--
+      // }
+
+
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
-      this.$emit('ReadCheckboxNumber', nunmberOfCheckedCheckboxes)
+      let nunmberFinished = nunmberOfCheckedCheckboxes + this.accceptCounter
+      this.$emit('ReadCheckboxNumber', nunmberFinished)
     },
-    accept() {
-      console.log("accept")
+    accept(itemId) {
       this.expanded = []
-      let element = document.getElementById("accepted1");
+      let element = document.getElementById("accepted" + itemId)
       element.style.opacity = 1.0
+      document.getElementById("confirm" + itemId).checked = false;
+
+      this.accceptCounter++
+      this.numberOfCheckedCheckboxes(itemId, true)
     }
   }
 }
