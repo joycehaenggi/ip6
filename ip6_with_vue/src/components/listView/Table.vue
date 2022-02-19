@@ -209,7 +209,7 @@
                     </div>
                   </div>
                   <div class="buttonContainer buttonContainer-detailView">
-                    <button class="button button-submit">Gefährdung abschliessen</button>
+                    <button @click="accept(item.id)"  class="button button-submit">Gefährdung abschliessen</button>
                   </div>
                 </div>
               </template>
@@ -443,7 +443,7 @@ export default {
           break
       }
 
-      this.numberOfCheckedCheckboxes()
+      this.numberOfCheckedCheckboxes(1, false)
     }
   },
   created() {
@@ -453,22 +453,12 @@ export default {
   },
   methods: {
     numberOfCheckedCheckboxes(itemId, acceptStatus) {
-      // console.log(itemId)
       let element = document.getElementById("accepted" + itemId)
-      console.log(element.style.opacity)
 
       if(element.style.opacity.match("1") && acceptStatus === false){
         element.style.opacity = 0.2
         this.accceptCounter--
       }
-
-      // let elementParce = parseInt(element, 10);
-      // console.log(elementParce)
-      // if(elementParce.style.opacity === 1.0) {
-      //   element.style.opacity = 0.2
-      //   this.accceptCounter--
-      // }
-
 
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
       let nunmberFinished = nunmberOfCheckedCheckboxes + this.accceptCounter
