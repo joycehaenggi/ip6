@@ -59,6 +59,7 @@
         <!--Expanded informations-->
         <template v-slot:expanded-item="{ headers, item }">
           <td class="td_detailView" :colspan="headers.length ">
+            <form>
 
 <!--            <div class="hazard-situation">
               <div class="hazard-situation-text">
@@ -171,8 +172,8 @@
                           Gefährdung erstellen
                         </button>
                       </router-link>
-                      <button @click="accept(item.id)" class="button button-submit button-finishHazard">Gefährdung abschliessen
-                      </button>
+<!--                      <button @click="accept(item.id)" class="button button-submit button-finishHazard">Gefährdung abschliessen</button>-->
+                      <input @click="accept(item.id)" class="button button-submit button-finishHazard" type="submit" value="Gefährdung abschliessen">
                     </div>
                   </div>
 
@@ -184,7 +185,7 @@
                       </div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
-                      <button class="button button-submit">Herstellung abbrechen</button>
+                      <button @click="cancel" class="button button-submit">Herstellung abbrechen</button>
                     </div>
                   </div>
                 </div>
@@ -199,6 +200,7 @@
                       placeholder="Geben Sie eine Erläuterung ein."
                       class="textarea-declaration"
                       rows="2"
+                      aria-required="true"
                   />
                   <div class='block block-verify'>
                     <div class='block-title'>
@@ -209,13 +211,15 @@
                     </div>
                   </div>
                   <div class="buttonContainer buttonContainer-detailView">
-                    <button @click="accept(item.id)"  class="button button-submit">Gefährdung abschliessen</button>
+<!--                    <button @click="accept(item.id)"  class="button button-submit">Gefährdung abschliessen</button>-->
+                    <input @click="accept(item.id)" class="button button-submit" type="submit" value="Gefährdung abschliessen">
                   </div>
                 </div>
               </template>
 
             </div>
 
+            </form>
           </td>
         </template>
 
@@ -472,6 +476,9 @@ export default {
 
       this.accceptCounter++
       this.numberOfCheckedCheckboxes(itemId, true)
+    },
+    cancel(){
+      this.expanded = []
     }
   }
 }
