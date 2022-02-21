@@ -33,6 +33,9 @@ export default {
       a: null,
     }
   },
+  // computed: {
+  //   console.log("computed")
+  // },
   mounted() {
     this.checkedCheckboxesArrayNewHazardTransfered = this.$route.params.checkedCheckboxesArrayNewHazard
 
@@ -42,14 +45,24 @@ export default {
       this.checkedCheckboxesArrayNewHazardTransfered = convertStringPart1.split(',').map(function(item) {
         return parseInt(item, 10);
       })
-    } else {
+    }
+
+    if(!this.$route.params.checkedCheckboxesArrayNewHazard !== undefined) {
       localStorage.a = this.$route.params.checkedCheckboxesArrayNewHazard
     }
+    // localStorage.a = this.$route.params.checkedCheckboxesArrayNewHazard
     console.log(localStorage.a)
 
     // console.log(this.$route.params.acceptCounterArrayNewHazard)
     // console.log(this.checkedCheckboxesArrayNewHazardTransfered)
+    let abc
+    if(!this.$route.params.checkedCheckboxesArrayNewHazard !== undefined) {
+      abc = this.$route.params.checkedCheckboxesArrayNewHazard
+    }
+    localStorage.setItem('myCat', abc)
+    var cat = localStorage.getItem('myCat');
 
+    console.log(cat)
   }
 }
 </script>

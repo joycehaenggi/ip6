@@ -466,12 +466,24 @@ export default {
           this.checkedCheckboxesArray.push([itemId, 0])
           console.log(this.checkedCheckboxesArray)
         } else {
-          const index = this.checkedCheckboxesArray.indexOf(itemId)
+
+          let index
+          // console.log(index)
+          // if (index > -1) {
+          for (var i = 0; i < this.checkedCheckboxesArray.length; i++) {
+
+            for (var x = 0; x < this.checkedCheckboxesArray[i].length; x++) {
+
+              if(this.checkedCheckboxesArray[i].toString() === [itemId, 0].toString()){
+                index = i
+              }
+            }
+          }
           if (index > -1) {
             this.checkedCheckboxesArray.splice(index, 1); // 2nd parameter means remove one item only
           }
-
           console.log(this.checkedCheckboxesArray)
+
         }
       }
 
@@ -481,12 +493,11 @@ export default {
         element.style.opacity = 0.2
         this.acceptCounter--
 
-        const index = this.acceptCounterArray.indexOf(itemId)
+        const index = this.acceptCounterArray.indexOf([itemId, 0])
         if (index > -1) {
           this.acceptCounterArray.splice(index, 1); // 2nd parameter means remove one item only
         }
 
-        // this.acceptCounterArray.shift(itemId)
         // console.log(this.acceptCounterArray)
       }
 
