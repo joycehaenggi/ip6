@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="listView">
     <Header/>
     <div class="wrapper">
       <Navigation

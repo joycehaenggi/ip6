@@ -1,11 +1,13 @@
-<template>
-  <div class="home">
+<template >
+  <div class="newHazard">
     <Header/>
     <div class="wrapper">
       <Navigation
           :actualTitleNameNavigation="$route.params.actualTitleNameNewHazard"
           :listViewStatusNavigation="listViewStatus"
       />
+<!--      {{ $route.params.actualTitleNameNewHazard }} -->
+<!--      {{ $route.params.checkedCheckboxesArrayNewHazard }}-->
       <NewHazardForm/>
     </div>
   </div>
@@ -18,7 +20,7 @@ import Navigation from '@/components/Navigation.vue'
 import NewHazardForm from "@/components/newHazard/NewHazardForm";
 
 export default {
-  props: ['actualTitleNameNewHazard'],
+  props: ['actualTitleNameNewHazard', 'itemIdNewHazard', 'checkedCheckboxesArrayNewHazard',],
   components: {
     Header,
     Navigation,
@@ -26,8 +28,19 @@ export default {
   },
   data() {
     return {
-      listViewStatus: false
+      listViewStatus: false,
+      checkedCheckboxesArrayNewHazard2: []
     }
+  },
+  mounted() {
+    console.log(this.$route.params.checkedCheckboxesArrayNewHazard)
+    this.$route.params.checkedCheckboxesArrayNewHazard.parseInt
+    let a = this.$route.params.checkedCheckboxesArrayNewHazard.replace("/",",")
+
+    var b = a.split(',').map(function(item) {
+      return parseInt(item, 10);
+    })
+    console.log(b)
   }
 }
 </script>

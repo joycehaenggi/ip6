@@ -60,12 +60,6 @@
         <template v-slot:expanded-item="{ headers, item }">
           <td class="td_detailView" :colspan="headers.length ">
             <form>
-
-              <!--            <div class="hazard-situation">
-                            <div class="hazard-situation-text">
-                              {{ item.hazardDetailDescription }}
-                            </div>
-                          </div>-->
               <div class='title_with_image_container'>
                 <div class='title_with_image_square'>
                   <div class='title_detail_view'> Dicke des Implantats zu dünn. {{ item.hazardDetailDescription }}
@@ -169,13 +163,14 @@
                       </div>
                       <div class="buttonContainer buttonContainer-detailView">
                         <router-link
-                            :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }}">
+                            :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id, checkedCheckboxesArrayNewHazard: checkedCheckboxesArray }}">
                           <button class="button button-cancel">
                             Gefährdung erstellen
                           </button>
                         </router-link>
                         <!--                      <button @click="accept(item.id)" class="button button-submit button-finishHazard">Gefährdung abschliessen</button>-->
-                        <input @click="numberOfCheckedCheckboxes(item.id, false, true)" class="button button-submit button-finishHazard"
+                        <input @click="numberOfCheckedCheckboxes(item.id, false, true)"
+                               class="button button-submit button-finishHazard"
                                type="submit" value="Gefährdung abschliessen">
                       </div>
                     </div>
@@ -237,8 +232,11 @@ export default {
   props: ['actualTitleNameTable', 'nameCounterTable'],
   data() {
     return {
+      numberOfCheckedCheckboxesValue: 0,
+      accceptCounter: 0,
+      checkedCheckboxesArray: [],
+      accceptCounterArray: [],
       imagePath: require('../../assets/svg/table_icons/toThin.svg'),
-      accceptCounter: null,
       sortBy: 'riskPriority',
       sortDesc: false,
       reviews: 413,
@@ -461,32 +459,58 @@ export default {
   },
   methods: {
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
+
+      if (acceptStatus === false) {
+        let actualCheckbox = document.getElementById("confirm" + itemId).checked
+        if (actualCheckbox === true) {
+          this.checkedCheckboxesArray.push(itemId)
+          console.log(this.checkedCheckboxesArray)
+        } else {
+          const index = this.checkedCheckboxesArray.indexOf(itemId)
+          if (index > -1) {
+            this.checkedCheckboxesArray.splice(index, 1); // 2nd parameter means remove one item only
+          }
+
+          console.log(this.checkedCheckboxesArray)
+        }
+      }
+
       let element = document.getElementById("accepted" + itemId)
 
       if (element.style.opacity.match("1") && acceptStatus === false) {
         element.style.opacity = 0.2
         this.accceptCounter--
+
+        const index = this.accceptCounterArray.indexOf(itemId)
+        if (index > -1) {
+          this.accceptCounterArray.splice(index, 1); // 2nd parameter means remove one item only
+        }
+
+        // this.accceptCounterArray.shift(itemId)
+        // console.log(this.accceptCounterArray)
       }
 
-      if(specification === true){
+      if (specification === true) {
         document.getElementById("confirm" + itemId).checked = true;
         this.expanded = []
       }
 
-      let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
-      let nunmberFinished = nunmberOfCheckedCheckboxes + this.accceptCounter
-      this.$emit('ReadCheckboxNumber', nunmberFinished)
+      this.numberOfCheckedCheckboxesValue = document.querySelectorAll('input[type="checkbox"]:checked').length
+      let numberFinished = this.numberOfCheckedCheckboxesValue + this.accceptCounter
+      this.$emit('ReadCheckboxNumber', numberFinished)
     },
     accept(itemId) {
       this.expanded = []
       let element = document.getElementById("accepted" + itemId)
 
       if (!element.style.opacity.match("1")) {
+        this.accceptCounterArray.push(itemId)
+        // console.log(this.accceptCounterArray)
+
         element.style.opacity = 1.0
         this.accceptCounter++
         document.getElementById("confirm" + itemId).checked = false;
       }
-
 
       this.numberOfCheckedCheckboxes(itemId, true, false)
     },
