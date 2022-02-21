@@ -33,7 +33,7 @@
 
         <!--Set checkbox for nicht-zutreffend-row-->
         <template v-slot:item.nicht-zutreffend="{item}">
-          <input :id="`confirm${item.id}`" @click="numberOfCheckedCheckboxes(item.id, false)"
+          <input :id="`confirm${item.id}`" @click="numberOfCheckedCheckboxes(item.id, false, false)"
                  type="checkbox"/>
           <label class="checkbox" :for="`confirm${item.id}`"></label>
         </template>
@@ -61,163 +61,167 @@
           <td class="td_detailView" :colspan="headers.length ">
             <form>
 
-<!--            <div class="hazard-situation">
-              <div class="hazard-situation-text">
-                {{ item.hazardDetailDescription }}
-              </div>
-            </div>-->
-            <div class='title_with_image_container'>
-              <div class='title_with_image_square'>
-                <div class='title_detail_view'> Dicke des Implantats zu dünn. {{ item.hazardDetailDescription }}
-                </div>
-                <div class='image_detail_view'><img :src="`${item.imageName}`" width='89' height='auto'>
-                </div>
-              </div>
-            </div>
-
-            <div class='blocks'>
-
-              <div class='block'>
-                <div class='block-title'>Schaden
-                </div>
-                <div class='block-text'>
-                  <ul>
-                    <li>{{item.damage}}</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class='block'>
-                <div class='block-title'>
-                  Massnahmen zur Risikominderung
-                </div>
-                <div class='block-text'>
-                  <ul>
-                    <li>{{item.measures}}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class='block block-effects'>
-                <div class='block-title'>
-                  Auswirkungen der Risikominderung
-                </div>
-                <div class='block-graphics'>
-                  <img src='../../assets/svg/riskVisualization1.svg'>
-                  <img src='../../assets/svg/riskVisualization2.svg' class='riskVisualization2'>
-                </div>
-              </div>
-
-              <div class='block block-verify'>
-                <div class='block-title'>
-                  Bewertung
-                </div>
-                <div class='block-text decision-evaluation'>
-                  <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
-                    Device herstellen?
+              <!--            <div class="hazard-situation">
+                            <div class="hazard-situation-text">
+                              {{ item.hazardDetailDescription }}
+                            </div>
+                          </div>-->
+              <div class='title_with_image_container'>
+                <div class='title_with_image_square'>
+                  <div class='title_detail_view'> Dicke des Implantats zu dünn. {{ item.hazardDetailDescription }}
                   </div>
-                  <label class="container label-verify">
-                    <div class="verify-label-text"> Spezifikation</div>
-                    <input type="radio" :name="`evaluation${item.id}`" :value="`Spezifikation${item.id}`"
-                           v-model="specification_customMadeDevice">
-                    <span class="custom_radio_button"></span>
-                  </label>
-                  <label class="container label-verify">
-                    <div class="verify-label-text"> Custom Made Device</div>
-                    <input type="radio" :name="`evaluation${item.id}`" :value="`CustomMadeDevice${item.id}`"
-                           v-model="specification_customMadeDevice">
-                    <span class="custom_radio_button"></span>
-                  </label>
-
+                  <div class='image_detail_view'><img :src="`${item.imageName}`" width='89' height='auto'>
+                  </div>
                 </div>
               </div>
 
-              <!--Nachbearbeitung (in Spezifikation bleiben) -->
-              <template>
-                <div v-if="specification_customMadeDevice === 'Spezifikation'+item.id">
-                  <div class='block block-verify'>
-                    <div class='block-title'>
-                      Nachbearbeitung
+              <div class='blocks'>
+
+                <div class='block'>
+                  <div class='block-title'>Schaden
+                  </div>
+                  <div class='block-text'>
+                    <ul>
+                      <li>{{ item.damage }}</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class='block'>
+                  <div class='block-title'>
+                    Massnahmen zur Risikominderung
+                  </div>
+                  <div class='block-text'>
+                    <ul>
+                      <li>{{ item.measures }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class='block block-effects'>
+                  <div class='block-title'>
+                    Auswirkungen der Risikominderung
+                  </div>
+                  <div class='block-graphics'>
+                    <img src='../../assets/svg/riskVisualization1.svg'>
+                    <img src='../../assets/svg/riskVisualization2.svg' class='riskVisualization2'>
+                  </div>
+                </div>
+
+                <div class='block block-verify'>
+                  <div class='block-title'>
+                    Bewertung
+                  </div>
+                  <div class='block-text decision-evaluation'>
+                    <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
+                      Device herstellen?
                     </div>
-                    <div class='block-text decision-evaluation'>
-                      <div class='evaluation-text'>
-                        Ist eine Nachbearbeitung des Devices möglich?
+                    <label class="container label-verify">
+                      <div class="verify-label-text"> Spezifikation</div>
+                      <input type="radio" :name="`evaluation${item.id}`" :value="`Spezifikation${item.id}`"
+                             v-model="specification_customMadeDevice">
+                      <span class="custom_radio_button"></span>
+                    </label>
+                    <label class="container label-verify">
+                      <div class="verify-label-text"> Custom Made Device</div>
+                      <input type="radio" :name="`evaluation${item.id}`" :value="`CustomMadeDevice${item.id}`"
+                             v-model="specification_customMadeDevice">
+                      <span class="custom_radio_button"></span>
+                    </label>
+
+                  </div>
+                </div>
+
+                <!--Nachbearbeitung (in Spezifikation bleiben) -->
+                <template>
+                  <div v-if="specification_customMadeDevice === 'Spezifikation'+item.id">
+                    <div class='block block-verify'>
+                      <div class='block-title'>
+                        Nachbearbeitung
                       </div>
-                      <label class="container label-verify">
-                        <div class="verify-label-text"> Ja</div>
-                        <input :name="`postPrcessing${item.id}`" type="radio" :value="`yes${item.id}`" v-model="postProcessingPossibility">
-                        <span class="custom_radio_button"></span>
-                      </label>
-                      <label class="container label-verify">
-                        <div class="verify-label-text"> Nein</div>
-                        <input :name="`postPrcessing${item.id}`" type="radio" :value="`no${item.id}`" v-model="postProcessingPossibility">
-                        <span class="custom_radio_button"></span>
-                      </label>
+                      <div class='block-text decision-evaluation'>
+                        <div class='evaluation-text'>
+                          Ist eine Nachbearbeitung des Devices möglich?
+                        </div>
+                        <label class="container label-verify">
+                          <div class="verify-label-text"> Ja</div>
+                          <input :name="`postPrcessing${item.id}`" type="radio" :value="`yes${item.id}`"
+                                 v-model="postProcessingPossibility">
+                          <span class="custom_radio_button"></span>
+                        </label>
+                        <label class="container label-verify">
+                          <div class="verify-label-text"> Nein</div>
+                          <input :name="`postPrcessing${item.id}`" type="radio" :value="`no${item.id}`"
+                                 v-model="postProcessingPossibility">
+                          <span class="custom_radio_button"></span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!--Nachbearbeitung JA-->
+                    <div v-if="postProcessingPossibility === 'yes'+item.id">
+                      <div class="rectangle-block">
+                        <div class="detailView-notification">
+                          Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
+                          Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
+                        </div>
+                      </div>
+                      <div class="buttonContainer buttonContainer-detailView">
+                        <router-link
+                            :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }}">
+                          <button class="button button-cancel">
+                            Gefährdung erstellen
+                          </button>
+                        </router-link>
+                        <!--                      <button @click="accept(item.id)" class="button button-submit button-finishHazard">Gefährdung abschliessen</button>-->
+                        <input @click="numberOfCheckedCheckboxes(item.id, false, true)" class="button button-submit button-finishHazard"
+                               type="submit" value="Gefährdung abschliessen">
+                      </div>
+                    </div>
+
+                    <!--Nachbearbeitung NEIN-->
+                    <div v-if="postProcessingPossibility === 'no'+item.id">
+                      <div class="rectangle-block">
+                        <div class="detailView-notification">
+                          Die Herstellung des Devices muss abgebrochen werden.
+                        </div>
+                      </div>
+                      <div class="buttonContainer buttonContainer-detailView">
+                        <button @click="cancel" class="button button-cancel">Herstellung abbrechen</button>
+                      </div>
                     </div>
                   </div>
+                </template>
 
-                  <!--Nachbearbeitung JA-->
-                  <div v-if="postProcessingPossibility === 'yes'+item.id">
-                    <div class="rectangle-block">
-                      <div class="detailView-notification">
-                        Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
-                        Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
+                <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
+                <template>
+                  <div v-if="specification_customMadeDevice === 'CustomMadeDevice'+item.id">
+                    <v-textarea
+                        outlined
+                        label="Begründung für Custom Made Device"
+                        placeholder="Geben Sie eine Erläuterung ein."
+                        class="textarea-declaration"
+                        rows="2"
+                        aria-required="true"
+                    />
+                    <div class='block block-verify'>
+                      <div class='block-title'>
+                        Arztnachweis
+                      </div>
+                      <div class="block-text">
+                        <input class=" inputfile" type="file" name="file" id="file" title="test"/>
                       </div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
-                      <router-link
-                          :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable }}">
-                        <button class="button button-cancel">
-                          Gefährdung erstellen
-                        </button>
-                      </router-link>
-<!--                      <button @click="accept(item.id)" class="button button-submit button-finishHazard">Gefährdung abschliessen</button>-->
-                      <input @click="accept(item.id)" class="button button-submit button-finishHazard" type="submit" value="Gefährdung abschliessen">
+                      <!--                    <button @click="accept(item.id)"  class="button button-submit">Gefährdung abschliessen</button>-->
+                      <input @click="accept(item.id)" class="button button-submit" type="submit"
+                             value="Gefährdung abschliessen">
                     </div>
                   </div>
+                </template>
 
-                  <!--Nachbearbeitung NEIN-->
-                  <div v-if="postProcessingPossibility === 'no'+item.id">
-                    <div class="rectangle-block">
-                      <div class="detailView-notification">
-                        Die Herstellung des Devices muss abgebrochen werden.
-                      </div>
-                    </div>
-                    <div class="buttonContainer buttonContainer-detailView">
-                      <button @click="cancel" class="button button-submit">Herstellung abbrechen</button>
-                    </div>
-                  </div>
-                </div>
-              </template>
-
-              <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
-              <template>
-                <div v-if="specification_customMadeDevice === 'CustomMadeDevice'+item.id">
-                  <v-textarea
-                      outlined
-                      label="Begründung für Custom Made Device"
-                      placeholder="Geben Sie eine Erläuterung ein."
-                      class="textarea-declaration"
-                      rows="2"
-                      aria-required="true"
-                  />
-                  <div class='block block-verify'>
-                    <div class='block-title'>
-                      Arztnachweis
-                    </div>
-                    <div class="block-text">
-                      <input class=" inputfile" type="file" name="file" id="file" title="test"/>
-                    </div>
-                  </div>
-                  <div class="buttonContainer buttonContainer-detailView">
-<!--                    <button @click="accept(item.id)"  class="button button-submit">Gefährdung abschliessen</button>-->
-                    <input @click="accept(item.id)" class="button button-submit" type="submit" value="Gefährdung abschliessen">
-                  </div>
-                </div>
-              </template>
-
-            </div>
+              </div>
 
             </form>
           </td>
@@ -447,7 +451,7 @@ export default {
           break
       }
 
-      this.numberOfCheckedCheckboxes(1, false)
+      this.numberOfCheckedCheckboxes(1, false, false)
     }
   },
   created() {
@@ -456,14 +460,17 @@ export default {
     }
   },
   methods: {
-    numberOfCheckedCheckboxes(itemId, acceptStatus) {
+    numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
       let element = document.getElementById("accepted" + itemId)
 
-      // console.log(element.style.opacity)
-
-      if(element.style.opacity.match("1") && acceptStatus === false){
+      if (element.style.opacity.match("1") && acceptStatus === false) {
         element.style.opacity = 0.2
         this.accceptCounter--
+      }
+
+      if(specification === true){
+        document.getElementById("confirm" + itemId).checked = true;
+        this.expanded = []
       }
 
       let nunmberOfCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length
@@ -474,16 +481,16 @@ export default {
       this.expanded = []
       let element = document.getElementById("accepted" + itemId)
 
-      if(!element.style.opacity.match("1")){
+      if (!element.style.opacity.match("1")) {
         element.style.opacity = 1.0
         this.accceptCounter++
         document.getElementById("confirm" + itemId).checked = false;
       }
 
 
-      this.numberOfCheckedCheckboxes(itemId, true)
+      this.numberOfCheckedCheckboxes(itemId, true, false)
     },
-    cancel(){
+    cancel() {
       this.expanded = []
     }
   }
