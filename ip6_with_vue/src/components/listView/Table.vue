@@ -435,15 +435,15 @@ export default {
 
       let i;
       for (i = idOfFirstElementActualCategory; i < idOfLastElementActualCategory; i++) {
-        document.getElementById("confirm" + i).checked = false;
+        document.getElementById("confirm" + i).checked = false
       }
 
       switch (this.nameCounterTable) {
         case 0:
-          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1);
+          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
           break
         case 1:
-          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2);
+          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
           break
       }
 
@@ -459,6 +459,8 @@ export default {
     numberOfCheckedCheckboxes(itemId, acceptStatus) {
       let element = document.getElementById("accepted" + itemId)
 
+      // console.log(element.style.opacity)
+
       if(element.style.opacity.match("1") && acceptStatus === false){
         element.style.opacity = 0.2
         this.accceptCounter--
@@ -471,10 +473,14 @@ export default {
     accept(itemId) {
       this.expanded = []
       let element = document.getElementById("accepted" + itemId)
-      element.style.opacity = 1.0
-      document.getElementById("confirm" + itemId).checked = false;
 
-      this.accceptCounter++
+      if(!element.style.opacity.match("1")){
+        element.style.opacity = 1.0
+        this.accceptCounter++
+        document.getElementById("confirm" + itemId).checked = false;
+      }
+
+
       this.numberOfCheckedCheckboxes(itemId, true)
     },
     cancel(){
