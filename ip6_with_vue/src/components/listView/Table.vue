@@ -163,7 +163,7 @@
                       </div>
                       <div class="buttonContainer buttonContainer-detailView">
                         <router-link
-                            :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id, checkedCheckboxesArrayNewHazard: checkedCheckboxesArray }}">
+                            :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id, checkedCheckboxesArrayNewHazard: checkedCheckboxesArray, acceptCounterArrayNewHazard: acceptCounterArray }}">
                           <button class="button button-cancel">
                             Gefährdung erstellen
                           </button>
@@ -233,9 +233,9 @@ export default {
   data() {
     return {
       numberOfCheckedCheckboxesValue: 0,
-      accceptCounter: 0,
+      acceptCounter: 0,
       checkedCheckboxesArray: [],
-      accceptCounterArray: [],
+      acceptCounterArray: [],
       imagePath: require('../../assets/svg/table_icons/toThin.svg'),
       sortBy: 'riskPriority',
       sortDesc: false,
@@ -463,7 +463,7 @@ export default {
       if (acceptStatus === false) {
         let actualCheckbox = document.getElementById("confirm" + itemId).checked
         if (actualCheckbox === true) {
-          this.checkedCheckboxesArray.push(itemId)
+          this.checkedCheckboxesArray.push([itemId, 0])
           console.log(this.checkedCheckboxesArray)
         } else {
           const index = this.checkedCheckboxesArray.indexOf(itemId)
@@ -479,15 +479,15 @@ export default {
 
       if (element.style.opacity.match("1") && acceptStatus === false) {
         element.style.opacity = 0.2
-        this.accceptCounter--
+        this.acceptCounter--
 
-        const index = this.accceptCounterArray.indexOf(itemId)
+        const index = this.acceptCounterArray.indexOf(itemId)
         if (index > -1) {
-          this.accceptCounterArray.splice(index, 1); // 2nd parameter means remove one item only
+          this.acceptCounterArray.splice(index, 1); // 2nd parameter means remove one item only
         }
 
-        // this.accceptCounterArray.shift(itemId)
-        // console.log(this.accceptCounterArray)
+        // this.acceptCounterArray.shift(itemId)
+        // console.log(this.acceptCounterArray)
       }
 
       if (specification === true) {
@@ -496,7 +496,7 @@ export default {
       }
 
       this.numberOfCheckedCheckboxesValue = document.querySelectorAll('input[type="checkbox"]:checked').length
-      let numberFinished = this.numberOfCheckedCheckboxesValue + this.accceptCounter
+      let numberFinished = this.numberOfCheckedCheckboxesValue + this.acceptCounter
       this.$emit('ReadCheckboxNumber', numberFinished)
     },
     accept(itemId) {
@@ -504,11 +504,11 @@ export default {
       let element = document.getElementById("accepted" + itemId)
 
       if (!element.style.opacity.match("1")) {
-        this.accceptCounterArray.push(itemId)
-        // console.log(this.accceptCounterArray)
+        this.acceptCounterArray.push(itemId)
+        // console.log(this.acceptCounterArray)
 
         element.style.opacity = 1.0
-        this.accceptCounter++
+        this.acceptCounter++
         document.getElementById("confirm" + itemId).checked = false;
       }
 

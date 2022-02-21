@@ -11,7 +11,7 @@ const routes = [
     component: ListView
   },
   {
-    path: '/newHazard/:actualTitleNameNewHazard/:itemIdNewHazard/:checkedCheckboxesArrayNewHazard*',
+    path: '/newHazard/:actualTitleNameNewHazard/:itemIdNewHazard/:checkedCheckboxesArrayNewHazard*/:acceptCounterArrayNewHazard*',
     name: 'NewHazard',
     mode: "history",
     Props: true, // if props is set to true, $route.params will be set as the component property

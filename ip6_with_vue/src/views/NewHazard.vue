@@ -6,8 +6,8 @@
           :actualTitleNameNavigation="$route.params.actualTitleNameNewHazard"
           :listViewStatusNavigation="listViewStatus"
       />
-<!--      {{ $route.params.actualTitleNameNewHazard }} -->
-<!--      {{ $route.params.checkedCheckboxesArrayNewHazard }}-->
+
+<!--      {{ checkedCheckboxesArrayNewHazardTransfered }}-->
       <NewHazardForm/>
     </div>
   </div>
@@ -20,7 +20,7 @@ import Navigation from '@/components/Navigation.vue'
 import NewHazardForm from "@/components/newHazard/NewHazardForm";
 
 export default {
-  props: ['actualTitleNameNewHazard', 'itemIdNewHazard', 'checkedCheckboxesArrayNewHazard',],
+  props: ['actualTitleNameNewHazard', 'itemIdNewHazard', 'checkedCheckboxesArrayNewHazard', 'acceptCounterArrayNewHazard'],
   components: {
     Header,
     Navigation,
@@ -29,18 +29,27 @@ export default {
   data() {
     return {
       listViewStatus: false,
-      checkedCheckboxesArrayNewHazard2: []
+      checkedCheckboxesArrayNewHazardTransfered: [],
+      a: null,
     }
   },
   mounted() {
-    console.log(this.$route.params.checkedCheckboxesArrayNewHazard)
-    this.$route.params.checkedCheckboxesArrayNewHazard.parseInt
-    let a = this.$route.params.checkedCheckboxesArrayNewHazard.replace("/",",")
+    this.checkedCheckboxesArrayNewHazardTransfered = this.$route.params.checkedCheckboxesArrayNewHazard
 
-    var b = a.split(',').map(function(item) {
-      return parseInt(item, 10);
-    })
-    console.log(b)
+    if(typeof this.$route.params.checkedCheckboxesArrayNewHazard === 'string'){
+      let convertStringPart1 = this.$route.params.checkedCheckboxesArrayNewHazard.replace("/",",")
+
+      this.checkedCheckboxesArrayNewHazardTransfered = convertStringPart1.split(',').map(function(item) {
+        return parseInt(item, 10);
+      })
+    } else {
+      localStorage.a = this.$route.params.checkedCheckboxesArrayNewHazard
+    }
+    console.log(localStorage.a)
+
+    // console.log(this.$route.params.acceptCounterArrayNewHazard)
+    // console.log(this.checkedCheckboxesArrayNewHazardTransfered)
+
   }
 }
 </script>
