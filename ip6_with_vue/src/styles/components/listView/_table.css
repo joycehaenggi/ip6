@@ -16,7 +16,7 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
 }
 
 .theme--light.v-text-field > .v-input__control > .v-input__slot {
-    border: 1px solid var(--frames-BlueGray);
+    border: 1.25px solid var(--frames-BlueGray);
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -32,11 +32,12 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
 
 /* Search Field Border Color */
 .theme--light.v-text-field > .v-input__control > .v-input__slot::before {
-    border-color: var(--frames-BlueGray);
+    border-color: var(--notification-Blue) !important;
     opacity: 0.5;
 }
 .v-text-field > .v-input__control > .v-input__slot::after {
-    border:none;
+    /*border:none;*/
+    border-color: var(--notification-Blue) !important;
 }
 
 /* Search Field Text no data */
