@@ -91,17 +91,6 @@
         <p class="manu-title" id="titleName">{{ actualTitleNameNavigation }}</p>
       </div>
 
-<!--      <div>
-        <v-text-field
-            append-icon="search"
-            class="searchfield"
-            v-model="search"
-            label="Suchen"
-            single-line
-            hide-details>
-        </v-text-field>
-      </div>-->
-
     </div>
   </div>
 </template>

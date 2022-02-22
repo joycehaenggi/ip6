@@ -234,6 +234,7 @@ export default {
   props: ['actualTitleNameTable', 'nameCounterTable'],
   data() {
     return {
+      numberOfCurrentCheckboxes: 0,
       numberOfCheckedCheckboxesValue: 0,
       acceptCounter: 0,
       checkedCheckboxesArray: [],
@@ -465,14 +466,13 @@ export default {
 
       if (acceptStatus === false) {
         let actualCheckbox = document.getElementById("confirm" + itemId).checked
+
+        //Checkbox-Array
         if (actualCheckbox === true) {
           this.checkedCheckboxesArray.push([itemId, 0])
-          console.log(this.checkedCheckboxesArray)
+          // console.log(this.checkedCheckboxesArray)
         } else {
-
           let index
-          // console.log(index)
-          // if (index > -1) {
           for (var i = 0; i < this.checkedCheckboxesArray.length; i++) {
             for (var x = 0; x < this.checkedCheckboxesArray[i].length; x++) {
               if (this.checkedCheckboxesArray[i].toString() === [itemId, 0].toString()) {
@@ -483,17 +483,18 @@ export default {
           if (index > -1) {
             this.checkedCheckboxesArray.splice(index, 1); // 2nd parameter means remove one item only
           }
-          console.log(this.checkedCheckboxesArray)
-
+          // console.log(this.checkedCheckboxesArray)
         }
       }
 
+      //Accept-icon
       let element = document.getElementById("accepted" + itemId)
 
       if (element.style.opacity.match("1") && acceptStatus === false) {
         element.style.opacity = 0.2
         this.acceptCounter--
 
+        //Accept-Array
         const index = this.acceptCounterArray.indexOf([itemId, 0])
         if (index > -1) {
           this.acceptCounterArray.splice(index, 1); // 2nd parameter means remove one item only
@@ -507,9 +508,11 @@ export default {
         this.expanded = []
       }
 
+      this.numberOfCurrentCheckboxes = this.hazards.filter(priority => priority.categoryId === (this.nameCounterTable + 1)).length
+
       this.numberOfCheckedCheckboxesValue = document.querySelectorAll('input[type="checkbox"]:checked').length
       let numberFinished = this.numberOfCheckedCheckboxesValue + this.acceptCounter
-      this.$emit('ReadCheckboxNumber', numberFinished)
+      this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
     },
     accept(itemId) {
       this.expanded = []

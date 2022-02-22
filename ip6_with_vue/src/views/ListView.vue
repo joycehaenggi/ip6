@@ -47,6 +47,7 @@ export default {
       nunmberOfAllCheckboxesValue: null,
       nunmberOfCheckedCheckboxesValue: null,
       percentageOfCheckedCheckboxes: null,
+      numberOfCurrentCheckboxesValue: null,
       noCheckboxChecked: true,
       titleNames: ['Implantatdesign Matching', 'SLM Titan'],
 /*      titleNames: ['CT-Scan Orbita Rekon', 'CT-Daten Segmentierung Orbita', '3D Patientenanatomie', 'Implantatdesign Matching', 'Pre-Processing for SLM Titan Orbita',
@@ -56,15 +57,18 @@ export default {
     }
   },
   methods: {
-    numberOfAllCheckboxes() {
+/*    numberOfAllCheckboxes() {
       this.nunmberOfAllCheckboxesValue = document.querySelectorAll('input[type="checkbox"]').length
-    },
-    transferCheckboxNumbers(nunmberFinished) {
-      this.numberOfAllCheckboxes()
+    },*/
+    transferCheckboxNumbers(nunmberFinished, numberOfCurrentCheckboxes) {
+      // this.numberOfAllCheckboxes()
       this.nunmberOfCheckedCheckboxesValue = nunmberFinished
 
+      this.numberOfCurrentCheckboxesValue= numberOfCurrentCheckboxes
+      console.log(this.numberOfCurrentCheckboxesValue)
+
       let progress_in_percent = document.getElementById("progress_in_percent");
-      this.percentageOfCheckedCheckboxes = Math.round((this.nunmberOfCheckedCheckboxesValue / this.nunmberOfAllCheckboxesValue) * 100);
+      this.percentageOfCheckedCheckboxes = Math.round((this.nunmberOfCheckedCheckboxesValue / this.numberOfCurrentCheckboxesValue) * 100);
 
       progress_in_percent.style.transition = "1s"
       progress_in_percent.style.width = this.percentageOfCheckedCheckboxes + "%"
