@@ -18,41 +18,25 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
 .theme--light.v-text-field > .v-input__control > .v-input__slot {
     border: 1px solid var(--frames-BlueGray);
     border-radius: 5px;
-    padding-left: 10px;
-    /*background: url("../../../assets/svg/search.svg") left / contain no-repeat;*/
-}
-
-.v-text-field__slot input {
-
-}
-
-.search-icon {
-    height: 10px;
-    width: 10px;
-    background: red;
-}
-
-.searchfield {
-    left: 5px;
-    top: 2px;
-    bottom: 0;
-    /*width: 20px;*/
-    /*background: url("../../../assets/svg/search.svg") left / contain no-repeat;*/
     margin-bottom: 10px;
+}
+
+.v-input__append-inner {
+    margin-right: 10px;
+}
+
+.v-input__slot {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 /* Search Field Border Color */
 .theme--light.v-text-field > .v-input__control > .v-input__slot::before {
     border-color: var(--frames-BlueGray);
-    /*border: thin solid rgba(0, 0, 0, 0.12);*/
-    /*border:none;*/
     opacity: 0.5;
 }
 .v-text-field > .v-input__control > .v-input__slot::after {
-    border-color: var(--notification-Blue);
-    /*border: thin solid var(--frames-BlueGray);*/
     border:none;
-    opacity: 0.9;
 }
 
 /* Search Field Text no data */

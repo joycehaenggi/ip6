@@ -3,6 +3,7 @@
   <div id="app">
     <v-app id="inspire">
       <v-text-field
+        append-icon="search"
           class="searchfield"
           v-model="search"
           label="Suchen"
