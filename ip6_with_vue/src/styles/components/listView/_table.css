@@ -15,7 +15,7 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
     margin-top: 0;
 }
 
-.theme--light.v-text-field > .v-input__control > .v-input__slot {
+.v-application--wrap > .theme--light.v-text-field > .v-input__control > .v-input__slot{
     border: 1.25px solid var(--frames-BlueGray);
     border-radius: 4px;
     margin-bottom: 10px;
