@@ -1,15 +1,15 @@
 <template>
-<!--  append-icon="search"-->
+  <!--  append-icon="search"-->
   <div id="app">
     <v-app id="inspire">
       <v-text-field
-        append-icon="search"
+          append-icon="search"
           class="searchfield"
           v-model="search"
           label="Suchen"
           single-line
-          hide-details
-      ><div class="search-icon"></div> aa</v-text-field>
+          hide-details>
+      </v-text-field>
       <v-data-table
           :headers="hazardsHeader"
           :items="hazardsSliced"
@@ -474,7 +474,7 @@ export default {
           // if (index > -1) {
           for (var i = 0; i < this.checkedCheckboxesArray.length; i++) {
             for (var x = 0; x < this.checkedCheckboxesArray[i].length; x++) {
-              if(this.checkedCheckboxesArray[i].toString() === [itemId, 0].toString()){
+              if (this.checkedCheckboxesArray[i].toString() === [itemId, 0].toString()) {
                 index = i
               }
             }
