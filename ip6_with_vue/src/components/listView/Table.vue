@@ -1,13 +1,14 @@
 <template>
+<!--  append-icon="search"-->
   <div id="app">
     <v-app id="inspire">
       <v-text-field
+          class="searchfield"
           v-model="search"
-          append-icon="search"
           label="Suchen"
           single-line
           hide-details
-      ></v-text-field>
+      ><div class="search-icon"></div> aa</v-text-field>
       <v-data-table
           :headers="hazardsHeader"
           :items="hazardsSliced"
