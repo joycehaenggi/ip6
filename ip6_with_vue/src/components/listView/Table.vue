@@ -503,16 +503,37 @@ export default {
         // console.log(this.acceptCounterArray)
       }
 
+      // For Specification
       if (specification === true) {
         document.getElementById("confirm" + itemId).checked = true;
         this.expanded = []
       }
 
+      //General Settings
+      this.saveCheckboxStatus()
       this.numberOfCurrentCheckboxes = this.hazards.filter(priority => priority.categoryId === (this.nameCounterTable + 1)).length
 
       this.numberOfCheckedCheckboxesValue = document.querySelectorAll('input[type="checkbox"]:checked').length
       let numberFinished = this.numberOfCheckedCheckboxesValue + this.acceptCounter
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
+    },
+    saveCheckboxStatus(){
+      checkbox = document.querySelectorAll("input[type='checkbox']");
+      for (item of checkbox) {
+        item.addEventListener("click", function () {
+          localStorage.s_item ?
+              localStorage.s_item = localStorage.s_item.indexOf(this.id + ",") == -1
+                  ? localStorage.s_item + this.id + ","
+                  : localStorage.s_item.replace(this.id + ",", "") :
+              localStorage.s_item = this.id + ",";
+        });
+      }
+
+      if (localStorage.s_item) { // verifico se existe localStorage
+        for (item of checkbox) { // existe, percorro as checkbox
+          item.checked = localStorage.s_item.indexOf(item.id + ",") != -1 ? true : false;
+        }
+      }
     },
     accept(itemId) {
       this.expanded = []

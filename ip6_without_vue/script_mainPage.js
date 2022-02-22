@@ -111,7 +111,6 @@ function nextStepCounter(){
 
 document.addEventListener("DOMContentLoaded", function () {
     checkbox = document.querySelectorAll("input[type='checkbox']");
-
     for (item of checkbox) {
         item.addEventListener("click", function () {
             localStorage.s_item ?
