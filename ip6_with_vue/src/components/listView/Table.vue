@@ -451,6 +451,7 @@ export default {
           break
       }
 
+      this.acceptCounter = 0
       this.numberOfCheckedCheckboxes(1, false, false)
     }
   },
