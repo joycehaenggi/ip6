@@ -471,9 +471,7 @@ export default {
           // console.log(index)
           // if (index > -1) {
           for (var i = 0; i < this.checkedCheckboxesArray.length; i++) {
-
             for (var x = 0; x < this.checkedCheckboxesArray[i].length; x++) {
-
               if(this.checkedCheckboxesArray[i].toString() === [itemId, 0].toString()){
                 index = i
               }
