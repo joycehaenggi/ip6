@@ -457,22 +457,39 @@ export default {
 
       this.acceptCounter = 0
       localStorage.checkedCheckboxesArray = null
+      localStorage.acceptCounterArray = null
+      console.log(localStorage.acceptCounterArray)
 
       this.numberOfCheckedCheckboxes(null, true, false)
     }
   },
   created() {
-    localStorage.checkedCheckboxesArray = undefined
-    localStorage.acceptCounterArray = undefined
+    if(localStorage.checkedCheckboxesArray === undefined){
+      localStorage.checkedCheckboxesArray = undefined
+    }
+
+    if(localStorage.acceptCounterArray === undefined){
+      localStorage.acceptCounterArray = undefined
+    }
 
     if (this.nameCounterTable === 0) {
       this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1);
     }
   },
   mounted() {
+    console.log(localStorage.checkedCheckboxesArray)
+    console.log(localStorage.acceptCounterArray)
+
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
       let newArray = []
       localStorage.checkedCheckboxesArray = JSON.stringify(newArray);
+    }
+    if (localStorage.acceptCounterArray === "undefined" || localStorage.acceptCounterArray === undefined || localStorage.acceptCounterArray === "null" || localStorage.acceptCounterArray === null) {
+      let newArray = []
+      localStorage.acceptCounterArray = JSON.stringify(newArray);
+    } else {
+      this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray);
+      console.log(this.acceptCounterArray)
     }
 
     let storedNames = JSON.parse(localStorage.checkedCheckboxesArray);
@@ -487,21 +504,38 @@ export default {
       }
     }
     for (var j = 0; j < checkedCheckboxArrayNew.length; j++) {
-      document.getElementById("confirm" + checkedCheckboxArrayNew[j]).checked = true;
+      // console.log(checkedCheckboxArrayNew[j])
+      if(document.getElementById("confirm" + checkedCheckboxArrayNew[j] !== null)){
+        document.getElementById("confirm" + checkedCheckboxArrayNew[j]).checked = true;
+      }
     }
     this.numberOfCheckedCheckboxes(null, true, false)
   },
   methods: {
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
+      // console.log(localStorage.acceptCounterArray)
 
       if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
         let newArray = []
         localStorage.checkedCheckboxesArray = JSON.stringify(newArray);
         this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray);
         this.checkedCheckboxesArray = []
+
       } else {
         this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray);
       }
+
+      if (localStorage.acceptCounterArray === "undefined" || localStorage.acceptCounterArray === undefined || localStorage.acceptCounterArray === "null" || localStorage.acceptCounterArray === null) {
+        let newArray = []
+        localStorage.acceptCounterArray = JSON.stringify(newArray);
+        this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray);
+        this.acceptCounterArray = []
+
+      } else {
+        this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray);
+      }
+
+
       if (acceptStatus === false) {
         let actualCheckbox = document.getElementById("confirm" + itemId).checked
 
@@ -526,9 +560,15 @@ export default {
 
       //Accept-icon
       if (itemId !== null) {
+
         let element = document.getElementById("accepted" + itemId)
 
-        if (element.style.opacity.match("1") && acceptStatus === false) {
+/*        if(this.acceptCounterArray.includes(itemId)){
+          console.log("test")
+        }*/
+
+        if(this.acceptCounterArray.includes(itemId) && acceptStatus === false) {
+
           element.style.opacity = 0.2
           this.acceptCounter--
 
@@ -556,9 +596,14 @@ export default {
       if (localStorage.checkedCheckboxesArray === 'null') {
         numberFinished = 0
       } else {
-        numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + this.acceptCounter
+        numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + JSON.parse(localStorage.acceptCounterArray).length
       }
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
+
+      console.log(localStorage.checkedCheckboxesArray)
+      console.log(localStorage.acceptCounterArray)
+      // console.log(this.acceptCounterArray)
+
     },
     itemIdPartOfArray(itemId) {
       if (localStorage.checkedCheckboxesArray === 'undefined' || localStorage.checkedCheckboxesArray === 'null') {
@@ -601,10 +646,25 @@ export default {
         this.acceptCounter++
         document.getElementById("confirm" + itemId).checked = false;
 
+        let index
+        for (var i = 0; i < this.checkedCheckboxesArray.length; i++) {
+          for (var x = 0; x < this.checkedCheckboxesArray[i].length; x++) {
+            if (this.checkedCheckboxesArray[i].toString() === [itemId, 0].toString()) {
+              index = i
+            }
+          }
+        }
+        if (index > -1) {
+          this.checkedCheckboxesArray.splice(index, 1); // 2nd parameter means remove one item only
+        }
+        localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
+
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
       }
 
       this.numberOfCheckedCheckboxes(itemId, true, false)
+      console.log(localStorage.checkedCheckboxesArray)
+      console.log(localStorage.acceptCounterArray)
     },
     cancel() {
       this.expanded = []
