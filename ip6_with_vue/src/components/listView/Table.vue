@@ -235,7 +235,8 @@ export default {
   props: ['actualTitleNameTable', 'nameCounterTable'],
   data() {
     return {
-      name: '',
+      idOfFirstElementActualCategory: 0,
+      idOfLastElementActualCategory: 0,
       numberOfCurrentCheckboxes: 0,
       numberOfCheckedCheckboxesValue: 0,
       acceptCounter: 0,
@@ -436,11 +437,11 @@ export default {
       else if (this.nameCounterTable === 0) {
         oldCategoryId = 2
       }
-      let idOfFirstElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
-      let idOfLastElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
+      this.idOfFirstElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
+      this.idOfLastElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
 
       let i;
-      for (i = idOfFirstElementActualCategory; i < idOfLastElementActualCategory; i++) {
+      for (i = this.idOfFirstElementActualCategory; i < this.idOfLastElementActualCategory; i++) {
         if (document.getElementById("confirm" + i) !== null) {
           document.getElementById("confirm" + i).checked = false
         }
@@ -458,7 +459,6 @@ export default {
       this.acceptCounter = 0
       localStorage.checkedCheckboxesArray = null
       localStorage.acceptCounterArray = null
-      console.log(localStorage.acceptCounterArray)
 
       this.numberOfCheckedCheckboxes(null, true, false)
     }
@@ -477,8 +477,6 @@ export default {
     }
   },
   mounted() {
-    console.log(localStorage.checkedCheckboxesArray)
-    console.log(localStorage.acceptCounterArray)
 
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
       let newArray = []
@@ -501,17 +499,16 @@ export default {
       }
     }
     for (var j = 0; j < checkedCheckboxArrayNew.length; j++) {
-      // console.log(checkedCheckboxArrayNew[j])
       if(document.getElementById("confirm" + checkedCheckboxArrayNew[j] !== null)){
         document.getElementById("confirm" + checkedCheckboxArrayNew[j]).checked = true;
       }
     }
     this.numberOfCheckedCheckboxes(null, true, false)
   },
+  updated() {
+  },
   methods: {
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
-      // console.log(localStorage.acceptCounterArray)
-
       if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
         let newArray = []
         localStorage.checkedCheckboxesArray = JSON.stringify(newArray);
@@ -560,10 +557,6 @@ export default {
 
         let element = document.getElementById("accepted" + itemId)
 
-/*        if(this.acceptCounterArray.includes(itemId)){
-          console.log("test")
-        }*/
-
         if(this.acceptCounterArray.includes(itemId) && acceptStatus === false) {
 
           element.style.opacity = 0.2
@@ -598,10 +591,6 @@ export default {
         numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + JSON.parse(localStorage.acceptCounterArray).length
       }
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
-
-      console.log(localStorage.checkedCheckboxesArray)
-      console.log(localStorage.acceptCounterArray)
-      // console.log(this.acceptCounterArray)
 
     },
     itemIdPartOfArray(itemId) {
@@ -662,12 +651,10 @@ export default {
       }
 
       this.numberOfCheckedCheckboxes(itemId, true, false)
-      console.log(localStorage.checkedCheckboxesArray)
-      console.log(localStorage.acceptCounterArray)
     },
     cancel() {
       this.expanded = []
-    }
+    },
   }
 }
 </script>
