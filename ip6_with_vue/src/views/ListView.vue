@@ -56,6 +56,9 @@ export default {
       listViewStatus: true,
     }
   },
+  mounted(){
+    this.nameCounterListView
+  },
   methods: {
 /*    numberOfAllCheckboxes() {
       this.nunmberOfAllCheckboxesValue = document.querySelectorAll('input[type="checkbox"]').length
@@ -93,7 +96,10 @@ export default {
       }
     },
     transferNameCounter(nameCounter) {
-      this.nameCounterListView = nameCounter
+      // console.log(this.nameCounterListView = nameCounter)
+      // console.log(typeof this.nameCounterListView)
+      this.nameCounterListView = parseInt(nameCounter, 10);
+      // console.log(this.nameCounterListView)
     }
 
   }

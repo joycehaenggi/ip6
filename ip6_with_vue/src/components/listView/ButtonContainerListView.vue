@@ -10,6 +10,14 @@
 
 <script>
 export default {
+  mounted(){
+    // localStorage.nameCounter = 0
+    if(localStorage.nameCounter === undefined){
+      localStorage.nameCounter = 0
+    }
+    // console.log(localStorage.nameCounter)
+    this.checkStep()
+  },
   props: ['titleNamesButtonList', 'hazardsButtonContainer'],
   data() {
     return {
@@ -19,16 +27,24 @@ export default {
   },
   methods: {
     nextStepCounter() {
-      if(this.nameCounter !== this.titleNamesButtonList.length-1){
+      // console.log(this.nameCounter)
+      if(this.nameCounter < this.titleNamesButtonList.length-1){
         this.nameCounter++;
       } else {
         this.nameCounter = 0;
       }
       localStorage.nameCounter = this.nameCounter
-      let nameCounter = this.nameCounter
-      this.$emit('readNameCounter',nameCounter)
+      this.checkStep()
+    },
+    checkStep(){
+      this.$emit('readNameCounter', localStorage.nameCounter)
+
+      if(this.nameCounter !== localStorage.nameCounter){
+        this.nameCounter = localStorage.nameCounter
+      }
     }
-  }
+  },
+
 }
 
 </script>
