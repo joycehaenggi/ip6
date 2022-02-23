@@ -487,9 +487,6 @@ export default {
     if (localStorage.acceptCounterArray === "undefined" || localStorage.acceptCounterArray === undefined || localStorage.acceptCounterArray === "null" || localStorage.acceptCounterArray === null) {
       let newArray = []
       localStorage.acceptCounterArray = JSON.stringify(newArray);
-    } else {
-      this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray);
-      console.log(this.acceptCounterArray)
     }
 
     let storedNames = JSON.parse(localStorage.checkedCheckboxesArray);
