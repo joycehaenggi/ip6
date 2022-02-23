@@ -227,7 +227,10 @@
 
       </v-data-table>
     </v-app>
+    <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
   </div>
+
 </template>
 
 <script>
@@ -235,6 +238,7 @@ export default {
   props: ['actualTitleNameTable', 'nameCounterTable'],
   data() {
     return {
+      message: "",
       idOfFirstElementActualCategory: 0,
       idOfLastElementActualCategory: 0,
       numberOfCurrentCheckboxes: 0,
@@ -655,6 +659,29 @@ export default {
     },
     cancel() {
       this.expanded = []
+      this.hazards.push({
+        id: 15,
+        categoryId: 1,
+        name: "Designvorgadddbe Mindestdicke kann nicht eingehalten werden. - Dicke des Implantsts zu dünn.",
+        imageName: require('../../assets/svg/table_icons/toThin.svg'),
+        riskPriority: 2,
+        hazardDetailDescription: "Implantat bricht aufgrund der zu kleinen Mindestdicke.",
+        damage: "Zweitoperation",
+        probabilityOfOccurrenceBefore: 3,
+        severity: 3,
+        measures: "Erfüllen der Belastungstests (DFMEA-D16)",
+        probabilityOfOccurrenceAfter: 3,
+    })
+      console.log(this.hazards)
+      // this.hazardsSliced = []
+      switch (this.nameCounterTable) {
+        case 0:
+          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
+          break
+        case 1:
+          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
+          break
+      }
     },
   }
 }
