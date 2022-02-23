@@ -24,7 +24,7 @@ export default {
       } else {
         this.nameCounter = 0;
       }
-
+      localStorage.nameCounter = this.nameCounter
       let nameCounter = this.nameCounter
       this.$emit('readNameCounter',nameCounter)
     }

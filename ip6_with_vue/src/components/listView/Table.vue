@@ -52,7 +52,7 @@
                data-tooltip="Akzeptiert-Status">
             <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-width="1.5"
+              <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-width="1.5" :stroke-opacity="itemIdPartOfArray2(item.id)"
                     stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
@@ -463,13 +463,13 @@ export default {
   },
   created() {
     localStorage.checkedCheckboxesArray = undefined
+    localStorage.acceptCounterArray = undefined
 
     if (this.nameCounterTable === 0) {
       this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1);
     }
   },
   mounted() {
-
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
       let newArray = []
       localStorage.checkedCheckboxesArray = JSON.stringify(newArray);
@@ -535,12 +535,14 @@ export default {
           this.acceptCounter--
 
           //Accept-Array
-          const index = this.acceptCounterArray.indexOf([itemId, 0])
+          const index = this.acceptCounterArray.indexOf(itemId)
           if (index > -1) {
             this.acceptCounterArray.splice(index, 1); // 2nd parameter means remove one item only
           }
-
+          console.log(this.acceptCounterArray)
         }
+        localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
+        console.log(JSON.parse(localStorage.acceptCounterArray))
       }
 
       // For Specification
@@ -578,6 +580,20 @@ export default {
       }
       return false
     },
+    itemIdPartOfArray2(itemId) {
+      if (localStorage.acceptCounterArray === 'undefined' || localStorage.acceptCounterArray === 'null') {
+        return 0.2
+      } else {
+        let a
+        a = JSON.parse(localStorage.acceptCounterArray)
+        for (var i = 0; i < a.length; i++) {
+            if (a[i] === itemId) {
+              return 1.0
+            }
+        }
+      }
+      return 0.2
+    },
     accept(itemId) {
       this.expanded = []
       let element = document.getElementById("accepted" + itemId)
@@ -588,6 +604,9 @@ export default {
         element.style.opacity = 1.0
         this.acceptCounter++
         document.getElementById("confirm" + itemId).checked = false;
+
+        localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
+        console.log(JSON.parse(localStorage.acceptCounterArray))
       }
 
       this.numberOfCheckedCheckboxes(itemId, true, false)
