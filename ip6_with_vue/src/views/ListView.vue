@@ -65,7 +65,6 @@ export default {
       this.nunmberOfCheckedCheckboxesValue = nunmberFinished
 
       this.numberOfCurrentCheckboxesValue= numberOfCurrentCheckboxes
-      console.log(this.numberOfCurrentCheckboxesValue)
 
       let progress_in_percent = document.getElementById("progress_in_percent");
       this.percentageOfCheckedCheckboxes = Math.round((this.nunmberOfCheckedCheckboxesValue / this.numberOfCurrentCheckboxesValue) * 100);

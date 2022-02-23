@@ -35,8 +35,9 @@
 
         <!--Set checkbox for nicht-zutreffend-row-->
         <template v-slot:item.nicht-zutreffend="{item}">
-          <input :id="`confirm${item.id}`" @click="numberOfCheckedCheckboxes(item.id, false, false)"
-                 type="checkbox"/>
+          <input :id="`confirm${item.id}`" :ref="`confirm${item.id}`"
+                 @click="numberOfCheckedCheckboxes(item.id, false, false)"
+                 type="checkbox" :checked="itemIdPartOfArray(item.id)"/>
           <label class="checkbox" :for="`confirm${item.id}`"></label>
         </template>
 
@@ -234,6 +235,7 @@ export default {
   props: ['actualTitleNameTable', 'nameCounterTable'],
   data() {
     return {
+      name: '',
       numberOfCurrentCheckboxes: 0,
       numberOfCheckedCheckboxesValue: 0,
       acceptCounter: 0,
@@ -317,7 +319,7 @@ export default {
         {
           id: 5,
           categoryId: 1,
-          name: "Designvorgabe Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
+          name: "Designvorgabee Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
           imageName: require('../../assets/svg/table_icons/screw.svg'),
           riskPriority: 3,
           hazardDetailDescription: "Stabilitätsverlust bei Fixierung weil Schraubentyp und -dimension nicht zur Implantatdimension und dem zu erwartenden Lastfall passen.",
@@ -327,7 +329,6 @@ export default {
           measures: "Einen Standardschraubentyp aus ähnlichen Indikationen verwenden  und unter Belastung testen  (DFMEA-D14).",
           probabilityOfOccurrenceAfter: 3,
         },
-
         {
           id: 6,
           categoryId: 2,
@@ -440,7 +441,9 @@ export default {
 
       let i;
       for (i = idOfFirstElementActualCategory; i < idOfLastElementActualCategory; i++) {
-        document.getElementById("confirm" + i).checked = false
+        if(document.getElementById("confirm" + i) !== null){
+          document.getElementById("confirm" + i).checked = false
+        }
       }
 
       switch (this.nameCounterTable) {
@@ -453,16 +456,79 @@ export default {
       }
 
       this.acceptCounter = 0
-      this.numberOfCheckedCheckboxes(1, false, false)
+
+      localStorage.checkedCheckboxesArray = null
+      // console.log(localStorage.checkedCheckboxesArray)
+
+      this.numberOfCheckedCheckboxes(null, true, false)
     }
   },
   created() {
+    localStorage.checkedCheckboxesArray = undefined
+
+/*    if(localStorage.checkedCheckboxesArray !== 'undefined'){
+      let a = JSON.parse(localStorage.checkedCheckboxesArray)
+      console.log(a)
+      for (var i = 0; i < a.length; i++) {
+        for (var x = 0; x < a[i].length; x++) {
+          if(a[i][0] > 5){
+            a.splice(i, 1);
+          }
+        }
+      }
+      localStorage.checkedCheckboxesArray = a
+    }*/
+
     if (this.nameCounterTable === 0) {
       this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1);
     }
   },
+  mounted() {
+    // localStorage.checkedCheckboxesArray = undefined
+
+    if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
+      let newArray = []
+      localStorage.checkedCheckboxesArray = JSON.stringify(newArray);
+    }
+    console.log(JSON.parse(localStorage.checkedCheckboxesArray))
+    console.log("test")
+    // localStorage.checkedCheckboxesArray = [2]
+    // console.log(JSON.parse(localStorage.checkedCheckboxesArray))
+    let storedNames = JSON.parse(localStorage.checkedCheckboxesArray);
+    // let storedNames = []
+    // console.log(storedNames)
+    let checkedCheckboxArrayNew = []
+    // console.log(checkedCheckboxArrayNew)
+
+    for (var i = 0; i < storedNames.length; i++) {
+      for (var x = 0; x < storedNames[i].length; x++) {
+        // if (this.checkedCheckboxesArray[i].toString() === [itemId, 0].toString()) {
+        //   index = i
+        // }
+        if (storedNames[i][1] === 0 && x === 0) {
+          checkedCheckboxArrayNew.push(storedNames[i][0])
+        }
+      }
+    }
+    // console.log(checkedCheckboxArrayNew)
+    for (var j = 0; j < checkedCheckboxArrayNew.length; j++) {
+      // console.log(checkedCheckboxArrayNew[j])
+      document.getElementById("confirm" + checkedCheckboxArrayNew[j]).checked = true;
+    }
+    this.numberOfCheckedCheckboxes(null, true, false)
+  },
   methods: {
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
+
+      if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
+        let newArray = []
+        localStorage.checkedCheckboxesArray = JSON.stringify(newArray);
+        this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray);
+        this.checkedCheckboxesArray = []
+      } else {
+        this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray);
+      }
+      // console.log(this.checkedCheckboxesArray)
 
       if (acceptStatus === false) {
         let actualCheckbox = document.getElementById("confirm" + itemId).checked
@@ -470,7 +536,7 @@ export default {
         //Checkbox-Array
         if (actualCheckbox === true) {
           this.checkedCheckboxesArray.push([itemId, 0])
-          // console.log(this.checkedCheckboxesArray)
+          console.log(this.checkedCheckboxesArray)
         } else {
           let index
           for (var i = 0; i < this.checkedCheckboxesArray.length; i++) {
@@ -485,22 +551,30 @@ export default {
           }
           // console.log(this.checkedCheckboxesArray)
         }
+        localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
+        // console.log(localStorage.checkedCheckboxesArray)
+
       }
+      console.log(this.checkedCheckboxesArray)
+
 
       //Accept-icon
-      let element = document.getElementById("accepted" + itemId)
+      // console.log(itemId)
+      if (itemId !== null) {
+        let element = document.getElementById("accepted" + itemId)
 
-      if (element.style.opacity.match("1") && acceptStatus === false) {
-        element.style.opacity = 0.2
-        this.acceptCounter--
+        if (element.style.opacity.match("1") && acceptStatus === false) {
+          element.style.opacity = 0.2
+          this.acceptCounter--
 
-        //Accept-Array
-        const index = this.acceptCounterArray.indexOf([itemId, 0])
-        if (index > -1) {
-          this.acceptCounterArray.splice(index, 1); // 2nd parameter means remove one item only
+          //Accept-Array
+          const index = this.acceptCounterArray.indexOf([itemId, 0])
+          if (index > -1) {
+            this.acceptCounterArray.splice(index, 1); // 2nd parameter means remove one item only
+          }
+
+          // console.log(this.acceptCounterArray)
         }
-
-        // console.log(this.acceptCounterArray)
       }
 
       // For Specification
@@ -510,30 +584,37 @@ export default {
       }
 
       //General Settings
-      this.saveCheckboxStatus()
       this.numberOfCurrentCheckboxes = this.hazards.filter(priority => priority.categoryId === (this.nameCounterTable + 1)).length
 
       this.numberOfCheckedCheckboxesValue = document.querySelectorAll('input[type="checkbox"]:checked').length
-      let numberFinished = this.numberOfCheckedCheckboxesValue + this.acceptCounter
+      // let numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + this.acceptCounter
+      var numberFinished
+      if(localStorage.checkedCheckboxesArray === 'null'){
+        numberFinished = 0
+      } else {
+        numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + this.acceptCounter
+      }
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
     },
-    saveCheckboxStatus(){
-      checkbox = document.querySelectorAll("input[type='checkbox']");
-      for (item of checkbox) {
-        item.addEventListener("click", function () {
-          localStorage.s_item ?
-              localStorage.s_item = localStorage.s_item.indexOf(this.id + ",") == -1
-                  ? localStorage.s_item + this.id + ","
-                  : localStorage.s_item.replace(this.id + ",", "") :
-              localStorage.s_item = this.id + ",";
-        });
-      }
-
-      if (localStorage.s_item) { // verifico se existe localStorage
-        for (item of checkbox) { // existe, percorro as checkbox
-          item.checked = localStorage.s_item.indexOf(item.id + ",") != -1 ? true : false;
+    itemIdPartOfArray(itemId) {
+      if (localStorage.checkedCheckboxesArray === 'undefined' || localStorage.checkedCheckboxesArray === 'null') {
+        return false
+      } else {
+        let a
+        a = JSON.parse(localStorage.checkedCheckboxesArray)
+        for (var i = 0; i < a.length; i++) {
+          for (var x = 0; x < a[i].length; x++) {
+            if(a[i][0] === itemId){
+              return true
+            }
+          }
         }
       }
+
+
+      console.log(itemId)
+      // console.log(itemId)
+      return false
     },
     accept(itemId) {
       this.expanded = []
