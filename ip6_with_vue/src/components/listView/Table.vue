@@ -581,6 +581,8 @@ export default {
       // For Specification
       if (specification === true) {
         document.getElementById("confirm" + itemId).checked = true;
+        this.checkedCheckboxesArray.push([itemId, 0])
+        localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
         this.expanded = []
       }
 
