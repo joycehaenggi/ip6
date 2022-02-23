@@ -530,11 +530,10 @@ export default {
       }
 
 
-      if (acceptStatus === false) {
-        let actualCheckbox = document.getElementById("confirm" + itemId).checked
+      if (acceptStatus === false && specification === false) {
+        let actualCheckbox = document.getElementById("confirm" + itemId)
 
-        //Checkbox-Array
-        if (actualCheckbox === true) {
+        if(actualCheckbox.checked === true){
           this.checkedCheckboxesArray.push([itemId, 0])
         } else {
           let index
@@ -555,13 +554,9 @@ export default {
       //Accept-icon
       if (itemId !== null) {
 
-        let element = document.getElementById("accepted" + itemId)
-
         if(this.acceptCounterArray.includes(itemId) && acceptStatus === false) {
 
-          element.style.opacity = 0.2
           this.acceptCounter--
-
           //Accept-Array
           const index = this.acceptCounterArray.indexOf(itemId)
           if (index > -1) {
@@ -569,13 +564,19 @@ export default {
           }
         }
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
+        this.itemIdPartOfArray2(itemId)
+        this.$forceUpdate();
       }
 
       // For Specification
       if (specification === true) {
-        document.getElementById("confirm" + itemId).checked = true;
-        this.checkedCheckboxesArray.push([itemId, 0])
-        localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
+        let checkbox = document.getElementById("confirm" + itemId);
+        if(!localStorage.checkedCheckboxesArray.includes(itemId)){
+          checkbox.checked = true
+
+          this.checkedCheckboxesArray.push([itemId, 0])
+          localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
+        }
         this.expanded = []
       }
 
