@@ -508,7 +508,6 @@ export default {
         //Checkbox-Array
         if (actualCheckbox === true) {
           this.checkedCheckboxesArray.push([itemId, 0])
-          // console.log(this.checkedCheckboxesArray)
         } else {
           let index
           for (var i = 0; i < this.checkedCheckboxesArray.length; i++) {
@@ -521,7 +520,6 @@ export default {
           if (index > -1) {
             this.checkedCheckboxesArray.splice(index, 1); // 2nd parameter means remove one item only
           }
-          // console.log(this.checkedCheckboxesArray)
         }
         localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
       }
@@ -539,10 +537,8 @@ export default {
           if (index > -1) {
             this.acceptCounterArray.splice(index, 1); // 2nd parameter means remove one item only
           }
-          console.log(this.acceptCounterArray)
         }
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
-        console.log(JSON.parse(localStorage.acceptCounterArray))
       }
 
       // For Specification
@@ -606,7 +602,6 @@ export default {
         document.getElementById("confirm" + itemId).checked = false;
 
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
-        console.log(JSON.parse(localStorage.acceptCounterArray))
       }
 
       this.numberOfCheckedCheckboxes(itemId, true, false)
