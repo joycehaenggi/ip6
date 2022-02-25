@@ -215,9 +215,10 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     padding: calc(10 * 0.063rem);
     border: 1px solid var(--frames-BlueGray);
     border-radius: calc(var(--borderRadius) * 0.063rem);
+    display: flex;
 }
 
-.pictogram-graphic-block-svgs-probabilityOccurence {
+.pictogram-graphic-block-svgs-block {
     width: calc(225 * 0.063rem);
     height: 100%;
     display: flex;
@@ -225,18 +226,18 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     justify-content: space-between;
 }
 
-.pictogram-graphic-block-svgs-probabilityOccurence-row {
+.pictogram-graphic-block-svgs-block-row {
     padding-right: calc(10 * 0.063rem);
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.pictogram-graphic-block-svgs-probabilityOccurence-row-column {
+.pictogram-graphic-block-svgs-block-row-column {
     padding-right: calc(10 * 0.063rem);
 }
 
-.pictogram-graphic-block-svgs-probabilityOccurence-description {
+.pictogram-graphic-block-svgs-block-description {
     padding-bottom: calc(0 * 0.063rem);
 }
 
