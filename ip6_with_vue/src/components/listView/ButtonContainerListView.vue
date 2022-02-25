@@ -11,11 +11,9 @@
 <script>
 export default {
   mounted(){
-    // localStorage.nameCounter = 0
     if(localStorage.nameCounter === undefined){
       localStorage.nameCounter = 0
     }
-    // console.log(localStorage.nameCounter)
     this.checkStep()
   },
   props: ['titleNamesButtonList', 'hazardsButtonContainer'],
