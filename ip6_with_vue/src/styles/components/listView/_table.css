@@ -175,7 +175,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 
 .pictogramm {
     height: calc(300 * 0.063rem);
-    width: calc(750 * 0.063rem);
+    width: calc(660 * 0.063rem);
     padding: calc(30 * 0.063rem);
     border: 1px solid var(--frames-BlueGray);
     border-radius: calc(var(--borderRadius) * 0.063rem);
@@ -206,11 +206,11 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 }
 
 .pictogram-graphic-block-title {
-    width: calc(100 * 0.063rem);
+    width: calc(150 * 0.063rem);
 }
 
 .pictogram-graphic-block-svgs {
-    width: calc(500 * 0.063rem);
+    width: calc(450 * 0.063rem);
     height: calc(70 * 0.063rem);
     padding: calc(10 * 0.063rem);
     border: 1px solid var(--frames-BlueGray);

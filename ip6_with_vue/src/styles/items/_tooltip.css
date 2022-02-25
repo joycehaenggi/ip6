@@ -1,7 +1,7 @@
-[data-tooltip], [data-tooltip2]  {
+[data-tooltip], [data-tooltip2] {
     position: relative;
     cursor: default;
-    z-index:2;
+    z-index: 2;
 }
 
 [data-tooltip]::after {
@@ -21,7 +21,6 @@
     transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
     transition: 0.25s transform;
     transform-origin: center center;
-    z-index:20000;
 }
 
 [data-tooltip]:hover::after, [data-tooltip]:hover::before, [data-tooltip2]:hover::after, [data-tooltip2]:hover::before {
@@ -29,7 +28,7 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0) translateX(0px);
-    z-index:2;
+    z-index: 2;
 }
 
 [data-tooltip2]::after {
@@ -49,4 +48,166 @@
     transition: 0.25s transform;
     transform-origin: center center;
     z-index: 2;
+}
+
+
+/* Tooltip new Version */
+/* setup tooltips */
+.tooltip {
+    position: relative;
+    border-radius: 100px;
+    z-index: 2;
+}
+
+.tooltip:before,
+.tooltip:after {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.tooltip:after {
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid rgba(0,0,0,.75);
+    border-left: 6px solid transparent;
+    content: '';
+    height: 0;
+    top: 20px;
+    left: 20px;
+    width: 0;
+}
+.tooltip:before {
+    background: rgba(0,0,0,.75);
+    border-radius: 200px;
+    color: #fff;
+    content: attr(data-title);
+    font-size: 14px;
+    padding: 6px 10px;
+    top: 26px;
+}
+
+/* the animations */
+/* fade */
+.tooltip.fade:after,
+.tooltip.fade:before {
+    transform: translate3d(0, -10px, 0);
+    transition: all .15s ease-in-out;
+}
+
+.tooltip.fade:hover:after,
+.tooltip.fade:hover:before {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* expand */
+.tooltip.expand:before {
+    transform: scale3d(.2, .2, 1);
+    transition: all .2s ease-in-out;
+}
+
+.tooltip.expand:after {
+    transform: translate3d(0, 6px, 0);
+    transition: all .1s ease-in-out;
+}
+
+.tooltip.expand:hover:before,
+.tooltip.expand:hover:after {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+}
+
+.tooltip.expand:hover:after {
+    transition: all .2s .1s ease-in-out;
+}
+
+/* swing */
+.tooltip.swing:before,
+.tooltip.swing:after {
+    transform: translate3d(0, 30px, 0) rotate3d(0, 0, 1, 60deg);
+    transform-origin: 0 0;
+    transition: transform .15s ease-in-out, opacity .2s;
+}
+
+.tooltip.swing:after {
+    transform: translate3d(0, 60px, 0);
+    transition: transform .15s ease-in-out, opacity .2s;
+}
+
+.tooltip.swing:hover:before,
+.tooltip.swing:hover:after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0deg);
+}
+
+.pictogram-tooltip:after {
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid var(--notification-Blue);
+    border-left: 6px solid transparent;
+    content: '';
+    height: 0;
+    top: 50px;
+    left: 89px;
+    display: flex;
+    align-items: center;
+    width: 0;
+    border-radius: 5px;
+}
+
+.pictogram-tooltip:before {
+    background: var(--notification-Blue);
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #fff;
+    content: attr(data-title);
+    font-size: 11px;
+    padding: 6px 10px;
+    top: 55px;
+    left: -12.5px;
+    width: 215px;
+    /*left: 25px;*/
+    /*max-width: 190px;*/
+    /*left: calc(25px);*/
+}
+
+
+/*
+[data-tooltip-2] {
+    position: relative;
+    cursor: default;
+    z-index: 2;
+}
+
+[data-tooltip-2]::after {
+    position: absolute;
+    width: 120px;
+    height: 100px;
+    left: calc(50% - 90px);
+    top: 80%;
+    text-align: center;
+    content: attr(data-tooltip);
+    color: white;
+    background-color: var(--notification-Blue);
+    padding: 4px;
+    border-radius: calc(var(--borderRadius) * 0.063rem);
+    font-size: calc(var(--mainFontSize) * 0.063rem);
+    font-family: OpenSans-Regular, serif;
+    opacity: 0;
+    transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
+    transition: 0.25s transform;
+    transform-origin: center center;
+}
+
+[data-tooltip-2]:hover::after, [data-tooltip-2]:hover::before {
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) translateX(0px);
+    z-index: 2;
+}*/
+
+svg {
+    z-index: 0;
 }
