@@ -28,9 +28,9 @@
 
         <!--add risikoprioritätszahl--row-->
         <template v-slot:item.riskPriority="{ item }">
-          <div v-if="item.riskPriority === 3" :class="`dot greenCustomized`"></div>
+          <div v-if="item.riskPriority === 1" :class="`dot greenCustomized`"></div>
           <div v-if="item.riskPriority === 2" :class="`dot yellowCustomized`"></div>
-          <div v-if="item.riskPriority === 1" :class="`dot redCustomized`"></div>
+          <div v-if="item.riskPriority === 3" :class="`dot redCustomized`"></div>
         </template>
 
         <!--Set checkbox for nicht-zutreffend-row-->
@@ -510,7 +510,7 @@ export default {
       acceptCounterArray: [],
       imagePath: require('../../assets/svg/table_icons/toThin.svg'),
       sortBy: 'riskPriority',
-      sortDesc: false,
+      sortDesc: true,
       reviews: 413,
       value: 4.5,
       specification_customMadeDevice: null,
@@ -520,7 +520,7 @@ export default {
       singleExpand: false,
       hazardsHeader: [
         {text: 'Icon', value: 'icon', width: 80, sortable: false},
-        {text: 'Risikopriorität', value: 'riskPriority', width: 150},
+        {text: 'Risikopriorität', value: 'riskPriority', width: 150, sortable: true},
         {text: 'Definition Gefährdung', align: 'start', value: 'name', width: 800, sortable: true},
         {text: 'Nicht zutreffend', value: 'nicht-zutreffend', width: 100, sortable: false},
         {text: 'Akzeptiert', value: 'akzeptiert', width: 80, sortable: false},
@@ -588,7 +588,7 @@ export default {
           categoryId: 1,
           name: "Designvorgabee Schraubentyp/Durchmesser/Länge kann nicht eingehalten werden.",
           imageName: require('../../assets/svg/table_icons/screw.svg'),
-          riskPriority: 3,
+          riskPriority: 1,
           hazardDetailDescription: "Stabilitätsverlust bei Fixierung weil Schraubentyp und -dimension nicht zur Implantatdimension und dem zu erwartenden Lastfall passen.",
           damage: "Verlängerung der OP, Leiden des Patienten.",
           probabilityOfOccurrenceBefore: 3,
