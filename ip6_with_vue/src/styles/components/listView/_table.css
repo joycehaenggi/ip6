@@ -122,7 +122,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 }
 
 .title_with_image_square {
-    height: calc(230 * 0.063rem);
+    min-height: calc(230 * 0.063rem);
     width: calc(250 * 0.063rem);
     padding-top: calc(10 * 0.063rem);
     padding-bottom: calc(10 * 0.063rem);
