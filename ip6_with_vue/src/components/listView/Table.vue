@@ -120,8 +120,9 @@
                           <div class="pictogram-graphic-block-svgs">
 
                             <div class="pictogram-graphic-block-svgs-block">
-                              <div class="pictogram-graphic-block-svgs-block-row tooltip expand pictogram-tooltip" :data-title="`Eintretenswahrscheinlichkeit : ${item.probabilityOfOccurrenceBefore} von 5`"
-                                   v-if="pictogram.pictogramRow === 1" >
+                              <div class="pictogram-graphic-block-svgs-block-row tooltip expand pictogram-tooltip"
+                                   :data-title="`Eintretenswahrscheinlichkeit : ${item.probabilityOfOccurrenceBefore} von 5`"
+                                   v-if="pictogram.pictogramRow === 1">
                                 <div class="pictogram-graphic-block-svgs-block-row-column" v-for="svg in svgList"
                                      :key="svg.svgNumber">
                                   <svg :id="`${svg.svgNumber}`" width="30"
@@ -147,8 +148,9 @@
                                   </svg>
                                 </div>
                               </div>
-                              <div class="pictogram-graphic-block-svgs-block-row tooltip expand pictogram-tooltip" :data-title="`Eintretenswahrscheinlichkeit : ${item.probabilityOfOccurrenceAfter} von 5`"
-                                   v-if="pictogram.pictogramRow === 2" >
+                              <div class="pictogram-graphic-block-svgs-block-row tooltip expand pictogram-tooltip"
+                                   :data-title="`Eintretenswahrscheinlichkeit : ${item.probabilityOfOccurrenceAfter} von 5`"
+                                   v-if="pictogram.pictogramRow === 2">
                                 <div class="pictogram-graphic-block-svgs-block-row-column" v-for="svg in svgList"
                                      :key="svg.svgNumber">
                                   <svg :id="`${svg.svgNumber}`" width="30"
@@ -182,7 +184,8 @@
                             </div>
 
                             <div class="pictogram-graphic-block-svgs-block">
-                              <div class="pictogram-graphic-block-svgs-block-row tooltip expand pictogram-tooltip" :data-title="`Schweregrad : ${item.severity} von 5`" >
+                              <div class="pictogram-graphic-block-svgs-block-row tooltip expand pictogram-tooltip"
+                                   :data-title="`Schweregrad : ${item.severity} von 5`">
                                 <div class="pictogram-graphic-block-svgs-block-row-column">
                                   <svg width="30" height="24" viewBox="0 0 30 24" fill="none"
                                        xmlns="http://www.w3.org/2000/svg">
@@ -353,11 +356,19 @@
                       </div>
                     </div>
                     <div class="riskMatrix">
-                      <RiskMatrix
-                          :probabilityOfOccurrenceBeforeRiskMatrix="item.probabilityOfOccurrenceBefore"
-                          :probabilityOfOccurrenceAfterRiskMatrix="item.probabilityOfOccurrenceAfter"
-                          :severityRiskMatrix="item.severity"
-                      />
+                      <div class="pictogram-title">
+                        Piktogramm
+                      </div>
+                      <div class="pictogram-description">
+                        <p>Veränderung des Gesamtrisikos durch getätigte Massnahmen.</p>
+                      </div>
+                      <div class="pictogram-graphic">
+                        <RiskMatrix
+                            :probabilityOfOccurrenceBeforeRiskMatrix="item.probabilityOfOccurrenceBefore"
+                            :probabilityOfOccurrenceAfterRiskMatrix="item.probabilityOfOccurrenceAfter"
+                            :severityRiskMatrix="item.severity"
+                        />
+                      </div>
                     </div>
                     <!--                    <img src='../../assets/svg/riskVisualization1.svg'>-->
                     <!--                    <img src='../../assets/svg/riskVisualization2.svg' class='riskVisualization2'>-->

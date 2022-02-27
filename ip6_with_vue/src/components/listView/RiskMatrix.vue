@@ -20,7 +20,7 @@
       <path d="M168 146H201V179H168V146Z" fill="#FEE191"/>
     </g>
     <!--<circle cx="85.5" cy="162.5" r="12.5" fill="black" fill-opacity="0.7"/>-->
-    <!--    <circle cx="52.5" cy="162.5" r="12.5" fill="black" fill-opacity="0.5"/>-->
+
     <g filter="url(#filter5_d_1909_77424)">
       <rect x="36" y="113" width="33" height="33" fill="#B0D8A4"/>
     </g>
@@ -420,11 +420,15 @@
       </filter>
     </defs>
 
-    <circle :cx="positionInMatrix(severityRiskMatrix, 'circle', 'x')" :cy="positionInMatrix(probabilityOfOccurrenceBeforeRiskMatrix, 'circle', 'y')" r="12.5" fill="black" fill-opacity="0.5"/>
-    <text fill="white" :x="positionInMatrix(severityRiskMatrix, 'text', 'x')" :y="positionInMatrix(probabilityOfOccurrenceBeforeRiskMatrix, 'text', 'y')" class="riskPriorityNumbers">
+    <circle :cx="positionInMatrix(severityRiskMatrix, 'circle', 'x')"
+            :cy="positionInMatrix(probabilityOfOccurrenceBeforeRiskMatrix, 'circle', 'y')" r="12.5" fill="black"
+            fill-opacity="0.5"
+            class="tooltip expand pictogram-tooltip"
+            :data-title="`Eintretenswahrscheinlichkeit : von 5`"/>
+    <text fill="white" :x="positionInMatrix(severityRiskMatrix, 'text', 'x')"
+          :y="positionInMatrix(probabilityOfOccurrenceBeforeRiskMatrix, 'text', 'y')" class="riskPriorityNumbers">
       {{ probabilityOfOccurrenceBeforeRiskMatrix }}:{{ severityRiskMatrix }}
     </text>
-    <!--    <text fill="white" x="44.5" y="166.5" class="riskPriorityNumbers">{{ probabilityOfOccurrenceBeforeRiskMatrix }}:{{ severityRiskMatrix }}</text>-->
   </svg>
 </template>
 

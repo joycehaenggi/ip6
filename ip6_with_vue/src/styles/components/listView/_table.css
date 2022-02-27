@@ -154,7 +154,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 }
 
 .block-effects {
-    height: 335px;
+    height: calc(360 * 0.063rem);
 }
 
 .block-title, .pictogram-title {
@@ -174,11 +174,12 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 }
 
 .pictogramm {
-    height: calc(300 * 0.063rem);
+    height: calc(325 * 0.063rem);
     width: calc(660 * 0.063rem);
     padding: calc(30 * 0.063rem);
     border: 1px solid var(--frames-BlueGray);
     border-radius: calc(var(--borderRadius) * 0.063rem);
+    margin-right: 20px;
 }
 
 .pictogram-description {
