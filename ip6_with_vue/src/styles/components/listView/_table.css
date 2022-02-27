@@ -154,7 +154,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 }
 
 .block-effects {
-    height: calc(360 * 0.063rem);
+    height: auto;
 }
 
 .block-title, .pictogram-title {
@@ -241,6 +241,17 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 .pictogram-graphic-block-svgs-block-description {
     padding-bottom: calc(0 * 0.063rem);
 }
+
+.graphic-selection {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.graphic-selection-block {
+    margin-right: 20px;
+}
+
 
 .block-verify {
     margin-bottom: 20px;

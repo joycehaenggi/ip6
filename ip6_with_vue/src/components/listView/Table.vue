@@ -102,7 +102,7 @@
                     Auswirkungen der Risikominderung
                   </div>
                   <div class='block-graphics'>
-                    <div class="pictogramm">
+                    <div class="pictogramm" v-if="pictogram">
                       <div class="pictogram-title">
                         Piktogramm
                       </div>
@@ -355,9 +355,10 @@
 
                       </div>
                     </div>
-                    <div class="riskMatrix">
+
+                    <div class="riskMatrix" v-if="riskMatrix">
                       <div class="pictogram-title">
-                        Piktogramm
+                        Risikomatrix
                       </div>
                       <div class="pictogram-description">
                         <p>Veränderung des Gesamtrisikos durch getätigte Massnahmen.</p>
@@ -370,8 +371,26 @@
                         />
                       </div>
                     </div>
+
                     <!--                    <img src='../../assets/svg/riskVisualization1.svg'>-->
                     <!--                    <img src='../../assets/svg/riskVisualization2.svg' class='riskVisualization2'>-->
+                  </div>
+                  <div class="graphic-selection">
+                    <div class="graphic-selection-block">
+                      Darstellungsart wählen:
+                    </div>
+                    <div class="graphic-selection-block">
+                      <input :id="`pictogram`" type="checkbox"
+                             v-model="pictogram"/>
+                      <label class="checkbox" :for="`pictogram`"></label>
+                      Piktogramm
+                    </div>
+                    <div class="graphic-selection-block">
+                      <input :id="`rM`" type="checkbox"
+                             v-model="riskMatrix"/>
+                      <label class="checkbox" :for="`rM`"></label>
+                      Risiko-Matrix
+                    </div>
                   </div>
                 </div>
 
@@ -539,6 +558,8 @@ export default {
       value: 4.5,
       specification_customMadeDevice: null,
       postProcessingPossibility: null,
+      riskMatrix: true,
+      pictogram: true,
       search: '',
       expanded: [],
       singleExpand: false,
