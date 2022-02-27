@@ -382,14 +382,12 @@
                     <div class="graphic-selection-block">
                       <input :id="`pictogram`" type="checkbox"
                              v-model="pictogram"/>
-                      <label class="checkbox" :for="`pictogram`"></label>
-                      Piktogramm
+                      <label :for="`pictogram`">Piktogramm</label>
                     </div>
                     <div class="graphic-selection-block">
                       <input :id="`rM`" type="checkbox"
                              v-model="riskMatrix"/>
-                      <label class="checkbox" :for="`rM`"></label>
-                      Risiko-Matrix
+                      <label :for="`rM`">Risikomatrix</label>
                     </div>
                   </div>
                 </div>
