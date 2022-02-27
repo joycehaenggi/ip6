@@ -45,8 +45,8 @@
         <div class="column column1">
           <div class="columnInColumn">
             <label class="label_customized">Eintretungswahrscheinlichkeit</label>
-            <div class='data-tooltip'
-                 data-tooltip2="Eintretungs-wahrscheinlichkeit vor Anwendung der Massnahmen.">
+            <div class='tooltip expand newHazard-tooltip'
+                 data-title="Eintretungs-wahrscheinlichkeit vor Anwendung der Massnahmen.">
               <svg class="svg_info_icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -89,7 +89,8 @@
         <div class="column column3">
           <div class="columnInColumn columnInColumn-Severity">
             <label>Schweregrad</label>
-            <div class='data-tooltip' data-tooltip2="Schweregrad vor Anwendung der Massnahmen.">
+            <div class='tooltip expand newHazard-tooltip'
+                 data-title="Schweregrad vor Anwendung der Massnahmen.">
               <svg class="svg_info_icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -138,8 +139,8 @@
         <div class="column column1">
           <div class="columnInColumn">
             <label class="risk_priority_number_title">Risikoprioritätszahl</label>
-            <div class='data-tooltip'
-                 data-tooltip2="Risikoprioritätszahl vor Anwendung der Massnahmen.">
+            <div class='tooltip expand newHazard-tooltip'
+                 data-title="Risikoprioritätszahl vor Anwendung der Massnahmen.">
               <svg class="svg_info_icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -184,8 +185,8 @@
         <div class="column column1">
           <div class="columnInColumn">
             <label class="label_customized">Implementierungsnachweis</label>
-            <div class='data-tooltip'
-                 data-tooltip2="Optionaler Upload eines Nachweises.">
+            <div class='tooltip expand newHazard-tooltip'
+                 data-title="Optionaler Upload eines Nachweises.">
               <svg class="svg_info_icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -204,8 +205,8 @@
         <div class="column column1">
           <div class="columnInColumn">
             <label class="label_customized">Eintretungswahrscheinlichkeit</label>
-            <div class='data-tooltip'
-                 data-tooltip2="Eintretungs-wahrscheinlichkeit nach Anwendung der Massnahmen.">
+            <div class='tooltip expand newHazard-tooltip'
+                 data-title="Eintretungs-wahrscheinlichkeit nach Anwendung der Massnahmen.">
               <svg class="svg_info_icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -247,7 +248,8 @@
         <div class="column column3">
           <div class="columnInColumn columnInColumn-Severity">
             <label class="responsive_width">Schweregrad</label>
-            <div class='data-tooltip' data-tooltip2="Schweregrad nach Anwendung der Massnahmen.">
+            <div class='tooltip expand newHazard-tooltip'
+                 data-title="Schweregrad nach Anwendung der Massnahmen.">
               <svg class="svg_info_icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -268,8 +270,8 @@
         <div class="column column1">
           <div class="columnInColumn">
             <label class="risk_priority_number_title">Risikoprioritätszahl</label>
-            <div class='data-tooltip'
-                 data-tooltip2="Risikoprioritätszahl nach Anwendung der Massnahmen.">
+            <div class='tooltip expand newHazard-tooltip'
+                 data-title="Risikoprioritätszahl nach Anwendung der Massnahmen.">
               <svg class="svg_info_icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
