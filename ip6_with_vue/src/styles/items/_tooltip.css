@@ -165,3 +165,14 @@ tr:last-child > td.text-start > .akzeptiert-status:before {
     top: -35px;
     width: 110px;
 }
+
+#tooltip {
+    position: relative;
+    border-radius: 5px;
+    z-index: 2;
+    background: var(--notification-Blue);
+    box-sizing: border-box;
+    color: #fff;
+    padding: 6px 6px;
+    cursor: pointer;
+}
