@@ -51,6 +51,7 @@
 }
 
 
+
 /* Tooltip new Version */
 /* setup tooltips */
 .tooltip {
@@ -167,47 +168,4 @@
     top: 55px;
     left: -12.5px;
     width: 215px;
-    /*left: 25px;*/
-    /*max-width: 190px;*/
-    /*left: calc(25px);*/
-}
-
-
-/*
-[data-tooltip-2] {
-    position: relative;
-    cursor: default;
-    z-index: 2;
-}
-
-[data-tooltip-2]::after {
-    position: absolute;
-    width: 120px;
-    height: 100px;
-    left: calc(50% - 90px);
-    top: 80%;
-    text-align: center;
-    content: attr(data-tooltip);
-    color: white;
-    background-color: var(--notification-Blue);
-    padding: 4px;
-    border-radius: calc(var(--borderRadius) * 0.063rem);
-    font-size: calc(var(--mainFontSize) * 0.063rem);
-    font-family: OpenSans-Regular, serif;
-    opacity: 0;
-    transform: translateY(calc(-1% - 10px)) translateX(-1%) scale(0);
-    transition: 0.25s transform;
-    transform-origin: center center;
-}
-
-[data-tooltip-2]:hover::after, [data-tooltip-2]:hover::before {
-    position: absolute;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0) translateX(0px);
-    z-index: 2;
-}*/
-
-svg {
-    z-index: 0;
 }
