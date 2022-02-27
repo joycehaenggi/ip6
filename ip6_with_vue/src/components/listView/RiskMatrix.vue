@@ -423,7 +423,7 @@
         </filter>
       </defs>
 
-      <circle  @mousemove="showTooltip($event, '<b>Werte vor Anwendung der Massnahmen</b> <br> ' +
+      <circle  @mousemove="showTooltip($event, '<b>'+titleTooltip1+'</b> <br> ' +
        'Eintretungswahrscheinlichkeit: '+probabilityOfOccurrenceBeforeRiskMatrix+ '<br>'+
        'Schweregrad: '+severityRiskMatrix)"
                @mouseout="hideTooltip()"
@@ -434,8 +434,7 @@
               :data-title="`Eintretenswahrscheinlichkeit : von 5`"
               :title="`Eintretenswahrscheinlichkeit : von 5`">
       </circle>
-
-      <text @mousemove="showTooltip($event, '<b>Werte vor Anwendung der Massnahmen</b> <br> ' +
+      <text @mousemove="showTooltip($event, '<b>'+titleTooltip1+'</b> <br> ' +
        'Eintretungswahrscheinlichkeit: '+probabilityOfOccurrenceBeforeRiskMatrix+ '<br>'+
        'Schweregrad: '+severityRiskMatrix)"
             @mouseout="hideTooltip()"
@@ -447,6 +446,31 @@
             alignment-baseline="middle"
       > {{ probabilityOfOccurrenceBeforeRiskMatrix }}:{{ severityRiskMatrix }}
       </text>
+
+      <circle v-if="probabilityOfOccurrenceBeforeRiskMatrix !== probabilityOfOccurrenceAfterRiskMatrix"  @mousemove="showTooltip($event, '<b>'+titleTooltip2+'</b> <br> ' +
+       'Eintretungswahrscheinlichkeit: '+probabilityOfOccurrenceAfterRiskMatrix+ '<br>'+
+       'Schweregrad: '+severityRiskMatrix)"
+               @mouseout="hideTooltip()"
+               :cx="positionInMatrix(severityRiskMatrix, 'circle', 'x')"
+               :cy="positionInMatrix(probabilityOfOccurrenceAfterRiskMatrix, 'circle', 'y')" r="12.5" fill="black"
+               fill-opacity="0.7"
+               class="tooltip expand pictogram-tooltip"
+               :data-title="`Eintretenswahrscheinlichkeit : von 5`"
+               :title="`Eintretenswahrscheinlichkeit : von 5`">
+      </circle>
+      <text @mousemove="showTooltip($event, '<b>'+titleTooltip2+'</b> <br> ' +
+       'Eintretungswahrscheinlichkeit: '+probabilityOfOccurrenceAfterRiskMatrix+ '<br>'+
+       'Schweregrad: '+severityRiskMatrix)"
+            @mouseout="hideTooltip()"
+            class=" riskPriorityNumberstooltip expand pictogram-tooltip"
+            :data-title="`Eintretenswahrscheinlichkeit : von 5`" fill="white"
+            :x="positionInMatrix(severityRiskMatrix, 'circle', 'x')"
+            :y="positionInMatrix(probabilityOfOccurrenceAfterRiskMatrix, 'text', 'y')"
+            text-anchor="middle"
+            alignment-baseline="middle"
+      > {{ probabilityOfOccurrenceAfterRiskMatrix }}:{{ severityRiskMatrix }}
+      </text>
+
     </svg>
 
   </div>
@@ -457,6 +481,12 @@
 
 <script>
 export default {
+  data (){
+    return {
+      titleTooltip1: "Werte vor Anwendung der Massnahmen",
+      titleTooltip2: "Werte nach Anwendung der Massnahmen",
+    }
+  },
   props: ['probabilityOfOccurrenceBeforeRiskMatrix', 'probabilityOfOccurrenceAfterRiskMatrix', 'severityRiskMatrix'],
 
   methods: {
