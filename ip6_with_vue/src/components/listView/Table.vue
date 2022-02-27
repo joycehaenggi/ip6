@@ -48,8 +48,8 @@
 
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{item}">
-          <div class='data-tooltip'
-               data-tooltip="Akzeptiert-Status">
+          <div class='tooltip expand akzeptiert-status'
+               data-title="Akzeptiert-Status">
             <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-width="1.5"

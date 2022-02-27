@@ -535,5 +535,6 @@ export default {
   box-sizing: border-box;
   color: #fff;
   padding: 6px 6px;
+  cursor: pointer;
 }
 </style>

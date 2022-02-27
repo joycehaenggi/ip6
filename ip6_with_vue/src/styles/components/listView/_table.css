@@ -76,7 +76,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 }
 
 /* Selected Row */
-.v-data-table__expanded__row {
+.v-data-table__expanded__row > td > :not(.tooltip){
     font-weight: bold;
 }
 
