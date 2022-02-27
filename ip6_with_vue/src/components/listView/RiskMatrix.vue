@@ -458,7 +458,7 @@
                :data-title="`Eintretenswahrscheinlichkeit : von 5`"
                :title="`Eintretenswahrscheinlichkeit : von 5`">
       </circle>
-      <text @mousemove="showTooltip($event, '<b>'+titleTooltip2+'</b> <br> ' +
+      <text v-if="probabilityOfOccurrenceBeforeRiskMatrix !== probabilityOfOccurrenceAfterRiskMatrix" @mousemove="showTooltip($event, '<b>'+titleTooltip2+'</b> <br> ' +
        'Eintretungswahrscheinlichkeit: '+probabilityOfOccurrenceAfterRiskMatrix+ '<br>'+
        'Schweregrad: '+severityRiskMatrix)"
             @mouseout="hideTooltip()"
