@@ -420,10 +420,8 @@
       </filter>
     </defs>
 
-    <circle :cx="positionInMatrix(severityRiskMatrix, 'circle', 'x')" :cy="positionInMatrix(severityRiskMatrix, 'circle', 'y')" r="12.5" fill="black" fill-opacity="0.5"/>
-
-
-    <text fill="white" :x="positionInMatrix(severityRiskMatrix, 'text', 'x')" :y="positionInMatrix(severityRiskMatrix, 'text', 'y')" class="riskPriorityNumbers">
+    <circle :cx="positionInMatrix(severityRiskMatrix, 'circle', 'x')" :cy="positionInMatrix(probabilityOfOccurrenceBeforeRiskMatrix, 'circle', 'y')" r="12.5" fill="black" fill-opacity="0.5"/>
+    <text fill="white" :x="positionInMatrix(severityRiskMatrix, 'text', 'x')" :y="positionInMatrix(probabilityOfOccurrenceBeforeRiskMatrix, 'text', 'y')" class="riskPriorityNumbers">
       {{ probabilityOfOccurrenceBeforeRiskMatrix }}:{{ severityRiskMatrix }}
     </text>
     <!--    <text fill="white" x="44.5" y="166.5" class="riskPriorityNumbers">{{ probabilityOfOccurrenceBeforeRiskMatrix }}:{{ severityRiskMatrix }}</text>-->
@@ -435,27 +433,23 @@ export default {
   props: ['probabilityOfOccurrenceBeforeRiskMatrix', 'probabilityOfOccurrenceAfterRiskMatrix', 'severityRiskMatrix'],
 
   methods: {
-    positionInMatrix(severityRiskMatrix, element, axis) {
+    positionInMatrix(changeValueRiskMatrix, element, axis) {
       var squareWitdth = 33
-      var newXposition
-      var newYposition
+      var newAxisPosition
       if (element === 'text') {
         if (axis === 'x') {
-          newXposition = 44.5 + ((severityRiskMatrix - 1) * squareWitdth)
-          return newXposition
+          newAxisPosition = 44.5 + ((changeValueRiskMatrix - 1) * squareWitdth)
         } else {
-          newYposition = 166.5 - ((severityRiskMatrix - 1) * squareWitdth)
-          return newYposition
+          newAxisPosition = 166.5 - ((changeValueRiskMatrix - 1) * squareWitdth)
         }
       } else {
         if (axis === 'x') {
-          newXposition = 52.5 + ((severityRiskMatrix - 1) * squareWitdth)
-          return newXposition
+          newAxisPosition = 52.5 + ((changeValueRiskMatrix - 1) * squareWitdth)
         } else {
-          newYposition = 162.5 - ((severityRiskMatrix - 1) * squareWitdth)
-          return newYposition
+          newAxisPosition = 162.5 - ((changeValueRiskMatrix - 1) * squareWitdth)
         }
       }
+      return newAxisPosition
 
     },
 
