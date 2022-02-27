@@ -352,6 +352,13 @@
 
                       </div>
                     </div>
+                    <div class="riskMatrix">
+                      <RiskMatrix
+                          :probabilityOfOccurrenceBeforeRiskMatrix="item.probabilityOfOccurrenceBefore"
+                          :probabilityOfOccurrenceAfterRiskMatrix="item.probabilityOfOccurrenceAfter"
+                          :severityRiskMatrix="item.severity"
+                      />
+                    </div>
                     <!--                    <img src='../../assets/svg/riskVisualization1.svg'>-->
                     <!--                    <img src='../../assets/svg/riskVisualization2.svg' class='riskVisualization2'>-->
                   </div>
@@ -482,10 +489,16 @@
     <!--    <p>Message is: {{ message }}</p>-->
   </div>
 
+
 </template>
 
 <script>
+import RiskMatrix from "@/components/listView/RiskMatrix";
+
 export default {
+  components: {
+    RiskMatrix,
+  },
   props: ['actualTitleNameTable', 'nameCounterTable'],
   data() {
     return {

@@ -13,12 +13,14 @@
 @import "items/_tooltip.css";
 
 @import "components/listView/_buttonContainer.css";
-@import "components/_header.css";
-@import "components/_navigation.css";
-@import "components/newHazard/_newHazardForm.css";
-@import "components/_notification.css";
 @import "components/listView/_progress_overview.css";
 @import "components/listView/_table.css";
+@import "components/listView/_riskMatrix.css";
+@import "components/newHazard/_newHazardForm.css";
+@import "components/_header.css";
+@import "components/_navigation.css";
+
+@import "components/_notification.css";
 @import "components/_responsiveAdjustment.css";
 
 @import "materialDesign/_materialDesignIcons.css";
