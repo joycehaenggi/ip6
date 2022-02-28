@@ -101,6 +101,21 @@
                   <div class='block-title'>
                     Auswirkungen der Risikominderung
                   </div>
+                  <div class="graphic-selection">
+                    <div class="graphic-selection-block">
+                      Darstellungsart wählen:
+                    </div>
+                    <div class="graphic-selection-block">
+                      <input :id="`pictogram`" type="checkbox"
+                             v-model="pictogram"/>
+                      <label :for="`pictogram`">Piktogramm</label>
+                    </div>
+                    <div class="graphic-selection-block">
+                      <input :id="`rM`" type="checkbox"
+                             v-model="riskMatrix"/>
+                      <label :for="`rM`">Risikomatrix</label>
+                    </div>
+                  </div>
                   <div class='block-graphics'>
                     <div class="pictogramm" v-if="pictogram">
                       <div class="pictogram-title">
@@ -348,11 +363,8 @@
                                 </div>
                               </div>
                             </div>
-
-
                           </div>
                         </div>
-
                       </div>
                     </div>
 
@@ -367,27 +379,8 @@
                         <RiskMatrix
                             :probabilityOfOccurrenceBeforeRiskMatrix="item.probabilityOfOccurrenceBefore"
                             :probabilityOfOccurrenceAfterRiskMatrix="item.probabilityOfOccurrenceAfter"
-                            :severityRiskMatrix="item.severity"
-                        />
+                            :severityRiskMatrix="item.severity" />
                       </div>
-                    </div>
-
-                    <!--                    <img src='../../assets/svg/riskVisualization1.svg'>-->
-                    <!--                    <img src='../../assets/svg/riskVisualization2.svg' class='riskVisualization2'>-->
-                  </div>
-                  <div class="graphic-selection">
-                    <div class="graphic-selection-block">
-                      Darstellungsart wählen:
-                    </div>
-                    <div class="graphic-selection-block">
-                      <input :id="`pictogram`" type="checkbox"
-                             v-model="pictogram"/>
-                      <label :for="`pictogram`">Piktogramm</label>
-                    </div>
-                    <div class="graphic-selection-block">
-                      <input :id="`rM`" type="checkbox"
-                             v-model="riskMatrix"/>
-                      <label :for="`rM`">Risikomatrix</label>
                     </div>
                   </div>
                 </div>
