@@ -45,14 +45,15 @@
         <template v-slot:item.icon="{item}">
           <img class="icon_list" :src="`${item.imageName}`" alt="icon"/>
         </template>
-<!--        class='tooltip expand akzeptiert-status'-->
+        <!--        class='tooltip expand akzeptiert-status'-->
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{item}">
           <div
-               ref="submit"
-               :class="{ 'apply-shake': shake , 'tooltip expand akzeptiert-status' :true}"
-               @click="shakeAnimation()"
-               data-title="Akzeptiert-Status">
+              ref="submit"
+              :id="`acceptedDiv${item.id}`"
+              :class="{ 'apply-shake': shake , 'tooltip expand akzeptiert-status' :true}"
+              @click="shakeAnimation(item.id)"
+              data-title="Akzeptiert-Status">
             <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-width="1.5"
@@ -510,10 +511,10 @@
       </v-data-table>
     </v-app>
 
-<!--    <form id="test-form">-->
-<!--      <input type="text" id="test-input">-->
-<!--      <button type="submit" id="submit-button" onclick="shakeAnimation()">Submit</button>-->
-<!--    </form>-->
+    <!--    <form id="test-form">-->
+    <!--      <input type="text" id="test-input">-->
+    <!--      <button type="submit" id="submit-button" onclick="shakeAnimation()">Submit</button>-->
+    <!--    </form>-->
     <!--    <input v-model="message" placeholder="edit me">-->
     <!--    <p>Message is: {{ message }}</p>-->
   </div>
@@ -790,7 +791,10 @@ export default {
   mounted() {
 
     this.$refs.submit.addEventListener("animationend", (e) => {
-      this.shake = false
+      // this.shake = false
+      let actualAcceptedCheckmarkDiv = document.getElementById("acceptedDiv" + elementId)
+
+      actualAcceptedCheckmarkDiv.classList.remove("apply-shake")
     });
 
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
@@ -823,8 +827,13 @@ export default {
   updated() {
   },
   methods: {
-    shakeAnimation() {
-      this.shake = true;
+    shakeAnimation(elementId) {
+      let actualAcceptedCheckmarkDiv = document.getElementById("acceptedDiv" + elementId)
+      actualAcceptedCheckmarkDiv.classList.add("apply-shake")
+
+      setTimeout(() =>
+          actualAcceptedCheckmarkDiv.classList.remove("apply-shake"), 820
+      )
     },
 
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
@@ -1036,7 +1045,7 @@ export default {
 }
 
 .apply-shake {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
 }
 
 </style>
