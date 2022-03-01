@@ -45,7 +45,7 @@
         <template v-slot:item.icon="{item}">
           <img class="icon_list" :src="`${item.imageName}`" alt="icon"/>
         </template>
-        <!--        class='tooltip expand akzeptiert-status'-->
+
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{item}">
           <div
@@ -850,7 +850,7 @@ export default {
       }
 
 
-      if (acceptStatus === false && specification === false) {
+      if (acceptStatus === false && specification === false && itemId !== null) {
         let actualCheckbox = document.getElementById("confirm" + itemId)
 
         if (actualCheckbox.checked === true) {
@@ -975,29 +975,38 @@ export default {
     },
     cancel() {
       this.expanded = []
-      this.hazards.push({
-        id: 15,
-        categoryId: 1,
-        name: "Designvorgadddbe Mindestdicke kann nicht eingehalten werden. - Dicke des Implantsts zu dünn.",
-        imageName: require('../../assets/svg/table_icons/toThin.svg'),
-        riskPriority: 2,
-        hazardDetailDescription: "Implantat bricht aufgrund der zu kleinen Mindestdicke.",
-        damage: "Zweitoperation",
-        probabilityOfOccurrenceBefore: 3,
-        severity: 3,
-        measures: "Erfüllen der Belastungstests (DFMEA-D16)",
-        probabilityOfOccurrenceAfter: 3,
-      })
-      console.log(this.hazards)
-      // this.hazardsSliced = []
-      switch (this.nameCounterTable) {
-        case 0:
-          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
-          break
-        case 1:
-          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
-          break
-      }
+
+      localStorage.checkedCheckboxesArray = null
+      localStorage.acceptCounterArray = null
+
+      this.numberOfCheckedCheckboxes(null, false, false)
+
+
+      // this.hazards.push({
+      //   id: 15,
+      //   categoryId: 1,
+      //   name: "Designvorgadddbe Mindestdicke kann nicht eingehalten werden. - Dicke des Implantsts zu dünn.",
+      //   imageName: require('../../assets/svg/table_icons/toThin.svg'),
+      //   riskPriority: "2 mittel",
+      //   hazardDetailDescription: "Implantat bricht aufgrund der zu kleinen Mindestdicke.",
+      //   damage: "Zweitoperation",
+      //   probabilityOfOccurrenceBefore: 3,
+      //   severity: 3,
+      //   measures: "Erfüllen der Belastungstests (DFMEA-D16)",
+      //   probabilityOfOccurrenceAfter: 3,
+      // })
+      // console.log(this.hazards)
+      // // this.hazardsSliced = []
+      // switch (this.nameCounterTable) {
+      //   case 0:
+      //     this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
+      //     break
+      //   case 1:
+      //     this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
+      //     break
+      // }
+      //
+
     },
     pictogramIconColor(itemNumber, svgNumber, activeColor) {
       if (svgNumber <= itemNumber) {
@@ -1015,29 +1024,3 @@ export default {
 }
 
 </script>
-
-<style>
-/* Standard syntax */
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
-.apply-shake {
-  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-}
-
-</style>
