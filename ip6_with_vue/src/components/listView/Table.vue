@@ -789,14 +789,6 @@ export default {
     }
   },
   mounted() {
-
-    this.$refs.submit.addEventListener("animationend", (e) => {
-      // this.shake = false
-      let actualAcceptedCheckmarkDiv = document.getElementById("acceptedDiv" + elementId)
-
-      actualAcceptedCheckmarkDiv.classList.remove("apply-shake")
-    });
-
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
       let newArray = []
       localStorage.checkedCheckboxesArray = JSON.stringify(newArray);
