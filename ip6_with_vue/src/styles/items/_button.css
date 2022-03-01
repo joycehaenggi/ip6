@@ -1,7 +1,8 @@
 .button {
     font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
     font-family: OpenSans-SemiBold, serif;
-    width: 140px;
+    padding-left: var(--paddingButtons);
+    padding-right: var(--paddingButtons);
     height: 38px;
     border-radius: 50px;
     justify-content: center;
@@ -48,6 +49,10 @@
 
 .button-cancel:hover {
     background-color: #d3d8e1;
+}
+
+.button-newHazard {
+    width: 140px;
 }
 
 .button-newHazard-cancel {

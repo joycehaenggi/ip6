@@ -45,10 +45,13 @@
         <template v-slot:item.icon="{item}">
           <img class="icon_list" :src="`${item.imageName}`" alt="icon"/>
         </template>
-
+<!--        class='tooltip expand akzeptiert-status'-->
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{item}">
-          <div class='tooltip expand akzeptiert-status'
+          <div
+               ref="submit"
+               :class="{ 'apply-shake': shake , 'tooltip expand akzeptiert-status' :true}"
+               @click="shakeAnimation()"
                data-title="Akzeptiert-Status">
             <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -379,7 +382,7 @@
                         <RiskMatrix
                             :probabilityOfOccurrenceBeforeRiskMatrix="item.probabilityOfOccurrenceBefore"
                             :probabilityOfOccurrenceAfterRiskMatrix="item.probabilityOfOccurrenceAfter"
-                            :severityRiskMatrix="item.severity" />
+                            :severityRiskMatrix="item.severity"/>
                       </div>
                     </div>
                   </div>
@@ -506,6 +509,11 @@
 
       </v-data-table>
     </v-app>
+
+<!--    <form id="test-form">-->
+<!--      <input type="text" id="test-input">-->
+<!--      <button type="submit" id="submit-button" onclick="shakeAnimation()">Submit</button>-->
+<!--    </form>-->
     <!--    <input v-model="message" placeholder="edit me">-->
     <!--    <p>Message is: {{ message }}</p>-->
   </div>
@@ -523,6 +531,7 @@ export default {
   props: ['actualTitleNameTable', 'nameCounterTable'],
   data() {
     return {
+      shake: false,
       message: "",
       pictogramRows: [
         {pictogramRow: 1, title: "Vor Massnahmen"},
@@ -780,6 +789,10 @@ export default {
   },
   mounted() {
 
+    this.$refs.submit.addEventListener("animationend", (e) => {
+      this.shake = false
+    });
+
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
       let newArray = []
       localStorage.checkedCheckboxesArray = JSON.stringify(newArray);
@@ -810,6 +823,10 @@ export default {
   updated() {
   },
   methods: {
+    shakeAnimation() {
+      this.shake = true;
+    },
+
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
       if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
         let newArray = []
@@ -991,9 +1008,35 @@ export default {
       } else {
         return "#E1E5EB"
       }
-    }
+    },
 
   }
 }
 
 </script>
+
+<style>
+/* Standard syntax */
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.apply-shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+</style>
