@@ -455,9 +455,10 @@
                           </button>
                         </router-link>
                         <!--                      <button @click="accept(item.id)" class="button button-submit button-finishHazard">Gefährdung abschliessen</button>-->
-                        <input @click="numberOfCheckedCheckboxes(item.id, false, true)"
-                               class="button button-submit button-finishHazard"
-                               type="submit" value="Gefährdung abschliessen">
+                        <input
+                            @click="numberOfCheckedCheckboxes(item.id, false, true)"
+                            class="button button-submit button-finishHazard"
+                            type="submit" value="Gefährdung abschliessen">
                       </div>
                     </div>
 
@@ -485,18 +486,20 @@
                         class="textarea-declaration"
                         rows="2"
                         aria-required="true"
+                        v-model="customMadeDeviceDescription"
                     />
                     <div class='block block-verify'>
                       <div class='block-title'>
                         Arztnachweis
                       </div>
                       <div class="block-text">
-                        <input class=" inputfile" type="file" name="file" id="file" title="test"/>
+                        <input class=" inputfile" type="file"  name="file" id="file" title="test"/>
                       </div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
-                      <!--                    <button @click="accept(item.id)"  class="button button-submit">Gefährdung abschliessen</button>-->
                       <input @click="accept(item.id)" class="button button-submit" type="submit"
+                             :id="`customMadeDeviceSubmit${item.id}`"
+                             :disabled="checkCustomMadeDeviceFields(item.id)"
                              value="Gefährdung abschliessen">
                     </div>
                   </div>
@@ -511,12 +514,6 @@
       </v-data-table>
     </v-app>
 
-    <!--    <form id="test-form">-->
-    <!--      <input type="text" id="test-input">-->
-    <!--      <button type="submit" id="submit-button" onclick="shakeAnimation()">Submit</button>-->
-    <!--    </form>-->
-    <!--    <input v-model="message" placeholder="edit me">-->
-    <!--    <p>Message is: {{ message }}</p>-->
   </div>
 
 
@@ -532,6 +529,9 @@ export default {
   props: ['actualTitleNameTable', 'nameCounterTable'],
   data() {
     return {
+      customMadeDeviceDescription: '',
+      customMadeDeviceFile: '',
+      customMadeDeviceDocument: '',
       shake: false,
       message: "",
       pictogramRows: [
@@ -768,7 +768,6 @@ export default {
           break
       }
 
-      this.acceptCounter = 0
       localStorage.checkedCheckboxesArray = null
       localStorage.acceptCounterArray = null
 
@@ -816,8 +815,23 @@ export default {
     }
     this.numberOfCheckedCheckboxes(null, true, false)
   },
-  updated() {
-  },
+  /*  computed: {
+      checkCustomMadeDeviceFields: function (actualId) {
+        // console.log(actualId)
+
+        console.log(this.customMadeDeviceDescription)
+        // let actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit1")
+        // console.log(actualCustomMadeDeviceSubmit)
+        if (this.customMadeDeviceDescription === '') {
+          // actualCustomMadeDeviceSubmit.style.background = "red"
+          return true
+        } else {
+          // actualCustomMadeDeviceSubmit.style.background = "#339C74";
+          return false
+        }
+      },
+
+    },*/
   methods: {
     shakeAnimation(elementId) {
       let actualAcceptedCheckmarkDiv = document.getElementById("acceptedDiv" + elementId)
@@ -826,6 +840,25 @@ export default {
       setTimeout(() =>
           actualAcceptedCheckmarkDiv.classList.remove("apply-shake"), 820
       )
+    },
+
+    checkCustomMadeDeviceFields(itemId) {
+      if (document.getElementById("customMadeDeviceSubmit"+itemId) !== null && document.getElementById("customMadeDeviceSubmit"+itemId) !== undefined  && document.getElementById("customMadeDeviceSubmit"+itemId) !== "undefined") {
+        var actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit" +itemId)
+        console.log(actualCustomMadeDeviceSubmit)
+      }
+
+      if (this.customMadeDeviceDescription === '') {
+        if (document.getElementById("customMadeDeviceSubmit"+itemId) !== null && document.getElementById("customMadeDeviceSubmit"+itemId) !== undefined
+            && document.getElementById("customMadeDeviceSubmit") !== undefined && document.getElementById("customMadeDeviceSubmit"+itemId) !== "undefined") {
+          // actualCustomMadeDeviceSubmit.style.background = "red"
+        }
+        // console.log(this.customMadeDeviceFile)
+        return true
+      } else {
+        // actualCustomMadeDeviceSubmit.style.background = "#339C74";
+        return false
+      }
     },
 
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
@@ -946,6 +979,7 @@ export default {
     },
     accept(itemId) {
       this.expanded = []
+      this.customMadeDeviceDescription = ''
       let element = document.getElementById("accepted" + itemId)
 
       if (!element.style.opacity.match("1")) {
