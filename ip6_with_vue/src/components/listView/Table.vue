@@ -815,23 +815,6 @@ export default {
     }
     this.numberOfCheckedCheckboxes(null, true, false)
   },
-  /*  computed: {
-      checkCustomMadeDeviceFields: function (actualId) {
-        // console.log(actualId)
-
-        console.log(this.customMadeDeviceDescription)
-        // let actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit1")
-        // console.log(actualCustomMadeDeviceSubmit)
-        if (this.customMadeDeviceDescription === '') {
-          // actualCustomMadeDeviceSubmit.style.background = "red"
-          return true
-        } else {
-          // actualCustomMadeDeviceSubmit.style.background = "#339C74";
-          return false
-        }
-      },
-
-    },*/
   methods: {
     shakeAnimation(elementId) {
       let actualAcceptedCheckmarkDiv = document.getElementById("acceptedDiv" + elementId)
@@ -841,7 +824,6 @@ export default {
           actualAcceptedCheckmarkDiv.classList.remove("apply-shake"), 820
       )
     },
-
     checkCustomMadeDeviceFields(itemId) {
       if (document.getElementById("customMadeDeviceSubmit"+itemId) !== null && document.getElementById("customMadeDeviceSubmit"+itemId) !== undefined  && document.getElementById("customMadeDeviceSubmit"+itemId) !== "undefined") {
         var actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit" +itemId)
