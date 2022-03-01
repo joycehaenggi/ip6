@@ -516,9 +516,10 @@ export default {
       tooltip.innerHTML = '<b>' + text + '</b> <br> ' +
           'Eintretungswahrscheinlichkeit: ' + this.probabilityOfOccurrenceBeforeRiskMatrix + '<br>' +
           'Schweregrad: ' + this.severityRiskMatrix;
-      tooltip.style.display = "block";
-      tooltip.style.left = evt.pageX + -60 + 'px';
-      tooltip.style.top = evt.pageY + -210 + 'px';
+      tooltip.style.display = "block"
+      tooltip.style.left = evt.pageX + -60 + 'px'
+      tooltip.style.top = evt.pageY + -210 + 'px'
+      // tooltip.style.transition = "1s"
     },
 
     hideTooltip() {
@@ -529,8 +530,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-
-</style>
