@@ -161,11 +161,22 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     font-family: 'OpenSans-SemiBold', sans-serif;
 }
 
-.block-text {
+.block-text, .graphic-selection, .block-graphics {
     margin-left: 40px;
-    margin-top: 8px;
+}
+
+.block-text, .graphic-selection, .block-graphics {
+    margin-left: 40px;
+}
+
+.graphic-selection {
     display: flex;
     align-items: center;
+    height: 50px;
+}
+
+.graphic-selection-block {
+    margin-right: 20px;
 }
 
 .block-graphics {
@@ -240,16 +251,6 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 
 .pictogram-graphic-block-svgs-block-description {
     padding-bottom: calc(0 * 0.063rem);
-}
-
-.graphic-selection {
-    display: flex;
-    align-items: center;
-    height: 50px;
-}
-
-.graphic-selection-block {
-    margin-right: 20px;
 }
 
 

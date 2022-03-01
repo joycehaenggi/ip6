@@ -14,7 +14,7 @@
   border-top-right-radius: 5px;
 }
 
-form {
+form.form_newHazard {
   border: 1px solid var(--frames-BlueGray);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;

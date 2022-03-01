@@ -63,7 +63,7 @@
         <!--Expanded informations-->
         <template v-slot:expanded-item="{ headers, item }">
           <td class="td_detailView" :colspan="headers.length ">
-            <form>
+            <form class="form_detailView">
               <div class='title_with_image_container'>
                 <div class='title_with_image_square'>
                   <div class='title_detail_view'> Dicke des Implantats zu dünn. {{ item.hazardDetailDescription }}

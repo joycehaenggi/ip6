@@ -4,7 +4,8 @@
     <div class="new_hazard_title">
       Neue Gefährdung erstellen
     </div>
-    <form class="form" id="form">
+<!--    <form class="form" id="form">-->
+    <form class="form_newHazard">
       <div class="flex-element">
         <div class="column column1">
           <label class="label_customized">Gefährdung</label>
