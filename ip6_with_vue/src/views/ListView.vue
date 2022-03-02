@@ -60,11 +60,7 @@ export default {
     this.nameCounterListView
   },
   methods: {
-/*    numberOfAllCheckboxes() {
-      this.nunmberOfAllCheckboxesValue = document.querySelectorAll('input[type="checkbox"]').length
-    },*/
     transferCheckboxNumbers(nunmberFinished, numberOfCurrentCheckboxes) {
-      // this.numberOfAllCheckboxes()
       this.nunmberOfCheckedCheckboxesValue = nunmberFinished
 
       this.numberOfCurrentCheckboxesValue= numberOfCurrentCheckboxes
@@ -74,6 +70,7 @@ export default {
 
       progress_in_percent.style.transition = "1s"
       progress_in_percent.style.width = this.percentageOfCheckedCheckboxes + "%"
+      progress_in_percent.style.maxWidth = "100%"
 
       this.noCheckboxChecked = this.percentageOfCheckedCheckboxes === 0;
 
