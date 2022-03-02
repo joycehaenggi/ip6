@@ -584,7 +584,7 @@ export default {
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
           measures: "Erfüllen der Belastungstests (DFMEA-D16)",
-          probabilityOfOccurrenceAfter: 3,
+          probabilityOfOccurrenceAfter: 2,
 
         },
         {
@@ -598,7 +598,7 @@ export default {
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
           measures: "Erfüllen der Belastungstests (DFMEA-D16)",
-          probabilityOfOccurrenceAfter: 3,
+          probabilityOfOccurrenceAfter: 2,
 
         },
         {
@@ -612,7 +612,7 @@ export default {
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
           measures: "Einen Standardschraubentyp aus ähnlichen Indikationen verwenden  und unter Belastung testen  (DFMEA-D14)",
-          probabilityOfOccurrenceAfter: 3,
+          probabilityOfOccurrenceAfter: 1,
 
         },
         {
@@ -626,7 +626,7 @@ export default {
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
           measures: "Erfüllen der Belastungstests (DFMEA-D16)",
-          probabilityOfOccurrenceAfter: 3,
+          probabilityOfOccurrenceAfter: 1,
 
         },
         {
@@ -640,7 +640,7 @@ export default {
           probabilityOfOccurrenceBefore: 3,
           severity: 2,
           measures: "Einen Standardschraubentyp aus ähnlichen Indikationen verwenden  und unter Belastung testen  (DFMEA-D14).",
-          probabilityOfOccurrenceAfter: 3,
+          probabilityOfOccurrenceAfter: 1,
         },
         {
           id: 6,

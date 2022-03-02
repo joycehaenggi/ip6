@@ -506,7 +506,6 @@ export default {
       tooltip.style.display = "block"
       tooltip.style.left = evt.pageX + -60 + 'px'
       tooltip.style.top = evt.pageY + -210 + 'px'
-      // tooltip.style.transition = "1s"
     },
 
     hideTooltip() {
