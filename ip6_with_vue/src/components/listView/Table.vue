@@ -768,11 +768,6 @@ export default {
           break
       }
 
-      // localStorage.checkedCheckboxesArray = null
-      // localStorage.acceptCounterArray = null
-
-      // console.log(JSON.parse(localStorage.checkedCheckboxesArray))
-
       this.numberOfCheckedCheckboxes(null, true, false)
     }
   },
