@@ -25,6 +25,9 @@
 
 .first_part {
     display: flex;
+    width: 610px;
+    align-items: center;
+    justify-content:center;
 }
 
 .arrow {

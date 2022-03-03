@@ -66,12 +66,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.first_part {
-  width: 610px;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-}
-</style>

@@ -1,6 +1,7 @@
 <template>
   <div class="progress-wrapper">
-    <div class="title_progress_bar" id="titleProgressBar">Fortschrittsübersicht -
+    <div class="title_progress_bar" id="titleProgressBar">
+      Fortschrittsübersicht -
       {{ titleNamesProcessOverview[nameCounterProcessOverview] }}
     </div>
     <div class="progress_bar">
@@ -16,6 +17,5 @@
 <script>
 export default {
   props: ['noCheckboxCheckedProcess', 'percentageOfCheckedCheckboxesProcess', 'nameCounterProcessOverview', 'titleNamesProcessOverview']
-
   }
 </script>
