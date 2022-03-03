@@ -493,7 +493,7 @@
                         Arztnachweis
                       </div>
                       <div class="block-text">
-                        <input class=" inputfile" type="file"  name="file" id="file" title="test"/>
+                        <input class=" inputfile" type="file" name="file" id="file" title="test"/>
                       </div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
@@ -814,7 +814,9 @@ export default {
       }
     }
     this.numberOfCheckedCheckboxes(null, true, false)
-  },
+  }
+
+  ,
   methods: {
     shakeAnimation(elementId) {
       let actualAcceptedCheckmarkDiv = document.getElementById("acceptedDiv" + elementId)
@@ -823,16 +825,17 @@ export default {
       setTimeout(() =>
           actualAcceptedCheckmarkDiv.classList.remove("apply-shake"), 820
       )
-    },
+    }
+    ,
     checkCustomMadeDeviceFields(itemId) {
-      if (document.getElementById("customMadeDeviceSubmit"+itemId) !== null && document.getElementById("customMadeDeviceSubmit"+itemId) !== undefined  && document.getElementById("customMadeDeviceSubmit"+itemId) !== "undefined") {
-        var actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit" +itemId)
+      if (document.getElementById("customMadeDeviceSubmit" + itemId) !== null && document.getElementById("customMadeDeviceSubmit" + itemId) !== undefined && document.getElementById("customMadeDeviceSubmit" + itemId) !== "undefined") {
+        var actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit" + itemId)
         console.log(actualCustomMadeDeviceSubmit)
       }
 
       if (this.customMadeDeviceDescription === '') {
-        if (document.getElementById("customMadeDeviceSubmit"+itemId) !== null && document.getElementById("customMadeDeviceSubmit"+itemId) !== undefined
-            && document.getElementById("customMadeDeviceSubmit") !== undefined && document.getElementById("customMadeDeviceSubmit"+itemId) !== "undefined") {
+        if (document.getElementById("customMadeDeviceSubmit" + itemId) !== null && document.getElementById("customMadeDeviceSubmit" + itemId) !== undefined
+            && document.getElementById("customMadeDeviceSubmit") !== undefined && document.getElementById("customMadeDeviceSubmit" + itemId) !== "undefined") {
           // actualCustomMadeDeviceSubmit.style.background = "red"
         }
         // console.log(this.customMadeDeviceFile)
@@ -841,7 +844,8 @@ export default {
         // actualCustomMadeDeviceSubmit.style.background = "#339C74";
         return false
       }
-    },
+    }
+    ,
 
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
       if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
@@ -928,7 +932,8 @@ export default {
       }
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
 
-    },
+    }
+    ,
     itemIdPartOfArray(itemId) {
       if (localStorage.checkedCheckboxesArray === 'undefined' || localStorage.checkedCheckboxesArray === 'null') {
         return false
@@ -944,7 +949,8 @@ export default {
         }
       }
       return false
-    },
+    }
+    ,
     itemIdPartOfArray2(itemId) {
       if (localStorage.acceptCounterArray === 'undefined' || localStorage.acceptCounterArray === 'null') {
         return 0.2
@@ -958,7 +964,8 @@ export default {
         }
       }
       return 0.2
-    },
+    }
+    ,
     accept(itemId) {
       this.expanded = []
       this.customMadeDeviceDescription = ''
@@ -988,7 +995,8 @@ export default {
       }
 
       this.numberOfCheckedCheckboxes(itemId, true, false)
-    },
+    }
+    ,
     cancel() {
       this.expanded = []
 
@@ -1023,7 +1031,8 @@ export default {
       // }
       //
 
-    },
+    }
+    ,
     pictogramIconColor(itemNumber, svgNumber, activeColor) {
       if (svgNumber <= itemNumber) {
         if (activeColor === 1) {
@@ -1034,7 +1043,8 @@ export default {
       } else {
         return "#E1E5EB"
       }
-    },
+    }
+    ,
 
   }
 }

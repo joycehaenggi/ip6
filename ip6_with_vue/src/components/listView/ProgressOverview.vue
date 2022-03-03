@@ -5,7 +5,7 @@
     </div>
     <div class="progress_bar">
       <div class="progress_in_percent" id="progress_in_percent">
-        <div v-if="!noCheckboxCheckedProcess">
+        <div id="percentageInPro" v-if="!noCheckboxCheckedProcess">
           {{ percentageOfCheckedCheckboxesProcess }}%
         </div>
       </div>
@@ -15,6 +15,7 @@
 
 <script>
 export default {
-  props: ['noCheckboxCheckedProcess', 'percentageOfCheckedCheckboxesProcess', 'nameCounterProcessOverview', 'titleNamesProcessOverview'],
+  props: ['noCheckboxCheckedProcess', 'percentageOfCheckedCheckboxesProcess', 'nameCounterProcessOverview', 'titleNamesProcessOverview']
+
   }
 </script>
