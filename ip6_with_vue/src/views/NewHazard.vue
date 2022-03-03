@@ -4,7 +4,6 @@
     <div class="wrapper">
       <Navigation
           :actualTitleNameNavigation="$route.params.actualTitleNameNewHazard"
-          :listViewStatusNavigation="listViewStatus"
       />
       <NewHazardForm/>
     </div>
@@ -22,10 +21,8 @@ export default {
     Navigation,
     NewHazardForm
   },
-  data() {
-    return {
-      listViewStatus: false,
-    }
+  mounted(){
+    console.log(this.$route.params.actualTitleNameNewHazard)
   }
 }
 </script>

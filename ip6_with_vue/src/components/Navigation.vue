@@ -96,6 +96,6 @@
 
 <script>
 export default {
-  props: ['actualTitleNameNavigation', 'listViewStatusNavigation']
+  props: ['actualTitleNameNavigation']
 }
 </script>
