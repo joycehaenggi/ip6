@@ -76,7 +76,7 @@ export default {
       let nextStepLink = document.getElementById("nextStep-Link")
 
 
-      if (this.percentageOfCheckedCheckboxes === 100) {
+      if (this.percentageOfCheckedCheckboxes >= 100) {
         nextStepButton.style.color = 'white'
         nextStepButton.style.background = '#687D99'
         nextStepButton.style.opacity = '1.0'

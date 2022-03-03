@@ -768,13 +768,16 @@ export default {
           break
       }
 
-      localStorage.checkedCheckboxesArray = null
-      localStorage.acceptCounterArray = null
+      // localStorage.checkedCheckboxesArray = null
+      // localStorage.acceptCounterArray = null
+
+      // console.log(JSON.parse(localStorage.checkedCheckboxesArray))
 
       this.numberOfCheckedCheckboxes(null, true, false)
     }
   },
   created() {
+
     if (localStorage.checkedCheckboxesArray === undefined) {
       localStorage.checkedCheckboxesArray = undefined
     }
@@ -814,9 +817,8 @@ export default {
       }
     }
     this.numberOfCheckedCheckboxes(null, true, false)
-  }
 
-  ,
+  },
   methods: {
     shakeAnimation(elementId) {
       let actualAcceptedCheckmarkDiv = document.getElementById("acceptedDiv" + elementId)
