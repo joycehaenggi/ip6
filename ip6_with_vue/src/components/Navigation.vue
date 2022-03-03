@@ -90,7 +90,6 @@
       <div class="menu-title-box">
         <p class="manu-title" id="titleName">{{ actualTitleNameNavigation }}</p>
       </div>
-
     </div>
   </div>
 </template>

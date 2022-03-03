@@ -247,11 +247,6 @@ input[type="text"] {
   font-size: 11px;
 }
 
-
-.class {
-  margin-left: 15rem;
-}
-
 .wrapper {
   margin-top: calc(var(--marginOne) * 0.063rem);
   padding-left: var(--paddingLeftRight);

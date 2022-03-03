@@ -1,4 +1,3 @@
-/* Tooltip new Version */
 .tooltip {
     position: relative;
     z-index: 2;
@@ -106,7 +105,6 @@ tr:last-child > td.text-start > .akzeptiert-status:before {
     top: -35px;
     width: 110px;
 }
-
 
 #tooltip {
     position:absolute;
