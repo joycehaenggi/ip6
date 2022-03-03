@@ -39,13 +39,13 @@ export default {
 
     function typing(){
       if(i < typingWord.length){
-        document.getElementById("text_notification").innerHTML += typingWord.charAt(i);
-        i++;
-        setTimeout(typing, 20);
+        document.getElementById("text_notification").innerHTML += typingWord.charAt(i)
+        i++
+        setTimeout(typing, 15)
       }
     }
 
-    typing();
+    typing()
   },
   methods: {
     decreaseNotification() {
@@ -55,11 +55,11 @@ export default {
 
       if (this.fullNotification === true) {
         notification.style.width = "5%"
-        TextNotification.style.display = "none";
+        TextNotification.style.display = "none"
         this.fullNotification = false
       } else {
         notification.style.width = "100%"
-        TextNotification.style.display = "block";
+        TextNotification.style.display = "block"
         this.fullNotification = true
       }
     }

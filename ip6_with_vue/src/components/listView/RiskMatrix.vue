@@ -1,6 +1,6 @@
 <template>
   <div id="riskMatrix">
-    <div id="tooltip" style="position: absolute; display: none;"></div>
+    <div id="tooltip"></div>
 
     <svg width="216" height="212" viewBox="0 0 216 212" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_d_1909_77424)">
@@ -499,18 +499,18 @@ export default {
       } else {
         text = this.titleTooltip3
       }
-      let tooltip = document.getElementById("tooltip");
+      let tooltip = document.getElementById("tooltip")
       tooltip.innerHTML = '<b>' + text + '</b> <br> ' +
           'Eintretungswahrscheinlichkeit: ' + this.probabilityOfOccurrenceBeforeRiskMatrix + '<br>' +
-          'Schweregrad: ' + this.severityRiskMatrix;
+          'Schweregrad: ' + this.severityRiskMatrix
       tooltip.style.display = "block"
       tooltip.style.left = evt.pageX + -60 + 'px'
       tooltip.style.top = evt.pageY + -210 + 'px'
     },
 
     hideTooltip() {
-      var tooltip = document.getElementById("tooltip");
-      tooltip.style.display = "none";
+      var tooltip = document.getElementById("tooltip")
+      tooltip.style.display = "none"
     }
 
   }

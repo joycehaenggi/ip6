@@ -4,7 +4,6 @@
     <div class="new_hazard_title">
       Neue Gefährdung erstellen
     </div>
-<!--    <form class="form" id="form">-->
     <form class="form_newHazard">
       <div class="flex-element">
         <div class="column column1">
@@ -130,10 +129,6 @@
             </div>
           </div>
         </div>
-
-        <!--                <div class="column column4">
-
-                        </div>-->
       </div>
 
       <div class="flex-element">
@@ -262,10 +257,7 @@
           <div class="column3_part2">
             <div class="result_field severity_field" id="resultSeverity_two"></div>
           </div>
-
         </div>
-        <!--                <div class="column column4">
-                        </div>-->
       </div>
       <div class="flex-element">
         <div class="column column1">
@@ -315,14 +307,14 @@
 </template>
 
 <script>
-let ProbabilityOfOccurrenceValue = null
-let ProbabilityOfOccurrenceValue2 = null;
-let severityValue = null;
+let ProbabilityOfOccurrenceValue = null,
+ProbabilityOfOccurrenceValue2 = null,
+severityValue = null,
 
 
-let transition = "1s";
-let color1 = "white";
-let color2 = "black";
+transition = "1s",
+color1 = "white",
+color2 = "black"
 
 export default {
   data() {
@@ -335,81 +327,81 @@ export default {
   methods: {
     displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
       if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {
-        ProbabilityOfOccurrenceValue = document.querySelector('input[name="probabilityOfOccurrence"]:checked').value;
-        document.getElementById("resultProbabilityOfOccurrence").innerHTML = ProbabilityOfOccurrenceValue;
+        ProbabilityOfOccurrenceValue = document.querySelector('input[name="probabilityOfOccurrence"]:checked').value
+        document.getElementById("resultProbabilityOfOccurrence").innerHTML = ProbabilityOfOccurrenceValue
       } else {
-        ProbabilityOfOccurrenceValue2 = document.querySelector('input[name="probabilityOfOccurrenceTwo"]:checked').value;
-        document.getElementById("resultProbabilityOfOccurrence_two").innerHTML = ProbabilityOfOccurrenceValue2;
+        ProbabilityOfOccurrenceValue2 = document.querySelector('input[name="probabilityOfOccurrenceTwo"]:checked').value
+        document.getElementById("resultProbabilityOfOccurrence_two").innerHTML = ProbabilityOfOccurrenceValue2
       }
 
-      this.checkofProbabilityOfOccurrenceANDSeverity();
+      this.checkofProbabilityOfOccurrenceANDSeverity()
     },
     // get value of the checked radio for severity
     displayRadioValueOfSeverity() {
-      severityValue = document.querySelector('input[name="severity"]:checked').value;
+      severityValue = document.querySelector('input[name="severity"]:checked').value
 
-      let severityValueField = document.getElementById("resultSeverity");
+      let severityValueField = document.getElementById("resultSeverity")
 
-      severityValueField.style.animation = "changeBackground 3s 1;";
-      severityValueField.innerHTML = severityValue;
-      document.getElementById("resultSeverity_two").innerHTML = severityValue;
-      document.getElementById("resultSeverity_three").innerHTML = severityValue;
+      severityValueField.style.animation = "changeBackground 3s 1 "
+      severityValueField.innerHTML = severityValue
+      document.getElementById("resultSeverity_two").innerHTML = severityValue
+      document.getElementById("resultSeverity_three").innerHTML = severityValue
 
-      this.checkofProbabilityOfOccurrenceANDSeverity();
+      this.checkofProbabilityOfOccurrenceANDSeverity()
     },
     checkofProbabilityOfOccurrenceANDSeverity() {
-      let resultField1 = document.getElementById("resultRiskPriorityNumber");
-      let resultField2 = document.getElementById("resultRiskPriorityNumber2");
+      let resultField1 = document.getElementById("resultRiskPriorityNumber")
+      let resultField2 = document.getElementById("resultRiskPriorityNumber2")
 
       if (severityValue !== null) {
-        let NewSeverityValue = parseInt(severityValue, 10);
+        let NewSeverityValue = parseInt(severityValue, 10)
 
         if (ProbabilityOfOccurrenceValue !== null) {
-          let result = ProbabilityOfOccurrenceValue * severityValue;
+          let result = ProbabilityOfOccurrenceValue * severityValue
 
           if (result <= 6 && NewSeverityValue !== 5) {
-            resultField1.style.background = "#339C74";
-            resultField1.style.color = color1;
-            resultField1.style.transition = transition;
+            resultField1.style.background = "#339C74"
+            resultField1.style.color = color1
+            resultField1.style.transition = transition
           } else if ((result >= 7 && result <= 12 && NewSeverityValue !== 5) || (result === 5 && NewSeverityValue === 5)) {
-            resultField1.style.background = "#FBDB34";
-            resultField1.style.color = color2;
-            resultField1.style.transition = transition;
+            resultField1.style.background = "#FBDB34"
+            resultField1.style.color = color2
+            resultField1.style.transition = transition
           } else {
-            resultField1.style.background = "#D63837";
-            resultField1.style.color = color1;
-            resultField1.style.transition = transition;
+            resultField1.style.background = "#D63837"
+            resultField1.style.color = color1
+            resultField1.style.transition = transition
           }
         }
 
         if (ProbabilityOfOccurrenceValue2 !== null) {
-          let result2 = ProbabilityOfOccurrenceValue2 * severityValue;
+          let result2 = ProbabilityOfOccurrenceValue2 * severityValue
 
           if (result2 <= 6 && NewSeverityValue !== 5) {
-            resultField2.style.background = "#339C74";
-            resultField2.style.color = color1;
-            resultField2.style.transition = transition;
+            resultField2.style.background = "#339C74"
+            resultField2.style.color = color1
+            resultField2.style.transition = transition
           } else if ((result2 >= 7 && result2 <= 12 && NewSeverityValue !== 5) || (result2 === 5 && NewSeverityValue === 5)) {
-            resultField2.style.background = "#FBDB34";
-            resultField2.style.color = color2;
-            resultField2.style.transition = transition;
+            resultField2.style.background = "#FBDB34"
+            resultField2.style.color = color2
+            resultField2.style.transition = transition
           } else {
-            resultField2.style.background = "#D63837";
-            resultField2.style.color = color1;
-            resultField2.style.transition = transition;
+            resultField2.style.background = "#D63837"
+            resultField2.style.color = color1
+            resultField2.style.transition = transition
           }
         }
       }
     },
     addNewTextfield(TopicofnewTextfield) {
-      var objTo = document.getElementById(TopicofnewTextfield);
-      var divAdd = document.createElement("div");
+      var objTo = document.getElementById(TopicofnewTextfield)
+      var divAdd = document.createElement("div")
       divAdd.innerHTML = '<div class="flex_add">\n' +
           '<div class="empty_column-Flex-Add">\n' +
           '</div>\n' +
           '<div class="flex_add_column">' +
           '<input class="input_customized add_new_input" type="text">' +
-          '</div></div>';
+          '</div></div>'
       objTo.appendChild(divAdd)
     }
   }

@@ -24,7 +24,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+
 import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
 import NotificationBar from "@/components/NotificationBar";
@@ -50,8 +50,6 @@ export default {
       numberOfCurrentCheckboxesValue: null,
       noCheckboxChecked: true,
       titleNames: ['Implantatdesign Matching', 'SLM Titan'],
-/*      titleNames: ['CT-Scan Orbita Rekon', 'CT-Daten Segmentierung Orbita', '3D Patientenanatomie', 'Implantatdesign Matching', 'Pre-Processing for SLM Titan Orbita',
-        'SLM Titan', 'Wärmebehandlung SLM Titan', 'Deburring SLM Titan', 'Sand-Blasting SLM Titan', 'Machining SLM Titan Structures'],*/
       nameCounterListView: 0,
       listViewStatus: true,
     }
@@ -65,38 +63,35 @@ export default {
 
       this.numberOfCurrentCheckboxesValue= numberOfCurrentCheckboxes
 
-      let progress_in_percent = document.getElementById("progress_in_percent");
-      this.percentageOfCheckedCheckboxes = Math.round((this.nunmberOfCheckedCheckboxesValue / this.numberOfCurrentCheckboxesValue) * 100);
+      let progress_in_percent = document.getElementById("progress_in_percent")
+      this.percentageOfCheckedCheckboxes = Math.round((this.nunmberOfCheckedCheckboxesValue / this.numberOfCurrentCheckboxesValue) * 100)
 
       progress_in_percent.style.transition = "1s"
       progress_in_percent.style.width = this.percentageOfCheckedCheckboxes + "%"
       progress_in_percent.style.maxWidth = "100%"
 
-      this.noCheckboxChecked = this.percentageOfCheckedCheckboxes === 0;
+      this.noCheckboxChecked = this.percentageOfCheckedCheckboxes === 0
 
-      let nextStepButton = document.getElementById("button-nextStep");
-      let nextStepLink = document.getElementById("nextStep-Link");
+      let nextStepButton = document.getElementById("button-nextStep")
+      let nextStepLink = document.getElementById("nextStep-Link")
 
 
       if (this.percentageOfCheckedCheckboxes === 100) {
-        nextStepButton.style.color = 'white';
-        nextStepButton.style.background = '#687D99';
-        nextStepButton.style.opacity = '1.0';
-        nextStepButton.style.cursor = 'pointer';
-        nextStepLink.style.pointerEvents = 'auto';
+        nextStepButton.style.color = 'white'
+        nextStepButton.style.background = '#687D99'
+        nextStepButton.style.opacity = '1.0'
+        nextStepButton.style.cursor = 'pointer'
+        nextStepLink.style.pointerEvents = 'auto'
       } else {
-        nextStepButton.style.color = '#4C5A69';
-        nextStepButton.style.background = '#E1E5EB';
-        nextStepButton.style.opacity = '0.4';
-        nextStepButton.style.cursor = 'default';
-        nextStepLink.style.pointerEvents = 'none';
+        nextStepButton.style.color = '#4C5A69'
+        nextStepButton.style.background = '#E1E5EB'
+        nextStepButton.style.opacity = '0.4'
+        nextStepButton.style.cursor = 'default'
+        nextStepLink.style.pointerEvents = 'none'
       }
     },
     transferNameCounter(nameCounter) {
-      // console.log(this.nameCounterListView = nameCounter)
-      // console.log(typeof this.nameCounterListView)
-      this.nameCounterListView = parseInt(nameCounter, 10);
-      // console.log(this.nameCounterListView)
+      this.nameCounterListView = parseInt(nameCounter, 10)
     }
 
   }

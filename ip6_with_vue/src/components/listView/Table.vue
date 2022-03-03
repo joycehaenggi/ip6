@@ -520,7 +520,7 @@
 </template>
 
 <script>
-import RiskMatrix from "@/components/listView/RiskMatrix";
+import RiskMatrix from "@/components/listView/RiskMatrix"
 
 export default {
   components: {
@@ -665,7 +665,7 @@ export default {
           damage: "Infektion, ungewollte Immunreaktion",
           probabilityOfOccurrenceBefore: 2,
           severity: 4,
-          measures: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP;\n" +
+          measures: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP \n" +
               "\n" +
               "Vor Gebrauch die Bauplattform mit Isopropanol reinigen gemäss SOP.",
           probabilityOfOccurrenceAfter: 1,
@@ -676,10 +676,10 @@ export default {
           name: "Bauplattform ist nicht aus demselben Material wie das Baumaterial.",
           imageName: require('../../assets/svg/table_icons/not_same_material.svg'),
           riskPriority: "2 mittel",
-          hazardDetailDescription: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP;\n" +
+          hazardDetailDescription: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP \n" +
               "\n" +
               "Vor Gebrauch die Bauplattform mit G23",
-          damage: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP;\n" +
+          damage: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP \n" +
               "\n" +
               "Vor Gebrauch die Bauplattform mit G23",
           probabilityOfOccurrenceBefore: 2,
@@ -697,9 +697,9 @@ export default {
           damage: "Schädigung der Weichteile / Sehnervs",
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
-          measures: "Geschultes Personal;\n" +
+          measures: "Geschultes Personal \n" +
               "\n" +
-              "Visuelle Prüfung  des Pulverausstrichs bei der zuletzt gebauten  Schicht gemäss SOP;\n" +
+              "Visuelle Prüfung  des Pulverausstrichs bei der zuletzt gebauten  Schicht gemäss SOP \n" +
               "\n" +
               "Soll-Ist Vergleich mittels 3D-Scan bei der Type Examination gemäss SOP",
           probabilityOfOccurrenceAfter: 2,
@@ -752,7 +752,7 @@ export default {
       this.idOfFirstElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
       this.idOfLastElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
 
-      let i;
+      let i
       for (i = this.idOfFirstElementActualCategory; i < this.idOfLastElementActualCategory; i++) {
         if (document.getElementById("confirm" + i) !== null) {
           document.getElementById("confirm" + i).checked = false
@@ -784,20 +784,20 @@ export default {
     }
 
     if (this.nameCounterTable === 0) {
-      this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1);
+      this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
     }
   },
   mounted() {
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
       let newArray = []
-      localStorage.checkedCheckboxesArray = JSON.stringify(newArray);
+      localStorage.checkedCheckboxesArray = JSON.stringify(newArray)
     }
     if (localStorage.acceptCounterArray === "undefined" || localStorage.acceptCounterArray === undefined || localStorage.acceptCounterArray === "null" || localStorage.acceptCounterArray === null) {
       let newArray = []
-      localStorage.acceptCounterArray = JSON.stringify(newArray);
+      localStorage.acceptCounterArray = JSON.stringify(newArray)
     }
 
-    let storedNames = JSON.parse(localStorage.checkedCheckboxesArray);
+    let storedNames = JSON.parse(localStorage.checkedCheckboxesArray)
 
     let checkedCheckboxArrayNew = []
 
@@ -810,7 +810,7 @@ export default {
     }
     for (var j = 0; j < checkedCheckboxArrayNew.length; j++) {
       if (document.getElementById("confirm" + checkedCheckboxArrayNew[j] !== null)) {
-        document.getElementById("confirm" + checkedCheckboxArrayNew[j]).checked = true;
+        document.getElementById("confirm" + checkedCheckboxArrayNew[j]).checked = true
       }
     }
     this.numberOfCheckedCheckboxes(null, true, false)
@@ -841,7 +841,7 @@ export default {
         // console.log(this.customMadeDeviceFile)
         return true
       } else {
-        // actualCustomMadeDeviceSubmit.style.background = "#339C74";
+        // actualCustomMadeDeviceSubmit.style.background = "#339C74"
         return false
       }
     }
@@ -850,22 +850,22 @@ export default {
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
       if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
         let newArray = []
-        localStorage.checkedCheckboxesArray = JSON.stringify(newArray);
-        this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray);
+        localStorage.checkedCheckboxesArray = JSON.stringify(newArray)
+        this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
         this.checkedCheckboxesArray = []
 
       } else {
-        this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray);
+        this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
       }
 
       if (localStorage.acceptCounterArray === "undefined" || localStorage.acceptCounterArray === undefined || localStorage.acceptCounterArray === "null" || localStorage.acceptCounterArray === null) {
         let newArray = []
-        localStorage.acceptCounterArray = JSON.stringify(newArray);
-        this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray);
+        localStorage.acceptCounterArray = JSON.stringify(newArray)
+        this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
         this.acceptCounterArray = []
 
       } else {
-        this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray);
+        this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
       }
 
 
@@ -884,7 +884,7 @@ export default {
             }
           }
           if (index > -1) {
-            this.checkedCheckboxesArray.splice(index, 1); // 2nd parameter means remove one item only
+            this.checkedCheckboxesArray.splice(index, 1)  // 2nd parameter means remove one item only
           }
         }
         localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
@@ -899,17 +899,17 @@ export default {
           //Accept-Array
           const index = this.acceptCounterArray.indexOf(itemId)
           if (index > -1) {
-            this.acceptCounterArray.splice(index, 1); // 2nd parameter means remove one item only
+            this.acceptCounterArray.splice(index, 1)  // 2nd parameter means remove one item only
           }
         }
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
         this.itemIdPartOfArray2(itemId)
-        this.$forceUpdate();
+        this.$forceUpdate()
       }
 
       // For Specification
       if (specification === true) {
-        let checkbox = document.getElementById("confirm" + itemId);
+        let checkbox = document.getElementById("confirm" + itemId)
         if (!localStorage.checkedCheckboxesArray.includes(itemId)) {
           checkbox.checked = true
 
@@ -976,7 +976,7 @@ export default {
 
         element.style.opacity = 1.0
         this.acceptCounter++
-        document.getElementById("confirm" + itemId).checked = false;
+        document.getElementById("confirm" + itemId).checked = false
 
         let index
         for (var i = 0; i < this.checkedCheckboxesArray.length; i++) {
@@ -987,7 +987,7 @@ export default {
           }
         }
         if (index > -1) {
-          this.checkedCheckboxesArray.splice(index, 1); // 2nd parameter means remove one item only
+          this.checkedCheckboxesArray.splice(index, 1)  // 2nd parameter means remove one item only
         }
         localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
 
