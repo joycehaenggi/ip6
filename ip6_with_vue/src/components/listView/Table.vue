@@ -529,7 +529,7 @@ export default {
   components: {
     RiskMatrix,
   },
-  props: ['actualTitleNameTable', 'nameCounterTable'],
+  props: ['actualTitleNameTable', 'nameCounterTable', 'hazardNameTable'],
   data() {
     return {
       customMadeDeviceDescription: '',
@@ -772,6 +772,33 @@ export default {
       }
 
       this.numberOfCheckedCheckboxes(null, true, false)
+    },
+    hazardNameTable: function () {
+      console.log(this.hazardNameTable)
+      if (this.hazardNameTable !== "") {
+        this.hazards.push({
+          id: 15,
+          categoryId: 1,
+          name: this.hazardNameTable,
+          imageName: require('../../assets/svg/table_icons/toThin.svg'),
+          riskPriority: "2 mittel",
+          hazardDetailDescription: "Implantat bricht aufgrund der zu kleinen Mindestdicke.",
+          damage: "Zweitoperation",
+          probabilityOfOccurrenceBefore: 3,
+          severity: 3,
+          measures: "Erfüllen der Belastungstests (DFMEA-D16)",
+          probabilityOfOccurrenceAfter: 3,
+        })
+        console.log(this.hazards)
+        switch (this.nameCounterTable) {
+          case 0:
+            this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
+            break
+          case 1:
+            this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
+            break
+        }
+      }
     }
   },
   created() {
@@ -828,8 +855,8 @@ export default {
     ,
     checkCustomMadeDeviceFields(itemId) {
       if (document.getElementById("customMadeDeviceSubmit" + itemId) !== null && document.getElementById("customMadeDeviceSubmit" + itemId) !== undefined && document.getElementById("customMadeDeviceSubmit" + itemId) !== "undefined") {
-        var actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit" + itemId)
-        console.log(actualCustomMadeDeviceSubmit)
+        // var actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit" + itemId)
+        // console.log(actualCustomMadeDeviceSubmit)
       }
 
       if (this.customMadeDeviceDescription === '') {
@@ -1003,32 +1030,6 @@ export default {
       localStorage.acceptCounterArray = null
 
       this.numberOfCheckedCheckboxes(null, false, false)
-
-
-      // this.hazards.push({
-      //   id: 15,
-      //   categoryId: 1,
-      //   name: "Designvorgadddbe Mindestdicke kann nicht eingehalten werden. - Dicke des Implantsts zu dünn.",
-      //   imageName: require('../../assets/svg/table_icons/toThin.svg'),
-      //   riskPriority: "2 mittel",
-      //   hazardDetailDescription: "Implantat bricht aufgrund der zu kleinen Mindestdicke.",
-      //   damage: "Zweitoperation",
-      //   probabilityOfOccurrenceBefore: 3,
-      //   severity: 3,
-      //   measures: "Erfüllen der Belastungstests (DFMEA-D16)",
-      //   probabilityOfOccurrenceAfter: 3,
-      // })
-      // console.log(this.hazards)
-      // // this.hazardsSliced = []
-      // switch (this.nameCounterTable) {
-      //   case 0:
-      //     this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
-      //     break
-      //   case 1:
-      //     this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
-      //     break
-      // }
-      //
 
     }
     ,

@@ -9,6 +9,7 @@
       <Table @ReadCheckboxNumber="transferCheckboxNumbers"
              :actualTitleNameTable="titleNames[nameCounterListView]"
              :nameCounterTable="nameCounterListView"
+             :hazardNameTable ="hazardNameNewListView"
       />
       <ProgressOverview :noCheckboxCheckedProcess="noCheckboxChecked"
                        :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"
@@ -51,10 +52,14 @@ export default {
       noCheckboxChecked: true,
       titleNames: ['Implantatdesign Matching', 'SLM Titan'],
       nameCounterListView: 0,
+      hazardNameNewListView: ""
     }
   },
   mounted(){
-    console.log(this.$route.params.nameListView)
+    // console.log(this.$route.params.hazardNameListView)
+    if(this.$route.params.hazardNameListView !== undefined) {
+      this.hazardNameNewListView = this.$route.params.hazardNameListView
+    }
   },
   methods: {
     transferCheckboxNumbers(nunmberFinished, numberOfCurrentCheckboxes) {
