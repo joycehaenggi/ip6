@@ -11,14 +11,10 @@ const routes = [
     component: ListView
   },
   {
-    path: '/newHazard/:actualTitleNameNewHazard/:itemIdNewHazard/:checkedCheckboxesArrayNewHazard*/:acceptCounterArrayNewHazard*',
+    path: '/newHazard/:actualTitleNameNewHazard/:itemIdNewHazard/',
     name: 'NewHazard',
     mode: "history",
-    Props: true, // if props is set to true, $route.params will be set as the component property
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/NewHazard.vue')
+    component: () => import('../views/NewHazard.vue')
   }
 ]
 

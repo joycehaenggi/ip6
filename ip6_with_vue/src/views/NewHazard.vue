@@ -15,7 +15,7 @@ import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
 import NewHazardForm from "@/components/newHazard/NewHazardForm";
 export default {
-  props: ['actualTitleNameNewHazard', 'itemIdNewHazard', 'checkedCheckboxesArrayNewHazard', 'acceptCounterArrayNewHazard'],
+  props: ['actualTitleNameNewHazard', 'itemIdNewHazard'],
   components: {
     Header,
     Navigation,

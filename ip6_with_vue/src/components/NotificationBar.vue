@@ -41,7 +41,7 @@ export default {
       if(i < typingWord.length){
         document.getElementById("text_notification").innerHTML += typingWord.charAt(i)
         i++
-        setTimeout(typing, 15)
+        setTimeout(typing, 10)
       }
     }
 
