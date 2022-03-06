@@ -59,6 +59,16 @@
     margin-right: 20px;
 }
 
+.button-newHazard-submit {
+    opacity: 0.4;
+    pointer-events: none;
+    text-align: center;
+}
+
+#router-link-newHazardSubmit {
+    pointer-events: none;
+}
+
 .button-finishHazard{
     margin-left: 20px;
 }

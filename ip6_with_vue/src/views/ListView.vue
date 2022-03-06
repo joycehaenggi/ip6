@@ -4,7 +4,6 @@
     <div class="wrapper">
       <Navigation
           :actualTitleNameNavigation="titleNames[nameCounterListView]"
-          :listViewStatusNavigation="listViewStatus"
       />
       <NotificationBar/>
       <Table @ReadCheckboxNumber="transferCheckboxNumbers"
@@ -33,6 +32,7 @@ import ProgressOverview from "@/components/listView/ProgressOverview";
 import ButtonContainerListView from "@/components/listView/ButtonContainerListView";
 
 export default {
+  props: ['nameListView'],
   components: {
     Header,
     Navigation,
@@ -51,8 +51,10 @@ export default {
       noCheckboxChecked: true,
       titleNames: ['Implantatdesign Matching', 'SLM Titan'],
       nameCounterListView: 0,
-      listViewStatus: true,
     }
+  },
+  mounted(){
+    console.log(this.$route.params.nameListView)
   },
   methods: {
     transferCheckboxNumbers(nunmberFinished, numberOfCurrentCheckboxes) {
@@ -89,7 +91,7 @@ export default {
     },
     transferNameCounter(nameCounter) {
       this.nameCounterListView = parseInt(nameCounter, 10)
-    }
+    },
   }
 }
 </script>

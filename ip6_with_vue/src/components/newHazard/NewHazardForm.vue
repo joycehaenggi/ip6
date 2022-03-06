@@ -10,7 +10,7 @@
           <label class="label_customized">Gefährdung</label>
         </div>
         <div class="column column2">
-          <input class="input_customized" type="text">
+          <input v-model="hazardNameNewHazardForm" class="input_customized" type="text">
         </div>
       </div>
       <div class="flex-element">
@@ -18,7 +18,7 @@
           <label class="label_customized">Gefährdungssituation</label>
         </div>
         <div class="column column2">
-          <input class="input_customized" type="text">
+          <input v-model="hazardSituationNewHazardForm" class="input_customized" type="text">
         </div>
       </div>
       <div class="flex-element flex_add">
@@ -26,7 +26,7 @@
           <label class="label_customized addLabel">Schaden</label>
         </div>
         <div class="column column2">
-          <input class="input_customized add_new_input" type="text">
+          <input v-model="hazardDamageNewHazardForm" class="input_customized add_new_input" type="text">
           <svg class="svg_add" width="20" height="20" @click="addNewTextfield('add_new_Damage')"
                viewBox="0 0 20 20" fill="none"
                xmlns="http://www.w3.org/2000/svg">
@@ -60,27 +60,32 @@
         <div class="column column2">
           <div class="radio">
             <label class="container"> 1
-              <input type="radio" name="probabilityOfOccurrence" value="1"
+              <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
+                     name="probabilityOfOccurrence" value="1"
                      @click="displayRadioValueOfProbabilityOfOccurrence(1)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 2
-              <input type="radio" name="probabilityOfOccurrence" value="2"
+              <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
+                     name="probabilityOfOccurrence" value="2"
                      @click="displayRadioValueOfProbabilityOfOccurrence(1)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 3
-              <input type="radio" name="probabilityOfOccurrence" value="3"
+              <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
+                     name="probabilityOfOccurrence" value="3"
                      @click="displayRadioValueOfProbabilityOfOccurrence(1)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 4
-              <input type="radio" name="probabilityOfOccurrence" value="4"
+              <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
+                     name="probabilityOfOccurrence" value="4"
                      @click="displayRadioValueOfProbabilityOfOccurrence(1)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 5
-              <input type="radio" name="probabilityOfOccurrence" value="5"
+              <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
+                     name="probabilityOfOccurrence" value="5"
                      @click="displayRadioValueOfProbabilityOfOccurrence(1)">
               <span class="custom_radio_button"></span>
             </label>
@@ -102,27 +107,27 @@
           <div class="column3_part2">
             <div class="radio">
               <label class="container"> 1
-                <input type="radio" name="severity" value="1"
+                <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="1"
                        @click="displayRadioValueOfSeverity()">
                 <span class="custom_radio_button"></span>
               </label>
               <label class="container"> 2
-                <input type="radio" name="severity" value="2"
+                <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="2"
                        @click="displayRadioValueOfSeverity()">
                 <span class="custom_radio_button"></span>
               </label>
               <label class="container"> 3
-                <input type="radio" name="severity" value="3"
+                <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="3"
                        @click="displayRadioValueOfSeverity()">
                 <span class="custom_radio_button"></span>
               </label>
               <label class="container"> 4
-                <input type="radio" name="severity" value="4"
+                <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="4"
                        @click="displayRadioValueOfSeverity()">
                 <span class="custom_radio_button"></span>
               </label>
               <label class="container"> 5
-                <input type="radio" name="severity" value="5"
+                <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="5"
                        @click="displayRadioValueOfSeverity()">
                 <span class="custom_radio_button"></span>
               </label>
@@ -160,7 +165,7 @@
           <label class="label_customized addLabel">Massnahmen</label>
         </div>
         <div class="column column2 add_column">
-          <input class="input_customized add_new_input" type="text">
+          <input v-model="hazardMeasuresNewHazardForm" class="input_customized add_new_input" type="text">
           <svg class="svg_add" width="20" height="20" @click="addNewTextfield('add_new_measures')"
                viewBox="0 0 20 20"
                fill="none"
@@ -215,27 +220,32 @@
         <div class="column column2">
           <div class="radio">
             <label class="container"> 1
-              <input type="radio" name="probabilityOfOccurrenceTwo" value="1"
+              <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
+                     name="probabilityOfOccurrenceTwo" value="1"
                      @click="displayRadioValueOfProbabilityOfOccurrence(2)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 2
-              <input type="radio" name="probabilityOfOccurrenceTwo" value="2"
+              <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
+                     name="probabilityOfOccurrenceTwo" value="2"
                      @click="displayRadioValueOfProbabilityOfOccurrence(2)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 3
-              <input type="radio" name="probabilityOfOccurrenceTwo" value="3"
+              <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
+                     name="probabilityOfOccurrenceTwo" value="3"
                      @click="displayRadioValueOfProbabilityOfOccurrence(2)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 4
-              <input type="radio" name="probabilityOfOccurrenceTwo" value="4"
+              <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
+                     name="probabilityOfOccurrenceTwo" value="4"
                      @click="displayRadioValueOfProbabilityOfOccurrence(2)">
               <span class="custom_radio_button"></span>
             </label>
             <label class="container"> 5
-              <input type="radio" name="probabilityOfOccurrenceTwo" value="5"
+              <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
+                     name="probabilityOfOccurrenceTwo" value="5"
                      @click="displayRadioValueOfProbabilityOfOccurrence(2)">
               <span class="custom_radio_button"></span>
             </label>
@@ -293,10 +303,10 @@
               Abbrechen
             </div>
           </router-link>
-          <router-link :to="{ name: 'ListView'}">
-            <div class="button button-submit button-newHazard">
-              Speichern
-            </div>
+          <router-link :to="{ name: 'ListView', params: { nameListView: hazardNameNewHazardForm }}"
+                       id="router-link-newHazardSubmit">
+            <input class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit"
+                   :disabled="setNewHazardButtonProperties()" value="Speichern">
           </router-link>
         </div>
       </div>
@@ -308,23 +318,64 @@
 
 <script>
 let ProbabilityOfOccurrenceValue = null,
-ProbabilityOfOccurrenceValue2 = null,
-severityValue = null,
+    ProbabilityOfOccurrenceValue2 = null,
+    severityValue = null,
 
 
-transition = "1s",
-color1 = "white",
-color2 = "black"
+    transition = "1s",
+    color1 = "white",
+    color2 = "black"
 
 export default {
   data() {
     return {
-      showToolTip: false,
+      hazardNameNewHazardForm: "",
+      hazardSituationNewHazardForm: "",
+      hazardDamageNewHazardForm: "",
+      hazardProbabilityOfOccurenceBeforeNewHazardForm: "",
+      hazardSeverityNewHazardForm: "",
+      hazardMeasuresNewHazardForm: "",
+      hazardProbabilityOfOccurenceAfterNewHazardForm: "",
       ProbabilityOfOccurrenceValue: null,
       ProbabilityOfOccurrenceValue2: null,
     }
   },
   methods: {
+    setNewHazardButtonProperties() {
+      console.log(this.hazardNameNewHazardForm)
+      console.log(this.hazardSituationNewHazardForm)
+      console.log(this.hazardDamageNewHazardForm)
+      console.log(this.hazardProbabilityOfOccurenceBeforeNewHazardForm)
+      console.log(this.hazardSeverityNewHazardForm)
+      console.log(this.hazardMeasuresNewHazardForm)
+      console.log(this.hazardProbabilityOfOccurenceAfterNewHazardForm)
+
+      let submitButton = document.getElementById("newHazardSubmit"),
+          submitButtonLink = document.getElementById("router-link-newHazardSubmit")
+
+      if (this.checkNewHazardFields()) {
+        if (submitButton !== null && submitButton !== undefined) {
+          submitButton.style.opacity = "1.0"
+          submitButtonLink.style.pointerEvents = 'auto'
+        }
+        return false
+      } else {
+        if (submitButton !== null && submitButton !== undefined) {
+          submitButton.style.opacity = "0.4"
+          submitButtonLink.style.pointerEvents = 'none'
+        }
+        return true
+      }
+    },
+    checkNewHazardFields() {
+      return this.hazardNameNewHazardForm !== "" &&
+          this.hazardSituationNewHazardForm !== "" &&
+          this.hazardDamageNewHazardForm !== "" &&
+          this.hazardProbabilityOfOccurenceBeforeNewHazardForm !== "" &&
+          this.hazardSeverityNewHazardForm !== "" &&
+          this.hazardMeasuresNewHazardForm !== "" &&
+          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== "";
+    },
     displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
       if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {
         ProbabilityOfOccurrenceValue = document.querySelector('input[name="probabilityOfOccurrence"]:checked').value

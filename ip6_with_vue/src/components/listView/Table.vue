@@ -453,12 +453,11 @@
                       </div>
                       <div class="buttonContainer buttonContainer-detailView">
                         <router-link
-                            :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id, checkedCheckboxesArrayNewHazard: checkedCheckboxesArray, acceptCounterArrayNewHazard: acceptCounterArray }}">
+                            :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id }}">
                           <button class="button button-cancel">
                             Gefährdung erstellen
                           </button>
                         </router-link>
-                        <!--                      <button @click="accept(item.id)" class="button button-submit button-finishHazard">Gefährdung abschliessen</button>-->
                         <input
                             @click="numberOfCheckedCheckboxes(item.id, false, true)"
                             class="button button-submit button-finishHazard"

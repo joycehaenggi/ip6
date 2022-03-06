@@ -20,13 +20,6 @@ export default {
     Header,
     Navigation,
     NewHazardForm
-  },
-  mounted(){
-    console.log(this.$route.params.actualTitleNameNewHazard)
   }
 }
 </script>
-
-<style>
-
-</style>
