@@ -775,11 +775,6 @@ export default {
       this.numberOfCheckedCheckboxes(null, true, false)
     }
   },
-/*  updated(){
-    let paginationText = document.getElementsByClassName("v-data-footer__pagination")[0].innerHTML,
-        replaceLinkTo = paginationText.replace(/of/g, "von")
-    document.getElementsByClassName("v-data-footer__pagination")[0].innerHTML = replaceLinkTo
-  },*/
   created() {
 
     if (localStorage.checkedCheckboxesArray === undefined) {

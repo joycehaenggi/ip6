@@ -36,7 +36,6 @@ export default {
       localStorage.nameCounter = this.nameCounter
       this.checkStep()
 
-      // this.$router.go()
     },
     checkStep(){
       this.$emit('readNameCounter', localStorage.nameCounter)
