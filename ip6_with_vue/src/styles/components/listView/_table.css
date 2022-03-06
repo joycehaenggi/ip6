@@ -42,19 +42,18 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
     border:none;
 }
 .v-text-field > .v-input__control > .v-input__slot::after {
-    /*opacity: 0.5;*/
     border-color: var(--notification-Blue) !important;
 
 }
 
-/* Search Field Text no data */
+/*!* Search Field Text no data *!
 .v-data-table__wrapper .v-data-table__empty-wrapper td {
     visibility: hidden;
 }
 .v-data-table__wrapper .v-data-table__empty-wrapper td:after {
     visibility: visible;
     content: "Keine übereinstimmenden Daten gefunden";
-}
+}*/
 
 /* color "suchen" */
 .theme--light.v-label {

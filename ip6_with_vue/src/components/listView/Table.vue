@@ -20,10 +20,14 @@
           :footer-props="{
               showFirstLastPage: true,
               'items-per-page-text':'Gefährdungen pro Seite',
+              'items-per-page-all-text':'Alle',
           }"
           item-key="name"
           show-expand
           class="elevation-1"
+          no-results-text="Keine übereinstimmenden Daten gefunden."
+          no-data-text="Keine Daten gefunden"
+
       >
 
         <!--add risikoprioritätszahl--row-->
@@ -771,6 +775,11 @@ export default {
       this.numberOfCheckedCheckboxes(null, true, false)
     }
   },
+/*  updated(){
+    let paginationText = document.getElementsByClassName("v-data-footer__pagination")[0].innerHTML,
+        replaceLinkTo = paginationText.replace(/of/g, "von")
+    document.getElementsByClassName("v-data-footer__pagination")[0].innerHTML = replaceLinkTo
+  },*/
   created() {
 
     if (localStorage.checkedCheckboxesArray === undefined) {
@@ -812,7 +821,6 @@ export default {
       }
     }
     this.numberOfCheckedCheckboxes(null, true, false)
-
   },
   methods: {
     shakeAnimation(elementId) {

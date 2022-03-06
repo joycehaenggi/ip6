@@ -54,9 +54,6 @@ export default {
       listViewStatus: true,
     }
   },
-  mounted(){
-    this.nameCounterListView
-  },
   methods: {
     transferCheckboxNumbers(nunmberFinished, numberOfCurrentCheckboxes) {
       this.nunmberOfCheckedCheckboxesValue = nunmberFinished
@@ -93,7 +90,6 @@ export default {
     transferNameCounter(nameCounter) {
       this.nameCounterListView = parseInt(nameCounter, 10)
     }
-
   }
 }
 </script>
