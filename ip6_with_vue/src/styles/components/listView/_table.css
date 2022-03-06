@@ -46,15 +46,6 @@ th span, .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
 
 }
 
-/*!* Search Field Text no data *!
-.v-data-table__wrapper .v-data-table__empty-wrapper td {
-    visibility: hidden;
-}
-.v-data-table__wrapper .v-data-table__empty-wrapper td:after {
-    visibility: visible;
-    content: "Keine übereinstimmenden Daten gefunden";
-}*/
-
 /* color "suchen" */
 .theme--light.v-label {
     color: var(--notification-Blue);
