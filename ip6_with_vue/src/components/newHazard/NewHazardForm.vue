@@ -298,7 +298,8 @@
         <div class="column column2 empty_column">
         </div>
         <div class="column column3 button-column">
-          <router-link :to="{ name: 'ListView'}">
+          <router-link :to="{ name: 'ListView', params: {
+            hazardOriginalIdListView: hazardOriginalIdNewHazardForm,}}">
             <div class="button button-cancel button-newHazard button-newHazard-cancel" id="cancel">
               Abbrechen
             </div>
@@ -353,6 +354,7 @@ export default {
   },
   mounted() {
     this.hazardOriginalIdNewHazardForm = this.$route.params.itemIdNewHazard
+    console.log(this.severityValue)
   },
   updated() {
     /*      console.log(this.hazardNameNewHazardForm)
@@ -384,13 +386,13 @@ export default {
     setNewHazardButtonProperties() {
     },
     checkNewHazardFields() {
-      return this.hazardNameNewHazardForm !== "" &&
+      return this.hazardNameNewHazardForm !== "" /*&&
           this.hazardSituationNewHazardForm !== "" &&
           this.hazardDamageNewHazardForm !== "" &&
           this.hazardProbabilityOfOccurenceBeforeNewHazardForm !== "" &&
           this.hazardSeverityNewHazardForm !== "" &&
           this.hazardMeasuresNewHazardForm !== "" &&
-          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""
+          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""*/
     },
     displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
       if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {

@@ -496,7 +496,7 @@
                         Arztnachweis
                       </div>
                       <div class="block-text">
-                        <input class=" inputfile" type="file" name="file" id="file" title="test"/>
+                        <input class=" inputfile" type="file" name="file" id="file"/>
                       </div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
@@ -543,6 +543,7 @@ export default {
       hazardRiskPriorityWord: '',
       hazardNewId: null,
       hazardImageNameTable: '',
+      hazardOriginalIdTableNumber: null,
       customMadeDeviceDescription: '',
       customMadeDeviceFile: '',
       customMadeDeviceDocument: '',
@@ -753,34 +754,34 @@ export default {
     }
   },
   watch: {
-    hazardNameTable: function () {
-      switch (this.hazardRiskPriorityTableNumber) {
-        case 1:
-          this.hazardRiskPriorityWord = 'gering'
-          break
-        case 2:
-          this.hazardRiskPriorityWord = 'mittel'
-          break
-        case 3:
-          this.hazardRiskPriorityWord = 'hoch'
-          break
-      }
+    hazardOriginalIdTableNumber: function () {
       if (this.hazardNameTable !== "") {
+        switch (this.hazardRiskPriorityTableNumber) {
+          case 1:
+            this.hazardRiskPriorityWord = 'gering'
+            break
+          case 2:
+            this.hazardRiskPriorityWord = 'mittel'
+            break
+          case 3:
+            this.hazardRiskPriorityWord = 'hoch'
+            break
+        }
+
         this.hazardNewId = this.hazards.length + 1
         this.hazards.push({
           id: this.hazardNewId,
           categoryId: this.nameCounterTable + 1,
           name: this.hazardNameTable,
           imageName: this.hazardImageNameTable,
-          riskPriority: this.hazardRiskPriorityTableNumber+' '+this.hazardRiskPriorityWord,
+          riskPriority: this.hazardRiskPriorityTableNumber + ' ' + this.hazardRiskPriorityWord,
           hazardDetailDescription: this.hazardSituationTable,
           damage: this.hazardDamageTable,
           probabilityOfOccurrenceBefore: this.hazardProbabilityOfOccurenceBeforeTable,
-          severity: 3,
+          severity: this.hazardSeverityTable,
           measures: this.hazardMeasuresTable,
           probabilityOfOccurrenceAfter: this.hazardProbabilityOfOccurenceAfterTable,
         })
-        console.log(this.hazards)
         switch (this.nameCounterTable) {
           case 0:
             this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
@@ -789,12 +790,10 @@ export default {
             this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
             break
         }
-        console.log(localStorage.checkedCheckboxesArray)
-        this.numberOfCheckedCheckboxes(this.hazardOriginalIdTableNumber, false, true)
       }
+      this.numberOfCheckedCheckboxes(this.hazardOriginalIdTableNumber, false, true)
     },
     nameCounterTable: function () {
-      console.log(localStorage.checkedCheckboxesArray)
       let oldCategoryId
       //for case: nameCounterTable = 0, category = 1 before
       if (this.nameCounterTable === 1) {
@@ -841,7 +840,10 @@ export default {
     }
   },
   mounted() {
-    if(this.$route.params.hazardNameListView !== undefined) {
+    if(this.$route.params.hazardOriginalIdListView !== undefined) {
+      this.hazardOriginalIdTableNumber = this.$route.params.hazardOriginalIdListView
+    }
+    if (this.$route.params.hazardNameListView !== undefined) {
       this.hazardNameTable = this.$route.params.hazardNameListView
       this.hazardSituationTable = this.$route.params.hazardSituationListView
       this.hazardDamageTable = this.$route.params.hazardDamageListView
@@ -850,7 +852,6 @@ export default {
       this.hazardMeasuresTable = this.$route.params.hazardMeasuresListView
       this.hazardProbabilityOfOccurenceAfterTable = this.$route.params.hazardProbabilityOfOccurenceAfterListView
       this.hazardRiskPriorityTableNumber = this.$route.params.hazardRiskPriorityListView
-      this.hazardOriginalIdTableNumber = this.$route.params.hazardOriginalIdListView
       this.hazardImageNameTable = this.hazards.find(hazard => hazard.id === this.hazardOriginalIdTableNumber).imageName
     }
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
@@ -893,7 +894,6 @@ export default {
     checkCustomMadeDeviceFields(itemId) {
       if (document.getElementById("customMadeDeviceSubmit" + itemId) !== null && document.getElementById("customMadeDeviceSubmit" + itemId) !== undefined && document.getElementById("customMadeDeviceSubmit" + itemId) !== "undefined") {
         // var actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit" + itemId)
-        // console.log(actualCustomMadeDeviceSubmit)
       }
 
       if (this.customMadeDeviceDescription === '') {
