@@ -310,7 +310,8 @@
             hazardProbabilityOfOccurenceBeforeListView: hazardProbabilityOfOccurenceBeforeNewHazardForm,
             hazardSeverityListView: hazardSeverityNewHazardForm,
             hazardMeasuresListView: hazardMeasuresNewHazardForm,
-            hazardProbabilityOfOccurenceAfterListView: hazardProbabilityOfOccurenceAfterNewHazardForm
+            hazardProbabilityOfOccurenceAfterListView: hazardProbabilityOfOccurenceAfterNewHazardForm,
+            hazardRiskPriorityListView: hazardRiskPriorityNewHazardForm,
           }}"
                        id="router-link-newHazardSubmit">
             <input class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit"
@@ -342,6 +343,7 @@ export default {
       hazardSeverityNewHazardForm: "",
       hazardMeasuresNewHazardForm: "",
       hazardProbabilityOfOccurenceAfterNewHazardForm: "",
+      hazardRiskPriorityNewHazardForm: 1,
       ProbabilityOfOccurrenceValue: null,
       ProbabilityOfOccurrenceValue2: null,
     }
@@ -420,15 +422,19 @@ export default {
             resultField1.style.background = "#339C74"
             resultField1.style.color = color1
             resultField1.style.transition = transition
+            this.hazardRiskPriorityNewHazardForm = 1
           } else if ((result >= 7 && result <= 12 && NewSeverityValue !== 5) || (result === 5 && NewSeverityValue === 5)) {
             resultField1.style.background = "#FBDB34"
             resultField1.style.color = color2
             resultField1.style.transition = transition
+            this.hazardRiskPriorityNewHazardForm = 2
           } else {
             resultField1.style.background = "#D63837"
             resultField1.style.color = color1
             resultField1.style.transition = transition
+            this.hazardRiskPriorityNewHazardForm = 3
           }
+          console.log(this.hazardRiskPriorityNewHazardForm)
         }
 
         if (ProbabilityOfOccurrenceValue2 !== null) {

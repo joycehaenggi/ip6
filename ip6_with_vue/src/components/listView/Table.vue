@@ -539,6 +539,8 @@ export default {
       hazardSeverityTable: '',
       hazardMeasuresTable: '',
       hazardProbabilityOfOccurenceAfterTable: '',
+      hazardRiskPriorityListViewTable: '',
+      hazardRiskPriorityWord: '',
       customMadeDeviceDescription: '',
       customMadeDeviceFile: '',
       customMadeDeviceDocument: '',
@@ -781,6 +783,17 @@ export default {
       this.numberOfCheckedCheckboxes(null, true, false)
     },
     hazardNameTable: function () {
+      switch (this.hazardRiskPriorityListViewTable) {
+        case 1:
+          this.hazardRiskPriorityWord = 'gering'
+          break
+        case 2:
+          this.hazardRiskPriorityWord = 'mittel'
+          break
+        case 3:
+          this.hazardRiskPriorityWord = 'hoch'
+          break
+      }
       // console.log(this.$route.params.hazardNameListView)
       // console.log(this.hazardNameTable)
       if (this.hazardNameTable !== "") {
@@ -789,7 +802,7 @@ export default {
           categoryId: this.nameCounterTable + 1,
           name: this.hazardNameTable,
           imageName: require('../../assets/svg/table_icons/toThin.svg'),
-          riskPriority: "2 mittel",
+          riskPriority: this.hazardRiskPriorityListViewTable+' '+this.hazardRiskPriorityWord,
           hazardDetailDescription: this.hazardSituationTable,
           damage: this.hazardDamageTable,
           probabilityOfOccurrenceBefore: this.hazardProbabilityOfOccurenceBeforeTable,
@@ -797,7 +810,7 @@ export default {
           measures: this.hazardMeasuresTable,
           probabilityOfOccurrenceAfter: this.hazardProbabilityOfOccurenceAfterTable,
         })
-        // console.log(this.hazards)
+        console.log(this.hazards)
         switch (this.nameCounterTable) {
           case 0:
             this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
@@ -832,8 +845,9 @@ export default {
       this.hazardSeverityTable = this.$route.params.hazardSeverityListView
       this.hazardMeasuresTable = this.$route.params.hazardMeasuresListView
       this.hazardProbabilityOfOccurenceAfterTable = this.$route.params.hazardProbabilityOfOccurenceAfterListView
+      this.hazardRiskPriorityListViewTable = this.$route.params.hazardRiskPriorityListView
     }
-    console.log(this.$route.params.hazardNameListView)
+    console.log(this.$route.params.hazardRiskPriorityListView)
 
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
       let newArray = []
