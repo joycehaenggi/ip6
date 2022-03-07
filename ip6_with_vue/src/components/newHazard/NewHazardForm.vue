@@ -315,8 +315,12 @@
             hazardOriginalIdListView: hazardOriginalIdNewHazardForm
           }}"
                        id="router-link-newHazardSubmit">
-            <input class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit"
-                   :disabled="setNewHazardButtonProperties()" value="Speichern">
+            <!--            <input class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit"
+                               :disabled="setNewHazardButtonProperties()" value="Speichern">-->
+            <div class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit"
+                 :disabled="setNewHazardButtonProperties()">
+              Speichern
+            </div>
           </router-link>
         </div>
       </div>

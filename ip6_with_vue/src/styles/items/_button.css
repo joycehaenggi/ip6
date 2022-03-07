@@ -34,7 +34,7 @@
     cursor: default;
 }
 
-#button-nextStep:hover {
+#button-nextStep:hover, #newHazardSubmit:hover {
     background-color: var(--notification-Blue) !important;
 }
 
@@ -61,12 +61,15 @@
 
 .button-newHazard-submit {
     opacity: 0.4;
-    pointer-events: none;
     text-align: center;
 }
 
+.button-newHazard-submit:hover {
+    background:red;
+}
+
 #router-link-newHazardSubmit {
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 .button-finishHazard{
