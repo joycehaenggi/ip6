@@ -66,8 +66,12 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 }
 
 /* Selected Row */
-.v-data-table__expanded__row > td > :not(.tooltip){
+.v-data-table__expanded__row > td{
     font-weight: bold;
+}
+
+.v-data-table__expanded__row > td div.tooltip{
+    font-weight: normal;
 }
 
 /* Remove background of expand-icon */
