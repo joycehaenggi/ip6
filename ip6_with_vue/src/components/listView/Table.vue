@@ -1052,14 +1052,11 @@ export default {
     }
     ,
     accept(itemId) {
-      this.expanded = []
       this.customMadeDeviceDescription = ''
-      let element = document.getElementById("accepted" + itemId)
 
-      if (!element.style.opacity.match("1")) {
+      if (!this.acceptCounterArray.includes(itemId)) {
         this.acceptCounterArray.push(itemId)
 
-        element.style.opacity = 1.0
         this.acceptCounter++
         document.getElementById("confirm" + itemId).checked = false
 
@@ -1078,10 +1075,12 @@ export default {
 
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
       }
+      console.log(localStorage.acceptCounterArray)
 
       this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
       this.launch_notification()
 
+      this.expanded = []
       this.numberOfCheckedCheckboxes(itemId, true, false, false)
     },
     cancel() {
