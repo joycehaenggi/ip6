@@ -541,6 +541,8 @@ export default {
       hazardProbabilityOfOccurenceAfterTable: '',
       hazardRiskPriorityTableNumber: '',
       hazardRiskPriorityWord: '',
+      hazardNewId: null,
+      hazardImageNameTable: '',
       customMadeDeviceDescription: '',
       customMadeDeviceFile: '',
       customMadeDeviceDocument: '',
@@ -795,11 +797,12 @@ export default {
           break
       }
       if (this.hazardNameTable !== "") {
+        this.hazardNewId = this.hazards.length
         this.hazards.push({
-          id: 15,
+          id: this.hazardNewId,
           categoryId: this.nameCounterTable + 1,
           name: this.hazardNameTable,
-          imageName: require('../../assets/svg/table_icons/toThin.svg'),
+          imageName: this.hazardImageNameTable,
           riskPriority: this.hazardRiskPriorityTableNumber+' '+this.hazardRiskPriorityWord,
           hazardDetailDescription: this.hazardSituationTable,
           damage: this.hazardDamageTable,
@@ -844,6 +847,8 @@ export default {
       this.hazardMeasuresTable = this.$route.params.hazardMeasuresListView
       this.hazardProbabilityOfOccurenceAfterTable = this.$route.params.hazardProbabilityOfOccurenceAfterListView
       this.hazardRiskPriorityTableNumber = this.$route.params.hazardRiskPriorityListView
+      this.hazardOriginalIdTableNumber = this.$route.params.hazardOriginalIdListView
+      this.hazardImageNameTable = this.hazards.find(hazard => hazard.id === this.hazardOriginalIdTableNumber).imageName
     }
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
       let newArray = []

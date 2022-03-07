@@ -312,6 +312,7 @@
             hazardMeasuresListView: hazardMeasuresNewHazardForm,
             hazardProbabilityOfOccurenceAfterListView: hazardProbabilityOfOccurenceAfterNewHazardForm,
             hazardRiskPriorityListView: hazardRiskPriorityNewHazardForm,
+            hazardOriginalIdListView: hazardOriginalIdNewHazardForm
           }}"
                        id="router-link-newHazardSubmit">
             <input class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit"
@@ -344,9 +345,13 @@ export default {
       hazardMeasuresNewHazardForm: "",
       hazardProbabilityOfOccurenceAfterNewHazardForm: "",
       hazardRiskPriorityNewHazardForm: 1,
+      hazardOriginalIdNewHazardForm: 0,
       ProbabilityOfOccurrenceValue: null,
       ProbabilityOfOccurrenceValue2: null,
     }
+  },
+  mounted() {
+    this.hazardOriginalIdNewHazardForm = this.$route.params.itemIdNewHazard
   },
   methods: {
     setNewHazardButtonProperties() {
