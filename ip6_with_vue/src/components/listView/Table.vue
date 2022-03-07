@@ -539,7 +539,7 @@ export default {
       hazardSeverityTable: '',
       hazardMeasuresTable: '',
       hazardProbabilityOfOccurenceAfterTable: '',
-      hazardRiskPriorityListViewTable: '',
+      hazardRiskPriorityTableNumber: '',
       hazardRiskPriorityWord: '',
       customMadeDeviceDescription: '',
       customMadeDeviceFile: '',
@@ -783,7 +783,7 @@ export default {
       this.numberOfCheckedCheckboxes(null, true, false)
     },
     hazardNameTable: function () {
-      switch (this.hazardRiskPriorityListViewTable) {
+      switch (this.hazardRiskPriorityTableNumber) {
         case 1:
           this.hazardRiskPriorityWord = 'gering'
           break
@@ -794,15 +794,13 @@ export default {
           this.hazardRiskPriorityWord = 'hoch'
           break
       }
-      // console.log(this.$route.params.hazardNameListView)
-      // console.log(this.hazardNameTable)
       if (this.hazardNameTable !== "") {
         this.hazards.push({
           id: 15,
           categoryId: this.nameCounterTable + 1,
           name: this.hazardNameTable,
           imageName: require('../../assets/svg/table_icons/toThin.svg'),
-          riskPriority: this.hazardRiskPriorityListViewTable+' '+this.hazardRiskPriorityWord,
+          riskPriority: this.hazardRiskPriorityTableNumber+' '+this.hazardRiskPriorityWord,
           hazardDetailDescription: this.hazardSituationTable,
           damage: this.hazardDamageTable,
           probabilityOfOccurrenceBefore: this.hazardProbabilityOfOccurenceBeforeTable,
@@ -845,10 +843,8 @@ export default {
       this.hazardSeverityTable = this.$route.params.hazardSeverityListView
       this.hazardMeasuresTable = this.$route.params.hazardMeasuresListView
       this.hazardProbabilityOfOccurenceAfterTable = this.$route.params.hazardProbabilityOfOccurenceAfterListView
-      this.hazardRiskPriorityListViewTable = this.$route.params.hazardRiskPriorityListView
+      this.hazardRiskPriorityTableNumber = this.$route.params.hazardRiskPriorityListView
     }
-    console.log(this.$route.params.hazardRiskPriorityListView)
-
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
       let newArray = []
       localStorage.checkedCheckboxesArray = JSON.stringify(newArray)
@@ -897,14 +893,12 @@ export default {
             && document.getElementById("customMadeDeviceSubmit") !== undefined && document.getElementById("customMadeDeviceSubmit" + itemId) !== "undefined") {
           // actualCustomMadeDeviceSubmit.style.background = "red"
         }
-        // console.log(this.customMadeDeviceFile)
         return true
       } else {
         // actualCustomMadeDeviceSubmit.style.background = "#339C74"
         return false
       }
-    }
-    ,
+    },
 
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
       if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {

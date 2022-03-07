@@ -434,7 +434,6 @@ export default {
             resultField1.style.transition = transition
             this.hazardRiskPriorityNewHazardForm = 3
           }
-          console.log(this.hazardRiskPriorityNewHazardForm)
         }
 
         if (ProbabilityOfOccurrenceValue2 !== null) {
