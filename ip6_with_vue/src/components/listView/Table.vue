@@ -40,7 +40,7 @@
         <!--Set checkbox for nicht-zutreffend-row-->
         <template v-slot:item.nicht-zutreffend="{item}">
           <input :id="`confirm${item.id}`" :ref="`confirm${item.id}`"
-                 @click="numberOfCheckedCheckboxes(item.id, false, false)"
+                 @click="numberOfCheckedCheckboxes(item.id, false, false, false)"
                  type="checkbox" :checked="itemIdPartOfArray(item.id)"/>
           <label class="checkbox" :for="`confirm${item.id}`"></label>
         </template>
@@ -459,7 +459,7 @@
                           </button>
                         </router-link>
                         <input
-                            @click="numberOfCheckedCheckboxes(item.id, false, true)"
+                            @click="numberOfCheckedCheckboxes(item.id, false, true, false)"
                             class="button button-submit button-finishHazard"
                             type="submit" value="Gefährdung abschliessen">
                       </div>
@@ -517,7 +517,9 @@
       </v-data-table>
     </v-app>
 
-    <div id="toast"><div id="desc">{{ toastMessage }}</div></div>
+    <div id="toast">
+      <div id="desc">{{ toastMessage }}</div>
+    </div>
 
   </div>
 
@@ -798,7 +800,7 @@ export default {
       }
       this.launch_notification()
 
-      this.numberOfCheckedCheckboxes(this.hazardOriginalIdTableNumber, false, true)
+      this.numberOfCheckedCheckboxes(this.hazardOriginalIdTableNumber, false, true, true)
     },
     nameCounterTable: function () {
       let oldCategoryId
@@ -829,7 +831,7 @@ export default {
           break
       }
 
-      this.numberOfCheckedCheckboxes(null, true, false)
+      this.numberOfCheckedCheckboxes(null, true, false, false)
     },
   },
   created() {
@@ -847,7 +849,7 @@ export default {
     }
   },
   mounted() {
-    if(this.$route.params.hazardOriginalIdListView !== undefined) {
+    if (this.$route.params.hazardOriginalIdListView !== undefined) {
       this.hazardOriginalIdTableNumber = this.$route.params.hazardOriginalIdListView
     }
     if (this.$route.params.hazardNameListView !== undefined) {
@@ -886,13 +888,15 @@ export default {
         document.getElementById("confirm" + checkedCheckboxArrayNew[j]).checked = true
       }
     }
-    this.numberOfCheckedCheckboxes(null, true, false)
+    this.numberOfCheckedCheckboxes(null, true, false, false)
   },
   methods: {
-    launch_notification(){
+    launch_notification() {
       let notification = document.getElementById("toast")
       notification.className = "show";
-      setTimeout(() => { notification.className = notification.className.replace("show", ""); }, 4000);
+      setTimeout(() => {
+        notification.className = notification.className.replace("show", "");
+      }, 4000);
     },
     shakeAnimation(elementId) {
       let actualAcceptedCheckmarkDiv = document.getElementById("acceptedDiv" + elementId)
@@ -901,8 +905,7 @@ export default {
       setTimeout(() =>
           actualAcceptedCheckmarkDiv.classList.remove("apply-shake"), 820
       )
-    }
-    ,
+    },
     checkCustomMadeDeviceFields(itemId) {
       if (document.getElementById("customMadeDeviceSubmit" + itemId) !== null && document.getElementById("customMadeDeviceSubmit" + itemId) !== undefined && document.getElementById("customMadeDeviceSubmit" + itemId) !== "undefined") {
         // var actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit" + itemId)
@@ -920,7 +923,7 @@ export default {
       }
     },
 
-    numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
+    numberOfCheckedCheckboxes(itemId, acceptStatus, specification, newItem) {
 
       if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
         let newArray = []
@@ -966,7 +969,6 @@ export default {
 
       //Accept-icon
       if (itemId !== null) {
-
         if (this.acceptCounterArray.includes(itemId) && acceptStatus === false) {
 
           this.acceptCounter--
@@ -978,21 +980,24 @@ export default {
         }
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
         this.itemIdPartOfArray2(itemId)
-        // this.$forceUpdate()
+        this.$forceUpdate()
       }
 
       // For Specification
       if (specification === true) {
         let checkbox = document.getElementById("confirm" + itemId)
-        if (!localStorage.checkedCheckboxesArray.includes(itemId) && checkbox != null) {
-          checkbox.checked = true
-
+        if (!localStorage.checkedCheckboxesArray.includes(itemId)) {
+          if (checkbox != null) {
+            checkbox.checked = true
+          }
           this.checkedCheckboxesArray.push([itemId, 0])
           localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
         }
         this.expanded = []
 
-        if(this.hazardOriginalIdTableNumber === null){
+        console.log(this.$route.params.hazardOriginalIdListView)
+
+        if (newItem === false) {
           this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
           this.launch_notification()
         }
@@ -1077,7 +1082,7 @@ export default {
       this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
       this.launch_notification()
 
-      this.numberOfCheckedCheckboxes(itemId, true, false)
+      this.numberOfCheckedCheckboxes(itemId, true, false, false)
     },
     cancel() {
       this.expanded = []
@@ -1085,7 +1090,7 @@ export default {
       localStorage.checkedCheckboxesArray = null
       localStorage.acceptCounterArray = null
 
-      this.numberOfCheckedCheckboxes(null, false, false)
+      this.numberOfCheckedCheckboxes(null, false, false, false)
 
     }
     ,
