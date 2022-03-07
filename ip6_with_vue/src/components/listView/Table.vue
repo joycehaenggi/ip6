@@ -517,6 +517,8 @@
       </v-data-table>
     </v-app>
 
+    <div id="toast"><div id="desc">{{ toastMessage }}</div></div>
+
   </div>
 
 
@@ -548,7 +550,7 @@ export default {
       customMadeDeviceFile: '',
       customMadeDeviceDocument: '',
       shake: false,
-      message: "",
+      toastMessage: 'Gefährdung wurde erfolgreich hinzugefügt.',
       pictogramRows: [
         {pictogramRow: 1, title: "Vor Massnahmen"},
         {pictogramRow: 2, title: "Nach Massnahmen"},
@@ -790,7 +792,12 @@ export default {
             this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
             break
         }
+        this.toastMessage = 'Gefährdung wurde erfolgreich hinzugefügt.'
+      } else {
+        this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
       }
+      this.launch_notification()
+
       this.numberOfCheckedCheckboxes(this.hazardOriginalIdTableNumber, false, true)
     },
     nameCounterTable: function () {
@@ -882,6 +889,11 @@ export default {
     this.numberOfCheckedCheckboxes(null, true, false)
   },
   methods: {
+    launch_notification(){
+      let notification = document.getElementById("toast")
+      notification.className = "show";
+      setTimeout(() => { notification.className = notification.className.replace("show", ""); }, 4000);
+    },
     shakeAnimation(elementId) {
       let actualAcceptedCheckmarkDiv = document.getElementById("acceptedDiv" + elementId)
       actualAcceptedCheckmarkDiv.classList.add("apply-shake")
@@ -909,6 +921,7 @@ export default {
     },
 
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification) {
+
       if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
         let newArray = []
         localStorage.checkedCheckboxesArray = JSON.stringify(newArray)
@@ -965,19 +978,24 @@ export default {
         }
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
         this.itemIdPartOfArray2(itemId)
-        this.$forceUpdate()
+        // this.$forceUpdate()
       }
 
       // For Specification
       if (specification === true) {
         let checkbox = document.getElementById("confirm" + itemId)
-        if (!localStorage.checkedCheckboxesArray.includes(itemId)) {
+        if (!localStorage.checkedCheckboxesArray.includes(itemId) && checkbox != null) {
           checkbox.checked = true
 
           this.checkedCheckboxesArray.push([itemId, 0])
           localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
         }
         this.expanded = []
+
+        if(this.hazardOriginalIdTableNumber === null){
+          this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
+          this.launch_notification()
+        }
       }
 
       //General Settings
@@ -991,6 +1009,7 @@ export default {
       } else {
         numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + JSON.parse(localStorage.acceptCounterArray).length
       }
+
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
 
     }
@@ -1055,9 +1074,11 @@ export default {
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
       }
 
+      this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
+      this.launch_notification()
+
       this.numberOfCheckedCheckboxes(itemId, true, false)
-    }
-    ,
+    },
     cancel() {
       this.expanded = []
 
