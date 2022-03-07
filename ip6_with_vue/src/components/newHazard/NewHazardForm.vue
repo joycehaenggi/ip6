@@ -315,10 +315,7 @@
             hazardOriginalIdListView: hazardOriginalIdNewHazardForm
           }}"
                        id="router-link-newHazardSubmit">
-            <!--            <input class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit"
-                               :disabled="setNewHazardButtonProperties()" value="Speichern">-->
-            <div class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit"
-                 :disabled="setNewHazardButtonProperties()">
+            <div class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit">
               Speichern
             </div>
           </router-link>
@@ -357,41 +354,43 @@ export default {
   mounted() {
     this.hazardOriginalIdNewHazardForm = this.$route.params.itemIdNewHazard
   },
+  updated() {
+    /*      console.log(this.hazardNameNewHazardForm)
+      console.log(this.hazardSituationNewHazardForm)
+      console.log(this.hazardDamageNewHazardForm)
+      console.log(this.hazardProbabilityOfOccurenceBeforeNewHazardForm)
+      console.log(this.hazardSeverityNewHazardForm)
+      console.log(this.hazardMeasuresNewHazardForm)
+      console.log(this.hazardProbabilityOfOccurenceAfterNewHazardForm)*/
+
+    let submitButton = document.getElementById("newHazardSubmit"),
+        submitButtonLink = document.getElementById("router-link-newHazardSubmit")
+
+    if (this.checkNewHazardFields()) {
+      if (submitButton !== null && submitButton !== undefined) {
+        submitButton.style.opacity = "1.0"
+        submitButtonLink.style.pointerEvents = 'auto'
+      }
+      return false
+    } else {
+      if (submitButton !== null && submitButton !== undefined) {
+        submitButton.style.opacity = "0.4"
+        submitButtonLink.style.pointerEvents = 'none'
+      }
+      return true
+    }
+  },
   methods: {
     setNewHazardButtonProperties() {
-      /*      console.log(this.hazardNameNewHazardForm)
-            console.log(this.hazardSituationNewHazardForm)
-            console.log(this.hazardDamageNewHazardForm)
-            console.log(this.hazardProbabilityOfOccurenceBeforeNewHazardForm)
-            console.log(this.hazardSeverityNewHazardForm)
-            console.log(this.hazardMeasuresNewHazardForm)
-            console.log(this.hazardProbabilityOfOccurenceAfterNewHazardForm)*/
-
-      let submitButton = document.getElementById("newHazardSubmit"),
-          submitButtonLink = document.getElementById("router-link-newHazardSubmit")
-
-      if (this.checkNewHazardFields()) {
-        if (submitButton !== null && submitButton !== undefined) {
-          submitButton.style.opacity = "1.0"
-          submitButtonLink.style.pointerEvents = 'auto'
-        }
-        return false
-      } else {
-        if (submitButton !== null && submitButton !== undefined) {
-          submitButton.style.opacity = "0.4"
-          submitButtonLink.style.pointerEvents = 'none'
-        }
-        return true
-      }
     },
     checkNewHazardFields() {
-      return this.hazardNameNewHazardForm !== "" /*&&
+      return this.hazardNameNewHazardForm !== "" &&
           this.hazardSituationNewHazardForm !== "" &&
           this.hazardDamageNewHazardForm !== "" &&
           this.hazardProbabilityOfOccurenceBeforeNewHazardForm !== "" &&
           this.hazardSeverityNewHazardForm !== "" &&
           this.hazardMeasuresNewHazardForm !== "" &&
-          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""*/
+          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""
     },
     displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
       if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {
