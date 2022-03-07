@@ -797,7 +797,7 @@ export default {
           break
       }
       if (this.hazardNameTable !== "") {
-        this.hazardNewId = this.hazards.length
+        this.hazardNewId = this.hazards.length + 1
         this.hazards.push({
           id: this.hazardNewId,
           categoryId: this.nameCounterTable + 1,

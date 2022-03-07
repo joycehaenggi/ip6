@@ -329,7 +329,6 @@
 <script>
 let ProbabilityOfOccurrenceValue = null,
     ProbabilityOfOccurrenceValue2 = null,
-    severityValue = null,
     transition = "1s",
     color1 = "white",
     color2 = "black"
@@ -348,6 +347,7 @@ export default {
       hazardOriginalIdNewHazardForm: 0,
       ProbabilityOfOccurrenceValue: null,
       ProbabilityOfOccurrenceValue2: null,
+      severityValue: null
     }
   },
   mounted() {
@@ -402,14 +402,14 @@ export default {
     },
     // get value of the checked radio for severity
     displayRadioValueOfSeverity() {
-      severityValue = document.querySelector('input[name="severity"]:checked').value
+      this.severityValue = document.querySelector('input[name="severity"]:checked').value
 
       let severityValueField = document.getElementById("resultSeverity")
 
-      severityValueField.style.animation = "changeBackground 3s 1 "
-      severityValueField.innerHTML = severityValue
-      document.getElementById("resultSeverity_two").innerHTML = severityValue
-      document.getElementById("resultSeverity_three").innerHTML = severityValue
+      // severityValueField.style.animation = "changeBackground 3s 1 "
+      severityValueField.innerHTML = this.severityValue
+      document.getElementById("resultSeverity_two").innerHTML = this.severityValue
+      document.getElementById("resultSeverity_three").innerHTML = this.severityValue
 
       this.checkofProbabilityOfOccurrenceANDSeverity()
     },
@@ -417,11 +417,11 @@ export default {
       let resultField1 = document.getElementById("resultRiskPriorityNumber")
       let resultField2 = document.getElementById("resultRiskPriorityNumber2")
 
-      if (severityValue !== null) {
-        let NewSeverityValue = parseInt(severityValue, 10)
+      if (this.severityValue !== null) {
+        let NewSeverityValue = parseInt(this.severityValue, 10)
 
         if (ProbabilityOfOccurrenceValue !== null) {
-          let result = ProbabilityOfOccurrenceValue * severityValue
+          let result = ProbabilityOfOccurrenceValue * this.severityValue
 
           if (result <= 6 && NewSeverityValue !== 5) {
             resultField1.style.background = "#339C74"
@@ -442,7 +442,7 @@ export default {
         }
 
         if (ProbabilityOfOccurrenceValue2 !== null) {
-          let result2 = ProbabilityOfOccurrenceValue2 * severityValue
+          let result2 = ProbabilityOfOccurrenceValue2 * this.severityValue
 
           if (result2 <= 6 && NewSeverityValue !== 5) {
             resultField2.style.background = "#339C74"
