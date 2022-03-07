@@ -753,37 +753,6 @@ export default {
     }
   },
   watch: {
-    nameCounterTable: function () {
-      let oldCategoryId
-      //for case: nameCounterTable = 0, category = 1 before
-      if (this.nameCounterTable === 1) {
-        oldCategoryId = 1
-      }
-      //for case: nameCounterTable = 1, category = 2 before
-      else if (this.nameCounterTable === 0) {
-        oldCategoryId = 2
-      }
-      this.idOfFirstElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
-      this.idOfLastElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
-
-      let i
-      for (i = this.idOfFirstElementActualCategory; i < this.idOfLastElementActualCategory; i++) {
-        if (document.getElementById("confirm" + i) !== null) {
-          document.getElementById("confirm" + i).checked = false
-        }
-      }
-
-      switch (this.nameCounterTable) {
-        case 0:
-          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
-          break
-        case 1:
-          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
-          break
-      }
-
-      this.numberOfCheckedCheckboxes(null, true, false)
-    },
     hazardNameTable: function () {
       switch (this.hazardRiskPriorityTableNumber) {
         case 1:
@@ -820,8 +789,42 @@ export default {
             this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
             break
         }
+        console.log(localStorage.checkedCheckboxesArray)
+        this.numberOfCheckedCheckboxes(this.hazardOriginalIdTableNumber, false, true)
       }
-    }
+    },
+    nameCounterTable: function () {
+      console.log(localStorage.checkedCheckboxesArray)
+      let oldCategoryId
+      //for case: nameCounterTable = 0, category = 1 before
+      if (this.nameCounterTable === 1) {
+        oldCategoryId = 1
+      }
+      //for case: nameCounterTable = 1, category = 2 before
+      else if (this.nameCounterTable === 0) {
+        oldCategoryId = 2
+      }
+      this.idOfFirstElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
+      this.idOfLastElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
+
+      let i
+      for (i = this.idOfFirstElementActualCategory; i < this.idOfLastElementActualCategory; i++) {
+        if (document.getElementById("confirm" + i) !== null) {
+          document.getElementById("confirm" + i).checked = false
+        }
+      }
+
+      switch (this.nameCounterTable) {
+        case 0:
+          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
+          break
+        case 1:
+          this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 2)
+          break
+      }
+
+      this.numberOfCheckedCheckboxes(null, true, false)
+    },
   },
   created() {
 
