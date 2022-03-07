@@ -74,7 +74,7 @@
             <form class="form_detailView">
               <div class='title_with_image_container'>
                 <div class='title_with_image_square'>
-                  <div class='title_detail_view'> Dicke des Implantats zu dünn. {{ item.hazardDetailDescription }}
+                  <div class='title_detail_view'> {{ item.hazardDetailDescription }}
                   </div>
                   <div class='image_detail_view'><img :src="`${item.imageName}`" width='89' height='auto'>
                   </div>
@@ -529,9 +529,16 @@ export default {
   components: {
     RiskMatrix,
   },
-  props: ['actualTitleNameTable', 'nameCounterTable', 'hazardNameTable'],
+  props: ['actualTitleNameTable', 'nameCounterTable', 'hazardNameListView'],
   data() {
     return {
+      hazardNameTable: '',
+      hazardSituationTable: '',
+      hazardDamageTable: '',
+      hazardProbabilityOfOccurenceBeforeTable: '',
+      hazardSeverityTable: '',
+      hazardMeasuresTable: '',
+      hazardProbabilityOfOccurenceAfterTable: '',
       customMadeDeviceDescription: '',
       customMadeDeviceFile: '',
       customMadeDeviceDocument: '',
@@ -774,22 +781,23 @@ export default {
       this.numberOfCheckedCheckboxes(null, true, false)
     },
     hazardNameTable: function () {
-      console.log(this.hazardNameTable)
+      // console.log(this.$route.params.hazardNameListView)
+      // console.log(this.hazardNameTable)
       if (this.hazardNameTable !== "") {
         this.hazards.push({
           id: 15,
-          categoryId: 1,
+          categoryId: this.nameCounterTable + 1,
           name: this.hazardNameTable,
           imageName: require('../../assets/svg/table_icons/toThin.svg'),
           riskPriority: "2 mittel",
-          hazardDetailDescription: "Implantat bricht aufgrund der zu kleinen Mindestdicke.",
-          damage: "Zweitoperation",
-          probabilityOfOccurrenceBefore: 3,
+          hazardDetailDescription: this.hazardSituationTable,
+          damage: this.hazardDamageTable,
+          probabilityOfOccurrenceBefore: this.hazardProbabilityOfOccurenceBeforeTable,
           severity: 3,
-          measures: "Erfüllen der Belastungstests (DFMEA-D16)",
-          probabilityOfOccurrenceAfter: 3,
+          measures: this.hazardMeasuresTable,
+          probabilityOfOccurrenceAfter: this.hazardProbabilityOfOccurenceAfterTable,
         })
-        console.log(this.hazards)
+        // console.log(this.hazards)
         switch (this.nameCounterTable) {
           case 0:
             this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
@@ -816,6 +824,17 @@ export default {
     }
   },
   mounted() {
+    if(this.$route.params.hazardNameListView !== undefined) {
+      this.hazardNameTable = this.$route.params.hazardNameListView
+      this.hazardSituationTable = this.$route.params.hazardSituationListView
+      this.hazardDamageTable = this.$route.params.hazardDamageListView
+      this.hazardProbabilityOfOccurenceBeforeTable = this.$route.params.hazardProbabilityOfOccurenceBeforeListView
+      this.hazardSeverityTable = this.$route.params.hazardSeverityListView
+      this.hazardMeasuresTable = this.$route.params.hazardMeasuresListView
+      this.hazardProbabilityOfOccurenceAfterTable = this.$route.params.hazardProbabilityOfOccurenceAfterListView
+    }
+    console.log(this.$route.params.hazardNameListView)
+
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
       let newArray = []
       localStorage.checkedCheckboxesArray = JSON.stringify(newArray)

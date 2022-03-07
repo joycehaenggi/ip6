@@ -303,7 +303,15 @@
               Abbrechen
             </div>
           </router-link>
-          <router-link :to="{ name: 'ListView', params: { hazardNameListView: hazardNameNewHazardForm }}"
+          <router-link :to="{ name: 'ListView', params: {
+            hazardNameListView: hazardNameNewHazardForm,
+            hazardSituationListView: hazardSituationNewHazardForm,
+            hazardDamageListView: hazardDamageNewHazardForm,
+            hazardProbabilityOfOccurenceBeforeListView: hazardProbabilityOfOccurenceBeforeNewHazardForm,
+            hazardSeverityListView: hazardSeverityNewHazardForm,
+            hazardMeasuresListView: hazardMeasuresNewHazardForm,
+            hazardProbabilityOfOccurenceAfterListView: hazardProbabilityOfOccurenceAfterNewHazardForm
+          }}"
                        id="router-link-newHazardSubmit">
             <input class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit"
                    :disabled="setNewHazardButtonProperties()" value="Speichern">
@@ -320,8 +328,6 @@
 let ProbabilityOfOccurrenceValue = null,
     ProbabilityOfOccurrenceValue2 = null,
     severityValue = null,
-
-
     transition = "1s",
     color1 = "white",
     color2 = "black"
@@ -342,13 +348,13 @@ export default {
   },
   methods: {
     setNewHazardButtonProperties() {
-/*      console.log(this.hazardNameNewHazardForm)
-      console.log(this.hazardSituationNewHazardForm)
-      console.log(this.hazardDamageNewHazardForm)
-      console.log(this.hazardProbabilityOfOccurenceBeforeNewHazardForm)
-      console.log(this.hazardSeverityNewHazardForm)
-      console.log(this.hazardMeasuresNewHazardForm)
-      console.log(this.hazardProbabilityOfOccurenceAfterNewHazardForm)*/
+      /*      console.log(this.hazardNameNewHazardForm)
+            console.log(this.hazardSituationNewHazardForm)
+            console.log(this.hazardDamageNewHazardForm)
+            console.log(this.hazardProbabilityOfOccurenceBeforeNewHazardForm)
+            console.log(this.hazardSeverityNewHazardForm)
+            console.log(this.hazardMeasuresNewHazardForm)
+            console.log(this.hazardProbabilityOfOccurenceAfterNewHazardForm)*/
 
       let submitButton = document.getElementById("newHazardSubmit"),
           submitButtonLink = document.getElementById("router-link-newHazardSubmit")
@@ -374,7 +380,7 @@ export default {
           this.hazardProbabilityOfOccurenceBeforeNewHazardForm !== "" &&
           this.hazardSeverityNewHazardForm !== "" &&
           this.hazardMeasuresNewHazardForm !== "" &&
-          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== "";*/
+          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""*/
     },
     displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
       if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {

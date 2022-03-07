@@ -9,7 +9,6 @@
       <Table @ReadCheckboxNumber="transferCheckboxNumbers"
              :actualTitleNameTable="titleNames[nameCounterListView]"
              :nameCounterTable="nameCounterListView"
-             :hazardNameTable ="hazardNameNewListView"
       />
       <ProgressOverview :noCheckboxCheckedProcess="noCheckboxChecked"
                        :percentageOfCheckedCheckboxesProcess="percentageOfCheckedCheckboxes"
@@ -33,7 +32,6 @@ import ProgressOverview from "@/components/listView/ProgressOverview";
 import ButtonContainerListView from "@/components/listView/ButtonContainerListView";
 
 export default {
-  props: ['nameListView'],
   components: {
     Header,
     Navigation,
@@ -53,12 +51,6 @@ export default {
       titleNames: ['Implantatdesign Matching', 'SLM Titan'],
       nameCounterListView: 0,
       hazardNameNewListView: ""
-    }
-  },
-  mounted(){
-    // console.log(this.$route.params.hazardNameListView)
-    if(this.$route.params.hazardNameListView !== undefined) {
-      this.hazardNameNewListView = this.$route.params.hazardNameListView
     }
   },
   methods: {
