@@ -860,13 +860,11 @@ export default {
         if (index > -1) {
           let a = JSON.parse(localStorage.checkedCheckboxesArray)
           a.splice(index, 1)  // 2nd parameter means remove one item only
-          console.log(a)
-          console.log(localStorage.checkedCheckboxesArray)
           localStorage.checkedCheckboxesArray = JSON.stringify(a)
-          console.log(localStorage.checkedCheckboxesArray)
         }
       }
     }
+
   },
   mounted() {
     if (this.$route.params.hazardOriginalIdListView !== undefined) {
