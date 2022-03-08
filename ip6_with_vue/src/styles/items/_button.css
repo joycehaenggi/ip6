@@ -68,10 +68,6 @@
     background:red;
 }
 
-#router-link-newHazardSubmit {
-    /*pointer-events: none;*/
-}
-
 .button-finishHazard{
     margin-left: 20px;
 }

@@ -329,12 +329,6 @@
 </template>
 
 <script>
-let ProbabilityOfOccurrenceValue = null,
-    ProbabilityOfOccurrenceValue2 = null,
-    transition = "1s",
-    color1 = "white",
-    color2 = "black"
-
 export default {
   data() {
     return {
@@ -347,14 +341,20 @@ export default {
       hazardProbabilityOfOccurenceAfterNewHazardForm: "",
       hazardRiskPriorityNewHazardForm: 1,
       hazardOriginalIdNewHazardForm: 0,
-      ProbabilityOfOccurrenceValue: null,
-      ProbabilityOfOccurrenceValue2: null,
-      severityValue: null
+      probabilityOfOccurrenceValue: null,
+      probabilityOfOccurrenceValue2: null,
+      severityValue: null,
+      transition: "1s",
+      color1: "white",
+      color2: "black",
+      result1: null,
+      result2: null,
+      newSeverityValue: null
     }
   },
   mounted() {
     this.hazardOriginalIdNewHazardForm = this.$route.params.itemIdNewHazard
-    console.log(this.severityValue)
+    console.log(this.hazardOriginalIdNewHazardForm)
   },
   updated() {
     /*      console.log(this.hazardNameNewHazardForm)
@@ -384,29 +384,27 @@ export default {
   },
   methods: {
     checkNewHazardFields() {
-      return this.hazardNameNewHazardForm !== "" &&
+      return this.hazardNameNewHazardForm !== "" /*&&
           this.hazardSituationNewHazardForm !== "" &&
           this.hazardDamageNewHazardForm !== "" &&
           this.hazardProbabilityOfOccurenceBeforeNewHazardForm !== "" &&
           this.hazardSeverityNewHazardForm !== "" &&
           this.hazardMeasuresNewHazardForm !== "" &&
-          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""
+          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""*/
     },
     displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
       if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {
-        ProbabilityOfOccurrenceValue = document.querySelector('input[name="probabilityOfOccurrence"]:checked').value
-        document.getElementById("resultProbabilityOfOccurrence").innerHTML = ProbabilityOfOccurrenceValue
+        this.probabilityOfOccurrenceValue = document.querySelector('input[name="probabilityOfOccurrence"]:checked').value
+        document.getElementById("resultProbabilityOfOccurrence").innerHTML = this.probabilityOfOccurrenceValue
       } else {
-        ProbabilityOfOccurrenceValue2 = document.querySelector('input[name="probabilityOfOccurrenceTwo"]:checked').value
-        document.getElementById("resultProbabilityOfOccurrence_two").innerHTML = ProbabilityOfOccurrenceValue2
+        this.probabilityOfOccurrenceValue2 = document.querySelector('input[name="probabilityOfOccurrenceTwo"]:checked').value
+        document.getElementById("resultProbabilityOfOccurrence_two").innerHTML = this.probabilityOfOccurrenceValue2
       }
-
       this.checkofProbabilityOfOccurrenceANDSeverity()
     },
     // get value of the checked radio for severity
     displayRadioValueOfSeverity() {
       this.severityValue = document.querySelector('input[name="severity"]:checked').value
-
       let severityValueField = document.getElementById("resultSeverity")
 
       // severityValueField.style.animation = "changeBackground 3s 1 "
@@ -421,44 +419,38 @@ export default {
       let resultField2 = document.getElementById("resultRiskPriorityNumber2")
 
       if (this.severityValue !== null) {
-        let NewSeverityValue = parseInt(this.severityValue, 10)
+        this.newSeverityValue = parseInt(this.severityValue, 10)
 
-        if (ProbabilityOfOccurrenceValue !== null) {
-          let result = ProbabilityOfOccurrenceValue * this.severityValue
+        if (this.probabilityOfOccurrenceValue !== null) {
+          this.result1 = this.probabilityOfOccurrenceValue * this.severityValue
+          resultField1.style.transition = this.transition
+          resultField1.style.color = this.color1
 
-          if (result <= 6 && NewSeverityValue !== 5) {
+          if (this.result1 <= 6 && this.newSeverityValue !== 5) {
             resultField1.style.background = "#339C74"
-            resultField1.style.color = color1
-            resultField1.style.transition = transition
             this.hazardRiskPriorityNewHazardForm = 1
-          } else if ((result >= 7 && result <= 12 && NewSeverityValue !== 5) || (result === 5 && NewSeverityValue === 5)) {
+          } else if ((this.result1 >= 7 && this.result1 <= 12 && this.newSeverityValue !== 5) || (this.result1 === 5 && this.newSeverityValue === 5)) {
             resultField1.style.background = "#FBDB34"
-            resultField1.style.color = color2
-            resultField1.style.transition = transition
+            resultField1.style.color = this.color2
             this.hazardRiskPriorityNewHazardForm = 2
           } else {
             resultField1.style.background = "#D63837"
-            resultField1.style.color = color1
-            resultField1.style.transition = transition
             this.hazardRiskPriorityNewHazardForm = 3
           }
         }
 
-        if (ProbabilityOfOccurrenceValue2 !== null) {
-          let result2 = ProbabilityOfOccurrenceValue2 * this.severityValue
+        if (this.probabilityOfOccurrenceValue2 !== null) {
+          this.result2 = this.probabilityOfOccurrenceValue2 * this.severityValue
+          resultField2.style.transition = this.transition
+          resultField2.style.color = this.color1
 
-          if (result2 <= 6 && NewSeverityValue !== 5) {
+          if (this.result2 <= 6 && this.newSeverityValue !== 5) {
             resultField2.style.background = "#339C74"
-            resultField2.style.color = color1
-            resultField2.style.transition = transition
-          } else if ((result2 >= 7 && result2 <= 12 && NewSeverityValue !== 5) || (result2 === 5 && NewSeverityValue === 5)) {
+          } else if ((this.result2 >= 7 && this.result2 <= 12 && this.newSeverityValue !== 5) || (this.result2 === 5 && this.newSeverityValue === 5)) {
             resultField2.style.background = "#FBDB34"
-            resultField2.style.color = color2
-            resultField2.style.transition = transition
+            resultField2.style.color = this.color2
           } else {
             resultField2.style.background = "#D63837"
-            resultField2.style.color = color1
-            resultField2.style.transition = transition
           }
         }
       }

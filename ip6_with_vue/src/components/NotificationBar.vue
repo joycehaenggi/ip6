@@ -35,7 +35,7 @@ export default {
   mounted() {
 
     var i= 0
-    var typingWord = "Wählen Sie alle nicht zutreffenden Gefährdungen aus und bearbeiten Sie die zutreffenden Gefährdungen"
+    var typingWord = "Wählen Sie alle nicht zutreffenden Gefährdungen aus und bearbeiten Sie die zutreffenden Gefährdungen."
 
     function typing(){
       if(i < typingWord.length){

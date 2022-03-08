@@ -835,7 +835,6 @@ export default {
     },
   },
   created() {
-
     if (localStorage.checkedCheckboxesArray === undefined) {
       localStorage.checkedCheckboxesArray = undefined
     }
@@ -846,6 +845,27 @@ export default {
 
     if (this.nameCounterTable === 0) {
       this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
+    }
+
+    for (let i = 0; i < JSON.parse(localStorage.checkedCheckboxesArray).length; i++) {
+
+      let partOf = false
+      for (let j = 0; j < this.hazardsSliced.length; j++) {
+        if(JSON.parse(localStorage.checkedCheckboxesArray)[i] === this.hazardsSliced[j].id){
+          partOf = true
+        }
+      }
+      if(partOf === false){
+        const index = JSON.parse(localStorage.checkedCheckboxesArray).indexOf(JSON.parse(localStorage.checkedCheckboxesArray)[i])
+        if (index > -1) {
+          let a = JSON.parse(localStorage.checkedCheckboxesArray)
+          a.splice(index, 1)  // 2nd parameter means remove one item only
+          console.log(a)
+          console.log(localStorage.checkedCheckboxesArray)
+          localStorage.checkedCheckboxesArray = JSON.stringify(a)
+          console.log(localStorage.checkedCheckboxesArray)
+        }
+      }
     }
   },
   mounted() {
@@ -861,6 +881,8 @@ export default {
       this.hazardMeasuresTable = this.$route.params.hazardMeasuresListView
       this.hazardProbabilityOfOccurenceAfterTable = this.$route.params.hazardProbabilityOfOccurenceAfterListView
       this.hazardRiskPriorityTableNumber = this.$route.params.hazardRiskPriorityListView
+
+      this.hazardOriginalIdTableNumber = parseInt(this.hazardOriginalIdTableNumber, 10)
       this.hazardImageNameTable = this.hazards.find(hazard => hazard.id === this.hazardOriginalIdTableNumber).imageName
     }
     if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
@@ -872,22 +894,18 @@ export default {
       localStorage.acceptCounterArray = JSON.stringify(newArray)
     }
 
-    let storedNames = JSON.parse(localStorage.checkedCheckboxesArray)
+    /*    let storedNames = JSON.parse(localStorage.checkedCheckboxesArray)
 
-    let checkedCheckboxArrayNew = []
+        let checkedCheckboxArrayNew = []
 
-    for (var i = 0; i < storedNames.length; i++) {
-      for (var x = 0; x < storedNames[i].length; x++) {
-        if (storedNames[i][1] === 0 && x === 0) {
-          checkedCheckboxArrayNew.push(storedNames[i][0])
+        for (var i = 0; i < storedNames.length; i++) {
+              checkedCheckboxArrayNew.push(storedNames[i])
         }
-      }
-    }
-    for (var j = 0; j < checkedCheckboxArrayNew.length; j++) {
-      if (document.getElementById("confirm" + checkedCheckboxArrayNew[j] !== null)) {
-        document.getElementById("confirm" + checkedCheckboxArrayNew[j]).checked = true
-      }
-    }
+        for (var j = 0; j < checkedCheckboxArrayNew.length; j++) {
+          if (document.getElementById("confirm" + checkedCheckboxArrayNew[j] !== null)) {
+            document.getElementById("confirm" + checkedCheckboxArrayNew[j]).checked = true
+          }
+        }*/
     this.numberOfCheckedCheckboxes(null, true, false, false)
   },
   methods: {
@@ -948,18 +966,10 @@ export default {
 
       if (acceptStatus === false && specification === false && itemId !== null) {
         let actualCheckbox = document.getElementById("confirm" + itemId)
-
         if (actualCheckbox.checked === true) {
-          this.checkedCheckboxesArray.push([itemId, 0])
+          this.checkedCheckboxesArray.push(itemId)
         } else {
-          let index
-          for (var i = 0; i < this.checkedCheckboxesArray.length; i++) {
-            for (var x = 0; x < this.checkedCheckboxesArray[i].length; x++) {
-              if (this.checkedCheckboxesArray[i].toString() === [itemId, 0].toString()) {
-                index = i
-              }
-            }
-          }
+          const index = this.checkedCheckboxesArray.indexOf(itemId)
           if (index > -1) {
             this.checkedCheckboxesArray.splice(index, 1)  // 2nd parameter means remove one item only
           }
@@ -990,12 +1000,10 @@ export default {
           if (checkbox != null) {
             checkbox.checked = true
           }
-          this.checkedCheckboxesArray.push([itemId, 0])
+          this.checkedCheckboxesArray.push(itemId)
           localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
         }
         this.expanded = []
-
-        console.log(this.$route.params.hazardOriginalIdListView)
 
         if (newItem === false) {
           this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
@@ -1014,43 +1022,33 @@ export default {
       } else {
         numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + JSON.parse(localStorage.acceptCounterArray).length
       }
-
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
 
-    }
-    ,
+    },
     itemIdPartOfArray(itemId) {
       if (localStorage.checkedCheckboxesArray === 'undefined' || localStorage.checkedCheckboxesArray === 'null') {
         return false
       } else {
         let a
         a = JSON.parse(localStorage.checkedCheckboxesArray)
-        for (var i = 0; i < a.length; i++) {
-          for (var x = 0; x < a[i].length; x++) {
-            if (a[i][0] === itemId) {
-              return true
-            }
-          }
+        if (a.includes(itemId)) {
+          return true
         }
       }
       return false
-    }
-    ,
+    },
     itemIdPartOfArray2(itemId) {
       if (localStorage.acceptCounterArray === 'undefined' || localStorage.acceptCounterArray === 'null') {
         return 0.2
       } else {
         let a
         a = JSON.parse(localStorage.acceptCounterArray)
-        for (var i = 0; i < a.length; i++) {
-          if (a[i] === itemId) {
-            return 1.0
-          }
+        if (a.includes(itemId)) {
+          return 1.0
         }
       }
       return 0.2
-    }
-    ,
+    },
     accept(itemId) {
       this.customMadeDeviceDescription = ''
 
@@ -1060,14 +1058,7 @@ export default {
         this.acceptCounter++
         document.getElementById("confirm" + itemId).checked = false
 
-        let index
-        for (var i = 0; i < this.checkedCheckboxesArray.length; i++) {
-          for (var x = 0; x < this.checkedCheckboxesArray[i].length; x++) {
-            if (this.checkedCheckboxesArray[i].toString() === [itemId, 0].toString()) {
-              index = i
-            }
-          }
-        }
+        const index = this.checkedCheckboxesArray.indexOf(itemId)
         if (index > -1) {
           this.checkedCheckboxesArray.splice(index, 1)  // 2nd parameter means remove one item only
         }
@@ -1075,7 +1066,6 @@ export default {
 
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
       }
-      console.log(localStorage.acceptCounterArray)
 
       this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
       this.launch_notification()
@@ -1090,9 +1080,7 @@ export default {
       localStorage.acceptCounterArray = null
 
       this.numberOfCheckedCheckboxes(null, false, false, false)
-
-    }
-    ,
+    },
     pictogramIconColor(itemNumber, svgNumber, activeColor) {
       if (svgNumber <= itemNumber) {
         if (activeColor === 1) {
@@ -1103,9 +1091,7 @@ export default {
       } else {
         return "#E1E5EB"
       }
-    }
-    ,
-
+    },
   }
 }
 
