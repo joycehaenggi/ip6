@@ -892,18 +892,6 @@ export default {
       localStorage.acceptCounterArray = JSON.stringify(newArray)
     }
 
-    /*    let storedNames = JSON.parse(localStorage.checkedCheckboxesArray)
-
-        let checkedCheckboxArrayNew = []
-
-        for (var i = 0; i < storedNames.length; i++) {
-              checkedCheckboxArrayNew.push(storedNames[i])
-        }
-        for (var j = 0; j < checkedCheckboxArrayNew.length; j++) {
-          if (document.getElementById("confirm" + checkedCheckboxArrayNew[j] !== null)) {
-            document.getElementById("confirm" + checkedCheckboxArrayNew[j]).checked = true
-          }
-        }*/
     this.numberOfCheckedCheckboxes(null, true, false, false)
   },
   methods: {
