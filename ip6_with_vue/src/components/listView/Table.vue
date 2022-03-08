@@ -847,20 +847,22 @@ export default {
       this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
     }
 
-    for (let i = 0; i < JSON.parse(localStorage.checkedCheckboxesArray).length; i++) {
+    if (localStorage.checkedCheckboxesArray !== undefined && localStorage.checkedCheckboxesArray !== 'undefined') {
+      for (let i = 0; i < JSON.parse(localStorage.checkedCheckboxesArray).length; i++) {
 
-      let partOf = false
-      for (let j = 0; j < this.hazardsSliced.length; j++) {
-        if(JSON.parse(localStorage.checkedCheckboxesArray)[i] === this.hazardsSliced[j].id){
-          partOf = true
+        let partOf = false
+        for (let j = 0; j < this.hazardsSliced.length; j++) {
+          if (JSON.parse(localStorage.checkedCheckboxesArray)[i] === this.hazardsSliced[j].id) {
+            partOf = true
+          }
         }
-      }
-      if(partOf === false){
-        const index = JSON.parse(localStorage.checkedCheckboxesArray).indexOf(JSON.parse(localStorage.checkedCheckboxesArray)[i])
-        if (index > -1) {
-          let a = JSON.parse(localStorage.checkedCheckboxesArray)
-          a.splice(index, 1)  // 2nd parameter means remove one item only
-          localStorage.checkedCheckboxesArray = JSON.stringify(a)
+        if (partOf === false) {
+          const index = JSON.parse(localStorage.checkedCheckboxesArray).indexOf(JSON.parse(localStorage.checkedCheckboxesArray)[i])
+          if (index > -1) {
+            let a = JSON.parse(localStorage.checkedCheckboxesArray)
+            a.splice(index, 1)  // 2nd parameter means remove one item only
+            localStorage.checkedCheckboxesArray = JSON.stringify(a)
+          }
         }
       }
     }
