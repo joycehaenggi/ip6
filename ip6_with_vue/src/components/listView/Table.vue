@@ -41,7 +41,7 @@
         <template v-slot:item.nicht-zutreffend="{item}">
           <input :id="`confirm${item.id}`" :ref="`confirm${item.id}`"
                  @click="numberOfCheckedCheckboxes(item.id, false, false, false)"
-                 type="checkbox" :checked="itemIdPartOfArray(item.id)"/>
+                 type="checkbox" :checked="itemIdPartOfCheckedCheckboxesArray(item.id)"/>
           <label class="checkbox" :for="`confirm${item.id}`"></label>
         </template>
 
@@ -56,12 +56,12 @@
               ref="submit"
               :id="`acceptedDiv${item.id}`"
               class="tooltip expand akzeptiert-status"
-              @click="shakeAnimation(item.id)"
+              @click="moveCheckmark(item.id, 'acceptedDiv', 'apply-shake', 820)"
               data-title="Akzeptiert-Status">
             <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-width="1.5"
-                    :stroke-opacity="itemIdPartOfArray2(item.id)"
+                    :stroke-opacity="itemIdPartOfacceptCounterArray(item.id, 'checkedCheckboxesArray', '1.0', '0.2')"
                     stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
@@ -99,8 +99,7 @@
                   </div>
                   <div class='block-text'>
                     <ul>
-                      <li>{{ item.measures }}
-                      </li>
+                      <li v-for="measure in item.measures" :key="measure.description">{{ measure.description }}</li>
                     </ul>
                   </div>
                 </div>
@@ -479,30 +478,31 @@
               </div>
 
               <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
-              <div class="blocks_custom_made_device" v-if="specification_customMadeDevice === 'CustomMadeDevice'+item.id">
-                  <v-textarea
-                      outlined
-                      label="Begründung für Custom Made Device"
-                      placeholder="Geben Sie eine Erläuterung ein."
-                      class="textarea-declaration"
-                      rows="2"
-                      aria-required="true"
-                      v-model="customMadeDeviceDescription"
-                  />
-                  <div class='block block-verify'>
-                    <div class='block-title'>
-                      Arztnachweis
-                    </div>
-                    <div class="block-text">
-                      <input class=" inputfile" type="file" name="file" id="file"/>
-                    </div>
+              <div class="blocks_custom_made_device"
+                   v-if="specification_customMadeDevice === 'CustomMadeDevice'+item.id">
+                <v-textarea
+                    outlined
+                    label="Begründung für Custom Made Device"
+                    placeholder="Geben Sie eine Erläuterung ein."
+                    class="textarea-declaration"
+                    rows="2"
+                    aria-required="true"
+                    v-model="customMadeDeviceDescription"
+                />
+                <div class='block block-verify'>
+                  <div class='block-title'>
+                    Arztnachweis
                   </div>
-                  <div class="buttonContainer">
-                    <input @click="accept(item.id)" class="button button-submit" type="submit"
-                           :id="`customMadeDeviceSubmit${item.id}`"
-                           :disabled="checkCustomMadeDeviceFields(item.id)"
-                           value="Gefährdung abschliessen">
+                  <div class="block-text">
+                    <input class=" inputfile" type="file" name="file" id="file"/>
                   </div>
+                </div>
+                <div class="buttonContainer">
+                  <input @click="accept(item.id)" class="button button-submit" type="submit"
+                         :id="`customMadeDeviceSubmit${item.id}`"
+                         :disabled="checkCustomMadeDeviceFields(item.id)"
+                         value="Gefährdung abschliessen">
+                </div>
               </div>
 
             </form>
@@ -594,9 +594,10 @@ export default {
           damage: "Zweitoperation",
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
-          measures: "Erfüllen der Belastungstests (DFMEA-D16)",
+          measures: [
+            {description: 'Erfüllen der Belastungstests (DFMEA-D16)'},
+          ],
           probabilityOfOccurrenceAfter: 2,
-
         },
         {
           id: 2,
@@ -608,9 +609,10 @@ export default {
           damage: "Schädigung der Weichteile / Sehnervs",
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
-          measures: "Erfüllen der Belastungstests (DFMEA-D16)",
+          measures: [
+            {description: 'Erfüllen der Belastungstests (DFMEA-D16)'},
+          ],
           probabilityOfOccurrenceAfter: 2,
-
         },
         {
           id: 3,
@@ -622,9 +624,10 @@ export default {
           damage: "Schädigung der Weichteile / Sehnervs",
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
-          measures: "Einen Standardschraubentyp aus ähnlichen Indikationen verwenden  und unter Belastung testen  (DFMEA-D14)",
+          measures: [
+            {description: 'Einen Standardschraubentyp aus ähnlichen Indikationen verwenden  und unter Belastung testen  (DFMEA-D14)'},
+          ],
           probabilityOfOccurrenceAfter: 1,
-
         },
         {
           id: 4,
@@ -636,9 +639,10 @@ export default {
           damage: "Zweitoperation",
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
-          measures: "Erfüllen der Belastungstests (DFMEA-D16)",
+          measures: [
+            {description: 'Erfüllen der Belastungstests (DFMEA-D16)'},
+          ],
           probabilityOfOccurrenceAfter: 1,
-
         },
         {
           id: 5,
@@ -650,7 +654,9 @@ export default {
           damage: "Verlängerung der OP, Leiden des Patienten.",
           probabilityOfOccurrenceBefore: 3,
           severity: 2,
-          measures: "Einen Standardschraubentyp aus ähnlichen Indikationen verwenden  und unter Belastung testen  (DFMEA-D14).",
+          measures: [
+            {description: 'Einen Standardschraubentyp aus ähnlichen Indikationen verwenden  und unter Belastung testen  (DFMEA-D14).'},
+          ],
           probabilityOfOccurrenceAfter: 1,
         },
         {
@@ -663,7 +669,9 @@ export default {
           damage: "Zweitoperation",
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
-          measures: "Zum Gasstrom hin diagonale Platzierung der Implantate auf der Bauplattform gemäss SOP.",
+          measures: [
+            {description: 'Zum Gasstrom hin diagonale Platzierung der Implantate auf der Bauplattform gemäss SOP.'},
+          ],
           probabilityOfOccurrenceAfter: 1,
         },
         {
@@ -676,9 +684,10 @@ export default {
           damage: "Infektion, ungewollte Immunreaktion",
           probabilityOfOccurrenceBefore: 2,
           severity: 4,
-          measures: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP \n" +
-              "\n" +
-              "Vor Gebrauch die Bauplattform mit Isopropanol reinigen gemäss SOP.",
+          measures: [
+            {description: 'Ordnungsgemässe Lagerung der Bauplattform gemäss SOP.'},
+            {description: 'Vor Gebrauch die Bauplattform mit Isopropanol reinigen gemäss SOP.'},
+          ],
           probabilityOfOccurrenceAfter: 1,
         },
         {
@@ -687,15 +696,15 @@ export default {
           name: "Bauplattform ist nicht aus demselben Material wie das Baumaterial.",
           imageName: require('../../assets/svg/table_icons/not_same_material.svg'),
           riskPriority: "2 mittel",
-          hazardDetailDescription: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP \n" +
-              "\n" +
-              "Vor Gebrauch die Bauplattform mit G23",
+          hazardDetailDescription: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP. Vor Gebrauch die Bauplattform mit G23.",
           damage: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP \n" +
               "\n" +
               "Vor Gebrauch die Bauplattform mit G23",
           probabilityOfOccurrenceBefore: 2,
           severity: 4,
-          measures: "Vor Gebrauch die Bauplattform bezüglich Material überprüfen.",
+          measures: [
+            {description: 'Vor Gebrauch die Bauplattform bezüglich Material überprüfen.'},
+          ],
           probabilityOfOccurrenceAfter: 1,
         },
         {
@@ -704,15 +713,15 @@ export default {
           name: "Die Beschichterlippe ist abgenutzt.",
           imageName: require('../../assets/svg/table_icons/coater_flap_worn.svg'),
           riskPriority: "2 mittel",
-          hazardDetailDescription: "Implantat ist nicht formschlüssig - passt nicht mehr aufgrund verschlechtertem Schichtaufbau",
+          hazardDetailDescription: "Implantat ist nicht formschlüssig - passt nicht mehr aufgrund verschlechtertem Schichtaufbau.",
           damage: "Schädigung der Weichteile / Sehnervs",
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
-          measures: "Geschultes Personal \n" +
-              "\n" +
-              "Visuelle Prüfung  des Pulverausstrichs bei der zuletzt gebauten  Schicht gemäss SOP \n" +
-              "\n" +
-              "Soll-Ist Vergleich mittels 3D-Scan bei der Type Examination gemäss SOP",
+          measures: [
+            {description: 'Geschultes Personal.'},
+            {description: 'Visuelle Prüfung  des Pulverausstrichs bei der zuletzt gebauten  Schicht gemäss SOP.'},
+            {description: 'Soll-Ist Vergleich mittels 3D-Scan bei der Type Examination gemäss SOP.'},
+          ],
           probabilityOfOccurrenceAfter: 2,
         },
         {
@@ -725,9 +734,10 @@ export default {
           damage: "Schädigung der Weichteile / Sehnervs",
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
-          measures: "Bei harten Kollisionen bricht die Anlage den Baujob selber ab." +
-              "\n" +
-              "Soll-Ist Vergleich mittels 3D-Scan bei der Type Examination",
+          measures: [
+            {description: 'Bei harten Kollisionen bricht die Anlage den Baujob selber ab.'},
+            {description: 'Soll-Ist Vergleich mittels 3D-Scan bei der Type Examination'},
+          ],
           probabilityOfOccurrenceAfter: 2,
         },
         {
@@ -740,9 +750,10 @@ export default {
           damage: "Zweitoperation",
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
-          measures: "SLM Anlage verfügt über ein Layer Control System, das bei fehlerhaften Beschichtung den Vorgang vor dem Belichtung wiederholt." +
-              "\n" +
-              "Bei mehrfach fehlerhafter Beschichtung muss der Baujob erneut aufgesetzt und ausgeführt werden.",
+          measures: [
+            {description: 'SLM Anlage verfügt über ein Layer Control System, das bei fehlerhaften Beschichtung den Vorgang vor dem Belichtung wiederholt.'},
+            {description: 'Bei mehrfach fehlerhafter Beschichtung muss der Baujob erneut aufgesetzt und ausgeführt werden.'},
+          ],
           probabilityOfOccurrenceAfter: 2,
         }
       ],
@@ -806,9 +817,7 @@ export default {
       }
       this.idOfFirstElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
       this.idOfLastElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
-
-      let i
-      for (i = this.idOfFirstElementActualCategory; i < this.idOfLastElementActualCategory; i++) {
+      for (let i = this.idOfFirstElementActualCategory; i < this.idOfLastElementActualCategory; i++) {
         if (document.getElementById("confirm" + i) !== null) {
           document.getElementById("confirm" + i).checked = false
         }
@@ -823,6 +832,27 @@ export default {
           break
       }
 
+      if (localStorage.checkedCheckboxesArray !== '') {
+        for (let i = 0; i < JSON.parse(localStorage.checkedCheckboxesArray).length; i++) {
+
+          let partOf = false
+          for (let j = 0; j < this.hazardsSliced.length; j++) {
+            if (JSON.parse(localStorage.checkedCheckboxesArray)[i] === this.hazardsSliced[j].id) {
+              partOf = true
+            }
+          }
+          if (partOf === false) {
+            const index = JSON.parse(localStorage.checkedCheckboxesArray).indexOf(JSON.parse(localStorage.checkedCheckboxesArray)[i])
+
+            if (index !== -1) {
+              let a = JSON.parse(localStorage.checkedCheckboxesArray)
+              a.splice(index, 1)  // 2nd parameter means remove one item only
+              localStorage.checkedCheckboxesArray = JSON.stringify(a)
+            }
+          }
+        }
+      }
+
       this.numberOfCheckedCheckboxes(null, true, false, false)
     },
   },
@@ -830,30 +860,32 @@ export default {
     if (localStorage.checkedCheckboxesArray === undefined) {
       localStorage.checkedCheckboxesArray = ''
     }
-
     if (localStorage.acceptCounterArray === undefined) {
       localStorage.acceptCounterArray = ''
     }
-
     if (this.nameCounterTable === 0) {
       this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
     }
 
-    if (localStorage.checkedCheckboxesArray !== '') {
-      for (let i = 0; i < JSON.parse(localStorage.checkedCheckboxesArray).length; i++) {
+    let nameCounterLocalStorageVariable = parseInt(localStorage.nameCounter, 10)
+    if (this.nameCounterTable === nameCounterLocalStorageVariable || localStorage.nameCounter === undefined) {
+      if (localStorage.checkedCheckboxesArray !== '') {
+        for (let i = 0; i < JSON.parse(localStorage.checkedCheckboxesArray).length; i++) {
 
-        let partOf = false
-        for (let j = 0; j < this.hazardsSliced.length; j++) {
-          if (JSON.parse(localStorage.checkedCheckboxesArray)[i] === this.hazardsSliced[j].id) {
-            partOf = true
+          let partOf = false
+          for (let j = 0; j < this.hazardsSliced.length; j++) {
+            if (JSON.parse(localStorage.checkedCheckboxesArray)[i] === this.hazardsSliced[j].id) {
+              partOf = true
+            }
           }
-        }
-        if (partOf === false) {
-          const index = JSON.parse(localStorage.checkedCheckboxesArray).indexOf(JSON.parse(localStorage.checkedCheckboxesArray)[i])
-          if (index > -1) {
-            let a = JSON.parse(localStorage.checkedCheckboxesArray)
-            a.splice(index, 1)  // 2nd parameter means remove one item only
-            localStorage.checkedCheckboxesArray = JSON.stringify(a)
+          if (partOf === false) {
+            const index = JSON.parse(localStorage.checkedCheckboxesArray).indexOf(JSON.parse(localStorage.checkedCheckboxesArray)[i])
+
+            if (index !== -1) {
+              let a = JSON.parse(localStorage.checkedCheckboxesArray)
+              a.splice(index, 1)  // 2nd parameter means remove one item only
+              localStorage.checkedCheckboxesArray = JSON.stringify(a)
+            }
           }
         }
       }
@@ -878,12 +910,10 @@ export default {
       this.hazardImageNameTable = this.hazards.find(hazard => hazard.id === this.hazardOriginalIdTableNumber).imageName
     }
     if (localStorage.checkedCheckboxesArray === '') {
-      let newArray = []
-      localStorage.checkedCheckboxesArray = JSON.stringify(newArray)
+      localStorage.checkedCheckboxesArray = JSON.stringify([])
     }
     if (localStorage.acceptCounterArray === '') {
-      let newArray = []
-      localStorage.acceptCounterArray = JSON.stringify(newArray)
+      localStorage.acceptCounterArray = JSON.stringify([])
     }
 
     this.numberOfCheckedCheckboxes(null, true, false, false)
@@ -896,20 +926,12 @@ export default {
         notification.className = notification.className.replace("show", "");
       }, 4000);
     },
-    shakeAnimation(elementId) {
-      let actualAcceptedCheckmarkDiv = document.getElementById("acceptedDiv" + elementId)
-      actualAcceptedCheckmarkDiv.classList.add("apply-shake")
+    moveCheckmark(elementId, element, action, time) {
+      let actualAcceptedCheckmarkDiv = document.getElementById(element + elementId)
+      actualAcceptedCheckmarkDiv.classList.add(action)
 
       setTimeout(() =>
-          actualAcceptedCheckmarkDiv.classList.remove("apply-shake"), 820
-      )
-    },
-    resizeAnimation(elementId) {
-      let actualAcceptedCheckmarkDiv = document.getElementById("accepted" + elementId)
-      actualAcceptedCheckmarkDiv.classList.add("apply-resize")
-
-      setTimeout(() =>
-          actualAcceptedCheckmarkDiv.classList.remove("apply-resize"), 3000
+          actualAcceptedCheckmarkDiv.classList.remove(action), time
       )
     },
     checkCustomMadeDeviceFields(itemId) {
@@ -928,36 +950,28 @@ export default {
         return false
       }
     },
-
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification, newItem) {
-
       if (localStorage.checkedCheckboxesArray === '') {
-        let newArray = []
-        localStorage.checkedCheckboxesArray = JSON.stringify(newArray)
-        this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
+        localStorage.checkedCheckboxesArray = JSON.stringify([])
         this.checkedCheckboxesArray = []
       } else {
         this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
       }
 
       if (localStorage.acceptCounterArray === '') {
-        let newArray = []
-        localStorage.acceptCounterArray = JSON.stringify(newArray)
-        this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
+        localStorage.acceptCounterArray = JSON.stringify([])
         this.acceptCounterArray = []
       } else {
         this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
       }
 
-      if (acceptStatus === false && specification === false && itemId !== null) {
+      if (!acceptStatus && !specification && itemId !== null) {
         let actualCheckbox = document.getElementById("confirm" + itemId)
         if (actualCheckbox.checked === true) {
           this.checkedCheckboxesArray.push(itemId)
         } else {
           const index = this.checkedCheckboxesArray.indexOf(itemId)
-          if (index > -1) {
-            this.checkedCheckboxesArray.splice(index, 1)  // 2nd parameter means remove one item only
-          }
+          this.checkedCheckboxesArray.splice(index, 1)  // 2nd parameter means remove one item only
         }
         localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
       }
@@ -965,21 +979,17 @@ export default {
       //Accept-icon
       if (itemId !== null) {
         if (this.acceptCounterArray.includes(itemId) && acceptStatus === false) {
-
           this.acceptCounter--
           //Accept-Array
           const index = this.acceptCounterArray.indexOf(itemId)
-          if (index > -1) {
-            this.acceptCounterArray.splice(index, 1)  // 2nd parameter means remove one item only
-          }
+          this.acceptCounterArray.splice(index, 1)  // 2nd parameter means remove one item only
         }
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
-        this.itemIdPartOfArray2(itemId)
         this.$forceUpdate()
       }
 
       // For Specification
-      if (specification === true) {
+      if (specification) {
         let checkbox = document.getElementById("confirm" + itemId)
         if (!localStorage.checkedCheckboxesArray.includes(itemId)) {
           if (checkbox != null) {
@@ -990,7 +1000,7 @@ export default {
         }
         this.expanded = []
 
-        if (newItem === false) {
+        if (!newItem) {
           this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
           this.launch_notification()
         }
@@ -998,15 +1008,7 @@ export default {
 
       //General Settings
       this.numberOfCurrentCheckboxes = this.hazards.filter(priority => priority.categoryId === (this.nameCounterTable + 1)).length
-
-      this.numberOfCheckedCheckboxesValue = document.querySelectorAll('input[type="checkbox"]:checked').length
-      // let numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + this.acceptCounter
-      var numberFinished
-      if (localStorage.checkedCheckboxesArray === 'null') {
-        numberFinished = 0
-      } else {
-        numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + JSON.parse(localStorage.acceptCounterArray).length
-      }
+      var numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + JSON.parse(localStorage.acceptCounterArray).length
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
     },
     accept(itemId) {
@@ -1014,16 +1016,15 @@ export default {
 
       if (!this.acceptCounterArray.includes(itemId)) {
         this.acceptCounterArray.push(itemId)
-
         this.acceptCounter++
         document.getElementById("confirm" + itemId).checked = false
 
-        const index = this.checkedCheckboxesArray.indexOf(itemId)
-        if (index > -1) {
+        if (this.checkedCheckboxesArray.includes(itemId)) {
+          const index = this.checkedCheckboxesArray.indexOf(itemId)
           this.checkedCheckboxesArray.splice(index, 1)  // 2nd parameter means remove one item only
         }
-        localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
 
+        localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
         localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
       }
 
@@ -1032,27 +1033,20 @@ export default {
 
       this.expanded = []
       this.numberOfCheckedCheckboxes(itemId, true, false, false)
-
-      this.resizeAnimation(itemId)
+      this.moveCheckmark(itemId, 'accepted', 'apply-resize', 3000)
     },
-    itemIdPartOfArray(itemId) {
-      if (localStorage.checkedCheckboxesArray === '') {
-        return false
-      } else {
-        let a
-        a = JSON.parse(localStorage.checkedCheckboxesArray)
+    itemIdPartOfCheckedCheckboxesArray(itemId) {
+      if (localStorage.checkedCheckboxesArray !== '') {
+        let a = JSON.parse(localStorage.checkedCheckboxesArray)
         if (a.includes(itemId)) {
           return true
         }
       }
       return false
     },
-    itemIdPartOfArray2(itemId) {
-      if (localStorage.acceptCounterArray === '') {
-        return 0.2
-      } else {
-        let a
-        a = JSON.parse(localStorage.acceptCounterArray)
+    itemIdPartOfacceptCounterArray(itemId) {
+      if (localStorage.acceptCounterArray !== '') {
+        let a = JSON.parse(localStorage.acceptCounterArray)
         if (a.includes(itemId)) {
           return 1.0
         }
@@ -1061,10 +1055,8 @@ export default {
     },
     cancel() {
       this.expanded = []
-
       localStorage.checkedCheckboxesArray = ''
       localStorage.acceptCounterArray = ''
-
       this.numberOfCheckedCheckboxes(null, false, false, false)
     },
     pictogramIconColor(itemNumber, svgNumber, activeColor) {
@@ -1080,5 +1072,4 @@ export default {
     },
   }
 }
-
 </script>

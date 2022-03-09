@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       hazardsNew: null,
-      nameCounter: 0,
+      nameCounter: null,
     }
   },
   methods: {

@@ -353,9 +353,7 @@ export default {
     }
   },
   mounted() {
-    this.hazardOriginalIdNewHazardForm = this.$route.params.itemIdNewHazard
-    console.log(this.hazardOriginalIdNewHazardForm)
-  },
+    this.hazardOriginalIdNewHazardForm = this.$route.params.itemIdNewHazard},
   updated() {
     /*      console.log(this.hazardNameNewHazardForm)
       console.log(this.hazardSituationNewHazardForm)
