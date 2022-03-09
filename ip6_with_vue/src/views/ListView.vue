@@ -7,6 +7,7 @@
       />
       <NotificationBar/>
       <Table @ReadCheckboxNumber="transferCheckboxNumbers"
+             @updateNumber="newNumber"
              :actualTitleNameTable="titleNames[nameCounterListView]"
              :nameCounterTable="nameCounterListView"
       />
@@ -85,6 +86,9 @@ export default {
         nextStepButton.style.cursor = 'default'
         nextStepLink.style.pointerEvents = 'none'
       }
+    },
+    newNumber(nameCounterTableValue){
+      this.nameCounterListView = nameCounterTableValue
     },
     transferNameCounter(nameCounter) {
       this.nameCounterListView = parseInt(nameCounter, 10)

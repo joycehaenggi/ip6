@@ -1,5 +1,4 @@
 <template>
-  <!--  append-icon="search"-->
   <div id="app">
     <v-app id="inspire">
       <v-text-field
@@ -20,15 +19,11 @@
           :footer-props="{
               showFirstLastPage: true,
               'items-per-page-text':'Gefährdungen pro Seite',
-              'items-per-page-all-text':'Alle',
-          }"
-          item-key="name"
+              'items-per-page-all-text':'Alle', }"
           show-expand
           class="elevation-1"
           no-results-text="Keine übereinstimmenden Daten gefunden."
-          no-data-text="Keine Daten gefunden"
-
-      >
+          no-data-text="Keine Daten gefunden">
 
         <!--add risikoprioritätszahl--row-->
         <template v-slot:item.riskPriority="{ item }">
@@ -36,7 +31,6 @@
           <div v-if="item.riskPriority === '2 mittel'" :class="`dot yellowCustomized`"></div>
           <div v-if="item.riskPriority === '3 hoch'" :class="`dot redCustomized`"></div>
         </template>
-
         <!--Set checkbox for nicht-zutreffend-row-->
         <template v-slot:item.nicht-zutreffend="{item}">
           <input :id="`confirm${item.id}`" :ref="`confirm${item.id}`"
@@ -44,28 +38,22 @@
                  type="checkbox" :checked="itemIdPartOfCheckedCheckboxesArray(item.id)"/>
           <label class="checkbox" :for="`confirm${item.id}`"></label>
         </template>
-
         <!--Add different icon per row in icon-row-->
         <template v-slot:item.icon="{item}">
           <img class="icon_list" :src="`${item.imageName}`" alt="icon"/>
         </template>
-
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{item}">
-          <div
-              ref="submit"
-              :id="`acceptedDiv${item.id}`"
-              class="tooltip expand akzeptiert-status"
-              @click="moveCheckmark(item.id, 'acceptedDiv', 'apply-shake', 820)"
-              data-title="Akzeptiert-Status">
+          <div ref="submit" :id="`acceptedDiv${item.id}`" class="tooltip expand akzeptiert-status"
+               data-title="Akzeptiert-Status"
+               @click="moveCheckmark(item.id, 'acceptedDiv', 'apply-shake', 820)">
             <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-width="1.5"
-                    :stroke-opacity="itemIdPartOfacceptCounterArray(item.id, 'checkedCheckboxesArray', '1.0', '0.2')"
-                    stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round"
+                    :stroke-opacity="itemIdPartOfacceptCounterArray(item.id, 'checkedCheckboxesArray', '1.0', '0.2')"/>
             </svg>
           </div>
-
         </template>
 
         <!--Expanded informations-->
@@ -82,10 +70,8 @@
               </div>
 
               <div class='blocks'>
-
                 <div class='block'>
-                  <div class='block-title'>Schaden
-                  </div>
+                  <div class='block-title'>Schaden</div>
                   <div class='block-text'>
                     <ul>
                       <li>{{ item.damage }}</li>
@@ -94,9 +80,7 @@
                 </div>
 
                 <div class='block'>
-                  <div class='block-title'>
-                    Massnahmen zur Risikominderung
-                  </div>
+                  <div class='block-title'>Massnahmen zur Risikominderung</div>
                   <div class='block-text'>
                     <ul>
                       <li v-for="measure in item.measures" :key="measure.description">{{ measure.description }}</li>
@@ -105,50 +89,37 @@
                 </div>
 
                 <div class='block block-effects'>
-                  <div class='block-title'>
-                    Auswirkungen der Risikominderung
-                  </div>
+                  <div class='block-title'>Auswirkungen der Risikominderung</div>
                   <div class="graphic-selection">
+                    <div class="graphic-selection-block">Darstellungsart wählen:</div>
                     <div class="graphic-selection-block">
-                      Darstellungsart wählen:
-                    </div>
-                    <div class="graphic-selection-block">
-                      <input :id="`pictogram`" type="checkbox"
-                             v-model="pictogram"/>
+                      <input :id="`pictogram`" type="checkbox" v-model="pictogram"/>
                       <label :for="`pictogram`">Piktogramm</label>
                     </div>
                     <div class="graphic-selection-block">
-                      <input :id="`rM`" type="checkbox"
-                             v-model="riskMatrix"/>
+                      <input :id="`rM`" type="checkbox" v-model="riskMatrix"/>
                       <label :for="`rM`">Risikomatrix</label>
                     </div>
                   </div>
                   <div class='block-graphics'>
                     <div class="pictogramm" v-if="pictogram">
-                      <div class="pictogram-title">
-                        Piktogramm
-                      </div>
+                      <div class="pictogram-title"> Piktogramm</div>
                       <div class="pictogram-description">
                         <p>Die Höhe des Risikos berechnet sich aus der Eintretenswahrscheinlichkeit und dem Schweregrad,
                           wobei 5 der Maximalwert darstellt.</p>
                       </div>
                       <div class="pictogram-graphic">
-
                         <div class="pictogram-graphic-block" v-for="pictogram in pictogramRows"
                              :key="pictogram.pictogramRow">
-                          <div class="pictogram-graphic-block-title">
-                            {{ pictogram.title }}
-                          </div>
+                          <div class="pictogram-graphic-block-title">{{ pictogram.title }}</div>
                           <div class="pictogram-graphic-block-svgs">
-
                             <div class="pictogram-graphic-block-svgs-block">
                               <div class="pictogram-graphic-block-svgs-block-row tooltip expand pictogram-tooltip"
                                    :data-title="`Eintretenswahrscheinlichkeit : ${item.probabilityOfOccurrenceBefore} von 5`"
                                    v-if="pictogram.pictogramRow === 1">
                                 <div class="pictogram-graphic-block-svgs-block-row-column" v-for="svg in svgList"
                                      :key="svg.svgNumber">
-                                  <svg :id="`${svg.svgNumber}`" width="30"
-                                       height="29" viewBox="0 0 30 29" fill="none"
+                                  <svg :id="`${svg.svgNumber}`" width="30" height="29" viewBox="0 0 30 29" fill="none"
                                        xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M19.294 14.9269L20.5797 13.0075L22.5246 10.7198C22.7489 10.4559 22.9514 10.1744 23.1302 9.87781L23.557 9.16973C23.7564 8.83905 23.9123 8.48405 24.0209 8.11351C24.1052 7.82562 24.1605 7.53001 24.186 7.23109L24.2364 6.63863C24.3142 5.72561 24.1469 4.80838 23.752 3.98154C23.359 3.15885 22.7548 2.45521 22.0009 1.94248L20.6626 1.03234L20.1188 0.744422C19.1954 0.255567 18.1664 0 17.1216 0H15.9329H14.7347C14.2352 0 13.7374 0.0584201 13.2515 0.174069L12.0744 0.454229L10.5198 1.04366C9.81911 1.30934 9.17046 1.69591 8.60336 2.18579L7.91789 2.77792C7.48279 3.15378 7.10534 3.5916 6.79768 4.07732C6.31155 4.84478 6.01044 5.71472 5.91809 6.61848L5.82867 7.49366C5.81603 7.61733 5.82506 7.74227 5.85535 7.86284C5.97477 8.33829 6.40221 8.67164 6.89242 8.67164H8.92125H11.1785C11.5629 8.67164 11.9283 8.50411 12.1791 8.2128C12.2474 8.13357 12.306 8.04651 12.3537 7.95345L12.7807 7.12043C13.1257 6.44732 13.7214 5.93668 14.4393 5.6985C15.1687 5.34721 16.0457 5.60754 16.4653 6.29995L16.5847 6.49688C17.0088 7.19678 16.9152 8.09345 16.3557 8.69069L14.4393 10.7363L13.6795 11.4925C13.2478 11.9222 12.8796 12.4112 12.586 12.9448L12.0744 13.8746L11.5557 14.911C11.4512 15.12 11.5398 15.374 11.7516 15.4727C11.8268 15.5077 11.9107 15.5193 11.9926 15.5061L12.4727 15.4288C13.001 15.3438 13.4511 14.9987 13.6704 14.5106L13.7464 14.3415C13.9567 13.8733 14.4223 13.5721 14.9355 13.5721C15.5135 13.5721 16.0225 13.9527 16.186 14.507L16.2034 14.5662C16.3068 14.9168 16.5444 15.2123 16.8646 15.3885L17.0279 15.4784C17.6653 15.8293 18.4544 15.7426 19.0005 15.2618C19.1124 15.1633 19.211 15.0507 19.294 14.9269Z"
@@ -175,8 +146,7 @@
                                    v-if="pictogram.pictogramRow === 2">
                                 <div class="pictogram-graphic-block-svgs-block-row-column" v-for="svg in svgList"
                                      :key="svg.svgNumber">
-                                  <svg :id="`${svg.svgNumber}`" width="30"
-                                       height="29" viewBox="0 0 30 29" fill="none"
+                                  <svg :id="`${svg.svgNumber}`" width="30" height="29" viewBox="0 0 30 29" fill="none"
                                        xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M19.294 14.9269L20.5797 13.0075L22.5246 10.7198C22.7489 10.4559 22.9514 10.1744 23.1302 9.87781L23.557 9.16973C23.7564 8.83905 23.9123 8.48405 24.0209 8.11351C24.1052 7.82562 24.1605 7.53001 24.186 7.23109L24.2364 6.63863C24.3142 5.72561 24.1469 4.80838 23.752 3.98154C23.359 3.15885 22.7548 2.45521 22.0009 1.94248L20.6626 1.03234L20.1188 0.744422C19.1954 0.255567 18.1664 0 17.1216 0H15.9329H14.7347C14.2352 0 13.7374 0.0584201 13.2515 0.174069L12.0744 0.454229L10.5198 1.04366C9.81911 1.30934 9.17046 1.69591 8.60336 2.18579L7.91789 2.77792C7.48279 3.15378 7.10534 3.5916 6.79768 4.07732C6.31155 4.84478 6.01044 5.71472 5.91809 6.61848L5.82867 7.49366C5.81603 7.61733 5.82506 7.74227 5.85535 7.86284C5.97477 8.33829 6.40221 8.67164 6.89242 8.67164H8.92125H11.1785C11.5629 8.67164 11.9283 8.50411 12.1791 8.2128C12.2474 8.13357 12.306 8.04651 12.3537 7.95345L12.7807 7.12043C13.1257 6.44732 13.7214 5.93668 14.4393 5.6985C15.1687 5.34721 16.0457 5.60754 16.4653 6.29995L16.5847 6.49688C17.0088 7.19678 16.9152 8.09345 16.3557 8.69069L14.4393 10.7363L13.6795 11.4925C13.2478 11.9222 12.8796 12.4112 12.586 12.9448L12.0744 13.8746L11.5557 14.911C11.4512 15.12 11.5398 15.374 11.7516 15.4727C11.8268 15.5077 11.9107 15.5193 11.9926 15.5061L12.4727 15.4288C13.001 15.3438 13.4511 14.9987 13.6704 14.5106L13.7464 14.3415C13.9567 13.8733 14.4223 13.5721 14.9355 13.5721C15.5135 13.5721 16.0225 13.9527 16.186 14.507L16.2034 14.5662C16.3068 14.9168 16.5444 15.2123 16.8646 15.3885L17.0279 15.4784C17.6653 15.8293 18.4544 15.7426 19.0005 15.2618C19.1124 15.1633 19.211 15.0507 19.294 14.9269Z"
@@ -365,20 +335,15 @@
                                 </div>
                               </div>
                               <div class="pictogram-graphic-block-svgs-block-row">
-                                <div class="pictogram-graphic-block-svgs-block-description">
-                                  Schweregrad
-                                </div>
+                                <div class="pictogram-graphic-block-svgs-block-description">Schweregrad</div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-
                     <div class="riskMatrix" v-if="riskMatrix">
-                      <div class="pictogram-title">
-                        Risikomatrix
-                      </div>
+                      <div class="pictogram-title">Risikomatrix</div>
                       <div class="pictogram-description">
                         <p>Veränderung des Gesamtrisikos durch getätigte Massnahmen.</p>
                       </div>
@@ -393,9 +358,7 @@
                 </div>
 
                 <div class='block block-verify'>
-                  <div class='block-title'>
-                    Bewertung
-                  </div>
+                  <div class='block-title'>Bewertung</div>
                   <div class='block-text decision-evaluation'>
                     <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
                       Device herstellen?
@@ -412,20 +375,15 @@
                              v-model="specification_customMadeDevice">
                       <span class="custom_radio_button"></span>
                     </label>
-
                   </div>
                 </div>
 
                 <!--Nachbearbeitung (in Spezifikation bleiben) -->
                 <div v-if="specification_customMadeDevice === 'Spezifikation'+item.id">
                   <div class='block block-verify'>
-                    <div class='block-title'>
-                      Nachbearbeitung
-                    </div>
+                    <div class='block-title'>Nachbearbeitung</div>
                     <div class='block-text decision-evaluation'>
-                      <div class='evaluation-text'>
-                        Ist eine Nachbearbeitung des Devices möglich?
-                      </div>
+                      <div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?</div>
                       <label class="container label-verify">
                         <div class="verify-label-text"> Ja</div>
                         <input :name="`postPrcessing${item.id}`" type="radio" :value="`yes${item.id}`"
@@ -452,23 +410,18 @@
                     <div class="buttonContainer buttonContainer-detailView">
                       <router-link
                           :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id }}">
-                        <button class="button button-cancel">
-                          Gefährdung erstellen
-                        </button>
+                        <button class="button button-cancel">Gefährdung erstellen</button>
                       </router-link>
-                      <input
-                          @click="numberOfCheckedCheckboxes(item.id, false, true, false)"
-                          class="button button-submit button-finishHazard"
-                          type="submit" value="Gefährdung abschliessen">
+                      <input @click="numberOfCheckedCheckboxes(item.id, false, true, false)"
+                             class="button button-submit button-finishHazard"
+                             type="submit" value="Gefährdung abschliessen">
                     </div>
                   </div>
 
                   <!--Nachbearbeitung NEIN-->
                   <div v-if="postProcessingPossibility === 'no'+item.id">
                     <div class="rectangle-block">
-                      <div class="detailView-notification">
-                        Die Herstellung des Devices muss abgebrochen werden.
-                      </div>
+                      <div class="detailView-notification">Die Herstellung des Devices muss abgebrochen werden.</div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
                       <button @click="cancel" class="button button-cancel">Herstellung abbrechen</button>
@@ -487,12 +440,9 @@
                     class="textarea-declaration"
                     rows="2"
                     aria-required="true"
-                    v-model="customMadeDeviceDescription"
-                />
+                    v-model="customMadeDeviceDescription"/>
                 <div class='block block-verify'>
-                  <div class='block-title'>
-                    Arztnachweis
-                  </div>
+                  <div class='block-title'>Arztnachweis</div>
                   <div class="block-text">
                     <input class=" inputfile" type="file" name="file" id="file"/>
                   </div>
@@ -508,14 +458,11 @@
             </form>
           </td>
         </template>
-
       </v-data-table>
     </v-app>
-
     <div id="toast">
       <div id="desc">{{ toastMessage }}</div>
     </div>
-
   </div>
 </template>
 
@@ -563,11 +510,8 @@ export default {
       acceptCounter: 0,
       checkedCheckboxesArray: [],
       acceptCounterArray: [],
-      imagePath: require('../../assets/svg/table_icons/toThin.svg'),
       sortBy: 'riskPriority',
       sortDesc: true,
-      reviews: 413,
-      value: 4.5,
       specification_customMadeDevice: null,
       postProcessingPossibility: null,
       riskMatrix: true,
@@ -774,7 +718,6 @@ export default {
             this.hazardRiskPriorityWord = 'hoch'
             break
         }
-
         this.hazardNewId = this.hazards.length + 1
         this.hazards.push({
           id: this.hazardNewId,
@@ -802,7 +745,6 @@ export default {
         this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
       }
       this.launch_notification()
-
       this.numberOfCheckedCheckboxes(this.hazardOriginalIdTableNumber, false, true, true)
     },
     nameCounterTable: function () {
@@ -815,6 +757,7 @@ export default {
       else if (this.nameCounterTable === 0) {
         oldCategoryId = 2
       }
+
       this.idOfFirstElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id
       this.idOfLastElementActualCategory = this.hazards.find(priority => priority.categoryId === oldCategoryId).id + this.hazards.filter(priority => priority.categoryId === oldCategoryId).length
       for (let i = this.idOfFirstElementActualCategory; i < this.idOfLastElementActualCategory; i++) {
@@ -833,7 +776,6 @@ export default {
       }
 
       this.deleteNotSavedNewHazardInCheckedCheckboxArray()
-
       this.numberOfCheckedCheckboxes(null, true, false, false)
     },
   },
@@ -847,12 +789,10 @@ export default {
     if (this.nameCounterTable === 0) {
       this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
     }
-
     let nameCounterLocalStorageVariable = parseInt(localStorage.nameCounter, 10)
     if (this.nameCounterTable === nameCounterLocalStorageVariable || localStorage.nameCounter === undefined) {
       this.deleteNotSavedNewHazardInCheckedCheckboxArray()
     }
-
   },
   mounted() {
     if (this.$route.params.hazardOriginalIdListView !== undefined) {
@@ -867,7 +807,6 @@ export default {
       this.hazardMeasuresTable = this.$route.params.hazardMeasuresListView
       this.hazardProbabilityOfOccurenceAfterTable = this.$route.params.hazardProbabilityOfOccurenceAfterListView
       this.hazardRiskPriorityTableNumber = this.$route.params.hazardRiskPriorityListView
-
       this.hazardOriginalIdTableNumber = parseInt(this.hazardOriginalIdTableNumber, 10)
       this.hazardImageNameTable = this.hazards.find(hazard => hazard.id === this.hazardOriginalIdTableNumber).imageName
     }
@@ -877,14 +816,12 @@ export default {
     if (localStorage.acceptCounterArray === '') {
       localStorage.acceptCounterArray = JSON.stringify([])
     }
-
     this.numberOfCheckedCheckboxes(null, true, false, false)
   },
   methods: {
-    deleteNotSavedNewHazardInCheckedCheckboxArray(){
+    deleteNotSavedNewHazardInCheckedCheckboxArray() {
       if (localStorage.checkedCheckboxesArray !== '') {
         for (let i = 0; i < JSON.parse(localStorage.checkedCheckboxesArray).length; i++) {
-
           let partOf = false
           for (let j = 0; j < this.hazardsSliced.length; j++) {
             if (JSON.parse(localStorage.checkedCheckboxesArray)[i] === this.hazardsSliced[j].id) {
@@ -893,7 +830,6 @@ export default {
           }
           if (partOf === false) {
             const index = JSON.parse(localStorage.checkedCheckboxesArray).indexOf(JSON.parse(localStorage.checkedCheckboxesArray)[i])
-
             if (index !== -1) {
               let a = JSON.parse(localStorage.checkedCheckboxesArray)
               a.splice(index, 1)  // 2nd parameter means remove one item only
@@ -913,7 +849,6 @@ export default {
     moveCheckmark(elementId, element, action, time) {
       let actualAcceptedCheckmarkDiv = document.getElementById(element + elementId)
       actualAcceptedCheckmarkDiv.classList.add(action)
-
       setTimeout(() =>
           actualAcceptedCheckmarkDiv.classList.remove(action), time
       )
@@ -922,7 +857,6 @@ export default {
       if (document.getElementById("customMadeDeviceSubmit" + itemId) !== null && document.getElementById("customMadeDeviceSubmit" + itemId) !== undefined && document.getElementById("customMadeDeviceSubmit" + itemId) !== "undefined") {
         // var actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit" + itemId)
       }
-
       if (this.customMadeDeviceDescription === '') {
         if (document.getElementById("customMadeDeviceSubmit" + itemId) !== null && document.getElementById("customMadeDeviceSubmit" + itemId) !== undefined
             && document.getElementById("customMadeDeviceSubmit") !== undefined && document.getElementById("customMadeDeviceSubmit" + itemId) !== "undefined") {
@@ -941,7 +875,6 @@ export default {
       } else {
         this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
       }
-
       if (localStorage.acceptCounterArray === '') {
         localStorage.acceptCounterArray = JSON.stringify([])
         this.acceptCounterArray = []
@@ -983,7 +916,6 @@ export default {
           localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
         }
         this.expanded = []
-
         if (!newItem) {
           this.toastMessage = 'Gefährdung wurde erfolgreich verifiziert.'
           this.launch_notification()
@@ -1041,6 +973,8 @@ export default {
       this.expanded = []
       localStorage.checkedCheckboxesArray = ''
       localStorage.acceptCounterArray = ''
+      let nameCounterTableValue = 0
+      this.$emit("updateNumber", nameCounterTableValue);
       this.numberOfCheckedCheckboxes(null, false, false, false)
     },
     pictogramIconColor(itemNumber, svgNumber, activeColor) {
