@@ -828,18 +828,18 @@ export default {
   },
   created() {
     if (localStorage.checkedCheckboxesArray === undefined) {
-      localStorage.checkedCheckboxesArray = undefined
+      localStorage.checkedCheckboxesArray = ''
     }
 
     if (localStorage.acceptCounterArray === undefined) {
-      localStorage.acceptCounterArray = undefined
+      localStorage.acceptCounterArray = ''
     }
 
     if (this.nameCounterTable === 0) {
       this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
     }
 
-    if (localStorage.checkedCheckboxesArray !== undefined && localStorage.checkedCheckboxesArray !== 'undefined') {
+    if (localStorage.checkedCheckboxesArray !== '') {
       for (let i = 0; i < JSON.parse(localStorage.checkedCheckboxesArray).length; i++) {
 
         let partOf = false
@@ -877,11 +877,11 @@ export default {
       this.hazardOriginalIdTableNumber = parseInt(this.hazardOriginalIdTableNumber, 10)
       this.hazardImageNameTable = this.hazards.find(hazard => hazard.id === this.hazardOriginalIdTableNumber).imageName
     }
-    if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
+    if (localStorage.checkedCheckboxesArray === '') {
       let newArray = []
       localStorage.checkedCheckboxesArray = JSON.stringify(newArray)
     }
-    if (localStorage.acceptCounterArray === "undefined" || localStorage.acceptCounterArray === undefined || localStorage.acceptCounterArray === "null" || localStorage.acceptCounterArray === null) {
+    if (localStorage.acceptCounterArray === '') {
       let newArray = []
       localStorage.acceptCounterArray = JSON.stringify(newArray)
     }
@@ -931,7 +931,7 @@ export default {
 
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification, newItem) {
 
-      if (localStorage.checkedCheckboxesArray === "undefined" || localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === "null" || localStorage.checkedCheckboxesArray === null) {
+      if (localStorage.checkedCheckboxesArray === '') {
         let newArray = []
         localStorage.checkedCheckboxesArray = JSON.stringify(newArray)
         this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
@@ -940,7 +940,7 @@ export default {
         this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
       }
 
-      if (localStorage.acceptCounterArray === "undefined" || localStorage.acceptCounterArray === undefined || localStorage.acceptCounterArray === "null" || localStorage.acceptCounterArray === null) {
+      if (localStorage.acceptCounterArray === '') {
         let newArray = []
         localStorage.acceptCounterArray = JSON.stringify(newArray)
         this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
@@ -1036,7 +1036,7 @@ export default {
       this.resizeAnimation(itemId)
     },
     itemIdPartOfArray(itemId) {
-      if (localStorage.checkedCheckboxesArray === 'undefined' || localStorage.checkedCheckboxesArray === 'null') {
+      if (localStorage.checkedCheckboxesArray === '') {
         return false
       } else {
         let a
@@ -1048,7 +1048,7 @@ export default {
       return false
     },
     itemIdPartOfArray2(itemId) {
-      if (localStorage.acceptCounterArray === 'undefined' || localStorage.acceptCounterArray === 'null') {
+      if (localStorage.acceptCounterArray === '') {
         return 0.2
       } else {
         let a
@@ -1062,8 +1062,8 @@ export default {
     cancel() {
       this.expanded = []
 
-      localStorage.checkedCheckboxesArray = null
-      localStorage.acceptCounterArray = null
+      localStorage.checkedCheckboxesArray = ''
+      localStorage.acceptCounterArray = ''
 
       this.numberOfCheckedCheckboxes(null, false, false, false)
     },

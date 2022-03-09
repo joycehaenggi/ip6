@@ -25,8 +25,8 @@ export default {
   },
   methods: {
     nextStepCounter() {
-      localStorage.checkedCheckboxesArray = null
-      localStorage.acceptCounterArray = null
+      localStorage.checkedCheckboxesArray = ''
+      localStorage.acceptCounterArray = ''
 
       if(this.nameCounter < this.titleNamesButtonList.length-1){
         this.nameCounter++;
