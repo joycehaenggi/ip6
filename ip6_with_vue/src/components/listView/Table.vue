@@ -480,7 +480,6 @@
 
               <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
               <div class="blocks_custom_made_device" v-if="specification_customMadeDevice === 'CustomMadeDevice'+item.id">
-                <div class="blocks_custom_made_device-content">
                   <v-textarea
                       outlined
                       label="Begründung für Custom Made Device"
@@ -504,7 +503,6 @@
                            :disabled="checkCustomMadeDeviceFields(item.id)"
                            value="Gefährdung abschliessen">
                   </div>
-                </div>
               </div>
 
             </form>
