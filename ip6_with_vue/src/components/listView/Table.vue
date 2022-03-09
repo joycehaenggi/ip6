@@ -55,7 +55,7 @@
           <div
               ref="submit"
               :id="`acceptedDiv${item.id}`"
-              :class="{ 'apply-shake': shake , 'tooltip expand akzeptiert-status' :true}"
+              class="tooltip expand akzeptiert-status"
               @click="shakeAnimation(item.id)"
               data-title="Akzeptiert-Status">
             <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
@@ -551,7 +551,6 @@ export default {
       customMadeDeviceDescription: '',
       customMadeDeviceFile: '',
       customMadeDeviceDocument: '',
-      shake: false,
       toastMessage: 'Gefährdung wurde erfolgreich hinzugefügt.',
       pictogramRows: [
         {pictogramRow: 1, title: "Vor Massnahmen"},
@@ -912,6 +911,14 @@ export default {
           actualAcceptedCheckmarkDiv.classList.remove("apply-shake"), 820
       )
     },
+    resizeAnimation(elementId) {
+      let actualAcceptedCheckmarkDiv = document.getElementById("accepted" + elementId)
+      actualAcceptedCheckmarkDiv.classList.add("apply-resize")
+
+      setTimeout(() =>
+          actualAcceptedCheckmarkDiv.classList.remove("apply-resize"), 3000
+      )
+    },
     checkCustomMadeDeviceFields(itemId) {
       if (document.getElementById("customMadeDeviceSubmit" + itemId) !== null && document.getElementById("customMadeDeviceSubmit" + itemId) !== undefined && document.getElementById("customMadeDeviceSubmit" + itemId) !== "undefined") {
         // var actualCustomMadeDeviceSubmit = document.getElementById("customMadeDeviceSubmit" + itemId)
@@ -936,7 +943,6 @@ export default {
         localStorage.checkedCheckboxesArray = JSON.stringify(newArray)
         this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
         this.checkedCheckboxesArray = []
-
       } else {
         this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
       }
@@ -946,11 +952,9 @@ export default {
         localStorage.acceptCounterArray = JSON.stringify(newArray)
         this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
         this.acceptCounterArray = []
-
       } else {
         this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
       }
-
 
       if (acceptStatus === false && specification === false && itemId !== null) {
         let actualCheckbox = document.getElementById("confirm" + itemId)
@@ -1011,31 +1015,6 @@ export default {
         numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + JSON.parse(localStorage.acceptCounterArray).length
       }
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
-
-    },
-    itemIdPartOfArray(itemId) {
-      if (localStorage.checkedCheckboxesArray === 'undefined' || localStorage.checkedCheckboxesArray === 'null') {
-        return false
-      } else {
-        let a
-        a = JSON.parse(localStorage.checkedCheckboxesArray)
-        if (a.includes(itemId)) {
-          return true
-        }
-      }
-      return false
-    },
-    itemIdPartOfArray2(itemId) {
-      if (localStorage.acceptCounterArray === 'undefined' || localStorage.acceptCounterArray === 'null') {
-        return 0.2
-      } else {
-        let a
-        a = JSON.parse(localStorage.acceptCounterArray)
-        if (a.includes(itemId)) {
-          return 1.0
-        }
-      }
-      return 0.2
     },
     accept(itemId) {
       this.customMadeDeviceDescription = ''
@@ -1060,6 +1039,32 @@ export default {
 
       this.expanded = []
       this.numberOfCheckedCheckboxes(itemId, true, false, false)
+
+      this.resizeAnimation(itemId)
+    },
+    itemIdPartOfArray(itemId) {
+      if (localStorage.checkedCheckboxesArray === 'undefined' || localStorage.checkedCheckboxesArray === 'null') {
+        return false
+      } else {
+        let a
+        a = JSON.parse(localStorage.checkedCheckboxesArray)
+        if (a.includes(itemId)) {
+          return true
+        }
+      }
+      return false
+    },
+    itemIdPartOfArray2(itemId) {
+      if (localStorage.acceptCounterArray === 'undefined' || localStorage.acceptCounterArray === 'null') {
+        return 0.2
+      } else {
+        let a
+        a = JSON.parse(localStorage.acceptCounterArray)
+        if (a.includes(itemId)) {
+          return 1.0
+        }
+      }
+      return 0.2
     },
     cancel() {
       this.expanded = []
