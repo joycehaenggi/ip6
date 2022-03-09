@@ -418,96 +418,93 @@
                 </div>
 
                 <!--Nachbearbeitung (in Spezifikation bleiben) -->
-                <template>
-                  <div v-if="specification_customMadeDevice === 'Spezifikation'+item.id">
-                    <div class='block block-verify'>
-                      <div class='block-title'>
-                        Nachbearbeitung
-                      </div>
-                      <div class='block-text decision-evaluation'>
-                        <div class='evaluation-text'>
-                          Ist eine Nachbearbeitung des Devices möglich?
-                        </div>
-                        <label class="container label-verify">
-                          <div class="verify-label-text"> Ja</div>
-                          <input :name="`postPrcessing${item.id}`" type="radio" :value="`yes${item.id}`"
-                                 v-model="postProcessingPossibility">
-                          <span class="custom_radio_button"></span>
-                        </label>
-                        <label class="container label-verify">
-                          <div class="verify-label-text"> Nein</div>
-                          <input :name="`postPrcessing${item.id}`" type="radio" :value="`no${item.id}`"
-                                 v-model="postProcessingPossibility">
-                          <span class="custom_radio_button"></span>
-                        </label>
-                      </div>
+                <div v-if="specification_customMadeDevice === 'Spezifikation'+item.id">
+                  <div class='block block-verify'>
+                    <div class='block-title'>
+                      Nachbearbeitung
                     </div>
-
-                    <!--Nachbearbeitung JA-->
-                    <div v-if="postProcessingPossibility === 'yes'+item.id">
-                      <div class="rectangle-block">
-                        <div class="detailView-notification">
-                          Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
-                          Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
-                        </div>
+                    <div class='block-text decision-evaluation'>
+                      <div class='evaluation-text'>
+                        Ist eine Nachbearbeitung des Devices möglich?
                       </div>
-                      <div class="buttonContainer buttonContainer-detailView">
-                        <router-link
-                            :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id }}">
-                          <button class="button button-cancel">
-                            Gefährdung erstellen
-                          </button>
-                        </router-link>
-                        <input
-                            @click="numberOfCheckedCheckboxes(item.id, false, true, false)"
-                            class="button button-submit button-finishHazard"
-                            type="submit" value="Gefährdung abschliessen">
-                      </div>
-                    </div>
-
-                    <!--Nachbearbeitung NEIN-->
-                    <div v-if="postProcessingPossibility === 'no'+item.id">
-                      <div class="rectangle-block">
-                        <div class="detailView-notification">
-                          Die Herstellung des Devices muss abgebrochen werden.
-                        </div>
-                      </div>
-                      <div class="buttonContainer buttonContainer-detailView">
-                        <button @click="cancel" class="button button-cancel">Herstellung abbrechen</button>
-                      </div>
+                      <label class="container label-verify">
+                        <div class="verify-label-text"> Ja</div>
+                        <input :name="`postPrcessing${item.id}`" type="radio" :value="`yes${item.id}`"
+                               v-model="postProcessingPossibility">
+                        <span class="custom_radio_button"></span>
+                      </label>
+                      <label class="container label-verify">
+                        <div class="verify-label-text"> Nein</div>
+                        <input :name="`postPrcessing${item.id}`" type="radio" :value="`no${item.id}`"
+                               v-model="postProcessingPossibility">
+                        <span class="custom_radio_button"></span>
+                      </label>
                     </div>
                   </div>
-                </template>
 
-                <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
-                <template>
-                  <div v-if="specification_customMadeDevice === 'CustomMadeDevice'+item.id">
-                    <v-textarea
-                        outlined
-                        label="Begründung für Custom Made Device"
-                        placeholder="Geben Sie eine Erläuterung ein."
-                        class="textarea-declaration"
-                        rows="2"
-                        aria-required="true"
-                        v-model="customMadeDeviceDescription"
-                    />
-                    <div class='block block-verify'>
-                      <div class='block-title'>
-                        Arztnachweis
-                      </div>
-                      <div class="block-text">
-                        <input class=" inputfile" type="file" name="file" id="file"/>
+                  <!--Nachbearbeitung JA-->
+                  <div v-if="postProcessingPossibility === 'yes'+item.id">
+                    <div class="rectangle-block">
+                      <div class="detailView-notification">
+                        Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
+                        Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
                       </div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
-                      <input @click="accept(item.id)" class="button button-submit" type="submit"
-                             :id="`customMadeDeviceSubmit${item.id}`"
-                             :disabled="checkCustomMadeDeviceFields(item.id)"
-                             value="Gefährdung abschliessen">
+                      <router-link
+                          :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id }}">
+                        <button class="button button-cancel">
+                          Gefährdung erstellen
+                        </button>
+                      </router-link>
+                      <input
+                          @click="numberOfCheckedCheckboxes(item.id, false, true, false)"
+                          class="button button-submit button-finishHazard"
+                          type="submit" value="Gefährdung abschliessen">
                     </div>
                   </div>
-                </template>
 
+                  <!--Nachbearbeitung NEIN-->
+                  <div v-if="postProcessingPossibility === 'no'+item.id">
+                    <div class="rectangle-block">
+                      <div class="detailView-notification">
+                        Die Herstellung des Devices muss abgebrochen werden.
+                      </div>
+                    </div>
+                    <div class="buttonContainer buttonContainer-detailView">
+                      <button @click="cancel" class="button button-cancel">Herstellung abbrechen</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
+              <div class="blocks_custom_made_device" v-if="specification_customMadeDevice === 'CustomMadeDevice'+item.id">
+                <div class="blocks_custom_made_device-content">
+                  <v-textarea
+                      outlined
+                      label="Begründung für Custom Made Device"
+                      placeholder="Geben Sie eine Erläuterung ein."
+                      class="textarea-declaration"
+                      rows="2"
+                      aria-required="true"
+                      v-model="customMadeDeviceDescription"
+                  />
+                  <div class='block block-verify'>
+                    <div class='block-title'>
+                      Arztnachweis
+                    </div>
+                    <div class="block-text">
+                      <input class=" inputfile" type="file" name="file" id="file"/>
+                    </div>
+                  </div>
+                  <div class="buttonContainer">
+                    <input @click="accept(item.id)" class="button button-submit" type="submit"
+                           :id="`customMadeDeviceSubmit${item.id}`"
+                           :disabled="checkCustomMadeDeviceFields(item.id)"
+                           value="Gefährdung abschliessen">
+                  </div>
+                </div>
               </div>
 
             </form>
@@ -522,8 +519,6 @@
     </div>
 
   </div>
-
-
 </template>
 
 <script>

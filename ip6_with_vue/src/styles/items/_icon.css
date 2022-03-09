@@ -38,8 +38,8 @@
     animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
 }
 
-/* Shake-effect */
-@keyframes turner{
+/* Turn-resize-effect */
+@keyframes turn-resize{
     10%, 90% {
         transform: scale(1.3) rotateY(36deg);
     }
@@ -61,5 +61,5 @@
 }
 
 .apply-resize {
-    animation: turner 3s infinite linear
+    animation: turn-resize 3s infinite linear
 }
