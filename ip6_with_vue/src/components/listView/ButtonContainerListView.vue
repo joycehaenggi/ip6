@@ -21,10 +21,15 @@ export default {
     return {
       hazardsNew: null,
       nameCounter: null,
+      cusomtMadeProcess: false
     }
   },
   methods: {
     nextStepCounter() {
+      if(JSON.parse(localStorage.acceptCounterArray).length > 0){
+        this.cusomMadeProcess = true
+      }
+
       localStorage.checkedCheckboxesArray = JSON.stringify([])
       localStorage.acceptCounterArray = JSON.stringify([])
 
@@ -32,10 +37,11 @@ export default {
         this.nameCounter++;
       } else {
         this.nameCounter = 0;
+        this.cusomMadeProcess = false
       }
       localStorage.nameCounter = this.nameCounter
+      localStorage.customMadeProcess = this.cusomMadeProcess
       this.checkStep()
-
     },
     checkStep(){
       this.$emit('readNameCounter', localStorage.nameCounter)

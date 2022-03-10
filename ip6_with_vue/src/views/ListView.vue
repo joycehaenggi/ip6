@@ -55,6 +55,11 @@ export default {
       hazardNameNewListView: ""
     }
   },
+  mounted() {
+    if(localStorage.customMadeProcess === undefined){
+      localStorage.customMadeProcess = false
+    }
+  },
   methods: {
     transferCheckboxNumbers(nunmberFinished, numberOfCurrentCheckboxes) {
       this.nunmberOfCheckedCheckboxesValue = nunmberFinished
@@ -96,7 +101,7 @@ export default {
       let notification = document.getElementById("notification")
       header.style.transition = "2s"
       header.style.notification = "2s"
-      if(acceptCounterArrayLength > 0){
+      if(acceptCounterArrayLength > 0 || localStorage.customMadeProcess === 'true'){
         header.style.background = '#597380'
         notification.style.background = '#597380'
       }else {
