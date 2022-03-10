@@ -8,6 +8,7 @@
       <NotificationBar/>
       <Table @ReadCheckboxNumber="transferCheckboxNumbers"
              @updateNumber="newNumber"
+             @CustomMadeProcessSettings="setCustomMadeProcessSettings"
              :actualTitleNameTable="titleNames[nameCounterListView]"
              :nameCounterTable="nameCounterListView"
       />
@@ -89,6 +90,17 @@ export default {
     },
     newNumber(nameCounterTableValue){
       this.nameCounterListView = nameCounterTableValue
+    },
+    setCustomMadeProcessSettings(acceptCounterArrayLength){
+      let header = document.getElementById("mainHeader")
+      let notification = document.getElementById("notification")
+      if(acceptCounterArrayLength > 0){
+        header.style.background = '#597380'
+        notification.style.background = '#597380'
+      }else {
+        header.style.background = '#32404F'
+        notification.style.background = '#4C5A69'
+      }
     },
     transferNameCounter(nameCounter) {
       this.nameCounterListView = parseInt(nameCounter, 10)

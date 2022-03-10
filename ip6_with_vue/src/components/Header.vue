@@ -1,5 +1,5 @@
 <template>
-  <nav class="header">
+  <nav class="header" id="mainHeader">
     <a href="index.html">
       <div class="logo_title">
         <div class="logo">

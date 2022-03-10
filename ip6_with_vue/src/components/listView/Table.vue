@@ -912,6 +912,9 @@ export default {
       this.numberOfCurrentCheckboxes = this.hazards.filter(priority => priority.categoryId === (this.nameCounterTable + 1)).length
       var numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + JSON.parse(localStorage.acceptCounterArray).length
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
+
+      let acceptCounterArrayLength = JSON.parse(localStorage.acceptCounterArray).length
+      this.$emit('CustomMadeProcessSettings', acceptCounterArrayLength)
     },
     accept(itemId) {
       this.customMadeDeviceDescription = ''
