@@ -25,8 +25,8 @@ export default {
   },
   methods: {
     nextStepCounter() {
-      localStorage.checkedCheckboxesArray = ''
-      localStorage.acceptCounterArray = ''
+      localStorage.checkedCheckboxesArray = JSON.stringify([])
+      localStorage.acceptCounterArray = JSON.stringify([])
 
       if(this.nameCounter < this.titleNamesButtonList.length-1){
         this.nameCounter++;

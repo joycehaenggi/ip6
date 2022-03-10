@@ -781,11 +781,12 @@ export default {
   },
   created() {
     if (localStorage.checkedCheckboxesArray === undefined) {
-      localStorage.checkedCheckboxesArray = ''
+      localStorage.checkedCheckboxesArray = JSON.stringify([])
     }
     if (localStorage.acceptCounterArray === undefined) {
-      localStorage.acceptCounterArray = ''
+      localStorage.acceptCounterArray = JSON.stringify([])
     }
+
     if (this.nameCounterTable === 0) {
       this.hazardsSliced = this.hazards.filter(priority => priority.categoryId === 1)
     }
@@ -809,12 +810,6 @@ export default {
       this.hazardRiskPriorityTableNumber = this.$route.params.hazardRiskPriorityListView
       this.hazardOriginalIdTableNumber = parseInt(this.hazardOriginalIdTableNumber, 10)
       this.hazardImageNameTable = this.hazards.find(hazard => hazard.id === this.hazardOriginalIdTableNumber).imageName
-    }
-    if (localStorage.checkedCheckboxesArray === '') {
-      localStorage.checkedCheckboxesArray = JSON.stringify([])
-    }
-    if (localStorage.acceptCounterArray === '') {
-      localStorage.acceptCounterArray = JSON.stringify([])
     }
     this.numberOfCheckedCheckboxes(null, true, false, false)
   },
@@ -869,19 +864,10 @@ export default {
       }
     },
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification, newItem) {
-      if (localStorage.checkedCheckboxesArray === '') {
-        localStorage.checkedCheckboxesArray = JSON.stringify([])
-        this.checkedCheckboxesArray = []
-      } else {
-        this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
-      }
-      if (localStorage.acceptCounterArray === '') {
-        localStorage.acceptCounterArray = JSON.stringify([])
-        this.acceptCounterArray = []
-      } else {
-        this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
-      }
+      this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
+      this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
 
+      // If checkbox "nicht" zutreffend" is selected
       if (!acceptStatus && !specification && itemId !== null) {
         let actualCheckbox = document.getElementById("confirm" + itemId)
         if (actualCheckbox.checked === true) {
@@ -890,10 +876,9 @@ export default {
           const index = this.checkedCheckboxesArray.indexOf(itemId)
           this.checkedCheckboxesArray.splice(index, 1)  // 2nd parameter means remove one item only
         }
-        localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
       }
 
-      //Accept-icon
+      //If accept-Icon is set and should be unset after checkbox is checked
       if (itemId !== null) {
         if (this.acceptCounterArray.includes(itemId) && acceptStatus === false) {
           this.acceptCounter--
@@ -901,7 +886,6 @@ export default {
           const index = this.acceptCounterArray.indexOf(itemId)
           this.acceptCounterArray.splice(index, 1)  // 2nd parameter means remove one item only
         }
-        localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
         this.$forceUpdate()
       }
 
@@ -913,7 +897,6 @@ export default {
             checkbox.checked = true
           }
           this.checkedCheckboxesArray.push(itemId)
-          localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
         }
         this.expanded = []
         if (!newItem) {
@@ -923,6 +906,9 @@ export default {
       }
 
       //General Settings
+      localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
+      localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
+
       this.numberOfCurrentCheckboxes = this.hazards.filter(priority => priority.categoryId === (this.nameCounterTable + 1)).length
       var numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + JSON.parse(localStorage.acceptCounterArray).length
       this.$emit('ReadCheckboxNumber', numberFinished, this.numberOfCurrentCheckboxes)
@@ -953,8 +939,8 @@ export default {
     },
     itemIdPartOfCheckedCheckboxesArray(itemId) {
       if (localStorage.checkedCheckboxesArray !== '') {
-        let a = JSON.parse(localStorage.checkedCheckboxesArray)
-        if (a.includes(itemId)) {
+        let newCheckedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
+        if (newCheckedCheckboxesArray.includes(itemId)) {
           return true
         }
       }
@@ -962,8 +948,8 @@ export default {
     },
     itemIdPartOfacceptCounterArray(itemId) {
       if (localStorage.acceptCounterArray !== '') {
-        let a = JSON.parse(localStorage.acceptCounterArray)
-        if (a.includes(itemId)) {
+        let newAcceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
+        if (newAcceptCounterArray.includes(itemId)) {
           return 1.0
         }
       }
