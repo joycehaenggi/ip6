@@ -836,10 +836,10 @@ export default {
     },
     launch_notification() {
       let notification = document.getElementById("toast")
-      notification.className = "show";
+      notification.className = "show"
       setTimeout(() => {
-        notification.className = notification.className.replace("show", "");
-      }, 4000);
+        notification.className = notification.className.replace("show", "")
+      }, 4000)
     },
     moveCheckmark(elementId, element, action, time) {
       let actualAcceptedCheckmarkDiv = document.getElementById(element + elementId)
@@ -963,7 +963,7 @@ export default {
       localStorage.checkedCheckboxesArray = ''
       localStorage.acceptCounterArray = ''
       let nameCounterTableValue = 0
-      this.$emit("updateNumber", nameCounterTableValue);
+      this.$emit("updateNumber", nameCounterTableValue)
       this.numberOfCheckedCheckboxes(null, false, false, false)
     },
     pictogramIconColor(itemNumber, svgNumber, activeColor) {

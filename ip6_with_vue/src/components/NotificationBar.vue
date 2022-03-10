@@ -59,7 +59,9 @@ export default {
         this.fullNotification = false
       } else {
         notification.style.width = "100%"
-        TextNotification.style.display = "block"
+        setTimeout(() => {
+          TextNotification.style.display = "block"
+        }, 250)
         this.fullNotification = true
       }
     }
