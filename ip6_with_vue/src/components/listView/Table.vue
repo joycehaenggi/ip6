@@ -938,7 +938,7 @@ export default {
 
       this.expanded = []
       this.numberOfCheckedCheckboxes(itemId, true, false, false)
-      this.moveCheckmark(itemId, 'accepted', 'apply-resize', 3000)
+      this.moveCheckmark(itemId, 'accepted', 'apply-resize', 1000)
     },
     itemIdPartOfCheckedCheckboxesArray(itemId) {
       if (localStorage.checkedCheckboxesArray !== '') {

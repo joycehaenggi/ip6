@@ -94,6 +94,8 @@ export default {
     setCustomMadeProcessSettings(acceptCounterArrayLength){
       let header = document.getElementById("mainHeader")
       let notification = document.getElementById("notification")
+      header.style.transition = "2s"
+      header.style.notification = "2s"
       if(acceptCounterArrayLength > 0){
         header.style.background = '#597380'
         notification.style.background = '#597380'
