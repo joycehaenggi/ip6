@@ -227,6 +227,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     border: 1px solid var(--frames-BlueGray);
     border-radius: calc(var(--borderRadius) * 0.063rem);
     display: flex;
+    z-index: 0;
 }
 
 .pictogram-graphic-block-svgs-block {

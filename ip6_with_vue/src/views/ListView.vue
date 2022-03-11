@@ -44,6 +44,7 @@ export default {
   },
   data() {
     return {
+      var: true,
       hazards: null,
       nunmberOfAllCheckboxesValue: null,
       nunmberOfCheckedCheckboxesValue: null,
@@ -61,6 +62,10 @@ export default {
     }
   },
   methods: {
+    changeVariable(){
+      this.var = false
+      console.log(this.var)
+    },
     transferCheckboxNumbers(nunmberFinished, numberOfCurrentCheckboxes) {
       this.nunmberOfCheckedCheckboxesValue = nunmberFinished
 

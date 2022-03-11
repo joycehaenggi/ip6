@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <v-app id="inspire">
       <v-text-field
           append-icon="search"
@@ -16,6 +17,7 @@
           :sort-by.sync="sortBy"
           :sort-desc.sync="sortDesc"
           :expanded.sync="expanded"
+          :single-expand="true"
           :footer-props="{
               showFirstLastPage: true,
               'items-per-page-text':'Gefährdungen pro Seite',
@@ -365,13 +367,13 @@
                     </div>
                     <label class="container label-verify">
                       <div class="verify-label-text"> Spezifikation</div>
-                      <input type="radio" :name="`evaluation${item.id}`" :value="`Spezifikation${item.id}`"
+                      <input type="radio" :name="`evaluation`" :value="`Spezifikation`"
                              v-model="specification_customMadeDevice">
                       <span class="custom_radio_button"></span>
                     </label>
                     <label class="container label-verify">
                       <div class="verify-label-text"> Custom Made Device</div>
-                      <input type="radio" :name="`evaluation${item.id}`" :value="`CustomMadeDevice${item.id}`"
+                      <input type="radio" :name="`evaluation`" :value="`CustomMadeDevice`"
                              v-model="specification_customMadeDevice">
                       <span class="custom_radio_button"></span>
                     </label>
@@ -379,20 +381,20 @@
                 </div>
 
                 <!--Nachbearbeitung (in Spezifikation bleiben) -->
-                <div v-if="specification_customMadeDevice === 'Spezifikation'+item.id">
+                <div v-if="specification_customMadeDevice === 'Spezifikation'">
                   <div class='block block-verify'>
                     <div class='block-title'>Nachbearbeitung</div>
                     <div class='block-text decision-evaluation'>
                       <div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?</div>
                       <label class="container label-verify">
                         <div class="verify-label-text"> Ja</div>
-                        <input :name="`postPrcessing${item.id}`" type="radio" :value="`yes${item.id}`"
+                        <input :name="`postPrcessing`" type="radio" :value="`yes`"
                                v-model="postProcessingPossibility">
                         <span class="custom_radio_button"></span>
                       </label>
                       <label class="container label-verify">
                         <div class="verify-label-text"> Nein</div>
-                        <input :name="`postPrcessing${item.id}`" type="radio" :value="`no${item.id}`"
+                        <input :name="`postPrcessing`" type="radio" :value="`no`"
                                v-model="postProcessingPossibility">
                         <span class="custom_radio_button"></span>
                       </label>
@@ -400,7 +402,7 @@
                   </div>
 
                   <!--Nachbearbeitung JA-->
-                  <div v-if="postProcessingPossibility === 'yes'+item.id">
+                  <div v-if="postProcessingPossibility === 'yes'">
                     <div class="rectangle-block">
                       <div class="detailView-notification">
                         Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
@@ -419,20 +421,22 @@
                   </div>
 
                   <!--Nachbearbeitung NEIN-->
-                  <div v-if="postProcessingPossibility === 'no'+item.id">
+                  <div v-if="postProcessingPossibility === 'no'">
                     <div class="rectangle-block">
                       <div class="detailView-notification">Die Herstellung des Devices muss abgebrochen werden.</div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
-                      <button @click="cancel" class="button button-cancel">Herstellung abbrechen</button>
+                      <button @click="showModal = true" class="button button-cancel">Herstellung abbrechen</button>
                     </div>
                   </div>
+
+
                 </div>
               </div>
 
               <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
               <div class="blocks_custom_made_device"
-                   v-if="specification_customMadeDevice === 'CustomMadeDevice'+item.id">
+                   v-if="specification_customMadeDevice === 'CustomMadeDevice'">
                 <v-textarea
                     outlined
                     label="Begründung für Custom Made Device"
@@ -459,6 +463,30 @@
           </td>
         </template>
       </v-data-table>
+      <!-- The Modal -->
+      <div id="myModal" v-if="showModal" class="modal" @click="showModal = false">
+        <!-- Modal content -->
+        <div class="modal-content" @click.stop="showModal = true">
+          <div class="close-span">
+            <span class="close" @click.stop="showModal = false">&times;</span>
+          </div>
+          <div class="modal-content-inner-part">
+            <div class="modal-topPart-container">
+              <div class="modal-text">Möchten Sie Herstellung des Devices wirklich abbrechen? Der aktuelle Fortschritt
+                wird
+                dabei zurückgesetzt.
+              </div>
+            </div>
+
+            <div class="modal-button-container">
+              <button @click.stop="showModal = false" class="button button-cancel">Herstellung fortsetzen</button>
+              <button @click.stop="showModal = false; cancel()" class="button button-submit button-submit-modal">Herstellung
+                abbrechen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </v-app>
     <div id="toast">
       <div id="desc">{{ toastMessage }}</div>
@@ -476,6 +504,7 @@ export default {
   props: ['actualTitleNameTable', 'nameCounterTable', 'hazardNameListView'],
   data() {
     return {
+      showModal: false,
       hazardNameTable: '',
       hazardSituationTable: '',
       hazardDamageTable: '',
@@ -780,10 +809,10 @@ export default {
     },
   },
   created() {
-    if (localStorage.checkedCheckboxesArray === undefined) {
+    if (localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === '') {
       localStorage.checkedCheckboxesArray = JSON.stringify([])
     }
-    if (localStorage.acceptCounterArray === undefined) {
+    if (localStorage.acceptCounterArray === undefined || localStorage.acceptCounterArray === '') {
       localStorage.acceptCounterArray = JSON.stringify([])
     }
 
@@ -796,6 +825,11 @@ export default {
     }
   },
   mounted() {
+
+    if (window.location.href !== 'http://localhost:8080/index.html?evaluation=Spezifikation&postPrcessing=no#/') {
+      window.location.href = 'http://localhost:8080/index.html?evaluation=Spezifikation&postPrcessing=no#/'
+      console.log("test")
+    }
     if (this.$route.params.hazardOriginalIdListView !== undefined) {
       this.hazardOriginalIdTableNumber = this.$route.params.hazardOriginalIdListView
     }
@@ -815,7 +849,7 @@ export default {
   },
   methods: {
     deleteNotSavedNewHazardInCheckedCheckboxArray() {
-      if (localStorage.checkedCheckboxesArray !== '') {
+      if (localStorage.checkedCheckboxesArray !== undefined || localStorage.checkedCheckboxesArray !== '') {
         for (let i = 0; i < JSON.parse(localStorage.checkedCheckboxesArray).length; i++) {
           let partOf = false
           for (let j = 0; j < this.hazardsSliced.length; j++) {
@@ -864,6 +898,13 @@ export default {
       }
     },
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification, newItem) {
+      console.log(localStorage.checkedCheckboxesArray)
+      if (localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === '') {
+        localStorage.checkedCheckboxesArray = JSON.stringify([])
+      }
+      if (localStorage.acceptCounterArray === undefined || localStorage.acceptCounterArray === '') {
+        localStorage.acceptCounterArray = JSON.stringify([])
+      }
       this.checkedCheckboxesArray = JSON.parse(localStorage.checkedCheckboxesArray)
       this.acceptCounterArray = JSON.parse(localStorage.acceptCounterArray)
 
@@ -908,6 +949,9 @@ export default {
       //General Settings
       localStorage.checkedCheckboxesArray = JSON.stringify(this.checkedCheckboxesArray)
       localStorage.acceptCounterArray = JSON.stringify(this.acceptCounterArray)
+      this.specification_customMadeDevice = null
+      this.postProcessingPossibility = null
+      this.customMadeDeviceDescription = ''
 
       this.numberOfCurrentCheckboxes = this.hazards.filter(priority => priority.categoryId === (this.nameCounterTable + 1)).length
       var numberFinished = JSON.parse(localStorage.checkedCheckboxesArray).length + JSON.parse(localStorage.acceptCounterArray).length
@@ -959,12 +1003,21 @@ export default {
       return 0.2
     },
     cancel() {
-      this.expanded = []
       localStorage.checkedCheckboxesArray = ''
       localStorage.acceptCounterArray = ''
+
+      this.specification_customMadeDevice = null
+      this.postProcessingPossibility = null
+      this.customMadeDeviceDescription = ''
+
       let nameCounterTableValue = 0
       this.$emit("updateNumber", nameCounterTableValue)
       this.numberOfCheckedCheckboxes(null, false, false, false)
+      this.expanded = []
+      this.showModal = false
+
+      this.toastMessage = 'Aktueller Fortschrittstand wurde zurückgesetzt.'
+      this.launch_notification()
     },
     pictogramIconColor(itemNumber, svgNumber, activeColor) {
       if (svgNumber <= itemNumber) {

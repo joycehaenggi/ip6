@@ -15,6 +15,10 @@
     cursor: pointer;
 }
 
+.accepted_status {
+    z-index: 0;
+}
+
 /* Shake-effect */
 @keyframes shake {
     10%, 90% {

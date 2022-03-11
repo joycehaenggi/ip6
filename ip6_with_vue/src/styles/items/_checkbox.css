@@ -15,7 +15,7 @@
     content: "";
     float: left;
     margin-right: 5px;
-    z-index: 2;
+    z-index: 0;
     position: relative;
 }
 
