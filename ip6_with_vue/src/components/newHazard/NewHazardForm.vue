@@ -382,13 +382,13 @@ export default {
   },
   methods: {
     checkNewHazardFields() {
-      return this.hazardNameNewHazardForm !== "" /*&&
+      return this.hazardNameNewHazardForm !== "" &&
           this.hazardSituationNewHazardForm !== "" &&
           this.hazardDamageNewHazardForm !== "" &&
           this.hazardProbabilityOfOccurenceBeforeNewHazardForm !== "" &&
           this.hazardSeverityNewHazardForm !== "" &&
           this.hazardMeasuresNewHazardForm !== "" &&
-          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""*/
+          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""
     },
     displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
       if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {
