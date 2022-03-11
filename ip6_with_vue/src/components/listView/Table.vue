@@ -468,7 +468,23 @@
         <!-- Modal content -->
         <div class="modal-content" @click.stop="showModal = true">
           <div class="close-span">
-            <span class="close" @click.stop="showModal = false">&times;</span>
+            <span class="close" @click.stop="showModal = false">
+              <svg class="close-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2029_82762)">
+                <path
+                    d="M0.781183 15.9999C0.626645 15.9999 0.47557 15.9541 0.347067 15.8682C0.218564 15.7824 0.118407 15.6604 0.0592641 15.5176C0.000121039 15.3748 -0.0153506 15.2177 0.0148062 15.0662C0.044963 14.9146 0.119393 14.7754 0.228683 14.6661L14.6662 0.228609C14.8127 0.0820767 15.0115 -0.000244141 15.2187 -0.000244141C15.4259 -0.000244141 15.6247 0.0820767 15.7712 0.228609C15.9177 0.375141 16.0001 0.573881 16.0001 0.781109C16.0001 0.988336 15.9177 1.18708 15.7712 1.33361L1.33368 15.7711C1.2612 15.8437 1.17507 15.9013 1.08025 15.9406C0.98544 15.9799 0.883803 16 0.781183 15.9999Z"
+                    fill="#32404F"/>
+                <path
+                    d="M15.2187 15.9999C15.1161 16 15.0144 15.9799 14.9196 15.9406C14.8248 15.9013 14.7387 15.8437 14.6662 15.7711L0.2287 1.33361C0.0821683 1.18708 -0.000152588 0.988336 -0.000152588 0.781109C-0.000152588 0.573881 0.0821683 0.375141 0.2287 0.228609C0.375233 0.0820767 0.573973 -0.000244141 0.7812 -0.000244141C0.988428 -0.000244141 1.18717 0.0820767 1.3337 0.228609L15.7712 14.6661C15.8805 14.7754 15.9549 14.9146 15.9851 15.0662C16.0152 15.2177 15.9998 15.3748 15.9406 15.5176C15.8815 15.6604 15.7813 15.7824 15.6528 15.8682C15.5243 15.9541 15.3732 15.9999 15.2187 15.9999V15.9999Z"
+                    fill="#32404F"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_2029_82762">
+                <rect width="16" height="16" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            </span>
           </div>
           <div class="modal-content-inner-part">
             <div class="modal-topPart-container">
@@ -480,7 +496,8 @@
 
             <div class="modal-button-container">
               <button @click.stop="showModal = false" class="button button-cancel">Herstellung fortsetzen</button>
-              <button @click.stop="showModal = false; cancel()" class="button button-submit button-submit-modal">Herstellung
+              <button @click.stop="showModal = false; cancel()" class="button button-submit button-submit-modal">
+                Herstellung
                 abbrechen
               </button>
             </div>

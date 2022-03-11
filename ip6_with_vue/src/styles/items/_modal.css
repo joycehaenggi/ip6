@@ -16,7 +16,6 @@
 .modal-content {
     display: flex;
     flex-direction: column;
-    /*justify-content: space-between;*/
     border-radius: 5px;
     background-color: #fefefe;
     margin: auto;
@@ -31,7 +30,7 @@
 }
 
 .modal-content-inner-part {
-    padding: 0 30px 30px 30px;
+    padding: 20px 30px 30px 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,9 +46,6 @@
 .close {
     color: #aaaaaa;
     float:right;
-    /*display: flex;*/
-    /*justify-content: flex-end;*/
-    font-size: calc(28 * 0.063rem);
     font-weight: bold;
 }
 
@@ -58,8 +54,8 @@
     justify-content: center;
 }
 
-.close:hover,
-.close:focus {
+.close-svg:hover,
+.close-svg:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
