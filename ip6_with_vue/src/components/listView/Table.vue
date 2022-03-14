@@ -512,7 +512,10 @@ export default {
           damage: this.hazardDamageTable,
           probabilityOfOccurrenceBefore: this.hazardProbabilityOfOccurenceBeforeTable,
           severity: this.hazardSeverityTable,
-          measures: this.hazardMeasuresTable,
+          // measures: this.hazardMeasuresTable,
+          measures: [
+            {description: this.hazardMeasuresTable},
+          ],
           probabilityOfOccurrenceAfter: this.hazardProbabilityOfOccurenceAfterTable,
         })
         switch (this.nameCounterTable) {
