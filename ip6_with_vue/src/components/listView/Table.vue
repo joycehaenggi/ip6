@@ -77,7 +77,7 @@
                   <div class='block-title'>Schaden</div>
                   <div class='block-text'>
                     <ul>
-                      <li>{{ item.damage }}</li>
+                      <li v-for="damage in item.damage" :key="damage.description">{{damage.description }}</li>
                     </ul>
                   </div>
                 </div>
@@ -318,7 +318,9 @@ export default {
           imageName: require('../../assets/svg/table_icons/toThin.svg'),
           riskPriority: "2 mittel",
           hazardDetailDescription: "Implantat bricht aufgrund der zu kleinen Mindestdicke.",
-          damage: "Zweitoperation",
+          damage: [
+            {description: 'Zweitoperation'},
+          ],
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
           measures: [
@@ -333,7 +335,9 @@ export default {
           imageName: require('../../assets/svg/table_icons/dimensionally_unstable.svg'),
           riskPriority: "2 mittel",
           hazardDetailDescription: "Implantat bleibt nicht formstabil bei der Implantierung was zu einer schlechten Passgenauigkeit führt.",
-          damage: "Schädigung der Weichteile / Sehnervs",
+          damage: [
+            {description: 'Schädigung der Weichteile / Sehnervs'},
+          ],
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
           measures: [
@@ -348,7 +352,9 @@ export default {
           imageName: require('../../assets/svg/table_icons/nut.svg'),
           riskPriority: "2 mittel",
           hazardDetailDescription: "Implantat löst sich nach der Implantation unter Last, aufgrund ungenügender Verankerung.",
-          damage: "Schädigung der Weichteile / Sehnervs",
+          damage: [
+            {description: 'Schädigung der Weichteile / Sehnervs'},
+          ],
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
           measures: [
@@ -363,7 +369,9 @@ export default {
           imageName: require('../../assets/svg/table_icons/nut.svg'),
           riskPriority: "2 mittel",
           hazardDetailDescription: "Implantat bricht aufgrund der zu nahen Schrauben am Implantatrand.",
-          damage: "Zweitoperation",
+          damage: [
+            {description: 'Zweitoperation'},
+          ],
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
           measures: [
@@ -378,7 +386,10 @@ export default {
           imageName: require('../../assets/svg/table_icons/screw.svg'),
           riskPriority: "1 gering",
           hazardDetailDescription: "Stabilitätsverlust bei Fixierung weil Schraubentyp und -dimension nicht zur Implantatdimension und dem zu erwartenden Lastfall passen.",
-          damage: "Verlängerung der OP, Leiden des Patienten.",
+          damage: [
+            {description: 'Verlängerung der OP'},
+            {description: 'Leiden des Patienten.'},
+          ],
           probabilityOfOccurrenceBefore: 3,
           severity: 2,
           measures: [
@@ -393,7 +404,9 @@ export default {
           imageName: require('../../assets/svg/table_icons/not_diagonal_placable.svg'),
           riskPriority: "2 mittel",
           hazardDetailDescription: "Implantat bricht durch Gefügefehler (Reduzierte mechansiche Festigkeit) aufgrund Schweissspritzer von benachbarten Bauteile.",
-          damage: "Zweitoperation",
+          damage: [
+            {description: 'Zweitoperation'},
+          ],
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
           measures: [
@@ -408,7 +421,10 @@ export default {
           imageName: require('../../assets/svg/table_icons/contaminated_building_platform.svg'),
           riskPriority: "2 mittel",
           hazardDetailDescription: "Verunreinigungen gelangen ins Bauteil und schliesslich in den Patienten.",
-          damage: "Infektion, ungewollte Immunreaktion",
+          damage: [
+            {description: 'Infektion, '},
+            {description: 'Ungewollte Immunreaktion'},
+          ],
           probabilityOfOccurrenceBefore: 2,
           severity: 4,
           measures: [
@@ -424,9 +440,10 @@ export default {
           imageName: require('../../assets/svg/table_icons/not_same_material.svg'),
           riskPriority: "2 mittel",
           hazardDetailDescription: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP. Vor Gebrauch die Bauplattform mit G23.",
-          damage: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP \n" +
-              "\n" +
-              "Vor Gebrauch die Bauplattform mit G23",
+          damage: [
+            {description: 'Ordnungsgemässe Lagerung der Bauplattform gemäss SOP'},
+            {description: 'Vor Gebrauch die Bauplattform mit G23'},
+          ],
           probabilityOfOccurrenceBefore: 2,
           severity: 4,
           measures: [
@@ -441,7 +458,9 @@ export default {
           imageName: require('../../assets/svg/table_icons/coater_flap_worn.svg'),
           riskPriority: "2 mittel",
           hazardDetailDescription: "Implantat ist nicht formschlüssig - passt nicht mehr aufgrund verschlechtertem Schichtaufbau.",
-          damage: "Schädigung der Weichteile / Sehnervs",
+          damage: [
+            {description: 'Schädigung der Weichteile / Sehnervs'},
+          ],
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
           measures: [
@@ -458,7 +477,9 @@ export default {
           imageName: require('../../assets/svg/table_icons/coater_collides.svg'),
           riskPriority: "2 mittel",
           hazardDetailDescription: "Implantat ist nicht formschlüssig - passt nicht mehr aufgrund einer Verschiebung der Bauteilstruktur oder Ablösung von der  Supportstruktur.",
-          damage: "Schädigung der Weichteile / Sehnervs",
+          damage: [
+            {description: 'Schädigung der Weichteile / Sehnervs'},
+          ],
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
           measures: [
@@ -474,7 +495,9 @@ export default {
           imageName: require('../../assets/svg/table_icons/faulty_layer_structure.svg'),
           riskPriority: "2 mittel",
           hazardDetailDescription: "Implantat bricht durch Gefügefehler (Reduzierte mechanische Festigkeit) aufgrund  von Fehlern im Schichtaufbau verursacht durch ungleichmässig ausgestrichenes Pulver.",
-          damage: "Zweitoperation",
+          damage: [
+            {description: 'Zweitoperation'},
+          ],
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
           measures: [
