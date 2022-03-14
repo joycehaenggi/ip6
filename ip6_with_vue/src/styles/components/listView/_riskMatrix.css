@@ -6,6 +6,19 @@
     border-radius: calc(var(--border-radius) * 0.063rem);
 }
 
+.risk-matrix__title {
+    font-family: 'OpenSans-SemiBold', sans-serif;
+}
+
+.risk-matrix__description {
+    width: calc(600 * 0.063rem);
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    text-align: justify;
+}
+
 .riskPriorityNumbers {
     font-size: 11px;
 }

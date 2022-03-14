@@ -49,14 +49,17 @@ export default {
     decreaseNotification() {
       let notification = document.getElementById("notification")
       let TextNotification = document.getElementById("text_notification")
+      let ArrowLeft = document.getElementById("arrow_id")
       notification.style.transition = "1s"
 
       if (this.fullNotification === true) {
         notification.style.width = "5%"
         TextNotification.style.display = "none"
+        ArrowLeft.style.display = "none"
         this.fullNotification = false
       } else {
         notification.style.width = "100%"
+        ArrowLeft.style.display = "flex"
         setTimeout(() => {
           TextNotification.style.display = "block"
         }, 250)

@@ -156,7 +156,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     height: auto;
 }
 
-.block-title, .pictogram-title {
+.block-title {
     font-family: 'OpenSans-SemiBold', sans-serif;
 }
 
@@ -182,77 +182,6 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     display: flex;
     margin-top: calc(16 * 0.063rem);
 }
-
-.pictogramm {
-    height: calc(325 * 0.063rem);
-    width: calc(660 * 0.063rem);
-    padding: calc(30 * 0.063rem);
-    border: 1px solid var(--frames-bluegray);
-    border-radius: calc(var(--border-radius) * 0.063rem);
-    margin-right: 20px;
-}
-
-.pictogram-description {
-    width: calc(600 * 0.063rem);
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    text-align: justify;
-}
-
-.pictogram-graphic p {
-    height: calc(150 * 0.063rem);
-    margin-top: calc(10 * 0.063rem);
-    display: flex;
-    flex-direction: column;
-}
-
-.pictogram-graphic-block {
-    display: flex;
-    flex-direction: row;
-    height: calc(80 * 0.063rem);
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.pictogram-graphic-block-title {
-    width: calc(150 * 0.063rem);
-}
-
-.pictogram-graphic-block-svgs {
-    width: calc(450 * 0.063rem);
-    height: calc(70 * 0.063rem);
-    padding: calc(10 * 0.063rem);
-    border: 1px solid var(--frames-bluegray);
-    border-radius: calc(var(--border-radius) * 0.063rem);
-    display: flex;
-    z-index: 0;
-}
-
-.pictogram-graphic-block-svgs-block {
-    width: calc(225 * 0.063rem);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.pictogram-graphic-block-svgs-block-row {
-    padding-right: calc(10 * 0.063rem);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.pictogram-graphic-block-svgs-block-row-column {
-    padding-right: calc(10 * 0.063rem);
-}
-
-.pictogram-graphic-block-svgs-block-description {
-    padding-bottom: calc(0 * 0.063rem);
-}
-
 
 .block-verify {
     margin-bottom: 20px;
