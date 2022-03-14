@@ -16,10 +16,9 @@
     font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
     border-radius: calc(var(--borderRadius) * 0.063rem);
     cursor: pointer;
-    float: right;
 }
 
-.notification:active p, .notification:active .arrow_right {
+.notification:active p, .notification:active .arrow_left {
     display: none;
 }
 
@@ -35,6 +34,6 @@
     align-items: center;
 }
 
-.info_icon, .arrow_right {
+.info_icon, .arrow_left {
     margin: 0 25px;
 }
