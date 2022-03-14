@@ -1,7 +1,7 @@
 .rectangle {
     display: block;
     height: 30px;
-    margin-bottom: calc(var(--marginOne) * 0.063rem);
+    margin-bottom: calc(var(--margin-one) * 0.063rem);
     background: white;
 }
 
@@ -11,10 +11,10 @@
     justify-content: space-between;
     height: 30px;
     width: 100%;
-    background-color: var(--notification-Blue);
+    background-color: var(--notification-blue);
     color: white;
-    font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
-    border-radius: calc(var(--borderRadius) * 0.063rem);
+    font-size: calc(var(--main-font-size) * 0.063rem);
+    border-radius: calc(var(--border-radius) * 0.063rem);
     cursor: pointer;
 }
 

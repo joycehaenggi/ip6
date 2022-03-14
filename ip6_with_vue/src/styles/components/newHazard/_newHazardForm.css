@@ -3,7 +3,7 @@
 }
 
 .new_hazard_title {
-  background-color: var(--frames-BlueGray);
+  background-color: var(--frames-bluegray);
   font-size: 14px;
   width: 100%;
   height: 45px;
@@ -15,7 +15,7 @@
 }
 
 form.form_newHazard {
-  border: 1px solid var(--frames-BlueGray);
+  border: 1px solid var(--frames-bluegray);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 20px;
@@ -113,8 +113,8 @@ form.form_newHazard {
 }
 
 .input_customized {
-  border: 1px solid var(--frames-BlueGray);
-  border-radius: calc(var(--borderRadius) * 0.063rem);
+  border: 1px solid var(--frames-bluegray);
+  border-radius: calc(var(--border-radius) * 0.063rem);
   font-family: "OpenSans-Regular", sans-serif;
   font-size: 11px;
   width: calc(300 * 0.063rem);
@@ -133,7 +133,7 @@ form.form_newHazard {
   left: 0;
   height: 15px;
   width: 15px;
-  border: 1px solid var(--header-Darkblue);
+  border: 1px solid var(--header-darkblue);
   border-radius: 100%;
 }
 
@@ -145,14 +145,14 @@ form.form_newHazard {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--frames-BlueGray);
-  border-radius: calc(var(--borderRadius) * 0.063rem);
+  border: 1px solid var(--frames-bluegray);
+  border-radius: calc(var(--border-radius) * 0.063rem);
   width: calc(120 * 0.063rem);
   height: calc(29 * 0.063rem);
 }
 
 .severity_field {
-  background-color: var(--frames-BlueGray);
+  background-color: var(--frames-bluegray);
 }
 
 .svg_info_icon {
@@ -165,7 +165,7 @@ form.form_newHazard {
   left: 0;
   height: 15px;
   width: 15px;
-  border: 1px solid var(--header-Darkblue);
+  border: 1px solid var(--header-darkblue);
   border-radius: 100%;
 }
 
@@ -201,13 +201,13 @@ form.form_newHazard {
   left: 0;
   height: 15px;
   width: 15px;
-  border: 1px solid var(--header-Darkblue);
+  border: 1px solid var(--header-darkblue);
   border-radius: 100%;
 }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .custom_radio_button {
-  background-color: var(--header-Darkblue);
+  background-color: var(--header-darkblue);
 }
 
 /* When the radio button is checked, add a blue background */
@@ -234,7 +234,7 @@ form.form_newHazard {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--header-Darkblue);
+  background: var(--header-darkblue);
 }
 
 input[type="button"] {

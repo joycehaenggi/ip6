@@ -1,17 +1,17 @@
 :root {
-    --header-Darkblue: #32404F;
-    --notification-Blue: #4C5A69;
-    --button-Blue: #687D99;
-    --frames-BlueGray: #E1E5EB;
-    --button-Hover: #212B36;
-    --riskPriority-Green: #008351;
-    --riskPriority-Yellow: #FAD201;
-    --riskPriority-Red: #CC0605;
-    --colorOpacity: 0.8;
+    --header-darkblue: #32404F;
+    --notification-blue: #4C5A69;
+    --button-blue: #687D99;
+    --frames-bluegray: #E1E5EB;
+    --button-hover: #212B36;
+    --risk-priority-green: #008351;
+    --risk-priority-yellow: #FAD201;
+    --risk-priority-red: #CC0605;
+    --color-opacity: 0.8;
     --padding-wrapper-header: 80;
-    --paddingButtons: 15;
-    --marginOne: 20;
-    --borderRadius: 5;
-    --mainFontSize: 11;
-    --secondFontSize: 12;
+    --padding-button: 15;
+    --margin-one: 20;
+    --border-radius: 5;
+    --main-font-size: 11;
+    --second-font-size: 12;
 }

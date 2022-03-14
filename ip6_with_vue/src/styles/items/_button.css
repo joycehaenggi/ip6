@@ -1,8 +1,8 @@
 .button {
-    font-size: calc(var(--mainFontSize) * 0.063rem);
+    font-size: calc(var(--main-font-size) * 0.063rem);
     font-family: OpenSans-SemiBold, serif;
-    padding-left: calc(var(--paddingButtons) * 0.063rem);
-    padding-right: calc(var(--paddingButtons) * 0.063rem);
+    padding-left: calc(var(--padding-button) * 0.063rem);
+    padding-right: calc(var(--padding-button) * 0.063rem);
     height: calc(38 * 0.063rem);
     border-radius: calc(50 * 0.063rem);
     justify-content: center;
@@ -12,17 +12,17 @@
 }
 
 .button:hover {
-    background-color: var(--notification-Blue);
+    background-color: var(--notification-blue);
 }
 
 .button-submit, .button-submit a {
-    background-color: var(--button-Blue);
+    background-color: var(--button-blue);
     color: white;
 }
 
 .button-cancel, #button-nextStep {
-    background-color: var(--frames-BlueGray);
-    color: var(--notification-Blue);
+    background-color: var(--frames-bluegray);
+    color: var(--notification-blue);
 }
 
 .button-cancel:hover {
@@ -35,7 +35,7 @@
 }
 
 #button-nextStep:hover, #newHazardSubmit:hover {
-    background-color: var(--notification-Blue) !important;
+    background-color: var(--notification-blue) !important;
 }
 
 #nextStep-Link {
@@ -43,8 +43,8 @@
 }
 
 .button-cancel {
-    background-color: var(--frames-BlueGray);
-    color: var(--notification-Blue);
+    background-color: var(--frames-bluegray);
+    color: var(--notification-blue);
 }
 
 .button-cancel:hover {

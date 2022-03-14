@@ -8,7 +8,7 @@
 }
 
 .buttonContainer-nextStep {
-    margin-top: calc(var(--marginOne) * 0.063rem);
+    margin-top: calc(var(--margin-one) * 0.063rem);
 }
 
 .flex-element {

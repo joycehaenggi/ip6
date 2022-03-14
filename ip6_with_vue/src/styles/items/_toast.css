@@ -3,8 +3,8 @@
     height: 50px;
     width: fit-content;
     margin: auto;
-    background-color: var(--frames-BlueGray);
-    border-color: var(--notification-Blue);
+    background-color: var(--frames-bluegray);
+    border-color: var(--notification-blue);
     text-align: center;
     border-radius: 5px;
     position: fixed;
@@ -16,7 +16,7 @@
 }
 
 #toast #desc {
-    color: var(--notification-Blue);
+    color: var(--notification-blue);
     padding: 16px;
     overflow: hidden;
     white-space: nowrap;

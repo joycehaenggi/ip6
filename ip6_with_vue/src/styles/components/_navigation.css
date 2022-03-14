@@ -25,7 +25,7 @@
 input.searchfield {
     font-size: calc(11 * 0.063rem);
     border-radius: 50px;
-    border: 1px solid var(--notification-Blue);
+    border: 1px solid var(--notification-blue);
     height: 21.8px;
     width: 200px;
     padding-left: 25px;

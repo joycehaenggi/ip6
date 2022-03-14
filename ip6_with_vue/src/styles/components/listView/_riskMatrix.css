@@ -2,8 +2,8 @@
     height: calc(325 * 0.063rem);
     width: calc(400 * 0.063rem);
     padding: calc(30 * 0.063rem);
-    border: 1px solid var(--frames-BlueGray);
-    border-radius: calc(var(--borderRadius) * 0.063rem);
+    border: 1px solid var(--frames-bluegray);
+    border-radius: calc(var(--border-radius) * 0.063rem);
 }
 
 .riskPriorityNumbers {
