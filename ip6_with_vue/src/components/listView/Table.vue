@@ -46,8 +46,8 @@
         </template>
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{item}">
-          <div ref="submit" :id="`acceptedDiv${item.id}`" class="tooltip expand akzeptiert-status"
-               data-title="Akzeptiert-Status"
+          <div ref="submit" :id="`acceptedDiv${item.id}`" class="tooltip akzeptiertStatus-tooltip expand akzeptiert-status"
+               data-title="Akzeptiert-Status wird automatisch gesetzt, nachdem Gefährdung erfolgreich bearbeitet wurde. "
                @click="moveCheckmark(item.id, 'acceptedDiv', 'apply-shake', 820)">
             <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
                  fill="none" xmlns="http://www.w3.org/2000/svg">

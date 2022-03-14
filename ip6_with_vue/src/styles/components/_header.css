@@ -7,8 +7,8 @@
     background-color: var(--header-Darkblue);
     color: white;
     height: 72px;
-    padding-left: var(--paddingLeftRight);
-    padding-right: var(--paddingLeftRight);
+    padding-left: calc(var(--padding-wrapper-header) * 0.063rem);
+    padding-right: calc(var(--padding-wrapper-header) * 0.063rem);
 }
 
 .header a {

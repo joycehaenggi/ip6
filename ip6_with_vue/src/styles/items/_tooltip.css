@@ -19,7 +19,7 @@
     z-index: 1;
 }
 
-tr td.td_detailView .tooltip:after, tr:not(:last-child) > td.text-start > .tooltip:after, .newHazard-tooltip:after {
+tr td.td_detailView .tooltip:after, tr:not(:last-child, :nth-last-child(2)) > td.text-start > .tooltip:after, .newHazard-tooltip:after {
     border-right: 6px solid transparent;
     border-bottom: 6px solid var(--notification-Blue);
     border-left: 6px solid transparent;
@@ -83,7 +83,7 @@ tr:not(:last-child) > td.text-start > .akzeptiert-status:after {
     top: 18px;
 }
 
-tr:last-child > td.text-start > .akzeptiert-status:after {
+tr:last-child > td.text-start > .akzeptiert-status:after, tr:nth-last-child(2) > td.text-start > .akzeptiert-status:after {
     border-right: 6px solid transparent;
     border-top: 6px solid var(--notification-Blue);
     border-left: 6px solid transparent;
@@ -95,15 +95,16 @@ tr:last-child > td.text-start > .akzeptiert-status:after {
 }
 
 tr:not(:last-child) > td.text-start > .akzeptiert-status:before {
-    left: -45px;
     top: 23px;
-    width: 110px;
 }
 
-tr:last-child > td.text-start > .akzeptiert-status:before {
-    left: -45px;
-    top: -35px;
-    width: 110px;
+tr:last-child > td.text-start > .akzeptiert-status:before, tr:nth-last-child(2) > td.text-start > .akzeptiert-status:before {
+    top: -101px;
+}
+
+.akzeptiertStatus-tooltip:before {
+    left: -40px;
+    width: 140px;
 }
 
 #tooltip {
@@ -118,3 +119,6 @@ tr:last-child > td.text-start > .akzeptiert-status:before {
     cursor: pointer;
     display: none;
 }
+
+
+/*:nth-last-child(2)*/

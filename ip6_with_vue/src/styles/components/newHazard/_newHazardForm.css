@@ -249,8 +249,8 @@ input[type="text"] {
 
 .wrapper {
   margin-top: calc(var(--marginOne) * 0.063rem);
-  padding-left: var(--paddingLeftRight);
-  padding-right: var(--paddingLeftRight);
+  padding-left: calc(var(--padding-wrapper-header) * 0.063rem);
+  padding-right: calc(var(--padding-wrapper-header) * 0.063rem);
   margin-bottom: calc(var(--marginOne) * 0.063rem);
 }
 
