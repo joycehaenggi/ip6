@@ -61,8 +61,8 @@ a {
 }
 
 .header-links li:hover a {
-    background-color: var(--notification-Blue);
-    border-radius: calc(var(--borderRadius) * 0.063rem);
+    background-color: var(--notification-blue);
+    border-radius: calc(var(--border-radius) * 0.063rem);
 }
 
 .toggle-button {

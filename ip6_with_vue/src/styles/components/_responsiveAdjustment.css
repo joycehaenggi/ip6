@@ -23,7 +23,7 @@
     .header-links {
         display: none;
         width: 100%;
-        background-color: var(--header-Darkblue);
+        background-color: var(--header-darkblue);
     }
 
     .header {
@@ -67,7 +67,7 @@
 
     .table {
         display: block;
-        font-size: calc((var(--mainFontSize) - 2) * 0.063rem);
+        font-size: calc((var(--main-font-size) - 2) * 0.063rem);
     }
 
     .neue_gefaehrdung_input {
