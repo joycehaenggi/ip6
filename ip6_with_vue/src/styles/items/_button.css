@@ -1,10 +1,10 @@
 .button {
-    font-size: calc(calc(var(--mainFontSize)) * 0.063rem);
+    font-size: calc(var(--mainFontSize) * 0.063rem);
     font-family: OpenSans-SemiBold, serif;
-    padding-left: var(--paddingButtons);
-    padding-right: var(--paddingButtons);
-    height: 38px;
-    border-radius: 50px;
+    padding-left: calc(var(--paddingButtons) * 0.063rem);
+    padding-right: calc(var(--paddingButtons) * 0.063rem);
+    height: calc(38 * 0.063rem);
+    border-radius: calc(50 * 0.063rem);
     justify-content: center;
     align-items: center;
     display: flex;
@@ -52,11 +52,11 @@
 }
 
 .button-newHazard {
-    width: 140px;
+    width: calc(140 * 0.063rem);
 }
 
 .button-newHazard-cancel {
-    margin-right: 20px;
+    margin-right: calc(20 * 0.063rem);
 }
 
 .button-newHazard-submit {
@@ -69,7 +69,7 @@
 }
 
 .button-finishHazard{
-    margin-left: 20px;
+    margin-left: calc(20 * 0.063rem);
 }
 
 .button a {
@@ -79,7 +79,7 @@
 
 @media (max-width: 1020px) {
     .button-cancel {
-        margin-bottom: 20px;
+        margin-bottom: calc(20 * 0.063rem);
         margin-right: 0;
     }
 

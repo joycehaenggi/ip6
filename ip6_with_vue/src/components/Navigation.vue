@@ -69,15 +69,15 @@
           <p class="manu-legend-tittle">Risikopriorität:</p>
         </div>
         <div class="low">
-          <span class="legend-dot greenCustomized"></span>
+          <span class="dot greenCustomized"></span>
           <p class="manu-legend">gering</p>
         </div>
         <div class="middle">
-          <span class="legend-dot yellowCustomized"></span>
+          <span class="dot yellowCustomized"></span>
           <p class="manu-legend">mittel</p>
         </div>
         <div class="high">
-          <span class="legend-dot redCustomized"></span>
+          <span class="dot redCustomized"></span>
           <p class="manu-legend">hoch</p>
         </div>
         <div class="manufacturing-legend-elements">

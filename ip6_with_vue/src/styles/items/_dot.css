@@ -1,14 +1,7 @@
 .dot {
-    height: 22px;
-    width: 22px;
+    height: calc(21 * 0.063rem);
+    width: calc(21 * 0.063rem);
     border-radius: 50%;
-}
-
-.legend-dot {
-    height: 21px;
-    width: 21px;
-    border-radius: 50%;
-    display: inline-block;
 }
 
 .greenCustomized {
