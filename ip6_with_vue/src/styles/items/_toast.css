@@ -1,23 +1,25 @@
 #toast {
     visibility: hidden;
-    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: fit-content;
     margin: auto;
     background-color: var(--frames-bluegray);
     border-color: var(--notification-blue);
     text-align: center;
-    border-radius: 5px;
+    border-radius: calc(var(--border-radius) * 0.063rem);
     position: fixed;
     z-index: 1;
-    right: 30px;
-    top: 30px;
-    font-size: 13px;
+    right: calc(30 * 0.063rem);
+    top: calc(30 * 0.063rem);
+    font-size: calc(13 * 0.063rem);
     white-space: nowrap;
 }
 
 #toast #desc {
+    padding: calc(16 * 0.063rem);
     color: var(--notification-blue);
-    padding: 16px;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -33,14 +35,14 @@
         opacity: 0;
     }
     to {
-        top: 30px;
+        top: calc(30 * 0.063rem);
         opacity: 1
     }
 }
 
 @keyframes fadeout {
     from {
-        top: 30px;
+        top: calc(30 * 0.063rem);
         opacity: 1;
     }
     to {

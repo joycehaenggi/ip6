@@ -5,12 +5,12 @@
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 21px;
+    width: calc(30 * 0.063rem);
+    height: calc(21 * 0.063rem);
 }
 
 .toggle-button .bar {
-    height: 3px;
+    height: calc(3 * 0.063rem);
     background-color: white;
-    border-radius: 10px;
+    border-radius: calc(10 * 0.063rem);
 }

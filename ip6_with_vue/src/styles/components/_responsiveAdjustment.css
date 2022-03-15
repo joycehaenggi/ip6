@@ -1,18 +1,18 @@
-@media (max-width: 1150px) {
+@media (max-width: calc(1150 * 0.063em)) {
     .wrapper {
         padding-left: 1rem;
         padding-right: 1rem;
     }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: calc(1050 * 0.063em)) {
     .header {
         padding-left: 0;
         padding-right: 0;
     }
 
     .logo_title {
-        margin-left: .5rem;
+        margin-left: calc(8 * 0.063rem);
     }
 
     .toggle-button {
@@ -42,7 +42,7 @@
     }
 
     .header-links li a {
-        padding: .5rem 1rem;
+        padding: calc(8 * 0.063rem) calc(16 * 0.063rem);
     }
 
     .header-links.navMobileActive {
@@ -50,15 +50,15 @@
     }
 
     .rectangle {
-        height: 50px;
+        height: calc(50 * 0.063rem);
     }
 
     .notification {
-        height: 50px;
+        height: calc(50 * 0.063rem);
     }
 
     #text_notification {
-        margin-left: 25px;
+        margin-left: calc(25 * 0.063rem);
     }
 
     .info_icon {
@@ -71,7 +71,7 @@
     }
 
     .neue_gefaehrdung_input {
-        width: 10em;
+        width: 10rem;
     }
 
     p.th_title {
@@ -79,29 +79,29 @@
     }
 
     .th, .td {
-        height: 45px;
-        padding-left: 5px;
+        height: calc(45 * 0.063rem);
+        padding-left: calc(5 * 0.063rem);
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: calc(800 * 0.063em)) {
     .manufacturing-step-navigation, .manufacturing-step-information {
         flex-direction: column-reverse;
         align-items: flex-start;
-        height: 50px;
+        height: calc(50 * 0.063rem);
     }
 
     .manufacturing-step-information {
-        margin-top: 30px;
+        margin-top: calc(30 * 0.063rem);
     }
 
     .manufacturing-legend {
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: calc(10 * 0.063rem);
+        margin-bottom: calc(10 * 0.063rem);
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: calc(700 * 0.063em)) {
     .flex-element {
         flex-direction: column;
         align-items: flex-start;

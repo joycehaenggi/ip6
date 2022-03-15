@@ -77,7 +77,7 @@
 }
 
 
-@media (max-width: 1020px) {
+@media (max-width: calc(1020 * 0.063em)) {
     .button-cancel {
         margin-bottom: calc(20 * 0.063rem);
         margin-right: 0;

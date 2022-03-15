@@ -15,17 +15,17 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    min-height: 50px;
+    min-height: calc(50 * 0.063rem);
     flex-wrap: wrap;
 }
 
 .buttons_new_hazard {
-    margin-top: 40px;
+    margin-top: calc(40 * 0.063rem);
 }
 
 .column {
     min-width: calc(300 * 0.063rem);
-    min-height: 50px;
+    min-height: calc(50 * 0.063rem);
     margin-right: calc(10 * 0.063rem);
     display: flex;
     justify-content: space-between;
