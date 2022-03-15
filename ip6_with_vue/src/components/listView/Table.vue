@@ -62,7 +62,7 @@
         <template v-slot:expanded-item="{ headers, item }">
           <td class="td_detailView" :colspan="headers.length ">
             <form class="form_detailView">
-              <div class='title_with_image_container'>
+              <div class='block block--logo-description'>
                 <div class='title_with_image_square'>
                   <div class='title_detail_view'> {{ item.hazardDetailDescription }}
                   </div>
@@ -72,11 +72,11 @@
               </div>
 
               <div class='blocks'>
-                <div class='block'>
+                <div class='block block--damage'>
                   <div class='block-title'>Schaden</div>
                   <div class='block-text'>
                     <ul>
-                      <li v-for="damage in item.damage" :key="damage.description">{{damage.description }}</li>
+                      <li v-for="damage in item.damage" :key="damage.description">{{ damage.description }}</li>
                     </ul>
                   </div>
                 </div>
@@ -90,9 +90,9 @@
                   </div>
                 </div>
 
-                <div class='block block-effects'>
+                <div class='block'>
                   <div class='block-title'>Auswirkungen der Risikominderung</div>
-                  <div class='block-graphics'>
+                  <div class='block-text block-content--graphic'>
 
                     <div class="riskMatrix">
                       <div class="risk-matrix__title">Risikomatrix</div>
@@ -107,7 +107,7 @@
                   </div>
                 </div>
 
-                <div class='block block-verify'>
+                <div class='block'>
                   <div class='block-title'>Bewertung</div>
                   <div class='block-text decision-evaluation'>
                     <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
@@ -130,7 +130,7 @@
 
                 <!--Nachbearbeitung (in Spezifikation bleiben) -->
                 <div v-if="specification_customMadeDevice === 'Spezifikation'">
-                  <div class='block block-verify'>
+                  <div class='block'>
                     <div class='block-title'>Nachbearbeitung</div>
                     <div class='block-text decision-evaluation'>
                       <div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?</div>
@@ -151,7 +151,7 @@
 
                   <!--Nachbearbeitung JA-->
                   <div v-if="postProcessingPossibility === 'yes'">
-                    <div class="rectangle-block">
+                    <div class="block">
                       <div class="detailView-notification">
                         Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
                         Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
@@ -170,7 +170,7 @@
 
                   <!--Nachbearbeitung NEIN-->
                   <div v-if="postProcessingPossibility === 'no'">
-                    <div class="rectangle-block">
+                    <div class="block">
                       <div class="detailView-notification">Die Herstellung des Devices muss abgebrochen werden.</div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
@@ -183,17 +183,16 @@
               </div>
 
               <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
-              <div class="blocks_custom_made_device"
-                   v-if="specification_customMadeDevice === 'CustomMadeDevice'">
+              <div class="blocks_custom_made_device" v-if="specification_customMadeDevice === 'CustomMadeDevice'">
                 <v-textarea
                     outlined
                     label="Begründung für Custom Made Device"
                     placeholder="Geben Sie eine Erläuterung ein."
-                    class="textarea-declaration"
+                    class="block textarea-declaration"
                     rows="2"
                     aria-required="true"
                     v-model="customMadeDeviceDescription"/>
-                <div class='block block-verify'>
+                <div class='block'>
                   <div class='block-title'>Arztnachweis</div>
                   <div class="block-text">
                     <input class=" inputfile" type="file" name="file" id="file"/>
@@ -206,6 +205,7 @@
                          value="Gefährdung abschliessen">
                 </div>
               </div>
+
 
             </form>
           </td>
