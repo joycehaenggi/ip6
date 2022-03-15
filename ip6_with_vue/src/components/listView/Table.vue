@@ -199,7 +199,7 @@
                     <input class=" inputfile" type="file" name="file" id="file"/>
                   </div>
                 </div>
-                <div class="buttonContainer">
+                <div class="buttonContainer buttonContainer-detailView">
                   <input @click="accept(item.id)" class="button button-submit" type="submit"
                          :id="`customMadeDeviceSubmit${item.id}`"
                          :disabled="checkCustomMadeDeviceFields(item.id)"

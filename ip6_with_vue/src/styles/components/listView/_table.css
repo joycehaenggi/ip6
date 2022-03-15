@@ -110,7 +110,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 }
 
 .title_with_image_container {
-    padding-top: calc(9 * 0.063rem);
+    padding-top: calc(18 * 0.063rem);
     padding-bottom: calc(18 * 0.063rem);
     display: flex;
     justify-content: center;
@@ -146,40 +146,30 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 .blocks_custom_made_device {
     color: var(--notification-blue);
     padding: calc(40 * 0.063rem) calc(20 * 0.063rem);
+    padding-bottom: calc(0 * 0.063rem);
     border-left: calc(1.5 * 0.063rem) solid var(--notification-blue);
     border-right: calc(1.5 * 0.063rem) solid var(--notification-blue);
 }
 
 .block {
-    height: calc(48 * 0.063rem);
     margin-top: calc(18 * 0.063rem);
     font-size: calc(11 * 0.063rem);
 }
 
-.block-effects {
-    height: auto;
+.v-application ul, .v-application ol {
+    padding-left: calc(10 * 0.063rem);
 }
 
 .block-title {
     font-family: 'OpenSans-SemiBold', sans-serif;
 }
 
-.block-text, .graphic-selection, .block-graphics {
+.block-text, .block-graphics {
     margin-left: calc(40 * 0.063rem);
-}
-
-.graphic-selection {
-    display: flex;
-    align-items: center;
-    height: calc(50 * 0.063rem);
-}
-
-.graphic-selection-block {
-    margin-right: calc(20 * 0.063rem);
+    padding-top: calc(8 * 0.063rem);
 }
 
 .block-graphics {
-    display: flex;
     margin-top: calc(16 * 0.063rem);
 }
 
@@ -222,8 +212,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 }
 
 .rectangle-block {
-    margin-top: calc(18 * 0.063rem);
-    margin-bottom: calc(80 * 0.063rem);
+    margin-top: calc(20 * 0.063rem);
 }
 
 .detailView-notification {
