@@ -1,5 +1,4 @@
 <template>
-    <div class="rectangle">
       <div class="notification" id="notification" @click="decreaseNotification">
         <div class="first_part">
           <svg class="info_icon" id="info_icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
@@ -17,7 +16,6 @@
 
         </div>
       </div>
-    </div>
 </template>
 
 <script>

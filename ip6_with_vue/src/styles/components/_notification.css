@@ -1,20 +1,14 @@
-.rectangle {
-    display: block;
-    height: calc(30 * 0.063rem);
-    margin-top: calc(var(--margin-one) * 0.063rem);
-    background: white;
-}
-
 .notification {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    margin-top: calc(var(--margin-one) * 0.063rem);
     height: calc(30 * 0.063rem);
+    font-size: calc(var(--main-font-size) * 0.063rem);
+    border-radius: calc(var(--border-radius) * 0.063rem);
     width: 100%;
     background-color: var(--notification-blue);
     color: white;
-    font-size: calc(var(--main-font-size) * 0.063rem);
-    border-radius: calc(var(--border-radius) * 0.063rem);
     cursor: pointer;
 }
 
