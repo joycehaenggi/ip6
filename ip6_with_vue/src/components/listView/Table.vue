@@ -62,11 +62,12 @@
         <template v-slot:expanded-item="{ headers, item }">
           <td class="td_detailView" :colspan="headers.length ">
             <form class="form_detailView">
-              <div class='block block--logo-description'>
-                <div class='title_with_image_square'>
-                  <div class='title_detail_view'> {{ item.hazardDetailDescription }}
+
+              <div class='blocks blocks--logo-description'>
+                <div class='block block--square'>
+                  <div class='block-title block-title--square'> {{ item.hazardDetailDescription }}
                   </div>
-                  <div class='image_detail_view'><img :src="`${item.imageName}`" width='89' height='auto'>
+                  <div class='block-text block-text--square'><img :src="`${item.imageName}`" width='89' height='auto'>
                   </div>
                 </div>
               </div>
