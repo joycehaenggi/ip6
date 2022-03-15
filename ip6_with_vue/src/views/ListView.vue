@@ -109,6 +109,7 @@ export default {
       if(acceptCounterArrayLength > 0 || localStorage.customMadeProcess === 'true'){
         header.style.background = '#597380'
         notification.style.background = '#597380'
+        // notification.style.background = '#005178'
       }else {
         header.style.background = '#32404F'
         notification.style.background = '#4C5A69'

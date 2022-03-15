@@ -10,14 +10,14 @@
   display: flex;
   align-items: center;
   padding-left: 13px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: calc(var(--border-radius) * 0.063rem);
+  border-top-right-radius: calc(var(--border-radius) * 0.063rem);
 }
 
 form.form_newHazard {
   border: 1px solid var(--frames-bluegray);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: calc(var(--border-radius) * 0.063rem);
+  border-bottom-right-radius: calc(var(--border-radius) * 0.063rem);
   padding: 20px;
   font-size: calc(12 * 0.063rem);
 }
