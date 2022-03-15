@@ -64,36 +64,36 @@
             <form class="form-detail-view">
 
               <div class='detail-view__groups detail-view__groups--description-icon'>
-                <div class='block block--square'>
-                  <div class='block-title block-title--square'> {{ item.hazardDetailDescription }}
+                <div class='detail-view__group detail-view__group--square'>
+                  <div class='detail-view__title detail-view__title--square'> {{ item.hazardDetailDescription }}
                   </div>
-                  <div class='block-text block-text--square'><img :src="`${item.imageName}`" width='89' height='auto'>
+                  <div class='detail-view__content detail-view__content--square'><img :src="`${item.imageName}`" width='89' height='auto'>
                   </div>
                 </div>
               </div>
 
               <div class='detail-view__groups'>
-                <div class='block block--damage'>
-                  <div class='block-title'>Schaden</div>
-                  <div class='block-text'>
+                <div class='detail-view__group detail-view__group--damage'>
+                  <div class='detail-view__title'>Schaden</div>
+                  <div class='detail-view__content'>
                     <ul>
                       <li v-for="damage in item.damage" :key="damage.description">{{ damage.description }}</li>
                     </ul>
                   </div>
                 </div>
 
-                <div class='block'>
-                  <div class='block-title'>Massnahmen zur Risikominderung</div>
-                  <div class='block-text'>
+                <div class='detail-view__group'>
+                  <div class='detail-view__title'>Massnahmen zur Risikominderung</div>
+                  <div class='detail-view__content'>
                     <ul>
                       <li v-for="measure in item.measures" :key="measure.description">{{ measure.description }}</li>
                     </ul>
                   </div>
                 </div>
 
-                <div class='block'>
-                  <div class='block-title'>Auswirkungen der Risikominderung</div>
-                  <div class='block-text block-content--graphic'>
+                <div class='detail-view__group'>
+                  <div class='detail-view__title'>Auswirkungen der Risikominderung</div>
+                  <div class='detail-view__content detail-view__content--graphic'>
 
                     <div class="riskMatrix">
                       <div class="risk-matrix__title">Risikomatrix</div>
@@ -108,9 +108,9 @@
                   </div>
                 </div>
 
-                <div class='block'>
-                  <div class='block-title'>Bewertung</div>
-                  <div class='block-text decision-evaluation'>
+                <div class='detail-view__group'>
+                  <div class='detail-view__title'>Bewertung</div>
+                  <div class='detail-view__content decision-evaluation'>
                     <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
                       Device herstellen?
                     </div>
@@ -131,9 +131,9 @@
 
                 <!--Nachbearbeitung (in Spezifikation bleiben) -->
                 <div v-if="specification_customMadeDevice === 'Spezifikation'">
-                  <div class='block'>
-                    <div class='block-title'>Nachbearbeitung</div>
-                    <div class='block-text decision-evaluation'>
+                  <div class='detail-view__group'>
+                    <div class='detail-view__title'>Nachbearbeitung</div>
+                    <div class='detail-view__content decision-evaluation'>
                       <div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?</div>
                       <label class="container label-verify">
                         <div class="verify-label-text"> Ja</div>
@@ -152,7 +152,7 @@
 
                   <!--Nachbearbeitung JA-->
                   <div v-if="postProcessingPossibility === 'yes'">
-                    <div class="block">
+                    <div class="detail-view__group">
                       <div class="detailView-notification">
                         Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
                         Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
@@ -171,7 +171,7 @@
 
                   <!--Nachbearbeitung NEIN-->
                   <div v-if="postProcessingPossibility === 'no'">
-                    <div class="block">
+                    <div class="detail-view__group">
                       <div class="detailView-notification">Die Herstellung des Devices muss abgebrochen werden.</div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
@@ -189,13 +189,13 @@
                     outlined
                     label="Begründung für Custom Made Device"
                     placeholder="Geben Sie eine Erläuterung ein."
-                    class="block textarea-declaration"
+                    class="detail-view__group textarea-declaration"
                     rows="2"
                     aria-required="true"
                     v-model="customMadeDeviceDescription"/>
-                <div class='block'>
-                  <div class='block-title'>Arztnachweis</div>
-                  <div class="block-text">
+                <div class='detail-view__group'>
+                  <div class='detail-view__title'>Arztnachweis</div>
+                  <div class="detail-view__content">
                     <input class=" inputfile" type="file" name="file" id="file"/>
                   </div>
                 </div>
