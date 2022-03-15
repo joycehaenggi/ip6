@@ -19,6 +19,8 @@
 .next-arrow {
     margin-left: calc(15 * 0.063rem);
     margin-right: calc(5 * 0.063rem);
+    display: flex;
+    align-items: center;
 }
 
 .next-arrow-first-child {
@@ -53,7 +55,6 @@ input.searchfield {
     justify-content: space-between;
     align-items: center;
     font-family: 'OpenSans-Regular', sans-serif;
-    height: calc(21 * 0.063rem);
     margin-top: calc(16 * 0.063rem);
 }
 
