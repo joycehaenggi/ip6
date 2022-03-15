@@ -60,10 +60,10 @@
 
         <!--Expanded informations-->
         <template v-slot:expanded-item="{ headers, item }">
-          <td class="td_detailView" :colspan="headers.length ">
-            <form class="form_detailView">
+          <td class="detail-view" :colspan="headers.length ">
+            <form class="form-detail-view">
 
-              <div class='blocks blocks--logo-description'>
+              <div class='detail-view__groups detail-view__groups--description-icon'>
                 <div class='block block--square'>
                   <div class='block-title block-title--square'> {{ item.hazardDetailDescription }}
                   </div>
@@ -72,7 +72,7 @@
                 </div>
               </div>
 
-              <div class='blocks'>
+              <div class='detail-view__groups'>
                 <div class='block block--damage'>
                   <div class='block-title'>Schaden</div>
                   <div class='block-text'>
@@ -184,7 +184,7 @@
               </div>
 
               <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
-              <div class="blocks_custom_made_device" v-if="specification_customMadeDevice === 'CustomMadeDevice'">
+              <div class="detail-view__groups detail-view__groups--custom-made-device" v-if="specification_customMadeDevice === 'CustomMadeDevice'">
                 <v-textarea
                     outlined
                     label="Begründung für Custom Made Device"
@@ -206,7 +206,6 @@
                          value="Gefährdung abschliessen">
                 </div>
               </div>
-
 
             </form>
           </td>
