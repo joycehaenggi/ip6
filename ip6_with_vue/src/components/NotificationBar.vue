@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="rectangle">
       <div class="notification" id="notification" @click="decreaseNotification">
         <div class="first_part">
@@ -19,8 +18,6 @@
         </div>
       </div>
     </div>
-    <div></div>
-  </div>
 </template>
 
 <script>

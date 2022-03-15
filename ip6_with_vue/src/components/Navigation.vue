@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="navigation">
     <div class="manufacturing-step-navigation">
       <div class="navigation-tree">
         <svg class="home" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">

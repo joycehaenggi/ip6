@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-
+  <div class="hazard-table">
     <v-app id="inspire">
       <v-text-field
           append-icon="search"
@@ -532,7 +531,10 @@ export default {
           imageName: this.hazardImageNameTable,
           riskPriority: this.hazardRiskPriorityTableNumber + ' ' + this.hazardRiskPriorityWord,
           hazardDetailDescription: this.hazardSituationTable,
-          damage: this.hazardDamageTable,
+          // damage: this.hazardDamageTable,
+          damage: [
+            {description: this.hazardDamageTable},
+          ],
           probabilityOfOccurrenceBefore: this.hazardProbabilityOfOccurenceBeforeTable,
           severity: this.hazardSeverityTable,
           // measures: this.hazardMeasuresTable,

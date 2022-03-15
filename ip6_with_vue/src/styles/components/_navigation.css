@@ -1,3 +1,7 @@
+.navigation {
+    margin-top: calc(var(--margin-one) * 0.063rem);
+}
+
 .manufacturing-step-navigation {
     display: flex;
     flex-direction: row;
@@ -5,7 +9,6 @@
     align-items: center;
     font-family: 'OpenSans-Bold', sans-serif;
     font-size: calc(11 * 0.063rem);
-    margin-top: calc(20 * 0.063rem);
 }
 
 .navigation-tree {
@@ -52,7 +55,6 @@ input.searchfield {
     font-family: 'OpenSans-Regular', sans-serif;
     height: calc(21 * 0.063rem);
     margin-top: calc(16 * 0.063rem);
-    margin-bottom: calc(20 * 0.063rem);
 }
 
 .manu-title {
