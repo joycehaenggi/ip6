@@ -6,10 +6,6 @@
 }
 
 @media (max-width: calc(1050 * 0.063em)) {
-    .rectangle {
-        height: calc(50 * 0.063rem);
-    }
-
     .notification {
         height: calc(50 * 0.063rem);
     }

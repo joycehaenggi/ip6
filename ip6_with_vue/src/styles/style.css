@@ -13,15 +13,14 @@
 @import "items/_toast.css";
 @import "items/_modal.css";
 
-@import "components/listView/_buttonContainer.css";
 @import "components/listView/_progress_overview.css";
 @import "components/listView/_table.css";
 @import "components/listView/_riskMatrix.css";
 @import "components/newHazard/_newHazardForm.css";
 @import "components/_header.css";
 @import "components/_pathSection.css";
-
 @import "components/_notification.css";
+@import "components/_buttonContainer.css";
 @import "components/_responsiveAdjustment.css";
 
 @import "materialDesign/_materialDesignIcons.css";
