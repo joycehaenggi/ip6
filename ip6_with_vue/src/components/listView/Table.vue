@@ -28,9 +28,9 @@
 
         <!--add risikoprioritätszahl--row-->
         <template v-slot:item.riskPriority="{ item }">
-          <div v-if="item.riskPriority === '1 gering'" :class="`dot greenCustomized`"></div>
-          <div v-if="item.riskPriority === '2 mittel'" :class="`dot yellowCustomized`"></div>
-          <div v-if="item.riskPriority === '3 hoch'" :class="`dot redCustomized`"></div>
+          <div v-if="item.riskPriority === '1 gering'" :class="`dot green-customized`"></div>
+          <div v-if="item.riskPriority === '2 mittel'" :class="`dot yellow-customized`"></div>
+          <div v-if="item.riskPriority === '3 hoch'" :class="`dot red-customized`"></div>
         </template>
         <!--Set checkbox for nicht-zutreffend-row-->
         <template v-slot:item.nicht-zutreffend="{item}">

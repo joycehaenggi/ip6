@@ -1,8 +1,8 @@
 <template>
-  <div class="navigation">
-    <div class="manufacturing-step-navigation">
-      <div class="navigation-tree">
-        <svg class="home" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div class="path-section">
+    <div class="path-section__row1">
+      <div class="path-section__full-path">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1387_56763)">
             <path
                 d="M14.8861 7.00049L12.1185 4.63702C12.1217 4.62085 12.1249 4.60469 12.1282 4.58529V1.49435C12.1249 1.31005 11.9794 1.16133 11.7952 1.15486H10.2497C10.0719 1.15486 9.92637 1.31329 9.92637 1.49435V2.77469L7.71163 0.886503C7.592 0.783041 7.41417 0.783041 7.29131 0.886503L0.116845 6.99726C-0.0221828 7.11042 -0.0383488 7.31411 0.0748131 7.45314C0.187975 7.59217 0.391666 7.60833 0.530694 7.49517C0.533927 7.49194 0.533927 7.49194 0.53716 7.4887L7.50147 1.55901L9.99426 3.68322L11.4848 4.95064L14.469 7.49194C14.6048 7.60833 14.8085 7.59216 14.9249 7.45637C15.0381 7.32058 15.0219 7.11688 14.8861 7.00049ZM11.4783 4.09061L10.573 3.32757V1.80473H11.4783V4.09061Z"
@@ -17,7 +17,7 @@
             </clipPath>
           </defs>
         </svg>
-        <div class="next-arrow next-arrow-first-child">
+        <div class="path-section__next-arrow path-section__next-arrow--first-child">
           <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1387_56747)">
@@ -32,8 +32,8 @@
             </defs>
           </svg>
         </div>
-        <p class="navigation-steps">Neuer Auftrag erstellen</p>
-        <div class="next-arrow">
+        <p class="path-section__directory">Neuer Auftrag erstellen</p>
+        <div class="path-section__next-arrow">
           <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1387_56747)">
               <path
@@ -47,8 +47,8 @@
             </defs>
           </svg>
         </div>
-        <p class="navigation-steps">Herstellungsprozess</p>
-        <div class="next-arrow">
+        <p class="path-section__directory">Herstellungsprozess</p>
+        <div class="path-section__next-arrow">
           <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1387_56747)">
               <path
@@ -62,33 +62,34 @@
             </defs>
           </svg>
         </div>
-        <p class="navigation-steps nameStep" id="actualStep">{{ actualTitleNameNavigation }}</p>
+        <p class="path-section__directory">{{ actualTitleNameNavigation }}</p>
       </div>
-      <div class="manufacturing-legend">
+
+      <div class="path-section__risk-priority-legend">
         <div class="priority-title">
           <p class="manu-legend-tittle">Risikopriorität:</p>
         </div>
-        <div class="low">
-          <span class="dot greenCustomized"></span>
+        <div class="path-section__risk-priority-legend-element">
+          <span class="dot green-customized"></span>
           <p class="manu-legend">gering</p>
         </div>
-        <div class="middle">
-          <span class="dot yellowCustomized"></span>
+        <div class="path-section__risk-priority-legend-element">
+          <span class="dot yellow-customized"></span>
           <p class="manu-legend">mittel</p>
         </div>
-        <div class="high">
-          <span class="dot redCustomized"></span>
+        <div class="path-section__risk-priority-legend-element">
+          <span class="dot red-customized"></span>
           <p class="manu-legend">hoch</p>
-        </div>
-        <div class="manufacturing-legend-elements">
         </div>
       </div>
 
     </div>
 
-    <div class="manufacturing-step-information">
-      <div class="menu-title-box">
-        <p class="manu-title" id="titleName">{{ actualTitleNameNavigation }}</p>
+    <div class="path-section__row2">
+      <div class="manufacturing-step-information">
+        <div class="menu-title-box">
+          <p class="manu-title" id="titleName">{{ actualTitleNameNavigation }}</p>
+        </div>
       </div>
     </div>
   </div>
