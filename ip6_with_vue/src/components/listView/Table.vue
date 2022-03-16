@@ -169,7 +169,6 @@
                              class="button button--submit button--finish-hazard"
                              type="submit" value="Gefährdung abschliessen">
                     </div>
-                    yxcdd
                   </div>
 
                   <!--Nachbearbeitung NEIN-->
