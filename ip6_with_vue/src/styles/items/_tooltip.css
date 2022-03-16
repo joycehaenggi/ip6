@@ -13,46 +13,46 @@
 }
 
 /* Tooltip expand settings */
-.expand:before {
+.tooltip--expand:before {
     transform: scale3d(.2, .2, 1);
     transition: all .2s ease-in-out;
 }
 
-.expand:after {
+.tooltip--expand:after {
     transform: translate3d(0, calc(6 * 0.063rem), 0);
     transition: all .1s ease-in-out;
 }
 
-.expand:hover:before,
-.expand:hover:after {
+.tooltip--expand:hover:before,
+.tooltip--expand:hover:after {
     opacity: 1;
     transform: scale3d(1, 1, 1);
 }
 
-.expand:hover:after {
+.tooltip--expand:hover:after {
     transition: all .2s .1s ease-in-out;
 }
 
 
 /* Tooltip after-effect */
-tr td.td_detailView .tooltip:after, tr > td.text-start > .tooltip:after, .newHazard-tooltip:after {
+tr td.td_detailView .tooltip:after, tr > td.text-start > .tooltip:after, .tooltip--new-hazard:after {
     border-right: calc(6 * 0.063rem) solid transparent;
     border-left: calc(6 * 0.063rem) solid transparent;
     content: '';
     left: calc(5 * 0.063rem);
-}
-
-tr td.td_detailView .tooltip:after, tr:not(:last-child, :nth-last-child(2)) > td.text-start > .tooltip:after, .newHazard-tooltip:after {
-    border-bottom: calc(6 * 0.063rem) solid var(--notification-blue);
     top: calc(21 * 0.063rem);
 }
 
-tr:last-child > td.text-start > .akzeptiert-status:after, tr:nth-last-child(2) > td.text-start > .akzeptiert-status:after {
+tr td.td_detailView .tooltip:after, tr:not(:last-child, :nth-last-child(2)) > td.text-start > .tooltip:after, .tooltip--new-hazard:after {
+    border-bottom: calc(6 * 0.063rem) solid var(--notification-blue);
+}
+
+tr:last-child > td.text-start > .tooltip:after, tr:nth-last-child(2) > td.text-start > .tooltip:after {
     border-top: calc(6 * 0.063rem) solid var(--notification-blue);
     top: calc(-7 * 0.063rem);
 }
 
-.newHazard-tooltip:after {
+.tooltip--new-hazard:after {
     left: calc(17 * 0.063rem);
 }
 
@@ -69,11 +69,11 @@ tr:last-child > td.text-start > .akzeptiert-status:after, tr:nth-last-child(2) >
     width: calc(150 * 0.063rem);
 }
 
-tr:last-child > td.text-start > .akzeptiert-status:before, tr:nth-last-child(2) > td.text-start > .akzeptiert-status:before {
+tr:last-child > td.text-start > .tooltip:before, tr:nth-last-child(2) > td.text-start > .tooltip:before {
     top: calc(-85 * 0.063rem);
 }
 
-.newHazard-tooltip:before {
+.tooltip--new-hazard:before {
     left: calc(-23 * 0.063rem);
 }
 

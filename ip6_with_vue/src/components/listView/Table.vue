@@ -46,7 +46,7 @@
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{item}">
           <div ref="submit" :id="`acceptedDiv${item.id}`"
-               class="tooltip akzeptiertStatus-tooltip expand akzeptiert-status"
+               class="tooltip tooltip--expand"
                data-title="Akzeptiert-Status wird automatisch bei Verifizierung des Custom Made Devices gesetzt. "
                @click="moveCheckmark(item.id, 'acceptedDiv', 'apply-shake', 820)">
             <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
