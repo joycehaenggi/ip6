@@ -16,7 +16,7 @@
     height: calc(17 * 0.063rem);
     margin-top: calc(20 * 0.063rem);
     background-color: var(--frames-bluegray);
-    border-radius: calc(10 * 0.063rem);
+    border-radius: calc(var(--border-radius--progress-bar) * 0.063rem);
 }
 
 .progress-overview__progress-in-percent {
@@ -25,6 +25,6 @@
     justify-content: center;
     height: 100%;
     background-color: var(--notification-blue);
-    border-radius: calc(10 * 0.063rem);
+    border-radius: calc(var(--border-radius--progress-bar) * 0.063rem);
     color: white;
 }

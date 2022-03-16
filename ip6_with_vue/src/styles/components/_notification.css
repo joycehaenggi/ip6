@@ -2,32 +2,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: calc(var(--margin-one) * 0.063rem);
     height: calc(30 * 0.063rem);
+    width: 100%;
+    margin-top: calc(var(--margin-one) * 0.063rem);
     font-size: calc(var(--main-font-size) * 0.063rem);
     border-radius: calc(var(--border-radius) * 0.063rem);
-    width: 100%;
     background-color: var(--notification-blue);
     color: white;
     cursor: pointer;
 }
 
-.notification:active p, .notification:active .arrow_left {
-    display: none;
-}
-
-.first_part {
+.notification__info-icon-text {
     display: flex;
     width: calc(610 * 0.063rem);
     align-items: center;
     justify-content:center;
 }
 
-.arrow {
+.notification__arrow {
     display: flex;
     align-items: center;
 }
 
-.info_icon, .arrow_left {
+.notification__info-icon, .notification__arrow {
     margin: 0 calc(25 * 0.063rem);
 }

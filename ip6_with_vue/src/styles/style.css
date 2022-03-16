@@ -19,7 +19,7 @@
 @import "components/listView/_riskMatrix.css";
 @import "components/newHazard/_newHazardForm.css";
 @import "components/_header.css";
-@import "components/_navigation.css";
+@import "components/_pathSection.css";
 
 @import "components/_notification.css";
 @import "components/_responsiveAdjustment.css";

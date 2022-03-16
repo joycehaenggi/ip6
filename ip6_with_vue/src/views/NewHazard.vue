@@ -2,7 +2,7 @@
   <div class="newHazard">
     <Header/>
     <div class="wrapper">
-      <Navigation
+      <PathSection
           :actualTitleNameNavigation="$route.params.actualTitleNameNewHazard"
       />
       <NewHazardForm/>
@@ -12,13 +12,13 @@
 
 <script>
 import Header from '@/components/Header.vue'
-import Navigation from '@/components/Navigation.vue'
+import PathSection from '@/components/PathSection.vue'
 import NewHazardForm from "@/components/newHazard/NewHazardForm";
 export default {
   props: ['actualTitleNameNewHazard', 'itemIdNewHazard'],
   components: {
     Header,
-    Navigation,
+    PathSection,
     NewHazardForm
   }
 }

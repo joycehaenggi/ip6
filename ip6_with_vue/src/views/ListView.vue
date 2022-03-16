@@ -2,10 +2,10 @@
   <div class="listView">
     <Header/>
     <div class="wrapper">
-      <Navigation
+      <PathSection
           :actualTitleNameNavigation="titleNames[nameCounterListView]"
       />
-      <NotificationBar/>
+      <Notification/>
       <Table @ReadCheckboxNumber="transferCheckboxNumbers"
              @updateNumber="newNumber"
              @CustomMadeProcessSettings="setCustomMadeProcessSettings"
@@ -27,8 +27,8 @@
 <script>
 
 import Header from '@/components/Header.vue'
-import Navigation from '@/components/Navigation.vue'
-import NotificationBar from "@/components/NotificationBar";
+import PathSection from '@/components/PathSection.vue'
+import Notification from "@/components/Notification";
 import Table from "@/components/listView/Table";
 import ProgressOverview from "@/components/listView/ProgressOverview";
 import ButtonContainerListView from "@/components/listView/ButtonContainerListView";
@@ -36,8 +36,8 @@ import ButtonContainerListView from "@/components/listView/ButtonContainerListVi
 export default {
   components: {
     Header,
-    Navigation,
-    NotificationBar,
+    PathSection,
+    Notification,
     Table,
     ProgressOverview,
     ButtonContainerListView
@@ -103,7 +103,7 @@ export default {
     },
     setCustomMadeProcessSettings(acceptCounterArrayLength){
       let header = document.getElementById("mainHeader")
-      let notification = document.getElementById("notification")
+      let notification = document.getElementById("notification-id")
       header.style.transition = "2s"
       header.style.notification = "2s"
       if(acceptCounterArrayLength > 0 || localStorage.customMadeProcess === 'true'){
