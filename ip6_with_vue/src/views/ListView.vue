@@ -66,12 +66,12 @@ export default {
       this.var = false
       console.log(this.var)
     },
-    transferCheckboxNumbers(nunmberFinished, numberOfCurrentCheckboxes) {
-      this.nunmberOfCheckedCheckboxesValue = nunmberFinished
+    transferCheckboxNumbers(numberFinished, numberOfCurrentCheckboxes) {
+      this.nunmberOfCheckedCheckboxesValue = numberFinished
 
       this.numberOfCurrentCheckboxesValue= numberOfCurrentCheckboxes
 
-      let progress_in_percent = document.getElementById("progress_in_percent")
+      let progress_in_percent = document.getElementById("progress-overview__progress-in-percent-id")
       this.percentageOfCheckedCheckboxes = Math.round((this.nunmberOfCheckedCheckboxesValue / this.numberOfCurrentCheckboxesValue) * 100)
 
       progress_in_percent.style.transition = "1s"

@@ -1,11 +1,11 @@
 <template>
   <div class="progress-overview">
-    <div class="progress-overview__title" id="titleProgressBar">
+    <div class="progress-overview__title">
       Fortschrittsübersicht -
       {{ titleNamesProcessOverview[nameCounterProcessOverview] }}
     </div>
     <div class="progress-overview__bar">
-      <div class="progress-overview__progress-in-percent" id="progress_in_percent">
+      <div class="progress-overview__progress-in-percent" id="progress-overview__progress-in-percent-id">
         <div v-if="!noCheckboxCheckedProcess">
           {{ percentageOfCheckedCheckboxesProcess }}%
         </div>
@@ -16,6 +16,6 @@
 
 <script>
 export default {
-  props: ['noCheckboxCheckedProcess', 'percentageOfCheckedCheckboxesProcess', 'nameCounterProcessOverview', 'titleNamesProcessOverview']
+  props: ['titleNamesProcessOverview', 'nameCounterProcessOverview', 'noCheckboxCheckedProcess', 'percentageOfCheckedCheckboxesProcess']
   }
 </script>

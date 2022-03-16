@@ -608,7 +608,6 @@ export default {
 
     if (window.location.href !== 'http://localhost:8080/index.html?evaluation=Spezifikation&postPrcessing=no#/') {
       window.location.href = 'http://localhost:8080/index.html?evaluation=Spezifikation&postPrcessing=no#/'
-      console.log("test")
     }
     if (this.$route.params.hazardOriginalIdListView !== undefined) {
       this.hazardOriginalIdTableNumber = this.$route.params.hazardOriginalIdListView
@@ -678,7 +677,6 @@ export default {
       }
     },
     numberOfCheckedCheckboxes(itemId, acceptStatus, specification, newItem) {
-      console.log(localStorage.checkedCheckboxesArray)
       if (localStorage.checkedCheckboxesArray === undefined || localStorage.checkedCheckboxesArray === '') {
         localStorage.checkedCheckboxesArray = JSON.stringify([])
       }
