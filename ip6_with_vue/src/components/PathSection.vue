@@ -1,6 +1,6 @@
 <template>
   <div class="path-section">
-    <div class="path-section__row1">
+    <div class="path-section__row path-section__row--row1">
       <div class="path-section__full-path">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1387_56763)">
@@ -66,31 +66,26 @@
       </div>
 
       <div class="path-section__risk-priority-legend">
-        <div class="priority-title">
-          <p class="manu-legend-tittle">Risikopriorität:</p>
+        <div class="path-section__risk-priority-legend-element">
+          <p>Risikopriorität:</p>
         </div>
         <div class="path-section__risk-priority-legend-element">
           <span class="dot green-customized"></span>
-          <p class="manu-legend">gering</p>
+          <p>gering</p>
         </div>
         <div class="path-section__risk-priority-legend-element">
           <span class="dot yellow-customized"></span>
-          <p class="manu-legend">mittel</p>
+          <p>mittel</p>
         </div>
         <div class="path-section__risk-priority-legend-element">
           <span class="dot red-customized"></span>
-          <p class="manu-legend">hoch</p>
+          <p>hoch</p>
         </div>
       </div>
-
     </div>
 
-    <div class="path-section__row2">
-      <div class="manufacturing-step-information">
-        <div class="menu-title-box">
-          <p class="manu-title" id="titleName">{{ actualTitleNameNavigation }}</p>
-        </div>
-      </div>
+    <div class="path-section__row path-section__row--row2">
+          <p class="path-section__title">{{ actualTitleNameNavigation }}</p>
     </div>
   </div>
 </template>

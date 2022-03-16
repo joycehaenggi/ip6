@@ -2,13 +2,20 @@
     margin-top: calc(var(--margin-one) * 0.063rem);
 }
 
-.path-section__row1 {
+.path-section__row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     font-family: 'OpenSans-Bold', sans-serif;
+}
+
+.path-section__row--row1 {
     font-size: calc(11 * 0.063rem);
+}
+
+.path-section__row--row2 {
+    margin-top: calc(16 * 0.063rem);
 }
 
 .path-section__full-path {
@@ -42,21 +49,16 @@
 
 .path-section__risk-priority-legend-element {
     display: flex;
-    width: calc(60 * 0.063rem);
     justify-content: space-between;
     align-items: center;
     font-size: calc(11 * 0.063rem);
     margin-left: calc(9 * 0.063rem);
 }
 
-.manufacturing-step-information {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'OpenSans-Regular', sans-serif;
-    margin-top: calc(16 * 0.063rem);
+.path-section__risk-priority-legend-element p {
+    margin-left: calc(6 * 0.063rem);
 }
 
-.manu-title {
+.path-section__title {
     font-size: calc(14 * 0.063rem);
 }
