@@ -17,14 +17,14 @@
     white-space: nowrap;
 }
 
-#toast #desc {
+#toast__message {
     padding: calc(16 * 0.063rem);
     color: var(--notification-blue);
     overflow: hidden;
     white-space: nowrap;
 }
 
-#toast.show {
+#toast.toast__show {
     visibility: visible;
     animation: fadein 1s, fadeout 1s 3s;
 }

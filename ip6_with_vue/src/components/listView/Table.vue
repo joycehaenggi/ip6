@@ -41,7 +41,7 @@
         </template>
         <!--Add different icon per row in icon-row-->
         <template v-slot:item.icon="{item}">
-          <img class="icon_list" :src="`${item.imageName}`" alt="icon"/>
+          <img class="hazard-table__hazard-icon" :src="`${item.imageName}`" alt="icon"/>
         </template>
         <!--add Checkmark and tooltip to akzeptiert-row-->
         <template v-slot:item.akzeptiert="{item}">
@@ -49,7 +49,7 @@
                class="tooltip tooltip--expand"
                data-title="Akzeptiert-Status wird automatisch bei Verifizierung des Custom Made Devices gesetzt. "
                @click="moveCheckmark(item.id, 'acceptedDiv', 'apply-shake', 820)">
-            <svg class="accepted_status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
+            <svg class="hazard-table__accepted-status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-width="1.5" stroke-linecap="round"
                     stroke-linejoin="round"
@@ -60,7 +60,7 @@
 
         <!--Expanded informations-->
         <template v-slot:expanded-item="{ headers, item }">
-          <td class="detail-view" :colspan="headers.length ">
+          <td class="hazard-table__detail-view detail-view" :colspan="headers.length ">
             <form class="form-detail-view">
 
               <div class='detail-view__groups detail-view__groups--description-icon'>
@@ -123,7 +123,7 @@
                       <span class="custom_radio_button"></span>
                     </label>
                     <label class="detail-view__evaluation-answer-label container">
-                      <div class="verify-label-text"> Custom Made Device</div>
+                      <div class="detail-view__evaluation-answer-text"> Custom Made Device</div>
                       <input type="radio" :name="`evaluation`" :value="`CustomMadeDevice`"
                              v-model="specification_customMadeDevice">
                       <span class="custom_radio_button"></span>
@@ -258,7 +258,7 @@
 
     </v-app>
     <div id="toast">
-      <div id="desc">{{ toastMessage }}</div>
+      <div id="toast__message">{{ toastMessage }}</div>
     </div>
   </div>
 </template>
@@ -651,9 +651,9 @@ export default {
     },
     launch_notification() {
       let notification = document.getElementById("toast")
-      notification.className = "show"
+      notification.className = "toast__show"
       setTimeout(() => {
-        notification.className = notification.className.replace("show", "")
+        notification.className = notification.className.replace("toast__show", "")
       }, 4000)
     },
     moveCheckmark(elementId, element, action, time) {

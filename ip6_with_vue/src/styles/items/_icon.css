@@ -1,25 +1,26 @@
-.icon_list {
+.hazard-table__hazard-icon {
     transition: all 0.5s ease-in-out;
     transform: scale(1.5);
 }
 
-.icon_list:hover {
+.hazard-table__hazard-icon:hover {
     transform: scale(2.5);
 }
 
-.svg_info_icon {
+.hazard-table__accepted-status {
+    z-index: 0;
+}
+
+.new-hazard__info-icon {
     margin: 0 calc(20 * 0.063rem);
     position: absolute;
     z-index: 0;
 }
 
-.svg_add {
+.new-hazard__add-icon {
     cursor: pointer;
 }
 
-.accepted_status {
-    z-index: 0;
-}
 
 /* Shake-effect */
 @keyframes shake {
