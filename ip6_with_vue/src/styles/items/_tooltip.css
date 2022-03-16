@@ -12,7 +12,6 @@
     position: absolute;
 }
 
-
 /* Tooltip expand settings */
 .expand:before {
     transform: scale3d(.2, .2, 1);
