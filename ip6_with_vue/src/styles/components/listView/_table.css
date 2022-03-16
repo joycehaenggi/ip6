@@ -156,6 +156,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 .detail-view__content {
     padding-left: calc(40 * 0.063rem);
     padding-top: calc(8 * 0.063rem);
+    display: flex;
 }
 
 .detail-view__content--square {
@@ -170,37 +171,20 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     padding-left: calc(10 * 0.063rem);
 }
 
-.decision-evaluation {
-    display: flex;
-}
-
-.evaluation-text {
+.detail-view__evaluation-question {
     width: calc(600 * 0.063rem);
 }
 
-.evaluation-radio-buttons {
-    margin-left: calc(100 * 1rem);
-    display: flex;
-}
-
-.button_detailView {
-    display: flex;
-}
-
-.label-verify {
+.detail-view__evaluation-answer-label {
     width: calc(150 * 0.063rem);
 }
 
-.verify-label-text {
+.detail-view__evaluation-answer-text {
     margin-top: calc(-2 * 0.063rem);
     margin-left: calc(10 * 0.063rem);
 }
 
-.radioButton-detailView {
-    margin-right: calc(5 * 0.063rem);
-}
-
-.detailView-notification {
+.detail-view__notification {
     background-color: var(--frames-bluegray);
     height: calc(30 * 0.063rem);
     width: 100%;

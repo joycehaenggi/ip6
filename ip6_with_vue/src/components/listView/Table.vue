@@ -95,9 +95,9 @@
                   <div class='detail-view__title'>Auswirkungen der Risikominderung</div>
                   <div class='detail-view__content detail-view__content--graphic'>
 
-                    <div class="riskMatrix">
-                      <div class="risk-matrix__title">Risikomatrix</div>
-                      <div class="risk-matrix__description">
+                    <div class="detail-view__risk-matrix">
+                      <div class="detail-view__risk-matrix-title">Risikomatrix</div>
+                      <div class="detail-view__risk-matrix-description">
                         <p>Veränderung des Gesamtrisikos durch getätigte Massnahmen.</p>
                       </div>
                       <RiskMatrix
@@ -110,17 +110,17 @@
 
                 <div class='detail-view__group'>
                   <div class='detail-view__title'>Bewertung</div>
-                  <div class='detail-view__content decision-evaluation'>
-                    <div class='evaluation-text'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
+                  <div class='detail-view__content'>
+                    <div class='detail-view__evaluation-question'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
                       Device herstellen?
                     </div>
-                    <label class="container label-verify">
-                      <div class="verify-label-text"> Spezifikation</div>
+                    <label class="detail-view__evaluation-answer-label container">
+                      <div class="detail-view__evaluation-answer-text"> Spezifikation</div>
                       <input type="radio" :name="`evaluation`" :value="`Spezifikation`"
                              v-model="specification_customMadeDevice">
                       <span class="custom_radio_button"></span>
                     </label>
-                    <label class="container label-verify">
+                    <label class="detail-view__evaluation-answer-label container">
                       <div class="verify-label-text"> Custom Made Device</div>
                       <input type="radio" :name="`evaluation`" :value="`CustomMadeDevice`"
                              v-model="specification_customMadeDevice">
@@ -133,16 +133,16 @@
                 <div v-if="specification_customMadeDevice === 'Spezifikation'">
                   <div class='detail-view__group'>
                     <div class='detail-view__title'>Nachbearbeitung</div>
-                    <div class='detail-view__content decision-evaluation'>
-                      <div class='evaluation-text'>Ist eine Nachbearbeitung des Devices möglich?</div>
-                      <label class="container label-verify">
-                        <div class="verify-label-text"> Ja</div>
+                    <div class='detail-view__content'>
+                      <div class='detail-view__evaluation-question'>Ist eine Nachbearbeitung des Devices möglich?</div>
+                      <label class="detail-view__evaluation-answer-label container">
+                        <div class="detail-view__evaluation-answer-text"> Ja</div>
                         <input :name="`postPrcessing`" type="radio" :value="`yes`"
                                v-model="postProcessingPossibility">
                         <span class="custom_radio_button"></span>
                       </label>
-                      <label class="container label-verify">
-                        <div class="verify-label-text"> Nein</div>
+                      <label class="detail-view__evaluation-answer-label container">
+                        <div class="detail-view__evaluation-answer-text"> Nein</div>
                         <input :name="`postPrcessing`" type="radio" :value="`no`"
                                v-model="postProcessingPossibility">
                         <span class="custom_radio_button"></span>
@@ -153,7 +153,7 @@
                   <!--Nachbearbeitung JA-->
                   <div v-if="postProcessingPossibility === 'yes'">
                     <div class="detail-view__group">
-                      <div class="detailView-notification">
+                      <div class="detail-view__notification">
                         Die Herstellung des Devices ist durch die Nachbearbeitung weiterhin möglich.
                         Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
                       </div>
@@ -172,14 +172,12 @@
                   <!--Nachbearbeitung NEIN-->
                   <div v-if="postProcessingPossibility === 'no'">
                     <div class="detail-view__group">
-                      <div class="detailView-notification">Die Herstellung des Devices muss abgebrochen werden.</div>
+                      <div class="detail-view__notification">Die Herstellung des Devices muss abgebrochen werden.</div>
                     </div>
                     <div class="buttonContainer buttonContainer-detailView">
                       <button @click="showModal = true" class="button button-cancel">Herstellung abbrechen</button>
                     </div>
                   </div>
-
-
                 </div>
               </div>
 

@@ -1,4 +1,4 @@
-.riskMatrix {
+.detail-view__risk-matrix {
     height: calc(325 * 0.063rem);
     width: calc(400 * 0.063rem);
     padding: calc(30 * 0.063rem);
@@ -6,19 +6,15 @@
     border-radius: calc(var(--border-radius) * 0.063rem);
 }
 
-.risk-matrix__title {
+.detail-view__risk-matrix-title {
     font-family: 'OpenSans-SemiBold', sans-serif;
 }
 
-.risk-matrix__description {
+.detail-view__risk-matrix-description {
     width: calc(600 * 0.063rem);
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
     text-align: justify;
-}
-
-.riskPriorityNumbers {
-    font-size: calc(var(--main-font-size) * 0.063rem);
 }
