@@ -16,3 +16,8 @@
 .new-hazard__button-container {
     margin-top: calc(40 * 0.063rem);
 }
+
+.modal__button-container {
+    display: flex;
+    justify-content: center;
+}

@@ -67,7 +67,8 @@
                 <div class='detail-view__group detail-view__group--square'>
                   <div class='detail-view__title detail-view__title--square'> {{ item.hazardDetailDescription }}
                   </div>
-                  <div class='detail-view__content detail-view__content--square'><img :src="`${item.imageName}`" width='89' height='auto'>
+                  <div class='detail-view__content detail-view__content--square'><img :src="`${item.imageName}`"
+                                                                                      width='89' height='auto'>
                   </div>
                 </div>
               </div>
@@ -111,7 +112,8 @@
                 <div class='detail-view__group'>
                   <div class='detail-view__title'>Bewertung</div>
                   <div class='detail-view__content'>
-                    <div class='detail-view__evaluation-question'>Wollen Sie innerhalb der Spezifikation bleiben oder ein Custom Made
+                    <div class='detail-view__evaluation-question'>Wollen Sie innerhalb der Spezifikation bleiben oder
+                      ein Custom Made
                       Device herstellen?
                     </div>
                     <label class="detail-view__evaluation-answer-label container">
@@ -166,7 +168,8 @@
                       <input @click="numberOfCheckedCheckboxes(item.id, false, true, false)"
                              class="button button--submit button--finish-hazard"
                              type="submit" value="Gefährdung abschliessen">
-                    </div>yxcdd
+                    </div>
+                    yxcdd
                   </div>
 
                   <!--Nachbearbeitung NEIN-->
@@ -175,14 +178,16 @@
                       <div class="detail-view__notification">Die Herstellung des Devices muss abgebrochen werden.</div>
                     </div>
                     <div class="button-container detail-view__button-container">
-                      <button @click="showModal = true" class="button button--cancel">Herstellung abbrechen</button>
+                      <button @click.prevent="showModal = true" class="button button--cancel">Herstellung abbrechen
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
 
               <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
-              <div class="detail-view__groups detail-view__groups--custom-made-device" v-if="specification_customMadeDevice === 'CustomMadeDevice'">
+              <div class="detail-view__groups detail-view__groups--custom-made-device"
+                   v-if="specification_customMadeDevice === 'CustomMadeDevice'">
                 <v-textarea
                     outlined
                     label="Begründung für Custom Made Device"
@@ -209,13 +214,14 @@
           </td>
         </template>
       </v-data-table>
-      <!-- The Modal -->
-      <div id="myModal" v-if="showModal" class="modal" @click="showModal = false">
+
+      <!-- Modal -->
+      <div v-if="showModal" class="modal" @click="showModal = false">
         <!-- Modal content -->
-        <div class="modal-content" @click.stop="showModal = true">
-          <div class="close-span">
-            <span class="close" @click.stop="showModal = false">
-              <svg class="close-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+        <div class="modal__content" @click.stop="showModal = true">
+          <div class="modal__close-span">
+            <span class="modal__close" @click.stop="showModal = false">
+              <svg class="modal__close-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_2029_82762)">
                 <path
@@ -233,15 +239,14 @@
               </svg>
             </span>
           </div>
-          <div class="modal-content-inner-part">
-            <div class="modal-topPart-container">
-              <div class="modal-text">Möchten Sie Herstellung des Devices wirklich abbrechen? Der aktuelle Fortschritt
-                wird
-                dabei zurückgesetzt.
+          <div class="modal__inner-part">
+            <div class="modal__inner-top-part">
+              <div class="modal__text">Möchten Sie Herstellung des Devices wirklich abbrechen? Der aktuelle Fortschritt
+                wird dabei zurückgesetzt.
               </div>
             </div>
 
-            <div class="modal-button-container">
+            <div class="modal__button-container">
               <button @click.stop="showModal = false" class="button button--cancel">Herstellung fortsetzen</button>
               <button @click.stop="showModal = false; cancel()" class="button button--submit button--submit-modal">
                 Herstellung
@@ -251,6 +256,7 @@
           </div>
         </div>
       </div>
+
     </v-app>
     <div id="toast">
       <div id="desc">{{ toastMessage }}</div>
@@ -606,9 +612,6 @@ export default {
   },
   mounted() {
 
-    if (window.location.href !== 'http://localhost:8080/index.html?evaluation=Spezifikation&postPrcessing=no#/') {
-      window.location.href = 'http://localhost:8080/index.html?evaluation=Spezifikation&postPrcessing=no#/'
-    }
     if (this.$route.params.hazardOriginalIdListView !== undefined) {
       this.hazardOriginalIdTableNumber = this.$route.params.hazardOriginalIdListView
     }
