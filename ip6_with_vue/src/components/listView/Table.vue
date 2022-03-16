@@ -160,13 +160,13 @@
                     </div>
                     <div class="button-container detail-view__button-container">
                       <router-link
-                          :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id }}">
+                          :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id, acceptCounterArrayLengthNewHazard : acceptCounterArray.length }}">
                         <button class="button button--cancel">Gefährdung erstellen</button>
                       </router-link>
                       <input @click="numberOfCheckedCheckboxes(item.id, false, true, false)"
                              class="button button--submit button--finish-hazard"
                              type="submit" value="Gefährdung abschliessen">
-                    </div>
+                    </div>yxcdd
                   </div>
 
                   <!--Nachbearbeitung NEIN-->

@@ -15,53 +15,53 @@
     color: white;
 }
 
-.logo_title {
+.header__logo-title {
     margin: calc(8 * 0.063rem);
     margin-left: 0;
     align-items: center;
     display: flex;
 }
 
-.logo {
+.header__logo {
     float: left;
     margin-right: calc(9 * 0.063rem);
 }
 
-.title_assistent {
+.header__title {
     font-family: 'Oswald', sans-serif;
     font-size: calc(28 * 0.063rem);
     float: left;
     margin-top: calc(-5 * 0.063rem);
 }
 
-.header-links {
+.header__links {
     height: 100%;
     align-items: center;
     display: flex;
 }
 
-.header-links ul {
+.header__links ul {
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-.header-links li {
+.header__links li {
     list-style: none;
 }
 
-.header-links li a {
+.header__links li a {
     text-decoration: none;
     padding: calc(16 * 0.063rem);;
     display: block;
 }
 
-.header-links li:hover a {
+.header__links li:hover a {
     background-color: var(--notification-blue);
     border-radius: calc(var(--border-radius) * 0.063rem);
 }
 
-.toggle-button {
+.header__toggle-button {
     position: absolute;
     top: calc(20 * 0.063rem);
     right: 1rem;
@@ -72,9 +72,55 @@
     height: calc(21 * 0.063rem);
 }
 
-.toggle-button .bar {
+.header__toggle-button .header__bar {
     height: calc(3 * 0.063rem);
     width: 100%;
     background-color: white;
     border-radius: calc(10 * 0.063rem);;
+}
+
+
+@media (max-width: calc(1050 * 0.063em)) {
+    .header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .header__logo-title {
+        margin-left: calc(8 * 0.063rem);
+    }
+
+    .header__toggle-button {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .header__links {
+        display: none;
+        width: 100%;
+        background-color: var(--header-darkblue);
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .header__links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .header__links li {
+        text-align: center;
+    }
+
+    .header__links li a {
+        padding: calc(8 * 0.063rem) calc(16 * 0.063rem);
+    }
+
+    .header__links.navMobileActive {
+        display: flex;
+    }
 }

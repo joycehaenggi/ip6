@@ -11,7 +11,7 @@ const routes = [
     component: ListView
   },
   {
-    path: '/newHazard/:actualTitleNameNewHazard/:itemIdNewHazard/',
+    path: '/newHazard/:actualTitleNameNewHazard/:itemIdNewHazard/:acceptCounterArrayLengthNewHazard',
     name: 'NewHazard',
     mode: "history",
     component: () => import('../views/NewHazard.vue')

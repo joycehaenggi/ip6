@@ -1,8 +1,8 @@
 <template>
-  <nav class="header" id="mainHeader">
+  <nav class="header" id="header-id">
     <a href="index.html">
-      <div class="logo_title">
-        <div class="logo">
+      <div class="header__logo-title">
+        <div class="header__logo">
           <svg width="21" height="38" viewBox="0 0 21 38" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.8806 25.6055V30.0586L10.3142 32.4336L4.7478 30.0586V25.6055L10.3142 23.3789L15.8806 25.6055Z" fill="#B8C7E6"/>
             <path d="M15.8806 16.6992V21.1523L10.3142 23.3789L4.7478 21.1523V16.6992L10.3142 14.4727L15.8806 16.6992Z" fill="#B8C7E6"/>
@@ -21,17 +21,17 @@
           </svg>
 
         </div>
-        <div class="title_assistent">
+        <div class="header__title">
           Virtueller Assistent
         </div>
       </div>
     </a>
-    <a @click="showResponsiveNavigation" href="#" class="toggle-button">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+    <a @click="showResponsiveNavigation" href="#" class="header__toggle-button">
+      <span class="header__bar"></span>
+      <span class="header__bar"></span>
+      <span class="header__bar"></span>
     </a>
-    <div class="header-links">
+    <div class="header__links">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="https://quizzical-keller-9651b4.netlify.app/" target="_blank">Auftragsübersicht</a></li>
@@ -45,7 +45,7 @@
 export default{
   methods: {
     showResponsiveNavigation(){
-      const navbarLinks = document.getElementsByClassName('header-links')[0]
+      const navbarLinks = document.getElementsByClassName('header__links')[0]
       navbarLinks.classList.toggle('navMobileActive')
     }
   }

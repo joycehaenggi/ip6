@@ -83,7 +83,6 @@ export default {
       let nextStepButton = document.getElementById("button--next-step")
       let nextStepLink = document.getElementById("next-step__link")
 
-
       if (this.percentageOfCheckedCheckboxes >= 100) {
         nextStepButton.style.color = 'white'
         nextStepButton.style.background = '#687D99'
@@ -102,14 +101,13 @@ export default {
       this.nameCounterListView = nameCounterTableValue
     },
     setCustomMadeProcessSettings(acceptCounterArrayLength){
-      let header = document.getElementById("mainHeader")
+      let header = document.getElementById("header-id")
       let notification = document.getElementById("notification-id")
       header.style.transition = "2s"
       header.style.notification = "2s"
       if(acceptCounterArrayLength > 0 || localStorage.customMadeProcess === 'true'){
         header.style.background = '#597380'
         notification.style.background = '#597380'
-        // notification.style.background = '#005178'
       }else {
         header.style.background = '#32404F'
         notification.style.background = '#4C5A69'
