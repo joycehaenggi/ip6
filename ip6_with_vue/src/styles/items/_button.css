@@ -1,13 +1,13 @@
 .button {
-    font-size: calc(var(--main-font-size) * 0.063rem);
-    font-family: OpenSans-SemiBold, serif;
-    padding-left: calc(var(--padding-button) * 0.063rem);
-    padding-right: calc(var(--padding-button) * 0.063rem);
-    height: calc(38 * 0.063rem);
-    border-radius: calc(50 * 0.063rem);
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
+    font-family: OpenSans-SemiBold, serif;
+    font-size: calc(var(--main-font-size) * 0.063rem);
+    height: calc(38 * 0.063rem);
+    padding-left: calc(var(--padding-button) * 0.063rem);
+    padding-right: calc(var(--padding-button) * 0.063rem);
+    border-radius: calc(50 * 0.063rem);
     cursor: pointer;
 }
 
@@ -15,79 +15,52 @@
     background-color: var(--notification-blue);
 }
 
-.button-submit, .button-submit a {
+#button--next-step:hover, #newHazardSubmit:hover {
+    background-color: var(--notification-blue) !important;
+}
+
+.button--submit {
     background-color: var(--button-blue);
     color: white;
 }
 
-.button-cancel, #button-nextStep {
+.button--cancel {
     background-color: var(--frames-bluegray);
     color: var(--notification-blue);
 }
 
-.button-cancel:hover {
+.button--cancel:hover {
     background-color: #d3d8e1;
 }
 
-#button-nextStep {
-    opacity: 0.4;
-    cursor: default;
-}
-
-#button-nextStep:hover, #newHazardSubmit:hover {
-    background-color: var(--notification-blue) !important;
-}
-
-#nextStep-Link {
-    pointer-events: none;
-}
-
-.button-cancel {
-    background-color: var(--frames-bluegray);
-    color: var(--notification-blue);
-}
-
-.button-cancel:hover {
-    background-color: #d3d8e1;
-}
-
-.button-newHazard {
+.button--new-hazard {
     width: calc(140 * 0.063rem);
 }
 
-.button-newHazard-cancel {
+.button--new-hazard-cancel {
     margin-right: calc(20 * 0.063rem);
 }
 
-.button-newHazard-submit {
+.button--new-hazard-submit {
     opacity: 0.4;
     text-align: center;
 }
 
-.button-newHazard-submit:hover {
-    background:red;
-}
-
-.button-finishHazard{
+.button--finish-hazard{
     margin-left: calc(20 * 0.063rem);
 }
 
-.button a {
-    font-family: OpenSans-SemiBold, serif;
-}
-
-
 @media (max-width: calc(1020 * 0.063em)) {
-    .button-cancel {
+    .button--cancel {
         margin-bottom: calc(20 * 0.063rem);
         margin-right: 0;
     }
 
-    .button-newHazard {
+    .button--new-hazard {
         min-width: calc(330 * 0.063rem);
     }
 
-    .button-newHazard-cancel {
+    .button--new-hazard-cancel {
         margin-right: 0;
     }
 }

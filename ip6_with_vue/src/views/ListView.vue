@@ -80,8 +80,8 @@ export default {
 
       this.noCheckboxChecked = this.percentageOfCheckedCheckboxes === 0
 
-      let nextStepButton = document.getElementById("button-nextStep")
-      let nextStepLink = document.getElementById("nextStep-Link")
+      let nextStepButton = document.getElementById("button--next-step")
+      let nextStepLink = document.getElementById("next-step__link")
 
 
       if (this.percentageOfCheckedCheckboxes >= 100) {

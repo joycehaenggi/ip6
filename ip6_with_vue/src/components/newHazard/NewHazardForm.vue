@@ -292,7 +292,7 @@
           </div>
         </div>
       </div>
-      <div class="flex-element buttons_new_hazard">
+      <div class="flex-element new-hazard__button-container">
         <div class="column column1 empty_column">
         </div>
         <div class="column column2 empty_column">
@@ -300,7 +300,7 @@
         <div class="column column3 button-column">
           <router-link :to="{ name: 'ListView', params: {
             hazardOriginalIdListView: hazardOriginalIdNewHazardForm,}}">
-            <div class="button button-cancel button-newHazard button-newHazard-cancel" id="cancel">
+            <div class="button button--cancel button--new-hazard button--new-hazard-cancel" id="cancel">
               Abbrechen
             </div>
           </router-link>
@@ -315,8 +315,8 @@
             hazardRiskPriorityListView: hazardRiskPriorityNewHazardForm,
             hazardOriginalIdListView: hazardOriginalIdNewHazardForm
           }}"
-                       id="router-link-newHazardSubmit">
-            <div class="button button-submit button-newHazard button-newHazard-submit" id="newHazardSubmit">
+                       id="router-link--new-hazard-submit">
+            <div class="button button--submit button--new-hazard button--new-hazard-submit" id="button--new-hazard-submit">
               Speichern
             </div>
           </router-link>
@@ -353,7 +353,8 @@ export default {
     }
   },
   mounted() {
-    this.hazardOriginalIdNewHazardForm = this.$route.params.itemIdNewHazard},
+    this.hazardOriginalIdNewHazardForm = this.$route.params.itemIdNewHazard
+  },
   updated() {
     /*      console.log(this.hazardNameNewHazardForm)
       console.log(this.hazardSituationNewHazardForm)
@@ -363,8 +364,8 @@ export default {
       console.log(this.hazardMeasuresNewHazardForm)
       console.log(this.hazardProbabilityOfOccurenceAfterNewHazardForm)*/
 
-    let submitButton = document.getElementById("newHazardSubmit"),
-        submitButtonLink = document.getElementById("router-link-newHazardSubmit")
+    let submitButton = document.getElementById("button--new-hazard-submit"),
+        submitButtonLink = document.getElementById("router-link--new-hazard-submit")
 
     if (this.checkNewHazardFields()) {
       if (submitButton !== null && submitButton !== undefined) {

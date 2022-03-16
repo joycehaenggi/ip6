@@ -1,12 +1,12 @@
 <template>
-  <div class="progress-wrapper">
-    <div class="title_progress_bar" id="titleProgressBar">
+  <div class="progress-overview">
+    <div class="progress-overview__title" id="titleProgressBar">
       Fortschrittsübersicht -
       {{ titleNamesProcessOverview[nameCounterProcessOverview] }}
     </div>
-    <div class="progress_bar">
-      <div class="progress_in_percent" id="progress_in_percent">
-        <div id="percentageInPro" v-if="!noCheckboxCheckedProcess">
+    <div class="progress-overview__bar">
+      <div class="progress-overview__progress-in-percent" id="progress_in_percent">
+        <div v-if="!noCheckboxCheckedProcess">
           {{ percentageOfCheckedCheckboxesProcess }}%
         </div>
       </div>

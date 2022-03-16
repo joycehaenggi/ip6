@@ -158,13 +158,13 @@
                         Fügen Sie zusätzliche Gefährdungen hinzu oder schliessen Sie diese Gefährdung direkt ab.
                       </div>
                     </div>
-                    <div class="buttonContainer buttonContainer-detailView">
+                    <div class="button-container detail-view__button-container">
                       <router-link
                           :to="{ name: 'NewHazard', params: { actualTitleNameNewHazard: actualTitleNameTable, itemIdNewHazard: item.id }}">
-                        <button class="button button-cancel">Gefährdung erstellen</button>
+                        <button class="button button--cancel">Gefährdung erstellen</button>
                       </router-link>
                       <input @click="numberOfCheckedCheckboxes(item.id, false, true, false)"
-                             class="button button-submit button-finishHazard"
+                             class="button button--submit button--finish-hazard"
                              type="submit" value="Gefährdung abschliessen">
                     </div>
                   </div>
@@ -174,8 +174,8 @@
                     <div class="detail-view__group">
                       <div class="detail-view__notification">Die Herstellung des Devices muss abgebrochen werden.</div>
                     </div>
-                    <div class="buttonContainer buttonContainer-detailView">
-                      <button @click="showModal = true" class="button button-cancel">Herstellung abbrechen</button>
+                    <div class="button-container detail-view__button-container">
+                      <button @click="showModal = true" class="button button--cancel">Herstellung abbrechen</button>
                     </div>
                   </div>
                 </div>
@@ -197,8 +197,8 @@
                     <input class=" inputfile" type="file" name="file" id="file"/>
                   </div>
                 </div>
-                <div class="buttonContainer buttonContainer-detailView">
-                  <input @click="accept(item.id)" class="button button-submit" type="submit"
+                <div class="button-container detail-view__button-container">
+                  <input @click="accept(item.id)" class="button button--submit button--finish-hazard" type="submit"
                          :id="`customMadeDeviceSubmit${item.id}`"
                          :disabled="checkCustomMadeDeviceFields(item.id)"
                          value="Gefährdung abschliessen">
@@ -242,8 +242,8 @@
             </div>
 
             <div class="modal-button-container">
-              <button @click.stop="showModal = false" class="button button-cancel">Herstellung fortsetzen</button>
-              <button @click.stop="showModal = false; cancel()" class="button button-submit button-submit-modal">
+              <button @click.stop="showModal = false" class="button button--cancel">Herstellung fortsetzen</button>
+              <button @click.stop="showModal = false; cancel()" class="button button--submit button--submit-modal">
                 Herstellung
                 abbrechen
               </button>

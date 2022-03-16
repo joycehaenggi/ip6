@@ -44,6 +44,7 @@ form.form_newHazard {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /*min-width: calc(300 * 0.063rem);*/
 }
 
 .column1 {
@@ -164,7 +165,8 @@ form.form_newHazard {
   display: flex;
 }
 
-/* Radio Buttons neue Gefährdung erstellen */
+
+/* Custom radio-buttons */
 .container {
   display: block;
   position: relative;
@@ -236,13 +238,6 @@ input[type="button"] {
 input[type="text"] {
   font-family: "OpenSans-Regular", sans-serif;
   font-size: calc(var(--main-font-size) * 0.063rem);
-}
-
-.wrapper {
-  margin-top: calc(var(--marginOne) * 0.063rem);
-  padding-left: calc(var(--padding-wrapper-header) * 0.063rem);
-  padding-right: calc(var(--padding-wrapper-header) * 0.063rem);
-  margin-bottom: calc(var(--marginOne) * 0.063rem);
 }
 
 @media (max-width: calc(1150 * 0.063em)) {
