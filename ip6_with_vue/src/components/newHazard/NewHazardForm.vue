@@ -1,7 +1,7 @@
 <template>
   <!--Neue Gefährdung erstellen-->
-  <div class="new_hazard">
-    <div class="new_hazard_title">
+  <div class="new-hazard">
+    <div class="new-hazard__title">
       Neue Gefährdung erstellen
     </div>
     <form class="form_newHazard">
