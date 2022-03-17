@@ -46,10 +46,3 @@
         margin-bottom: calc(10 * 0.063rem);
     }
 }
-
-@media (max-width: calc(700 * 0.063em)) {
-    .flex-element {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}

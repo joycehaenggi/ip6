@@ -50,7 +50,7 @@
     margin-left: calc(20 * 0.063rem);
 }
 
-@media (max-width: calc(1020 * 0.063em)) {
+@media (max-width: calc(1059 * 0.063em)) {
     .button--cancel {
         margin-bottom: calc(20 * 0.063rem);
         margin-right: 0;
@@ -58,9 +58,5 @@
 
     .button--new-hazard {
         min-width: calc(330 * 0.063rem);
-    }
-
-    .button--new-hazard-cancel {
-        margin-right: 0;
     }
 }
