@@ -1,139 +1,142 @@
 .new-hazard {
-  margin: calc(var(--margin-one) * 0.063rem) 0;
+    margin: calc(var(--margin-one) * 0.063rem) 0;
 }
 
 .new-hazard__title {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: calc(45 * 0.063rem);
-  padding-left: calc(13 * 0.063rem);
-  font-size: calc(14 * 0.063rem);
-  background-color: var(--frames-bluegray);
-  border-top-left-radius: calc(var(--border-radius) * 0.063rem);
-  border-top-right-radius: calc(var(--border-radius) * 0.063rem);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: calc(45 * 0.063rem);
+    padding-left: calc(13 * 0.063rem);
+    font-size: calc(14 * 0.063rem);
+    background-color: var(--frames-bluegray);
+    border-top-left-radius: calc(var(--border-radius) * 0.063rem);
+    border-top-right-radius: calc(var(--border-radius) * 0.063rem);
 }
 
 .new-hazard__form {
-  padding: calc(20 * 0.063rem);
-  font-size: calc(11 * 0.063rem);
-  border: calc(1 * 0.063rem) solid var(--frames-bluegray);
-  border-bottom-left-radius: calc(var(--border-radius) * 0.063rem);
-  border-bottom-right-radius: calc(var(--border-radius) * 0.063rem);
+    padding: calc(20 * 0.063rem);
+    font-size: calc(11 * 0.063rem);
+    border: calc(1 * 0.063rem) solid var(--frames-bluegray);
+    border-bottom-left-radius: calc(var(--border-radius) * 0.063rem);
+    border-bottom-right-radius: calc(var(--border-radius) * 0.063rem);
 }
 
 .new-hazard__row {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: calc(50 * 0.063rem);
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: calc(50 * 0.063rem);
+    flex-wrap: wrap;
 }
 
 .new-hazard__row--add {
-  align-items: flex-start;
-  min-height: unset;
-  height: calc(40 * 0.063rem);
+    align-items: flex-start;
+    min-height: unset;
+    height: calc(40 * 0.063rem);
 }
 
 .new-hazard__column {
-  min-height: calc(50 * 0.063rem);
-  margin-right: calc(10 * 0.063rem);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /*min-width: calc(300 * 0.063rem);*/
+    min-height: calc(50 * 0.063rem);
+    margin-right: calc(10 * 0.063rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*min-width: calc(300 * 0.063rem);*/
 }
 
 .new-hazard__column--column1 {
-  min-width: calc(250 * 0.063rem);
-  justify-content: flex-start;
+    min-width: calc(220 * 0.063rem);
+    justify-content: flex-start;
 }
 
 .new-hazard__column--column2 {
-  min-width: calc(330 * 0.063rem);
+    min-width: calc(330 * 0.063rem);
 }
 
 .new-hazard__column--column3 {
-  margin-right: 0;
-  min-width: calc(340 * 0.063rem);
+    min-width: calc(340 * 0.063rem);
 }
 
 .new-hazard__column--column3_part1 {
-  display: flex;
-  min-width: calc(110 * 0.063rem);
-  margin-right: calc(10 * 0.063rem);
+    display: flex;
+    min-width: calc(220 * 0.063rem);
+    margin-right: calc(10 * 0.063rem);
 }
 
 .new-hazard__column--column3_part2 {
-  min-width: calc(175 * 0.063rem);
+    min-width: calc(175 * 0.063rem);
 }
 
 .new-hazard__column--button-column {
-  justify-content: flex-start;
+    justify-content: flex-start;
 }
 
-.new-hazard__radio-buttons {
-  display: flex;
+.new-hazard__column--empty-column-add {
+    min-width: calc(220 * 0.063rem);
+    min-height: unset;
+    height: calc(40 * 0.063rem);
 }
 
-.new-hazard__column--column2-radio-buttons {
-  width: calc(175 * 0.063rem);
-}
-
-.new_hazard__column--empty-column-add {
-  min-width: calc(250 * 0.063rem);
-  height: calc(40 * 0.063rem);
-  margin-right: calc(10 * 0.063rem);
+.new-hazard__column--add {
+    align-items: baseline;
+    min-height: unset;
+    height: calc(40 * 0.063rem);
 }
 
 .new-hazard__info-icon-container {
-  height: calc(16 * 0.063rem);
-  width: calc(50 * 0.063rem);
-  display: flex;
-  align-items: center;
+    height: calc(16 * 0.063rem);
+    width: calc(50 * 0.063rem);
+    display: flex;
+    align-items: center;
 }
 
-@media (max-width: calc(1020 * 0.063em)) {
-  .columnInColumn-Severity {
-    min-width: calc(250 * 0.063rem);
-  }
-
-  .empty_column {
-    display: none;
-  }
-
-  .new-hazard__column--button-column {
-    min-width: calc(590 * 0.063rem);
-    flex-direction: column;
-    align-items: flex-end;
-  }
+.new-hazard__radio-buttons {
+    display: flex;
 }
 
 .new-hazard__input {
-  border: calc(1 * 0.063rem) solid var(--frames-bluegray);
-  border-radius: calc(var(--border-radius) * 0.063rem);
-  font-family: "OpenSans-Regular", sans-serif;
-  font-size: calc(var(--main-font-size) * 0.063rem);
-  width: calc(300 * 0.063rem);
-  height: calc(29 * 0.063rem);
-  padding-left: calc(5 * 0.063rem);
+    border: calc(1 * 0.063rem) solid var(--frames-bluegray);
+    border-radius: calc(var(--border-radius) * 0.063rem);
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: calc(var(--main-font-size) * 0.063rem);
+    width: calc(300 * 0.063rem);
+    height: calc(29 * 0.063rem);
+    padding-left: calc(5 * 0.063rem);
 }
+
 /*
 .add_new_input {
   margin-right: calc(10 * 0.063rem);;
 }*/
 
 .new-hazard__result {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: calc(1 * 0.063rem) solid var(--frames-bluegray);
-  border-radius: calc(var(--border-radius) * 0.063rem);
-  width: calc(120 * 0.063rem);
-  height: calc(29 * 0.063rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: calc(1 * 0.063rem) solid var(--frames-bluegray);
+    border-radius: calc(var(--border-radius) * 0.063rem);
+    width: calc(120 * 0.063rem);
+    height: calc(29 * 0.063rem);
 }
 
 .new-hazard__result--severity {
-  background-color: var(--frames-bluegray);
+    background-color: var(--frames-bluegray);
+}
+
+
+@media (max-width: calc(1020 * 0.063em)) {
+/*    .columnInColumn-Severity {
+        min-width: calc(250 * 0.063rem);
+    }*/
+
+    .new-hazard__column--empty_column {
+        display: none;
+    }
+
+    .new-hazard__column--button-column {
+        min-width: calc(590 * 0.063rem);
+        flex-direction: column;
+        align-items: flex-end;
+    }
 }

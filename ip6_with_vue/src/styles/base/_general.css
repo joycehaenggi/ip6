@@ -15,7 +15,7 @@ html {
     padding-right: calc(var(--padding-wrapper-header) * 0.063rem);
 }
 
-@media (max-width: calc(1150 * 0.063em)) {
+@media (max-width: calc(1200 * 0.063em)) {
     .wrapper {
         padding-left: calc(16 * 0.063rem);
         padding-right: calc(16 * 0.063rem);

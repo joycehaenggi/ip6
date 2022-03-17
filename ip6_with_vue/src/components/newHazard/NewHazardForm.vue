@@ -211,7 +211,7 @@
             </svg>
           </div>
         </div>
-        <div class="new-hazard__column new-hazard__column--column2">
+        <div class="new-hazard__column new-hazard__column--column2 new-hazard__column--column2-radio-buttons">
           <div class="new-hazard__radio-buttons">
             <label class="radio-button-container"> 1
               <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
@@ -285,9 +285,9 @@
         </div>
       </div>
       <div class="new-hazard__row new-hazard__button-container">
-        <div class="new-hazard__column new-hazard__column--column1 empty_column">
+        <div class="new-hazard__column new-hazard__column--column1 new-hazard__column--empty_column">
         </div>
-        <div class="new-hazard__column new-hazard__column--column2 empty_column">
+        <div class="new-hazard__column new-hazard__column--column2 new-hazard__column--empty_column">
         </div>
         <div class="new-hazard__column new-hazard__column--column3 new-hazard__column--button-column">
           <router-link :to="{ name: 'ListView', params: {
@@ -451,9 +451,9 @@ export default {
       var objTo = document.getElementById(TopicofnewTextfield)
       var divAdd = document.createElement("div")
       divAdd.innerHTML = '<div class="new-hazard__row new-hazard__row--add">\n' +
-          '<div class="new_hazard__column--empty-column-add">\n' +
+          '<div class="new-hazard__column new-hazard__column--empty-column-add">\n' +
           '</div>\n' +
-          '<div class="new-hazard__column--add">' +
+          '<div class="new-hazard__column new-hazard__column--add">' +
           '<input class="new-hazard__input" type="text">' +
           '</div></div>'
       objTo.appendChild(divAdd)
