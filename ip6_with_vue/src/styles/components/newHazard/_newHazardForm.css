@@ -69,6 +69,10 @@
   min-width: calc(175 * 0.063rem);
 }
 
+.new-hazard__column--button-column {
+  justify-content: flex-start;
+}
+
 .new-hazard__radio-buttons {
   display: flex;
 }
