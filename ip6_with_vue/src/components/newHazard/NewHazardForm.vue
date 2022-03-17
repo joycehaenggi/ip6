@@ -4,29 +4,29 @@
     <div class="new-hazard__title">
       Neue Gefährdung erstellen
     </div>
-    <form class="form_newHazard">
-      <div class="flex-element">
-        <div class="column column1">
-          <label class="label_customized">Gefährdung</label>
+    <form class="new-hazard__form">
+      <div class="new-hazard__row">
+        <div class="new-hazard__column new-hazard__column--column1">
+          <label>Gefährdung</label>
         </div>
-        <div class="column column2">
-          <input v-model="hazardNameNewHazardForm" class="input_customized" type="text">
-        </div>
-      </div>
-      <div class="flex-element">
-        <div class="column column1">
-          <label class="label_customized">Gefährdungssituation</label>
-        </div>
-        <div class="column column2">
-          <input v-model="hazardSituationNewHazardForm" class="input_customized" type="text">
+        <div class="new-hazard__column new-hazard__column--column2">
+          <input v-model="hazardNameNewHazardForm" class="new-hazard__input" type="text">
         </div>
       </div>
-      <div class="flex-element flex_add">
-        <div class="column column1">
-          <label class="label_customized addLabel">Schaden</label>
+      <div class="new-hazard__row">
+        <div class="new-hazard__column new-hazard__column--column1">
+          <label  >Gefährdungssituation</label>
         </div>
-        <div class="column column2">
-          <input v-model="hazardDamageNewHazardForm" class="input_customized add_new_input" type="text">
+        <div class="new-hazard__column new-hazard__column--column2">
+          <input v-model="hazardSituationNewHazardForm" class="new-hazard__input" type="text">
+        </div>
+      </div>
+      <div class="new-hazard__row flex_add">
+        <div class="new-hazard__column new-hazard__column--column1">
+          <label>Schaden</label>
+        </div>
+        <div class="new-hazard__column new-hazard__column--column2">
+          <input v-model="hazardDamageNewHazardForm" class="new-hazard__input" type="text">
           <svg class="new-hazard__add-icon" width="20" height="20" @click="addNewTextfield('add_new_Damage')"
                viewBox="0 0 20 20" fill="none"
                xmlns="http://www.w3.org/2000/svg">
@@ -41,24 +41,23 @@
       </div>
       <div id="add_new_Damage"></div>
 
-      <div class="flex-element">
-        <div class="column column1">
-          <div class="columnInColumn">
-            <label class="label_customized">Eintretungswahrscheinlichkeit</label>
-            <div class='tooltip tooltip--expand tooltip--new-hazard'
-                 data-title="Eintretungs-wahrscheinlichkeit vor Anwendung der Massnahmen.">
-              <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.96934 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.812641 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78747 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78747 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
-                    fill="#32404F"/>
-              </svg>
-            </div>
+      <div class="new-hazard__row">
+        <div class="new-hazard__column new-hazard__column--column1">
+          <label>Eintretungswahrscheinlichkeit</label>
+          <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
+               data-title="Eintretungs-wahrscheinlichkeit vor Anwendung der Massnahmen.">
+            <svg class="new-hazard__info-icon" width="6" height="12"
+                 viewBox="0 0 6 12" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path
+                  d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.96934 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.812641 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78747 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78747 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
+                  fill="#32404F"/>
+            </svg>
           </div>
         </div>
 
-        <div class="column column2">
-          <div class="radio">
+        <div class="new-hazard__column new-hazard__column--column2">
+          <div class="new-hazard__radio-buttons">
             <label class="radio-button-container"> 1
               <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
                      name="probabilityOfOccurrence" value="1"
@@ -91,10 +90,10 @@
             </label>
           </div>
         </div>
-        <div class="column column3">
-          <div class="columnInColumn columnInColumn-Severity">
+        <div class="new-hazard__column new-hazard__column--column3">
+          <div class="new-hazard__column--column3_part1">
             <label>Schweregrad</label>
-            <div class='tooltip tooltip--expand tooltip--new-hazard'
+            <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
                  data-title="Schweregrad vor Anwendung der Massnahmen.">
               <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
@@ -104,8 +103,8 @@
               </svg>
             </div>
           </div>
-          <div class="column3_part2">
-            <div class="radio">
+          <div class="new-hazard__column--column3_part2">
+            <div class="new-hazard__radio-buttons">
               <label class="radio-button-container"> 1
                 <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="1"
                        @click="displayRadioValueOfSeverity()">
@@ -136,22 +135,21 @@
         </div>
       </div>
 
-      <div class="flex-element">
-        <div class="column column1">
-          <div class="columnInColumn">
-            <label class="risk_priority_number_title">Risikoprioritätszahl</label>
-            <div class='tooltip tooltip--expand tooltip--new-hazard'
-                 data-title="Risikoprioritätszahl vor Anwendung der Massnahmen.">
-              <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.96934 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.812641 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78747 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78747 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
-                    fill="#32404F"/>
-              </svg>
-            </div>
+      <div class="new-hazard__row">
+        <div class="new-hazard__column new-hazard__column--column1">
+          <label class="risk_priority_number_title">Risikoprioritätszahl</label>
+          <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
+               data-title="Risikoprioritätszahl vor Anwendung der Massnahmen.">
+            <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path
+                  d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.96934 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.812641 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78747 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78747 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
+                  fill="#32404F"/>
+            </svg>
           </div>
+
         </div>
-        <div class="column column2">
+        <div class="new-hazard__column new-hazard__column--column2">
           <div class="result_field" id="resultRiskPriorityNumber">
             <div id="resultProbabilityOfOccurrence"></div>
             <p>/</p>
@@ -160,12 +158,12 @@
         </div>
       </div>
 
-      <div class="flex-element flex_add">
-        <div class="column column1">
-          <label class="label_customized addLabel">Massnahmen</label>
+      <div class="new-hazard__row flex_add">
+        <div class="new-hazard__column new-hazard__column--column1">
+          <label>Massnahmen</label>
         </div>
-        <div class="column column2 add_column">
-          <input v-model="hazardMeasuresNewHazardForm" class="input_customized add_new_input" type="text">
+        <div class="new-hazard__column new-hazard__column--column2 add_column">
+          <input v-model="hazardMeasuresNewHazardForm" class="new-hazard__input" type="text">
           <svg class="new-hazard__add-icon" width="20" height="20" @click="addNewTextfield('add_new_measures')"
                viewBox="0 0 20 20"
                fill="none"
@@ -182,43 +180,39 @@
 
       <div id="add_new_measures"></div>
 
-      <div class="flex-element">
-        <div class="column column1">
-          <div class="columnInColumn">
-            <label class="label_customized">Implementierungsnachweis</label>
-            <div class='tooltip tooltip--expand tooltip--new-hazard'
-                 data-title="Optionaler Upload eines Nachweises.">
-              <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.96934 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.812641 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78747 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78747 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
-                    fill="#32404F"/>
-              </svg>
-            </div>
+      <div class="new-hazard__row">
+        <div class="new-hazard__column new-hazard__column--column1">
+          <label>Implementierungsnachweis</label>
+          <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
+               data-title="Optionaler Upload eines Nachweises.">
+            <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path
+                  d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.96934 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.812641 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78747 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78747 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
+                  fill="#32404F"/>
+            </svg>
           </div>
         </div>
-        <div class="column column2">
+        <div class="new-hazard__column new-hazard__column--column2">
           <input type="file" name="file" id="file" class="inputfile" title="test"/>
         </div>
       </div>
 
-      <div class="flex-element">
-        <div class="column column1">
-          <div class="columnInColumn">
-            <label class="label_customized">Eintretungswahrscheinlichkeit</label>
-            <div class='tooltip tooltip--expand tooltip--new-hazard'
-                 data-title="Eintretungs-wahrscheinlichkeit nach Anwendung der Massnahmen.">
-              <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.96934 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.812641 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78747 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78747 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
-                    fill="#32404F"/>
-              </svg>
-            </div>
+      <div class="new-hazard__row">
+        <div class="new-hazard__column new-hazard__column--column1">
+          <label>Eintretungswahrscheinlichkeit</label>
+          <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
+               data-title="Eintretungs-wahrscheinlichkeit nach Anwendung der Massnahmen.">
+            <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path
+                  d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.96934 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.812641 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78747 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78747 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
+                  fill="#32404F"/>
+            </svg>
           </div>
         </div>
-        <div class="column column2">
-          <div class="radio">
+        <div class="new-hazard__column new-hazard__column--column2">
+          <div class="new-hazard__radio-buttons">
             <label class="radio-button-container"> 1
               <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
                      name="probabilityOfOccurrenceTwo" value="1"
@@ -251,10 +245,10 @@
             </label>
           </div>
         </div>
-        <div class="column column3">
-          <div class="columnInColumn columnInColumn-Severity">
-            <label class="responsive_width">Schweregrad</label>
-            <div class='tooltip tooltip--expand tooltip--new-hazard'
+        <div class="new-hazard__column new-hazard__column--column3">
+          <div class="new-hazard__column--column3_part1">
+            <label>Schweregrad</label>
+            <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
                  data-title="Schweregrad nach Anwendung der Massnahmen.">
               <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
@@ -264,27 +258,25 @@
               </svg>
             </div>
           </div>
-          <div class="column3_part2">
+          <div class="new-hazard__column--column3_part2">
             <div class="result_field severity_field" id="resultSeverity_two"></div>
           </div>
         </div>
       </div>
-      <div class="flex-element">
-        <div class="column column1">
-          <div class="columnInColumn">
-            <label class="risk_priority_number_title">Risikoprioritätszahl</label>
-            <div class='tooltip tooltip--expand tooltip--new-hazard'
-                 data-title="Risikoprioritätszahl nach Anwendung der Massnahmen.">
-              <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.96934 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.812641 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78747 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78747 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
-                    fill="#32404F"/>
-              </svg>
-            </div>
+      <div class="new-hazard__row">
+        <div class="new-hazard__column new-hazard__column--column1">
+          <label class="risk_priority_number_title">Risikoprioritätszahl</label>
+          <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
+               data-title="Risikoprioritätszahl nach Anwendung der Massnahmen.">
+            <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path
+                  d="M5.14332 10.705L4.97565 11.3904C4.47264 11.5889 4.07084 11.7401 3.77164 11.8439C3.47211 11.9482 3.12408 12 2.72755 12C2.11861 12 1.64496 11.8508 1.30715 11.5545C0.96934 11.2571 0.80038 10.8801 0.80038 10.4228C0.80038 10.2458 0.812641 10.0637 0.83813 9.87816C0.863834 9.69243 0.904703 9.48324 0.960628 9.24943L1.58925 7.02446C1.64518 6.8114 1.69271 6.60953 1.73079 6.41863C1.7694 6.22892 1.788 6.05437 1.788 5.89724C1.788 5.61309 1.72917 5.41434 1.61205 5.3026C1.49493 5.19118 1.27144 5.13461 0.939656 5.13461C0.777149 5.13461 0.610126 5.16063 0.439876 5.21097C0.268873 5.26151 0.122713 5.31034 0 5.35573L0.168099 4.66978C0.579904 4.50211 0.973534 4.35853 1.35006 4.23937C1.72659 4.11988 2.08236 4.06008 2.41889 4.06008C3.02363 4.06008 3.49029 4.20624 3.81799 4.49856C4.14569 4.79109 4.30949 5.17031 4.30949 5.63761C4.30949 5.7343 4.29874 5.90466 4.27561 6.14815C4.25303 6.39218 4.21098 6.61577 4.14967 6.81915L3.52374 9.0352C3.47244 9.21319 3.4263 9.41667 3.38618 9.64564C3.34478 9.87311 3.32499 10.0469 3.32499 10.1635C3.32499 10.4577 3.39059 10.6586 3.52212 10.7654C3.65462 10.8722 3.88284 10.9254 4.207 10.9254C4.35918 10.9254 4.53233 10.8984 4.72474 10.8454C4.9166 10.7923 5.05653 10.7458 5.14332 10.705ZM5.30206 1.40136C5.30206 1.78747 5.15655 2.11721 4.86412 2.38834C4.57245 2.66044 4.22098 2.7966 3.80982 2.7966C3.39737 2.7966 3.04504 2.66044 2.75003 2.38834C2.45556 2.1171 2.308 1.78747 2.308 1.40136C2.308 1.01602 2.45556 0.685733 2.75003 0.41116C3.0445 0.137017 3.39747 0 3.80982 0C4.22087 0 4.57245 0.13734 4.86412 0.41116C5.15676 0.685733 5.30206 1.01612 5.30206 1.40136Z"
+                  fill="#32404F"/>
+            </svg>
           </div>
         </div>
-        <div class="column column2">
+        <div class="new-hazard__column new-hazard__column--column2">
           <div class="result_field" id="resultRiskPriorityNumber2">
             <div id="resultProbabilityOfOccurrence_two"></div>
             <p>/</p>
@@ -292,12 +284,12 @@
           </div>
         </div>
       </div>
-      <div class="flex-element new-hazard__button-container">
-        <div class="column column1 empty_column">
+      <div class="new-hazard__row new-hazard__button-container">
+        <div class="new-hazard__column new-hazard__column--column1 empty_column">
         </div>
-        <div class="column column2 empty_column">
+        <div class="new-hazard__column new-hazard__column--column2 empty_column">
         </div>
-        <div class="column column3 button-column">
+        <div class="new-hazard__column new-hazard__column--column3 new-hazard__column--button-column">
           <router-link :to="{ name: 'ListView', params: {
             hazardOriginalIdListView: hazardOriginalIdNewHazardForm,}}">
             <div class="button button--cancel button--new-hazard button--new-hazard-cancel" id="cancel">
@@ -316,7 +308,8 @@
             hazardOriginalIdListView: hazardOriginalIdNewHazardForm
           }}"
                        id="router-link--new-hazard-submit">
-            <div class="button button--submit button--new-hazard button--new-hazard-submit" id="button--new-hazard-submit">
+            <div class="button button--submit button--new-hazard button--new-hazard-submit"
+                 id="button--new-hazard-submit">
               Speichern
             </div>
           </router-link>
@@ -457,11 +450,11 @@ export default {
     addNewTextfield(TopicofnewTextfield) {
       var objTo = document.getElementById(TopicofnewTextfield)
       var divAdd = document.createElement("div")
-      divAdd.innerHTML = '<div class="flex_add">\n' +
-          '<div class="empty_column-Flex-Add">\n' +
+      divAdd.innerHTML = '<div class="new-hazard__row--add">\n' +
+          '<div class="new_hazard__column--empty-column-add">\n' +
           '</div>\n' +
-          '<div class="flex_add_column">' +
-          '<input class="input_customized add_new_input" type="text">' +
+          '<div class="new-hazard__column--add">' +
+          '<input class="new-hazard__input" type="text">' +
           '</div></div>'
       objTo.appendChild(divAdd)
     }
