@@ -150,7 +150,7 @@
 
         </div>
         <div class="new-hazard__column new-hazard__column--column2">
-          <div class="result_field" id="resultRiskPriorityNumber">
+          <div class="new-hazard__result-field" id="resultRiskPriorityNumber">
             <div id="resultProbabilityOfOccurrence"></div>
             <p>/</p>
             <div id="resultSeverity"></div>
@@ -259,7 +259,7 @@
             </div>
           </div>
           <div class="new-hazard__column--column3_part2">
-            <div class="result_field severity_field" id="resultSeverity_two"></div>
+            <div class="new-hazard__result-field severity_field" id="resultSeverity_two"></div>
           </div>
         </div>
       </div>
@@ -277,7 +277,7 @@
           </div>
         </div>
         <div class="new-hazard__column new-hazard__column--column2">
-          <div class="result_field" id="resultRiskPriorityNumber2">
+          <div class="new-hazard__result-field" id="resultRiskPriorityNumber2">
             <div id="resultProbabilityOfOccurrence_two"></div>
             <p>/</p>
             <div id="resultSeverity_three"></div>

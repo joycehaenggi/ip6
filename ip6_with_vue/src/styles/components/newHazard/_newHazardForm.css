@@ -122,7 +122,7 @@
   margin-right: calc(10 * 0.063rem);;
 }*/
 
-.result_field {
+.new-hazard__result {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,6 +132,6 @@
   height: calc(29 * 0.063rem);
 }
 
-.severity_field {
+.new-hazard__severity {
   background-color: var(--frames-bluegray);
 }
