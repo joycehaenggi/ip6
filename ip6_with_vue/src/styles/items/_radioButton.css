@@ -2,7 +2,6 @@
 .container {
     display: block;
     position: relative;
-    cursor: pointer;
     font-size: calc(var(--main-font-size) * 0.063rem);
     padding-left: calc(20 * 0.063rem);
     padding-right: calc(10 * 0.063rem);
@@ -10,6 +9,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    cursor: pointer;
 }
 
 .container:last-child {

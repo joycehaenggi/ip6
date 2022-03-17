@@ -63,38 +63,38 @@
           <td class="hazard-table__detail-view detail-view" :colspan="headers.length ">
             <form class="form-detail-view">
 
-              <div class='detail-view__groups detail-view__groups--description-icon'>
-                <div class='detail-view__group detail-view__group--square'>
-                  <div class='detail-view__title detail-view__title--square'> {{ item.hazardDetailDescription }}
+              <div class="detail-view__groups detail-view__groups--description-icon">
+                <div class="detail-view__group detail-view__group--square">
+                  <div class="detail-view__title detail-view__title--square"> {{ item.hazardDetailDescription }}
                   </div>
-                  <div class='detail-view__content detail-view__content--square'><img :src="`${item.imageName}`"
-                                                                                      width='89' height='auto'>
+                  <div class="detail-view__content detail-view__content--square"><img :src="`${item.imageName}`"
+                                                                                      width="89" height="auto">
                   </div>
                 </div>
               </div>
 
-              <div class='detail-view__groups'>
-                <div class='detail-view__group detail-view__group--damage'>
-                  <div class='detail-view__title'>Schaden</div>
-                  <div class='detail-view__content'>
+              <div class="detail-view__groups">
+                <div class="detail-view__group detail-view__group--damage">
+                  <div class="detail-view__title">Schaden</div>
+                  <div class="detail-view__content">
                     <ul>
                       <li v-for="damage in item.damage" :key="damage.description">{{ damage.description }}</li>
                     </ul>
                   </div>
                 </div>
 
-                <div class='detail-view__group'>
-                  <div class='detail-view__title'>Massnahmen zur Risikominderung</div>
-                  <div class='detail-view__content'>
+                <div class="detail-view__group">
+                  <div class="detail-view__title">Massnahmen zur Risikominderung</div>
+                  <div class="detail-view__content">
                     <ul>
                       <li v-for="measure in item.measures" :key="measure.description">{{ measure.description }}</li>
                     </ul>
                   </div>
                 </div>
 
-                <div class='detail-view__group'>
-                  <div class='detail-view__title'>Auswirkungen der Risikominderung</div>
-                  <div class='detail-view__content detail-view__content--graphic'>
+                <div class="detail-view__group">
+                  <div class="detail-view__title">Auswirkungen der Risikominderung</div>
+                  <div class="detail-view__content detail-view__content--graphic">
 
                     <div class="detail-view__risk-matrix">
                       <div class="detail-view__risk-matrix-title">Risikomatrix</div>
@@ -109,10 +109,10 @@
                   </div>
                 </div>
 
-                <div class='detail-view__group'>
-                  <div class='detail-view__title'>Bewertung</div>
-                  <div class='detail-view__content'>
-                    <div class='detail-view__evaluation-question'>Wollen Sie innerhalb der Spezifikation bleiben oder
+                <div class="detail-view__group">
+                  <div class="detail-view__title">Bewertung</div>
+                  <div class="detail-view__content">
+                    <div class="detail-view__evaluation-question">Wollen Sie innerhalb der Spezifikation bleiben oder
                       ein Custom Made
                       Device herstellen?
                     </div>
@@ -133,10 +133,10 @@
 
                 <!--Nachbearbeitung (in Spezifikation bleiben) -->
                 <div v-if="specification_customMadeDevice === 'Spezifikation'">
-                  <div class='detail-view__group'>
-                    <div class='detail-view__title'>Nachbearbeitung</div>
-                    <div class='detail-view__content'>
-                      <div class='detail-view__evaluation-question'>Ist eine Nachbearbeitung des Devices möglich?</div>
+                  <div class="detail-view__group">
+                    <div class="detail-view__title">Nachbearbeitung</div>
+                    <div class="detail-view__content">
+                      <div class="detail-view__evaluation-question">Ist eine Nachbearbeitung des Devices möglich?</div>
                       <label class="detail-view__evaluation-answer-label container">
                         <div class="detail-view__evaluation-answer-text"> Ja</div>
                         <input :name="`postPrcessing`" type="radio" :value="`yes`"
@@ -195,8 +195,8 @@
                     rows="2"
                     aria-required="true"
                     v-model="customMadeDeviceDescription"/>
-                <div class='detail-view__group'>
-                  <div class='detail-view__title'>Arztnachweis</div>
+                <div class="detail-view__group">
+                  <div class="detail-view__title">Arztnachweis</div>
                   <div class="detail-view__content">
                     <input class=" inputfile" type="file" name="file" id="file"/>
                   </div>
