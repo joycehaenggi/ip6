@@ -450,7 +450,7 @@ export default {
     addNewTextfield(TopicofnewTextfield) {
       var objTo = document.getElementById(TopicofnewTextfield)
       var divAdd = document.createElement("div")
-      divAdd.innerHTML = '<div class="new-hazard__row--add">\n' +
+      divAdd.innerHTML = '<div class="new-hazard__row new-hazard__row--add">\n' +
           '<div class="new_hazard__column--empty-column-add">\n' +
           '</div>\n' +
           '<div class="new-hazard__column--add">' +

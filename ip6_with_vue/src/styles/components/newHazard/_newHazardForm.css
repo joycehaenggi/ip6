@@ -31,11 +31,9 @@
 }
 
 .new-hazard__row--add {
-  display: flex;
-  justify-content: flex-start;
   align-items: flex-start;
-  min-height: calc(40 * 0.063rem);
-  flex-wrap: wrap;
+  min-height: unset;
+  height: calc(40 * 0.063rem);
 }
 
 .new-hazard__column {
@@ -58,7 +56,7 @@
 
 .new-hazard__column--column3 {
   margin-right: 0;
-  min-width: calc(300 * 0.063rem);
+  min-width: calc(340 * 0.063rem);
 }
 
 .new-hazard__column--column3_part1 {
