@@ -1,5 +1,5 @@
 .new-hazard {
-  margin-top: calc(40 * 0.063rem);
+  margin: calc(var(--margin-one) * 0.063rem) 0;
 }
 
 .new-hazard__title {
