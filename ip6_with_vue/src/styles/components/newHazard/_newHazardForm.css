@@ -132,6 +132,6 @@
   height: calc(29 * 0.063rem);
 }
 
-.new-hazard__severity {
+.new-hazard__result--severity {
   background-color: var(--frames-bluegray);
 }

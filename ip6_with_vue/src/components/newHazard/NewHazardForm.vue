@@ -44,7 +44,7 @@
       <div class="new-hazard__row">
         <div class="new-hazard__column new-hazard__column--column1">
           <label>Eintretungswahrscheinlichkeit</label>
-          <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
+          <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                data-title="Eintretungs-wahrscheinlichkeit vor Anwendung der Massnahmen.">
             <svg class="new-hazard__info-icon" width="6" height="12"
                  viewBox="0 0 6 12" fill="none"
@@ -93,7 +93,7 @@
         <div class="new-hazard__column new-hazard__column--column3">
           <div class="new-hazard__column--column3_part1">
             <label>Schweregrad</label>
-            <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
+            <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                  data-title="Schweregrad vor Anwendung der Massnahmen.">
               <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +150,7 @@
 
         </div>
         <div class="new-hazard__column new-hazard__column--column2">
-          <div class="new-hazard__result-field" id="resultRiskPriorityNumber">
+          <div class="new-hazard__result" id="resultRiskPriorityNumber">
             <div id="resultProbabilityOfOccurrence"></div>
             <p>/</p>
             <div id="resultSeverity"></div>
@@ -183,7 +183,7 @@
       <div class="new-hazard__row">
         <div class="new-hazard__column new-hazard__column--column1">
           <label>Implementierungsnachweis</label>
-          <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
+          <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                data-title="Optionaler Upload eines Nachweises.">
             <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
@@ -201,7 +201,7 @@
       <div class="new-hazard__row">
         <div class="new-hazard__column new-hazard__column--column1">
           <label>Eintretungswahrscheinlichkeit</label>
-          <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
+          <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                data-title="Eintretungs-wahrscheinlichkeit nach Anwendung der Massnahmen.">
             <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
@@ -248,7 +248,7 @@
         <div class="new-hazard__column new-hazard__column--column3">
           <div class="new-hazard__column--column3_part1">
             <label>Schweregrad</label>
-            <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
+            <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                  data-title="Schweregrad nach Anwendung der Massnahmen.">
               <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
@@ -259,14 +259,14 @@
             </div>
           </div>
           <div class="new-hazard__column--column3_part2">
-            <div class="new-hazard__result-field severity_field" id="resultSeverity_two"></div>
+            <div class="new-hazard__result new-hazard__result--severity" id="resultSeverity_two"></div>
           </div>
         </div>
       </div>
       <div class="new-hazard__row">
         <div class="new-hazard__column new-hazard__column--column1">
           <label class="risk_priority_number_title">Risikoprioritätszahl</label>
-          <div class='tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container'
+          <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                data-title="Risikoprioritätszahl nach Anwendung der Massnahmen.">
             <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
@@ -277,7 +277,7 @@
           </div>
         </div>
         <div class="new-hazard__column new-hazard__column--column2">
-          <div class="new-hazard__result-field" id="resultRiskPriorityNumber2">
+          <div class="new-hazard__result" id="resultRiskPriorityNumber2">
             <div id="resultProbabilityOfOccurrence_two"></div>
             <p>/</p>
             <div id="resultSeverity_three"></div>
