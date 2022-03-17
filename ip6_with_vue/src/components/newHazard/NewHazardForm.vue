@@ -59,35 +59,35 @@
 
         <div class="column column2">
           <div class="radio">
-            <label class="container"> 1
+            <label class="radio-button-container"> 1
               <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
                      name="probabilityOfOccurrence" value="1"
                      @click="displayRadioValueOfProbabilityOfOccurrence(1)">
-              <span class="custom_radio_button"></span>
+              <span class="radio-button-container__button"></span>
             </label>
-            <label class="container"> 2
+            <label class="radio-button-container"> 2
               <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
                      name="probabilityOfOccurrence" value="2"
                      @click="displayRadioValueOfProbabilityOfOccurrence(1)">
-              <span class="custom_radio_button"></span>
+              <span class="radio-button-container__button"></span>
             </label>
-            <label class="container"> 3
+            <label class="radio-button-container"> 3
               <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
                      name="probabilityOfOccurrence" value="3"
                      @click="displayRadioValueOfProbabilityOfOccurrence(1)">
-              <span class="custom_radio_button"></span>
+              <span class="radio-button-container__button"></span>
             </label>
-            <label class="container"> 4
+            <label class="radio-button-container"> 4
               <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
                      name="probabilityOfOccurrence" value="4"
                      @click="displayRadioValueOfProbabilityOfOccurrence(1)">
-              <span class="custom_radio_button"></span>
+              <span class="radio-button-container__button"></span>
             </label>
-            <label class="container"> 5
+            <label class="radio-button-container"> 5
               <input v-model="hazardProbabilityOfOccurenceBeforeNewHazardForm" type="radio"
                      name="probabilityOfOccurrence" value="5"
                      @click="displayRadioValueOfProbabilityOfOccurrence(1)">
-              <span class="custom_radio_button"></span>
+              <span class="radio-button-container__button"></span>
             </label>
           </div>
         </div>
@@ -106,30 +106,30 @@
           </div>
           <div class="column3_part2">
             <div class="radio">
-              <label class="container"> 1
+              <label class="radio-button-container"> 1
                 <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="1"
                        @click="displayRadioValueOfSeverity()">
-                <span class="custom_radio_button"></span>
+                <span class="radio-button-container__button"></span>
               </label>
-              <label class="container"> 2
+              <label class="radio-button-container"> 2
                 <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="2"
                        @click="displayRadioValueOfSeverity()">
-                <span class="custom_radio_button"></span>
+                <span class="radio-button-container__button"></span>
               </label>
-              <label class="container"> 3
+              <label class="radio-button-container"> 3
                 <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="3"
                        @click="displayRadioValueOfSeverity()">
-                <span class="custom_radio_button"></span>
+                <span class="radio-button-container__button"></span>
               </label>
-              <label class="container"> 4
+              <label class="radio-button-container"> 4
                 <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="4"
                        @click="displayRadioValueOfSeverity()">
-                <span class="custom_radio_button"></span>
+                <span class="radio-button-container__button"></span>
               </label>
-              <label class="container"> 5
+              <label class="radio-button-container"> 5
                 <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="5"
                        @click="displayRadioValueOfSeverity()">
-                <span class="custom_radio_button"></span>
+                <span class="radio-button-container__button"></span>
               </label>
             </div>
           </div>
@@ -219,35 +219,35 @@
         </div>
         <div class="column column2">
           <div class="radio">
-            <label class="container"> 1
+            <label class="radio-button-container"> 1
               <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
                      name="probabilityOfOccurrenceTwo" value="1"
                      @click="displayRadioValueOfProbabilityOfOccurrence(2)">
-              <span class="custom_radio_button"></span>
+              <span class="radio-button-container__button"></span>
             </label>
-            <label class="container"> 2
+            <label class="radio-button-container"> 2
               <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
                      name="probabilityOfOccurrenceTwo" value="2"
                      @click="displayRadioValueOfProbabilityOfOccurrence(2)">
-              <span class="custom_radio_button"></span>
+              <span class="radio-button-container__button"></span>
             </label>
-            <label class="container"> 3
+            <label class="radio-button-container"> 3
               <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
                      name="probabilityOfOccurrenceTwo" value="3"
                      @click="displayRadioValueOfProbabilityOfOccurrence(2)">
-              <span class="custom_radio_button"></span>
+              <span class="radio-button-container__button"></span>
             </label>
-            <label class="container"> 4
+            <label class="radio-button-container"> 4
               <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
                      name="probabilityOfOccurrenceTwo" value="4"
                      @click="displayRadioValueOfProbabilityOfOccurrence(2)">
-              <span class="custom_radio_button"></span>
+              <span class="radio-button-container__button"></span>
             </label>
-            <label class="container"> 5
+            <label class="radio-button-container"> 5
               <input v-model="hazardProbabilityOfOccurenceAfterNewHazardForm" type="radio"
                      name="probabilityOfOccurrenceTwo" value="5"
                      @click="displayRadioValueOfProbabilityOfOccurrence(2)">
-              <span class="custom_radio_button"></span>
+              <span class="radio-button-container__button"></span>
             </label>
           </div>
         </div>

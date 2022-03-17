@@ -116,17 +116,17 @@
                       ein Custom Made
                       Device herstellen?
                     </div>
-                    <label class="detail-view__evaluation-answer-label container">
+                    <label class="detail-view__evaluation-answer-label radio-button-container">
                       <div class="detail-view__evaluation-answer-text"> Spezifikation</div>
                       <input type="radio" :name="`evaluation`" :value="`Spezifikation`"
                              v-model="specification_customMadeDevice">
-                      <span class="custom_radio_button"></span>
+                      <span class="radio-button-container__button"></span>
                     </label>
-                    <label class="detail-view__evaluation-answer-label container">
+                    <label class="detail-view__evaluation-answer-label radio-button-container">
                       <div class="detail-view__evaluation-answer-text"> Custom Made Device</div>
                       <input type="radio" :name="`evaluation`" :value="`CustomMadeDevice`"
                              v-model="specification_customMadeDevice">
-                      <span class="custom_radio_button"></span>
+                      <span class="radio-button-container__button"></span>
                     </label>
                   </div>
                 </div>
@@ -137,17 +137,17 @@
                     <div class="detail-view__title">Nachbearbeitung</div>
                     <div class="detail-view__content">
                       <div class="detail-view__evaluation-question">Ist eine Nachbearbeitung des Devices möglich?</div>
-                      <label class="detail-view__evaluation-answer-label container">
+                      <label class="detail-view__evaluation-answer-label radio-button-container">
                         <div class="detail-view__evaluation-answer-text"> Ja</div>
                         <input :name="`postPrcessing`" type="radio" :value="`yes`"
                                v-model="postProcessingPossibility">
-                        <span class="custom_radio_button"></span>
+                        <span class="radio-button-container__button"></span>
                       </label>
-                      <label class="detail-view__evaluation-answer-label container">
+                      <label class="detail-view__evaluation-answer-label radio-button-container">
                         <div class="detail-view__evaluation-answer-text"> Nein</div>
                         <input :name="`postPrcessing`" type="radio" :value="`no`"
                                v-model="postProcessingPossibility">
-                        <span class="custom_radio_button"></span>
+                        <span class="radio-button-container__button"></span>
                       </label>
                     </div>
                   </div>
@@ -185,7 +185,7 @@
               </div>
 
               <!--Custom Made Device (bewusst ausserhalb Spezifikation) -->
-              <div class="detail-view__groups detail-view__groups--custom-made-device"
+              <div class="detail-view__groups detail-view__groups--made-device"
                    v-if="specification_customMadeDevice === 'CustomMadeDevice'">
                 <v-textarea
                     outlined
