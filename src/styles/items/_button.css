@@ -9,28 +9,31 @@
     padding-right: calc(var(--padding-button) * 0.0625rem);
     border-radius: calc(50 * 0.0625rem);
     cursor: pointer;
-}
-
-.button:hover {
-    background-color: var(--notification-blue);
-}
-
-#button--next-step:hover, #newHazardSubmit:hover {
-    background-color: var(--notification-blue) !important;
+    transition: ease-out 0.3s;
 }
 
 .button--submit {
     background-color: var(--button-blue);
     color: white;
+    box-shadow: inset 0 0 0 0 var(--notification-blue);
 }
 
 .button--cancel {
     background-color: var(--frames-bluegray);
     color: var(--notification-blue);
+    box-shadow: inset 0 0 0 0 #d3d8e1;
+}
+
+#button--next-step:hover, #newHazardSubmit:hover {
+    box-shadow: inset 165px 0 0 0 var(--notification-blue) !important;
+}
+
+.button--submit:hover {
+    box-shadow: inset 165px 0 0 0 var(--notification-blue);
 }
 
 .button--cancel:hover {
-    background-color: #d3d8e1;
+    box-shadow: inset 165px 0 0 0 #d3d8e1;
 }
 
 .button--new-hazard {

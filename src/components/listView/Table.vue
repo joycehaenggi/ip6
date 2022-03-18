@@ -167,7 +167,8 @@
                         <button class="button button--cancel">Gefährdung erstellen</button>
                       </router-link>
                       <input @click="numberOfCheckedCheckboxes(item.id, false, true, false)"
-                             class="button button--submit button--finish-hazard"
+                             class="button button--submit button--finish-hazard material-bubble"
+                             id="btn"
                              type="submit" value="Gefährdung abschliessen">
                     </div>
                   </div>
