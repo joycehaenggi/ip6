@@ -49,7 +49,8 @@
                class="tooltip tooltip--expand"
                data-title="Akzeptiert-Status wird automatisch bei Verifizierung des Custom Made Devices gesetzt."
                @click="moveCheckmark(item.id, 'acceptedDiv', 'apply-shake', 820)">
-            <svg class="hazard-table__accepted-status" :id="`accepted${item.id}`" width="17" height="15" viewBox="0 0 17 15"
+            <svg class="hazard-table__accepted-status" :id="`accepted${item.id}`" width="17" height="15"
+                 viewBox="0 0 17 15"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 1L5.6875 14L1 8.09091" stroke="#4C5A69" stroke-width="1.5" stroke-linecap="round"
                     stroke-linejoin="round"
@@ -220,7 +221,7 @@
         <div class="modal__content" @click.stop="showModal = true">
           <div class="modal__close-span">
             <span class="modal__close" @click.stop="showModal = false">
-              <svg class="modal__close-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+<!--              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_2029_82762)">
                 <path
@@ -235,13 +236,39 @@
                 <rect width="16" height="16" fill="white"/>
                 </clipPath>
                 </defs>
+              </svg>-->
+
+<!--              <svg class="modal__close-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_2133_82499)">
+                  <path class="modal__close-svg-path"
+                      d="M9.46586 8.01266L15.696 1.78238C16.1014 1.37713 16.1014 0.721889 15.696 0.316636C15.2907 -0.0886181 14.6355 -0.0886181 14.2302 0.316636L7.99992 6.54691L1.76983 0.316636C1.36439 -0.0886181 0.709337 -0.0886181 0.304083 0.316636C-0.101361 0.721889 -0.101361 1.37713 0.304083 1.78238L6.53418 8.01266L0.304083 14.2429C-0.101361 14.6482 -0.101361 15.3034 0.304083 15.7087C0.506046 15.9108 0.771596 16.0124 1.03696 16.0124C1.30232 16.0124 1.56768 15.9108 1.76983 15.7087L7.99992 9.47841L14.2302 15.7087C14.4324 15.9108 14.6977 16.0124 14.9631 16.0124C15.2284 16.0124 15.4938 15.9108 15.696 15.7087C16.1014 15.3034 16.1014 14.6482 15.696 14.2429L9.46586 8.01266Z"
+                      fill="#687D99"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_2133_82499">
+                  <rect width="16" height="16" fill="white"/>
+                  </clipPath>
+                  </defs>
+              </svg>-->
+
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2133_82506)">
+                <path class="modal__close-svg-path" d="M1.51672 15.8995C1.12445 15.9223 0.738661 15.7919 0.440711 15.5358C-0.146904 14.9447 -0.146904 13.99 0.440711 13.3989L13.3076 0.532C13.9187 -0.0398937 14.8778 -0.00810247 15.4496 0.603069C15.9668 1.15575 15.9969 2.00523 15.5202 2.59314L2.57757 15.5358C2.28346 15.7882 1.90386 15.9184 1.51672 15.8995V15.8995Z" fill="#687D99"/>
+                <path class="modal__close-svg-path" d="M14.3684 15.8995C13.9708 15.8978 13.5898 15.74 13.3075 15.4601L0.440589 2.59313C-0.103806 1.9574 -0.0297926 1.00067 0.605934 0.456224C1.17334 -0.0296787 2.01014 -0.0296787 2.57749 0.456224L15.5201 13.3231C16.1312 13.8951 16.1628 14.8542 15.5907 15.4652C15.568 15.4895 15.5445 15.5131 15.5201 15.5358C15.2032 15.8114 14.7862 15.9431 14.3684 15.8995V15.8995Z" fill="#687D99"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_2133_82506">
+                <rect width="16" height="16" fill="white"/>
+                </clipPath>
+                </defs>
               </svg>
             </span>
           </div>
           <div class="modal__inner-part">
             <div class="modal__inner-top-part">
-              <div class="modal__text">Möchten Sie Herstellung des Devices wirklich abbrechen? Der aktuelle Fortschritt
-                wird dabei zurückgesetzt.
+              <div class="modal__text">
+                <div class="modal__text-row"> Möchten Sie Herstellung des Devices wirklich abbrechen? </div>
+                <div class="modal__text-row">Der aktuelle Fortschritt wird dabei zurückgesetzt.</div>
               </div>
             </div>
 
