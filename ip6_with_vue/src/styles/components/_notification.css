@@ -46,3 +46,12 @@
         display: none;
     }
 }
+
+@media (max-width: calc(400 * 0.0625em)) {
+    #notification__text-id {
+        margin-left: calc(15 * 0.0625rem);
+    }
+    .notification__arrow {
+        display: none;
+    }
+}
