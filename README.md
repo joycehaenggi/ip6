@@ -23,11 +23,11 @@ Dieser digitale Prozess sollte bei der Herstellung eines patientenangepassten Im
 * Die Daten für die Darstellung der Informationen stammen aus der Excel-Tabelle PFMEA-Orbita.xlsx.
 * Alle Dokumente liegen auf dem privaten Team "IP6 - UX und Usability für Patient Matched Production_M365" auf Microsoft Teams. Alle beteiligten Personen haben Zugang zu diesem Ordner.
 
-###Projektteam
+### Projektteam
 * Joyce Hänggi, 7iCbb, iCompetence
 * Florian Daasch, 7iCbb, iCompetence
 
-###Technologien
+### Technologien
 Eine Liste der im Rahmen des Projekts verwendeten Technologien:
 * Vue.js (https://vuejs.org): Version 4
 * Vuetify (https://vuetifyjs.com/en/): Version 2
