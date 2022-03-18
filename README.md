@@ -10,7 +10,7 @@
 ### Allgemeine Informationen
 **Zeitrahmen:** 20.09.2021 bis 25.03.2022
 >Das Ziel der Bachelorarbeit war es, einen virtuellen Assistenten für Risikovisualisierungen medizinischer Implantate als Webapplikation zu entwickeln. 
-Dieser digitale Prozess sollte bei der Herstellung eines patientenangepassten Implantats die Risikoabschätzungen übersichtlicher gestalten und Fehlerquellen minimieren, um eine möglichst grosse Sicherheit in der Herstellung eines patientenspezifischen Implantats zu bieten.
+Dieser digitale Prozess sollte bei der Herstellung eines patientenangepassten Implantats die Risikoabschätzungen übersichtlicher gestalten und Fehlerquellen minimieren, um eine möglichst grosse Sicherheit in der Herstellung eines patientenspezifischen Implantats zu sicherzustellen.
 
 
 **Betreuer/in:** Kathrin Koebel, Alexandre Thomas, Dr. Doris Agotai
