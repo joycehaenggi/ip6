@@ -92,17 +92,6 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     padding: 0;
 }
 
-.hazard-situation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: calc(18 * 0.0625rem);
-}
-
-.hazard-situation-text {
-    font-weight: bold;
-}
-
 .detail-view__groups {
     padding: 0 calc(40 * 0.0625rem);
 }
