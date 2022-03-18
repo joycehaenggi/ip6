@@ -1,0 +1,62 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: OpenSans-SemiBold, serif;
+    font-size: calc(var(--main-font-size) * 0.0625rem);
+    height: calc(38 * 0.0625rem);
+    padding-left: calc(var(--padding-button) * 0.0625rem);
+    padding-right: calc(var(--padding-button) * 0.0625rem);
+    border-radius: calc(50 * 0.0625rem);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--notification-blue);
+}
+
+#button--next-step:hover, #newHazardSubmit:hover {
+    background-color: var(--notification-blue) !important;
+}
+
+.button--submit {
+    background-color: var(--button-blue);
+    color: white;
+}
+
+.button--cancel {
+    background-color: var(--frames-bluegray);
+    color: var(--notification-blue);
+}
+
+.button--cancel:hover {
+    background-color: #d3d8e1;
+}
+
+.button--new-hazard {
+    width: calc(140 * 0.0625rem);
+}
+
+.button--new-hazard-cancel {
+    margin-right: calc(20 * 0.0625rem);
+}
+
+.button--new-hazard-submit {
+    opacity: 0.4;
+    text-align: center;
+}
+
+.button--finish-hazard{
+    margin-left: calc(20 * 0.0625rem);
+}
+
+@media (max-width: calc(1058 * 0.0625em)) {
+    .button--cancel {
+        margin-bottom: calc(20 * 0.0625rem);
+        margin-right: 0;
+    }
+
+    .button--new-hazard {
+        min-width: calc(330 * 0.0625rem);
+    }
+}
