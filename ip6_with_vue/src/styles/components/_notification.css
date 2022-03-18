@@ -27,3 +27,22 @@
 .notification__info-icon, .notification__arrow {
     margin: 0 calc(25 * 0.0625rem);
 }
+
+@media (max-width: calc(768 * 0.0625em)) {
+    .notification {
+        height: calc(50 * 0.0625rem);
+    }
+
+    .notification__info-icon-text {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    #notification__text-id {
+        margin-left: calc(25 * 0.0625rem);
+    }
+
+    .notification__info-icon {
+        display: none;
+    }
+}

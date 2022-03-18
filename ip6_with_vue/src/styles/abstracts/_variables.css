@@ -30,15 +30,6 @@
 
     /** 400px oder schmaler */
     --breakpoint-xss: 25em default;
-
-    /*
-    !** Breakpoints *!
-    @media (max-width: $breakpoint-lg) {}
-    @media (max-width: $breakpoint-md) {}
-    @media (max-width: $breakpoint-sm) {}
-    @media (max-width: $breakpoint-xs) {}
-    @media (max-width: $breakpoint-xss) {}
-    */
 }
 
 
