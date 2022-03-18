@@ -8,13 +8,13 @@
 }
 
 [type="checkbox"] + label::before {
-    width: calc(15 * 0.063rem);
-    height: calc(15 * 0.063rem);
+    width: calc(15 * 0.0625rem);
+    height: calc(15 * 0.0625rem);
     background-image: url("../../assets/svg/checkbox_unchecked.svg");
     display: block;
     content: "";
     float: left;
-    margin-right: calc(5 * 0.063rem);
+    margin-right: calc(5 * 0.0625rem);
     z-index: 0;
     position: relative;
 }

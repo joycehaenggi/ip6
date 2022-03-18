@@ -1,6 +1,6 @@
 .dot {
-    height: calc(21 * 0.063rem);
-    width: calc(21 * 0.063rem);
+    height: calc(21 * 0.0625rem);
+    width: calc(21 * 0.0625rem);
     border-radius: 50%;
 }
 

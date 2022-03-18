@@ -8,17 +8,17 @@
     background-color: var(--frames-bluegray);
     border-color: var(--notification-blue);
     text-align: center;
-    border-radius: calc(var(--border-radius) * 0.063rem);
+    border-radius: calc(var(--border-radius) * 0.0625rem);
     position: fixed;
     z-index: 1;
-    right: calc(30 * 0.063rem);
-    top: calc(30 * 0.063rem);
-    font-size: calc(13 * 0.063rem);
+    right: calc(30 * 0.0625rem);
+    top: calc(30 * 0.0625rem);
+    font-size: calc(13 * 0.0625rem);
     white-space: nowrap;
 }
 
 #toast__message {
-    padding: calc(16 * 0.063rem);
+    padding: calc(16 * 0.0625rem);
     color: var(--notification-blue);
     overflow: hidden;
     white-space: nowrap;
@@ -35,14 +35,14 @@
         opacity: 0;
     }
     to {
-        top: calc(30 * 0.063rem);
+        top: calc(30 * 0.0625rem);
         opacity: 1
     }
 }
 
 @keyframes fadeout {
     from {
-        top: calc(30 * 0.063rem);
+        top: calc(30 * 0.0625rem);
         opacity: 1;
     }
     to {

@@ -42,8 +42,8 @@
       <div id="add_new_Damage"></div>
 
       <div class="new-hazard__row">
-        <div class="new-hazard__column new-hazard__column--column1">
-          <label>Eintretungswahrscheinlichkeit</label>
+        <div class="new-hazard__column new-hazard__column--column1 new-hazard__column--ProbabilityOfOccurrence">
+          <label><div class="new-hazard__label-row1">Eintretungswahrscheinlichkeit</div> <div class="new-hazard__label-row2">vorher</div></label>
           <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                data-title="Eintretungs-wahrscheinlichkeit vor Anwendung der Massnahmen.">
             <svg class="new-hazard__info-icon" width="6" height="12"
@@ -91,7 +91,7 @@
           </div>
         </div>
         <div class="new-hazard__column new-hazard__column--column3">
-          <div class="new-hazard__column--column3_part1">
+          <div class="new-hazard__column--column3-part1">
             <label>Schweregrad</label>
             <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                  data-title="Schweregrad vor Anwendung der Massnahmen.">
@@ -103,7 +103,7 @@
               </svg>
             </div>
           </div>
-          <div class="new-hazard__column--column3_part2">
+          <div class="new-hazard__column--column3-part2">
             <div class="new-hazard__radio-buttons">
               <label class="radio-button-container"> 1
                 <input v-model="hazardSeverityNewHazardForm" type="radio" name="severity" value="1"
@@ -199,8 +199,8 @@
       </div>
 
       <div class="new-hazard__row">
-        <div class="new-hazard__column new-hazard__column--column1">
-          <label>Eintretungswahrscheinlichkeit</label>
+        <div class="new-hazard__column new-hazard__column--column1 new-hazard__column--ProbabilityOfOccurrence">
+          <label><div class="new-hazard__label-row1">Eintretungswahrscheinlichkeit</div> <div class="new-hazard__label-row2">nachher</div></label>
           <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                data-title="Eintretungs-wahrscheinlichkeit nach Anwendung der Massnahmen.">
             <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
@@ -246,7 +246,7 @@
           </div>
         </div>
         <div class="new-hazard__column new-hazard__column--column3">
-          <div class="new-hazard__column--column3_part1">
+          <div class="new-hazard__column--column3-part1">
             <label>Schweregrad</label>
             <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                  data-title="Schweregrad nach Anwendung der Massnahmen.">
@@ -258,7 +258,7 @@
               </svg>
             </div>
           </div>
-          <div class="new-hazard__column--column3_part2">
+          <div class="new-hazard__column--column3-part2">
             <div class="new-hazard__result new-hazard__result--severity" id="resultSeverity_two"></div>
           </div>
         </div>
@@ -285,9 +285,9 @@
         </div>
       </div>
       <div class="new-hazard__row new-hazard__button-container">
-        <div class="new-hazard__column new-hazard__column--column1 new-hazard__column--empty_column">
+        <div class="new-hazard__column new-hazard__column--column1 new-hazard__column--empty-column">
         </div>
-        <div class="new-hazard__column new-hazard__column--column2 new-hazard__column--empty_column">
+        <div class="new-hazard__column new-hazard__column--column2 new-hazard__column--empty-column">
         </div>
         <div class="new-hazard__column new-hazard__column--column3 new-hazard__column--button-column">
           <router-link :to="{ name: 'ListView', params: {

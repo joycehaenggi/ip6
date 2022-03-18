@@ -1,10 +1,10 @@
-@media (max-width: calc(1050 * 0.063em)) {
+@media (max-width: calc(1050 * 0.0625em)) {
     .notification {
-        height: calc(50 * 0.063rem);
+        height: calc(50 * 0.0625rem);
     }
 
     #text_notification {
-        margin-left: calc(25 * 0.063rem);
+        margin-left: calc(25 * 0.0625rem);
     }
 
     .info_icon {
@@ -13,7 +13,7 @@
 
     .table {
         display: block;
-        font-size: calc((var(--main-font-size) - 2) * 0.063rem);
+        font-size: calc((var(--main-font-size) - 2) * 0.0625rem);
     }
 
     .neue_gefaehrdung_input {
@@ -25,24 +25,24 @@
     }
 
     .th, .td {
-        height: calc(45 * 0.063rem);
-        padding-left: calc(5 * 0.063rem);
+        height: calc(45 * 0.0625rem);
+        padding-left: calc(5 * 0.0625rem);
     }
 }
 
-@media (max-width: calc(800 * 0.063em)) {
+@media (max-width: calc(800 * 0.0625em)) {
     .manufacturing-step-navigation, .manufacturing-step-information {
         flex-direction: column-reverse;
         align-items: flex-start;
-        height: calc(50 * 0.063rem);
+        height: calc(50 * 0.0625rem);
     }
 
     .manufacturing-step-information {
-        margin-top: calc(30 * 0.063rem);
+        margin-top: calc(30 * 0.0625rem);
     }
 
     .manufacturing-legend {
-        margin-top: calc(10 * 0.063rem);
-        margin-bottom: calc(10 * 0.063rem);
+        margin-top: calc(10 * 0.0625rem);
+        margin-bottom: calc(10 * 0.0625rem);
     }
 }

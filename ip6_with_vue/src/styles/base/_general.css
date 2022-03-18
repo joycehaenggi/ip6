@@ -11,14 +11,16 @@ html {
 }
 
 .wrapper {
-    padding-left: calc(var(--padding-wrapper-header) * 0.063rem);
-    padding-right: calc(var(--padding-wrapper-header) * 0.063rem);
+    padding-left: calc(var(--padding-wrapper-header) * 0.0625rem);
+    padding-right: calc(var(--padding-wrapper-header) * 0.0625rem);
+    padding-bottom: calc(var(--padding-wrapper-header) * 0.0625rem);
 }
 
-@media (max-width: calc(1200 * 0.063em)) {
+@media (max-width: calc(1200 * 0.0625em)) {
     .wrapper {
-        padding-left: calc(16 * 0.063rem);
-        padding-right: calc(16 * 0.063rem);
+        padding-left: calc(16 * 0.0625rem);
+        padding-right: calc(16 * 0.0625rem);
+        padding-bottom: calc(16 * 0.0625rem);
     }
 }
 
