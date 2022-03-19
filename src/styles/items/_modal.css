@@ -49,7 +49,7 @@
 
 @keyframes booking-modal__content--fade-in {
     0% {
-        transform: translate(0, calc(-60vh - 50%));
+        transform: translate(0, calc(-52vh - 50%));
     }
     100% {
         transform: translate(0, 0);
@@ -89,16 +89,6 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: calc(335 * 0.0625rem);
-
-/*    padding: calc(30 * 0.0625rem);
-    padding-top: calc(1.875rem);
-    padding-bottom: calc(1.875rem);
-    padding-top: calc(70 * 0.0625rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: calc(320 * 0.0625rem);
-    padding-bottom: 50px;*/
 }
 
 .modal__inner-top-part {
@@ -107,7 +97,7 @@
 }
 
 .modal__text {
-    font-size: calc(16 * 0.0625rem);
+    font-size: calc(17 * 0.0625rem);
     display: flex;
     flex-direction: column;
     align-items: center;
