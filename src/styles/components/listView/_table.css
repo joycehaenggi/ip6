@@ -193,6 +193,7 @@ fieldset, .v-text-field--outlined fieldset {
 
 .v-input__slot {
     margin-bottom: 0;
+    font-size: calc(var(--main-font-size) * 0.0625rem);
 }
 
 textarea, .v-label{
