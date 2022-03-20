@@ -27,7 +27,8 @@
         </div>
         <div class="new-hazard__column new-hazard__column--column2">
           <input v-model="hazardDamageNewHazardForm" class="new-hazard__input" type="text">
-          <svg class="new-hazard__add-icon" width="20" height="20" @click="addNewTextfield('damage')"
+          <svg class="new-hazard__add-icon" @click="addNewTextfield('damage', 'plus')"
+               width="20" height="20"
                viewBox="0 0 20 20" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <path
@@ -37,6 +38,18 @@
                 d="M13.873 9.15568H10.7746V6.05732C10.7746 5.62975 10.4284 5.28271 10 5.28271C9.57164 5.28271 9.22539 5.62975 9.22539 6.05732V9.15568H6.12703C5.69867 9.15568 5.35242 9.50271 5.35242 9.93029C5.35242 10.3579 5.69867 10.7049 6.12703 10.7049H9.22539V13.8033C9.22539 14.2308 9.57164 14.5779 10 14.5779C10.4284 14.5779 10.7746 14.2308 10.7746 13.8033V10.7049H13.873C14.3013 10.7049 14.6476 10.3579 14.6476 9.93029C14.6476 9.50271 14.3013 9.15568 13.873 9.15568Z"
                 fill="#32404F"/>
           </svg>
+          <div class="new-hazard__minus-icon-container">
+            <svg v-if="damagaAditionTextfiedNumber > 0" class="new-hazard__add-icon"
+                 @click="addNewTextfield('damage', 'minus')"
+                 width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                  d="M10 0C4.48566 0 0 4.48566 0 10C0 15.5143 4.48566 20 10 20C15.5143 20 20 15.5136 20 10C20 4.48645 15.5143 0 10 0ZM10 18.4508C5.34082 18.4508 1.54918 14.66 1.54918 10C1.54918 5.34004 5.34082 1.54918 10 1.54918C14.6592 1.54918 18.4508 5.34004 18.4508 10C18.4508 14.66 14.66 18.4508 10 18.4508Z"
+                  fill="#32404F"/>
+              <path
+                  d="M13.873 9.15571H10.7746C10.7746 9.15571 10.4284 9.1557 10 9.1557C9.57164 9.1557 9.22539 9.15572 9.22539 9.15572L6.12703 9.15571C5.69867 9.15571 5.35242 9.50274 5.35242 9.93032C5.35242 10.3579 5.69867 10.7049 6.12703 10.7049H9.22539C9.22539 10.7049 9.57164 10.7049 10 10.7049C10.4284 10.7049 10.7746 10.7049 10.7746 10.7049H13.873C14.3013 10.7049 14.6476 10.3579 14.6476 9.93032C14.6476 9.50274 14.3013 9.15571 13.873 9.15571Z"
+                  fill="#32404F"/>
+            </svg>
+          </div>
         </div>
       </div>
       <div v-for="damageNumber in damagaAditionTextfiedNumber" :key="'additionalDamageTextField'+damageNumber"
@@ -175,7 +188,7 @@
         </div>
         <div class="new-hazard__column new-hazard__column--column2 add_column">
           <input v-model="hazardMeasuresNewHazardForm" class="new-hazard__input" type="text">
-          <svg class="new-hazard__add-icon" width="20" height="20" @click="addNewTextfield('measure')"
+          <svg class="new-hazard__add-icon" width="20" height="20" @click="addNewTextfield('measure', 'plus')"
                viewBox="0 0 20 20"
                fill="none"
                xmlns="http://www.w3.org/2000/svg">
@@ -186,6 +199,18 @@
                 d="M13.873 9.15568H10.7746V6.05732C10.7746 5.62975 10.4284 5.28271 10 5.28271C9.57164 5.28271 9.22539 5.62975 9.22539 6.05732V9.15568H6.12703C5.69867 9.15568 5.35242 9.50271 5.35242 9.93029C5.35242 10.3579 5.69867 10.7049 6.12703 10.7049H9.22539V13.8033C9.22539 14.2308 9.57164 14.5779 10 14.5779C10.4284 14.5779 10.7746 14.2308 10.7746 13.8033V10.7049H13.873C14.3013 10.7049 14.6476 10.3579 14.6476 9.93029C14.6476 9.50271 14.3013 9.15568 13.873 9.15568Z"
                 fill="#32404F"/>
           </svg>
+          <div class="new-hazard__minus-icon-container">
+            <svg v-if="measureAditionTextfiedNumber > 0" class="new-hazard__add-icon"
+                 @click="addNewTextfield('measure', 'minus')"
+                 width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                  d="M10 0C4.48566 0 0 4.48566 0 10C0 15.5143 4.48566 20 10 20C15.5143 20 20 15.5136 20 10C20 4.48645 15.5143 0 10 0ZM10 18.4508C5.34082 18.4508 1.54918 14.66 1.54918 10C1.54918 5.34004 5.34082 1.54918 10 1.54918C14.6592 1.54918 18.4508 5.34004 18.4508 10C18.4508 14.66 14.66 18.4508 10 18.4508Z"
+                  fill="#32404F"/>
+              <path
+                  d="M13.873 9.15571H10.7746C10.7746 9.15571 10.4284 9.1557 10 9.1557C9.57164 9.1557 9.22539 9.15572 9.22539 9.15572L6.12703 9.15571C5.69867 9.15571 5.35242 9.50274 5.35242 9.93032C5.35242 10.3579 5.69867 10.7049 6.12703 10.7049H9.22539C9.22539 10.7049 9.57164 10.7049 10 10.7049C10.4284 10.7049 10.7746 10.7049 10.7746 10.7049H13.873C14.3013 10.7049 14.6476 10.3579 14.6476 9.93032C14.6476 9.50274 14.3013 9.15571 13.873 9.15571Z"
+                  fill="#32404F"/>
+            </svg>
+          </div>
         </div>
       </div>
 
@@ -380,41 +405,6 @@ export default {
   },
   updated() {
     console.log(this.hazardDamageNewHazardForm)
-/*    this.damagesObjectArray = []
-    this.newDamagesNewHazardForm = []
-    // this.newDamagesNewHazardForm = this.newDamages
-
-    if(this.hazardDamageNewHazardForm !== undefined && this.hazardDamageNewHazardForm !== ''){
-      // this.damagesObjectArray.push({description: this.hazardDamageNewHazardForm})
-      this.newDamagesNewHazardForm.push(this.hazardDamageNewHazardForm)
-    }
-    console.log(this.newDamagesNewHazardForm)
-
-    let i = 0
-    while (i < this.newDamages.length){
-      console.log(this.newDamages[i])
-      if(this.newDamages[i] !== undefined){
-        this.newDamagesNewHazardForm.push(this.newDamages[i])
-      }
-      i++;
-    }
-    console.log(this.newDamages)
-    console.log(this.newDamagesNewHazardForm)*/
-
-
-/*    let i = 0
-    if (this.damagaAditionTextfiedNumber !== 0) {
-      while (i < this.damagaAditionTextfiedNumber) {
-        i++
-        if(this.newDamages[i] !== undefined && this.newDamages[i] !== ''){
-          this.damagesObjectArray.push({description: this.newDamages[i]})
-        }
-      }
-    }*/
-    // console.log(this.damagesObjectArray)
-    // console.log(this.newDamages)
-
-
     /*      console.log(this.hazardNameNewHazardForm)
       console.log(this.hazardSituationNewHazardForm)
       console.log(this.hazardDamageNewHazardForm)
@@ -513,11 +503,19 @@ export default {
         }
       }
     },
-    addNewTextfield(TopicofnewTextfield) {
+    addNewTextfield(TopicofnewTextfield, typeOfCalculation) {
       if (TopicofnewTextfield === 'damage') {
-        this.damagaAditionTextfiedNumber++
+        if (typeOfCalculation === 'plus') {
+          this.damagaAditionTextfiedNumber++
+        } else if (typeOfCalculation === 'minus') {
+          this.damagaAditionTextfiedNumber--
+        }
       } else if (TopicofnewTextfield === 'measure') {
-        this.measureAditionTextfiedNumber++
+        if (typeOfCalculation === 'plus') {
+          this.measureAditionTextfiedNumber++
+        } else if (typeOfCalculation === 'minus') {
+          this.measureAditionTextfiedNumber--
+        }
       }
     }
   }

@@ -50,7 +50,13 @@
 }
 
 .new-hazard__column--column2 {
-    width: calc(330 * 0.0625rem);
+    width: calc(350 * 0.0625rem);
+}
+
+.new-hazard__minus-icon-container {
+    display: flex;
+    height: calc(20 * 0.0625rem);
+    width: calc(20 * 0.0625rem);
 }
 
 .new-hazard__column--column3-part1 {

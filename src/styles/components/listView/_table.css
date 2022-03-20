@@ -158,7 +158,6 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 
 ul {
     list-style: none;
-    /*list-style-image: url("../../../assets/svg/website_icon_list_style.svg");*/
 }
 
 li {
