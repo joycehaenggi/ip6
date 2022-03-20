@@ -284,11 +284,13 @@ export default {
       hazardProbabilityOfOccurenceBeforeTable: '',
       hazardSeverityTable: '',
       hazardMeasuresTable: '',
+      hazardMeasuresTable2: '',
       hazardProbabilityOfOccurenceAfterTable: '',
       hazardRiskPriorityTableNumber: '',
       hazardRiskPriorityWord: '',
       hazardNewId: null,
       hazardImageNameTable: '',
+      hazardDamageTable2: '',
       hazardOriginalIdTableNumber: null,
       customMadeDeviceDescription: '',
       customMadeDeviceFile: '',
@@ -530,7 +532,37 @@ export default {
             this.hazardRiskPriorityWord = 'hoch'
             break
         }
+        let newArray = []
+        newArray.push({description: this.hazardDamageTable2 })
+
+        // console.log(newArray.push({description: this.hazardDamageTable[i]}))
+        let i = 0
+        while (i < this.hazardDamageTable.length){
+          // console.log(this.hazardDamageTable[i])
+          if(this.hazardDamageTable[i] !== undefined){
+            newArray.push({description: this.hazardDamageTable[i]})
+          }
+          i++;
+        }
+
+        let newArray2 = []
+        newArray2.push({description: this.hazardMeasuresTable2 })
+        // console.log(newArray.push({description: this.hazardDamageTable[i]}))
+        let j = 0
+
+        while (j < this.hazardMeasuresTable.length){
+          console.log(this.hazardMeasuresTable)
+          // console.log(this.hazardDamageTable[i])
+          if(this.hazardMeasuresTable[j] !== undefined){
+            newArray2.push({description: this.hazardMeasuresTable[j]})
+          }
+          j++;
+        }
+
         this.hazardNewId = this.hazards.length + 1
+
+        // console.log(newArray)
+
         this.hazards.push({
           id: this.hazardNewId,
           categoryId: this.nameCounterTable + 1,
@@ -538,16 +570,15 @@ export default {
           imageName: this.hazardImageNameTable,
           riskPriority: this.hazardRiskPriorityTableNumber + ' ' + this.hazardRiskPriorityWord,
           hazardDetailDescription: this.hazardSituationTable,
+          damage: newArray,
           // damage: this.hazardDamageTable,
-          damage: [
-            {description: this.hazardDamageTable},
-          ],
+          // damage: [
+          //   {description: this.hazardDamageTable},
+          // ],
           probabilityOfOccurrenceBefore: this.hazardProbabilityOfOccurenceBeforeTable,
           severity: this.hazardSeverityTable,
           // measures: this.hazardMeasuresTable,
-          measures: [
-            {description: this.hazardMeasuresTable},
-          ],
+          measures: newArray2,
           probabilityOfOccurrenceAfter: this.hazardProbabilityOfOccurenceAfterTable,
         })
         switch (this.nameCounterTable) {
@@ -622,14 +653,18 @@ export default {
       this.hazardNameTable = this.$route.params.hazardNameListView
       this.hazardSituationTable = this.$route.params.hazardSituationListView
       this.hazardDamageTable = this.$route.params.hazardDamageListView
+      this.hazardDamageTable2 = this.$route.params.hazardDamageListView2
       this.hazardProbabilityOfOccurenceBeforeTable = this.$route.params.hazardProbabilityOfOccurenceBeforeListView
       this.hazardSeverityTable = this.$route.params.hazardSeverityListView
       this.hazardMeasuresTable = this.$route.params.hazardMeasuresListView
+      this.hazardMeasuresTable2 = this.$route.params.hazardMeasuresListView2
       this.hazardProbabilityOfOccurenceAfterTable = this.$route.params.hazardProbabilityOfOccurenceAfterListView
       this.hazardRiskPriorityTableNumber = this.$route.params.hazardRiskPriorityListView
       this.hazardOriginalIdTableNumber = parseInt(this.hazardOriginalIdTableNumber, 10)
       this.hazardImageNameTable = this.hazards.find(hazard => hazard.id === this.hazardOriginalIdTableNumber).imageName
     }
+    console.log(this.hazardDamageTable2)
+    console.log(this.hazardMeasuresTable2)
     this.numberOfCheckedCheckboxes(null, true, false, false)
   },
   methods: {

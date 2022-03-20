@@ -15,7 +15,7 @@
       </div>
       <div class="new-hazard__row">
         <div class="new-hazard__column new-hazard__column--column1">
-          <label  >Gefährdungssituation</label>
+          <label>Gefährdungssituation</label>
         </div>
         <div class="new-hazard__column new-hazard__column--column2">
           <input v-model="hazardSituationNewHazardForm" class="new-hazard__input" type="text">
@@ -27,7 +27,7 @@
         </div>
         <div class="new-hazard__column new-hazard__column--column2">
           <input v-model="hazardDamageNewHazardForm" class="new-hazard__input" type="text">
-          <svg class="new-hazard__add-icon" width="20" height="20" @click="addNewTextfield('add_new_Damage')"
+          <svg class="new-hazard__add-icon" width="20" height="20" @click="addNewTextfield('damage')"
                viewBox="0 0 20 20" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <path
@@ -39,11 +39,23 @@
           </svg>
         </div>
       </div>
-      <div id="add_new_Damage"></div>
+      <div v-for="damageNumber in damagaAditionTextfiedNumber" :key="'additionalDamageTextField'+damageNumber"
+           class="new-hazard__row new-hazard__row--add">
+        <div class="new-hazard__column new-hazard__column--empty-column-add">
+        </div>
+        <div class="new-hazard__column new-hazard__column--add">
+          <input v-model="newDamages[damageNumber-1]" class="new-hazard__input" type="text">
+        </div>
+        {{ newDamages[damageNumber-1] }}
+      </div>
+
 
       <div class="new-hazard__row">
         <div class="new-hazard__column new-hazard__column--column1 new-hazard__column--ProbabilityOfOccurrence">
-          <label><div class="new-hazard__label-row1">Eintretungswahrscheinlichkeit</div> <div class="new-hazard__label-row2">vorher</div></label>
+          <label>
+            <div class="new-hazard__label-row1">Eintretungswahrscheinlichkeit</div>
+            <div class="new-hazard__label-row2">vorher</div>
+          </label>
           <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                data-title="Eintretungs-wahrscheinlichkeit vor Anwendung der Massnahmen.">
             <svg class="new-hazard__info-icon" width="6" height="12"
@@ -164,7 +176,7 @@
         </div>
         <div class="new-hazard__column new-hazard__column--column2 add_column">
           <input v-model="hazardMeasuresNewHazardForm" class="new-hazard__input" type="text">
-          <svg class="new-hazard__add-icon" width="20" height="20" @click="addNewTextfield('add_new_measures')"
+          <svg class="new-hazard__add-icon" width="20" height="20" @click="addNewTextfield('measure')"
                viewBox="0 0 20 20"
                fill="none"
                xmlns="http://www.w3.org/2000/svg">
@@ -178,7 +190,15 @@
         </div>
       </div>
 
-      <div id="add_new_measures"></div>
+      <div v-for="measureNumber in measureAditionTextfiedNumber" :key="'additionalMeasureTextField'+measureNumber"
+           class="new-hazard__row new-hazard__row--add">
+        <div class="new-hazard__column new-hazard__column--empty-column-add">
+        </div>
+        <div class="new-hazard__column new-hazard__column--add">
+          <input v-model="newMeasures[measureNumber-1]" class="new-hazard__input" type="text">
+        </div>
+        {{ newMeasures[measureNumber-1] }}
+      </div>
 
       <div class="new-hazard__row">
         <div class="new-hazard__column new-hazard__column--column1">
@@ -200,7 +220,10 @@
 
       <div class="new-hazard__row">
         <div class="new-hazard__column new-hazard__column--column1 new-hazard__column--ProbabilityOfOccurrence">
-          <label><div class="new-hazard__label-row1">Eintretungswahrscheinlichkeit</div> <div class="new-hazard__label-row2">nachher</div></label>
+          <label>
+            <div class="new-hazard__label-row1">Eintretungswahrscheinlichkeit</div>
+            <div class="new-hazard__label-row2">nachher</div>
+          </label>
           <div class="tooltip tooltip--expand tooltip--new-hazard new-hazard__info-icon-container"
                data-title="Eintretungs-wahrscheinlichkeit nach Anwendung der Massnahmen.">
             <svg class="new-hazard__info-icon" width="6" height="12" viewBox="0 0 6 12" fill="none"
@@ -299,10 +322,12 @@
           <router-link :to="{ name: 'ListView', params: {
             hazardNameListView: hazardNameNewHazardForm,
             hazardSituationListView: hazardSituationNewHazardForm,
-            hazardDamageListView: hazardDamageNewHazardForm,
+            hazardDamageListView: newDamages,
+            hazardDamageListView2: hazardDamageNewHazardForm,
             hazardProbabilityOfOccurenceBeforeListView: hazardProbabilityOfOccurenceBeforeNewHazardForm,
             hazardSeverityListView: hazardSeverityNewHazardForm,
-            hazardMeasuresListView: hazardMeasuresNewHazardForm,
+            hazardMeasuresListView: newMeasures,
+            hazardMeasuresListView2: hazardMeasuresNewHazardForm,
             hazardProbabilityOfOccurenceAfterListView: hazardProbabilityOfOccurenceAfterNewHazardForm,
             hazardRiskPriorityListView: hazardRiskPriorityNewHazardForm,
             hazardOriginalIdListView: hazardOriginalIdNewHazardForm
@@ -342,13 +367,56 @@ export default {
       color2: "black",
       result1: null,
       result2: null,
-      newSeverityValue: null
+      newSeverityValue: null,
+      damagaAditionTextfiedNumber: 0,
+      measureAditionTextfiedNumber: 0,
+      newDamages: [],
+      newDamagesNewHazardForm: [],
+      newMeasures: [],
+      damagesObjectArray: [],
+      measuresObjectArray: [],
     }
   },
   mounted() {
     this.hazardOriginalIdNewHazardForm = this.$route.params.itemIdNewHazard
   },
   updated() {
+    console.log(this.hazardDamageNewHazardForm)
+/*    this.damagesObjectArray = []
+    this.newDamagesNewHazardForm = []
+    // this.newDamagesNewHazardForm = this.newDamages
+
+    if(this.hazardDamageNewHazardForm !== undefined && this.hazardDamageNewHazardForm !== ''){
+      // this.damagesObjectArray.push({description: this.hazardDamageNewHazardForm})
+      this.newDamagesNewHazardForm.push(this.hazardDamageNewHazardForm)
+    }
+    console.log(this.newDamagesNewHazardForm)
+
+    let i = 0
+    while (i < this.newDamages.length){
+      console.log(this.newDamages[i])
+      if(this.newDamages[i] !== undefined){
+        this.newDamagesNewHazardForm.push(this.newDamages[i])
+      }
+      i++;
+    }
+    console.log(this.newDamages)
+    console.log(this.newDamagesNewHazardForm)*/
+
+
+/*    let i = 0
+    if (this.damagaAditionTextfiedNumber !== 0) {
+      while (i < this.damagaAditionTextfiedNumber) {
+        i++
+        if(this.newDamages[i] !== undefined && this.newDamages[i] !== ''){
+          this.damagesObjectArray.push({description: this.newDamages[i]})
+        }
+      }
+    }*/
+    // console.log(this.damagesObjectArray)
+    // console.log(this.newDamages)
+
+
     /*      console.log(this.hazardNameNewHazardForm)
       console.log(this.hazardSituationNewHazardForm)
       console.log(this.hazardDamageNewHazardForm)
@@ -376,13 +444,13 @@ export default {
   },
   methods: {
     checkNewHazardFields() {
-      return this.hazardNameNewHazardForm !== "" &&
+      return this.hazardNameNewHazardForm !== "" /*&&
           this.hazardSituationNewHazardForm !== "" &&
           this.hazardDamageNewHazardForm !== "" &&
           this.hazardProbabilityOfOccurenceBeforeNewHazardForm !== "" &&
           this.hazardSeverityNewHazardForm !== "" &&
           this.hazardMeasuresNewHazardForm !== "" &&
-          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""
+          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""*/
     },
     displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
       if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {
@@ -448,15 +516,11 @@ export default {
       }
     },
     addNewTextfield(TopicofnewTextfield) {
-      var objTo = document.getElementById(TopicofnewTextfield)
-      var divAdd = document.createElement("div")
-      divAdd.innerHTML = '<div class="new-hazard__row new-hazard__row--add">\n' +
-          '<div class="new-hazard__column new-hazard__column--empty-column-add">\n' +
-          '</div>\n' +
-          '<div class="new-hazard__column new-hazard__column--add">' +
-          '<input class="new-hazard__input" type="text">' +
-          '</div></div>'
-      objTo.appendChild(divAdd)
+      if (TopicofnewTextfield === 'damage') {
+        this.damagaAditionTextfiedNumber++
+      } else if (TopicofnewTextfield === 'measure') {
+        this.measureAditionTextfiedNumber++
+      }
     }
   }
 }
