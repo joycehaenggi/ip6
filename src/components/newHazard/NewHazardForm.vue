@@ -60,7 +60,6 @@
           <input v-model="newDamages[damageNumber-1]" class="new-hazard__input" type="text">
         </div>
       </div>
-      {{newDamages}}
 
 
       <div class="new-hazard__row">
@@ -223,7 +222,6 @@
           <input v-model="newMeasures[measureNumber-1]" class="new-hazard__input" type="text">
         </div>
       </div>
-      {{ newMeasures }}
 
       <div class="new-hazard__row">
         <div class="new-hazard__column new-hazard__column--column1">
@@ -433,13 +431,13 @@ export default {
   },
   methods: {
     checkNewHazardFields() {
-      return this.hazardNameNewHazardForm !== "" /*&&
+      return this.hazardNameNewHazardForm !== "" &&
           this.hazardSituationNewHazardForm !== "" &&
           this.hazardDamageNewHazardForm !== "" &&
           this.hazardProbabilityOfOccurenceBeforeNewHazardForm !== "" &&
           this.hazardSeverityNewHazardForm !== "" &&
           this.hazardMeasuresNewHazardForm !== "" &&
-          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""*/
+          this.hazardProbabilityOfOccurenceAfterNewHazardForm !== ""
     },
     displayRadioValueOfProbabilityOfOccurrence(ProbabilityOfOccurrenceRadioButtonGroup) {
       if (ProbabilityOfOccurrenceRadioButtonGroup === 1) {

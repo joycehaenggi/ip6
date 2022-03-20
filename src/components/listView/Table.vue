@@ -545,7 +545,7 @@ export default {
 
         let i = 0
         while (i < this.hazardDamageTable.length) {
-          if (this.hazardDamageTable[i] !== undefined && this.hazardDamageTable[i] !== null && this.hazardDamageTable[i] !== '') {
+          if (this.hazardDamageTable[i] !== undefined && this.hazardDamageTable[i] !== null && this.hazardDamageTable[i] !== '' && newArray.filter(e => e.description === this.hazardDamageTable[i]).length === 0) {
             newArray.push({description: this.hazardDamageTable[i]})
           }
           i++;
@@ -556,7 +556,7 @@ export default {
         let j = 0
 
         while (j < this.hazardMeasuresTable.length) {
-          if (this.hazardMeasuresTable[j] !== undefined && this.hazardMeasuresTable[j] !== null && this.hazardMeasuresTable[j] !== '') {
+          if (this.hazardMeasuresTable[j] !== undefined && this.hazardMeasuresTable[j] !== null && this.hazardMeasuresTable[j] !== ''  && newArray2.filter(e => e.description === this.hazardMeasuresTable[j]).length === 0) {
             newArray2.push({description: this.hazardMeasuresTable[j]})
           }
           j++;
