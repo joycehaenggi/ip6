@@ -16,7 +16,7 @@
 
 .new-hazard__form {
     padding: calc(20 * 0.0625rem);
-    font-size: calc(11 * 0.0625rem);
+    font-size: calc(var(--main-font-size) * 0.0625rem);
     border: calc(1 * 0.0625rem) solid var(--frames-bluegray);
     border-bottom-left-radius: calc(var(--border-radius) * 0.0625rem);
     border-bottom-right-radius: calc(var(--border-radius) * 0.0625rem);

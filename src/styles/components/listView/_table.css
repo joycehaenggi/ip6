@@ -114,7 +114,7 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
 
 .detail-view__group, .v-text-field.v-text-field--enclosed {
     padding-bottom: calc(36 * 0.0625rem);
-    font-size: calc(11 * 0.0625rem);
+    font-size: calc(var(--main-font-size) * 0.0625rem);
 }
 
 .detail-view__group--damage {
@@ -166,7 +166,7 @@ li {
     align-items: center;
 }
 
-li:not(:first-child) {
+.detail-view__content li:not(:first-child) {
     margin-top: calc(10 * 0.0625rem);
 }
 

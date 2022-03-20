@@ -79,7 +79,7 @@
                   <div class="detail-view__title">Schaden</div>
                   <div class="detail-view__content">
                     <ul>
-                      <li v-for="damage in item.damage" :key="damage.description"><img src="../../assets/svg/website_icon_list_style_25x25.svg" alt="li-icon"><p>{{ damage.description }}</p></li>
+                      <li v-for="damage in item.damage" :key="damage.description"><img src="../../assets/svg/website_icon_list_style.svg" alt="li-icon"><p>{{ damage.description }}</p></li>
                     </ul>
                   </div>
                 </div>
@@ -88,7 +88,7 @@
                   <div class="detail-view__title">Massnahmen zur Risikominderung</div>
                   <div class="detail-view__content">
                     <ul>
-                      <li v-for="measure in item.measures" :key="measure.description"><img src="../../assets/svg/website_icon_list_style_25x25.svg" alt="li-icon"><p>{{ measure.description }}</p></li>
+                      <li v-for="measure in item.measures" :key="measure.description"><img src="../../assets/svg/website_icon_list_style.svg" alt="li-icon"><p>{{ measure.description }}</p></li>
                     </ul>
                   </div>
                 </div>

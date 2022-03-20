@@ -10,7 +10,7 @@
 }
 
 .path-section__row--row1 {
-    font-size: calc(11 * 0.0625rem);
+    font-size: calc(var(--main-font-size) * 0.0625rem);
 }
 
 .path-section__row--row2 {
@@ -46,14 +46,14 @@
     justify-content: space-between;
     align-items: center;
     height: calc(21 * 0.0625rem);
-    font-size: calc(11 * 0.0625rem);
+    font-size: calc(var(--main-font-size) * 0.0625rem);
 }
 
 .path-section__risk-priority-legend-element:not(:first-child)  {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: calc(11 * 0.0625rem);
+    font-size: calc(var(--main-font-size) * 0.0625rem);
     margin-left: calc(9 * 0.0625rem);
 }
 
