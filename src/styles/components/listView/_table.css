@@ -156,8 +156,27 @@ tr:hover:not(.v-data-table__expanded__content):not(thead tr), .v-data-table__exp
     padding-top: calc(12 * 0.0625rem);
 }
 
+ul {
+    list-style: none;
+    /*list-style-image: url("../../../assets/svg/website_icon_list_style.svg");*/
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+li:not(:first-child) {
+    margin-top: calc(10 * 0.0625rem);
+}
+
 .v-application ul, .v-application ol {
-    padding-left: calc(10 * 0.0625rem);
+    padding-left: 0;
+}
+
+.v-application p {
+    margin-bottom: 0;
+    margin-left: calc(10 * 0.0625rem);
 }
 
 .detail-view__evaluation-question {
