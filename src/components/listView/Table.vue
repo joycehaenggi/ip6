@@ -535,10 +535,8 @@ export default {
         let newArray = []
         newArray.push({description: this.hazardDamageTable2 })
 
-        // console.log(newArray.push({description: this.hazardDamageTable[i]}))
         let i = 0
         while (i < this.hazardDamageTable.length){
-          // console.log(this.hazardDamageTable[i])
           if(this.hazardDamageTable[i] !== undefined){
             newArray.push({description: this.hazardDamageTable[i]})
           }
@@ -547,12 +545,9 @@ export default {
 
         let newArray2 = []
         newArray2.push({description: this.hazardMeasuresTable2 })
-        // console.log(newArray.push({description: this.hazardDamageTable[i]}))
         let j = 0
 
         while (j < this.hazardMeasuresTable.length){
-          console.log(this.hazardMeasuresTable)
-          // console.log(this.hazardDamageTable[i])
           if(this.hazardMeasuresTable[j] !== undefined){
             newArray2.push({description: this.hazardMeasuresTable[j]})
           }
@@ -560,8 +555,6 @@ export default {
         }
 
         this.hazardNewId = this.hazards.length + 1
-
-        // console.log(newArray)
 
         this.hazards.push({
           id: this.hazardNewId,
@@ -663,8 +656,6 @@ export default {
       this.hazardOriginalIdTableNumber = parseInt(this.hazardOriginalIdTableNumber, 10)
       this.hazardImageNameTable = this.hazards.find(hazard => hazard.id === this.hazardOriginalIdTableNumber).imageName
     }
-    console.log(this.hazardDamageTable2)
-    console.log(this.hazardMeasuresTable2)
     this.numberOfCheckedCheckboxes(null, true, false, false)
   },
   methods: {

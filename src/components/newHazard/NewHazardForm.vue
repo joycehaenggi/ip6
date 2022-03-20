@@ -46,7 +46,6 @@
         <div class="new-hazard__column new-hazard__column--add">
           <input v-model="newDamages[damageNumber-1]" class="new-hazard__input" type="text">
         </div>
-        {{ newDamages[damageNumber-1] }}
       </div>
 
 
@@ -197,7 +196,6 @@
         <div class="new-hazard__column new-hazard__column--add">
           <input v-model="newMeasures[measureNumber-1]" class="new-hazard__input" type="text">
         </div>
-        {{ newMeasures[measureNumber-1] }}
       </div>
 
       <div class="new-hazard__row">
