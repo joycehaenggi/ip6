@@ -60,6 +60,7 @@
           <input v-model="newDamages[damageNumber-1]" class="new-hazard__input" type="text">
         </div>
       </div>
+      {{newDamages}}
 
 
       <div class="new-hazard__row">
@@ -222,6 +223,7 @@
           <input v-model="newMeasures[measureNumber-1]" class="new-hazard__input" type="text">
         </div>
       </div>
+      {{ newMeasures }}
 
       <div class="new-hazard__row">
         <div class="new-hazard__column new-hazard__column--column1">
@@ -404,7 +406,6 @@ export default {
     this.hazardOriginalIdNewHazardForm = this.$route.params.itemIdNewHazard
   },
   updated() {
-    console.log(this.hazardDamageNewHazardForm)
     /*      console.log(this.hazardNameNewHazardForm)
       console.log(this.hazardSituationNewHazardForm)
       console.log(this.hazardDamageNewHazardForm)
@@ -509,12 +510,14 @@ export default {
           this.damagaAditionTextfiedNumber++
         } else if (typeOfCalculation === 'minus') {
           this.damagaAditionTextfiedNumber--
+          this.newDamages.length = this.damagaAditionTextfiedNumber
         }
       } else if (TopicofnewTextfield === 'measure') {
         if (typeOfCalculation === 'plus') {
           this.measureAditionTextfiedNumber++
         } else if (typeOfCalculation === 'minus') {
           this.measureAditionTextfiedNumber--
+          this.newMeasures.length = this.measureAditionTextfiedNumber
         }
       }
     }

@@ -79,7 +79,9 @@
                   <div class="detail-view__title">Schaden</div>
                   <div class="detail-view__content">
                     <ul>
-                      <li v-for="damage in item.damage" :key="damage.description"><img src="../../assets/svg/bullet_point_new.svg" alt="li-icon"><p>{{ damage.description }}</p></li>
+                      <li v-for="damage in item.damage" :key="damage.description"><img
+                          src="../../assets/svg/bullet_point_new.svg" alt="li-icon">
+                        <p>{{ damage.description }}</p></li>
                     </ul>
                   </div>
                 </div>
@@ -88,7 +90,9 @@
                   <div class="detail-view__title">Massnahmen zur Risikominderung</div>
                   <div class="detail-view__content">
                     <ul>
-                      <li v-for="measure in item.measures" :key="measure.description"><img src="../../assets/svg/bullet_point_new.svg" alt="li-icon"><p>{{ measure.description }}</p></li>
+                      <li v-for="measure in item.measures" :key="measure.description"><img
+                          src="../../assets/svg/bullet_point_new.svg" alt="li-icon">
+                        <p>{{ measure.description }}</p></li>
                     </ul>
                   </div>
                 </div>
@@ -250,8 +254,11 @@
             </div>
 
             <div class="modal__button-container">
-              <button @click.stop="showModal = false" class="button button--cancel button--modal">Herstellung fortsetzen</button>
-              <button @click.stop="showModal = false; cancel()" class="button button--submit button--modal button--submit-modal">
+              <button @click.stop="showModal = false" class="button button--cancel button--modal">Herstellung
+                fortsetzen
+              </button>
+              <button @click.stop="showModal = false; cancel()"
+                      class="button button--submit button--modal button--submit-modal">
                 Herstellung
                 abbrechen
               </button>
@@ -532,23 +539,24 @@ export default {
             this.hazardRiskPriorityWord = 'hoch'
             break
         }
+
         let newArray = []
-        newArray.push({description: this.hazardDamageTable2 })
+        newArray.push({description: this.hazardDamageTable2})
 
         let i = 0
-        while (i < this.hazardDamageTable.length){
-          if(this.hazardDamageTable[i] !== undefined){
+        while (i < this.hazardDamageTable.length) {
+          if (this.hazardDamageTable[i] !== undefined && this.hazardDamageTable[i] !== null && this.hazardDamageTable[i] !== '') {
             newArray.push({description: this.hazardDamageTable[i]})
           }
           i++;
         }
 
         let newArray2 = []
-        newArray2.push({description: this.hazardMeasuresTable2 })
+        newArray2.push({description: this.hazardMeasuresTable2})
         let j = 0
 
-        while (j < this.hazardMeasuresTable.length){
-          if(this.hazardMeasuresTable[j] !== undefined){
+        while (j < this.hazardMeasuresTable.length) {
+          if (this.hazardMeasuresTable[j] !== undefined && this.hazardMeasuresTable[j] !== null && this.hazardMeasuresTable[j] !== '') {
             newArray2.push({description: this.hazardMeasuresTable[j]})
           }
           j++;
