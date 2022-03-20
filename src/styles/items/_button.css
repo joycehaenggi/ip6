@@ -53,10 +53,6 @@
     margin-left: calc(20 * 0.0625rem);
 }
 
-.button--modal {
-    font-size: calc(var(--second-font-size) * 0.0625rem);
-}
-
 @media (max-width: calc(1058 * 0.0625em)) {
     .button--cancel {
         margin-bottom: calc(20 * 0.0625rem);

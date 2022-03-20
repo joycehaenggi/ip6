@@ -254,11 +254,11 @@
             </div>
 
             <div class="modal__button-container">
-              <button @click.stop="showModal = false" class="button button--cancel button--modal">Herstellung
+              <button @click.stop="showModal = false" class="button button--cancel">Herstellung
                 fortsetzen
               </button>
               <button @click.stop="showModal = false; cancel()"
-                      class="button button--submit button--modal button--submit-modal">
+                      class="button button--submit button--submit-modal">
                 Herstellung
                 abbrechen
               </button>
@@ -339,7 +339,7 @@ export default {
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
           measures: [
-            {description: 'Erfüllen der Belastungstests (DFMEA-D16)'},
+            {description: 'Erfüllen der Belastungstests (DFMEA-D16).'},
           ],
           probabilityOfOccurrenceAfter: 2,
         },
@@ -356,7 +356,7 @@ export default {
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
           measures: [
-            {description: 'Erfüllen der Belastungstests (DFMEA-D16)'},
+            {description: 'Erfüllen der Belastungstests (DFMEA-D16).'},
           ],
           probabilityOfOccurrenceAfter: 2,
         },
@@ -373,7 +373,7 @@ export default {
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
           measures: [
-            {description: 'Einen Standardschraubentyp aus ähnlichen Indikationen verwenden  und unter Belastung testen  (DFMEA-D14)'},
+            {description: 'Einen Standardschraubentyp aus ähnlichen Indikationen verwenden  und unter Belastung testen  (DFMEA-D14).'},
           ],
           probabilityOfOccurrenceAfter: 1,
         },
@@ -390,7 +390,7 @@ export default {
           probabilityOfOccurrenceBefore: 3,
           severity: 3,
           measures: [
-            {description: 'Erfüllen der Belastungstests (DFMEA-D16)'},
+            {description: 'Erfüllen der Belastungstests (DFMEA-D16).'},
           ],
           probabilityOfOccurrenceAfter: 1,
         },
@@ -402,7 +402,7 @@ export default {
           riskPriority: "1 gering",
           hazardDetailDescription: "Stabilitätsverlust bei Fixierung weil Schraubentyp und -dimension nicht zur Implantatdimension und dem zu erwartenden Lastfall passen.",
           damage: [
-            {description: 'Verlängerung der OP'},
+            {description: 'Verlängerung der OP.'},
             {description: 'Leiden des Patienten.'},
           ],
           probabilityOfOccurrenceBefore: 3,
@@ -456,8 +456,8 @@ export default {
           riskPriority: "2 mittel",
           hazardDetailDescription: "Ordnungsgemässe Lagerung der Bauplattform gemäss SOP. Vor Gebrauch die Bauplattform mit G23.",
           damage: [
-            {description: 'Ordnungsgemässe Lagerung der Bauplattform gemäss SOP'},
-            {description: 'Vor Gebrauch die Bauplattform mit G23'},
+            {description: 'Ordnungsgemässe Lagerung der Bauplattform gemäss SOP.'},
+            {description: 'Vor Gebrauch die Bauplattform mit G23.'},
           ],
           probabilityOfOccurrenceBefore: 2,
           severity: 4,
@@ -474,7 +474,7 @@ export default {
           riskPriority: "2 mittel",
           hazardDetailDescription: "Implantat ist nicht formschlüssig - passt nicht mehr aufgrund verschlechtertem Schichtaufbau.",
           damage: [
-            {description: 'Schädigung der Weichteile / Sehnervs'},
+            {description: 'Schädigung der Weichteile / Sehnervs.'},
           ],
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
@@ -493,13 +493,13 @@ export default {
           riskPriority: "2 mittel",
           hazardDetailDescription: "Implantat ist nicht formschlüssig - passt nicht mehr aufgrund einer Verschiebung der Bauteilstruktur oder Ablösung von der  Supportstruktur.",
           damage: [
-            {description: 'Schädigung der Weichteile / Sehnervs'},
+            {description: 'Schädigung der Weichteile / Sehnervs.'},
           ],
           probabilityOfOccurrenceBefore: 3,
           severity: 4,
           measures: [
             {description: 'Bei harten Kollisionen bricht die Anlage den Baujob selber ab.'},
-            {description: 'Soll-Ist Vergleich mittels 3D-Scan bei der Type Examination'},
+            {description: 'Soll-Ist Vergleich mittels 3D-Scan bei der Type Examination.'},
           ],
           probabilityOfOccurrenceAfter: 2,
         },
@@ -572,13 +572,8 @@ export default {
           riskPriority: this.hazardRiskPriorityTableNumber + ' ' + this.hazardRiskPriorityWord,
           hazardDetailDescription: this.hazardSituationTable,
           damage: newArray,
-          // damage: this.hazardDamageTable,
-          // damage: [
-          //   {description: this.hazardDamageTable},
-          // ],
           probabilityOfOccurrenceBefore: this.hazardProbabilityOfOccurenceBeforeTable,
           severity: this.hazardSeverityTable,
-          // measures: this.hazardMeasuresTable,
           measures: newArray2,
           probabilityOfOccurrenceAfter: this.hazardProbabilityOfOccurenceAfterTable,
         })
@@ -829,6 +824,7 @@ export default {
       this.customMadeDeviceDescription = ''
 
       let nameCounterTableValue = 0
+      localStorage.nameCounter = nameCounterTableValue
       this.$emit("updateNumber", nameCounterTableValue)
       this.numberOfCheckedCheckboxes(null, false, false, false)
       this.expanded = []

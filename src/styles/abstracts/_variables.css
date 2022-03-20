@@ -14,7 +14,6 @@
     --border-radius: 5;
     --border-radius--progress-bar: 10;
     --main-font-size: 12;
-    --second-font-size: 12;
 
     /** 1200px oder schmaler */
     --breakpoint-lg: 75em;
