@@ -14,7 +14,7 @@
 
 .notification__info-icon-text {
     display: flex;
-    width: calc(610 * 0.0625rem);
+    width: calc(700 * 0.0625rem);
     align-items: center;
     justify-content:center;
 }
