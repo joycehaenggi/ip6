@@ -25,7 +25,7 @@ Dieser digitale Prozess sollte bei der Herstellung eines patientenangepassten Im
 
 ### Projektteam
 * Joyce Hänggi, 7iCbb, iCompetence
-* Florian Daasch, 7iCbb, iCompetence
+* Florian Daasch, 7iCa, iCompetence
 
 ### Technologien
 Eine Liste der im Rahmen des Projekts verwendeten Technologien:
